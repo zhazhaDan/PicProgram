@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Kingfisher (3.12.1)
+  - MOBFoundation (3.0.4)
+  - ShareSDK3/ShareSDKPlatforms/Facebook (4.0.2):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.2):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/Twitter (4.0.2):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.2):
+    - MOBFoundation
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher (= 3.12.1)
+  - ShareSDK3/ShareSDKPlatforms/Facebook
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/Twitter
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Kingfisher: 7e87498c3b795c2b8f6430fd5853ae5b5548ff9c
+  MOBFoundation: ee0d83f92fe394f7f2b145a407441d08ca1c831c
+  ShareSDK3: a01a35da3cd8f4d10d7f4394c7c42f8113392182
+
+PODFILE CHECKSUM: 51322f76ca7220a6bbcdc9daecf9743fc10848ad
+
+COCOAPODS: 1.2.0

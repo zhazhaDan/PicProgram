@@ -1,0 +1,6 @@
+framework module Pods_PicProgram {
+  umbrella header "Pods-PicProgram-umbrella.h"
+
+  export *
+  module * { export * }
+}

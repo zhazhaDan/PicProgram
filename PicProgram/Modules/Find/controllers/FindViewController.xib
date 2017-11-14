@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindViewController" customModule="PicProgram" customModuleProvider="target">
+            <connections>
+                <outlet property="currentView" destination="qzz-PV-QuR" id="Rgt-Ub-x72"/>
+                <outlet property="lineView" destination="DQx-bH-vR8" id="Jio-3N-zsD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="Qsv-cR-gb4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stV-Lj-DP7" userLabel="today">
+                    <rect key="frame" x="30" y="64" width="129" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="ZZ9-iy-mPw"/>
+                        <constraint firstAttribute="width" constant="129" id="f6I-eT-Dbm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="今日推荐">
+                        <color key="titleColor" red="0.80292302370071411" green="0.69994395971298218" blue="0.56815975904464722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" backgroundImage="01faxian_jinrituijian_yuanjiaojuxing"/>
+                    <connections>
+                        <action selector="chooseViewAction:" destination="-1" eventType="touchUpInside" id="hSh-rq-2iQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-px-cPA" userLabel="art">
+                    <rect key="frame" x="217" y="64" width="129" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="艺术先锋">
+                        <color key="titleColor" red="0.80292302370071411" green="0.69994395971298218" blue="0.56815975904464722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" backgroundImage="01faxian_jinrituijian_yuanjiaojuxing"/>
+                    <connections>
+                        <action selector="chooseViewAction:" destination="-1" eventType="touchUpInside" id="fSi-sp-yM5"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jianbiantiao" translatesAutoresizingMaskIntoConstraints="NO" id="DQx-bH-vR8">
+                    <rect key="frame" x="0.0" y="98" width="375" height="6"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="6" id="76W-7F-nkv"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzz-PV-QuR" userLabel="currentView">
+                    <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qzz-PV-QuR" firstAttribute="top" secondItem="DQx-bH-vR8" secondAttribute="bottom" id="4hI-Hw-Tbd"/>
+                <constraint firstItem="DQx-bH-vR8" firstAttribute="top" secondItem="stV-Lj-DP7" secondAttribute="bottom" id="DcE-dH-ipT"/>
+                <constraint firstItem="b2i-px-cPA" firstAttribute="height" secondItem="stV-Lj-DP7" secondAttribute="height" id="IZC-u7-vYL"/>
+                <constraint firstItem="DQx-bH-vR8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Mkd-2S-NOs"/>
+                <constraint firstItem="stV-Lj-DP7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" id="Olp-Hh-Run"/>
+                <constraint firstItem="b2i-px-cPA" firstAttribute="top" secondItem="stV-Lj-DP7" secondAttribute="top" id="RYq-cC-K3a"/>
+                <constraint firstItem="b2i-px-cPA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.5" id="UtD-Vb-pSv"/>
+                <constraint firstItem="stV-Lj-DP7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.5" id="We1-BR-kqb"/>
+                <constraint firstItem="b2i-px-cPA" firstAttribute="width" secondItem="stV-Lj-DP7" secondAttribute="width" id="ZFO-6e-EOL"/>
+                <constraint firstItem="qzz-PV-QuR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="lXw-7g-caj"/>
+                <constraint firstItem="stV-Lj-DP7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="qmE-s6-jpG"/>
+                <constraint firstItem="qzz-PV-QuR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="r8w-vr-Xbt"/>
+                <constraint firstItem="DQx-bH-vR8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="t0v-ET-mra"/>
+                <constraint firstItem="qzz-PV-QuR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vUj-Dr-Wth"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="344" y="-2"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="01faxian_jinrituijian_yuanjiaojuxing" width="132" height="34"/>
+        <image name="jianbiantiao" width="375" height="6"/>
+    </resources>
+</document>

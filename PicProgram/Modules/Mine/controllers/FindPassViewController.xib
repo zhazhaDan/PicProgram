@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindPassViewController" customModule="PicProgram">
+            <connections>
+                <outlet property="emailTextfield" destination="cnM-06-SQ8" id="6Ny-Vr-8pN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="FindPassViewController" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foZ-rL-QFa" userLabel="line2">
+                    <rect key="frame" x="20" y="146" width="335" height="1"/>
+                    <color key="backgroundColor" red="0.90580284595489502" green="0.9059332013130188" blue="0.90577441453933716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="dNg-Go-N6Q"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youxiang_icon" translatesAutoresizingMaskIntoConstraints="NO" id="n8Y-Kw-kVD" userLabel="pass">
+                    <rect key="frame" x="20" y="120.5" width="25" height="19"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAb-nf-g9x">
+                    <rect key="frame" x="20" y="212" width="335" height="32"/>
+                    <state key="normal" title="发送验证码" backgroundImage="00dengluzhuce_denglu_dianjianniu">
+                        <color key="titleColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sendCodeAction:" destination="-1" eventType="touchUpInside" id="qOi-Oe-IUy"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邮箱号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-06-SQ8">
+                    <rect key="frame" x="53" y="125" width="302" height="15"/>
+                    <color key="textColor" red="0.84166496992111206" green="0.75801330804824829" blue="0.65390139818191528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                            <color key="value" red="0.84166496989999995" green="0.758013308" blue="0.65390139820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oAb-nf-g9x" firstAttribute="top" secondItem="foZ-rL-QFa" secondAttribute="bottom" constant="65" id="4dv-dp-8ne"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="top" secondItem="cnM-06-SQ8" secondAttribute="bottom" constant="6" id="AIB-cP-ztl"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="126" id="CHo-xX-MDh"/>
+                <constraint firstItem="n8Y-Kw-kVD" firstAttribute="leading" secondItem="foZ-rL-QFa" secondAttribute="leading" id="DcN-nT-64y"/>
+                <constraint firstItem="oAb-nf-g9x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="F1k-kX-vAC"/>
+                <constraint firstItem="cnM-06-SQ8" firstAttribute="leading" secondItem="n8Y-Kw-kVD" secondAttribute="trailing" constant="8" id="IJk-c4-vSe"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bsI-xm-2RC"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="trailing" secondItem="cnM-06-SQ8" secondAttribute="trailing" id="duk-G0-Kff"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oAb-nf-g9x" secondAttribute="trailing" constant="20" id="flK-Dh-PeU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="foZ-rL-QFa" secondAttribute="trailing" constant="20" id="nVS-UC-cxV"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="top" secondItem="n8Y-Kw-kVD" secondAttribute="bottom" constant="6.5" id="pCo-eK-iCO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="36.5" y="75.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="00dengluzhuce_denglu_dianjianniu" width="291" height="32"/>
+        <image name="youxiang_icon" width="25" height="19"/>
+    </resources>
+</document>

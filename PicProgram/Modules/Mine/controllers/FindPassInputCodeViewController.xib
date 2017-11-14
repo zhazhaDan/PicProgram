@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindPassInputCodeViewController" customModule="PicProgram" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextfield" destination="cnM-06-SQ8" id="6Ny-Vr-8pN"/>
+                <outlet property="nextStepButton" destination="oAb-nf-g9x" id="OHP-9G-JFE"/>
+                <outlet property="passTextfield" destination="cnM-06-SQ8" id="j6y-ms-Ajk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foZ-rL-QFa" userLabel="line2">
+                    <rect key="frame" x="20" y="162" width="335" height="1"/>
+                    <color key="backgroundColor" red="0.90580284595489502" green="0.9059332013130188" blue="0.90577441453933716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="dNg-Go-N6Q"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhaohuimima_yanzhengma_icon" translatesAutoresizingMaskIntoConstraints="NO" id="n8Y-Kw-kVD" userLabel="pass">
+                    <rect key="frame" x="20" y="133.5" width="22" height="22"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAb-nf-g9x">
+                    <rect key="frame" x="20" y="197" width="335" height="32"/>
+                    <state key="normal" title="下一步" backgroundImage="00dengluzhuce_denglu_dianjianniu">
+                        <color key="titleColor" red="0.98958333333333337" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sendCodeAction:" destination="-1" eventType="touchUpInside" id="6fO-4Q-nZI"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-06-SQ8">
+                    <rect key="frame" x="53" y="141" width="242" height="15"/>
+                    <color key="textColor" red="0.84166496992111206" green="0.75801330804824829" blue="0.65390139818191528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                            <color key="value" red="0.85439974070000002" green="0.77819234130000003" blue="0.68513739110000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="为了安全，请输入你邮箱收到的验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNS-oD-UeE">
+                    <rect key="frame" x="20" y="91" width="335" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="wxy-Wf-nFD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.42741549015045166" green="0.52695870399475098" blue="0.69438368082046509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-uS-5db" userLabel="resendButton">
+                    <rect key="frame" x="295" y="139" width="54" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <state key="normal" title="重新发送">
+                        <color key="titleColor" red="0.84480816125869751" green="0.76482057571411133" blue="0.67114037275314331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="top" secondItem="BwZ-uS-5db" secondAttribute="bottom" id="0Rt-e1-T8M"/>
+                <constraint firstItem="WNS-oD-UeE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="71" id="1Rc-jY-447"/>
+                <constraint firstItem="oAb-nf-g9x" firstAttribute="top" secondItem="foZ-rL-QFa" secondAttribute="bottom" constant="34" id="4dv-dp-8ne"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="trailing" secondItem="BwZ-uS-5db" secondAttribute="trailing" constant="6" id="6r2-mZ-9df"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="top" secondItem="cnM-06-SQ8" secondAttribute="bottom" constant="6" id="AIB-cP-ztl"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="142" id="CHo-xX-MDh"/>
+                <constraint firstItem="n8Y-Kw-kVD" firstAttribute="leading" secondItem="foZ-rL-QFa" secondAttribute="leading" id="DcN-nT-64y"/>
+                <constraint firstItem="WNS-oD-UeE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Enk-LK-YL3"/>
+                <constraint firstItem="oAb-nf-g9x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="F1k-kX-vAC"/>
+                <constraint firstItem="cnM-06-SQ8" firstAttribute="leading" secondItem="n8Y-Kw-kVD" secondAttribute="trailing" constant="11" id="IJk-c4-vSe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WNS-oD-UeE" secondAttribute="trailing" constant="20" id="QdN-zZ-h79"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bsI-xm-2RC"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="trailing" secondItem="cnM-06-SQ8" secondAttribute="trailing" constant="60" id="duk-G0-Kff"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oAb-nf-g9x" secondAttribute="trailing" constant="20" id="flK-Dh-PeU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="foZ-rL-QFa" secondAttribute="trailing" constant="20" id="nVS-UC-cxV"/>
+                <constraint firstItem="foZ-rL-QFa" firstAttribute="top" secondItem="n8Y-Kw-kVD" secondAttribute="bottom" constant="6.5" id="pCo-eK-iCO"/>
+                <constraint firstItem="BwZ-uS-5db" firstAttribute="leading" secondItem="cnM-06-SQ8" secondAttribute="trailing" id="y86-Yw-Vyf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="36.5" y="75.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="00dengluzhuce_denglu_dianjianniu" width="291" height="32"/>
+        <image name="zhaohuimima_yanzhengma_icon" width="22" height="22"/>
+    </resources>
+</document>

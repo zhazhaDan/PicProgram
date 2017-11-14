@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G1036" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Paint" representedClassName="Paint" syncable="YES" codeGenerationType="class">
+        <attribute name="paint_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="paint_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Picture" representedClassName="Picture" syncable="YES" codeGenerationType="class">
+        <attribute name="picture_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="picture_url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Paint" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Picture" positionX="-63" positionY="36" width="128" height="75"/>
+    </elements>
+</model>
