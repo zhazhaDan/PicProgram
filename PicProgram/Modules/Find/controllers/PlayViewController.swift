@@ -21,13 +21,17 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     @IBAction func playStyleAction(_ sender: Any) {
     }
     @IBAction func tipsAction(_ sender: Any) {
-        let vc = TipsViewController()
+        let vc = TipsViewController.init(nibName: "TipsViewController", bundle: Bundle.main)
         vc.picModel = self.dataSource[0]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func pushAction(_ sender: Any) {
+        
     }
+    
     @IBAction func TiningAction(_ sender: Any) {
+        let vc = LiningViewController.init(nibName: "LiningViewController", bundle: Bundle.main)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func moreAction(_ sender: Any) {
         let moreView = Bundle.main.loadNibNamed("PlayMoreView", owner: nil, options: nil)?.first as! PlayMoreView

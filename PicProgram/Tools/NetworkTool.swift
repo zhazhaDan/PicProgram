@@ -31,6 +31,8 @@ enum RequestAPIType {
     case paint_list
     case paint_collect
     case paint_play
+    case paint_tips
+    case paint_lining
     case search_hotwords
     case search_info
     case picture_info
@@ -102,6 +104,10 @@ class  NetworkTool{
             realParams = nil
         case .paint_play:
             apiString = "painting/play"
+        case .paint_tips:
+            apiString = "painting/add_tips"
+        case .paint_lining:
+            apiString = "painting/add_frame"
         default:
             apiString = ""
             method = .get

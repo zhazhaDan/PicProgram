@@ -20,6 +20,8 @@
 		3A12A7971F8F1F77008C0C9F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A12A7961F8F1F73008C0C9F /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3A12A79A1F8F69AF008C0C9F /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12A7991F8F69AF008C0C9F /* LogOutView.swift */; };
 		3A12A79C1F8F69C0008C0C9F /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12A79B1F8F69C0008C0C9F /* MineView.swift */; };
+		3A3BF8031FBC29BD0013BB9D /* LiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */; };
+		3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */; };
 		3A41AD2D1F94947C000BCC16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A41AD2F1F94947C000BCC16 /* InfoPlist.strings */; };
 		3A41AD541F9599A3000BCC16 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41AD521F9599A3000BCC16 /* RegisterViewController.swift */; };
 		3A41AD551F9599A3000BCC16 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A41AD531F9599A3000BCC16 /* RegisterViewController.xib */; };
@@ -155,6 +157,8 @@
 		3A12A7981F8F24B9008C0C9F /* PicProgram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicProgram-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A12A7991F8F69AF008C0C9F /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
 		3A12A79B1F8F69C0008C0C9F /* MineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineView.swift; sourceTree = "<group>"; };
+		3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiningViewController.swift; sourceTree = "<group>"; };
+		3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiningViewController.xib; sourceTree = "<group>"; };
 		3A41AD2A1F9493EB000BCC16 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3A41AD2E1F94947C000BCC16 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		3A41AD301F9494A5000BCC16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -583,6 +587,8 @@
 				3A127A5A1FB9831600A781B1 /* EditPaintDetailViewController.xib */,
 				3A6A8B921FBAA15A0062B728 /* TipsViewController.swift */,
 				3A6A8B931FBAA15A0062B728 /* TipsViewController.xib */,
+				3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */,
+				3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -766,6 +772,7 @@
 			files = (
 				3A9963FE1F9E175400077307 /* PicDetailCollectionViewCell.xib in Resources */,
 				3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */,
+				3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */,
 				3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */,
 				3AB5DC1B1F8CB119004897B5 /* Assets.xcassets in Resources */,
 				3A41AD2D1F94947C000BCC16 /* InfoPlist.strings in Resources */,
@@ -919,6 +926,7 @@
 				3AB5DD351F8CB192004897B5 /* PKHUDWideBaseView.swift in Sources */,
 				3A127A5B1FB9831600A781B1 /* EditPaintDetailViewController.swift in Sources */,
 				3A7BA0E31FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift in Sources */,
+				3A3BF8031FBC29BD0013BB9D /* LiningViewController.swift in Sources */,
 				3AD84BF61F99ABD4009F3BD5 /* TextFieldExtension.swift in Sources */,
 				3AF8CB3E1FB1D70200635533 /* EmotionView.swift in Sources */,
 				F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */,
