@@ -45,7 +45,7 @@ class LogOutView: BaseScrollView {
         
         let shebeiTitleView = UIButton.init(frame: CGRect.init(x: 0, y: headerBackView.bottom, width: self.width, height: 41))
         shebeiTitleView.isUserInteractionEnabled = false
-        shebeiTitleView.setBackgroundImage(#imageLiteral(resourceName: "wode_shebeitiao"), for: .normal)
+        shebeiTitleView.setBackgroundImage(#imageLiteral(resourceName: "jianbiantiao"), for: .normal)
         shebeiTitleView.setTitle("设备", for: .normal)
         shebeiTitleView.titleLabel?.font = xsFont(15)
         shebeiTitleView.setTitleColor(xsColor_main_text_blue, for: .normal)
@@ -87,6 +87,6 @@ class LogOutView: BaseScrollView {
     @objc func buttonAction(_ sender: UIButton) {
         let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
         let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
-        (appDelegate.window?.rootViewController as! UINavigationController).pushViewController(login, animated: true)
+        ((appDelegate.window?.rootViewController as! UITabBarController).selectedViewController as! UINavigationController).pushViewController(login, animated: true)
     }
 }

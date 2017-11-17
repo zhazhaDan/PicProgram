@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ChangePassViewController: UIViewController {
-
+class ChangePassViewController: BaseViewController {
+    var userModel:UserModel = UserModel()
     @IBOutlet weak var repassTextfield: UITextField!
     @IBOutlet weak var passTextfield: UITextField!
     @IBAction func submitChangePassAction(_ sender: Any) {
-        
+        network.requestData(.user_reset_password, params: ["register_id":userModel.register_id,"passwrod":userModel.password], finishedCallback: { (result) in
+            
+        }, nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

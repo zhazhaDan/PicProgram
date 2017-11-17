@@ -27,12 +27,17 @@ class BaseTabBarController: UITabBarController {
         classVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:xsColor("cdb291")], for: .normal)
         classVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:xsColor("a4b7d2")], for: .selected)
         
+        let easelVC = EaselViewController()
+        easelVC.tabBarItem = UITabBarItem.init(title: "画架", image: #imageLiteral(resourceName: "weixuanzhonghuajia_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhonghuajia_icon"))
+        easelVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:xsColor("cdb291")], for: .normal)
+        easelVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:xsColor("a4b7d2")], for: .selected)
+        
         let minVC = MineViewController()
         minVC.tabBarItem = UITabBarItem.init(title: "我的", image: UIImage.init(named: "weixuanzhongwode_icon")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage.init(named: "weixuanzhongwode_icon"))
 
         minVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:xsColor("cdb291")], for: .normal)
         minVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:xsColor("a4b7d2")], for: .selected)
-        self.viewControllers = [HomePageNavigationController.init(rootViewController:findVC),HomePageNavigationController.init(rootViewController:classVC),UINavigationController.init(rootViewController: minVC)]
+        self.viewControllers = [HomePageNavigationController.init(rootViewController:findVC),HomePageNavigationController.init(rootViewController:classVC),UINavigationController.init(rootViewController: easelVC),UINavigationController.init(rootViewController: minVC)]
         
         self.tabBar.tintColor = xsColor("a4b7d2")
         self.selectedIndex = 3

@@ -36,6 +36,13 @@ enum RequestAPIType {
     case search_hotwords
     case search_info
     case picture_info
+    case user_register
+    case user_login
+    case user_send_code
+    case user_verify_code
+    case user_reset_password
+    case user_logout
+    case user_info
     case default_api
 }
 
@@ -108,6 +115,21 @@ class  NetworkTool{
             apiString = "painting/add_tips"
         case .paint_lining:
             apiString = "painting/add_frame"
+        case .user_register:
+            apiString = "user/register"
+        case .user_login:
+            apiString = "user/login"
+        case .user_send_code:
+            apiString = "user/send_code"
+        case .user_verify_code:
+            apiString = "user/verify_code"
+        case .user_reset_password:
+            apiString = "user/reset_password"
+        case .user_logout:
+            apiString = "user/logout"
+        case .user_info:
+            method = .get
+            apiString = "user/get_info"
         default:
             apiString = ""
             method = .get
