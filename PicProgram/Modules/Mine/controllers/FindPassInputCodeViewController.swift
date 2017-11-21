@@ -8,16 +8,45 @@
 
 import UIKit
 
+enum LoginMethod {
+    case login_regist
+    case login_forgetPass
+}
+
 class FindPassInputCodeViewController: BaseViewController {
     var userModel:UserModel = UserModel()
     @IBOutlet weak var codeTextfield: UITextField!
+    var method:LoginMethod = .login_regist
     @IBAction func sendCodeAction(_ sender: Any) {
-        //测试代码
-        let repassVC = ChangePassViewController.init(nibName: "ChangePassViewController", bundle: Bundle.main)
-        self.navigationController?.pushViewController(repassVC, animated: true)
+        switch method {
+        case .login_regist:
+            requestRegist()
+        case .login_forgetPass:
+            //测试代码
+            let repassVC = ChangePassViewController.init(nibName: "ChangePassViewController", bundle: Bundle.main)
+            self.navigationController?.pushViewController(repassVC, animated: true)
+        }
     }
     @IBAction func resendCodeAction(_ sender: Any) {
         self.requestData()
+    }
+    
+    func requestRegist() {
+        var param = ["password":self.userModel.password,"verify_code":codeTextfield.text] as [String : Any]
+        if self.userModel.phone.count > 0 {
+            param["phone"] = self.userModel.phone
+        }else if self.userModel.email.count > 0 {
+            param["email"] = self.userModel.email
+        }
+        network.requestData(.user_register, params: param, finishedCallback: { [weak self](result) in
+            if result["ret"] as! Int == 0{
+                self?.navigationController?.popToRootViewController(animated: true)
+                UserInfo.user.setValuesForKeys(result)
+                UserInfo.user.updateUserInfo()
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
+            }
+        }, nil)
     }
     
     override func requestData() {

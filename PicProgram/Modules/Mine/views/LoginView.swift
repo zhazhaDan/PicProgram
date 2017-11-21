@@ -20,6 +20,8 @@ class LoginView: BaseScrollView,UITextFieldDelegate{
     var code_textfield: UITextField!
     var viewHeight:CGFloat = 0
     open weak var c_delegate:CustomViewProtocol!
+    
+   
     override func buildUI() {
         let loginImageView = UIImageView.init(frame: CGRect.init(x: (self.width - 223)/2, y: 0, width: 223, height: 177))
         loginImageView.image = UIImage.init(named: "logo")

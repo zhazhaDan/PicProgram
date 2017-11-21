@@ -113,9 +113,6 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         return header
     }
     
-    
-
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if indexPath.section == 0 {
@@ -144,6 +141,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
             cDelegate.listView!(view: self, didSelected: indexPath.row)
         }
     }
+    
     
     func praiseBigStar() {
         network.requestData(.discovery_mqlove, params: ["mq_id":pioneerModel.master_quote.mq_id], finishedCallback: { [weak self](result) in

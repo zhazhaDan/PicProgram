@@ -37,7 +37,7 @@ class BaseTabBarController: UITabBarController {
 
         minVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:xsColor("cdb291")], for: .normal)
         minVC.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:xsColor("a4b7d2")], for: .selected)
-        self.viewControllers = [HomePageNavigationController.init(rootViewController:findVC),HomePageNavigationController.init(rootViewController:classVC),UINavigationController.init(rootViewController: easelVC),UINavigationController.init(rootViewController: minVC)]
+        self.viewControllers = [HomePageNavigationController.init(rootViewController:findVC),HomePageNavigationController.init(rootViewController:classVC),HomePageNavigationController.init(rootViewController: easelVC),HomePageNavigationController.init(rootViewController: minVC)]
         
         self.tabBar.tintColor = xsColor("a4b7d2")
         self.selectedIndex = 3

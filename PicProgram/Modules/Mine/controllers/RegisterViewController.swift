@@ -20,12 +20,12 @@ class RegisterViewController: BaseViewController {
     var selectedMethod:Int = 0 // 0 邮箱   1 手机号
     var userModel:UserModel = UserModel()
     @IBAction func nextAction(_ sender: Any) {
-        //测试代码
-        let vc = FindPassInputCodeViewController.init(nibName: "FindPassInputCodeViewController", bundle: Bundle.main
-        )
-        self.navigationController?.pushViewController(vc, animated: true)
-        return
-        
+//        //测试代码
+//        let vc = FindPassInputCodeViewController.init(nibName: "FindPassInputCodeViewController", bundle: Bundle.main
+//        )
+//        self.navigationController?.pushViewController(vc, animated: true)
+//        return
+//        
         
         if self.passTextfield.text != self.repassTextfield.text {
             HUDTool.show(.text, text: "两次密码不一致,请再次输入", delay: 1, view: self.view, complete: nil)
@@ -44,6 +44,8 @@ class RegisterViewController: BaseViewController {
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: hint, delay: 1, view: self.view, complete: {
                     let vc = FindPassInputCodeViewController()
+                    vc.method = .login_regist
+                    vc.userModel = self.userModel
                     self.navigationController?.pushViewController(vc, animated: true)
                 })
             }else {
@@ -74,7 +76,7 @@ class RegisterViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "注册账号"
         // Do any additional setup after loading the view.
     }
 

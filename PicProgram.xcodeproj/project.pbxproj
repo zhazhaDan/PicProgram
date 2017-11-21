@@ -34,6 +34,7 @@
 		3A12A7971F8F1F77008C0C9F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A12A7961F8F1F73008C0C9F /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3A12A79A1F8F69AF008C0C9F /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12A7991F8F69AF008C0C9F /* LogOutView.swift */; };
 		3A12A79C1F8F69C0008C0C9F /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12A79B1F8F69C0008C0C9F /* MineView.swift */; };
+		3A23CD211FC2AF3C009C238C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23CD201FC2AF3C009C238C /* UserInfo.swift */; };
 		3A3BF8031FBC29BD0013BB9D /* LiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */; };
 		3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */; };
 		3A41AD2D1F94947C000BCC16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A41AD2F1F94947C000BCC16 /* InfoPlist.strings */; };
@@ -133,6 +134,10 @@
 		3AB5DD401F8CB192004897B5 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB5DCC41F8CB192004897B5 /* ShadowView.swift */; };
 		3AB5DD441F8CB1B7004897B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB5DD421F8CB1B7004897B5 /* AppDelegate.swift */; };
 		3AB5DD451F8CB1B7004897B5 /* RegistThirdAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB5DD431F8CB1B7004897B5 /* RegistThirdAppDelegate.swift */; };
+		3AB78BFE1FC2D7C0001D9A43 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78BFC1FC2D7C0001D9A43 /* UserViewController.swift */; };
+		3AB78BFF1FC2D7C0001D9A43 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78BFD1FC2D7C0001D9A43 /* UserViewController.xib */; };
+		3AB78C021FC412D6001D9A43 /* SystemPicsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78C001FC412D6001D9A43 /* SystemPicsCollectionViewController.swift */; };
+		3AB78C031FC412D6001D9A43 /* SystemPicsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C011FC412D6001D9A43 /* SystemPicsCollectionViewController.xib */; };
 		3AB8FF931FAAF9D600058784 /* PicDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */; };
 		3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */; };
 		3AD84BF61F99ABD4009F3BD5 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */; };
@@ -177,6 +182,7 @@
 		3A12A7981F8F24B9008C0C9F /* PicProgram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicProgram-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A12A7991F8F69AF008C0C9F /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
 		3A12A79B1F8F69C0008C0C9F /* MineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineView.swift; sourceTree = "<group>"; };
+		3A23CD201FC2AF3C009C238C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiningViewController.swift; sourceTree = "<group>"; };
 		3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiningViewController.xib; sourceTree = "<group>"; };
 		3A41AD2A1F9493EB000BCC16 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -281,6 +287,10 @@
 		3AB5DCC41F8CB192004897B5 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		3AB5DD421F8CB1B7004897B5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB5DD431F8CB1B7004897B5 /* RegistThirdAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistThirdAppDelegate.swift; sourceTree = "<group>"; };
+		3AB78BFC1FC2D7C0001D9A43 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		3AB78BFD1FC2D7C0001D9A43 /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		3AB78C001FC412D6001D9A43 /* SystemPicsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPicsCollectionViewController.swift; sourceTree = "<group>"; };
+		3AB78C011FC412D6001D9A43 /* SystemPicsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemPicsCollectionViewController.xib; sourceTree = "<group>"; };
 		3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewFlowLayout.swift; sourceTree = "<group>"; };
 		3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -336,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				3A0B8B201FBD84AD006F09E9 /* UserModel.swift */,
+				3A23CD201FC2AF3C009C238C /* UserInfo.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -522,8 +533,8 @@
 		3AB5DC8C1F8CB192004897B5 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				3A0B8B1F1FBD848B006F09E9 /* models */,
 				3AB5DC8D1F8CB192004897B5 /* controllers */,
+				3A0B8B1F1FBD848B006F09E9 /* models */,
 				3AB5DC931F8CB192004897B5 /* views */,
 			);
 			path = Mine;
@@ -546,6 +557,10 @@
 				3A5387541F95DF6B00BA4359 /* FindPassViewController.swift */,
 				3A5387591F95E22E00BA4359 /* FindPassViewController.xib */,
 				3A5387611F96094A00BA4359 /* SBLoginViewController.swift */,
+				3AB78BFC1FC2D7C0001D9A43 /* UserViewController.swift */,
+				3AB78BFD1FC2D7C0001D9A43 /* UserViewController.xib */,
+				3AB78C001FC412D6001D9A43 /* SystemPicsCollectionViewController.swift */,
+				3AB78C011FC412D6001D9A43 /* SystemPicsCollectionViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -787,6 +802,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9963FE1F9E175400077307 /* PicDetailCollectionViewCell.xib in Resources */,
+				3AB78BFF1FC2D7C0001D9A43 /* UserViewController.xib in Resources */,
 				3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */,
 				3A0B8B391FBD91F1006F09E9 /* EmotionCollectionViewCell.xib in Resources */,
 				3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */,
@@ -799,6 +815,7 @@
 				3A9963DC1F9C9B7B00077307 /* ArtReadTableViewCell.xib in Resources */,
 				3A9CCC631FA1EC5100FC33BD /* ArtHeaderView.xib in Resources */,
 				3AB5DD291F8CB192004897B5 /* Images.xcassets in Resources */,
+				3AB78C031FC412D6001D9A43 /* SystemPicsCollectionViewController.xib in Resources */,
 				3A0B8B3E1FBD920C006F09E9 /* EaselViewController.xib in Resources */,
 				3A6A8B951FBAA15A0062B728 /* TipsViewController.xib in Resources */,
 				3AB5DD081F8CB192004897B5 /* Contents.json in Resources */,
@@ -893,6 +910,7 @@
 				3A0B8B331FBD91F1006F09E9 /* ClassifyViewController.swift in Sources */,
 				3AB5DD071F8CB192004897B5 /* ComView.swift in Sources */,
 				3AB5DD061F8CB192004897B5 /* Common.swift in Sources */,
+				3AB78C021FC412D6001D9A43 /* SystemPicsCollectionViewController.swift in Sources */,
 				3A6A8B911FBA881D0062B728 /* ChangeCoverPicturesViewController.swift in Sources */,
 				3A9CCC661FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift in Sources */,
 				3AB5DD041F8CB192004897B5 /* URLEncode+String.swift in Sources */,
@@ -914,11 +932,13 @@
 				3AB5DCFF1F8CB192004897B5 /* Formatter+Date.swift in Sources */,
 				3AA7A1601F8DC16000DDF7CB /* LoginView.swift in Sources */,
 				3AB5DD341F8CB192004897B5 /* PKHUDTextView.swift in Sources */,
+				3AB78BFE1FC2D7C0001D9A43 /* UserViewController.swift in Sources */,
 				3A0B8B361FBD91F1006F09E9 /* ClassifyCollectionViewCell.swift in Sources */,
 				3A0B8B211FBD84AD006F09E9 /* UserModel.swift in Sources */,
 				3AB5DD2E1F8CB192004897B5 /* PKHUDErrorView.swift in Sources */,
 				3A0B8B441FBE83FE006F09E9 /* EaselPaintCollectionViewCell.swift in Sources */,
 				3AB5DD311F8CB192004897B5 /* PKHUDSquareBaseView.swift in Sources */,
+				3A23CD211FC2AF3C009C238C /* UserInfo.swift in Sources */,
 				3AB5DD271F8CB192004897B5 /* FrameView.swift in Sources */,
 				3AB5DD3D1F8CB192004897B5 /* BaseViewController.swift in Sources */,
 				3AB5DD391F8CB192004897B5 /* BaseNavigationController.swift in Sources */,
@@ -1127,14 +1147,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZG6NBGKJGX;
+				DEVELOPMENT_TEAM = 2LLY9Q2SMZ;
 				INFOPLIST_FILE = PicProgram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jck.mr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jck.mr123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PicProgram/Header/PicProgram-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1149,14 +1170,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZG6NBGKJGX;
+				DEVELOPMENT_TEAM = 2LLY9Q2SMZ;
 				INFOPLIST_FILE = PicProgram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jck.mr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jck.mr123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PicProgram/Header/PicProgram-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

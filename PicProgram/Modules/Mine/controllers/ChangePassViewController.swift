@@ -14,7 +14,16 @@ class ChangePassViewController: BaseViewController {
     @IBOutlet weak var passTextfield: UITextField!
     @IBAction func submitChangePassAction(_ sender: Any) {
         network.requestData(.user_reset_password, params: ["register_id":userModel.register_id,"passwrod":userModel.password], finishedCallback: { (result) in
-            
+            if result["ret"] as! Int == 0 {
+                HUDTool.show(.text, text: "密码重置成功", delay: 1, view: self.view, complete: {
+                    let vc = FindPassInputCodeViewController()
+                    vc.method = .login_regist
+                    vc.userModel = self.userModel
+                    self.navigationController?.pushViewController(vc, animated: true)
+                })
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
+            }
         }, nil)
     }
     override func viewDidLoad() {
