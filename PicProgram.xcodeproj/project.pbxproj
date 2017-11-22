@@ -138,6 +138,9 @@
 		3AB78BFF1FC2D7C0001D9A43 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78BFD1FC2D7C0001D9A43 /* UserViewController.xib */; };
 		3AB78C021FC412D6001D9A43 /* SystemPicsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78C001FC412D6001D9A43 /* SystemPicsCollectionViewController.swift */; };
 		3AB78C031FC412D6001D9A43 /* SystemPicsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C011FC412D6001D9A43 /* SystemPicsCollectionViewController.xib */; };
+		3AB78C051FC5322C001D9A43 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78C041FC5322C001D9A43 /* AlbumListView.swift */; };
+		3AB78C081FC55840001D9A43 /* GDPHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78C061FC55840001D9A43 /* GDPHAsset.swift */; };
+		3AB78C091FC55840001D9A43 /* GDPhotoTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78C071FC55840001D9A43 /* GDPhotoTool.swift */; };
 		3AB8FF931FAAF9D600058784 /* PicDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */; };
 		3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */; };
 		3AD84BF61F99ABD4009F3BD5 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */; };
@@ -291,6 +294,9 @@
 		3AB78BFD1FC2D7C0001D9A43 /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		3AB78C001FC412D6001D9A43 /* SystemPicsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPicsCollectionViewController.swift; sourceTree = "<group>"; };
 		3AB78C011FC412D6001D9A43 /* SystemPicsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemPicsCollectionViewController.xib; sourceTree = "<group>"; };
+		3AB78C041FC5322C001D9A43 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
+		3AB78C061FC55840001D9A43 /* GDPHAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPHAsset.swift; sourceTree = "<group>"; };
+		3AB78C071FC55840001D9A43 /* GDPhotoTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPhotoTool.swift; sourceTree = "<group>"; };
 		3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewFlowLayout.swift; sourceTree = "<group>"; };
 		3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -345,6 +351,8 @@
 		3A0B8B1F1FBD848B006F09E9 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				3AB78C061FC55840001D9A43 /* GDPHAsset.swift */,
+				3AB78C071FC55840001D9A43 /* GDPhotoTool.swift */,
 				3A0B8B201FBD84AD006F09E9 /* UserModel.swift */,
 				3A23CD201FC2AF3C009C238C /* UserInfo.swift */,
 			);
@@ -572,6 +580,7 @@
 				3A12A7991F8F69AF008C0C9F /* LogOutView.swift */,
 				3A12A79B1F8F69C0008C0C9F /* MineView.swift */,
 				3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */,
+				3AB78C041FC5322C001D9A43 /* AlbumListView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -893,6 +902,7 @@
 				3A9CCC511FA1D08F00FC33BD /* PaintModel.swift in Sources */,
 				3AB5DD3E1F8CB192004897B5 /* Extension+UIView.swift in Sources */,
 				3A53875A1F95E22E00BA4359 /* FindPassInputCodeViewController.swift in Sources */,
+				3AB78C091FC55840001D9A43 /* GDPhotoTool.swift in Sources */,
 				3A9CCC611FA1EC3E00FC33BD /* ArtHeaderView.swift in Sources */,
 				3A9CCC5B1FA1E61D00FC33BD /* ItemView.swift in Sources */,
 				3AB5DD371F8CB192004897B5 /* WindowRootViewController.swift in Sources */,
@@ -912,6 +922,7 @@
 				3AB5DD061F8CB192004897B5 /* Common.swift in Sources */,
 				3AB78C021FC412D6001D9A43 /* SystemPicsCollectionViewController.swift in Sources */,
 				3A6A8B911FBA881D0062B728 /* ChangeCoverPicturesViewController.swift in Sources */,
+				3AB78C051FC5322C001D9A43 /* AlbumListView.swift in Sources */,
 				3A9CCC661FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift in Sources */,
 				3AB5DD041F8CB192004897B5 /* URLEncode+String.swift in Sources */,
 				3A9963E01F9DBEEF00077307 /* BannerView.swift in Sources */,
@@ -984,6 +995,7 @@
 				3A9CCC531FA1D1A700FC33BD /* FindTodayRecomModel.swift in Sources */,
 				3AB5DD3C1F8CB192004897B5 /* BaseView.swift in Sources */,
 				3AB5DD2A1F8CB192004897B5 /* PKHUD.swift in Sources */,
+				3AB78C081FC55840001D9A43 /* GDPHAsset.swift in Sources */,
 				3AB5DCFE1F8CB192004897B5 /* CustomBarItem+UINavigationController.swift in Sources */,
 				3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */,
 				F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */,

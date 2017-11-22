@@ -30,7 +30,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzh-qo-tOW">
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KL7-1y-eev" userLabel="头像">
+                        <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KL7-1y-eev" userLabel="头像">
                             <rect key="frame" x="0.0" y="5" width="375" height="61"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoq-5S-uLd" userLabel="头像">
@@ -50,7 +50,7 @@
                                     </constraints>
                                     <state key="normal" title="Button" image="next"/>
                                 </button>
-                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TGY-Xj-aNG">
+                                <imageView tag="10" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TGY-Xj-aNG">
                                     <rect key="frame" x="263" y="11" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="Mih-6c-ySA"/>
@@ -74,7 +74,7 @@
                                 <constraint firstItem="eoq-5S-uLd" firstAttribute="leading" secondItem="KL7-1y-eev" secondAttribute="leading" constant="23" id="ySD-Em-wCp"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGz-Zt-I4f" userLabel="个人主页背景">
+                        <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGz-Zt-I4f" userLabel="个人主页背景">
                             <rect key="frame" x="0.0" y="67" width="375" height="61"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人主页背景" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuS-SQ-0wW" userLabel="个人主页背景">
@@ -94,15 +94,12 @@
                                     </constraints>
                                     <state key="normal" title="Button" image="next"/>
                                 </button>
-                                <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbV-tL-PVy">
+                                <imageView tag="11" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbV-tL-PVy">
                                     <rect key="frame" x="263" y="11" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="Cff-gj-lPh"/>
                                         <constraint firstAttribute="height" constant="40" id="xYO-pe-NCU"/>
                                     </constraints>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="9uw-Xh-QEn" appends="YES" id="z0i-a1-adP"/>
-                                    </connections>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,9 +197,6 @@
                                 <constraint firstItem="vyZ-o5-kZ6" firstAttribute="leading" secondItem="JgJ-13-XjF" secondAttribute="trailing" constant="12" id="c1U-7B-tZK"/>
                                 <constraint firstItem="JgJ-13-XjF" firstAttribute="centerY" secondItem="NdP-zA-MMd" secondAttribute="centerY" id="ira-2Y-Z7Y"/>
                             </constraints>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="9uw-Xh-QEn" appends="YES" id="hoI-3P-rOz"/>
-                            </connections>
                         </view>
                         <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mz-90-bD2" userLabel="生日">
                             <rect key="frame" x="0.0" y="252" width="375" height="48"/>
@@ -242,9 +236,6 @@
                                 <constraint firstItem="MaN-s1-bXU" firstAttribute="centerY" secondItem="6mz-90-bD2" secondAttribute="centerY" id="Xbs-dt-C9e"/>
                                 <constraint firstItem="YQu-dk-wZc" firstAttribute="centerY" secondItem="6mz-90-bD2" secondAttribute="centerY" id="wxq-5T-VKu"/>
                             </constraints>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="9uw-Xh-QEn" appends="YES" id="Hph-S3-hC5"/>
-                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMW-du-P85" userLabel="地区">
                             <rect key="frame" x="0.0" y="301" width="375" height="48"/>
@@ -277,9 +268,6 @@
                                 <constraint firstItem="OjF-V3-Lvc" firstAttribute="centerY" secondItem="JMW-du-P85" secondAttribute="centerY" id="xS6-Rv-Ywb"/>
                                 <constraint firstItem="6ig-wt-PJY" firstAttribute="centerY" secondItem="JMW-du-P85" secondAttribute="centerY" id="xgH-GW-kcm"/>
                             </constraints>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="9uw-Xh-QEn" appends="YES" id="rpg-GH-kjZ"/>
-                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWa-XE-mp2" userLabel="介绍">
                             <rect key="frame" x="0.0" y="361" width="375" height="48"/>
@@ -329,9 +317,6 @@
                                 <constraint firstAttribute="trailing" secondItem="9GX-16-vYZ" secondAttribute="trailing" constant="12" id="p9Y-ol-ENU"/>
                                 <constraint firstItem="nBx-W4-odN" firstAttribute="leading" secondItem="7Mz-ZE-49p" secondAttribute="leading" constant="20" id="wpv-2x-Uqa"/>
                             </constraints>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="9uw-Xh-QEn" appends="YES" id="Bcv-ZE-q5D"/>
-                            </connections>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.94357955459999998" green="0.94368559119999995" blue="0.94351845980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
