@@ -51,6 +51,9 @@
 		3A6A8B911FBA881D0062B728 /* ChangeCoverPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A8B901FBA881D0062B728 /* ChangeCoverPicturesViewController.swift */; };
 		3A6A8B941FBAA15A0062B728 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A8B921FBAA15A0062B728 /* TipsViewController.swift */; };
 		3A6A8B951FBAA15A0062B728 /* TipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6A8B931FBAA15A0062B728 /* TipsViewController.xib */; };
+		3A6F49B81FC6C7C3001AE767 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */; };
+		3A6F49B91FC6C7C3001AE767 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */; };
+		3A6F49BB1FC6E1B3001AE767 /* ClassifyCommonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */; };
 		3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7BA0E01FA5A62C00E0EB55 /* PicDetailHeaderStyle3View.xib */; };
 		3A7BA0E31FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */; };
 		3A7C827E1FAC2B2000793420 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C827C1FAC2B2000793420 /* PictureDetailViewController.swift */; };
@@ -141,6 +144,9 @@
 		3AB78C051FC5322C001D9A43 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78C041FC5322C001D9A43 /* AlbumListView.swift */; };
 		3AB78C081FC55840001D9A43 /* GDPHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78C061FC55840001D9A43 /* GDPHAsset.swift */; };
 		3AB78C091FC55840001D9A43 /* GDPhotoTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78C071FC55840001D9A43 /* GDPhotoTool.swift */; };
+		3AB78C0D1FC67863001D9A43 /* 方正清刻本悦宋简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0B1FC675B2001D9A43 /* 方正清刻本悦宋简体.TTF */; };
+		3AB78C0E1FC67863001D9A43 /* 方正宋刻本秀楷简.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */; };
+		3AB78C0F1FC67863001D9A43 /* 方正宋刻本秀楷简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */; };
 		3AB8FF931FAAF9D600058784 /* PicDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */; };
 		3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */; };
 		3AD84BF61F99ABD4009F3BD5 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */; };
@@ -204,6 +210,9 @@
 		3A6A8B901FBA881D0062B728 /* ChangeCoverPicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCoverPicturesViewController.swift; sourceTree = "<group>"; };
 		3A6A8B921FBAA15A0062B728 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		3A6A8B931FBAA15A0062B728 /* TipsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipsViewController.xib; sourceTree = "<group>"; };
+		3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
+		3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyCommonListView.swift; sourceTree = "<group>"; };
 		3A7BA0E01FA5A62C00E0EB55 /* PicDetailHeaderStyle3View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicDetailHeaderStyle3View.xib; sourceTree = "<group>"; };
 		3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDetailHeaderStyle3View.swift; sourceTree = "<group>"; };
 		3A7C827C1FAC2B2000793420 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +306,9 @@
 		3AB78C041FC5322C001D9A43 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
 		3AB78C061FC55840001D9A43 /* GDPHAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPHAsset.swift; sourceTree = "<group>"; };
 		3AB78C071FC55840001D9A43 /* GDPhotoTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPhotoTool.swift; sourceTree = "<group>"; };
+		3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正宋刻本秀楷简体.TTF"; sourceTree = "<group>"; };
+		3AB78C0B1FC675B2001D9A43 /* 方正清刻本悦宋简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正清刻本悦宋简体.TTF"; sourceTree = "<group>"; };
+		3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正宋刻本秀楷简.TTF"; sourceTree = "<group>"; };
 		3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewFlowLayout.swift; sourceTree = "<group>"; };
 		3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -406,6 +418,7 @@
 		3A0B8B2C1FBD91F1006F09E9 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */,
 				3A0B8B2D1FBD91F1006F09E9 /* ClassifyBaseListView.swift */,
 				3A0B8B2E1FBD91F1006F09E9 /* ClassifyCollectionViewCell.swift */,
 				3A0B8B2F1FBD91F1006F09E9 /* ClassifyCollectionViewCell.xib */,
@@ -489,6 +502,9 @@
 		3AB5DC2D1F8CB191004897B5 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3AB78C0B1FC675B2001D9A43 /* 方正清刻本悦宋简体.TTF */,
+				3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */,
+				3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -581,6 +597,8 @@
 				3A12A79B1F8F69C0008C0C9F /* MineView.swift */,
 				3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */,
 				3AB78C041FC5322C001D9A43 /* AlbumListView.swift */,
+				3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */,
+				3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -810,6 +828,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB78C0D1FC67863001D9A43 /* 方正清刻本悦宋简体.TTF in Resources */,
+				3AB78C0E1FC67863001D9A43 /* 方正宋刻本秀楷简.TTF in Resources */,
+				3AB78C0F1FC67863001D9A43 /* 方正宋刻本秀楷简体.TTF in Resources */,
 				3A9963FE1F9E175400077307 /* PicDetailCollectionViewCell.xib in Resources */,
 				3AB78BFF1FC2D7C0001D9A43 /* UserViewController.xib in Resources */,
 				3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */,
@@ -825,6 +846,7 @@
 				3A9CCC631FA1EC5100FC33BD /* ArtHeaderView.xib in Resources */,
 				3AB5DD291F8CB192004897B5 /* Images.xcassets in Resources */,
 				3AB78C031FC412D6001D9A43 /* SystemPicsCollectionViewController.xib in Resources */,
+				3A6F49B91FC6C7C3001AE767 /* AlbumTableViewCell.xib in Resources */,
 				3A0B8B3E1FBD920C006F09E9 /* EaselViewController.xib in Resources */,
 				3A6A8B951FBAA15A0062B728 /* TipsViewController.xib in Resources */,
 				3AB5DD081F8CB192004897B5 /* Contents.json in Resources */,
@@ -900,6 +922,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9CCC511FA1D08F00FC33BD /* PaintModel.swift in Sources */,
+				3A6F49BB1FC6E1B3001AE767 /* ClassifyCommonListView.swift in Sources */,
 				3AB5DD3E1F8CB192004897B5 /* Extension+UIView.swift in Sources */,
 				3A53875A1F95E22E00BA4359 /* FindPassInputCodeViewController.swift in Sources */,
 				3AB78C091FC55840001D9A43 /* GDPhotoTool.swift in Sources */,
@@ -972,6 +995,7 @@
 				3A9963DB1F9C9B7B00077307 /* ArtReadTableViewCell.swift in Sources */,
 				3AD84C041F99CDDE009F3BD5 /* CustomViewProtocol.swift in Sources */,
 				3A0B8B3A1FBD91F1006F09E9 /* EmotionView.swift in Sources */,
+				3A6F49B81FC6C7C3001AE767 /* AlbumTableViewCell.swift in Sources */,
 				3A7C827E1FAC2B2000793420 /* PictureDetailViewController.swift in Sources */,
 				3A9CCC4E1FA0A85900FC33BD /* SearchViewController.swift in Sources */,
 				3AB5DD351F8CB192004897B5 /* PKHUDWideBaseView.swift in Sources */,

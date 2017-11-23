@@ -14,32 +14,50 @@ private let reuseIdentifier = "PicDetailCollectionViewCell"
 
 class SystemPicsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,CustomViewProtocol,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var dataSource:[GDPHAsset] = Array()
-    var listView:AlbumListView!
+    var _listView:AlbumListView!
+    var listView:AlbumListView {
+        set{
+            _listView = newValue
+        }
+        get {
+            if _listView == nil {
+                _listView = AlbumListView.init(frame: CGRect.zero)
+                _listView.showFrame = CGRect.init(x: 0, y: NavigationBarBottom, width: SCREEN_WIDTH, height: 236)
+                _listView.delegate = self
+                self.view.addSubview(_listView)
+            }
+            return _listView
+        }
+    }
     var showSigleView:UILabel!
+    var rowImageView:UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.automaticallyAdjustsScrollViewInsets = false
         self.collectionView?.backgroundColor = xsColor_main_white
-        listView = AlbumListView.init(frame: CGRect.zero)
-        listView.showFrame = CGRect.init(x: (SCREEN_WIDTH - 200)/2, y: 0, width: 200, height: 250)
-        self.view.addSubview(listView)
-        listView.delegate = self
+      
         self.navigationItem.titleView = buildNavibarTitleView()
-        listView.showAlbum()
-        self.listDidSelected(view: self.listView, at: 0)
+        GDPhotoTool.defaultTool.authorize { [weak self](ret) in
+            if ret == true {
+                self?.listView.showAlbum()
+                self?.listDidSelected(view: (self?.listView)!, at: 0)
+            }
+        }
         self.collectionView?.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     
     func buildNavibarTitleView() -> UIView {
-        showSigleView = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 150, height: 44))
+        showSigleView = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 44))
         showSigleView.font = xsFont(14)
         showSigleView.textColor = xsColor_main_text_blue
         showSigleView.textAlignment = .center
+        showSigleView.adjustsFontSizeToFitWidth = true
         showSigleView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(showList))
         showSigleView.addGestureRecognizer(tapGesture)
         
-        let rowImageView = UIImageView.init(image: #imageLiteral(resourceName: "next"))
+        rowImageView = UIImageView.init(image: #imageLiteral(resourceName: "wode_gerenziliao_xiangce_duibianxing"))
         rowImageView.frame = CGRect.init(x: showSigleView.width - 10, y: (showSigleView.height - 10)/2, width: 10, height: 10)
         showSigleView.addSubview(rowImageView)
         return showSigleView
@@ -49,8 +67,10 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
     @objc func showList() {
         if listView.isShow == false {
             self.listView.showList()
+            self.rowImageView.transform = CGAffineTransform.init(rotationAngle: CGFloat(Double.pi))
         }else {
            self.listView.hideList()
+            self.rowImageView.transform = CGAffineTransform.init(rotationAngle: 0)
         }
         
     }
@@ -69,6 +89,13 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
         // Dispose of any resources that can be recreated.
     }
 
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        super.scrollViewWillBeginDragging(scrollView)
+        if _listView != nil && _listView.isShow == true {
+            self.showList()
+        }
+    }
 
     // MARK: UICollectionViewDataSource
 
@@ -93,7 +120,7 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
        
         let subCell = cell as! PicDetailCollectionViewCell
         if indexPath.row == 0 {
-            subCell.picImageView.image = #imageLiteral(resourceName: "xi")
+            subCell.picImageView.image = #imageLiteral(resourceName: "xiangjirukou")
         }else {
             let asset = self.dataSource[indexPath.row-1]
             subCell.picImageView?.image = UIImage.init(named: defaultImageName);

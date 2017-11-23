@@ -64,9 +64,7 @@ class ClassifyViewController: BaseViewController {
         
 
     }
-    
-    
-    
+
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]

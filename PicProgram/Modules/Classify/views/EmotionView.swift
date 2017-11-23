@@ -8,7 +8,7 @@
 
 import UIKit
 
-let cellReuseableIdentString = "EmotionCollectionViewCell"
+let cellReuseableIdentString = "ClassifyCollectionViewCell"
 
 class EmotionView: BaseView ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,CustomViewProtocol{
     var dataSource: Array<[String:String]> = Array()

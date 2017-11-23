@@ -68,12 +68,16 @@ let xsColor_button_highlighted = xsColor("000000",alpha: 0.1)
  *  family: 字体
  *  Returns: 返回字体实例
  */
-func xsFont(_ size: CGFloat, family:String = "") -> UIFont {
-    return UIFont.systemFont(ofSize: size*CGFloat(fontScale))
+func xsFont(_ size: CGFloat, family:String = "GillSans-Italic") -> UIFont {
+    return UIFont.init(name: family, size: size*CGFloat(fontScale))!
+//    return UIFont.systemFont(ofSize: size*CGFloat(fontScale))
 }
 
-func xsBoldFont(_ size:CGFloat, family:String = "") -> UIFont {
-    return UIFont.boldSystemFont(ofSize: size*CGFloat(fontScale))
+func xsBoldFont(_ size:CGFloat, family:String = "GillSans-UltraBold") -> UIFont {
+    
+    return UIFont.init(name: family, size: size*CGFloat(fontScale))!
+
+//    return UIFont.boldSystemFont(ofSize: size*CGFloat(fontScale))
 }
 
 /**
