@@ -54,6 +54,9 @@
 		3A6F49B81FC6C7C3001AE767 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */; };
 		3A6F49B91FC6C7C3001AE767 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */; };
 		3A6F49BB1FC6E1B3001AE767 /* ClassifyCommonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */; };
+		3A7266451FC80F3C00727509 /* ClassifyArtListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7266431FC80F3C00727509 /* ClassifyArtListViewController.swift */; };
+		3A7266461FC80F3C00727509 /* ClassifyArtListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7266441FC80F3C00727509 /* ClassifyArtListViewController.xib */; };
+		3A7266481FC819D300727509 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7266471FC819D300727509 /* TestViewController.swift */; };
 		3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7BA0E01FA5A62C00E0EB55 /* PicDetailHeaderStyle3View.xib */; };
 		3A7BA0E31FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */; };
 		3A7C827E1FAC2B2000793420 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C827C1FAC2B2000793420 /* PictureDetailViewController.swift */; };
@@ -149,6 +152,8 @@
 		3AB78C0F1FC67863001D9A43 /* 方正宋刻本秀楷简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */; };
 		3AB8FF931FAAF9D600058784 /* PicDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */; };
 		3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */; };
+		3ACDB5D41FC7D710007E0E32 /* ClassifyCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDB5D21FC7D710007E0E32 /* ClassifyCollectionReusableView.swift */; };
+		3ACDB5D51FC7D710007E0E32 /* ClassifyCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ACDB5D31FC7D710007E0E32 /* ClassifyCollectionReusableView.xib */; };
 		3AD84BF61F99ABD4009F3BD5 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */; };
 		3AD84C041F99CDDE009F3BD5 /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD84BFB1F99CDDD009F3BD5 /* CustomViewProtocol.swift */; };
 		3ADB94A71FA753AE00711445 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB94A51FA753AE00711445 /* PlayViewController.swift */; };
@@ -213,6 +218,9 @@
 		3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyCommonListView.swift; sourceTree = "<group>"; };
+		3A7266431FC80F3C00727509 /* ClassifyArtListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyArtListViewController.swift; sourceTree = "<group>"; };
+		3A7266441FC80F3C00727509 /* ClassifyArtListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifyArtListViewController.xib; sourceTree = "<group>"; };
+		3A7266471FC819D300727509 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3A7BA0E01FA5A62C00E0EB55 /* PicDetailHeaderStyle3View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicDetailHeaderStyle3View.xib; sourceTree = "<group>"; };
 		3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDetailHeaderStyle3View.swift; sourceTree = "<group>"; };
 		3A7C827C1FAC2B2000793420 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +319,8 @@
 		3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正宋刻本秀楷简.TTF"; sourceTree = "<group>"; };
 		3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewFlowLayout.swift; sourceTree = "<group>"; };
+		3ACDB5D21FC7D710007E0E32 /* ClassifyCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyCollectionReusableView.swift; sourceTree = "<group>"; };
+		3ACDB5D31FC7D710007E0E32 /* ClassifyCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifyCollectionReusableView.xib; sourceTree = "<group>"; };
 		3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		3AD84BFB1F99CDDD009F3BD5 /* CustomViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
 		3ADB94A51FA753AE00711445 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +413,8 @@
 			isa = PBXGroup;
 			children = (
 				3A0B8B291FBD91F1006F09E9 /* ClassifyViewController.swift */,
+				3A7266431FC80F3C00727509 /* ClassifyArtListViewController.swift */,
+				3A7266441FC80F3C00727509 /* ClassifyArtListViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -425,6 +437,8 @@
 				3A0B8B301FBD91F1006F09E9 /* EmotionCollectionViewCell.swift */,
 				3A0B8B311FBD91F1006F09E9 /* EmotionCollectionViewCell.xib */,
 				3A0B8B321FBD91F1006F09E9 /* EmotionView.swift */,
+				3ACDB5D21FC7D710007E0E32 /* ClassifyCollectionReusableView.swift */,
+				3ACDB5D31FC7D710007E0E32 /* ClassifyCollectionReusableView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -665,6 +679,7 @@
 				3AB5DCC21F8CB192004897B5 /* Extension+UIView.swift */,
 				3AB5DCC31F8CB192004897B5 /* HomePageNavigationController.swift */,
 				3AB5DCC41F8CB192004897B5 /* ShadowView.swift */,
+				3A7266471FC819D300727509 /* TestViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -841,6 +856,7 @@
 				3AB5DC1B1F8CB119004897B5 /* Assets.xcassets in Resources */,
 				3A0B8B371FBD91F1006F09E9 /* ClassifyCollectionViewCell.xib in Resources */,
 				3A41AD2D1F94947C000BCC16 /* InfoPlist.strings in Resources */,
+				3ACDB5D51FC7D710007E0E32 /* ClassifyCollectionReusableView.xib in Resources */,
 				3A5387531F95DAB000BA4359 /* ChangePassViewController.xib in Resources */,
 				3A9963DC1F9C9B7B00077307 /* ArtReadTableViewCell.xib in Resources */,
 				3A9CCC631FA1EC5100FC33BD /* ArtHeaderView.xib in Resources */,
@@ -861,6 +877,7 @@
 				3A9963F21F9DEE6700077307 /* RecommandListCollectionViewCell.xib in Resources */,
 				3A9CCC671FA1ED2400FC33BD /* ArtMasterSayTableViewCell.xib in Resources */,
 				3A41AD551F9599A3000BCC16 /* RegisterViewController.xib in Resources */,
+				3A7266461FC80F3C00727509 /* ClassifyArtListViewController.xib in Resources */,
 				3A7C827F1FAC2B2000793420 /* PictureDetailViewController.xib in Resources */,
 				3A9CCC5F1FA1E65A00FC33BD /* ItemView.xib in Resources */,
 			);
@@ -942,6 +959,7 @@
 				3A9CCC571FA1DBD100FC33BD /* MasterQuoteModel.swift in Sources */,
 				3A0B8B331FBD91F1006F09E9 /* ClassifyViewController.swift in Sources */,
 				3AB5DD071F8CB192004897B5 /* ComView.swift in Sources */,
+				3A7266481FC819D300727509 /* TestViewController.swift in Sources */,
 				3AB5DD061F8CB192004897B5 /* Common.swift in Sources */,
 				3AB78C021FC412D6001D9A43 /* SystemPicsCollectionViewController.swift in Sources */,
 				3A6A8B911FBA881D0062B728 /* ChangeCoverPicturesViewController.swift in Sources */,
@@ -949,6 +967,7 @@
 				3A9CCC661FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift in Sources */,
 				3AB5DD041F8CB192004897B5 /* URLEncode+String.swift in Sources */,
 				3A9963E01F9DBEEF00077307 /* BannerView.swift in Sources */,
+				3A7266451FC80F3C00727509 /* ClassifyArtListViewController.swift in Sources */,
 				3A9963ED1F9DD63F00077307 /* RecommandListCollectionViewController.swift in Sources */,
 				3AE7A2481FA2EE96004BAD20 /* SearchResultView.swift in Sources */,
 				3AB5DD381F8CB192004897B5 /* BaseEntityManager.swift in Sources */,
@@ -1014,6 +1033,7 @@
 				3A5387561F95DF6B00BA4359 /* FindPassViewController.swift in Sources */,
 				3AB5DD261F8CB192004897B5 /* Reachability.swift in Sources */,
 				3A0085D71FB4760300BACFD0 /* PlayMoreView.swift in Sources */,
+				3ACDB5D41FC7D710007E0E32 /* ClassifyCollectionReusableView.swift in Sources */,
 				3AB5DD2D1F8CB192004897B5 /* PKHUDAssets.swift in Sources */,
 				3A41AD541F9599A3000BCC16 /* RegisterViewController.swift in Sources */,
 				3A9CCC531FA1D1A700FC33BD /* FindTodayRecomModel.swift in Sources */,

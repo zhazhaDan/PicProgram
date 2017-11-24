@@ -15,6 +15,7 @@ let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 
 let StatusBarHeight = UIApplication.shared.statusBarFrame.height
 let NavigationBarBottom = StatusBarHeight + 44
+let TabbarHeight = (UIApplication.shared.keyWindow?.rootViewController as! BaseTabBarController).tabBar.bounds.size.height
 
 let iPhone5 = (SCREEN_WIDTH <= 320 ? true:false)
 let iPhone6 = (SCREEN_WIDTH <= 375 ? true:false)

@@ -8,18 +8,18 @@
 
 import UIKit
 
-let cellReuseableIdentString = "ClassifyCollectionViewCell"
+let cellReuseableIdentString = "EmotionCollectionViewCell"
 
 class EmotionView: BaseView ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,CustomViewProtocol{
     var dataSource: Array<[String:String]> = Array()
     open weak var delegate:CustomViewProtocol!
-
+    var collecView:UICollectionView!
     override func buildUI() {
         let collectionLayout = UICollectionViewFlowLayout.init()
         collectionLayout.sectionInset = UIEdgeInsets.init(top: 20, left: 36, bottom: 20, right: 36)
         collectionLayout.scrollDirection = .vertical
         collectionLayout.minimumLineSpacing = 22
-        let collecView = UICollectionView.init(frame: self.bounds, collectionViewLayout: collectionLayout)
+        collecView = UICollectionView.init(frame: self.bounds, collectionViewLayout: collectionLayout)
         collecView.dataSource = self
         collecView.delegate = self
         collecView.bounces = false
@@ -28,9 +28,7 @@ class EmotionView: BaseView ,UICollectionViewDelegate,UICollectionViewDataSource
         collecView.translatesAutoresizingMaskIntoConstraints = false
         collecView.register(UINib.init(nibName: "EmotionCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: cellReuseableIdentString)
         addSubview(collecView)
-        let path = Bundle.main.path(forResource: "EmotionList", ofType: "plist")
-        dataSource = NSArray.init(contentsOfFile: path!) as! Array<[String : String]>
-        collecView.reloadData()
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

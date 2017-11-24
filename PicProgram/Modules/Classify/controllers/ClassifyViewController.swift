@@ -11,16 +11,61 @@ import UIKit
 class ClassifyViewController: BaseViewController {
     var selectedIndex:Int = 0
     var customViews:Array<BaseView> = Array()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        requestData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    override func requestData() {
+        if selectedIndex == 0 {
+            requestArtData()
+        }else if selectedIndex == 2 {
+            requestHomeData()
+        }else {
+            getEmotionData()
+        }
+    }
+    
+    func requestArtData(){
+        if (self.customViews.first as! ClassifyCommonListView).dataSource.count > 0 {
+            return
+        }
+        network.requestData(.classify_get_art_home, params: nil, finishedCallback: { [weak self](result) in
+            if result["ret"] as! Int == 0 {
+                (self?.customViews.first as! ClassifyCommonListView).dataSource = result["art_home_page"] as! Array<[String : Any]>
+                (self?.customViews.first as! ClassifyCommonListView).collecView.reloadData()
+            }
+        }, nil)
+    }
+    
+    func requestHomeData(){
+        if (self.customViews[selectedIndex] as! ClassifyCommonListView).dataSource.count > 0 {
+            return
+        }
+        network.requestData(.classify_get_art_home, params: nil, finishedCallback: { [weak self](result) in
+            if result["ret"] as! Int == 0 {
+                (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).dataSource = result["art_home_page"] as! Array<[String : Any]>
+                (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).collecView.reloadData()
+            }
+        }, nil)
+    }
+    
+    func getEmotionData() {
+        if (self.customViews[1] as! EmotionView).dataSource.count > 0 {
+            return
+        }
+        let path = Bundle.main.path(forResource: "EmotionList", ofType: "plist")
+        let data = NSArray.init(contentsOfFile: path!) as! Array<[String : String]>
+        (self.customViews[1] as! EmotionView).dataSource = data
+        (self.customViews[1] as! EmotionView).collecView.reloadData()
+    }
+    
     override func buildUI() {
         super.buildUI()
         let titles = ["艺术","心情","场景"]
@@ -44,7 +89,7 @@ class ClassifyViewController: BaseViewController {
         self.view.addSubview(headerLineView)
         customNavigationView()
         
-        scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: headerLineView.bottom, width: self.view.width, height: self.view.height - headerLineView.bottom))
+        scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: headerLineView.bottom, width: self.view.width, height: self.view.height - headerLineView.bottom - TabbarHeight))
         scrollView?.showsVerticalScrollIndicator = false
         scrollView?.showsHorizontalScrollIndicator = false
         scrollView?.isPagingEnabled = true
@@ -53,11 +98,10 @@ class ClassifyViewController: BaseViewController {
         scrollView?.isPagingEnabled = true
         self.view.addSubview(scrollView!)
         
-        let view1 = ClassifyBaseListView.init(frame: CGRect.init(x: 0, y: 0, width: (scrollView?.width)!, height: (scrollView?.height)!))
+        let view1 = ClassifyCommonListView.init(frame: CGRect.init(x: 0, y: 0, width: (scrollView?.width)!, height: (scrollView?.height)!))
         let view2 = EmotionView.init(frame:  CGRect.init(x: (scrollView?.width)!, y: 0, width: (scrollView?.width)!, height: (scrollView?.height)!))
-        let view3 = ClassifyBaseListView.init(frame:  CGRect.init(x: (scrollView?.width)! * 2, y: 0, width: (scrollView?.width)!, height: (scrollView?.height)!))
+        let view3 = ClassifyCommonListView.init(frame:  CGRect.init(x: (scrollView?.width)! * 2, y: 0, width: (scrollView?.width)!, height: (scrollView?.height)!))
         customViews = [view1,view2,view3]
-        selectedIndex = 1
         self.scrollView?.addSubview(view1)
         self.scrollView?.addSubview(view2)
         self.scrollView?.addSubview(view3)
@@ -90,6 +134,7 @@ class ClassifyViewController: BaseViewController {
                 }
             }
             self.scrollView?.setContentOffset(CGPoint.init(x: (scrollView?.width)! * CGFloat(selectedIndex), y: 0), animated: true)
+            requestData()
         }
     }
 

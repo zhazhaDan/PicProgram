@@ -43,6 +43,8 @@ enum RequestAPIType {
     case user_reset_password
     case user_logout
     case user_info
+    case classify_get_art_home
+    case classify_get_scene_home
     case default_api
 }
 
@@ -130,6 +132,12 @@ class  NetworkTool{
         case .user_info:
             method = .get
             apiString = "user/get_info"
+        case .classify_get_art_home:
+            method = .get
+            apiString = "classify/get_art_home"
+        case .classify_get_scene_home:
+            method = .get
+            apiString = "classify/get_scene_home"
         default:
             apiString = ""
             method = .get
