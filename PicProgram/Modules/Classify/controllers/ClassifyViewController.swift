@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClassifyViewController: BaseViewController {
+class ClassifyViewController: BaseViewController,CustomViewProtocol {
     var selectedIndex:Int = 0
     var customViews:Array<BaseView> = Array()
     override func viewDidLoad() {
@@ -99,8 +99,11 @@ class ClassifyViewController: BaseViewController {
         self.view.addSubview(scrollView!)
         
         let view1 = ClassifyCommonListView.init(frame: CGRect.init(x: 0, y: 0, width: (scrollView?.width)!, height: (scrollView?.height)!))
+        view1.delegate = self
         let view2 = EmotionView.init(frame:  CGRect.init(x: (scrollView?.width)!, y: 0, width: (scrollView?.width)!, height: (scrollView?.height)!))
+        view2.delegate = self
         let view3 = ClassifyCommonListView.init(frame:  CGRect.init(x: (scrollView?.width)! * 2, y: 0, width: (scrollView?.width)!, height: (scrollView?.height)!))
+        view3.delegate = self
         customViews = [view1,view2,view3]
         self.scrollView?.addSubview(view1)
         self.scrollView?.addSubview(view2)
@@ -138,20 +141,12 @@ class ClassifyViewController: BaseViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func listDidSelected(view: UIView, at index: Int) {
+        if view == self.customViews.first {
+            let vc = ClassifyArtListViewController.init(nibName: "ClassifyArtListViewController", bundle: Bundle.main)
+            vc.dataSource = (view as! ClassifyCommonListView).dataSource
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

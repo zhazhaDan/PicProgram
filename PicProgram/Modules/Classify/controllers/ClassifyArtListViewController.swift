@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PicDetailCollectionViewCell"
 
 class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var classTitleButton: UIButton!
@@ -26,7 +26,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
-        collectionView.register(PicDetailCollectionViewCell.self, forCellWithReuseIdentifier: "PicDetailCollectionViewCell")
+        collectionView.register(PicDetailCollectionViewCell.self, forCellWithReuseIdentifier:reuseIdentifier)
         showTableListView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
@@ -55,7 +55,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         return cell
     }
     
@@ -69,7 +69,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
         let datas = sectionData["paints"] as! Array<[String:Any]>
         let cell = cell as! PicDetailCollectionViewCell
         let item = datas[indexPath.row]
-        cell.picImageView.xs_setImage(item["img_url"] as! String)
+//        cell.picImageView.xs_setImage(item["img_url"] as! String)
     }
     
     //tableview

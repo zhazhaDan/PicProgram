@@ -61,7 +61,7 @@
                         <outlet property="delegate" destination="-1" id="ZiE-9x-hjS"/>
                     </connections>
                 </collectionView>
-                <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mF5-yE-DLg">
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mF5-yE-DLg">
                     <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="45" estimatedRowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BaF-eh-fzr">
