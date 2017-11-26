@@ -141,10 +141,16 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         }
     }
 
-    func listDidSelected(view: UIView, at index: Int) {
-        if view == self.customViews.first {
+    func listDidSelected(view: UIView, at index: Int, _ section: Int) {
+        if view != self.customViews[1] {
             let vc = ClassifyArtListViewController.init(nibName: "ClassifyArtListViewController", bundle: Bundle.main)
-            vc.dataSource = (view as! ClassifyCommonListView).dataSource
+            vc.dataSource = (view as! ClassifyCommonListView).dataSource[section]["paints"] as! Array<[String : Any]>
+            vc.selectedIndex = index
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let vc = ClassifyEmotionListViewController.init(nibName: "ClassifyEmotionListViewController", bundle: Bundle.main)
+            vc.dataSource = (view as! EmotionView).dataSource
+            vc.selectedIndex = index
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

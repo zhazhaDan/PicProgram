@@ -71,7 +71,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     var artView:ArtView {
         get{
             if _art == nil {
-                _art = ArtView.init(frame:CGRect.init(x: 0, y: 0, width: self.view.width, height: currentView.height))
+                _art = ArtView.init(frame:self.currentView.bounds)
                 _art.bannerView.delegate = self
                 _art.cDelegate = self
             }

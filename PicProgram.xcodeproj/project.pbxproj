@@ -162,6 +162,12 @@
 		3AE7A24A1FA33335004BAD20 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7A2491FA33335004BAD20 /* ReadListViewController.swift */; };
 		3AF8CB381FB1AE7A00635533 /* NavigationBarShowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8CB371FB1AE7A00635533 /* NavigationBarShowListView.swift */; };
 		F104340E8EA668A380E025B1 /* Pods_PicProgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD8C6DEB27196A274AADA3E /* Pods_PicProgram.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F71952CF1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */; };
+		F71952D01FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952CE1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib */; };
+		F71952D31FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952D11FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift */; };
+		F71952D41FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952D21FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.xib */; };
+		F71952D71FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952D51FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift */; };
+		F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */; };
 		F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9B1FB345D90033D69C /* FindHeaderView.swift */; };
 		F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9D1FB354590033D69C /* WebViewController.swift */; };
 		F7A5AD701FB7411000B74AF1 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A5AD6F1FB7411000B74AF1 /* PicturesViewController.swift */; };
@@ -331,6 +337,12 @@
 		4244DE9259CCF70FBFEBA945 /* Pods-PicProgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicProgram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicProgram/Pods-PicProgram.debug.xcconfig"; sourceTree = "<group>"; };
 		B637EB1BF82FD9C7B3061DE3 /* Pods-PicProgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicProgram.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicProgram/Pods-PicProgram.release.xcconfig"; sourceTree = "<group>"; };
 		CFD8C6DEB27196A274AADA3E /* Pods_PicProgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicProgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionListViewController.swift; sourceTree = "<group>"; };
+		F71952CE1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassifyEmotionListViewController.xib; sourceTree = "<group>"; };
+		F71952D11FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionCollectionReusableView.swift; sourceTree = "<group>"; };
+		F71952D21FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifyEmotionCollectionReusableView.xib; sourceTree = "<group>"; };
+		F71952D51FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionDetailListViewController.swift; sourceTree = "<group>"; };
+		F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifyEmotionDetailListViewController.xib; sourceTree = "<group>"; };
 		F7845C9B1FB345D90033D69C /* FindHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHeaderView.swift; sourceTree = "<group>"; };
 		F7845C9D1FB354590033D69C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F7A5AD6F1FB7411000B74AF1 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
@@ -412,9 +424,13 @@
 		3A0B8B281FBD91F1006F09E9 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */,
+				F71952CE1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib */,
 				3A0B8B291FBD91F1006F09E9 /* ClassifyViewController.swift */,
 				3A7266431FC80F3C00727509 /* ClassifyArtListViewController.swift */,
 				3A7266441FC80F3C00727509 /* ClassifyArtListViewController.xib */,
+				F71952D51FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift */,
+				F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -439,6 +455,8 @@
 				3A0B8B321FBD91F1006F09E9 /* EmotionView.swift */,
 				3ACDB5D21FC7D710007E0E32 /* ClassifyCollectionReusableView.swift */,
 				3ACDB5D31FC7D710007E0E32 /* ClassifyCollectionReusableView.xib */,
+				F71952D11FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift */,
+				F71952D21FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -479,7 +497,6 @@
 				3AB5DC701F8CB192004897B5 /* Define */,
 				3AB5DC651F8CB192004897B5 /* Extension */,
 				3AB5DC261F8CB191004897B5 /* Header */,
-				3AB5DC641F8CB191004897B5 /* Manager */,
 				3AB5DC741F8CB192004897B5 /* Modules */,
 				3AB5DC2D1F8CB191004897B5 /* Resource */,
 				3AB5DC941F8CB192004897B5 /* ThirdParty */,
@@ -521,13 +538,6 @@
 				3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		3AB5DC641F8CB191004897B5 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		3AB5DC651F8CB192004897B5 /* Extension */ = {
@@ -843,15 +853,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71952D41FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.xib in Resources */,
 				3AB78C0D1FC67863001D9A43 /* 方正清刻本悦宋简体.TTF in Resources */,
 				3AB78C0E1FC67863001D9A43 /* 方正宋刻本秀楷简.TTF in Resources */,
 				3AB78C0F1FC67863001D9A43 /* 方正宋刻本秀楷简体.TTF in Resources */,
 				3A9963FE1F9E175400077307 /* PicDetailCollectionViewCell.xib in Resources */,
+				F71952D01FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib in Resources */,
 				3AB78BFF1FC2D7C0001D9A43 /* UserViewController.xib in Resources */,
 				3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */,
 				3A0B8B391FBD91F1006F09E9 /* EmotionCollectionViewCell.xib in Resources */,
 				3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */,
 				3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */,
+				F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */,
 				3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */,
 				3AB5DC1B1F8CB119004897B5 /* Assets.xcassets in Resources */,
 				3A0B8B371FBD91F1006F09E9 /* ClassifyCollectionViewCell.xib in Resources */,
@@ -962,6 +975,7 @@
 				3A7266481FC819D300727509 /* TestViewController.swift in Sources */,
 				3AB5DD061F8CB192004897B5 /* Common.swift in Sources */,
 				3AB78C021FC412D6001D9A43 /* SystemPicsCollectionViewController.swift in Sources */,
+				F71952CF1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.swift in Sources */,
 				3A6A8B911FBA881D0062B728 /* ChangeCoverPicturesViewController.swift in Sources */,
 				3AB78C051FC5322C001D9A43 /* AlbumListView.swift in Sources */,
 				3A9CCC661FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift in Sources */,
@@ -983,6 +997,7 @@
 				3AB5DD2B1F8CB192004897B5 /* PKHUDAnimating.swift in Sources */,
 				3A12A79C1F8F69C0008C0C9F /* MineView.swift in Sources */,
 				3AB5DCFF1F8CB192004897B5 /* Formatter+Date.swift in Sources */,
+				F71952D31FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift in Sources */,
 				3AA7A1601F8DC16000DDF7CB /* LoginView.swift in Sources */,
 				3AB5DD341F8CB192004897B5 /* PKHUDTextView.swift in Sources */,
 				3AB78BFE1FC2D7C0001D9A43 /* UserViewController.swift in Sources */,
@@ -991,6 +1006,7 @@
 				3AB5DD2E1F8CB192004897B5 /* PKHUDErrorView.swift in Sources */,
 				3A0B8B441FBE83FE006F09E9 /* EaselPaintCollectionViewCell.swift in Sources */,
 				3AB5DD311F8CB192004897B5 /* PKHUDSquareBaseView.swift in Sources */,
+				F71952D71FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift in Sources */,
 				3A23CD211FC2AF3C009C238C /* UserInfo.swift in Sources */,
 				3AB5DD271F8CB192004897B5 /* FrameView.swift in Sources */,
 				3AB5DD3D1F8CB192004897B5 /* BaseViewController.swift in Sources */,

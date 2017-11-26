@@ -32,8 +32,8 @@ extension Date {
         let myCalendar:NSCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier(rawValue: NSGregorianCalendar))!
         let myComponents = myCalendar.components(NSCalendar.Unit.weekday, from: self)
         let weekDay = myComponents.weekday
-        let weedDays = ["六","日","一","二","三","四","五"]
-        return "星期"+weedDays[weekDay!]
+        let weedDays = ["日","一","二","三","四","五","六"]
+        return "星期"+weedDays[weekDay!-1]
     }
     func getUpperDate()->String{
         
