@@ -17,6 +17,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     open weak var cDelegate: FindViewProtocol!
     var dataSource:[ClassicQuoteModel] = []
     var _pioneerModel:PioneerModel!
+    var isFold:Bool = false
     var pioneerModel:PioneerModel {
         set {
             _pioneerModel = newValue
@@ -46,7 +47,8 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.width, height: 180))
         bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: self.width - 24, height: 168),true)
         view.addSubview(bannerView)
-        readTableView = UITableView.init(frame: self.bounds, style:.grouped)
+        readTableView = UITableView.init(frame: self.bounds, style:.plain)
+        readTableView.height -= 49
         readTableView.backgroundColor = xsColor_main_white
         readTableView.delegate = self
         readTableView.dataSource = self
@@ -65,7 +67,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            if _pioneerModel != nil {
+            if _pioneerModel != nil && self.isFold == false{
                 return  1
             }else {
                 return 0
@@ -142,6 +144,14 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         }
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= 400 && self.isFold == false {
+//            self.readTableView.deleteSections(NSIndexSet.init(index: 0) as IndexSet, with: .middle)
+            self.isFold = true
+
+            self.readTableView.deleteRows(at: [IndexPath.init(row: 0, section: 0)], with: .middle)
+        }
+    }
     
     func praiseBigStar() {
         network.requestData(.discovery_mqlove, params: ["mq_id":pioneerModel.master_quote.mq_id], finishedCallback: { [weak self](result) in

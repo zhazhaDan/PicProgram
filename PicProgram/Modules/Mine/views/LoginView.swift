@@ -122,7 +122,7 @@ class LoginView: BaseScrollView,UITextFieldDelegate{
             let btn:UIButton = self.viewWithTag(10+i) as! UIButton
             if btn == sender {
                 btn.isSelected = true
-                self.c_delegate.listDidSelected!(view: self, at: sender.tag)
+                self.c_delegate.listDidSelected!(view: self, at: sender.tag, 0)
             }else {
                 btn.isSelected = false
             }
@@ -131,7 +131,7 @@ class LoginView: BaseScrollView,UITextFieldDelegate{
     
     @objc func shareToThirdApps(_ sender:UIButton) {
         
-        self.c_delegate.listDidSelected!(view: self, at: sender.tag)
+        self.c_delegate.listDidSelected!(view: self, at: sender.tag, 0)
     }
     
 }

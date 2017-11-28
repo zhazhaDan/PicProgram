@@ -11,9 +11,8 @@ import UIKit
 class ClassifyBaseListView: BaseView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,CustomViewProtocol{
     var last_id:Int = 0
     var collecView:UICollectionView!
-//    var dataSource:Array<BaseObject> = Array()
     open weak var delegate:CustomViewProtocol!
-    var dataSource: Array<[String:String]> = Array()
+    var dataSource: Array<[String:Any]> = Array()
 
     override func buildUI() {
         let collectionLayout = UICollectionViewFlowLayout.init()
@@ -50,14 +49,14 @@ class ClassifyBaseListView: BaseView,UICollectionViewDelegate,UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (delegate?.listDidSelected) != nil{
-            delegate?.listDidSelected!(view: self, at: indexPath.row)
+            delegate?.listDidSelected!(view: self, at: indexPath.row, 0)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath){
         let cell = cell as! EmotionCollectionViewCell
         let dict = dataSource[indexPath.row]
-        cell.picImageView.image = UIImage.init(named: dict["imageName"]!)
-        cell.nameLabel.text = dict["title"]
+        cell.picImageView.image = UIImage.init(named: dict["imageName"]! as! String)
+        cell.nameLabel.text = dict["title"] as! String
     }
 }

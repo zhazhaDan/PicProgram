@@ -8,8 +8,8 @@
 
 import UIKit
 
-let cellReuseIdentifier = "ClassifyCollectionViewCell"
-let headerReuseIdentifier = "ClassifyCollectionReusableView"
+private let cellReuseIdentifier = "ClassifyCollectionViewCell"
+private let headerReuseIdentifier = "ClassifyCollectionReusableView"
 class ClassifyCommonListView: BaseView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,CustomViewProtocol{
     var last_id:Int = 0
     var collecView:UICollectionView!
@@ -86,7 +86,7 @@ class ClassifyCommonListView: BaseView,UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (delegate?.listDidSelected) != nil{
-            delegate?.listDidSelected!(view: self, at: indexPath.row)
+            delegate?.listDidSelected!(view: self, at: indexPath.row, 0)
         }
     }
     

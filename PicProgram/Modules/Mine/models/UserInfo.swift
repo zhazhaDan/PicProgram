@@ -57,6 +57,12 @@ class UserInfo: UserModel {
             }
             }, nil)
     }
+    //退出登录
+    func localLogout() {
+        UserDefaults.standard.removeObject(forKey: User_uin)
+        UserDefaults.standard.removeObject(forKey: User_token)
+        UserDefaults.standard.synchronize()
+    }
     
     @objc var uin: Int = 0
     @objc var token:String = ""

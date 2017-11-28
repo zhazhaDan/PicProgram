@@ -11,7 +11,7 @@ import UIKit
 let cellReuseableIdentString = "EmotionCollectionViewCell"
 
 class EmotionView: BaseView ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout ,CustomViewProtocol{
-    var dataSource: Array<[String:String]> = Array()
+    var dataSource: Array<[String:Any]> = Array()
     open weak var delegate:CustomViewProtocol!
     var collecView:UICollectionView!
     override func buildUI() {
@@ -51,14 +51,14 @@ class EmotionView: BaseView ,UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (delegate?.listDidSelected) != nil{
-            delegate?.listDidSelected!(view: self, at: indexPath.row)
+            delegate?.listDidSelected!(view: self, at: indexPath.row, 0)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath){
         let cell = cell as! EmotionCollectionViewCell
         let dict = dataSource[indexPath.row]
-        cell.picImageView.image = UIImage.init(named: dict["imageName"]!)
-        cell.nameLabel.text = dict["title"]
+        cell.picImageView.image = UIImage.init(named: dict["imageName"]! as! String)
+        cell.nameLabel.text = dict["title"] as! String
     }
 }

@@ -102,7 +102,7 @@ class AlbumListView: BaseView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate.listDidSelected!(view: self, at: indexPath.row)
+        delegate.listDidSelected!(view: self, at: indexPath.row, 0)
     }
     
     //MARK: private func
