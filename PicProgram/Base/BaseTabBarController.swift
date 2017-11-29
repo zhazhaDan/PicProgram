@@ -27,17 +27,17 @@ class BaseTabBarController: UITabBarController {
         findVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
         
         let classVC = ClassifyViewController()
-        classVC.tabBarItem = UITabBarItem.init(title: "分类", image: #imageLiteral(resourceName: "weixuanzhongfenlei_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhongfenlei_icon"))
+        classVC.tabBarItem = UITabBarItem.init(title: LocalizedLanguageTool().getString(forKey: "Category"), image: #imageLiteral(resourceName: "weixuanzhongfenlei_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhongfenlei_icon"))
         classVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         classVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
         
         let easelVC = EaselViewController()
-        easelVC.tabBarItem = UITabBarItem.init(title: "画架", image: #imageLiteral(resourceName: "weixuanzhonghuajia_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhonghuajia_icon"))
+        easelVC.tabBarItem = UITabBarItem.init(title: LocalizedLanguageTool().getString(forKey: "Art Works"), image: #imageLiteral(resourceName: "weixuanzhonghuajia_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhonghuajia_icon"))
         easelVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         easelVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
         
         let minVC = MineViewController()
-        minVC.tabBarItem = UITabBarItem.init(title: "我的", image: UIImage.init(named: "weixuanzhongwode_icon")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage.init(named: "weixuanzhongwode_icon"))
+        minVC.tabBarItem = UITabBarItem.init(title: LocalizedLanguageTool().getString(forKey: "My Account"), image: UIImage.init(named: "weixuanzhongwode_icon")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage.init(named: "weixuanzhongwode_icon"))
 
         minVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         minVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)

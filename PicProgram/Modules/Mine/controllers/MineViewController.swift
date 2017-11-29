@@ -24,6 +24,10 @@ class MineViewController: BaseViewController,MineViewProtocol {
         self.mineView.headerButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        self.requestData()
@@ -50,6 +54,11 @@ class MineViewController: BaseViewController,MineViewProtocol {
             let vc = UserViewController.init(nibName: "UserViewController", bundle: Bundle.main)
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func settingDidSelected() {
+        let vc = SettingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

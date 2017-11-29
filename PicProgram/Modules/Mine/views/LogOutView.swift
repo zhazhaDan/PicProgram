@@ -85,10 +85,15 @@ class LogOutView: BaseScrollView {
     
     
     @objc func buttonAction(_ sender: UIButton) {
-        cDelegate.headerDidSelected!()
+        if sender.tag == 10 {
+            cDelegate.settingDidSelected!()
+        }else if sender.tag == 20 {
+            cDelegate.headerDidSelected!()
+        }
     }
 }
 
 @objc protocol MineViewProtocol:NSObjectProtocol {
     @objc optional func headerDidSelected()
+    @objc optional func settingDidSelected()
 }

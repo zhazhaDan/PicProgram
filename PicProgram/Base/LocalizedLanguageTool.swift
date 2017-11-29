@@ -21,7 +21,7 @@ class LocalizedLanguageTool: NSObject {
             UserDefaults.standard.synchronize()
         }
         get {
-            if _language == EN {
+            if UserDefaults.standard.value(forKey: LanguageKey) != nil {
                 _language = UserDefaults.standard.value(forKey: LanguageKey) as! String
             }
             return _language
