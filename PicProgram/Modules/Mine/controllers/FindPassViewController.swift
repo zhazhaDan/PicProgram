@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FindPassViewController: UIViewController {
+class FindPassViewController: BaseViewController {
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBAction func sendCodeAction(_ sender: Any) {

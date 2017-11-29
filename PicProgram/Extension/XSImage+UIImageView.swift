@@ -35,3 +35,13 @@ extension UIImageView {
         }
     }
 }
+
+
+extension UIButton {
+    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "placeholder", state:UIControlState = .normal){
+        self.kf.setImage(with: URL.init(string: imageUrl), for: state, placeholder: UIImage.init(named: placeholderImage), options: [.transition(.fade(1))], progressBlock: { (receivedSize, totalSize) in
+            
+        }) { (image, error, cacheType, imageUrl) in
+            
+        }}
+}

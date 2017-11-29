@@ -31,9 +31,20 @@ enum RequestAPIType {
     case paint_list
     case paint_collect
     case paint_play
+    case paint_tips
+    case paint_lining
     case search_hotwords
     case search_info
     case picture_info
+    case user_register
+    case user_login
+    case user_send_code
+    case user_verify_code
+    case user_reset_password
+    case user_logout
+    case user_info
+    case classify_get_art_home
+    case classify_get_scene_home
     case default_api
 }
 
@@ -102,6 +113,31 @@ class  NetworkTool{
             realParams = nil
         case .paint_play:
             apiString = "painting/play"
+        case .paint_tips:
+            apiString = "painting/add_tips"
+        case .paint_lining:
+            apiString = "painting/add_frame"
+        case .user_register:
+            apiString = "user/register"
+        case .user_login:
+            apiString = "user/login"
+        case .user_send_code:
+            apiString = "user/send_code"
+        case .user_verify_code:
+            apiString = "user/verify_code"
+        case .user_reset_password:
+            apiString = "user/reset_password"
+        case .user_logout:
+            apiString = "user/logout"
+        case .user_info:
+            method = .get
+            apiString = "user/get_info"
+        case .classify_get_art_home:
+            method = .get
+            apiString = "classify/get_art_home"
+        case .classify_get_scene_home:
+            method = .get
+            apiString = "classify/get_scene_home"
         default:
             apiString = ""
             method = .get

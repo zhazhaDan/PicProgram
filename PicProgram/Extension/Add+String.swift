@@ -14,4 +14,8 @@ extension String {
         let range = Range.init(uncheckedBounds: (lower: index1, upper: index2))
         return  self.replacingCharacters(in: range, with: "****")
     }
+    func size(_ tWidth:CGFloat = CGFloat(MAXFLOAT),_ tHeight:CGFloat = CGFloat(MAXFLOAT),_ font:UIFont = xsFont(15)) -> CGSize {
+        let rect = (self as NSString).boundingRect(with: CGSize.init(width: tWidth, height:tHeight), options: [NSStringDrawingOptions.truncatesLastVisibleLine,NSStringDrawingOptions.usesFontLeading,NSStringDrawingOptions.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font:font], context: nil)
+        return rect.size
+    }
 }

@@ -19,6 +19,16 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         super.viewDidLoad()
         requestData()
         self.currentView.addSubview(todayView)
+        
+        let f = UIFont.familyNames
+        for string in f {
+            print(string+":-->")
+            let fs = UIFont.fontNames(forFamilyName: string)
+            for fo in fs {
+                print(fo+"++++")
+            }
+            print("\n")
+        }
     }
 
     
@@ -61,7 +71,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     var artView:ArtView {
         get{
             if _art == nil {
-                _art = ArtView.init(frame:CGRect.init(x: 0, y: 0, width: self.view.width, height: currentView.height))
+                _art = ArtView.init(frame:self.currentView.bounds)
                 _art.bannerView.delegate = self
                 _art.cDelegate = self
             }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassifyEmotionDetailListViewController" customModule="PicProgram" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="y8l-5Q-iLs" id="xBJ-tg-X0u"/>
+                <outlet property="titleButton" destination="1qZ-vO-iQf" id="8Rx-xY-4OB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qZ-vO-iQf">
+                    <rect key="frame" x="0.0" y="79" width="375" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="skB-G7-uQG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="写实">
+                        <color key="titleColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jianbiantiao" translatesAutoresizingMaskIntoConstraints="NO" id="Lo5-Lu-bWj">
+                    <rect key="frame" x="0.0" y="111" width="375" height="3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="Nco-dR-g6p"/>
+                    </constraints>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="y8l-5Q-iLs">
+                    <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C9g-DF-ixL">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ajH-AH-Gvv"/>
+                        <outlet property="delegate" destination="-1" id="5f1-lL-rdh"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Lo5-Lu-bWj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3vi-jT-Rm4"/>
+                <constraint firstItem="y8l-5Q-iLs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CrN-IB-Sfv"/>
+                <constraint firstItem="Lo5-Lu-bWj" firstAttribute="top" secondItem="1qZ-vO-iQf" secondAttribute="bottom" constant="12" id="PwX-zD-dyH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="y8l-5Q-iLs" secondAttribute="bottom" id="Qfi-Mn-cus"/>
+                <constraint firstAttribute="trailing" secondItem="Lo5-Lu-bWj" secondAttribute="trailing" id="ZNC-3H-7pE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1qZ-vO-iQf" secondAttribute="trailing" id="nYB-pz-XKg"/>
+                <constraint firstItem="y8l-5Q-iLs" firstAttribute="top" secondItem="Lo5-Lu-bWj" secondAttribute="bottom" id="nob-N5-uaR"/>
+                <constraint firstItem="1qZ-vO-iQf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qSB-qk-fl0"/>
+                <constraint firstItem="1qZ-vO-iQf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" constant="15" id="s2s-Am-Mx3"/>
+                <constraint firstItem="1qZ-vO-iQf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="uNm-P9-CfV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y8l-5Q-iLs" secondAttribute="trailing" id="xgl-gI-HRr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="jianbiantiao" width="375" height="6"/>
+    </resources>
+</document>

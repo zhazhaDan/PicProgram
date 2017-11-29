@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>方正宋刻本秀楷简体.TTF</string>
+		<string>方正宋刻本秀楷简.TTF</string>
+		<string>方正清刻本悦宋简体.TTF</string>
+	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>访问相册</string>
+	<key>NSCameraUsageDescription</key>
+	<string>访问相机</string>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

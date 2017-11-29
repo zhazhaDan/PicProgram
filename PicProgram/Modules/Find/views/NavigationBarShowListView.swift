@@ -52,7 +52,7 @@ class NavigationBarShowListView: BaseView,UITableViewDelegate,UITableViewDataSou
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate.listDidSelected!(view: self, at: indexPath.row)
+        delegate.listDidSelected!(view: self, at: indexPath.row, 0)
     }
     
     override func didMoveToSuperview() {

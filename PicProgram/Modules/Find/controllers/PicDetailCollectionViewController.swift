@@ -61,14 +61,12 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-//        self.navigationController?.view.sendSubview(toBack: (self.navigationController?.navigationBar)!)
         self.collectionView?.y = -20
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-//        self.navigationController?.view.bringSubview(toFront: (self.navigationController?.navigationBar)!)
     }
     
     func requestData() {
@@ -126,7 +124,8 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.init(width: self.view.width, height: 330)
+        let contentHeight = paintModel.paint_detail.size(self.view.width - 24, 74, xsFont(10)).height
+        return CGSize.init(width: self.view.width, height: 256+contentHeight)
     }
     
     

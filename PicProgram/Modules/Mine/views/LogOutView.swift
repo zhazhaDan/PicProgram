@@ -9,10 +9,9 @@
 import UIKit
 
 class LogOutView: BaseScrollView {
-
+    open weak var cDelegate:MineViewProtocol!
+    var headerButton:UIButton!
     override func buildUI() {
-        
-        
         let headerBackView = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: self.width, height: 230))
         headerBackView.image = UIImage.init(named: "headerBackground")
         headerBackView.isUserInteractionEnabled = true
@@ -30,7 +29,7 @@ class LogOutView: BaseScrollView {
         headerBackView.addSubview(showButton)
         showButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
 
-        let headerButton = UIButton.init(frame: CGRect.init(x: (self.width - 71)/2, y: (headerBackView.height - 71)/2, width: 71, height: 71))
+        headerButton = UIButton.init(frame: CGRect.init(x: (self.width - 71)/2, y: (headerBackView.height - 71)/2, width: 71, height: 71))
         headerButton.setImage(#imageLiteral(resourceName: "08weidenglu_yonghu_touxiang"), for: .normal)
         headerButton.tag = 20
         headerButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
@@ -45,7 +44,7 @@ class LogOutView: BaseScrollView {
         
         let shebeiTitleView = UIButton.init(frame: CGRect.init(x: 0, y: headerBackView.bottom, width: self.width, height: 41))
         shebeiTitleView.isUserInteractionEnabled = false
-        shebeiTitleView.setBackgroundImage(#imageLiteral(resourceName: "wode_shebeitiao"), for: .normal)
+        shebeiTitleView.setBackgroundImage(#imageLiteral(resourceName: "jianbiantiao"), for: .normal)
         shebeiTitleView.setTitle("设备", for: .normal)
         shebeiTitleView.titleLabel?.font = xsFont(15)
         shebeiTitleView.setTitleColor(xsColor_main_text_blue, for: .normal)
@@ -84,9 +83,12 @@ class LogOutView: BaseScrollView {
     }
 
     
+    
     @objc func buttonAction(_ sender: UIButton) {
-        let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
-        let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
-        (appDelegate.window?.rootViewController as! UINavigationController).pushViewController(login, animated: true)
+        cDelegate.headerDidSelected!()
     }
+}
+
+@objc protocol MineViewProtocol:NSObjectProtocol {
+    @objc optional func headerDidSelected()
 }

@@ -53,7 +53,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
     }
     
     func customNavigationBar() {
-        inputTextField = UITextField.init(frame: CGRect.init(x: 12, y: 27, width: self.view.width - 72, height: 30))
+        inputTextField = UITextField.init(frame: CGRect.init(x: 12, y: StatusBarHeight+7, width: self.view.width - 72, height: 30))
         inputTextField.leftViewMode = .always
         let leftView = UIImageView.init(image: #imageLiteral(resourceName: "04s_shousuo"))
         leftView.contentMode = .scaleAspectFit

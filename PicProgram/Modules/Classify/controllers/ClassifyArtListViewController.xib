@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassifyArtListViewController" customModule="PicProgram" customModuleProvider="target">
+            <connections>
+                <outlet property="classTitleButton" destination="ib5-jN-a8E" id="pj3-n4-OUd"/>
+                <outlet property="collectionView" destination="JZU-22-Wog" id="lYX-IX-Gpa"/>
+                <outlet property="showTableListView" destination="BaF-eh-fzr" id="AAK-wC-ThB"/>
+                <outlet property="showVBackView" destination="mF5-yE-DLg" id="tLy-5h-aLR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adk-Je-dsI">
+                    <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ib5-jN-a8E">
+                            <rect key="frame" x="162.5" y="10" width="50" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="q49-Me-mcG"/>
+                                <constraint firstAttribute="width" constant="50" id="vqy-rw-SJ5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="写实" image="04fenlei_yishu xieshi_sanjiaoxing">
+                                <color key="titleColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="tapChangePaintAction:" destination="-1" eventType="touchUpInside" id="Dpk-JB-Qmu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ib5-jN-a8E" firstAttribute="centerX" secondItem="adk-Je-dsI" secondAttribute="centerX" id="6JT-5a-46V"/>
+                        <constraint firstAttribute="height" constant="40" id="Acl-5x-6Na"/>
+                        <constraint firstItem="ib5-jN-a8E" firstAttribute="centerY" secondItem="adk-Je-dsI" secondAttribute="centerY" id="zju-is-8Ks"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JZU-22-Wog">
+                    <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Rl-9p-hDa">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dXs-KE-YJ9"/>
+                        <outlet property="delegate" destination="-1" id="ZiE-9x-hjS"/>
+                    </connections>
+                </collectionView>
+                <view hidden="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mF5-yE-DLg">
+                    <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="45" estimatedRowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BaF-eh-fzr">
+                            <rect key="frame" x="62.5" y="0.0" width="250" height="136"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="250" id="76u-HW-cMK"/>
+                                <constraint firstAttribute="height" constant="136" id="bEp-nk-KU8"/>
+                            </constraints>
+                            <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="874-Ux-7jE"/>
+                                <outlet property="delegate" destination="-1" id="QWo-vL-inU"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="BaF-eh-fzr" firstAttribute="centerX" secondItem="mF5-yE-DLg" secondAttribute="centerX" id="7lR-bK-ws9"/>
+                        <constraint firstItem="BaF-eh-fzr" firstAttribute="top" secondItem="mF5-yE-DLg" secondAttribute="top" id="ttr-Jm-Urf"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="yHH-wa-9QS" appends="YES" id="8AX-hL-jaO"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JZU-22-Wog" firstAttribute="top" secondItem="adk-Je-dsI" secondAttribute="bottom" id="Cgl-oy-RMh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JZU-22-Wog" secondAttribute="trailing" id="Jdd-PR-dLz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mF5-yE-DLg" secondAttribute="trailing" id="JpZ-ly-n9I"/>
+                <constraint firstItem="mF5-yE-DLg" firstAttribute="top" secondItem="adk-Je-dsI" secondAttribute="bottom" id="NxR-bQ-3Wu"/>
+                <constraint firstItem="mF5-yE-DLg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="U7j-oB-kcf"/>
+                <constraint firstItem="adk-Je-dsI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" id="UQa-QW-61U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mF5-yE-DLg" secondAttribute="bottom" id="X5U-mP-SCO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="adk-Je-dsI" secondAttribute="trailing" id="Zwa-2h-xZl"/>
+                <constraint firstItem="adk-Je-dsI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="p5t-og-XLM"/>
+                <constraint firstItem="adk-Je-dsI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pZj-Bu-Qlc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JZU-22-Wog" secondAttribute="bottom" id="y6p-gH-ZrR"/>
+                <constraint firstItem="JZU-22-Wog" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zFA-UF-HJ3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="92.5"/>
+        </view>
+        <tapGestureRecognizer id="yHH-wa-9QS">
+            <connections>
+                <action selector="tapChangePaintAction:" destination="-1" id="Mbc-FV-f1E"/>
+                <outlet property="delegate" destination="-1" id="HsS-P3-yoO"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="04fenlei_yishu xieshi_sanjiaoxing" width="6" height="5"/>
+    </resources>
+</document>

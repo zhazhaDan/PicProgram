@@ -37,7 +37,7 @@ open class PKHUDTextView: PKHUDWideBaseView {
     }
 
     open let titleLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel.init(frame: CGRect.zero)
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 17.0)
         label.textColor = UIColor.white

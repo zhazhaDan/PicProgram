@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ael-3J-CJl">
+                            <scrollView opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Ael-3J-CJl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="GvA-va-oyX">
@@ -46,7 +46,7 @@
                                             <constraint firstAttribute="height" constant="1" id="uP0-IJ-Wwq"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邮箱号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-4U-P9S">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邮箱号/手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-4U-P9S">
                                         <rect key="frame" x="75" y="208" width="258" height="15"/>
                                         <color key="textColor" red="0.84166496989999995" green="0.758013308" blue="0.65390139820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -61,7 +61,7 @@
                                         <rect key="frame" x="75" y="257" width="258" height="15"/>
                                         <color key="textColor" red="0.84166496989999995" green="0.758013308" blue="0.65390139820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                 <color key="value" red="0.84166496989999995" green="0.758013308" blue="0.65390139820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -189,6 +189,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="1Rd-DE-YmK" firstAttribute="leading" secondItem="Ael-3J-CJl" secondAttribute="leading" constant="42" id="0uu-xR-ETG"/>
                                     <constraint firstItem="Jen-3z-Eok" firstAttribute="top" secondItem="qYS-hh-Noq" secondAttribute="bottom" constant="26" id="1S6-jt-dXE"/>
@@ -241,6 +242,9 @@
                                     <constraint firstItem="GvA-va-oyX" firstAttribute="centerX" secondItem="D8B-MW-JfB" secondAttribute="centerX" id="zp7-J2-ZSY"/>
                                     <constraint firstItem="qYS-hh-Noq" firstAttribute="trailing" secondItem="68p-o6-jlQ" secondAttribute="trailing" id="zzZ-ad-G28"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Il9-rY-US4" appends="YES" id="KVh-Ht-oq9"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -260,6 +264,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Il9-rY-US4">
+                    <connections>
+                        <action selector="tapRegistKeyboardAction:" destination="BYZ-38-t0r" id="9l8-gn-zoT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="32.833583208395808"/>
         </scene>
