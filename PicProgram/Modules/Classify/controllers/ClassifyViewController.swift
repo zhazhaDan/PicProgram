@@ -122,7 +122,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { (tag) in
             print("去登录")
         }
-        self.title = "分类"
+        self.title = LocalizedLanguageTool().getString(forKey: "Category")
     }
     
     

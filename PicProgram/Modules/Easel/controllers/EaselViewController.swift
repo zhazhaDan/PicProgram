@@ -26,7 +26,7 @@ class EaselViewController: BaseViewController {
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
-        self.title = "画架"
+        self.title = LocalizedLanguageTool().getString(forKey: "Art Works")
     }
     
     @IBAction func titleChooseAction(_ sender: UIButton) {

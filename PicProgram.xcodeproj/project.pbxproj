@@ -171,6 +171,8 @@
 		F71952D41FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952D21FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.xib */; };
 		F71952D71FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952D51FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift */; };
 		F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */; };
+		F71952E51FCEFA6000ED9D68 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952E31FCEFA6000ED9D68 /* SettingViewController.swift */; };
+		F71952E61FCEFA6000ED9D68 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */; };
 		F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9B1FB345D90033D69C /* FindHeaderView.swift */; };
 		F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9D1FB354590033D69C /* WebViewController.swift */; };
 		F7A5AD701FB7411000B74AF1 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A5AD6F1FB7411000B74AF1 /* PicturesViewController.swift */; };
@@ -350,6 +352,8 @@
 		F71952D21FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifyEmotionCollectionReusableView.xib; sourceTree = "<group>"; };
 		F71952D51FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionDetailListViewController.swift; sourceTree = "<group>"; };
 		F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifyEmotionDetailListViewController.xib; sourceTree = "<group>"; };
+		F71952E31FCEFA6000ED9D68 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		F7845C9B1FB345D90033D69C /* FindHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHeaderView.swift; sourceTree = "<group>"; };
 		F7845C9D1FB354590033D69C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F7A5AD6F1FB7411000B74AF1 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
@@ -618,6 +622,8 @@
 				3AB78BFD1FC2D7C0001D9A43 /* UserViewController.xib */,
 				3AB78C001FC412D6001D9A43 /* SystemPicsCollectionViewController.swift */,
 				3AB78C011FC412D6001D9A43 /* SystemPicsCollectionViewController.xib */,
+				F71952E31FCEFA6000ED9D68 /* SettingViewController.swift */,
+				F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -863,6 +869,7 @@
 				3A9963FE1F9E175400077307 /* PicDetailCollectionViewCell.xib in Resources */,
 				F71952D01FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib in Resources */,
 				3AB78BFF1FC2D7C0001D9A43 /* UserViewController.xib in Resources */,
+				F71952E61FCEFA6000ED9D68 /* SettingViewController.xib in Resources */,
 				3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */,
 				3A0B8B391FBD91F1006F09E9 /* EmotionCollectionViewCell.xib in Resources */,
 				3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */,
@@ -960,6 +967,7 @@
 				3AB5DD3E1F8CB192004897B5 /* Extension+UIView.swift in Sources */,
 				3A53875A1F95E22E00BA4359 /* FindPassInputCodeViewController.swift in Sources */,
 				3AB78C091FC55840001D9A43 /* GDPhotoTool.swift in Sources */,
+				F71952E51FCEFA6000ED9D68 /* SettingViewController.swift in Sources */,
 				3A9CCC611FA1EC3E00FC33BD /* ArtHeaderView.swift in Sources */,
 				3A9CCC5B1FA1E61D00FC33BD /* ItemView.swift in Sources */,
 				3AB5DD371F8CB192004897B5 /* WindowRootViewController.swift in Sources */,

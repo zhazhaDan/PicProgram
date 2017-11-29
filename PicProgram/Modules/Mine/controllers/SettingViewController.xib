@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="PicProgram" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="uVC-al-gqf" id="KH5-9A-Pve"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uVC-al-gqf">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="rQl-or-vUw"/>
+                        <outlet property="delegate" destination="-1" id="d5o-23-hqy"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uW0-cT-GH0">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="6KI-55-HgS"/>
+                    </constraints>
+                    <state key="normal" title="退出登录" backgroundImage="bianjihuadan_anniu">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="BT9-1J-QIB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uVC-al-gqf" secondAttribute="bottom" id="BZd-g1-KzL"/>
+                <constraint firstItem="uW0-cT-GH0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="I33-E6-HB2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uW0-cT-GH0" secondAttribute="bottom" id="Jxp-Xa-XVp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uVC-al-gqf" secondAttribute="trailing" id="Pew-Xx-D8X"/>
+                <constraint firstItem="uVC-al-gqf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QrO-Ng-vNw"/>
+                <constraint firstItem="uVC-al-gqf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="ZEL-sF-4jL"/>
+                <constraint firstItem="uW0-cT-GH0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="d23-ZS-0QH"/>
+                <constraint firstItem="uVC-al-gqf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" id="eh9-w0-IB8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bianjihuadan_anniu" width="375" height="56"/>
+    </resources>
+</document>
