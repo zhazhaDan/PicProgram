@@ -42,7 +42,7 @@ open class PKHUDSquareBaseView: UIView {
     }()
 
     open let titleLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel.init(frame: CGRect.zero)
         label.textAlignment = .center
         label.font = xsFont(12)
         label.textColor = UIColor.white
@@ -52,7 +52,7 @@ open class PKHUDSquareBaseView: UIView {
     }()
 
     open let subtitleLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel.init(frame: CGRect.zero)
         label.textAlignment = .center
         label.font = xsFont(12)
         label.textColor = UIColor.white

@@ -37,6 +37,9 @@
 		3A23CD211FC2AF3C009C238C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23CD201FC2AF3C009C238C /* UserInfo.swift */; };
 		3A3BF8031FBC29BD0013BB9D /* LiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */; };
 		3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */; };
+		3A414E481FCE532B0046E2B7 /* FontChange+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A414E471FCE532B0046E2B7 /* FontChange+UILabel.swift */; };
+		3A414E4B1FCEB66C0046E2B7 /* content.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A414E4D1FCEB66C0046E2B7 /* content.strings */; };
+		3A414E501FCEC2920046E2B7 /* LocalizedLanguageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A414E4F1FCEC2920046E2B7 /* LocalizedLanguageTool.swift */; };
 		3A41AD2D1F94947C000BCC16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A41AD2F1F94947C000BCC16 /* InfoPlist.strings */; };
 		3A41AD541F9599A3000BCC16 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41AD521F9599A3000BCC16 /* RegisterViewController.swift */; };
 		3A41AD551F9599A3000BCC16 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A41AD531F9599A3000BCC16 /* RegisterViewController.xib */; };
@@ -205,6 +208,10 @@
 		3A23CD201FC2AF3C009C238C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiningViewController.swift; sourceTree = "<group>"; };
 		3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiningViewController.xib; sourceTree = "<group>"; };
+		3A414E471FCE532B0046E2B7 /* FontChange+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FontChange+UILabel.swift"; sourceTree = "<group>"; };
+		3A414E4C1FCEB66C0046E2B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/content.strings; sourceTree = "<group>"; };
+		3A414E4E1FCEB6810046E2B7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/content.strings"; sourceTree = "<group>"; };
+		3A414E4F1FCEC2920046E2B7 /* LocalizedLanguageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLanguageTool.swift; sourceTree = "<group>"; };
 		3A41AD2A1F9493EB000BCC16 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3A41AD2E1F94947C000BCC16 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		3A41AD301F9494A5000BCC16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -504,6 +511,7 @@
 				3AB5DC1A1F8CB119004897B5 /* Assets.xcassets */,
 				3AB5DC1C1F8CB119004897B5 /* LaunchScreen.storyboard */,
 				3AB5DC1F1F8CB119004897B5 /* Info.plist */,
+				3A414E4D1FCEB66C0046E2B7 /* content.strings */,
 				3A53875E1F95E7D700BA4359 /* Mine.storyboard */,
 				3A41AD2F1F94947C000BCC16 /* InfoPlist.strings */,
 				3AB5DC171F8CB119004897B5 /* PicProgram.xcdatamodeld */,
@@ -553,6 +561,7 @@
 				3AB5DC6D1F8CB192004897B5 /* Shadow+UIView.swift */,
 				3AB5DC6E1F8CB192004897B5 /* URLEncode+String.swift */,
 				3AB5DC6F1F8CB192004897B5 /* XSImage+UIImageView.swift */,
+				3A414E471FCE532B0046E2B7 /* FontChange+UILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -632,7 +641,6 @@
 			children = (
 				3AB5DCA51F8CB192004897B5 /* NetworkStatus */,
 				3AB5DCA71F8CB192004897B5 /* PKHUD */,
-				3AB5DCBA1F8CB192004897B5 /* UMengSDK */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -670,13 +678,6 @@
 			path = PKHUD;
 			sourceTree = "<group>";
 		};
-		3AB5DCBA1F8CB192004897B5 /* UMengSDK */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UMengSDK;
-			sourceTree = "<group>";
-		};
 		3AB5DCBB1F8CB192004897B5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -690,6 +691,7 @@
 				3AB5DCC31F8CB192004897B5 /* HomePageNavigationController.swift */,
 				3AB5DCC41F8CB192004897B5 /* ShadowView.swift */,
 				3A7266471FC819D300727509 /* TestViewController.swift */,
+				3A414E4F1FCEC2920046E2B7 /* LocalizedLanguageTool.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -837,6 +839,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 3AB5DC041F8CB119004897B5;
 			productRefGroup = 3AB5DC0E1F8CB119004897B5 /* Products */;
@@ -885,6 +888,7 @@
 				3A0085D51FB475F100BACFD0 /* PlayMoreView.xib in Resources */,
 				3A0B8B451FBE83FE006F09E9 /* EaselPaintCollectionViewCell.xib in Resources */,
 				3A127A5C1FB9831600A781B1 /* EditPaintDetailViewController.xib in Resources */,
+				3A414E4B1FCEB66C0046E2B7 /* content.strings in Resources */,
 				3A5387571F95DF6B00BA4359 /* FindPassInputCodeViewController.xib in Resources */,
 				3ADB94A81FA753AE00711445 /* PlayViewController.xib in Resources */,
 				3A9963F21F9DEE6700077307 /* RecommandListCollectionViewCell.xib in Resources */,
@@ -1007,6 +1011,7 @@
 				3A0B8B441FBE83FE006F09E9 /* EaselPaintCollectionViewCell.swift in Sources */,
 				3AB5DD311F8CB192004897B5 /* PKHUDSquareBaseView.swift in Sources */,
 				F71952D71FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift in Sources */,
+				3A414E501FCEC2920046E2B7 /* LocalizedLanguageTool.swift in Sources */,
 				3A23CD211FC2AF3C009C238C /* UserInfo.swift in Sources */,
 				3AB5DD271F8CB192004897B5 /* FrameView.swift in Sources */,
 				3AB5DD3D1F8CB192004897B5 /* BaseViewController.swift in Sources */,
@@ -1029,6 +1034,7 @@
 				3AB5DD3B1F8CB192004897B5 /* BaseTabBarController.swift in Sources */,
 				3A9963DB1F9C9B7B00077307 /* ArtReadTableViewCell.swift in Sources */,
 				3AD84C041F99CDDE009F3BD5 /* CustomViewProtocol.swift in Sources */,
+				3A414E481FCE532B0046E2B7 /* FontChange+UILabel.swift in Sources */,
 				3A0B8B3A1FBD91F1006F09E9 /* EmotionView.swift in Sources */,
 				3A6F49B81FC6C7C3001AE767 /* AlbumTableViewCell.swift in Sources */,
 				3A7C827E1FAC2B2000793420 /* PictureDetailViewController.swift in Sources */,
@@ -1073,6 +1079,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3A414E4D1FCEB66C0046E2B7 /* content.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A414E4C1FCEB66C0046E2B7 /* en */,
+				3A414E4E1FCEB6810046E2B7 /* zh-Hans */,
+			);
+			name = content.strings;
+			sourceTree = "<group>";
+		};
 		3A41AD2F1F94947C000BCC16 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
