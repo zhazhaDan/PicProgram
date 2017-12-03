@@ -32,6 +32,8 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         network.requestData(.user_logout, params: nil, finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
                 UserInfo.user.localLogout()
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
             }
         }, nil)
     }

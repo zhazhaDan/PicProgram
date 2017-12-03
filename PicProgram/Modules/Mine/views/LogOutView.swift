@@ -44,11 +44,14 @@ class LogOutView: BaseScrollView {
         
         let shebeiTitleView = UIButton.init(frame: CGRect.init(x: 0, y: headerBackView.bottom, width: self.width, height: 41))
         shebeiTitleView.isUserInteractionEnabled = false
-        shebeiTitleView.setBackgroundImage(#imageLiteral(resourceName: "jianbiantiao"), for: .normal)
         shebeiTitleView.setTitle("设备", for: .normal)
         shebeiTitleView.titleLabel?.font = xsFont(15)
         shebeiTitleView.setTitleColor(xsColor_main_text_blue, for: .normal)
         self.addSubview(shebeiTitleView)
+        
+        let lineImageView = UIImageView.init(image: #imageLiteral(resourceName: "jianbiantiao"))
+        lineImageView.frame = CGRect.init(x: 0, y: shebeiTitleView.bottom, width: shebeiTitleView.width, height: 3)
+        self.addSubview(lineImageView)
         
         let noDeviceView = UIImageView.init(frame: CGRect.init(x: (self.width - 267)/2, y: shebeiTitleView.bottom + 29, width: 267, height: 175))
         noDeviceView.image = #imageLiteral(resourceName: "08wode_shebeikuang")
