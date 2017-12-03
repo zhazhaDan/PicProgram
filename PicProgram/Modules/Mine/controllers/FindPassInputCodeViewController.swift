@@ -40,9 +40,10 @@ class FindPassInputCodeViewController: BaseViewController {
         }
         network.requestData(.user_register, params: param, finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0{
-                self?.navigationController?.popToRootViewController(animated: true)
+//                self?.navigationController?.popToRootViewController(animated: true)
                 UserInfo.user.setValuesForKeys(result)
                 UserInfo.user.updateUserInfo()
+                self?.dismiss(animated: true, completion: nil)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }

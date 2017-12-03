@@ -128,6 +128,7 @@ class  NetworkTool{
         case .user_reset_password:
             apiString = "user/reset_password"
         case .user_logout:
+            method = .get
             apiString = "user/logout"
         case .user_info:
             method = .get

@@ -23,6 +23,7 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
     }
     
     @IBAction func holdRegistAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func thirdLoginAction(_ sender: Any) {
@@ -35,11 +36,19 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
 
-        // Do any additional setup after loading the view.
+        self.customNavigationView()
     }
 
+    
+    func customNavigationView() {
+        self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        self.title = LocalizedLanguageTool().getString(forKey: "Art Works")
+    }
+    
+    
     @IBAction func tapRegistKeyboardAction(_ sender: Any) {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
@@ -60,7 +69,8 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
                 HUDTool.show(.text, text: "登录成功", delay: 0.6, view: (self?.view)!, complete: nil)
                 UserInfo.user.setValuesForKeys(result)
                 UserInfo.user.updateUserInfo()
-                self?.navigationController?.popToRootViewController(animated: true)
+//                self?.navigationController?.popToRootViewController(animated: true)
+                self?.dismiss(animated: true, completion: nil)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self?.view)!, complete: nil)
             }
