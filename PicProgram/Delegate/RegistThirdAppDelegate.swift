@@ -55,6 +55,8 @@ class RegistThirdAppDelegate: UIResponder {
                     break
                 }
         })
+        UserInfo.user.readUserDefaults()
+
         return true
     }
     

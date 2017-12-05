@@ -19,16 +19,6 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         super.viewDidLoad()
         requestData()
         self.currentView.addSubview(todayView)
-        
-        let f = UIFont.familyNames
-        for string in f {
-            print(string+":-->")
-            let fs = UIFont.fontNames(forFamilyName: string)
-            for fo in fs {
-                print(fo+"++++")
-            }
-            print("\n")
-        }
     }
 
     

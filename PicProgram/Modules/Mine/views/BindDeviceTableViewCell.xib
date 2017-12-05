@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="th2-Mk-aDz" userLabel="BindDeviceTableViewCell" customClass="BindUserTableViewCell" customModule="PicProgram" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="th2-Mk-aDz" userLabel="BindDeviceTableViewCell" customClass="BindDeviceTableViewCell" customModule="PicProgram" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th2-Mk-aDz" id="tF2-Hi-A4I">
@@ -33,13 +33,16 @@
                             <constraint firstAttribute="height" constant="15" id="o2x-pf-t2V"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="批准">
+                        <state key="normal" title="移除">
                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="7.5"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="removeRelationshipAction:" destination="th2-Mk-aDz" eventType="touchUpInside" id="2I7-Vg-fOX"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEX-BG-3ic">
                         <rect key="frame" x="114" y="15" width="96" height="14.5"/>
@@ -59,8 +62,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="adminButton" destination="7t0-b0-lkS" id="c4a-ov-an7"/>
-                <outlet property="promiseButton" destination="V4H-Co-hdc" id="pV4-9x-c95"/>
+                <outlet property="adminButton" destination="7t0-b0-lkS" id="gYh-d6-8ut"/>
+                <outlet property="deviceNameLabel" destination="HEX-BG-3ic" id="iPM-hk-sr0"/>
                 <outlet property="userNameLabel" destination="HEX-BG-3ic" id="IPE-hZ-llk"/>
             </connections>
         </tableViewCell>

@@ -14,8 +14,7 @@ private let cellReuseIdentifier = "BindDeviceTableViewCell"
 class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
-    
+
     var dataSource: Array<[String:Any]>!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +30,13 @@ class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let subCell = cell as! BindUserTableViewCell
-        
+        let subCell = cell as! BindDeviceTableViewCell
+        let item = dataSource[indexPath.row]
+        if item["flag"] as! Int == 1 {
+            subCell.adminButton.isHidden = false
+        }else {
+            subCell.adminButton.isHidden = true
+        }
+        subCell.deviceNameLabel.text = item["device_name"] as! String
     }
 }

@@ -9,12 +9,17 @@
 import UIKit
 
 class BindDeviceTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var adminButton: UIButton!
+    @IBOutlet weak var deviceNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    @IBAction func removeRelationshipAction(_ sender: Any) {
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
