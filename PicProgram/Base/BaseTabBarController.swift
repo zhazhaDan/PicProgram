@@ -36,7 +36,7 @@ class BaseTabBarController: UITabBarController {
         easelVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         easelVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
         
-        let minVC = MineViewController()
+        let minVC = MineViewController.init(nibName: "MineViewController", bundle: Bundle.main)
         minVC.tabBarItem = UITabBarItem.init(title: LocalizedLanguageTool().getString(forKey: "My Account"), image: UIImage.init(named: "weixuanzhongwode_icon")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage.init(named: "weixuanzhongwode_icon"))
 
         minVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)

@@ -9,7 +9,14 @@
 import UIKit
 
 class MineViewController: BaseViewController,MineViewProtocol {
-    var mineView:LogOutView!
+//    var mineView:LogOutView!
+    @IBOutlet weak var userBackImageView: UIImageView!
+    @IBOutlet weak var userIconButton: UIButton!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var contentView: UIView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
@@ -21,7 +28,7 @@ class MineViewController: BaseViewController,MineViewProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.mineView.headerButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
+        self.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -34,14 +41,18 @@ class MineViewController: BaseViewController,MineViewProtocol {
     }
 
     override func buildUI() {
-        mineView = LogOutView.init(frame: self.view.bounds)
-        mineView.cDelegate = self
-        self.view.addSubview(mineView)
+        self.userIconButton.layer.borderWidth = 2
+        self.userIconButton.layer.borderColor = xsColor_main_white.cgColor
+        let deviceView = Bundle.main.loadNibNamed("DeviceManageView", owner: nil, options: nil)?.first as! DeviceManageView
+        deviceView.cDelegate = self
+        deviceView.frame = contentView.bounds
+        self.contentView.addSubview(deviceView)
+
     }
     
     override func requestData() {
         UserInfo.user.updateUserInfo {[weak self] in
-            self?.mineView.headerButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
+            self?.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
         }
     }
    
@@ -49,7 +60,6 @@ class MineViewController: BaseViewController,MineViewProtocol {
         if UserInfo.user.checkUserLogin() == false {
             let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
             let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
-//            self.navigationController?.pushViewController(login, animated: true)
             self.present(HomePageNavigationController.init(rootViewController: login), animated: true, completion: nil)
         }else {//点击前往个人资料
             let vc = UserViewController.init(nibName: "UserViewController", bundle: Bundle.main)
@@ -57,9 +67,37 @@ class MineViewController: BaseViewController,MineViewProtocol {
         }
     }
     
+    @IBAction func headerAction(_ sender: Any) {
+        headerDidSelected()
+    }
+    @IBAction func settingAction(_ sender: Any) {
+        settingDidSelected()
+    }
+    
+    @IBAction func playAction(_ sender: Any) {
+    }
+    
     func settingDidSelected() {
         let vc = SettingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func deviceManageSelected() {
+        let bindView = Bundle.main.loadNibNamed("MineBindDeviceView", owner: nil, options: nil)?.first as! MineBindDeviceView
+        bindView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
+        self.contentView.addSubview(bindView)
+
+    }
+    
+    func addDeviceSelected() {
+        
+    }
+    func backSelectd() {
+        
+    }
+    
+    func wifiManageSelected() {
+        
     }
 
 }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DeviceManageView" customModule="PicProgram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQ6-CK-DKe">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="788-R7-Woe">
+                            <rect key="frame" x="90" y="0.5" width="195" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="DbH-GU-iHk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.1426818967" green="0.29433876279999999" blue="0.56016951800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jianbiantiao" translatesAutoresizingMaskIntoConstraints="NO" id="0cR-Po-eMA">
+                            <rect key="frame" x="0.0" y="38" width="375" height="3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="3" id="5NU-TY-5vU"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="0cR-Po-eMA" secondAttribute="trailing" id="Nr4-nv-39z"/>
+                        <constraint firstAttribute="bottom" secondItem="0cR-Po-eMA" secondAttribute="bottom" id="aUB-Cd-PfD"/>
+                        <constraint firstAttribute="height" constant="41" id="f43-04-yGx"/>
+                        <constraint firstItem="0cR-Po-eMA" firstAttribute="leading" secondItem="uQ6-CK-DKe" secondAttribute="leading" id="oa3-i9-FMh"/>
+                        <constraint firstItem="788-R7-Woe" firstAttribute="centerY" secondItem="uQ6-CK-DKe" secondAttribute="centerY" id="p54-ND-7pk"/>
+                        <constraint firstAttribute="trailing" secondItem="788-R7-Woe" secondAttribute="trailing" constant="90" id="pFc-vm-Dho"/>
+                        <constraint firstItem="788-R7-Woe" firstAttribute="leading" secondItem="uQ6-CK-DKe" secondAttribute="leading" constant="90" id="pHE-ZM-vj9"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeD-n3-p2J">
+                    <rect key="frame" x="53.5" y="91" width="267" height="175"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="175" id="FNW-7v-RKc"/>
+                        <constraint firstAttribute="width" constant="267" id="dfQ-Rg-4qx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="25"/>
+                    <state key="normal" title="暂无绑定设备" backgroundImage="08wode_shebeikuang">
+                        <color key="titleColor" red="0.1426818967" green="0.29433876279999999" blue="0.56016951800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="NoA-tK-XU4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sns-DM-JB6">
+                    <rect key="frame" x="102" y="284" width="70" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Rvb-qz-vBu"/>
+                        <constraint firstAttribute="height" constant="60" id="uHR-i8-XoA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="titleEdgeInsets" minX="-20" minY="29" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="29"/>
+                    <state key="normal" title="添加设备" image="08wode_tianjiashebei">
+                        <color key="titleColor" red="0.1426818967" green="0.29433876279999999" blue="0.56016951800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="fiO-NT-kdH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ig-f9-LhW">
+                    <rect key="frame" x="202" y="284" width="70" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="titleEdgeInsets" minX="-25" minY="29" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="29"/>
+                    <state key="normal" title="Wi-fi配置" image="08wode_wifipeizhi">
+                        <color key="titleColor" red="0.1426818967" green="0.29433876279999999" blue="0.56016951800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="chr-6A-qe8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VeD-n3-p2J" firstAttribute="centerX" secondItem="uQ6-CK-DKe" secondAttribute="centerX" id="0Sv-lY-LLN"/>
+                <constraint firstItem="5Ig-f9-LhW" firstAttribute="height" secondItem="Sns-DM-JB6" secondAttribute="height" id="1Ck-MN-51w"/>
+                <constraint firstItem="uQ6-CK-DKe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FaV-hG-BgA"/>
+                <constraint firstItem="VeD-n3-p2J" firstAttribute="top" secondItem="uQ6-CK-DKe" secondAttribute="bottom" constant="50" id="K4A-Ok-l76"/>
+                <constraint firstItem="5Ig-f9-LhW" firstAttribute="width" secondItem="Sns-DM-JB6" secondAttribute="width" id="Mct-d2-sgK"/>
+                <constraint firstAttribute="trailing" secondItem="uQ6-CK-DKe" secondAttribute="trailing" id="Upe-rp-jYp"/>
+                <constraint firstItem="Sns-DM-JB6" firstAttribute="centerX" secondItem="VeD-n3-p2J" secondAttribute="centerX" constant="-50" id="WhZ-x0-6M6"/>
+                <constraint firstItem="Sns-DM-JB6" firstAttribute="top" secondItem="VeD-n3-p2J" secondAttribute="bottom" constant="18" id="YxM-XP-QWK"/>
+                <constraint firstItem="5Ig-f9-LhW" firstAttribute="top" secondItem="Sns-DM-JB6" secondAttribute="top" id="kbd-hk-ohI"/>
+                <constraint firstItem="uQ6-CK-DKe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mic-03-RKk"/>
+                <constraint firstItem="5Ig-f9-LhW" firstAttribute="centerX" secondItem="VeD-n3-p2J" secondAttribute="centerX" constant="50" id="myD-Z4-SgZ"/>
+            </constraints>
+            <connections>
+                <outlet property="addDeviceButton" destination="Sns-DM-JB6" id="ibg-Ig-9Ey"/>
+                <outlet property="deviceManageButton" destination="VeD-n3-p2J" id="pMY-yQ-Zdh"/>
+                <outlet property="titleLabel" destination="788-R7-Woe" id="KOH-by-xQz"/>
+                <outlet property="wifiButton" destination="5Ig-f9-LhW" id="lu1-X2-i8y"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="08wode_shebeikuang" width="267" height="175"/>
+        <image name="08wode_tianjiashebei" width="25" height="29"/>
+        <image name="08wode_wifipeizhi" width="34" height="23"/>
+        <image name="jianbiantiao" width="375" height="6"/>
+    </resources>
+</document>

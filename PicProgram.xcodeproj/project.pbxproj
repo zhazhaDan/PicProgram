@@ -32,9 +32,15 @@
 		3A12A7931F8F1EED008C0C9F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A12A7921F8F1EE8008C0C9F /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3A12A7951F8F1EF3008C0C9F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A12A7941F8F1EF3008C0C9F /* libsqlite3.tbd */; };
 		3A12A7971F8F1F77008C0C9F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A12A7961F8F1F73008C0C9F /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3A12A79A1F8F69AF008C0C9F /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12A7991F8F69AF008C0C9F /* LogOutView.swift */; };
+		3A12A79A1F8F69AF008C0C9F /* DeviceManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12A7991F8F69AF008C0C9F /* DeviceManageView.swift */; };
 		3A12A79C1F8F69C0008C0C9F /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12A79B1F8F69C0008C0C9F /* MineView.swift */; };
 		3A23CD211FC2AF3C009C238C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23CD201FC2AF3C009C238C /* UserInfo.swift */; };
+		3A2616611FD695F6004A6A56 /* DeviceManageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2616601FD695F6004A6A56 /* DeviceManageView.xib */; };
+		3A2616631FD69644004A6A56 /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2616621FD69644004A6A56 /* MineViewController.xib */; };
+		3A2616661FD6A9CD004A6A56 /* MineBindDeviceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2616641FD6A9CD004A6A56 /* MineBindDeviceView.xib */; };
+		3A2616671FD6A9CD004A6A56 /* MineBindDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2616651FD6A9CD004A6A56 /* MineBindDeviceView.swift */; };
+		3A26166A1FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2616681FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift */; };
+		3A26166B1FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2616691FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib */; };
 		3A3BF8031FBC29BD0013BB9D /* LiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */; };
 		3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */; };
 		3A414E481FCE532B0046E2B7 /* FontChange+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A414E471FCE532B0046E2B7 /* FontChange+UILabel.swift */; };
@@ -64,6 +70,7 @@
 		3A7BA0E31FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */; };
 		3A7C827E1FAC2B2000793420 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C827C1FAC2B2000793420 /* PictureDetailViewController.swift */; };
 		3A7C827F1FAC2B2000793420 /* PictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C827D1FAC2B2000793420 /* PictureDetailViewController.xib */; };
+		3A92E8271FD68C9A00C7B5A3 /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92E8261FD68C9A00C7B5A3 /* GifViewController.swift */; };
 		3A9963CB1F9C6A5A00077307 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9963C91F9C6A5A00077307 /* FindViewController.swift */; };
 		3A9963CC1F9C6A5A00077307 /* FindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9963CA1F9C6A5A00077307 /* FindViewController.xib */; };
 		3A9963DB1F9C9B7B00077307 /* ArtReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9963D91F9C9B7B00077307 /* ArtReadTableViewCell.swift */; };
@@ -174,8 +181,8 @@
 		F71952E61FCEFA6000ED9D68 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */; };
 		F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9B1FB345D90033D69C /* FindHeaderView.swift */; };
 		F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9D1FB354590033D69C /* WebViewController.swift */; };
-		F784EEBF1FD2897800DD1B6F /* MineBindDevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784EEBE1FD2897800DD1B6F /* MineBindDevicesView.swift */; };
-		F784EEC11FD2898800DD1B6F /* MineBindDevicesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F784EEC01FD2898800DD1B6F /* MineBindDevicesView.xib */; };
+		F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */; };
+		F784EEC11FD2898800DD1B6F /* DeviceBindUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F784EEC01FD2898800DD1B6F /* DeviceBindUserView.xib */; };
 		F784EEC41FD28DBD00DD1B6F /* BindUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784EEC21FD28DBD00DD1B6F /* BindUserTableViewCell.swift */; };
 		F784EEC51FD28DBD00DD1B6F /* BindUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F784EEC31FD28DBD00DD1B6F /* BindUserTableViewCell.xib */; };
 		F7A5AD701FB7411000B74AF1 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A5AD6F1FB7411000B74AF1 /* PicturesViewController.swift */; };
@@ -208,9 +215,15 @@
 		3A12A7941F8F1EF3008C0C9F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3A12A7961F8F1F73008C0C9F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		3A12A7981F8F24B9008C0C9F /* PicProgram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicProgram-Bridging-Header.h"; sourceTree = "<group>"; };
-		3A12A7991F8F69AF008C0C9F /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
+		3A12A7991F8F69AF008C0C9F /* DeviceManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManageView.swift; sourceTree = "<group>"; };
 		3A12A79B1F8F69C0008C0C9F /* MineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineView.swift; sourceTree = "<group>"; };
 		3A23CD201FC2AF3C009C238C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3A2616601FD695F6004A6A56 /* DeviceManageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceManageView.xib; sourceTree = "<group>"; };
+		3A2616621FD69644004A6A56 /* MineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
+		3A2616641FD6A9CD004A6A56 /* MineBindDeviceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineBindDeviceView.xib; sourceTree = "<group>"; };
+		3A2616651FD6A9CD004A6A56 /* MineBindDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineBindDeviceView.swift; sourceTree = "<group>"; };
+		3A2616681FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindDeviceTableViewCell.swift; sourceTree = "<group>"; };
+		3A2616691FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindDeviceTableViewCell.xib; sourceTree = "<group>"; };
 		3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiningViewController.swift; sourceTree = "<group>"; };
 		3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiningViewController.xib; sourceTree = "<group>"; };
 		3A414E471FCE532B0046E2B7 /* FontChange+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FontChange+UILabel.swift"; sourceTree = "<group>"; };
@@ -243,6 +256,7 @@
 		3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDetailHeaderStyle3View.swift; sourceTree = "<group>"; };
 		3A7C827C1FAC2B2000793420 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
 		3A7C827D1FAC2B2000793420 /* PictureDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureDetailViewController.xib; sourceTree = "<group>"; };
+		3A92E8261FD68C9A00C7B5A3 /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
 		3A9963C91F9C6A5A00077307 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		3A9963CA1F9C6A5A00077307 /* FindViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindViewController.xib; sourceTree = "<group>"; };
 		3A9963D91F9C9B7B00077307 /* ArtReadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtReadTableViewCell.swift; sourceTree = "<group>"; };
@@ -358,8 +372,8 @@
 		F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		F7845C9B1FB345D90033D69C /* FindHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHeaderView.swift; sourceTree = "<group>"; };
 		F7845C9D1FB354590033D69C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		F784EEBE1FD2897800DD1B6F /* MineBindDevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineBindDevicesView.swift; sourceTree = "<group>"; };
-		F784EEC01FD2898800DD1B6F /* MineBindDevicesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineBindDevicesView.xib; sourceTree = "<group>"; };
+		F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBindUserView.swift; sourceTree = "<group>"; };
+		F784EEC01FD2898800DD1B6F /* DeviceBindUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceBindUserView.xib; sourceTree = "<group>"; };
 		F784EEC21FD28DBD00DD1B6F /* BindUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindUserTableViewCell.swift; sourceTree = "<group>"; };
 		F784EEC31FD28DBD00DD1B6F /* BindUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindUserTableViewCell.xib; sourceTree = "<group>"; };
 		F7A5AD6F1FB7411000B74AF1 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
@@ -593,6 +607,7 @@
 				3A0B8B241FBD91F0006F09E9 /* Easel */,
 				3AD84BF71F99CDDD009F3BD5 /* Find */,
 				3AB5DC8C1F8CB192004897B5 /* Mine */,
+				3A92E8261FD68C9A00C7B5A3 /* GifViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -615,6 +630,7 @@
 				3AB5DC8E1F8CB192004897B5 /* ChatViewController.swift */,
 				3AB5DC8F1F8CB192004897B5 /* DeviceManagerViewController.swift */,
 				3AB5DC901F8CB192004897B5 /* MineViewController.swift */,
+				3A2616621FD69644004A6A56 /* MineViewController.xib */,
 				3AB5DC911F8CB192004897B5 /* ScanQRCodeViewController.swift */,
 				3A41AD521F9599A3000BCC16 /* RegisterViewController.swift */,
 				3A41AD531F9599A3000BCC16 /* RegisterViewController.xib */,
@@ -637,16 +653,21 @@
 			isa = PBXGroup;
 			children = (
 				3AA7A15F1F8DC16000DDF7CB /* LoginView.swift */,
-				3A12A7991F8F69AF008C0C9F /* LogOutView.swift */,
+				3A12A7991F8F69AF008C0C9F /* DeviceManageView.swift */,
+				3A2616601FD695F6004A6A56 /* DeviceManageView.xib */,
 				3A12A79B1F8F69C0008C0C9F /* MineView.swift */,
 				3AD84BF51F99ABD4009F3BD5 /* TextFieldExtension.swift */,
 				3AB78C041FC5322C001D9A43 /* AlbumListView.swift */,
 				3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */,
 				3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */,
-				F784EEBE1FD2897800DD1B6F /* MineBindDevicesView.swift */,
-				F784EEC01FD2898800DD1B6F /* MineBindDevicesView.xib */,
+				F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */,
+				F784EEC01FD2898800DD1B6F /* DeviceBindUserView.xib */,
+				3A2616651FD6A9CD004A6A56 /* MineBindDeviceView.swift */,
+				3A2616641FD6A9CD004A6A56 /* MineBindDeviceView.xib */,
 				F784EEC21FD28DBD00DD1B6F /* BindUserTableViewCell.swift */,
 				F784EEC31FD28DBD00DD1B6F /* BindUserTableViewCell.xib */,
+				3A2616681FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift */,
+				3A2616691FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -882,6 +903,8 @@
 				3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */,
 				3A0B8B391FBD91F1006F09E9 /* EmotionCollectionViewCell.xib in Resources */,
 				3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */,
+				3A2616661FD6A9CD004A6A56 /* MineBindDeviceView.xib in Resources */,
+				3A26166B1FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib in Resources */,
 				3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */,
 				F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */,
 				3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */,
@@ -899,12 +922,14 @@
 				3A6A8B951FBAA15A0062B728 /* TipsViewController.xib in Resources */,
 				3AB5DD081F8CB192004897B5 /* Contents.json in Resources */,
 				3A5387601F95E7D700BA4359 /* Mine.storyboard in Resources */,
+				3A2616611FD695F6004A6A56 /* DeviceManageView.xib in Resources */,
 				3A9963CC1F9C6A5A00077307 /* FindViewController.xib in Resources */,
 				F784EEC51FD28DBD00DD1B6F /* BindUserTableViewCell.xib in Resources */,
+				3A2616631FD69644004A6A56 /* MineViewController.xib in Resources */,
 				3A53875B1F95E22E00BA4359 /* FindPassViewController.xib in Resources */,
 				3A0085D51FB475F100BACFD0 /* PlayMoreView.xib in Resources */,
 				3A0B8B451FBE83FE006F09E9 /* EaselPaintCollectionViewCell.xib in Resources */,
-				F784EEC11FD2898800DD1B6F /* MineBindDevicesView.xib in Resources */,
+				F784EEC11FD2898800DD1B6F /* DeviceBindUserView.xib in Resources */,
 				3A127A5C1FB9831600A781B1 /* EditPaintDetailViewController.xib in Resources */,
 				3A414E4B1FCEB66C0046E2B7 /* content.strings in Resources */,
 				3A5387571F95DF6B00BA4359 /* FindPassInputCodeViewController.xib in Resources */,
@@ -1034,6 +1059,7 @@
 				3A414E501FCEC2920046E2B7 /* LocalizedLanguageTool.swift in Sources */,
 				3A23CD211FC2AF3C009C238C /* UserInfo.swift in Sources */,
 				3AB5DD271F8CB192004897B5 /* FrameView.swift in Sources */,
+				3A92E8271FD68C9A00C7B5A3 /* GifViewController.swift in Sources */,
 				3AB5DD3D1F8CB192004897B5 /* BaseViewController.swift in Sources */,
 				3AB5DD391F8CB192004897B5 /* BaseNavigationController.swift in Sources */,
 				3AB5DD451F8CB1B7004897B5 /* RegistThirdAppDelegate.swift in Sources */,
@@ -1047,7 +1073,9 @@
 				3AB5DD011F8CB192004897B5 /* LengthLimit+UITextField.swift in Sources */,
 				3A6A8B941FBAA15A0062B728 /* TipsViewController.swift in Sources */,
 				3AB5DD301F8CB192004897B5 /* PKHUDRotatingImageView.swift in Sources */,
-				3A12A79A1F8F69AF008C0C9F /* LogOutView.swift in Sources */,
+				3A2616671FD6A9CD004A6A56 /* MineBindDeviceView.swift in Sources */,
+				3A26166A1FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift in Sources */,
+				3A12A79A1F8F69AF008C0C9F /* DeviceManageView.swift in Sources */,
 				3AB5DD2C1F8CB192004897B5 /* PKHUDAnimation.swift in Sources */,
 				3AB5DD401F8CB192004897B5 /* ShadowView.swift in Sources */,
 				3AB5DD031F8CB192004897B5 /* Shadow+UIView.swift in Sources */,
@@ -1086,7 +1114,7 @@
 				3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */,
 				F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */,
 				3A5387521F95DAB000BA4359 /* ChangePassViewController.swift in Sources */,
-				F784EEBF1FD2897800DD1B6F /* MineBindDevicesView.swift in Sources */,
+				F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */,
 				3AB5DD2F1F8CB192004897B5 /* PKHUDProgressView.swift in Sources */,
 				3A9CCC551FA1DB7A00FC33BD /* PioneerModel.swift in Sources */,
 				3AB5DD1B1F8CB192004897B5 /* ScanQRCodeViewController.swift in Sources */,

@@ -9,9 +9,9 @@
 import UIKit
 
 
-private let cellReuseIdentifier = "cellReuseIdentifier"
+private let cellReuseIdentifier = "BindDeviceTableViewCell"
 
-class MineBindDevicesView: BaseView,UITableViewDelegate,UITableViewDataSource {
+class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,7 +19,7 @@ class MineBindDevicesView: BaseView,UITableViewDelegate,UITableViewDataSource {
     var dataSource: Array<[String:Any]>!
     override func awakeFromNib() {
         super.awakeFromNib()
-        tableView.register(UINib.init(nibName: "BindUserTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentify)
+        tableView.register(UINib.init(nibName: "BindDeviceTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentify)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
