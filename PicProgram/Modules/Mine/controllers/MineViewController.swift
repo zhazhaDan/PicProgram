@@ -14,6 +14,8 @@ class MineViewController: BaseViewController,MineViewProtocol {
     @IBOutlet weak var userIconButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var cScrollView: UIScrollView!
     var deviceDatas:Array<[String:Any]> = Array()
     
     
@@ -27,7 +29,7 @@ class MineViewController: BaseViewController,MineViewProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
+//        self.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -41,13 +43,18 @@ class MineViewController: BaseViewController,MineViewProtocol {
     }
 
     override func buildUI() {
+        self.userIconButton.layer.cornerRadius = self.userIconButton.width/2
+        self.userIconButton.layer.masksToBounds = true
         self.userIconButton.layer.borderWidth = 2
         self.userIconButton.layer.borderColor = xsColor_main_white.cgColor
         let deviceView = Bundle.main.loadNibNamed("DeviceManageView", owner: nil, options: nil)?.first as! DeviceManageView
         deviceView.cDelegate = self
-        deviceView.frame = contentView.bounds
-        self.contentView.addSubview(deviceView)
-
+        deviceView.frame = bottomView.bounds
+        self.bottomView.addSubview(deviceView)
+//        self.contentView.height = self.bottomView.bottom
+//        self.contentView.updateConstraints()
+//        self.cScrollView.contentSize = CGSize.init(width: cScrollView.width, height: contentView.bottom)
+//        self.cScrollView.updateConstraints()
     }
     
     override func requestData() {
