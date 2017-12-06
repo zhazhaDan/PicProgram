@@ -69,7 +69,7 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Find/controllers/PicDetailCollectionViewController.swift"
-                  timestampString = "534161549.516017"
+                  timestampString = "534250464.312465"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "234"
@@ -84,7 +84,7 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Find/controllers/PicDetailCollectionViewController.swift"
-                  timestampString = "534161549.517428"
+                  timestampString = "534250464.314126"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "235"
@@ -149,12 +149,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "534162926.756383"
+            timestampString = "534250464.072803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "settingDidSelected()"
+            landmarkName = "headerAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

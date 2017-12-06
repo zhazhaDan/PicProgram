@@ -49,6 +49,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentify, for: indexPath)
         cell.textLabel?.textColor = xsColor_main_yellow
+        cell.textLabel?.font = xsFont(15)
         cell.accessoryView = UIImageView.init(image: #imageLiteral(resourceName: "next"))
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
         return cell

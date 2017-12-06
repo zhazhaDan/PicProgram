@@ -16,9 +16,13 @@ class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
 
     var dataSource: Array<[String:Any]>!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         tableView.register(UINib.init(nibName: "BindDeviceTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentify)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsSelection = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

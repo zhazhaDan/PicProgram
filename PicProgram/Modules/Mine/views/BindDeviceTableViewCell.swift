@@ -11,10 +11,13 @@ import UIKit
 class BindDeviceTableViewCell: UITableViewCell {
     @IBOutlet weak var adminButton: UIButton!
     @IBOutlet weak var deviceNameLabel: UILabel!
+    @IBOutlet weak var unbundleButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.unbundleButton.layer.borderColor = xsColor_placeholder_grey.cgColor
+        self.unbundleButton.layer.borderWidth = 1
     }
     @IBAction func removeRelationshipAction(_ sender: Any) {
         

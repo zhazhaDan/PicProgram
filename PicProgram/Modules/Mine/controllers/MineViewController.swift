@@ -96,13 +96,22 @@ class MineViewController: BaseViewController,MineViewProtocol {
     func deviceManageSelected() {
         let backView = UIView.init(frame: self.view.bounds)
         backView.backgroundColor = xsColor("000000", alpha: 0.6)
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapRegistAction))
+        backView.addGestureRecognizer(tapGesture)
         let bindView = Bundle.main.loadNibNamed("MineBindDeviceView", owner: nil, options: nil)?.first as! MineBindDeviceView
         bindView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
         bindView.dataSource = [["device_id":1,"device_name":"某人的数字画框","flag":1],["device_id":2,"device_name":"某人的智能画框","flag":1],["device_id":3,"device_name":"智能画框","flag":0],["device_id":4,"device_name":"数字画框","flag":0]]
+        backView.tag = 100
         bindView.tableView.reloadData()
+        backView.addSubview(bindView)
         self.navigationController?.tabBarController?.view.addSubview(backView)
-        self.navigationController?.tabBarController?.view.addSubview(bindView)
+//        self.navigationController?.tabBarController?.view.addSubview(bindView)
 
+    }
+    
+    @objc func tapRegistAction() {
+        let backView = self.navigationController?.tabBarController?.view.viewWithTag(100)
+        backView?.removeFromSuperview()
     }
     
     func addDeviceSelected() {
