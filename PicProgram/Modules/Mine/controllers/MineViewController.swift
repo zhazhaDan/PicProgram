@@ -124,7 +124,9 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     
     func addDeviceSelected() {
-        
+        let qrView = Bundle.main.loadNibNamed("ScanCodeView", owner: nil, options: nil)?.first as! ScanCodeView
+        qrView.frame = bottomView.bounds
+        bottomView.addSubview(qrView)
     }
     func backSelectd() {
         

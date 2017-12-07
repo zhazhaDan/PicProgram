@@ -7,30 +7,37 @@
 //
 
 import UIKit
+import AVFoundation
 
-class TestViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate {
-    
-    var tableView:UITableView!
+class TestViewController: BaseViewController,AVCaptureMetadataOutputObjectsDelegate {
+    var captureSession:AVCaptureSession?
+    var videoPreviewLayer:AVCaptureVideoPreviewLayer?
+
+//    var tableView:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView = UIScrollView.init(frame: self.view.bounds)
-        scrollView?.contentSize = CGSize.init(width: (scrollView?.width)!, height: (scrollView?.height)! * 2)
-        scrollView?.backgroundColor = UIColor.red
-        scrollView?.delegate = self
-        tableView = UITableView.init(frame: self.view.bounds)
-        scrollView?.addSubview(tableView)
-        self.view.addSubview(scrollView!)
-        // Do any additional setup after loading the view.
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.bounces = true
-        tableView.clipsToBounds = true
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-//        for gesture in (tableView.gestureRecognizers)! {
-//            gesture.require(toFail: (scrollView?.gestureRecognizers?.first)!)
-//        }
-        scrollView?.bounces = true
-        scrollView?.clipsToBounds = true
+        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+        do{
+            let input = try AVCaptureDeviceInput.init(device: captureDevice!)
+            captureSession = AVCaptureSession()
+            captureSession?.addInput(input)
+        }catch{
+            print(error)
+            return;
+        }
+        // 初始化 AVCaptureMetadataOutput 对象，并将它作为输出
+        let captureMetadataOutput = AVCaptureMetadataOutput()
+        captureSession?.addOutput(captureMetadataOutput)
+        // 设置 delegate 并使用默认的 dispatch 队列来执行回调
+        captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+        captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+        // 初始化视频预览 layer，并将其作为 viewPreview 的 sublayer
+        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+        videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        videoPreviewLayer?.frame = (self.view.layer.bounds)
+        self.view.layer.insertSublayer(videoPreviewLayer!, at: 0)
+        
+        captureSession?.startRunning()
     }
   
     
