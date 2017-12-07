@@ -11,18 +11,17 @@ import UIKit
 
 private let cellReuseIdentifier = "BindDeviceTableViewCell"
 
-class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource {
+class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource,CustomViewProtocol {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
-    var dataSource: Array<[String:Any]>!
+    weak open var delegate:CustomViewProtocol!
+    var dataSource: Array<[String:Any]> = Array()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         tableView.register(UINib.init(nibName: "BindDeviceTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentify)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsSelection = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,4 +42,8 @@ class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource {
         }
         subCell.deviceNameLabel.text = item["device_name"] as! String
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate.listDidSelected!(view: self, at: indexPath.row, 0)
+    }
 }
+

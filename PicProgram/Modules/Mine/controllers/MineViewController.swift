@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MineViewController: BaseViewController,MineViewProtocol {
+class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol,UIGestureRecognizerDelegate {
 //    var mineView:LogOutView!
     @IBOutlet weak var userBackImageView: UIImageView!
     @IBOutlet weak var userIconButton: UIButton!
@@ -16,7 +16,7 @@ class MineViewController: BaseViewController,MineViewProtocol {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var cScrollView: UIScrollView!
-    var deviceDatas:Array<[String:Any]> = Array()
+    var deviceDatas:Array<[String:Any]> = [["device_id":"1","device_name":"某人的数字画框","flag":1],["device_id":"2","device_name":"某人的智能画框","flag":1],["device_id":"3","device_name":"智能画框","flag":0],["device_id":"4","device_name":"数字画框","flag":0]]
     
     
     override func viewDidLoad() {
@@ -104,21 +104,23 @@ class MineViewController: BaseViewController,MineViewProtocol {
         let backView = UIView.init(frame: self.view.bounds)
         backView.backgroundColor = xsColor("000000", alpha: 0.6)
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapRegistAction))
+        tapGesture.delegate = self
         backView.addGestureRecognizer(tapGesture)
         let bindView = Bundle.main.loadNibNamed("MineBindDeviceView", owner: nil, options: nil)?.first as! MineBindDeviceView
         bindView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
-        bindView.dataSource = [["device_id":1,"device_name":"某人的数字画框","flag":1],["device_id":2,"device_name":"某人的智能画框","flag":1],["device_id":3,"device_name":"智能画框","flag":0],["device_id":4,"device_name":"数字画框","flag":0]]
+        bindView.dataSource = deviceDatas
+        bindView.delegate = self
         backView.tag = 100
         bindView.tableView.reloadData()
         backView.addSubview(bindView)
-        self.navigationController?.tabBarController?.view.addSubview(backView)
-//        self.navigationController?.tabBarController?.view.addSubview(bindView)
-
+        self.view.addSubview(backView)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     @objc func tapRegistAction() {
-        let backView = self.navigationController?.tabBarController?.view.viewWithTag(100)
+        let backView = self.view.viewWithTag(100)
         backView?.removeFromSuperview()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     func addDeviceSelected() {
@@ -131,5 +133,31 @@ class MineViewController: BaseViewController,MineViewProtocol {
     func wifiManageSelected() {
         
     }
+    
+    ///
+    func listDidSelected(view: UIView, at index: Int, _ section: Int) {
+        if view.isKind(of: MineBindDeviceView.self) {
+            let item = deviceDatas[index]
+            network.requestData(.user_get_device_info, params: ["device_id":item["device_id"] as! String], finishedCallback: { (result) in
+                if result["ret"] as! Int == 0 {
+                    let bindUserView = Bundle.main.loadNibNamed("DeviceBindUserView", owner: nil, options: nil)?.first as! DeviceBindUserView
+                    bindUserView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
+                    bindUserView.dataSource = self.deviceDatas
+                    let backView = self.view.viewWithTag(100)
+                    bindUserView.tableView.reloadData()
+                    backView?.addSubview(bindUserView)
+                    
+                }
+            }, nil)
+        }
+    }
 
+    //为了解决tableivew didselect和tableivew.superview添加手势之后的冲突
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if  (touch.view?.height)! < self.view.height {
+            return false
+        }
+        return true
+    }
+    
 }

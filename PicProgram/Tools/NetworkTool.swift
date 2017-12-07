@@ -146,7 +146,9 @@ class  NetworkTool{
             apiString = "user/get_bind_device"
         case .user_get_device_info:
             method = .get
-            apiString = ""
+            let device_id = params!["device_id"]
+            apiString = "master/\(device_id)/get_device_info"
+            realParams = nil
         default:
             apiString = ""
             method = .get

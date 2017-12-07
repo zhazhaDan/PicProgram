@@ -9,7 +9,7 @@
 import Foundation
 extension UILabel {
     @objc func myAwakeFromNib() {
-        if self.font.fontDescriptor.postscriptName.hasSuffix(".SFUIText") {
+        if self.font.fontDescriptor.postscriptName.hasSuffix(".SFUIText") || self.font.fontDescriptor.postscriptName.hasPrefix(".SFUIText") {
             let font = xsFont(self.font.pointSize, family: "FZSKBXKJW--GB1-0")
             self.font = font
         }
@@ -36,7 +36,7 @@ extension UILabel {
 extension UIButton {
     open override func awakeFromNib() {
         super.awakeFromNib()
-        if (self.titleLabel?.font.fontDescriptor.postscriptName.hasSuffix(".SFUIText"))! {
+        if (self.titleLabel?.font.fontDescriptor.postscriptName.hasSuffix(".SFUIText"))! || (self.titleLabel?.font.fontDescriptor.postscriptName.hasPrefix(".SFUIText"))! {
             let font = xsFont((self.titleLabel?.font?.pointSize)!, family: "FZSKBXKJW--GB1-0")
             self.titleLabel?.font = font
         }
@@ -47,7 +47,7 @@ extension UIButton {
 extension UITextView {
     open override func awakeFromNib() {
         super.awakeFromNib()
-        if (self.font?.fontDescriptor.postscriptName.hasSuffix(".SFUIText"))! {
+        if (self.font?.fontDescriptor.postscriptName.hasSuffix(".SFUIText"))! || (self.font?.fontDescriptor.postscriptName.hasPrefix(".SFUIText"))!{
             let font = xsFont((self.font?.pointSize)!, family: "FZSKBXKJW--GB1-0")
             self.font = font
         }
@@ -57,7 +57,7 @@ extension UITextView {
 extension UITextField {
     open override func awakeFromNib() {
         super.awakeFromNib()
-        if (self.font?.fontDescriptor.postscriptName.hasSuffix(".SFUIText"))! {
+        if (self.font?.fontDescriptor.postscriptName.hasSuffix(".SFUIText"))! || (self.font?.fontDescriptor.postscriptName.hasPrefix(".SFUIText"))! {
             let font = xsFont((self.font?.pointSize)!, family: "FZSKBXKJW--GB1-0")
             self.font = font
         }

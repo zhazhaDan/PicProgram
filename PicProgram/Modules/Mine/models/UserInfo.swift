@@ -22,7 +22,7 @@ class UserInfo: UserModel {
     }
 
     func checkUserLogin() -> Bool {
-        if self.uin == 1000000 {
+        if self.uin == 100000 {
             return false
         }
         return true
@@ -42,7 +42,7 @@ class UserInfo: UserModel {
     
     //读取本地化数据
     func readUserDefaults() {
-        self.uin = UserDefaults.standard.value(forKey: User_uin) != nil ? (UserDefaults.standard.value(forKey: User_uin) as! Int) : 1000000
+        self.uin = UserDefaults.standard.value(forKey: User_uin) != nil ? (UserDefaults.standard.value(forKey: User_uin) as! Int) : 100000
         self.token = UserDefaults.standard.value(forKey: User_token) == nil ? "" : (UserDefaults.standard.value(forKey: User_token) as! String)
 
     }
