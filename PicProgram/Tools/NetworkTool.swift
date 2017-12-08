@@ -43,6 +43,9 @@ enum RequestAPIType {
     case user_reset_password
     case user_logout
     case user_info
+    case user_get_device
+    case user_get_device_info
+    case user_bind_device
     case classify_get_art_home
     case classify_get_scene_home
     case default_api
@@ -128,6 +131,7 @@ class  NetworkTool{
         case .user_reset_password:
             apiString = "user/reset_password"
         case .user_logout:
+            method = .get
             apiString = "user/logout"
         case .user_info:
             method = .get
@@ -138,6 +142,16 @@ class  NetworkTool{
         case .classify_get_scene_home:
             method = .get
             apiString = "classify/get_scene_home"
+        case .user_get_device:
+            method = .get
+            apiString = "user/get_bind_device"
+        case .user_get_device_info:
+            method = .get
+            let device_id = params!["device_id"]
+            apiString = "master/\(device_id)/get_device_info"
+            realParams = nil
+        case .user_bind_device:
+            apiString = "user/device_bind"
         default:
             apiString = ""
             method = .get
@@ -166,8 +180,10 @@ class  NetworkTool{
             method = .post
         }
         print("\(corApi)")
-        var headerDict = ["content-type": "application/json","User-Uin": "100000","Req-From": "iOS-app"]
-       
+        var headerDict = ["content-type": "application/json","User-Uin": "\(UserInfo.user.uin)","Req-From": "iOS-app"]
+        if UserInfo.user.token.count > 0 {
+            headerDict["Client-Token"] = UserInfo.user.token
+        }
         print(headerDict)
         Alamofire.request(url, method: method, parameters: params, encoding: JSONEncoding.default,headers:headerDict)
             .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in

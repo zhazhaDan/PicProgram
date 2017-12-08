@@ -28,11 +28,11 @@ class UserViewController: BaseViewController {
 
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         if sender.view?.tag == 10 || sender.view?.tag == 11 {
-            let layout = UICollectionViewFlowLayout()
             let vc = SystemPicsCollectionViewController.init(nibName: "SystemPicsCollectionViewController", bundle: Bundle.main)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)

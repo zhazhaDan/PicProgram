@@ -33,22 +33,13 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
             return _pioneerModel
         }
     }
-//    @IBAction func readMoreAction(_ sender: Any) {
-//    }
-    
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-////        self.readTableView.delegate = self
-////        self.readTableView.dataSource = self
-//    }
-//    
+
     override func buildUI() {
         let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.width, height: 180))
         bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: self.width - 24, height: 168),true)
         view.addSubview(bannerView)
         readTableView = UITableView.init(frame: self.bounds, style:.plain)
-        readTableView.height -= 49
+//        readTableView.height -= 49
         readTableView.backgroundColor = xsColor_main_white
         readTableView.delegate = self
         readTableView.dataSource = self
@@ -125,7 +116,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
             let date = Date()
             cell.weendayLabel.text = date.getDayOfWeek()
             cell.dateLabel.text = date.getUpperDate()
-//            cell.praiseButton.isSelected = (pioneerModel.master_quote.flag == 1 ? true : false)
+            cell.praiseButton.isSelected = (pioneerModel.master_quote.flag == 1 ? true : false)
             return cell
         }else {
             let cell:ArtReadTableViewCell = tableView.dequeueReusableCell(withIdentifier: "readTableViewCell", for: indexPath) as! ArtReadTableViewCell
@@ -157,6 +148,13 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         network.requestData(.discovery_mqlove, params: ["mq_id":pioneerModel.master_quote.mq_id], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 let cell = self?.readTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! ArtMasterSayTableViewCell
+                if cell.praiseButton.isSelected == true {
+                    self?.pioneerModel.master_quote.mq_love_num = (self?.pioneerModel.master_quote.mq_love_num)! - 1
+                    cell.sayNumLabel.text = "\((self?.pioneerModel.master_quote.mq_love_num)!)"
+                }else {
+                    self?.pioneerModel.master_quote.mq_love_num = (self?.pioneerModel.master_quote.mq_love_num)! + 1
+                    cell.sayNumLabel.text = "\((self?.pioneerModel.master_quote.mq_love_num)!)"
+                }
                 cell.praiseButton.isSelected = !cell.praiseButton.isSelected
                 self?.bigAnimate(view: cell.praiseButton)
                 print(cell.praiseButton.isSelected)
