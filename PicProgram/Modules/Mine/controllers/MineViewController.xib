@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,11 +38,8 @@
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UE1-uG-8fU">
-                                    <rect key="frame" x="0.0" y="229" width="320" height="429"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="429" id="eQr-Tg-Gb4"/>
-                                    </constraints>
+                                    <rect key="frame" x="0.0" y="229" width="320" height="498"/>
+                                    <color key="backgroundColor" red="0.64049561420000001" green="1" blue="0.34611628459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppJ-PV-uqn">
                                     <rect key="frame" x="12" y="20" width="40" height="40"/>
@@ -101,6 +98,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Lz5-Ae-3U2" secondAttribute="trailing" id="bNB-eX-gKg"/>
                                 <constraint firstItem="8Nz-N9-LJE" firstAttribute="centerX" secondItem="Lz5-Ae-3U2" secondAttribute="centerX" id="eHe-PE-ZNV"/>
                                 <constraint firstItem="ppJ-PV-uqn" firstAttribute="top" secondItem="MEO-NM-UfP" secondAttribute="top" constant="20" id="nR4-GL-rdx"/>
+                                <constraint firstAttribute="bottom" secondItem="UE1-uG-8fU" secondAttribute="bottom" constant="-69" id="r68-Ff-SnE"/>
                                 <constraint firstItem="Lz5-Ae-3U2" firstAttribute="leading" secondItem="MEO-NM-UfP" secondAttribute="leading" id="wcy-UB-Qqh"/>
                                 <constraint firstAttribute="height" constant="658" id="ypC-iF-vGt"/>
                             </constraints>

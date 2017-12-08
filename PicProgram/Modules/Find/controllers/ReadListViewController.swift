@@ -18,6 +18,7 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
         tableView.register(UINib.init(nibName: "ArtReadTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "readTableViewCell")
         self.view.addSubview(tableView)
         requestData()
+        self.title = "读精彩"
     }
     
     override func requestData() {

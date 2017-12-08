@@ -37,4 +37,5 @@ class DeviceManageView: UIView {
     @objc optional func addDeviceSelected()
     @objc optional func wifiManageSelected()
     @objc optional func backSelectd()
+    @objc optional func scanCode(result:String)
 }

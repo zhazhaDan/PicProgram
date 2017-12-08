@@ -85,6 +85,8 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+
         let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 320, height: 26))
         button.setBackgroundImage(#imageLiteral(resourceName: "01faixian_jinrituijian_shousuolan"), for: .normal)
         button.setTitle("艺术品名称/作者", for: .normal)
@@ -171,11 +173,11 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    func praiseBigStar() {
-        network.requestData(.discovery_mqlove, params: ["mq_id":pioneerModel.master_quote.mq_id], finishedCallback: { (result) in
-            if result["ret"] as! Int == 0 {
-                
-            }
-        }, nil)
-    }
+//    func praiseBigStar() {
+//        network.requestData(.discovery_mqlove, params: ["mq_id":pioneerModel.master_quote.mq_id], finishedCallback: { (result) in
+//            if result["ret"] as! Int == 0 {
+//
+//            }
+//        }, nil)
+//    }
 }

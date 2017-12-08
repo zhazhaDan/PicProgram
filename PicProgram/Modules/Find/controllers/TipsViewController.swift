@@ -22,6 +22,10 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
     @IBOutlet weak var currentImageView: UIImageView!
     
     @IBOutlet weak var locateChooseStatusView: UIView!
+    
+    @IBOutlet weak var textView: UITextView!
+    
+    
     var lastLocate:CGPoint = CGPoint.zero
     var  chooseLocatedIndex:Int = 1
     var  chooseMaterialIndex:Int = 1
@@ -58,10 +62,15 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if self.locateView.isHidden == true {
+            return
+        }
         let touch = touches.first
         if self.localIcon.frame.contains((touch?.location(in: self.locateView))!) {
             self.lastLocate = (touch?.location(in: self.locateView))!
             self.isLocalViewChoosed = true
+            self.tipsMaterialsButton.isHidden = true
+            self.textView.isHidden = true
         }
     }
     
@@ -73,22 +82,30 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
             self.locateChooseStatusView.isHidden = false
             self.locateChooseStatusView.frame.origin = CGPoint.init(x: floor(point.x/self.locateChooseStatusView.width) * self.locateChooseStatusView.width, y: floor(point.y/self.locateChooseStatusView.height) * self.locateChooseStatusView.height)
             self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*3 + 1
-
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        let touch = touches.first
+        if self.locateView.isHidden == true {
+            return
+        }
+        //        let touch = touches.first
         self.locateChooseStatusView.isHidden = true
 //        self.localIcon.frame.origin = (touch?.location(in: self.locateView))!
 //        self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*3 + 1
         self.isLocalViewChoosed = false
+        self.tipsMaterialsButton.isHidden = false
+        self.textView.isHidden = false
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if self.locateView.isHidden == true {
+            return
+        }
         self.localIcon.frame.origin = lastLocate
         self.isLocalViewChoosed = false
         self.locateChooseStatusView.isHidden = true
+        self.textView.isHidden = false
     }
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {

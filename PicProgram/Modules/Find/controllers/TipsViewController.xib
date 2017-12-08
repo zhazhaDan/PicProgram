@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,6 +20,7 @@
                 <outlet property="locateView" destination="AEW-dO-brk" id="BfT-54-FA7"/>
                 <outlet property="materialBackView" destination="30K-o9-rUa" id="mzB-l5-yBz"/>
                 <outlet property="materialOrLocateChoosedView" destination="qiJ-1I-Ut6" id="MXd-SO-3lc"/>
+                <outlet property="textView" destination="X9e-09-bwJ" id="SLQ-J7-4zN"/>
                 <outlet property="tipsMaterialsButton" destination="VSY-io-nXb" id="eKq-cH-nkw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -96,12 +97,12 @@
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" text="老婆，祝你生日快乐" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-09-bwJ">
-                                    <rect key="frame" x="61" y="131" width="253" height="200"/>
+                                    <rect key="frame" x="61" y="120.5" width="253" height="200"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="qlj-zk-C35"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="Fjj-NT-k6k"/>
@@ -220,7 +221,7 @@
                                 <constraint firstItem="WTx-gm-Zah" firstAttribute="leading" secondItem="yc0-KN-Swe" secondAttribute="leading" id="b64-1M-VGW"/>
                                 <constraint firstItem="hQK-Nn-Sct" firstAttribute="centerY" secondItem="VSY-io-nXb" secondAttribute="top" id="eZb-R7-PWc"/>
                                 <constraint firstItem="VSY-io-nXb" firstAttribute="centerX" secondItem="WTx-gm-Zah" secondAttribute="centerX" id="fR2-bL-C78"/>
-                                <constraint firstItem="X9e-09-bwJ" firstAttribute="centerY" secondItem="VSY-io-nXb" secondAttribute="centerY" id="g8M-mp-9GB"/>
+                                <constraint firstItem="X9e-09-bwJ" firstAttribute="centerY" secondItem="VSY-io-nXb" secondAttribute="centerY" constant="-10" id="g8M-mp-9GB"/>
                                 <constraint firstItem="hQK-Nn-Sct" firstAttribute="centerX" secondItem="VSY-io-nXb" secondAttribute="leading" id="jWz-hL-9pW"/>
                                 <constraint firstItem="rnj-xQ-7EO" firstAttribute="leading" secondItem="yc0-KN-Swe" secondAttribute="leading" id="jXP-tp-w8a"/>
                                 <constraint firstItem="rnj-xQ-7EO" firstAttribute="top" secondItem="yc0-KN-Swe" secondAttribute="top" id="odR-nU-zLj"/>

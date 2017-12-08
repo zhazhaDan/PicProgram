@@ -14,6 +14,13 @@ class ScanCodeView: BaseView,AVCaptureMetadataOutputObjectsDelegate {
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     @IBOutlet weak var qrContentView: UIView!
+    @IBOutlet weak var qrContentHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var qrContentWidth: NSLayoutConstraint!
+    
+    open weak var delegate:MineViewProtocol!
+
+    
     
     @IBAction func backAction(_ sender: Any) {
         self.removeFromSuperview()
@@ -21,10 +28,14 @@ class ScanCodeView: BaseView,AVCaptureMetadataOutputObjectsDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let width = (self.width - 170)
+        let width = (SCREEN_WIDTH - 170)
+//        qrContentView.size = CGSize.init(width: width, height: width)
+        qrContentWidth.constant = width
+        qrContentHeight.constant = width
+        qrContentView.updateConstraints()
         let bottom = self.qrView.height - width - 36
         let X = (85 < bottom) ? (85 - bottom) : (bottom - 85)
-        let maskView = UIView.init(frame: CGRect.init(x:X, y: 36 - bottom , width: self.width - 2 * X, height: width + bottom * 2))
+        let maskView = UIView.init(frame: CGRect.init(x:X, y: 36 - bottom , width: SCREEN_WIDTH - 2 * X, height: width + bottom * 2))
         maskView.layer.borderWidth = bottom
         maskView.layer.borderColor = xsColor("000000", alpha: 0.6).cgColor
         self.qrView.addSubview(maskView)
@@ -49,7 +60,7 @@ class ScanCodeView: BaseView,AVCaptureMetadataOutputObjectsDelegate {
         // 初始化视频预览 layer，并将其作为 viewPreview 的 sublayer
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        videoPreviewLayer?.frame = (qrView.layer.bounds)
+        videoPreviewLayer?.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: (qrView.layer.bounds).size.height)
         qrView.layer.insertSublayer(videoPreviewLayer!, at: 0)
         captureSession?.startRunning()
     }
@@ -64,18 +75,16 @@ class ScanCodeView: BaseView,AVCaptureMetadataOutputObjectsDelegate {
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
             if metadataObj.stringValue != nil {
                 print("qr result is \(metadataObj.stringValue ?? "")")
-                HUDTool.show(.text, text: metadataObj.stringValue, delay: 1, view: self, complete: nil)
+                delegate.scanCode!(result: metadataObj.stringValue!)
+                captureSession?.stopRunning()
+                HUDTool.show(.text, text: "扫描已成功", delay: 1, view: self, complete: {
+                    [weak self] in
+                    self?.backAction(UIButton())
+                })
             }
         }
-
     }
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
+
+

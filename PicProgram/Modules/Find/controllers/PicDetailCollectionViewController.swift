@@ -239,6 +239,11 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             }
         }, nil)
     }
+    
+    func shareAction() {
+        //TODO:分享 未登录提示登录？
+    }
+    
     func chooseMainPicAction() {
         let vc = EditPaintDetailViewController()
         vc.paintModel = self.paintModel

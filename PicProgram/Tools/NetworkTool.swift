@@ -45,6 +45,7 @@ enum RequestAPIType {
     case user_info
     case user_get_device
     case user_get_device_info
+    case user_bind_device
     case classify_get_art_home
     case classify_get_scene_home
     case default_api
@@ -149,6 +150,8 @@ class  NetworkTool{
             let device_id = params!["device_id"]
             apiString = "master/\(device_id)/get_device_info"
             realParams = nil
+        case .user_bind_device:
+            apiString = "user/device_bind"
         default:
             apiString = ""
             method = .get
