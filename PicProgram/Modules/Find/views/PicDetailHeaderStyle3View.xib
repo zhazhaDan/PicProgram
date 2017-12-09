@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -143,7 +143,7 @@
                         <action selector="shareAction:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="YLn-fR-1Gp"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-ud-3jl">
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-ud-3jl">
                     <rect key="frame" x="12" y="260" width="135" height="28"/>
                     <color key="backgroundColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -161,7 +161,7 @@
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45张" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-su-DRC">
-                    <rect key="frame" x="283" y="263.5" width="80" height="20"/>
+                    <rect key="frame" x="283" y="263" width="80" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="ZXI-Wb-CMh"/>
                         <constraint firstAttribute="height" constant="20" id="aoj-SS-jWl"/>
@@ -247,6 +247,7 @@
                 <outlet property="eyeNumLabel" destination="xik-Zb-ODC" id="Day-n3-oAR"/>
                 <outlet property="numberLabel" destination="WoG-su-DRC" id="7gn-Qd-Hsh"/>
                 <outlet property="picTitleLabel" destination="388-Fj-9Xd" id="C5U-fm-6pX"/>
+                <outlet property="segmentControl" destination="J2G-ud-3jl" id="XV3-R7-R5H"/>
                 <outlet property="subTitleLabel" destination="kDf-3n-jL9" id="aVC-T9-5qz"/>
                 <outlet property="titleLabel" destination="eti-YU-tlN" id="US6-Zv-hXa"/>
                 <outlet property="totalNumLabel" destination="6pw-4r-rnV" id="wSc-du-HFS"/>

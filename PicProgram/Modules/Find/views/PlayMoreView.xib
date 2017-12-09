@@ -67,7 +67,7 @@
                                 <constraint firstAttribute="width" constant="70" id="8ZT-8b-jhN"/>
                                 <constraint firstAttribute="height" constant="65" id="cg8-XH-QdR"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <inset key="titleEdgeInsets" minX="-33" minY="63" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="18.5" minY="0.0" maxX="18.5" maxY="0.0"/>
                             <state key="normal" title="收藏" image="10sdanduye_gengduogongnneg_shouchang">
@@ -83,7 +83,7 @@
                                 <constraint firstAttribute="height" constant="65" id="Jbr-N2-rGe"/>
                                 <constraint firstAttribute="width" constant="70" id="Xl0-ff-EV6"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <inset key="titleEdgeInsets" minX="-33" minY="63" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="18.5" minY="0.0" maxX="18.5" maxY="0.0"/>
                             <state key="normal" title="添加心情" image="10sdanduye_gengduogongnneg_xinqing">
@@ -108,7 +108,7 @@
                                 <constraint firstAttribute="width" constant="70" id="dk1-X5-ua5"/>
                                 <constraint firstAttribute="height" constant="65" id="h5m-9G-z0j"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <inset key="titleEdgeInsets" minX="-33" minY="63" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="18.5" minY="0.0" maxX="18.5" maxY="0.0"/>
                             <state key="normal" title="详细信息" image="10sdanduye_gengduogongnneg_xiangxixinxi">
@@ -179,7 +179,7 @@
                                 <constraint firstAttribute="width" constant="35" id="YvJ-2d-sNe"/>
                                 <constraint firstAttribute="height" constant="15" id="wDE-ox-3JQ"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -189,7 +189,7 @@
                                 <constraint firstAttribute="height" constant="15" id="Nid-nT-iC6"/>
                                 <constraint firstAttribute="width" constant="35" id="Xrx-Gs-9pW"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -199,7 +199,7 @@
                                 <constraint firstAttribute="width" constant="40" id="3bQ-is-tUL"/>
                                 <constraint firstAttribute="height" constant="15" id="NwK-Hx-Kce"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -209,7 +209,7 @@
                                 <constraint firstAttribute="width" constant="40" id="Kei-Rg-6cc"/>
                                 <constraint firstAttribute="height" constant="15" id="ch8-hM-0aa"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -219,7 +219,7 @@
                                 <constraint firstAttribute="height" constant="15" id="gXm-qd-GAW"/>
                                 <constraint firstAttribute="width" constant="50" id="wdI-ss-V4I"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -260,7 +260,7 @@
                                 <constraint firstAttribute="height" constant="15" id="JVs-A1-D9X"/>
                                 <constraint firstAttribute="width" constant="50" id="KA0-6A-gic"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -270,7 +270,7 @@
                                 <constraint firstAttribute="width" constant="50" id="WJl-1X-jyg"/>
                                 <constraint firstAttribute="height" constant="15" id="rZp-kh-faL"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>

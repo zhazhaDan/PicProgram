@@ -45,7 +45,7 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
-        self.title = LocalizedLanguageTool().getString(forKey: "Art Works")
+        self.title = MRLanguage(forKey: "Art Works")
     }
     
     

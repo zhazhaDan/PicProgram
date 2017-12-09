@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GifViewController: BaseViewController {
+class GifViewController: BaseViewController,UIWebViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,10 +17,20 @@ class GifViewController: BaseViewController {
     }
 
     override func buildUI() {
-        let imageView = UIImageView.init(frame: self.view.bounds)
-        imageView.animationImages = []
-        self.view.addSubview(imageView)
+        let webview = UIWebView.init(frame: CGRect.init(x: 0, y: -StatusBarHeight, width: self.view.width, height: self.view.height + StatusBarHeight))
+        self.view.addSubview(webview)
+        webview.delegate = self
+        webview.scalesPageToFit = true
+        let path = Bundle.main.path(forResource: "moran", ofType: ".gif")
+        if let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: path!)) {
+            webview.load(data as Data, mimeType: "image/gif", textEncodingName: "UTF-8", baseURL: Bundle.main.resourceURL!)
+        }
     }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

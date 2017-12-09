@@ -46,7 +46,7 @@
                                             <constraint firstAttribute="height" constant="1" id="uP0-IJ-Wwq"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邮箱号/手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-4U-P9S">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="650974501@qq.com" placeholder="请输入邮箱号/手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-4U-P9S">
                                         <rect key="frame" x="75" y="208" width="258" height="15"/>
                                         <color key="textColor" red="0.84166496989999995" green="0.758013308" blue="0.65390139820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -57,7 +57,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68p-o6-jlQ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68p-o6-jlQ">
                                         <rect key="frame" x="75" y="257" width="258" height="15"/>
                                         <color key="textColor" red="0.84166496989999995" green="0.758013308" blue="0.65390139820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>

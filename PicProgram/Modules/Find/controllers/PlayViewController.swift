@@ -11,7 +11,7 @@ import UIKit
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
-class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource {
+class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,PlayMoreProtocol {
 
     var currentIndex:NSInteger = 0
     var dragStartX:CGFloat = 0
@@ -22,7 +22,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     }
     @IBAction func tipsAction(_ sender: Any) {
         let vc = TipsViewController.init(nibName: "TipsViewController", bundle: Bundle.main)
-        vc.picModel = self.dataSource[0]
+        vc.picModel = self.dataSource[currentIndex]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func pushAction(_ sender: Any) {
@@ -35,6 +35,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     }
     @IBAction func moreAction(_ sender: Any) {
         let moreView = Bundle.main.loadNibNamed("PlayMoreView", owner: nil, options: nil)?.first as! PlayMoreView
+        moreView.delegate = self
         moreView.frame = (self.navigationController?.view.bounds)!
         self.navigationController?.view.addSubview(moreView)
     }
@@ -108,5 +109,25 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         currentIndex = currentIndex <= 0 ? 0 : currentIndex
         currentIndex = currentIndex >= maxIndex ? maxIndex : currentIndex
         collectionView.scrollToItem(at: NSIndexPath.init(row: currentIndex, section: 0) as IndexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+    }
+    
+    
+    //PlayMoreProtocol
+    func detailInfo() {
+        let vc = PictureDetailViewController.init(nibName: "PictureDetailViewController", bundle: Bundle.main)
+        vc.model = dataSource[currentIndex]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func collectPicture() {
+        
+    }
+    func addEmotion() {
+        
+    }
+    func playTimeSetting(time: Int) {
+        HUDTool.show(.text, text: "播放时间设置成功", delay: 1, view: self.view, complete: nil)
+    }
+    func playModeSetting(mode: Int) {
+        HUDTool.show(.text, text: "播放模式设置成功", delay: 1, view: self.view, complete: nil)
     }
 }

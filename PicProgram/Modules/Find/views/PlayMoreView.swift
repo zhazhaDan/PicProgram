@@ -9,11 +9,21 @@
 import UIKit
 
 class PlayMoreView: BaseView {
-
+    open weak var delegate:PlayMoreProtocol!
     @IBAction func hidenView(_ sender: UIGestureRecognizer) {
         self.removeFromSuperview()
     }
     @IBAction func moreAction(_ sender: UIButton) {
+        switch sender.tag - 10 {
+        case 0:
+            delegate.detailInfo!()
+        case 1:
+            delegate.collectPicture!()
+        case 2:
+            delegate.addEmotion!()
+        default:
+            print("other")
+        }
     }
     
     @IBAction func timeAction(_ sender: UIButton) {
@@ -21,6 +31,7 @@ class PlayMoreView: BaseView {
             let btn = self.viewWithTag(20+i) as! UIButton
             if btn == sender {
                 btn.isSelected = true
+                delegate.playTimeSetting!(time: i)
             }else {
                 btn.isSelected = false
             }
@@ -32,17 +43,18 @@ class PlayMoreView: BaseView {
             let btn = self.viewWithTag(30+i) as! UIButton
             if btn == sender {
                 btn.isSelected = true
+                delegate.playModeSetting!(mode: i)
             }else {
                 btn.isSelected = false
             }
         }
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+}
 
+@objc protocol PlayMoreProtocol:NSObjectProtocol {
+    @objc optional func detailInfo()
+    @objc optional func collectPicture()
+    @objc optional func addEmotion()
+    @objc optional func playTimeSetting(time:Int)
+    @objc optional func playModeSetting(mode: Int)
 }

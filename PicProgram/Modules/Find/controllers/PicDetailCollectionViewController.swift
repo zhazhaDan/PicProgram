@@ -242,6 +242,10 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     
     func shareAction() {
         //TODO:分享 未登录提示登录？
+        let vc = ShareViewController.init(nibName: "ShareViewController", bundle: Bundle.main)
+        vc.picUrl = paintModel.title_url
+        vc.picTitle = paintModel.paint_title
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func chooseMainPicAction() {

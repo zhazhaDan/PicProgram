@@ -17,12 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIBarButtonItem.appearance().tintColor = xsColor_text_black
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = BaseTabBarController()// HomePageNavigationController.init(rootViewController: BaseTabBarController())
+        self.window?.rootViewController = GifViewController()
+        //BaseTabBarController()// HomePageNavigationController.init(rootViewController: BaseTabBarController())
+        self.perform(#selector(gifDone), with: nil, afterDelay: 3, inModes: [.commonModes,.defaultRunLoopMode,.UITrackingRunLoopMode])
         self.window?.makeKeyAndVisible()
         return RegistThirdAppDelegate.shareDelegate.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
-
+    @objc func gifDone() {
+        self.window?.rootViewController = BaseTabBarController()
+        
+    }
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

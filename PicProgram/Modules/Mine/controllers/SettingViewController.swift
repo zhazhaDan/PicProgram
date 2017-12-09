@@ -18,7 +18,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentify)
         tableView.separatorInset = UIEdgeInsetsMake(0, SCREEN_WIDTH, 0, 0 )
-        self.title = LocalizedLanguageTool().getString(forKey: "Mine Setting")
+        self.title = MRLanguage(forKey: "Mine Setting")
         // Do any additional setup after loading the view.
     }
 

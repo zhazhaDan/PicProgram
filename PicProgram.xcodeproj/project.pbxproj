@@ -42,7 +42,6 @@
 		3A26166A1FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2616681FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift */; };
 		3A26166B1FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2616691FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib */; };
 		3A3BF8031FBC29BD0013BB9D /* LiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */; };
-		3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */; };
 		3A414E481FCE532B0046E2B7 /* FontChange+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A414E471FCE532B0046E2B7 /* FontChange+UILabel.swift */; };
 		3A414E4B1FCEB66C0046E2B7 /* content.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A414E4D1FCEB66C0046E2B7 /* content.strings */; };
 		3A414E501FCEC2920046E2B7 /* LocalizedLanguageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A414E4F1FCEC2920046E2B7 /* LocalizedLanguageTool.swift */; };
@@ -59,7 +58,6 @@
 		3A5387621F96094A00BA4359 /* SBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5387611F96094A00BA4359 /* SBLoginViewController.swift */; };
 		3A6A8B911FBA881D0062B728 /* ChangeCoverPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A8B901FBA881D0062B728 /* ChangeCoverPicturesViewController.swift */; };
 		3A6A8B941FBAA15A0062B728 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A8B921FBAA15A0062B728 /* TipsViewController.swift */; };
-		3A6A8B951FBAA15A0062B728 /* TipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6A8B931FBAA15A0062B728 /* TipsViewController.xib */; };
 		3A6F49B81FC6C7C3001AE767 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */; };
 		3A6F49B91FC6C7C3001AE767 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */; };
 		3A6F49BB1FC6E1B3001AE767 /* ClassifyCommonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */; };
@@ -171,6 +169,11 @@
 		3AE7A24A1FA33335004BAD20 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7A2491FA33335004BAD20 /* ReadListViewController.swift */; };
 		3AF8CB381FB1AE7A00635533 /* NavigationBarShowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8CB371FB1AE7A00635533 /* NavigationBarShowListView.swift */; };
 		F104340E8EA668A380E025B1 /* Pods_PicProgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD8C6DEB27196A274AADA3E /* Pods_PicProgram.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F7141DAC1FDBCF5900606631 /* LiningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7141DAE1FDBCF5900606631 /* LiningViewController.xib */; };
+		F7141DB51FDBD05F00606631 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7141DB31FDBD05F00606631 /* ShareViewController.swift */; };
+		F7141DB61FDBD05F00606631 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7141DB41FDBD05F00606631 /* ShareViewController.xib */; };
+		F7141DB71FDBD06C00606631 /* TipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7141DB91FDBD06C00606631 /* TipsViewController.xib */; };
+		F7141DBF1FDC11CB00606631 /* UIScrollView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7141DBE1FDC11CB00606631 /* UIScrollView+Add.swift */; };
 		F71952CF1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */; };
 		F71952D01FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952CE1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib */; };
 		F71952D31FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952D11FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift */; };
@@ -179,6 +182,7 @@
 		F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */; };
 		F71952E51FCEFA6000ED9D68 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952E31FCEFA6000ED9D68 /* SettingViewController.swift */; };
 		F71952E61FCEFA6000ED9D68 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */; };
+		F72A5AC31FDC2E18007544CB /* moran.gif in Resources */ = {isa = PBXBuildFile; fileRef = F72A5AC21FDC2E18007544CB /* moran.gif */; };
 		F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9B1FB345D90033D69C /* FindHeaderView.swift */; };
 		F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9D1FB354590033D69C /* WebViewController.swift */; };
 		F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */; };
@@ -227,7 +231,6 @@
 		3A2616681FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindDeviceTableViewCell.swift; sourceTree = "<group>"; };
 		3A2616691FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindDeviceTableViewCell.xib; sourceTree = "<group>"; };
 		3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiningViewController.swift; sourceTree = "<group>"; };
-		3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiningViewController.xib; sourceTree = "<group>"; };
 		3A414E471FCE532B0046E2B7 /* FontChange+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FontChange+UILabel.swift"; sourceTree = "<group>"; };
 		3A414E4C1FCEB66C0046E2B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/content.strings; sourceTree = "<group>"; };
 		3A414E4E1FCEB6810046E2B7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/content.strings"; sourceTree = "<group>"; };
@@ -247,7 +250,6 @@
 		3A5387611F96094A00BA4359 /* SBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBLoginViewController.swift; sourceTree = "<group>"; };
 		3A6A8B901FBA881D0062B728 /* ChangeCoverPicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCoverPicturesViewController.swift; sourceTree = "<group>"; };
 		3A6A8B921FBAA15A0062B728 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
-		3A6A8B931FBAA15A0062B728 /* TipsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipsViewController.xib; sourceTree = "<group>"; };
 		3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyCommonListView.swift; sourceTree = "<group>"; };
@@ -364,6 +366,15 @@
 		4244DE9259CCF70FBFEBA945 /* Pods-PicProgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicProgram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicProgram/Pods-PicProgram.debug.xcconfig"; sourceTree = "<group>"; };
 		B637EB1BF82FD9C7B3061DE3 /* Pods-PicProgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicProgram.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicProgram/Pods-PicProgram.release.xcconfig"; sourceTree = "<group>"; };
 		CFD8C6DEB27196A274AADA3E /* Pods_PicProgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicProgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7141DAD1FDBCF5900606631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LiningViewController.xib; sourceTree = "<group>"; };
+		F7141DB01FDBCF6100606631 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LiningViewController.strings; sourceTree = "<group>"; };
+		F7141DB21FDBCF6700606631 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LiningViewController.strings"; sourceTree = "<group>"; };
+		F7141DB31FDBD05F00606631 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		F7141DB41FDBD05F00606631 /* ShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
+		F7141DB81FDBD06C00606631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TipsViewController.xib; sourceTree = "<group>"; };
+		F7141DBB1FDBD06E00606631 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TipsViewController.strings; sourceTree = "<group>"; };
+		F7141DBD1FDBD07000606631 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TipsViewController.strings"; sourceTree = "<group>"; };
+		F7141DBE1FDC11CB00606631 /* UIScrollView+Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Add.swift"; sourceTree = "<group>"; };
 		F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionListViewController.swift; sourceTree = "<group>"; };
 		F71952CE1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassifyEmotionListViewController.xib; sourceTree = "<group>"; };
 		F71952D11FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -372,6 +383,7 @@
 		F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifyEmotionDetailListViewController.xib; sourceTree = "<group>"; };
 		F71952E31FCEFA6000ED9D68 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		F72A5AC21FDC2E18007544CB /* moran.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = moran.gif; sourceTree = "<group>"; };
 		F7845C9B1FB345D90033D69C /* FindHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHeaderView.swift; sourceTree = "<group>"; };
 		F7845C9D1FB354590033D69C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBindUserView.swift; sourceTree = "<group>"; };
@@ -569,6 +581,7 @@
 		3AB5DC2D1F8CB191004897B5 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F72A5AC21FDC2E18007544CB /* moran.gif */,
 				3AB78C0B1FC675B2001D9A43 /* 方正清刻本悦宋简体.TTF */,
 				3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */,
 				3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */,
@@ -590,6 +603,7 @@
 				3AB5DC6E1F8CB192004897B5 /* URLEncode+String.swift */,
 				3AB5DC6F1F8CB192004897B5 /* XSImage+UIImageView.swift */,
 				3A414E471FCE532B0046E2B7 /* FontChange+UILabel.swift */,
+				F7141DBE1FDC11CB00606631 /* UIScrollView+Add.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -777,9 +791,11 @@
 				3A127A591FB9831600A781B1 /* EditPaintDetailViewController.swift */,
 				3A127A5A1FB9831600A781B1 /* EditPaintDetailViewController.xib */,
 				3A6A8B921FBAA15A0062B728 /* TipsViewController.swift */,
-				3A6A8B931FBAA15A0062B728 /* TipsViewController.xib */,
+				F7141DB91FDBD06C00606631 /* TipsViewController.xib */,
 				3A3BF8011FBC29BD0013BB9D /* LiningViewController.swift */,
-				3A3BF8021FBC29BD0013BB9D /* LiningViewController.xib */,
+				F7141DAE1FDBCF5900606631 /* LiningViewController.xib */,
+				F7141DB31FDBD05F00606631 /* ShareViewController.swift */,
+				F7141DB41FDBD05F00606631 /* ShareViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -908,11 +924,12 @@
 				F71952E61FCEFA6000ED9D68 /* SettingViewController.xib in Resources */,
 				3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */,
 				3A0B8B391FBD91F1006F09E9 /* EmotionCollectionViewCell.xib in Resources */,
+				F7141DB61FDBD05F00606631 /* ShareViewController.xib in Resources */,
 				3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */,
 				F7AC31E21FD96BAB00155666 /* ScanCodeView.xib in Resources */,
 				3A2616661FD6A9CD004A6A56 /* MineBindDeviceView.xib in Resources */,
 				3A26166B1FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib in Resources */,
-				3A3BF8041FBC29BD0013BB9D /* LiningViewController.xib in Resources */,
+				F7141DAC1FDBCF5900606631 /* LiningViewController.xib in Resources */,
 				F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */,
 				3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */,
 				3AB5DC1B1F8CB119004897B5 /* Assets.xcassets in Resources */,
@@ -926,7 +943,8 @@
 				3AB78C031FC412D6001D9A43 /* SystemPicsCollectionViewController.xib in Resources */,
 				3A6F49B91FC6C7C3001AE767 /* AlbumTableViewCell.xib in Resources */,
 				3A0B8B3E1FBD920C006F09E9 /* EaselViewController.xib in Resources */,
-				3A6A8B951FBAA15A0062B728 /* TipsViewController.xib in Resources */,
+				F72A5AC31FDC2E18007544CB /* moran.gif in Resources */,
+				F7141DB71FDBD06C00606631 /* TipsViewController.xib in Resources */,
 				3AB5DD081F8CB192004897B5 /* Contents.json in Resources */,
 				3A5387601F95E7D700BA4359 /* Mine.storyboard in Resources */,
 				3A2616611FD695F6004A6A56 /* DeviceManageView.xib in Resources */,
@@ -1027,6 +1045,7 @@
 				3A9CCC571FA1DBD100FC33BD /* MasterQuoteModel.swift in Sources */,
 				3A0B8B331FBD91F1006F09E9 /* ClassifyViewController.swift in Sources */,
 				3AB5DD071F8CB192004897B5 /* ComView.swift in Sources */,
+				F7141DB51FDBD05F00606631 /* ShareViewController.swift in Sources */,
 				3A7266481FC819D300727509 /* TestViewController.swift in Sources */,
 				3AB5DD061F8CB192004897B5 /* Common.swift in Sources */,
 				3AB78C021FC412D6001D9A43 /* SystemPicsCollectionViewController.swift in Sources */,
@@ -1049,6 +1068,7 @@
 				3AB5DCC51F8CB192004897B5 /* HUDTool.swift in Sources */,
 				3A0B8B381FBD91F1006F09E9 /* EmotionCollectionViewCell.swift in Sources */,
 				3AB5DCFC1F8CB192004897B5 /* Add+String.swift in Sources */,
+				F7141DBF1FDC11CB00606631 /* UIScrollView+Add.swift in Sources */,
 				3AB5DD2B1F8CB192004897B5 /* PKHUDAnimating.swift in Sources */,
 				3A12A79C1F8F69C0008C0C9F /* MineView.swift in Sources */,
 				3AB5DCFF1F8CB192004897B5 /* Formatter+Date.swift in Sources */,
@@ -1168,6 +1188,26 @@
 				3A41AD2A1F9493EB000BCC16 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F7141DAE1FDBCF5900606631 /* LiningViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7141DAD1FDBCF5900606631 /* Base */,
+				F7141DB01FDBCF6100606631 /* en */,
+				F7141DB21FDBCF6700606631 /* zh-Hans */,
+			);
+			name = LiningViewController.xib;
+			sourceTree = "<group>";
+		};
+		F7141DB91FDBD06C00606631 /* TipsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7141DB81FDBD06C00606631 /* Base */,
+				F7141DBB1FDBD06E00606631 /* en */,
+				F7141DBD1FDBD07000606631 /* zh-Hans */,
+			);
+			name = TipsViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

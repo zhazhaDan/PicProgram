@@ -80,6 +80,11 @@ func xsBoldFont(_ size:CGFloat, family:String = "FZSKBXKJW--GB1-0") -> UIFont {
 //    return UIFont.boldSystemFont(ofSize: size*CGFloat(fontScale))
 }
 
+//语言
+func MRLanguage(forKey key:String) -> String {
+    return LocalizedLanguageTool().getString(forKey: key)
+}
+
 /**
  * 打电话
  *callNumber： 拨号号码，默认公司客服号
