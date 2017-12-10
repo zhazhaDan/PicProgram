@@ -19,7 +19,7 @@ class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource,Cus
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        tableView.register(UINib.init(nibName: "BindDeviceTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentify)
+        tableView.register(UINib.init(nibName: "BindDeviceTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -29,7 +29,7 @@ class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource,Cus
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: cellReuseIdentify, for: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

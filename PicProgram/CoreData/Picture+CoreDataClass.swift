@@ -11,5 +11,8 @@ import CoreData
 
 
 public class Picture: NSManagedObject {
+    //NSPredicate
+    @nonobjc public class func fetchPicture(forPicId id : Int64) -> Picture {
 
+    }
 }

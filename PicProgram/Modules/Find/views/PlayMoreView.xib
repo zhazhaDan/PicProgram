@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkc-DQ-71w" userLabel="backView">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
@@ -73,6 +72,7 @@
                             <state key="normal" title="收藏" image="10sdanduye_gengduogongnneg_shouchang">
                                 <color key="titleColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <state key="selected" image="02faxians_bannererji_yishouchang"/>
                             <connections>
                                 <action selector="moreAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="EXj-Ns-Thk"/>
                             </connections>
@@ -381,15 +381,14 @@
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="vkc-DQ-71w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8h4-uC-rAE"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QpU-UB-RZa" secondAttribute="trailing" constant="8" id="I2u-wP-gUa"/>
-                <constraint firstItem="QpU-UB-RZa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="LwS-Ye-qLe"/>
-                <constraint firstItem="vkc-DQ-71w" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="N51-IC-txh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vkc-DQ-71w" secondAttribute="trailing" id="mJy-8S-us8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QpU-UB-RZa" secondAttribute="bottom" constant="10" id="y2U-Jr-uXl"/>
-                <constraint firstItem="vkc-DQ-71w" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="z78-3F-FEf"/>
+                <constraint firstItem="vkc-DQ-71w" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8h4-uC-rAE"/>
+                <constraint firstAttribute="trailing" secondItem="QpU-UB-RZa" secondAttribute="trailing" constant="8" id="I2u-wP-gUa"/>
+                <constraint firstItem="QpU-UB-RZa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="LwS-Ye-qLe"/>
+                <constraint firstItem="vkc-DQ-71w" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N51-IC-txh"/>
+                <constraint firstAttribute="trailing" secondItem="vkc-DQ-71w" secondAttribute="trailing" id="mJy-8S-us8"/>
+                <constraint firstAttribute="bottom" secondItem="QpU-UB-RZa" secondAttribute="bottom" constant="10" id="y2U-Jr-uXl"/>
+                <constraint firstItem="vkc-DQ-71w" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="z78-3F-FEf"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="34.5" y="129.5"/>
         </view>
         <tapGestureRecognizer id="4Uf-km-ifP">
@@ -400,6 +399,7 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="02faxians_bannererji_yishouchang" width="22" height="22"/>
         <image name="10sdanduye_gengduogongnneg_danxuan" width="22" height="22"/>
         <image name="10sdanduye_gengduogongnneg_rijianmoshi" width="26" height="26"/>
         <image name="10sdanduye_gengduogongnneg_shouchang" width="33" height="33"/>

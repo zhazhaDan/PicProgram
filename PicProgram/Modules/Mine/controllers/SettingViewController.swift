@@ -16,7 +16,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentify)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.separatorInset = UIEdgeInsetsMake(0, SCREEN_WIDTH, 0, 0 )
         self.title = MRLanguage(forKey: "Mine Setting")
         // Do any additional setup after loading the view.
@@ -47,7 +47,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentify, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         cell.textLabel?.textColor = xsColor_main_yellow
         cell.textLabel?.font = xsFont(15)
         cell.accessoryView = UIImageView.init(image: #imageLiteral(resourceName: "next"))

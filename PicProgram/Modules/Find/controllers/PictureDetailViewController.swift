@@ -14,6 +14,7 @@ class PictureDetailViewController: BaseViewController {
     @IBOutlet weak var autorLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var picInfoLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     var _model:PictureModel!
     var model:PictureModel {
         set{
@@ -39,8 +40,22 @@ class PictureDetailViewController: BaseViewController {
            self.updateUI()
         }
     }
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
     func updateUI() {
+        self.titleLabel.text = model.title
         picImageView.xs_setImage(model.picture_url)
         autorLabel.text = model.title
         timeLabel.text = model.time + "作"

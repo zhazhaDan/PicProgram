@@ -10,10 +10,11 @@ import UIKit
 
 class PlayMoreView: BaseView {
     open weak var delegate:PlayMoreProtocol!
-    @IBAction func hidenView(_ sender: UIGestureRecognizer) {
+    @IBAction func hidenView(_ sender: UIGestureRecognizer? = nil) {
         self.removeFromSuperview()
     }
     @IBAction func moreAction(_ sender: UIButton) {
+        hidenView()
         switch sender.tag - 10 {
         case 0:
             delegate.detailInfo!()

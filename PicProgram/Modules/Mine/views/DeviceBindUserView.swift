@@ -19,7 +19,7 @@ class DeviceBindUserView: BaseView,UITableViewDelegate,UITableViewDataSource {
     var dataSource: Array<[String:Any]>!
     override func awakeFromNib() {
         super.awakeFromNib()
-        tableView.register(UINib.init(nibName: "BindUserTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentify)
+        tableView.register(UINib.init(nibName: "BindUserTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellReuseIdentifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,7 +27,7 @@ class DeviceBindUserView: BaseView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: cellReuseIdentify, for: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

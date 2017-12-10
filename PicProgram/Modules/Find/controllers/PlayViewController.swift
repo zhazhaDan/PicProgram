@@ -119,7 +119,10 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func collectPicture() {
-        
+        let cView = Bundle.main.loadNibNamed("CollectPaintsListView", owner: self, options: nil)?.first as! CollectPaintsListView
+        cView.frame = (self.navigationController?.view.bounds)!
+        cView.picModel = dataSource[currentIndex]
+        self.navigationController?.view.addSubview(cView)
     }
     func addEmotion() {
         

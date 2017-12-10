@@ -8,7 +8,7 @@
 
 import UIKit
 
-let cellReuseIdentify = "cellReuseIdentify"
+private let cellReuseIdentify = "cellReuseIdentify"
 class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
     var collectionView:UICollectionView!
     var dataSource:[PaintModel] = Array()
