@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -181,252 +181,13 @@
                                 <constraint firstItem="etH-IA-QB2" firstAttribute="centerX" secondItem="Ivi-xk-hg1" secondAttribute="centerX" multiplier="1.25" id="z8m-BU-xi9"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WY-rS-4ZS" userLabel="心情">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WY-rS-4ZS" userLabel="心情" customClass="AddEmotionView" customModule="PicProgram" customModuleProvider="target">
                             <rect key="frame" x="375" y="0.0" width="375" height="54"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-j6-vwe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="23"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加心情" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORg-BJ-pDT">
-                                            <rect key="frame" x="12" y="0.0" width="351" height="23"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <color key="textColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.44706201553344727" green="0.44705307483673096" blue="0.44705915451049805" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="23" id="10k-QC-xtt"/>
-                                        <constraint firstAttribute="trailing" secondItem="ORg-BJ-pDT" secondAttribute="trailing" constant="12" id="2QO-2N-VWr"/>
-                                        <constraint firstItem="ORg-BJ-pDT" firstAttribute="leading" secondItem="6uf-j6-vwe" secondAttribute="leading" constant="12" id="VdU-q3-ljl"/>
-                                        <constraint firstAttribute="bottom" secondItem="ORg-BJ-pDT" secondAttribute="bottom" id="hca-6L-oYi"/>
-                                        <constraint firstItem="ORg-BJ-pDT" firstAttribute="top" secondItem="6uf-j6-vwe" secondAttribute="top" id="rb1-3d-87N"/>
-                                    </constraints>
-                                </view>
-                                <button opaque="NO" tag="30" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMn-7k-kKJ">
-                                    <rect key="frame" x="15" y="-8" width="65" height="90"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="65" id="25i-Sq-Suc"/>
-                                        <constraint firstAttribute="height" constant="90" id="8Q0-6X-tPW"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
-                                    <state key="normal" title="怒" image="nu">
-                                        <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="chooseEmotionAction:" destination="-1" eventType="touchUpInside" id="SeY-az-A0E"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="31" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-bg-C3X">
-                                    <rect key="frame" x="108" y="-8.5" width="65" height="90"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="90" id="EDc-m9-lqD"/>
-                                        <constraint firstAttribute="width" constant="65" id="TUB-T5-JGb"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
-                                    <state key="normal" title="思" image="si">
-                                        <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="chooseEmotionAction:" destination="-1" eventType="touchUpInside" id="cd7-gr-RL1"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="32" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ng1-Mg-pBL">
-                                    <rect key="frame" x="202" y="-8.5" width="65" height="90"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="90" id="QN9-ay-584"/>
-                                        <constraint firstAttribute="width" constant="65" id="lFq-18-20r"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
-                                    <state key="normal" title="恐" image="kong">
-                                        <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="chooseEmotionAction:" destination="-1" eventType="touchUpInside" id="JGI-eL-NbH"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="33" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL9-uY-oUN">
-                                    <rect key="frame" x="295.5" y="-8.5" width="65" height="90"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="90" id="PX7-hA-34J"/>
-                                        <constraint firstAttribute="width" constant="65" id="T67-QS-SaK"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-70" minY="0.0" maxX="0.0" maxY="5"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
-                                    <state key="normal" title="惊" image="jing">
-                                        <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="chooseEmotionAction:" destination="-1" eventType="touchUpInside" id="Y36-I4-FuJ"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="34" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQl-xb-jok">
-                                    <rect key="frame" x="15" y="-4" width="65" height="90"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="90" id="Bzl-e6-D54"/>
-                                        <constraint firstAttribute="width" constant="65" id="rNP-AC-S5E"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
-                                    <state key="normal" title="忧" image="you">
-                                        <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="chooseEmotionAction:" destination="-1" eventType="touchUpInside" id="QMH-Lz-c3i"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="35" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyD-u3-7Hg">
-                                    <rect key="frame" x="108" y="-4" width="65" height="90"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="65" id="CYn-Mi-HPt"/>
-                                        <constraint firstAttribute="height" constant="90" id="nwK-g9-bxk"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
-                                    <state key="normal" title="喜" image="xi">
-                                        <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="chooseEmotionAction:" destination="-1" eventType="touchUpInside" id="Tck-8z-SNU"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="36" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96p-zQ-gIX">
-                                    <rect key="frame" x="202" y="-4" width="65" height="90"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="90" id="Qg1-Iq-rjI"/>
-                                        <constraint firstAttribute="width" constant="65" id="kUS-7G-Suk"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
-                                    <state key="normal" title="悲" image="bei">
-                                        <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="chooseEmotionAction:" destination="-1" eventType="touchUpInside" id="a9j-Pc-uNP"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="37" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-LP-bFc">
-                                    <rect key="frame" x="295" y="-4" width="65" height="90"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="65" id="lgB-lG-0ek"/>
-                                        <constraint firstAttribute="height" constant="90" id="s0K-yv-SuI"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-70" minY="0.0" maxX="0.0" maxY="5"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
-                                    <state key="normal" title="无常" image="wu">
-                                        <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="chooseEmotionAction:" destination="-1" eventType="touchUpInside" id="Ceb-fN-mmn"/>
-                                    </connections>
-                                </button>
-                            </subviews>
                             <color key="backgroundColor" red="0.26666867733001709" green="0.26666298508644104" blue="0.26666685938835144" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <constraints>
-                                <constraint firstItem="96p-zQ-gIX" firstAttribute="top" secondItem="wQl-xb-jok" secondAttribute="top" id="0yK-JJ-SQX"/>
-                                <constraint firstItem="Ng1-Mg-pBL" firstAttribute="centerX" secondItem="9WY-rS-4ZS" secondAttribute="centerX" multiplier="1.25" id="1rf-hp-lUG"/>
-                                <constraint firstItem="Ng1-Mg-pBL" firstAttribute="top" secondItem="NMn-7k-kKJ" secondAttribute="top" id="5nW-6O-ojh"/>
-                                <constraint firstItem="NMn-7k-kKJ" firstAttribute="centerX" secondItem="9WY-rS-4ZS" secondAttribute="centerX" multiplier="0.25" id="942-HS-mIY"/>
-                                <constraint firstItem="4ML-LP-bFc" firstAttribute="centerX" secondItem="kL9-uY-oUN" secondAttribute="centerX" id="H4T-xO-xa8"/>
-                                <constraint firstItem="kL9-uY-oUN" firstAttribute="centerX" secondItem="9WY-rS-4ZS" secondAttribute="centerX" multiplier="1.75" id="HUu-EX-leh"/>
-                                <constraint firstItem="6uf-j6-vwe" firstAttribute="leading" secondItem="9WY-rS-4ZS" secondAttribute="leading" id="JxL-zU-T9B"/>
-                                <constraint firstItem="NMn-7k-kKJ" firstAttribute="centerY" secondItem="9WY-rS-4ZS" secondAttribute="centerY" multiplier="0.5" constant="23" id="KPo-jo-2Pn"/>
-                                <constraint firstItem="96p-zQ-gIX" firstAttribute="centerX" secondItem="Ng1-Mg-pBL" secondAttribute="centerX" id="KV0-df-5LV"/>
-                                <constraint firstAttribute="trailing" secondItem="6uf-j6-vwe" secondAttribute="trailing" id="UXz-9N-5x7"/>
-                                <constraint firstItem="4ML-LP-bFc" firstAttribute="top" secondItem="wQl-xb-jok" secondAttribute="top" id="Y16-ZF-vZW"/>
-                                <constraint firstItem="8UO-bg-C3X" firstAttribute="top" secondItem="NMn-7k-kKJ" secondAttribute="top" id="Zfh-ay-IPD"/>
-                                <constraint firstItem="6uf-j6-vwe" firstAttribute="top" secondItem="9WY-rS-4ZS" secondAttribute="top" id="iqO-iD-2BC"/>
-                                <constraint firstItem="DyD-u3-7Hg" firstAttribute="top" secondItem="wQl-xb-jok" secondAttribute="top" id="joe-Hi-zwA"/>
-                                <constraint firstItem="wQl-xb-jok" firstAttribute="centerY" secondItem="9WY-rS-4ZS" secondAttribute="centerY" multiplier="1.5" id="ojx-Oh-cmL"/>
-                                <constraint firstItem="8UO-bg-C3X" firstAttribute="centerX" secondItem="9WY-rS-4ZS" secondAttribute="centerX" multiplier="0.75" id="pZd-1E-f8P"/>
-                                <constraint firstItem="kL9-uY-oUN" firstAttribute="top" secondItem="NMn-7k-kKJ" secondAttribute="top" id="uGN-8l-DaM"/>
-                                <constraint firstItem="wQl-xb-jok" firstAttribute="centerX" secondItem="NMn-7k-kKJ" secondAttribute="centerX" id="wa4-lk-kC9"/>
-                                <constraint firstItem="DyD-u3-7Hg" firstAttribute="centerX" secondItem="8UO-bg-C3X" secondAttribute="centerX" id="zYl-FO-DN0"/>
-                            </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHP-gg-Xp5" userLabel="分享">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHP-gg-Xp5" userLabel="分享" customClass="SharePlatformView" customModule="PicProgram" customModuleProvider="target">
                             <rect key="frame" x="750" y="0.0" width="375" height="54"/>
-                            <subviews>
-                                <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEu-Xt-9Il">
-                                    <rect key="frame" x="21.5" y="11.5" width="32" height="32"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="32" id="5HY-Wy-DSg"/>
-                                        <constraint firstAttribute="height" constant="32" id="dkg-U0-21X"/>
-                                    </constraints>
-                                    <state key="normal" image="weixindenglu_icon"/>
-                                    <connections>
-                                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="WAD-DS-SWO"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dF-l2-2Qz">
-                                    <rect key="frame" x="96.5" y="11" width="32" height="32"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="32" id="fbN-N5-jWG"/>
-                                        <constraint firstAttribute="width" constant="32" id="j4L-I1-Tab"/>
-                                    </constraints>
-                                    <state key="normal" image="weibodenglu_icon"/>
-                                    <connections>
-                                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="wlN-4T-OIK"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-Xs-q47">
-                                    <rect key="frame" x="171" y="11" width="32" height="32"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="32" id="QOo-6X-9nY"/>
-                                        <constraint firstAttribute="width" constant="32" id="qXT-uG-B5a"/>
-                                    </constraints>
-                                    <state key="normal" image="fenxiang_ins"/>
-                                    <connections>
-                                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="JhB-KU-KKO"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="43" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqu-3M-mGo">
-                                    <rect key="frame" x="246.5" y="11" width="32" height="32"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="32" id="3qH-p8-qGe"/>
-                                        <constraint firstAttribute="height" constant="32" id="vS9-OP-5LJ"/>
-                                    </constraints>
-                                    <state key="normal" image="twitterdenglu"/>
-                                    <connections>
-                                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="AId-p9-3Na"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hch-Nk-3jD">
-                                    <rect key="frame" x="321.5" y="11" width="32" height="32"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="32" id="9EV-wo-5MY"/>
-                                        <constraint firstAttribute="width" constant="32" id="Ecc-2T-Hh8"/>
-                                    </constraints>
-                                    <state key="normal" image="Facebookdenglu"/>
-                                    <connections>
-                                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="ruT-k8-KV8"/>
-                                    </connections>
-                                </button>
-                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="OEu-Xt-9Il" firstAttribute="centerX" secondItem="wHP-gg-Xp5" secondAttribute="centerX" multiplier="0.2" id="7b0-wy-ye9"/>
-                                <constraint firstItem="hch-Nk-3jD" firstAttribute="centerY" secondItem="yqu-3M-mGo" secondAttribute="centerY" id="A5A-qz-fge"/>
-                                <constraint firstItem="yqu-3M-mGo" firstAttribute="centerX" secondItem="wHP-gg-Xp5" secondAttribute="centerX" multiplier="1.4" id="I0X-DQ-VSo"/>
-                                <constraint firstItem="Apo-Xs-q47" firstAttribute="centerX" secondItem="wHP-gg-Xp5" secondAttribute="centerX" id="MXJ-3d-G2g"/>
-                                <constraint firstItem="4dF-l2-2Qz" firstAttribute="centerY" secondItem="OEu-Xt-9Il" secondAttribute="centerY" id="Mkq-cI-dzb"/>
-                                <constraint firstItem="hch-Nk-3jD" firstAttribute="centerX" secondItem="wHP-gg-Xp5" secondAttribute="centerX" multiplier="1.8" id="f1c-5z-ecs"/>
-                                <constraint firstItem="yqu-3M-mGo" firstAttribute="centerY" secondItem="Apo-Xs-q47" secondAttribute="centerY" id="i5h-H3-VBj"/>
-                                <constraint firstItem="4dF-l2-2Qz" firstAttribute="centerX" secondItem="wHP-gg-Xp5" secondAttribute="centerX" multiplier="0.6" id="kwi-5o-yn5"/>
-                                <constraint firstItem="OEu-Xt-9Il" firstAttribute="centerY" secondItem="wHP-gg-Xp5" secondAttribute="centerY" id="vce-13-YA5"/>
-                                <constraint firstItem="Apo-Xs-q47" firstAttribute="centerY" secondItem="4dF-l2-2Qz" secondAttribute="centerY" id="wQe-hK-ccp"/>
-                            </constraints>
                         </view>
                     </subviews>
                     <constraints>
@@ -534,26 +295,14 @@
         </view>
     </objects>
     <resources>
-        <image name="Facebookdenglu" width="31" height="31"/>
-        <image name="bei" width="134" height="131"/>
         <image name="danduye_xiaohuawen1_weixuanzhong" width="25" height="25"/>
         <image name="danduye_xiaohuawen1_xuanzhong" width="25" height="25"/>
         <image name="danduye_xiaohuawen2_weixuanzhong" width="30" height="30"/>
         <image name="danduye_xiaohuawen2_xuanzhong" width="30" height="30"/>
         <image name="danduye_xiaohuawen3_weixuanzhong" width="28" height="28"/>
         <image name="danduye_xiaohuawen3_xuanzhong" width="28" height="28"/>
-        <image name="fenxiang_ins" width="32" height="32"/>
-        <image name="jing" width="65" height="70"/>
-        <image name="kong" width="127" height="141"/>
-        <image name="nu" width="131" height="142"/>
         <image name="shareCode" width="140" height="140"/>
-        <image name="si" width="129" height="147"/>
-        <image name="twitterdenglu" width="31" height="31"/>
-        <image name="weibodenglu_icon" width="31" height="31"/>
-        <image name="weixindenglu_icon" width="31" height="31"/>
-        <image name="wu" width="66" height="70"/>
         <image name="wuhuawen" width="262" height="649"/>
         <image name="xi" width="132" height="127"/>
-        <image name="you" width="133" height="137"/>
     </resources>
 </document>

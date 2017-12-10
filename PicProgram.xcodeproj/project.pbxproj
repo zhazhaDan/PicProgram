@@ -157,6 +157,17 @@
 		3AB78C0D1FC67863001D9A43 /* 方正清刻本悦宋简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0B1FC675B2001D9A43 /* 方正清刻本悦宋简体.TTF */; };
 		3AB78C0E1FC67863001D9A43 /* 方正宋刻本秀楷简.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */; };
 		3AB78C0F1FC67863001D9A43 /* 方正宋刻本秀楷简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */; };
+		3AB7B5831FDCE6360055B694 /* Paint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5811FDCE6360055B694 /* Paint+CoreDataClass.swift */; };
+		3AB7B5841FDCE6360055B694 /* Paint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5821FDCE6360055B694 /* Paint+CoreDataProperties.swift */; };
+		3AB7B5891FDCE67B0055B694 /* Picture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5851FDCE67B0055B694 /* Picture+CoreDataClass.swift */; };
+		3AB7B58A1FDCE67B0055B694 /* Emotion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5861FDCE67B0055B694 /* Emotion+CoreDataProperties.swift */; };
+		3AB7B58B1FDCE67B0055B694 /* Emotion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5871FDCE67B0055B694 /* Emotion+CoreDataClass.swift */; };
+		3AB7B58C1FDCE67B0055B694 /* Picture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5881FDCE67B0055B694 /* Picture+CoreDataProperties.swift */; };
+		3AB7B58E1FDCE70B0055B694 /* AddEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B58D1FDCE70B0055B694 /* AddEmotionView.swift */; };
+		3AB7B5901FDCE7160055B694 /* AddEmotionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7B58F1FDCE7160055B694 /* AddEmotionView.xib */; };
+		3AB7B5921FDCEBD20055B694 /* SharePlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5911FDCEBD20055B694 /* SharePlatformView.swift */; };
+		3AB7B5941FDCEBDC0055B694 /* SharePlatformView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */; };
+		3AB7B5961FDCEC1E0055B694 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */; };
 		3AB8FF931FAAF9D600058784 /* PicDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */; };
 		3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */; };
 		3ACDB5D41FC7D710007E0E32 /* ClassifyCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDB5D21FC7D710007E0E32 /* ClassifyCollectionReusableView.swift */; };
@@ -352,6 +363,17 @@
 		3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正宋刻本秀楷简体.TTF"; sourceTree = "<group>"; };
 		3AB78C0B1FC675B2001D9A43 /* 方正清刻本悦宋简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正清刻本悦宋简体.TTF"; sourceTree = "<group>"; };
 		3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正宋刻本秀楷简.TTF"; sourceTree = "<group>"; };
+		3AB7B5811FDCE6360055B694 /* Paint+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Paint+CoreDataClass.swift"; path = "/Users/gongdandan/Desktop/Demo/Swift_Documents/Swift Programming/画框项目/PicProgram/PicProgram/CoreData/Paint+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		3AB7B5821FDCE6360055B694 /* Paint+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Paint+CoreDataProperties.swift"; path = "/Users/gongdandan/Desktop/Demo/Swift_Documents/Swift Programming/画框项目/PicProgram/PicProgram/CoreData/Paint+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		3AB7B5851FDCE67B0055B694 /* Picture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Picture+CoreDataClass.swift"; path = "/Users/gongdandan/Desktop/Demo/Swift_Documents/Swift Programming/画框项目/PicProgram/PicProgram/CoreData/Picture+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		3AB7B5861FDCE67B0055B694 /* Emotion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Emotion+CoreDataProperties.swift"; path = "/Users/gongdandan/Desktop/Demo/Swift_Documents/Swift Programming/画框项目/PicProgram/PicProgram/CoreData/Emotion+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		3AB7B5871FDCE67B0055B694 /* Emotion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Emotion+CoreDataClass.swift"; path = "/Users/gongdandan/Desktop/Demo/Swift_Documents/Swift Programming/画框项目/PicProgram/PicProgram/CoreData/Emotion+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		3AB7B5881FDCE67B0055B694 /* Picture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Picture+CoreDataProperties.swift"; path = "/Users/gongdandan/Desktop/Demo/Swift_Documents/Swift Programming/画框项目/PicProgram/PicProgram/CoreData/Picture+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		3AB7B58D1FDCE70B0055B694 /* AddEmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmotionView.swift; sourceTree = "<group>"; };
+		3AB7B58F1FDCE7160055B694 /* AddEmotionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmotionView.xib; sourceTree = "<group>"; };
+		3AB7B5911FDCEBD20055B694 /* SharePlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlatformView.swift; sourceTree = "<group>"; };
+		3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharePlatformView.xib; sourceTree = "<group>"; };
+		3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
 		3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewFlowLayout.swift; sourceTree = "<group>"; };
 		3ACDB5D21FC7D710007E0E32 /* ClassifyCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -539,6 +561,7 @@
 		3AB5DC0F1F8CB119004897B5 /* PicProgram */ = {
 			isa = PBXGroup;
 			children = (
+				3AB7B5741FDCE1280055B694 /* CoreData */,
 				3AB5DCBB1F8CB192004897B5 /* Base */,
 				3AB5DD411F8CB1B7004897B5 /* Delegate */,
 				3AB5DC701F8CB192004897B5 /* Define */,
@@ -748,6 +771,7 @@
 				3AB5DCC41F8CB192004897B5 /* ShadowView.swift */,
 				3A7266471FC819D300727509 /* TestViewController.swift */,
 				3A414E4F1FCEC2920046E2B7 /* LocalizedLanguageTool.swift */,
+				3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -759,6 +783,19 @@
 				3AB5DD431F8CB1B7004897B5 /* RegistThirdAppDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		3AB7B5741FDCE1280055B694 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3AB7B5851FDCE67B0055B694 /* Picture+CoreDataClass.swift */,
+				3AB7B5881FDCE67B0055B694 /* Picture+CoreDataProperties.swift */,
+				3AB7B5871FDCE67B0055B694 /* Emotion+CoreDataClass.swift */,
+				3AB7B5861FDCE67B0055B694 /* Emotion+CoreDataProperties.swift */,
+				3AB7B5811FDCE6360055B694 /* Paint+CoreDataClass.swift */,
+				3AB7B5821FDCE6360055B694 /* Paint+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		3AD84BF71F99CDDD009F3BD5 /* Find */ = {
@@ -838,6 +875,10 @@
 				F7845C9B1FB345D90033D69C /* FindHeaderView.swift */,
 				3A0085D61FB4760300BACFD0 /* PlayMoreView.swift */,
 				3A0085D41FB475F100BACFD0 /* PlayMoreView.xib */,
+				3AB7B58D1FDCE70B0055B694 /* AddEmotionView.swift */,
+				3AB7B58F1FDCE7160055B694 /* AddEmotionView.xib */,
+				3AB7B5911FDCEBD20055B694 /* SharePlatformView.swift */,
+				3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -928,6 +969,7 @@
 				3A7BA0E21FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.xib in Resources */,
 				F7AC31E21FD96BAB00155666 /* ScanCodeView.xib in Resources */,
 				3A2616661FD6A9CD004A6A56 /* MineBindDeviceView.xib in Resources */,
+				3AB7B5901FDCE7160055B694 /* AddEmotionView.xib in Resources */,
 				3A26166B1FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib in Resources */,
 				F7141DAC1FDBCF5900606631 /* LiningViewController.xib in Resources */,
 				F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */,
@@ -965,6 +1007,7 @@
 				3A7266461FC80F3C00727509 /* ClassifyArtListViewController.xib in Resources */,
 				3A7C827F1FAC2B2000793420 /* PictureDetailViewController.xib in Resources */,
 				3A9CCC5F1FA1E65A00FC33BD /* ItemView.xib in Resources */,
+				3AB7B5941FDCEBDC0055B694 /* SharePlatformView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,9 +1110,12 @@
 				3AF8CB381FB1AE7A00635533 /* NavigationBarShowListView.swift in Sources */,
 				3AB5DCC51F8CB192004897B5 /* HUDTool.swift in Sources */,
 				3A0B8B381FBD91F1006F09E9 /* EmotionCollectionViewCell.swift in Sources */,
+				3AB7B58A1FDCE67B0055B694 /* Emotion+CoreDataProperties.swift in Sources */,
 				3AB5DCFC1F8CB192004897B5 /* Add+String.swift in Sources */,
 				F7141DBF1FDC11CB00606631 /* UIScrollView+Add.swift in Sources */,
+				3AB7B58E1FDCE70B0055B694 /* AddEmotionView.swift in Sources */,
 				3AB5DD2B1F8CB192004897B5 /* PKHUDAnimating.swift in Sources */,
+				3AB7B58C1FDCE67B0055B694 /* Picture+CoreDataProperties.swift in Sources */,
 				3A12A79C1F8F69C0008C0C9F /* MineView.swift in Sources */,
 				3AB5DCFF1F8CB192004897B5 /* Formatter+Date.swift in Sources */,
 				F71952D31FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift in Sources */,
@@ -1091,6 +1137,7 @@
 				3AB5DD391F8CB192004897B5 /* BaseNavigationController.swift in Sources */,
 				F7AC31E01FD96BA200155666 /* ScanCodeView.swift in Sources */,
 				3AB5DD451F8CB1B7004897B5 /* RegistThirdAppDelegate.swift in Sources */,
+				3AB7B5921FDCEBD20055B694 /* SharePlatformView.swift in Sources */,
 				3AB5DCC61F8CB192004897B5 /* NetworkTool.swift in Sources */,
 				3AB5DCFD1F8CB192004897B5 /* ConvertLocation+CLLocationCoordinate2D.swift in Sources */,
 				3AB5DD051F8CB192004897B5 /* XSImage+UIImageView.swift in Sources */,
@@ -1103,6 +1150,7 @@
 				3AB5DD301F8CB192004897B5 /* PKHUDRotatingImageView.swift in Sources */,
 				3A2616671FD6A9CD004A6A56 /* MineBindDeviceView.swift in Sources */,
 				3A26166A1FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift in Sources */,
+				3AB7B5891FDCE67B0055B694 /* Picture+CoreDataClass.swift in Sources */,
 				3A12A79A1F8F69AF008C0C9F /* DeviceManageView.swift in Sources */,
 				3AB5DD2C1F8CB192004897B5 /* PKHUDAnimation.swift in Sources */,
 				3AB5DD401F8CB192004897B5 /* ShadowView.swift in Sources */,
@@ -1118,6 +1166,7 @@
 				3AB5DD351F8CB192004897B5 /* PKHUDWideBaseView.swift in Sources */,
 				3A127A5B1FB9831600A781B1 /* EditPaintDetailViewController.swift in Sources */,
 				3A7BA0E31FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift in Sources */,
+				3AB7B5961FDCEC1E0055B694 /* BaseXibView.swift in Sources */,
 				3A0B8B351FBD91F1006F09E9 /* ClassifyBaseListView.swift in Sources */,
 				3A3BF8031FBC29BD0013BB9D /* LiningViewController.swift in Sources */,
 				3AD84BF61F99ABD4009F3BD5 /* TextFieldExtension.swift in Sources */,
@@ -1141,14 +1190,17 @@
 				3AB5DCFE1F8CB192004897B5 /* CustomBarItem+UINavigationController.swift in Sources */,
 				3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */,
 				F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */,
+				3AB7B58B1FDCE67B0055B694 /* Emotion+CoreDataClass.swift in Sources */,
 				3A5387521F95DAB000BA4359 /* ChangePassViewController.swift in Sources */,
 				F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */,
 				3AB5DD2F1F8CB192004897B5 /* PKHUDProgressView.swift in Sources */,
 				3A9CCC551FA1DB7A00FC33BD /* PioneerModel.swift in Sources */,
 				3AB5DD1B1F8CB192004897B5 /* ScanQRCodeViewController.swift in Sources */,
 				3A9963CB1F9C6A5A00077307 /* FindViewController.swift in Sources */,
+				3AB7B5841FDCE6360055B694 /* Paint+CoreDataProperties.swift in Sources */,
 				3AB5DD021F8CB192004897B5 /* Refresh+UIScrollView.swift in Sources */,
 				3A9963FC1F9E170300077307 /* PicDetailCollectionViewController.swift in Sources */,
+				3AB7B5831FDCE6360055B694 /* Paint+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var segView: UIView!
     @IBOutlet weak var view1: UIView!
-    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view2: AddEmotionView!
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var contentScrollViewHeight: NSLayoutConstraint!
     

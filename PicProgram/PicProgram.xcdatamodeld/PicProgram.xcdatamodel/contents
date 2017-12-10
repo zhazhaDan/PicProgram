@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="17B1003" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Paint" representedClassName="Paint" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13771" systemVersion="16G1036" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Emotion" representedClassName=".Emotion" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="emotion" inverseEntity="Picture" syncable="YES"/>
+    </entity>
+    <entity name="Paint" representedClassName=".Paint" syncable="YES">
         <attribute name="paint_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="paint_title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title_url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="paint" inverseEntity="Picture" syncable="YES"/>
     </entity>
-    <entity name="Picture" representedClassName="Picture" syncable="YES" codeGenerationType="class">
+    <entity name="Picture" representedClassName=".Picture" syncable="YES">
         <attribute name="picture_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="picture_url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="emotion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Emotion" inverseName="pictures" inverseEntity="Emotion" syncable="YES"/>
         <relationship name="paint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Paint" inverseName="pics" inverseEntity="Paint" syncable="YES"/>
     </entity>
     <elements>
         <element name="Paint" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Picture" positionX="-63" positionY="36" width="128" height="90"/>
+        <element name="Picture" positionX="-63" positionY="36" width="128" height="105"/>
+        <element name="Emotion" positionX="-54" positionY="36" width="128" height="90"/>
     </elements>
 </model>
