@@ -9,17 +9,37 @@
 import UIKit
 
 class PlayMoreView: BaseView {
+    @IBOutlet weak var collectButton: UIButton!
     open weak var delegate:PlayMoreProtocol!
+    private var _isCollected:Bool = false
+    var isCollected:Bool {
+        set {
+            _isCollected = newValue
+            self.collectButton.isSelected = isCollected
+        }
+        get {
+            return _isCollected
+        }
+    }
     @IBAction func hidenView(_ sender: UIGestureRecognizer? = nil) {
         self.removeFromSuperview()
     }
+    
+    override func awakeFromNib() {
+        collectButton.isSelected = isCollected
+    }
+    
     @IBAction func moreAction(_ sender: UIButton) {
         hidenView()
         switch sender.tag - 10 {
         case 0:
             delegate.detailInfo!()
         case 1:
-            delegate.collectPicture!()
+            if isCollected == true {
+                delegate.cancelCollectPicture!()
+            }else {
+                delegate.collectPicture!()
+            }
         case 2:
             delegate.addEmotion!()
         default:
@@ -55,6 +75,7 @@ class PlayMoreView: BaseView {
 @objc protocol PlayMoreProtocol:NSObjectProtocol {
     @objc optional func detailInfo()
     @objc optional func collectPicture()
+    @objc optional func cancelCollectPicture()
     @objc optional func addEmotion()
     @objc optional func playTimeSetting(time:Int)
     @objc optional func playModeSetting(mode: Int)

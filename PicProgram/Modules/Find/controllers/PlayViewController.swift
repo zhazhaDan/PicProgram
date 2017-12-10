@@ -38,6 +38,13 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         moreView.delegate = self
         moreView.frame = (self.navigationController?.view.bounds)!
         self.navigationController?.view.addSubview(moreView)
+        
+        let pic = Picture.fetchPicture(forPicId: Int64(Int(dataSource[currentIndex].picture_id)))
+        if pic == nil {
+            moreView.isCollected = false
+        }else {
+            moreView.isCollected = (pic?.localPaint == nil ? false : true)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,6 +131,19 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         cView.picModel = dataSource[currentIndex]
         self.navigationController?.view.addSubview(cView)
     }
+    
+    func cancelCollectPicture() {
+        let pic = Picture.fetchPicture(forPicId: Int64(Int(dataSource[currentIndex].picture_id)))
+        let paint = pic?.localPaint
+        paint?.removeFromPics(pic!)
+        do {
+            try appDelegate.managedObjectContext.save()
+        }catch {
+            
+        }
+
+    }
+    
     func addEmotion() {
         
     }

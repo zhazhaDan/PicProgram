@@ -59,7 +59,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
         }
     }
     
-    @IBAction func tapAction(_ sender: Any) {
+    @IBAction func tapAction(_ sender: Any?) {
         self.removeFromSuperview()
     }
     
@@ -106,7 +106,10 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
             pic.localPaint = paint
             do {
                 try managedObectContext.save()
-                HUDTool.show(.text, text: "收藏成功", delay: 1, view: self, complete: nil)
+                // TODO:收藏成功  通知收藏按钮改变，并收起视图
+                HUDTool.show(.text, text: "收藏成功", delay: 1, view: self, complete: {
+                    self.tapAction(nil)
+                })
             }catch {
                 
             }

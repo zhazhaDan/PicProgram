@@ -389,6 +389,9 @@
                 <constraint firstAttribute="bottom" secondItem="QpU-UB-RZa" secondAttribute="bottom" constant="10" id="y2U-Jr-uXl"/>
                 <constraint firstItem="vkc-DQ-71w" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="z78-3F-FEf"/>
             </constraints>
+            <connections>
+                <outlet property="collectButton" destination="lWv-kW-s6S" id="dCc-cN-eDr"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="129.5"/>
         </view>
         <tapGestureRecognizer id="4Uf-km-ifP">
