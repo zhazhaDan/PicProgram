@@ -2,7 +2,7 @@
 //  HistoryPic+CoreDataProperties.swift
 //  
 //
-//  Created by sliencio on 2017/12/10.
+//  Created by sliencio on 2017/12/11.
 //
 //
 

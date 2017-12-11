@@ -2,7 +2,7 @@
 //  Emotion+CoreDataProperties.swift
 //  
 //
-//  Created by 龚丹丹 on 2017/12/10.
+//  Created by sliencio on 2017/12/11.
 //
 //
 
@@ -16,8 +16,8 @@ extension Emotion {
         return NSFetchRequest<Emotion>(entityName: "Emotion")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var id: Int16
+    @NSManaged public var emotion_id: Int16
+    @NSManaged public var emotion_name: String?
     @NSManaged public var pictures: NSSet?
 
 }

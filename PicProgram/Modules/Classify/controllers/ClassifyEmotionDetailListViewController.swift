@@ -13,10 +13,12 @@ private let reuseIdentifier = "PicDetailCollectionViewCell"
 class ClassifyEmotionDetailListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var titleButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    var subTitle:String!
     var pictures:[PictureModel] = Array()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.titleButton.setTitle(subTitle, for: .normal)
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier:reuseIdentifier)
         // Do any additional setup after loading the view.
     }

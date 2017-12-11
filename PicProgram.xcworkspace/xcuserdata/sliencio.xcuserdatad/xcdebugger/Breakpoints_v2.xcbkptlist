@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/GifViewController.swift"
-            timestampString = "534606460.573363"
+            timestampString = "534697171.066729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -115,13 +115,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicProgram/Modules/Find/controllers/PlayViewController.swift"
-            timestampString = "534618329.862631"
+            filePath = "PicProgram/Modules/Classify/controllers/ClassifyEmotionListViewController.swift"
+            timestampString = "534697797.432203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "moreAction(_:)"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

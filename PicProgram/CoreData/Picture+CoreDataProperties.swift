@@ -18,6 +18,8 @@ extension Picture {
 
     @NSManaged public var picture_id: Int64
     @NSManaged public var picture_url: String?
+    @NSManaged public var detail_url: String?
+    @NSManaged public var title: String?
     @NSManaged public var emotion: Emotion?
     @NSManaged public var historyPics: HistoryPic?
     @NSManaged public var paint: Paint?

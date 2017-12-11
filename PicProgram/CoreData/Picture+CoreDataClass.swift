@@ -32,6 +32,11 @@ public class Picture: NSManagedObject {
             let pic = NSManagedObject.init(entity: entity, insertInto: appDelegate.managedObjectContext) as! Picture
         pic.picture_id = id
         return pic
-
+    }
+    
+    func coverProperties(model:PictureModel) {
+        self.picture_url = model.picture_url
+        self.detail_url = model.detail_url
+        self.title = model.title
     }
 }

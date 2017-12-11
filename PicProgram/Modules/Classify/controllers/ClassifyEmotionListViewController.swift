@@ -22,18 +22,25 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     var selectedIndex:Int = 0
     var model:PaintModel!
     var customPaint:[PictureModel] = Array()
+    var emotion:Emotion!
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
-        self.title = "心情"
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "心情"
+
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         let sectionData = self.dataSource[selectedIndex]
         self.emotionImageView.image = UIImage.init(named: sectionData["imageName"]! as! String)
         self.emotionLabel.text = sectionData["title"] as! String
+       loadLoadEmotionPaint()
     }
 
     override func buildUI() {
@@ -62,19 +69,22 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if customPaint.count > 0 {
+        if customPaint.count > 0 && self.model != nil {
             return 2
+        }else if customPaint.count == 0 && self.model == nil {
+            return 0
         }
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if self.model == nil {
+        if customPaint.count > 0 && section == 0 {
+            return customPaint.count
+        }else if self.model == nil {
             return 0
-        }else if customPaint.count == 0 || section == 1{
+        }else {
             return model.picture_arry.count
         }
-        return customPaint.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -186,6 +196,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
         let sectionData = self.dataSource[indexPath.row]
         self.emotionImageView.image = UIImage.init(named: sectionData["imageName"]! as! String)
         self.emotionLabel.text = sectionData["title"] as! String
+        loadLoadEmotionPaint()
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
         self.requestData()
@@ -213,11 +224,18 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
         }
         return true
     }
-    
+    //点击从本地数据库读取用户自定义列表
+    func loadLoadEmotionPaint() {
+        let sectionData = self.dataSource[selectedIndex]
+        emotion = Emotion.fetchPicture(forEmotionName: sectionData["title"] as! String)
+        customPaint = emotion.pictureModels
+        collectionView.reloadData()
+
+    }
     
     //customViewProtocol
     func listDidSelected(view: UIView, at index: Int, _ section: Int) {
-        let vc = ClassifyEmotionDetailListViewController()
+        let vc = ClassifyEmotionDetailListViewController.init(nibName: "ClassifyEmotionDetailListViewController", bundle: Bundle.main)
         let header = view as! ClassifyEmotionCollectionReusableView
         if customPaint.count == 0 {
             if section == 0 {
@@ -229,7 +247,8 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
             vc.pictures = self.model.picture_arry
         }
         vc.title = self.emotionLabel.text
-//        vc.titleButton.setTitle(header.emotionTitleButton.title(for: .normal), for: .normal)
+        let subTitle = header.emotionTitleButton.title(for: .normal)
+        vc.subTitle = subTitle
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

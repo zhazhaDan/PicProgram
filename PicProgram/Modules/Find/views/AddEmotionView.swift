@@ -8,16 +8,27 @@
 
 import UIKit
 
+enum EmotionType {
+    case Emotion_nu
+    case Emotion_si
+    case Emotion_kong
+    case Emotion_jing
+    case Emotion_you
+    case Emotion_xi
+    case Emotion_bei
+    case Emotion_wuchang
+}
+
 class AddEmotionView: BaseXibView {
 
     open weak var delegate : AddEmotionProtocol!
     @IBAction func emotionChoosedAction(_ sender: UIButton) {
-        delegate.emotionChoosed!(sender: sender,emotionIndex: sender.tag - 30)
+        delegate.emotionChoosed!(emotionView: self, sender: sender,emotionIndex: sender.tag - 30)
     }
 
 
 }
 
 @objc protocol AddEmotionProtocol:NSObjectProtocol {
-    @objc optional func emotionChoosed(sender:UIButton, emotionIndex index:Int)
+    @objc optional func emotionChoosed(emotionView:AddEmotionView,sender:UIButton, emotionIndex index:Int)
 }

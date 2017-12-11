@@ -18,6 +18,12 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         requestData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "分类"
+        self.scrollView?.setContentOffset(CGPoint.init(x: (scrollView?.width)! * CGFloat(selectedIndex), y: 0), animated: true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -71,7 +77,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         let titles = ["艺术","心情","场景"]
         let space = (self.view.width - 84*3)/3
         for i in 0 ..< titles.count {
-            let button = UIButton.init(frame: CGRect.init(x: space/2 + (space + 84) * CGFloat(i), y: NavigationBarBottom + 5, width: ( 84), height: 34))
+            let button = UIButton.init(frame: CGRect.init(x: space/2 + (space + 84) * CGFloat(i), y: NavigationBarBottom + 5, width: (84), height: 34))
             button.setTitle(titles[i], for: .normal)
             button.titleLabel?.font = xsFont(15)
             button.setTitleColor(xsColor_main_yellow, for: .normal)

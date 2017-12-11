@@ -2,7 +2,7 @@
 //  Paint+CoreDataProperties.swift
 //  
 //
-//  Created by 龚丹丹 on 2017/12/10.
+//  Created by sliencio on 2017/12/11.
 //
 //
 
@@ -19,7 +19,9 @@ extension Paint {
     @NSManaged public var paint_id: Int64
     @NSManaged public var paint_title: String?
     @NSManaged public var title_url: String?
+    @NSManaged public var title_detail_url: String?
     @NSManaged public var pics: NSSet?
+    @NSManaged public var localPaint: LocalPaint?
 
 }
 

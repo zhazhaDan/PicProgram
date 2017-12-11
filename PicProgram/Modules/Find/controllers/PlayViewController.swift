@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
@@ -151,6 +151,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     func addEmotion() {
         let maskView:UIView = UIView.init(frame: (self.navigationController?.view.bounds)!)
         maskView.backgroundColor = xsColor("000000", alpha: 0.6)
+        maskView.tag = 100
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapAction(_ :)))
         maskView.addGestureRecognizer(tapGesture)
         let emotionView = AddEmotionView.init(frame: CGRect.init(x: 0, y: (self.navigationController?.view.height)! - 249, width: self.view.width, height: 249))
@@ -159,8 +160,9 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         self.navigationController?.view.addSubview(maskView)
     }
     
-    @objc func tapAction(_ tapGesture:UITapGestureRecognizer) {
-        tapGesture.view?.removeFromSuperview()
+    @objc func tapAction(_ tapGesture:UITapGestureRecognizer?) {
+        let maskView = self.navigationController?.view.viewWithTag(100)
+        maskView?.removeFromSuperview()
     }
     
     
@@ -178,6 +180,24 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         let vc = NewPintNameViewController.init(nibName: "NewPintNameViewController", bundle: Bundle.main)
         self.navigationController?.present(HomePageNavigationController.init(rootViewController:vc), animated: true, completion: nil)
 //        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func emotionChoosed(emotionView:AddEmotionView,sender: UIButton, emotionIndex index: Int) {
+        let currentPic_id = dataSource[currentIndex].picture_id
+        let pic = Picture.fetchPicture(forPicId: Int64(currentPic_id))
+        pic?.coverProperties(model: dataSource[currentIndex])
+        let paint = Emotion.fetchPicture(forEmotionName: sender.title(for: .normal)!)
+        paint?.addToPictures(pic!)
+        pic?.emotion = paint
+        do {
+            try appDelegate.managedObjectContext.save()
+            HUDTool.show(.text, text: "心情添加成功", delay: 1, view: (self.navigationController?.view)!, complete: {[weak self] in
+                self?.tapAction(nil)
+            })
+        } catch  {
+            
+        }
+        
     }
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
