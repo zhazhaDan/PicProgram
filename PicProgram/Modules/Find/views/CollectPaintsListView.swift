@@ -12,15 +12,17 @@ import CoreData
 private let cellReuseIdentify = "CollectPaintsListViewCell"
 class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate {
     @IBOutlet weak var tapGesture: UITapGestureRecognizer!
-    
+    @IBOutlet weak var listViewHeight: NSLayoutConstraint!
+    open weak var delegate:CollectPaintsListProtocol!
     var dataSource:[LocalPaint] = Array()
     let managedObectContext = appDelegate.managedObjectContext
     var pic:Picture!
     var picModel:PictureModel? {
         set {
-            let entity = NSEntityDescription.entity(forEntityName: "Picture", in: managedObectContext) as! NSEntityDescription
-            pic = NSManagedObject.init(entity: entity, insertInto: managedObectContext) as! Picture
-            pic.picture_id = Int64(newValue?.picture_id as! Int)
+//            let entity = NSEntityDescription.entity(forEntityName: "Picture", in: managedObectContext) as! NSEntityDescription
+//            pic = NSManagedObject.init(entity: entity, insertInto: managedObectContext) as! Picture
+            pic = Picture.fetchPicture(forPicId: Int64(newValue?.picture_id as! Int))
+//            pic.picture_id = Int64(newValue?.picture_id as! Int)
             pic.picture_url = newValue?.picture_url
         }
         get {
@@ -34,6 +36,17 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
         tableView.dataSource = self
         tapGesture.delegate = self
         loadDatas()
+        //监听画单创建通知
+        NotificationCenter.default.addObserver(self, selector: #selector(addPaintSuccess(_ : )), name: NSNotification.Name(rawValue: NotificationName_LocalPaintCreateSuccessful), object: nil)
+    }
+    override func removeFromSuperview() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: NotificationName_LocalPaintCreateSuccessful), object: nil)
+         super.removeFromSuperview()
+    }
+    
+    @objc func addPaintSuccess(_ notification:NSNotification) {
+        dataSource.append(notification.object as! LocalPaint)
+        tableView.reloadData()
     }
     
     func loadDatas() {
@@ -51,6 +64,8 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
                         try managedObectContext.save()
                     }
                 }
+                listViewHeight.constant = CGFloat(Int(tableView.rowHeight) * (dataSource.count + 1) + 34)
+                self.updateConstraints()
                 tableView.reloadData()
             }
             
@@ -70,7 +85,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentify)
         if cell == nil {
-            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellReuseIdentify)
+            cell = CollectPaintsListTableViewCell.init(style: .subtitle, reuseIdentifier: cellReuseIdentify)
             cell?.textLabel?.textColor = xsColor_main_yellow
             cell?.textLabel?.font = xsFont(12)
             cell?.detailTextLabel?.textColor = xsColor_main_yellow
@@ -100,19 +115,24 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        delegate.listDidSelected(view: self, at: indexPath.row, 0)
         if indexPath.row > 0 {
             let paint = dataSource[indexPath.row - 1]
+            if paint.pics?.count == 0 {
+                paint.cover_url = pic.picture_url
+            }
             paint.addToPics(pic)
             pic.localPaint = paint
             do {
                 try managedObectContext.save()
-                // TODO:收藏成功  通知收藏按钮改变，并收起视图
                 HUDTool.show(.text, text: "收藏成功", delay: 1, view: self, complete: {
                     self.tapAction(nil)
                 })
             }catch {
-                
             }
+        }else {
+            //添加画单
+            delegate.collectionPaintsListAddPaint!()
         }
     }
     //为了解决tableivew didselect和tableivew.superview添加手势之后的冲突
@@ -122,5 +142,19 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
         }
         return true
     }
-    
+}
+
+class CollectPaintsListTableViewCell: UITableViewCell {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView?.size = CGSize.init(width: 35, height: 35)
+        textLabel?.x = 65
+        detailTextLabel?.x = 65
+        self.separatorInset = UIEdgeInsetsMake(0, 65, 0, 0)
+    }
+  
+}
+
+@objc protocol CollectPaintsListProtocol:NSObjectProtocol {
+    @objc optional func collectionPaintsListAddPaint()
 }

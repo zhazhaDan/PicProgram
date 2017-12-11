@@ -9,5 +9,13 @@
 import UIKit
 
 class SharePlatformView: BaseXibView {
+    open weak var delegate : SharePlatformProtocol!
+    @IBAction func platChooseAction(_ sender: UIButton) {
+        delegate.share!(toPlatform: sender.tag - 40)
+    }
+    
+}
 
+@objc protocol SharePlatformProtocol:NSObjectProtocol {
+    @objc optional func share(toPlatform index:Int)
 }

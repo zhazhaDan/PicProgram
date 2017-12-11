@@ -162,6 +162,8 @@
 		3AB7B5921FDCEBD20055B694 /* SharePlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5911FDCEBD20055B694 /* SharePlatformView.swift */; };
 		3AB7B5941FDCEBDC0055B694 /* SharePlatformView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */; };
 		3AB7B5961FDCEC1E0055B694 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */; };
+		3AB7B5991FDE62100055B694 /* NewPintNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5971FDE620F0055B694 /* NewPintNameViewController.swift */; };
+		3AB7B59B1FDE6D870055B694 /* NewPintNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7B59D1FDE6D870055B694 /* NewPintNameViewController.xib */; };
 		3AB8FF931FAAF9D600058784 /* PicDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */; };
 		3AB8FF951FAB0DA600058784 /* PlayViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */; };
 		3ACDB5D41FC7D710007E0E32 /* ClassifyCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDB5D21FC7D710007E0E32 /* ClassifyCollectionReusableView.swift */; };
@@ -374,6 +376,10 @@
 		3AB7B5911FDCEBD20055B694 /* SharePlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlatformView.swift; sourceTree = "<group>"; };
 		3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharePlatformView.xib; sourceTree = "<group>"; };
 		3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
+		3AB7B5971FDE620F0055B694 /* NewPintNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPintNameViewController.swift; sourceTree = "<group>"; };
+		3AB7B59C1FDE6D870055B694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NewPintNameViewController.xib; sourceTree = "<group>"; };
+		3AB7B59F1FDE6D8A0055B694 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NewPintNameViewController.strings; sourceTree = "<group>"; };
+		3AB7B5A11FDE6D8D0055B694 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/NewPintNameViewController.strings"; sourceTree = "<group>"; };
 		3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AB8FF941FAB0DA600058784 /* PlayViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewFlowLayout.swift; sourceTree = "<group>"; };
 		3ACDB5D21FC7D710007E0E32 /* ClassifyCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -849,6 +855,8 @@
 				F7141DAE1FDBCF5900606631 /* LiningViewController.xib */,
 				F7141DB31FDBD05F00606631 /* ShareViewController.swift */,
 				F7141DB41FDBD05F00606631 /* ShareViewController.xib */,
+				3AB7B5971FDE620F0055B694 /* NewPintNameViewController.swift */,
+				3AB7B59D1FDE6D870055B694 /* NewPintNameViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -990,6 +998,7 @@
 				3AB7B5901FDCE7160055B694 /* AddEmotionView.xib in Resources */,
 				3A26166B1FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib in Resources */,
 				F7141DAC1FDBCF5900606631 /* LiningViewController.xib in Resources */,
+				3AB7B59B1FDE6D870055B694 /* NewPintNameViewController.xib in Resources */,
 				F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */,
 				3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */,
 				3AB5DC1B1F8CB119004897B5 /* Assets.xcassets in Resources */,
@@ -1211,6 +1220,7 @@
 				3AB5DD2D1F8CB192004897B5 /* PKHUDAssets.swift in Sources */,
 				3A41AD541F9599A3000BCC16 /* RegisterViewController.swift in Sources */,
 				3A9CCC531FA1D1A700FC33BD /* FindTodayRecomModel.swift in Sources */,
+				3AB7B5991FDE62100055B694 /* NewPintNameViewController.swift in Sources */,
 				3AB5DD3C1F8CB192004897B5 /* BaseView.swift in Sources */,
 				3AB5DD2A1F8CB192004897B5 /* PKHUD.swift in Sources */,
 				3AB78C081FC55840001D9A43 /* GDPHAsset.swift in Sources */,
@@ -1264,6 +1274,16 @@
 				3A41AD2A1F9493EB000BCC16 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3AB7B59D1FDE6D870055B694 /* NewPintNameViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AB7B59C1FDE6D870055B694 /* Base */,
+				3AB7B59F1FDE6D8A0055B694 /* en */,
+				3AB7B5A11FDE6D8D0055B694 /* zh-Hans */,
+			);
+			name = NewPintNameViewController.xib;
 			sourceTree = "<group>";
 		};
 		F7141DAE1FDBCF5900606631 /* LiningViewController.xib */ = {
@@ -1405,12 +1425,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2LLY9Q2SMZ;
+				DEVELOPMENT_TEAM = VR5KL66BH3;
 				INFOPLIST_FILE = PicProgram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jck.mr123;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cnversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				REEXPORTED_LIBRARY_PATHS = "";
@@ -1427,12 +1447,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2LLY9Q2SMZ;
+				DEVELOPMENT_TEAM = VR5KL66BH3;
 				INFOPLIST_FILE = PicProgram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jck.mr123;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cnversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				REEXPORTED_LIBRARY_PATHS = "";

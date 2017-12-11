@@ -10,9 +10,14 @@ import UIKit
 
 class AddEmotionView: BaseXibView {
 
-    
-    @IBAction func emotionChoosedAction(_ sender: Any) {
+    open weak var delegate : AddEmotionProtocol!
+    @IBAction func emotionChoosedAction(_ sender: UIButton) {
+        delegate.emotionChoosed!(sender: sender,emotionIndex: sender.tag - 30)
     }
 
 
+}
+
+@objc protocol AddEmotionProtocol:NSObjectProtocol {
+    @objc optional func emotionChoosed(sender:UIButton, emotionIndex index:Int)
 }

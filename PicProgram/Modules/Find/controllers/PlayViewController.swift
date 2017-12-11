@@ -11,7 +11,7 @@ import UIKit
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
-class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,PlayMoreProtocol {
+class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,PlayMoreProtocol,CollectPaintsListProtocol,UIGestureRecognizerDelegate,AddEmotionProtocol {
 
     var currentIndex:NSInteger = 0
     var dragStartX:CGFloat = 0
@@ -52,6 +52,10 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         let layout = collectionView.collectionViewLayout as! PlayViewFlowLayout
         layout.scrollDirection = .horizontal
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
     }
     
     //单例
@@ -128,6 +132,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     func collectPicture() {
         let cView = Bundle.main.loadNibNamed("CollectPaintsListView", owner: self, options: nil)?.first as! CollectPaintsListView
         cView.frame = (self.navigationController?.view.bounds)!
+        cView.delegate = self
         cView.picModel = dataSource[currentIndex]
         self.navigationController?.view.addSubview(cView)
     }
@@ -138,19 +143,47 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         paint?.removeFromPics(pic!)
         do {
             try appDelegate.managedObjectContext.save()
-        }catch {
-            
-        }
+            HUDTool.show(.text, text: "取消收藏成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+        }catch {}
 
     }
     
     func addEmotion() {
-        
+        let maskView:UIView = UIView.init(frame: (self.navigationController?.view.bounds)!)
+        maskView.backgroundColor = xsColor("000000", alpha: 0.6)
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapAction(_ :)))
+        maskView.addGestureRecognizer(tapGesture)
+        let emotionView = AddEmotionView.init(frame: CGRect.init(x: 0, y: (self.navigationController?.view.height)! - 249, width: self.view.width, height: 249))
+        emotionView.delegate = self
+        maskView.addSubview(emotionView)
+        self.navigationController?.view.addSubview(maskView)
     }
+    
+    @objc func tapAction(_ tapGesture:UITapGestureRecognizer) {
+        tapGesture.view?.removeFromSuperview()
+    }
+    
+    
     func playTimeSetting(time: Int) {
         HUDTool.show(.text, text: "播放时间设置成功", delay: 1, view: self.view, complete: nil)
     }
+    
     func playModeSetting(mode: Int) {
         HUDTool.show(.text, text: "播放模式设置成功", delay: 1, view: self.view, complete: nil)
+    }
+    
+    
+    /// CollectPaintsListProtocol
+    func collectionPaintsListAddPaint() {
+        let vc = NewPintNameViewController.init(nibName: "NewPintNameViewController", bundle: Bundle.main)
+        self.navigationController?.present(HomePageNavigationController.init(rootViewController:vc), animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if (gestureRecognizer.view?.isKind(of: AddEmotionView.self))! {
+            return false
+        }
+        return true
     }
 }

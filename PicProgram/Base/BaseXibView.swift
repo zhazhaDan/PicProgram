@@ -16,6 +16,11 @@ class BaseXibView: UIView {
         setUp()
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUp()
+    }
+    
     func setUp() {
         let className = NSStringFromClass(self.classForCoder) as! NSString
         let programName = Bundle.main.infoDictionary!["CFBundleExecutable"] as! NSString

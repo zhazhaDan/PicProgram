@@ -14,7 +14,7 @@ public class Picture: NSManagedObject {
     //NSPredicate
     @nonobjc public class func fetchPicture(forPicId id : Int64) -> Picture? {
         let fetchRequest: NSFetchRequest<Picture> = Picture.fetchRequest()
-        fetchRequest.fetchBatchSize = 1
+        fetchRequest.fetchBatchSize = 10
         let predicate = NSPredicate.init(format: "picture_id==\(id)", argumentArray: nil)
         fetchRequest.predicate = predicate
         do {
@@ -28,7 +28,10 @@ public class Picture: NSManagedObject {
         } catch  {
             fatalError("获取失败")
         }
-        return nil
+            let entity = NSEntityDescription.entity(forEntityName: "Picture", in: appDelegate.managedObjectContext) as! NSEntityDescription
+            let pic = NSManagedObject.init(entity: entity, insertInto: appDelegate.managedObjectContext) as! Picture
+        pic.picture_id = id
+        return pic
 
     }
 }

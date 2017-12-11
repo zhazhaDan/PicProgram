@@ -16,6 +16,11 @@ class PlayMoreView: BaseView {
         set {
             _isCollected = newValue
             self.collectButton.isSelected = isCollected
+            if isCollected == true {
+                self.collectButton.setImage(self.collectButton.image(for: .selected), for: .highlighted)
+            }else {
+                self.collectButton.setImage(self.collectButton.image(for: .normal), for: .highlighted)
+            }
         }
         get {
             return _isCollected

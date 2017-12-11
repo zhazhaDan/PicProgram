@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScrollViewDelegate {
+class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScrollViewDelegate ,AddEmotionProtocol,SharePlatformProtocol{
     @IBOutlet weak var figureImageView: UIImageView!
     @IBOutlet weak var picImageView: UIImageView!
     @IBOutlet weak var picTitleLabel: UILabel!
@@ -18,7 +18,7 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
     @IBOutlet weak var segView: UIView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: AddEmotionView!
-    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var view3: SharePlatformView!
     @IBOutlet weak var contentScrollViewHeight: NSLayoutConstraint!
     
     
@@ -26,7 +26,8 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
     var picTitle:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view2.delegate = self
+        view3.delegate = self
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -47,15 +48,8 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
             }
         }
     }
-    
-    @IBAction func chooseEmotionAction(_ sender: UIButton) {
-        self.emotionButton.setImage(sender.image(for: .normal), for: .normal)
-        self.emotionButton.setTitle(sender.title(for: .normal), for: .normal)
-        
-    }
-    @IBAction func shareAction(_ sender: UIButton) {
-        //三方分享
-    }
+
+   
     @IBAction func bottomSegChooseAction(_ sender: UIButton) {
         for i in 0 ..< 3 {
             let btn = self.view.viewWithTag(10+i) as! UIButton
@@ -84,6 +78,16 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
         
     }
     
+    func share(toPlatform index: Int) {
+        //TODO:三方分享
+    }
+    
+    func emotionChoosed(sender: UIButton, emotionIndex index: Int) {
+        
+        self.emotionButton.setImage(sender.image(for: .normal), for: .normal)
+        self.emotionButton.setTitle(sender.title(for: .normal), for: .normal)
+
+    }
     
 //    //为了解决tableivew didselect和tableivew.superview添加手势之后的冲突
 //    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

@@ -8,6 +8,9 @@
 
 import UIKit
 
+//统一通知名称
+let NotificationName_LocalPaintCreateSuccessful = "NotificationName_LocalPaintCreateSuccessful"
+
 //统一常量定义
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate

@@ -108,6 +108,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         let vc = PlayViewController.player
         vc.dataSource = paintModel.picture_arry
         vc.title = paintModel.paint_title
+        vc.currentIndex = indexPath.item
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
