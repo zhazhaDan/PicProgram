@@ -21,12 +21,12 @@ class EaselPaintCollectionViewCell: UICollectionViewCell {
             _row = newValue
             if row % 3 == 0 {
                 self.plankBottomImageView.image = #imageLiteral(resourceName: "muwenzuobian")
-                self.paintPicRightConstrain.constant = 21
+                self.paintPicRightConstrain.constant = 0
 //                self.paintTitleLabel.x = self.paintPicImageView.x
                 self.plankBottomLeftConstrain.constant = 10
             }else if row % 3 == 2 {
                 self.plankBottomImageView.image = #imageLiteral(resourceName: "muwenyoubian")
-                self.paintPicRightConstrain.constant = 10 + self.paintPicImageView.width*2
+                self.paintPicRightConstrain.constant = self.width -  self.paintPicImageView.width
 //                self.paintTitleLabel.x = self.paintPicImageView.x
                 self.plankBottomLeftConstrain.constant = self.width - 10 - self.plankBottomImageView.width
             }else {

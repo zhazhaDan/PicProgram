@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     @objc func gifDone() {
         self.window?.rootViewController = BaseTabBarController()
-        
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

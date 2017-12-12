@@ -35,6 +35,7 @@ class EaselViewController: BaseViewController {
             if btn == sender {
                 self.chooseBottomView.x = btn.x
                 selectedAtIndex = sender.tag - 10
+                contentScrollView.setContentOffset(CGPoint.init(x: contentScrollView.width * CGFloat(i), y: 0), animated: true)
             }
         }
     }
