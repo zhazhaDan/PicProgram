@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -74,9 +75,10 @@
                 <constraint firstItem="iuC-7i-ynA" firstAttribute="top" secondItem="McU-fk-bP8" secondAttribute="bottom" constant="32" id="eru-LW-XTs"/>
                 <constraint firstItem="xcL-KL-LIc" firstAttribute="top" secondItem="iuC-7i-ynA" secondAttribute="top" id="kAt-6x-UPl"/>
                 <constraint firstAttribute="trailing" secondItem="McU-fk-bP8" secondAttribute="trailing" id="ptQ-5e-7Dx"/>
-                <constraint firstItem="McU-fk-bP8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="750" constant="8" id="r5t-pI-8v4"/>
+                <constraint firstItem="McU-fk-bP8" firstAttribute="top" secondItem="Psc-we-31l" secondAttribute="top" priority="750" constant="8" id="r5t-pI-8v4"/>
                 <constraint firstItem="YY3-ac-Ijx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yy1-sV-INS"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="Psc-we-31l"/>
         </view>
     </objects>
     <resources>

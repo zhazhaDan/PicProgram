@@ -14,7 +14,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
     @IBOutlet weak var tapGesture: UITapGestureRecognizer!
     @IBOutlet weak var listViewHeight: NSLayoutConstraint!
     open weak var delegate:CollectPaintsListProtocol!
-    var dataSource:[LocalPaint] = Array()
+    var dataSource:[Paint] = Array()
     let managedObectContext = appDelegate.managedObjectContext
     var pic:Picture!
     var picModel:PictureModel? {
@@ -45,33 +45,38 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
     }
     
     @objc func addPaintSuccess(_ notification:NSNotification) {
-        dataSource.append(notification.object as! LocalPaint)
-        tableView.reloadData()
+        dataSource.append(notification.object as! Paint)
+        updateUIData()
     }
     
     func loadDatas() {
-        let fetchRequest: NSFetchRequest<LocalPaint> = LocalPaint.fetchRequest()
+        let fetchRequest: NSFetchRequest<Paint> = Paint.fetchRequest()
         do {
             let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
             if let results = fetchedResults {
-                dataSource = results as! [LocalPaint]
+                dataSource = results as! [Paint]
                 if dataSource.count == 0 {
-                    let entity = NSEntityDescription.entity(forEntityName: "LocalPaint", in: managedObectContext) as! NSEntityDescription
-                    let paint = NSManagedObject.init(entity: entity, insertInto: managedObectContext) as! LocalPaint
-                    paint.name = "我的收藏画单"
+                    let entity = NSEntityDescription.entity(forEntityName: "Paint", in: managedObectContext) as! NSEntityDescription
+                    let paint = NSManagedObject.init(entity: entity, insertInto: managedObectContext) as! Paint
+                    paint.paint_title = "我的收藏画单"
                     dataSource.append(paint)
                     do {
                         try managedObectContext.save()
                     }
                 }
-                listViewHeight.constant = CGFloat(Int(tableView.rowHeight) * (dataSource.count + 1) + 34)
-                self.updateConstraints()
-                tableView.reloadData()
+               updateUIData()
             }
             
         } catch  {
             fatalError("获取失败")
         }
+    }
+    
+    func updateUIData() {
+        listViewHeight.constant = CGFloat(Int(tableView.rowHeight) * (dataSource.count + 1) + 34)
+        self.updateConstraints()
+        tableView.reloadData()
+
     }
     
     @IBAction func tapAction(_ sender: Any?) {
@@ -100,12 +105,12 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
             cell.textLabel?.text = "新建画单"
         }else {
             let paint = dataSource[indexPath.row - 1]
-            if paint.cover_url != nil {
-                cell.imageView?.xs_setImage(paint.cover_url!)
+            if paint.title_url != nil {
+                cell.imageView?.xs_setImage(paint.title_url!)
             }else {
                 cell.imageView?.image = UIImage.init(named: "danduye_shouchang")
             }
-            cell.textLabel?.text = paint.name
+            cell.textLabel?.text = paint.paint_title
             if paint.pics?.count as! Int > 0  {
                 cell.detailTextLabel?.text = "\(paint.pics?.count as! Int)张"
             }else {
@@ -119,10 +124,10 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
         if indexPath.row > 0 {
             let paint = dataSource[indexPath.row - 1]
             if paint.pics?.count == 0 {
-                paint.cover_url = pic.picture_url
+                paint.title_url = pic.picture_url
             }
             paint.addToPics(pic)
-            pic.localPaint = paint
+            pic.paint = paint
             do {
                 try managedObectContext.save()
                 HUDTool.show(.text, text: "收藏成功", delay: 1, view: self, complete: {

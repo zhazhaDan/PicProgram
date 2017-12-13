@@ -44,6 +44,26 @@ class PaintModel: BaseObject {
             super.setValue(value, forKey: key)
         }
     }
+    
+    init(paint:Paint) {
+        super.init()
+        
+        let properties = ["paint_id","paint_title","title_url","title_detail_url","paint_detail"]
+        for i in 0 ..< properties.count {
+            if paint.value(forKey: properties[i]) != nil {
+                self.setValue(paint.value(forKey: properties[i]), forKey: properties[i])
+            }
+        }
+        self.picture_arry = paint.pictureModels
+    }
+    
+    override init(dict: [String : Any]) {
+        super.init(dict: dict)
+    }
+    
+    override init() {
+        super.init()
+    }
 }
 
 class PictureModel: BaseObject {

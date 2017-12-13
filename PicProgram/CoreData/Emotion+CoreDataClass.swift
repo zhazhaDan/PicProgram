@@ -12,7 +12,7 @@ import CoreData
 
 public class Emotion: NSManagedObject {
     //NSPredicate
-    @nonobjc public class func fetchPicture(forEmotionName name : String) -> Emotion? {
+    @nonobjc public class func fetchEmotionPaint(forEmotionName name : String) -> Emotion? {
         let fetchRequest: NSFetchRequest<Emotion> = Emotion.fetchRequest()
         fetchRequest.fetchBatchSize = 1
         let predicate = NSPredicate.init(format: "emotion_name = \"\(name.utf8)\"", argumentArray: nil)

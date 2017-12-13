@@ -8,18 +8,26 @@
 
 import UIKit
 
-class EaselViewController: BaseViewController {
+class EaselViewController: BaseViewController,CustomViewProtocol {
 
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var chooseBottomView: UIView!
     var selectedAtIndex:Int = 0
+    var view1 : PaintFrameListView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadLocalPaintsDatas()
+    }
+    
     override func buildUI() {
         self.customNavigationView()
-        let view1 = PaintFrameListView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: self.contentScrollView.height))
+        view1 = PaintFrameListView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: self.contentScrollView.height))
+        view1.delegate = self
         self.contentScrollView.addSubview(view1)
     }
     
@@ -40,20 +48,21 @@ class EaselViewController: BaseViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadLocalPaintsDatas() {
+        var datas:[PaintModel] = Array()
+        for item in Paint.fetchAllLocalPaint()! {
+            let model = PaintModel.init(paint: item)
+            datas.append(model)
+        }
+        view1.dataSource = datas
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func listDidSelected(view: UIView, at index: Int, _ section: Int) {
+        if view == view1 {
+            let layout = UICollectionViewFlowLayout.init()
+            let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
+            vc.paintModel = view1.dataSource[index]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    */
-
 }

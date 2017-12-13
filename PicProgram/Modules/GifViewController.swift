@@ -17,7 +17,7 @@ class GifViewController: BaseViewController,UIWebViewDelegate {
     }
 
     override func buildUI() {
-        let webview = UIWebView.init(frame: CGRect.init(x: 0, y: -StatusBarHeight, width: self.view.width, height: self.view.height + StatusBarHeight))
+        let webview = UIWebView.init(frame: CGRect.init(x: 0, y: -StatusBarHeight, width: self.view.width, height: SCREEN_HEIGHT))
         self.view.addSubview(webview)
         webview.delegate = self
         webview.scalesPageToFit = true

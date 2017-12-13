@@ -227,7 +227,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     //点击从本地数据库读取用户自定义列表
     func loadLoadEmotionPaint() {
         let sectionData = self.dataSource[selectedIndex]
-        emotion = Emotion.fetchPicture(forEmotionName: sectionData["title"] as! String)
+        emotion = Emotion.fetchEmotionPaint(forEmotionName: sectionData["title"] as! String)
         customPaint = emotion.pictureModels
         collectionView.reloadData()
 

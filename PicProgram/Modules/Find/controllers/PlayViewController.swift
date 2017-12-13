@@ -43,7 +43,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         if pic == nil {
             moreView.isCollected = false
         }else {
-            moreView.isCollected = (pic?.localPaint == nil ? false : true)
+            moreView.isCollected = (pic?.paint == nil ? false : true)
         }
     }
     override func viewDidLoad() {
@@ -139,7 +139,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     
     func cancelCollectPicture() {
         let pic = Picture.fetchPicture(forPicId: Int64(Int(dataSource[currentIndex].picture_id)))
-        let paint = pic?.localPaint
+        let paint = pic?.paint
         paint?.removeFromPics(pic!)
         do {
             try appDelegate.managedObjectContext.save()
@@ -186,7 +186,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         let currentPic_id = dataSource[currentIndex].picture_id
         let pic = Picture.fetchPicture(forPicId: Int64(currentPic_id))
         pic?.coverProperties(model: dataSource[currentIndex])
-        let paint = Emotion.fetchPicture(forEmotionName: sender.title(for: .normal)!)
+        let paint = Emotion.fetchEmotionPaint(forEmotionName: sender.title(for: .normal)!)
         paint?.addToPictures(pic!)
         pic?.emotion = paint
         do {

@@ -39,7 +39,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "禅境迷踪"
-        self.collectionView?.frame = CGRect.init(x: 0, y: -20, width: self.view.width, height: self.view.height + 20)
+        self.collectionView?.frame = CGRect.init(x: 0, y: -StatusBarHeight, width: self.view.width, height: self.view.height + StatusBarHeight)
         self.collectionView?.backgroundColor = xsColor_main_white
         // Register cell classes
         self.collectionView!.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
@@ -54,14 +54,18 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        requestData()
+        if paint_id != 0 {
+            requestData()
+        }else {
+            self.collectionView?.reloadData()
+        }
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.collectionView?.y = -20
+        self.collectionView?.y = -StatusBarHeight
     }
     
     override func viewWillDisappear(_ animated: Bool) {

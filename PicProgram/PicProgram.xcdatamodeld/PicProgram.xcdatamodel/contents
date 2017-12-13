@@ -13,31 +13,40 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="introduce" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="pics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="localPaint" inverseEntity="Picture" syncable="YES"/>
+        <relationship name="pics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" syncable="YES"/>
     </entity>
     <entity name="Paint" representedClassName=".Paint" syncable="YES">
+        <attribute name="collect_num" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="flag" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="love_num" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="paint_detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paint_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="paint_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paint_type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="read_num" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title_detail_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title_url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="localPaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocalPaint" syncable="YES"/>
         <relationship name="pics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" inverseName="paint" inverseEntity="Picture" syncable="YES"/>
     </entity>
     <entity name="Picture" representedClassName=".Picture" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="detail_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture_content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="picture_type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="picture_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="emotion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Emotion" inverseName="pictures" inverseEntity="Emotion" syncable="YES"/>
         <relationship name="historyPics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HistoryPic" inverseName="pics" inverseEntity="HistoryPic" syncable="YES"/>
-        <relationship name="localPaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocalPaint" inverseName="pics" inverseEntity="LocalPaint" syncable="YES"/>
         <relationship name="paint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Paint" inverseName="pics" inverseEntity="Paint" syncable="YES"/>
     </entity>
     <elements>
         <element name="Emotion" positionX="-54" positionY="36" width="128" height="90"/>
         <element name="HistoryPic" positionX="-45" positionY="63" width="128" height="60"/>
         <element name="LocalPaint" positionX="-54" positionY="45" width="128" height="120"/>
-        <element name="Paint" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Picture" positionX="-63" positionY="36" width="128" height="165"/>
+        <element name="Paint" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Picture" positionX="-63" positionY="36" width="128" height="225"/>
     </elements>
 </model>

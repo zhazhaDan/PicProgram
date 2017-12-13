@@ -11,8 +11,19 @@ import UIKit
 private let cellReuseIdentify = "cellReuseIdentify"
 class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
     var collectionView:UICollectionView!
-    var dataSource:[PaintModel] = Array()
+    open weak var  delegate:CustomViewProtocol!
+    private var _data:[PaintModel] = []
+    var dataSource:[PaintModel] {
+        set {
+            _data = newValue
+            collectionView.reloadData()
+        }
+        get {
+            return _data
+        }
+    }
     override func buildUI() {
+        self.backgroundColor = xsColor_main_red
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView = UICollectionView.init(frame: self.bounds, collectionViewLayout: layout)
@@ -22,14 +33,16 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
         collectionView.register(UINib.init(nibName: "EaselPaintCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: cellReuseIdentify)
         self.addSubview(collectionView)
     }
+    
+  
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9//dataSource.count
+        return dataSource.count + (3 - dataSource.count % 3)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: self.collectionView.width/3, height: 227)
+        return CGSize.init(width: self.collectionView.width/3, height: 187)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -46,13 +59,23 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        let model = dataSource[indexPath.row]
         let subCell = cell as! EaselPaintCollectionViewCell
-//        subCell.paintPicImageView.xs_setImage(model.title_url)
+        subCell.row = indexPath.row
         let planks = [#imageLiteral(resourceName: "muwenzuo"),#imageLiteral(resourceName: "muwenzhong"),#imageLiteral(resourceName: "muwenyou")]
         subCell.plankImageView.image = planks[indexPath.row%3]
-        subCell.paintTitleLabel.text = "helldoodood"//model.paint_title
-        subCell.row = indexPath.row
-        
+        if indexPath.row < dataSource.count {
+            let model = dataSource[indexPath.row]
+            subCell.paintPicImageView.xs_setImage(model.title_url)
+            subCell.paintTitleLabel.text = model.paint_title
+        }else {
+            subCell.paintPicImageView.image = nil
+            subCell.paintTitleLabel.text = nil
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row < dataSource.count {
+            delegate.listDidSelected!(view: self, at: indexPath.item, 0)
+        }
     }
 }
