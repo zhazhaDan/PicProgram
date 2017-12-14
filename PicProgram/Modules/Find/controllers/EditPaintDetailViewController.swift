@@ -29,6 +29,11 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
 
     @IBAction func updatePainInfoAction(_ sender: Any) {
         //本地画单信息更新
+        saveEditPaintInfo()
+        HUDTool.show(.text, text: "画单信息修改成功", delay: 0.6, view: self.view) {
+            [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +74,8 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
         }
         
         self.textLengthLabel.text = "\(36 - self.introduceTextView.text.count)"
+        self.paintModel.paint_detail = textView.text
+//        saveEditPaintInfo()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -77,6 +84,14 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.paintModel.paint_title = textField.text!
+//        saveEditPaintInfo()
+    }
+    
+    func saveEditPaintInfo() {
+        do {
+            try appDelegate.managedObjectContext.save()
+        } catch {
+        }
     }
     
     @IBAction func tapAction(_ sender: Any) {
