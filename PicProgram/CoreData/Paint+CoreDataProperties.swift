@@ -25,7 +25,7 @@ extension Paint {
     @NSManaged public var read_num: Int64
     @NSManaged public var love_num: Int64
     @NSManaged public var collect_num: Int64
-    @NSManaged public var paint_type: Int16 // 画单类型 1 我的画单
+    @NSManaged public var paint_type: Int16 // 画单类型 1 我的画单 2是普通画单 3最近浏览
     @NSManaged public var pics: NSSet?
 
 }

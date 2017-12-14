@@ -15,15 +15,15 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
     @IBOutlet weak var introduceTextView: UITextView!
     @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var textLengthLabel: UILabel!
-    var paintModel:PaintModel!
+    var paintModel:Paint!
     @IBAction func changeCover(_ sender: Any) {
         let vc = ChangeCoverPicturesViewController()
         vc.chooseCoverPic = {[weak self](index) in
-            let picModel = self?.paintModel.picture_arry[index]
+            let picModel = self?.paintModel.pictureModels[index]
             self?.picImageView.xs_setImage((picModel?.picture_url)!)
             self?.paintModel.title_url = (picModel?.picture_url)!
         }
-        vc.dataSource = self.paintModel.picture_arry
+        vc.dataSource = self.paintModel.pictureModels
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -34,7 +34,7 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
         super.viewDidLoad()
         self.title = "编辑画单信息"
         self.titleTextField.text = self.paintModel.paint_title
-        self.picImageView.xs_setImage(self.paintModel.title_url)
+        self.picImageView.xs_setImage(self.paintModel.title_url!)
         // Do any additional setup after loading the view.
     }
 

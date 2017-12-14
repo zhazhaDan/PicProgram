@@ -67,8 +67,10 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
             let model = dataSource[indexPath.row]
             subCell.paintPicImageView.xs_setImage(model.title_url)
             subCell.paintTitleLabel.text = model.paint_title
+            subCell.paintPicImageView.backgroundColor = xsColor_main_yellow
         }else {
             subCell.paintPicImageView.image = nil
+            subCell.paintPicImageView.backgroundColor = UIColor.clear
             subCell.paintTitleLabel.text = nil
         }
     }

@@ -19,14 +19,14 @@ enum PaintPropertyKey:String {
 
 public class Paint: NSManagedObject {
     //NSPredicate
-    class func fetchPaint(type : PaintPropertyKey, value : Any, create:Bool) -> Paint? {
+    class func fetchPaint(key: PaintPropertyKey, value: Any, create:Bool = true, painttype type:Int16 = 1) -> Paint? {
         let fetchRequest: NSFetchRequest<Paint> = Paint.fetchRequest()
         fetchRequest.fetchBatchSize = 1
         var newValue = value
         if value is String {
             newValue = "\"\(value as! String)\""
         }
-        let predicate = NSPredicate.init(format: "\(type.rawValue)==\(newValue)", argumentArray: nil)
+        let predicate = NSPredicate.init(format: "(\(key.rawValue)==\(newValue))AND(paint_type==\(type))", argumentArray: nil)
         fetchRequest.predicate = predicate
         do {
             let fetchedResults = try appDelegate.managedObjectContext.fetch(fetchRequest) as? [NSManagedObject]
@@ -42,7 +42,8 @@ public class Paint: NSManagedObject {
         if create {
             let entity = NSEntityDescription.entity(forEntityName: "Paint", in: appDelegate.managedObjectContext) as! NSEntityDescription
             let paint = NSManagedObject.init(entity: entity, insertInto: appDelegate.managedObjectContext) as! Paint
-            paint.setValue(value, forKey: type.rawValue)
+            paint.setValue(value, forKey: key.rawValue)
+            paint.paint_type = type
             return paint
         }else {
             return nil
@@ -52,6 +53,9 @@ public class Paint: NSManagedObject {
     
     @nonobjc public class func fetchAllLocalPaint() -> Array<Paint>? {
         let fetchRequest: NSFetchRequest<Paint> = Paint.fetchRequest()
+        let predicate = NSPredicate.init(format: "paint_type==1", argumentArray: nil)
+        fetchRequest.predicate = predicate
+
         do {
             let fetchedResults = try appDelegate.managedObjectContext.fetch(fetchRequest) as? [NSManagedObject]
             if let results = fetchedResults {

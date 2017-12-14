@@ -28,12 +28,13 @@ class NewPintNameViewController: BaseViewController {
             sender.isSelected = true
             btn.isSelected = false
             if (textField.text?.count)! > 0 && (textField.text?.count)! < 20 {
-                if let paint = Paint.fetchPaint(type: .name, value: textField.text, create: false) {
+                if let paint = Paint.fetchPaint(key: .name, value: textField.text, create: false) {
                     HUDTool.show(.text, text: "画单已存在", delay: 1, view: self.view, complete: nil)
                 }else {
                     let entity = NSEntityDescription.entity(forEntityName: "Paint", in:  appDelegate.managedObjectContext) as! NSEntityDescription
                     let paint = NSManagedObject.init(entity: entity, insertInto: appDelegate.managedObjectContext) as! Paint
                     paint.paint_title = textField.text
+                    paint.paint_type = 1
                     do {
                         try appDelegate.managedObjectContext.save()
                         //TODO:通知新建画单成功

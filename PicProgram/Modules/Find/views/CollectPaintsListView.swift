@@ -50,26 +50,15 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
     }
     
     func loadDatas() {
-        let fetchRequest: NSFetchRequest<Paint> = Paint.fetchRequest()
-        do {
-            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
-            if let results = fetchedResults {
-                dataSource = results as! [Paint]
-                if dataSource.count == 0 {
-                    let entity = NSEntityDescription.entity(forEntityName: "Paint", in: managedObectContext) as! NSEntityDescription
-                    let paint = NSManagedObject.init(entity: entity, insertInto: managedObectContext) as! Paint
-                    paint.paint_title = "我的收藏画单"
-                    dataSource.append(paint)
-                    do {
-                        try managedObectContext.save()
-                    }
-                }
-               updateUIData()
-            }
-            
-        } catch  {
-            fatalError("获取失败")
+        dataSource = Paint.fetchAllLocalPaint()!
+        if dataSource.count == 0 {
+            let paint = Paint.fetchPaint(key: .name, value: "我的收藏画单", create: true, painttype: 1)
+            dataSource.append(paint!)
+            do {
+                try appDelegate.managedObjectContext.save()
+            }catch{}
         }
+        updateUIData()
     }
     
     func updateUIData() {

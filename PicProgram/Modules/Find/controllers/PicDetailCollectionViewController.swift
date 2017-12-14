@@ -12,7 +12,7 @@ private let reuseIdentifier = "PicDetailCollectionViewCell"
 private let reuseHeaderIdentifier = "header"
 
 class PicDetailCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,SearchProtocol,UIGestureRecognizerDelegate {
-    private var _paint_id:Int = 0
+    private var _paint_id:Int = 0 //默认id = 0 是自己收藏的画单
     var paint_id:Int {
         set{
             _paint_id = newValue
@@ -30,6 +30,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         set{
             _paintModel = newValue
             _paint_id = newValue.paint_id
+            dataSource = _paintModel.picture_arry
         }
         get {
             return _paintModel
@@ -254,8 +255,10 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     }
     
     func chooseMainPicAction() {
-        let vc = EditPaintDetailViewController()
-        vc.paintModel = self.paintModel
-        self.navigationController?.pushViewController(vc, animated: true)
+        if paint_id == 0 {
+            let vc = EditPaintDetailViewController()
+            vc.paintModel = Paint.fetchPaint(key: .name, value: paintModel.paint_title)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

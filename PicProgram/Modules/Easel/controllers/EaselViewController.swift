@@ -10,10 +10,13 @@ import UIKit
 
 class EaselViewController: BaseViewController,CustomViewProtocol {
 
+    @IBOutlet weak var segButtonsHeightConstrain: NSLayoutConstraint!
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var chooseBottomView: UIView!
     var selectedAtIndex:Int = 0
     var view1 : PaintFrameListView!
+    var view2 : PicturesView!
+    var view3 : PaintFrameListView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,19 +25,35 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadLocalPaintsDatas()
+        updateHistoryPaintDatas()
+        self.title = MRLanguage(forKey: "Art Works")
+        self.contentScrollView.setContentOffset(CGPoint.init(x: CGFloat(selectedAtIndex) * SCREEN_WIDTH, y: 0), animated: false)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = MRLanguage(forKey: "Art Works")
+    }
+    
+    
     
     override func buildUI() {
         self.customNavigationView()
-        view1 = PaintFrameListView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: self.contentScrollView.height))
+        view1 = PaintFrameListView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: self.view.height - segButtonsHeightConstrain.constant))
         view1.delegate = self
         self.contentScrollView.addSubview(view1)
+        
+        view2 = PicturesView.init(frame: CGRect.init(x: SCREEN_WIDTH, y: 0, width: SCREEN_WIDTH, height: view1.height))
+        self.contentScrollView.addSubview(view2)
+        
+        view3 = PaintFrameListView.init(frame: CGRect.init(x: SCREEN_WIDTH * 2, y: 0, width: SCREEN_WIDTH, height: view1.height))
+        view3.delegate = self
+        self.contentScrollView.addSubview(view3)
     }
     
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
-        self.title = MRLanguage(forKey: "Art Works")
     }
     
     @IBAction func titleChooseAction(_ sender: UIButton) {
@@ -47,21 +66,43 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
             }
         }
     }
-    
+    //更新数据
+    func updateHistoryPaintDatas() {
+        view2.requestData()
+    }
     func loadLocalPaintsDatas() {
         var datas:[PaintModel] = Array()
         for item in Paint.fetchAllLocalPaint()! {
             let model = PaintModel.init(paint: item)
             datas.append(model)
         }
+        if datas.count == 0 {
+            let paint = Paint.fetchPaint(key: .name, value: "我的收藏画单", create: true, painttype: 1)
+            let model = PaintModel.init(paint: paint!)
+            datas.append(model)
+            do {
+                try appDelegate.managedObjectContext.save()
+            }catch{}
+        }
         view1.dataSource = datas
     }
+    
     
     func listDidSelected(view: UIView, at index: Int, _ section: Int) {
         if view == view1 {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
             vc.paintModel = view1.dataSource[index]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if view == view2 {
+            let vc = PlayViewController.player
+            vc.dataSource = view2.dataSource
+            vc.title = view2.dataSource[index].title
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if view == view3 {
+            let layout = UICollectionViewFlowLayout.init()
+            let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
+            vc.paintModel = view3.dataSource[index]
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

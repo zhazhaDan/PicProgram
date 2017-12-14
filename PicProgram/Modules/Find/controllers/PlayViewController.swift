@@ -40,7 +40,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         self.navigationController?.view.addSubview(moreView)
         
         let pic = Picture.fetchPicture(forPicId: Int64(Int(dataSource[currentIndex].picture_id)))
-        if pic == nil {
+        if pic == nil || (pic?.paint == nil) || (pic?.paint?.paint_type != 1) {
             moreView.isCollected = false
         }else {
             moreView.isCollected = (pic?.paint == nil ? false : true)

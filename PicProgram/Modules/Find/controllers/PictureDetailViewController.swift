@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let historyPaintName = "我的历史浏览"
+
 class PictureDetailViewController: BaseViewController {
 
     @IBOutlet weak var picImageView: UIImageView!
@@ -15,7 +17,7 @@ class PictureDetailViewController: BaseViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var picInfoLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    var _model:PictureModel!
+    private var _model:PictureModel!
     var model:PictureModel {
         set{
             _model = newValue
@@ -39,7 +41,22 @@ class PictureDetailViewController: BaseViewController {
         }else {
            self.updateUI()
         }
+        fetchHistoryPaint()
     }
+    
+    func fetchHistoryPaint() {
+        let paint = Paint.fetchPaint(key: .name, value: historyPaintName, create: true, painttype: 3)
+        let picture = Picture.fetchPicture(forPicId: Int64(model.picture_id))
+        if (paint?.pics?.contains(picture))! {
+            paint?.removeFromPics(picture!)
+        }
+        picture?.coverProperties(model: model)
+        paint?.addToPics(picture!)
+        do {
+            try appDelegate.managedObjectContext.save()
+        }catch {}
+    }
+    
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -56,7 +73,7 @@ class PictureDetailViewController: BaseViewController {
     
     func updateUI() {
         self.titleLabel.text = model.title
-        picImageView.xs_setImage(model.picture_url)
+        picImageView.xs_setImage(model.detail_url)
         autorLabel.text = model.title
         timeLabel.text = model.time + "作"
         picInfoLabel.text = model.detail

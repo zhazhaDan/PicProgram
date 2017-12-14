@@ -10,9 +10,9 @@ import UIKit
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
-class PicturesViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource {
+class PicturesView: BaseView,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource {
     
-    
+    open weak var delegate:CustomViewProtocol!
     private var _dataSource:Array<PictureModel> = Array()
     var dataSource:Array<PictureModel> {
         set {
@@ -25,21 +25,29 @@ class PicturesViewController: BaseViewController,UICollectionViewDelegateFlowLay
     }
     var picture_id:Int = 0
     var collecView:UICollectionView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if picture_id == 0 {
-            collecView.reloadData()
-        }else {
-            requestData()
-        }
-        // Do any additional setup after loading the view.
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        if picture_id == 0 {
+//            collecView.reloadData()
+//        }else {
+//            requestData()
+//        }
+//        // Do any additional setup after loading the view.
+//    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        requestData()
+//    }
+//
+    
+    
     override func buildUI() {
         let collectionLayout = UICollectionViewFlowLayout.init()
         collectionLayout.sectionInset = UIEdgeInsets.init(top: 12, left: 12, bottom: 12, right: 12)
         collectionLayout.scrollDirection = .vertical
         collectionLayout.minimumLineSpacing = 12
-        collecView = UICollectionView.init(frame: CGRect.init(x: 0, y: NavigationBarBottom, width: self.view.width, height: self.view.height - NavigationBarBottom), collectionViewLayout: collectionLayout)
+        collecView = UICollectionView.init(frame: self.bounds, collectionViewLayout: collectionLayout)
         collecView.dataSource = self
         collecView.delegate = self
         collecView.bounces = false
@@ -47,19 +55,26 @@ class PicturesViewController: BaseViewController,UICollectionViewDelegateFlowLay
         collecView.showsHorizontalScrollIndicator = false
         collecView.translatesAutoresizingMaskIntoConstraints = false
         collecView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
-        self.view.addSubview(collecView)
+        self.addSubview(collecView)
         collecView.reloadData()
     }
     
-    
-    override func requestData() {
-        network.requestData(.picture_info, params: ["picture_id":picture_id], finishedCallback: { (result) in
-            
-        }, nil)
+    private let historyPaintName = "我的历史浏览"
+
+ func requestData() {
+//        network.requestData(.picture_info, params: ["picture_id":picture_id], finishedCallback: { (result) in
+//
+//        }, nil)
+    let paint = Paint.fetchPaint(key: .name, value: historyPaintName, create: true, painttype: 3)
+    do {
+        try appDelegate.managedObjectContext.save()
+    }catch {}
+        dataSource = (paint?.pictureModels)!
+        collecView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: (self.view.width - 36)/3, height: (self.view.width - 36)/3)
+        return CGSize.init(width: (self.width - 36)/3, height: (self.width - 36)/3)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -82,9 +97,7 @@ class PicturesViewController: BaseViewController,UICollectionViewDelegateFlowLay
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlayViewController.player
-        vc.dataSource = dataSource
-        vc.title = dataSource[indexPath.row].title
-        self.navigationController?.pushViewController(vc, animated: true)
+
+        delegate.listDidSelected!(view: self, at: indexPath.item, 0)
     }
 }

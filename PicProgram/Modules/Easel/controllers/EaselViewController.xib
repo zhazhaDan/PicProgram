@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="chooseBottomView" destination="ynv-f9-n2I" id="Eba-o3-zmV"/>
                 <outlet property="contentScrollView" destination="ACE-3g-6fj" id="Xh5-P2-8hv"/>
+                <outlet property="segButtonsHeightConstrain" destination="zlG-NZ-zN0" id="Gwy-Us-mGA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -94,7 +95,7 @@
                         <constraint firstAttribute="height" constant="27" id="zlG-NZ-zN0"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACE-3g-6fj">
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACE-3g-6fj">
                     <rect key="frame" x="0.0" y="91" width="375" height="576"/>
                     <color key="backgroundColor" red="0.30648254940000003" green="0.99751319819999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </scrollView>
@@ -103,7 +104,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fEy-6x-Ej3" secondAttribute="trailing" id="I7t-CA-TT7"/>
                 <constraint firstItem="fEy-6x-Ej3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jaw-8B-FeE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ACE-3g-6fj" secondAttribute="bottom" id="Rjq-TN-K3m"/>
+                <constraint firstAttribute="bottom" secondItem="ACE-3g-6fj" secondAttribute="bottom" id="Rjq-TN-K3m"/>
                 <constraint firstItem="ACE-3g-6fj" firstAttribute="top" secondItem="fEy-6x-Ej3" secondAttribute="bottom" id="abq-uG-h5p"/>
                 <constraint firstItem="ACE-3g-6fj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oUQ-eC-X0D"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ACE-3g-6fj" secondAttribute="trailing" id="pgl-47-2GT"/>
