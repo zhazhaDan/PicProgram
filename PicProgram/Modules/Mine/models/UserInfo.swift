@@ -53,7 +53,9 @@ class UserInfo: UserModel {
             if result["ret"] as! Int == 0 {
                 UserInfo.user.setValuesForKeys(result["user_info"] as! [String : Any])
                 UserInfo.user.saveToUserDefaults()
-                callback!()
+                if (callback != nil) {
+                    callback!()
+                }
             }
             }, nil)
     }

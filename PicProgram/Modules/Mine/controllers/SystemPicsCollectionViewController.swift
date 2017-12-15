@@ -14,6 +14,7 @@ private let reuseIdentifier = "PicDetailCollectionViewCell"
 
 class SystemPicsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,CustomViewProtocol,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var dataSource:[GDPHAsset] = Array()
+    open weak var delegate:SystemPicsCollectionProtocol!
     var _listView:AlbumListView!
     var listView:AlbumListView {
         set{
@@ -40,7 +41,7 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
         GDPhotoTool.defaultTool.authorize { [weak self](ret) in
             if ret == true {
                 self?.listView.showAlbum()
-                self?.listDidSelected(view: (self?.listView)!, at: 0)
+                self?.listDidSelected(view: (self?.listView)!, at: 0, 0)
             }
         }
         self.collectionView?.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
@@ -144,6 +145,18 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
             self.showSystemCamera()
         }else {
             //TODO://图片上传
+            let asset = self.dataSource[indexPath.row-1]
+            GDPhotoTool.defaultTool.getImage(asset: asset.asset as PHAsset,imageSize: PHImageManagerMaximumSize ,complete: { (image, ret) in
+                network.uploadPic(image: image) { [weak self](result) in
+                    if result["ret"] as! Int == 0 {
+                        self?.delegate.finishUpload!(imageUrl: result["url"] as! String)
+                    }else {
+                        HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: {
+                            
+                        })
+                    }
+                }
+            });
         }
     }
     
@@ -156,10 +169,19 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //照相后回调
+        network.uploadPic(image: info[UIImagePickerControllerOriginalImage] as! UIImage) { [weak self](result) in
+            if result["ret"] as! Int == 0 {
+                self?.delegate.finishUpload!(imageUrl: result["url"] as! String)
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: {
+                    
+                })
+            }
+        }
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func listDidSelected(view: UIView, at index: Int) {
+    func listDidSelected(view: UIView, at index: Int, _ section: Int) {
         showSigleView.text = (self.listView.dataSource[index] as! PHAssetCollection).localizedTitle
         let assetCollection = self.listView.dataSource[index]
         let fetchResult = GDPhotoTool.defaultTool.getFetchResultInAlbums(assetCollection: assetCollection as! PHAssetCollection);
@@ -168,4 +190,8 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
         self.collectionView?.reloadData()
         self.listView.hideList()
     }
+}
+
+@objc protocol SystemPicsCollectionProtocol:NSObjectProtocol{
+    @objc optional func finishUpload(imageUrl:String)
 }

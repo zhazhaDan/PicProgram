@@ -235,6 +235,33 @@ class  NetworkTool{
             }
         }
     }
-    
+    //图片上传
+    func uploadPic(image:UIImage,finishedCallback: ((_ result : [String:Any])->())? = nil) {
+        let imageData = UIImageJPEGRepresentation(image, 1.0)
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imageData!, withName: "file", fileName: "tmp.jpg", mimeType: "image/jpeg")
+        },usingThreshold:UInt64.init(), to: "\(baseApi)imgs/upload/user_head", method:.post, encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    if let JSON = response.result.value {
+                        let dict = JSON as! [String:Any]
+                        //这里处理JSON数据
+                        var item:[String:Any] = [:]
+                        item["url"] = dict["url"]
+                        item["image"] = image
+                        item["ret"] = 0
+                        finishedCallback!(item)
+                    }
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+                var item:[String:Any] = [:]
+                item["err"] = "图片上传失败"
+                item["ret"] = -1
+                finishedCallback!(item)
+            }
+        })
+    }
 }
 

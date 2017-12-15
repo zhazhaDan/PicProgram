@@ -41,7 +41,9 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.requestData()
-        getUserBindDevices()
+        if UserInfo.user.checkUserLogin() {
+            getUserBindDevices()
+        }
     }
 
     override func buildUI() {
