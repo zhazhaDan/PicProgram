@@ -200,6 +200,7 @@
 		F72A5ADE1FDD63E4007544CB /* HistoryPic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A5ADA1FDD63E4007544CB /* HistoryPic+CoreDataProperties.swift */; };
 		F72A5AE11FDD6DCC007544CB /* CollectPaintsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */; };
 		F72A5AE31FDD6DEC007544CB /* CollectPaintsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72A5AE21FDD6DEC007544CB /* CollectPaintsListView.xib */; };
+		F748BDF91FE4101700512215 /* BasePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748BDF81FE4101600512215 /* BasePickerView.swift */; };
 		F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9B1FB345D90033D69C /* FindHeaderView.swift */; };
 		F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9D1FB354590033D69C /* WebViewController.swift */; };
 		F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */; };
@@ -420,6 +421,7 @@
 		F72A5ADA1FDD63E4007544CB /* HistoryPic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryPic+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectPaintsListView.swift; sourceTree = "<group>"; };
 		F72A5AE21FDD6DEC007544CB /* CollectPaintsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectPaintsListView.xib; sourceTree = "<group>"; };
+		F748BDF81FE4101600512215 /* BasePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerView.swift; sourceTree = "<group>"; };
 		F7845C9B1FB345D90033D69C /* FindHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHeaderView.swift; sourceTree = "<group>"; };
 		F7845C9D1FB354590033D69C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBindUserView.swift; sourceTree = "<group>"; };
@@ -725,6 +727,7 @@
 				3A2616691FD6AB1A004A6A56 /* BindDeviceTableViewCell.xib */,
 				F7AC31DF1FD96BA200155666 /* ScanCodeView.swift */,
 				F7AC31E11FD96BAB00155666 /* ScanCodeView.xib */,
+				F748BDF81FE4101600512215 /* BasePickerView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1203,6 +1206,7 @@
 				3A0B8B401FBD97AA006F09E9 /* PaintFrameListView.swift in Sources */,
 				3AB5DD1A1F8CB192004897B5 /* MineViewController.swift in Sources */,
 				3A9963E41F9DC16F00077307 /* ArtView.swift in Sources */,
+				F748BDF91FE4101700512215 /* BasePickerView.swift in Sources */,
 				3AB5DD331F8CB192004897B5 /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				3A5387561F95DF6B00BA4359 /* FindPassViewController.swift in Sources */,
 				3AB5DD261F8CB192004897B5 /* Reachability.swift in Sources */,

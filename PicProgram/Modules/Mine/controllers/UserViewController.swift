@@ -16,13 +16,10 @@ class UserViewController: BaseViewController {
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var localLabel: UITextField!
     @IBOutlet weak var introduceTextView: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "我的资料"
-        
-        
-        
         // Do any additional setup after loading the view.
     }
 
@@ -30,6 +27,11 @@ class UserViewController: BaseViewController {
         if sender.view?.tag == 10 || sender.view?.tag == 11 {
             let vc = SystemPicsCollectionViewController.init(nibName: "SystemPicsCollectionViewController", bundle: Bundle.main)
             self.navigationController?.pushViewController(vc, animated: true)
+        }else if sender.view?.tag == 12 {
+            chooseGender()
+        }else if sender.view?.tag == 13 {
+            chooseBirthday()
+        }else {
         }
     }
     
@@ -37,20 +39,23 @@ class UserViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func chooseGender() {
+        let genderView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 140, width: self.view.width, height: 140))
+        genderView.type = .gender
+        genderView.buildUI(type: .gender) { (gender) in
+            self.genderLabel.text = gender as! String
+        }
+        self.view.addSubview(genderView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func chooseBirthday() {
+        let birthView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 190, width: self.view.width, height: 190))
+        birthView.type = .birthday
+        birthView.buildUI(type: .birthday) { (date) in
+            self.birthdayLabel.text = Date.formatterDateString(date as AnyObject)
+        }
+        self.view.addSubview(birthView)
     }
-    */
-
+   
 }
