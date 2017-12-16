@@ -16,7 +16,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.separatorInset = UIEdgeInsetsMake(0, SCREEN_WIDTH, 0, 0 )
         self.title = MRLanguage(forKey: "Mine Setting")
         // Do any additional setup after loading the view.
@@ -47,20 +47,40 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
-        cell.textLabel?.textColor = xsColor_main_yellow
-        cell.textLabel?.font = xsFont(15)
-        cell.accessoryView = UIImageView.init(image: #imageLiteral(resourceName: "next"))
-        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        return cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)
+        if cell == nil {
+            cell = UITableViewCell.init(style: .value1, reuseIdentifier: cellReuseIdentifier)
+            cell?.textLabel?.textColor = xsColor_main_yellow
+            cell?.textLabel?.font = xsFont(15)
+//            cell?.accessoryView = UIImageView.init(image: #imageLiteral(resourceName: "next"))
+            cell?.detailTextLabel?.font = xsFont(12)
+            cell?.detailTextLabel?.textColor = xsColor_placeholder_grey
+            cell?.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        }
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = dataSource[indexPath.row]
         if [0,3,5].contains(indexPath.row){
-            cell.accessoryView?.isHidden = false
+            cell.accessoryView = UIImageView.init(image: #imageLiteral(resourceName: "next"))
         }else{
-            cell.accessoryView?.isHidden = true
+            cell.accessoryView = nil
+        }
+        if cell.textLabel?.text == "意见反馈" {
+            //TODO:修改
+            cell.detailTextLabel?.text = "34445432@qq.com"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let vc = AboutUsViewController.init(nibName: "AboutUsViewController", bundle: Bundle.main)
+            self.navigationController?.pushViewController(vc, animated: true)
+            print("\(indexPath.row)")
+        default:
+            print("\(indexPath.row)")
         }
     }
     

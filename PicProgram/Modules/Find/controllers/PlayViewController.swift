@@ -78,7 +78,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: self.collectionView.width - 64, height: self.collectionView.height)
+        return CGSize.init(width: SCREEN_WIDTH - 64, height: self.view.height - 75 - 84)
     }
     
     

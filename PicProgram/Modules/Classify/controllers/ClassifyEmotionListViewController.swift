@@ -79,11 +79,11 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if customPaint.count > 0 && section == 0 {
-            return customPaint.count
+            return (customPaint.count > 9 ? 9 : customPaint.count)
         }else if self.model == nil {
             return 0
         }else {
-            return model.picture_arry.count
+            return (model.picture_arry.count > 12 ? 12 : model.picture_arry.count)
         }
     }
     

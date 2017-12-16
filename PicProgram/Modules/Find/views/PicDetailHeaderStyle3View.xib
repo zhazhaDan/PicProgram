@@ -70,7 +70,7 @@
                     <blurEffect style="dark"/>
                 </visualEffectView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="丢失日志的故事" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="388-Fj-9Xd" userLabel="简介">
-                    <rect key="frame" x="230" y="75" width="119" height="18"/>
+                    <rect key="frame" x="205" y="75" width="144" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" priority="500" constant="40" id="DaP-rg-IwM"/>
                     </constraints>
@@ -79,7 +79,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----鸟之心个展" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDf-3n-jL9">
-                    <rect key="frame" x="230" y="111" width="119" height="12"/>
+                    <rect key="frame" x="205" y="111" width="144" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -110,23 +110,23 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfg-4M-YDY">
-                    <rect key="frame" x="230" y="161" width="22" height="22"/>
+                    <rect key="frame" x="205" y="161" width="22" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="AIy-xJ-Kd6"/>
                         <constraint firstAttribute="width" constant="22" id="emy-aM-Ert"/>
                     </constraints>
-                    <state key="normal" title="Button" image="shangchunhuakuang" backgroundImage="shangchunhuakuang"/>
+                    <state key="normal" image="shangchunhuakuang" backgroundImage="shangchunhuakuang"/>
                     <connections>
                         <action selector="pushAction:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="Oyf-03-lbL"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUw-FR-drd">
-                    <rect key="frame" x="278.5" y="161" width="22" height="22"/>
+                    <rect key="frame" x="266" y="161" width="22" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="22" id="Prc-6m-FRE"/>
                         <constraint firstAttribute="height" constant="22" id="wal-gE-lRL"/>
                     </constraints>
-                    <state key="normal" title="Button" image="shouchang" backgroundImage="shouchang"/>
+                    <state key="normal" image="shouchang" backgroundImage="shouchang"/>
                     <state key="selected" image="02faxians_bannererji_yishouchang"/>
                     <connections>
                         <action selector="collectAction:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="EtK-uy-ldK"/>
@@ -138,7 +138,7 @@
                         <constraint firstAttribute="width" constant="22" id="gnP-iv-oDh"/>
                         <constraint firstAttribute="height" constant="22" id="rkc-8K-Qpt"/>
                     </constraints>
-                    <state key="normal" title="Button" image="fenxiang" backgroundImage="fenxiang"/>
+                    <state key="normal" image="fenxiang" backgroundImage="fenxiang"/>
                     <connections>
                         <action selector="shareAction:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="YLn-fR-1Gp"/>
                     </connections>
@@ -206,7 +206,7 @@
                 <constraint firstItem="Pwt-1F-NU9" firstAttribute="trailing" secondItem="388-Fj-9Xd" secondAttribute="trailing" constant="26" id="Az9-ZL-Q2j"/>
                 <constraint firstItem="kDf-3n-jL9" firstAttribute="leading" secondItem="388-Fj-9Xd" secondAttribute="leading" id="E7u-4b-maj"/>
                 <constraint firstItem="iAm-3x-a8H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="Ehv-Id-Il1"/>
-                <constraint firstItem="388-Fj-9Xd" firstAttribute="leading" secondItem="xhb-aw-89D" secondAttribute="trailing" constant="50" id="FC6-Mi-d2S"/>
+                <constraint firstItem="388-Fj-9Xd" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xhb-aw-89D" secondAttribute="trailing" constant="25" id="FC6-Mi-d2S"/>
                 <constraint firstItem="Pwt-1F-NU9" firstAttribute="bottom" secondItem="dxx-nK-wNy" secondAttribute="bottom" id="GOd-hc-GVa"/>
                 <constraint firstItem="J2G-ud-3jl" firstAttribute="top" secondItem="iAm-3x-a8H" secondAttribute="bottom" constant="8" id="HYk-fe-Tz5"/>
                 <constraint firstItem="xhb-aw-89D" firstAttribute="leading" secondItem="Pwt-1F-NU9" secondAttribute="leading" constant="12" id="Ism-7x-Rkx"/>

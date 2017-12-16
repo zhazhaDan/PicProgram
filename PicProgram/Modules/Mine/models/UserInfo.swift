@@ -10,15 +10,26 @@ import UIKit
 
 let User_uin = "uin"
 let User_token = "token"
+let User_head_url:String     =   "head_url"
+let User_background      =   "background"
+let User_nick_name           =   "nick_name"
+let User_gender              =   "gender"
+let User_birth_year          =   "birth_year"
+let User_birth_month         =   "birth_month"
+let User_birth_day           =   "birth_day"
+let User_region              =   "region"
+let User_personal_profile    =   "personal_profile"
+let User_client_id           =   "client_id"
 
 class UserInfo: UserModel {
-    
+
     //单例
     class var user: UserInfo {
         struct Singleton {
             static let instance = UserInfo()
         }
         return Singleton.instance
+        
     }
 
     func checkUserLogin() -> Bool {

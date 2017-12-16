@@ -26,6 +26,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
         super.viewWillAppear(animated)
         loadLocalPaintsDatas()
         updateHistoryPaintDatas()
+        loadCollectDatas()
         self.title = MRLanguage(forKey: "Art Works")
         self.contentScrollView.setContentOffset(CGPoint.init(x: CGFloat(selectedAtIndex) * SCREEN_WIDTH, y: 0), animated: false)
     }
@@ -85,6 +86,14 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
             }catch{}
         }
         view1.dataSource = datas
+    }
+    
+    func loadCollectDatas() {
+        network.requestData(.user_collect_list, params: nil, finishedCallback: { (result) in
+            if result["ret"] as! Int == 0 {
+                self.view3.dataSource = result["pains"] as! [PaintModel]
+            }
+        }, nil)
     }
     
     

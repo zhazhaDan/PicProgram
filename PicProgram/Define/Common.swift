@@ -47,7 +47,7 @@ func xsColor(_ color:String,alpha:Float = 1) -> UIColor {
 //通用色值
 let xsColor_title_normal = xsColor("adadad")
 let xsColor_title_select = xsColor("4a4a4a")
-let xsColor_main_blue = xsColor("189df9")
+let xsColor_main_blue = xsColor("2f5b99")
 let xsColor_main_red = xsColor("fe393d")
 let xsColor_main_white = xsColor("ffffff")
 let xsColor_main_black = xsColor("000000")

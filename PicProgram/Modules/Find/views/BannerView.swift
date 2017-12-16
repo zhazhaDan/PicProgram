@@ -84,7 +84,7 @@ class BannerView: BaseView,UIScrollViewDelegate {
         for i in 0 ..< count {
             let imageName = images[i % images.count]
             imageViews[i].frame = CGRect.init(x: CGFloat(i)*self.width, y: 0, width: self.width, height: self.height)
-            imageViews[i].backgroundColor = xsColor_main_blue
+            imageViews[i].backgroundColor = xsColor_main_yellow
             imageViews[i].contentMode = .scaleAspectFill
             imageViews[i].clipsToBounds = true
             imageViews[i].xs_setImage(imageName, imageSize: .image_957)

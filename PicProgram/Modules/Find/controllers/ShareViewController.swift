@@ -82,8 +82,7 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
         //TODO:三方分享
     }
     
-    func emotionChoosed(sender: UIButton, emotionIndex index: Int) {
-        
+    func emotionChoosed(emotionView: AddEmotionView, sender: UIButton, emotionIndex index: Int) {
         self.emotionButton.setImage(sender.image(for: .normal), for: .normal)
         self.emotionButton.setTitle(sender.title(for: .normal), for: .normal)
 

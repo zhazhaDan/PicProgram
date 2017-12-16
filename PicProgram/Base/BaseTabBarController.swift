@@ -18,11 +18,11 @@ class BaseTabBarController: UITabBarController {
     }
     func buildBarControllers() {
         
-        let normalAttris = [NSAttributedStringKey.foregroundColor:xsColor("cdb291"),NSAttributedStringKey.font:xsFont(10)]
-        let selectedAttris = [NSAttributedStringKey.foregroundColor:xsColor("a4b7d2"),NSAttributedStringKey.font:xsFont(10)]
+        let normalAttris = [NSAttributedStringKey.foregroundColor:xsColor_main_yellow,NSAttributedStringKey.font:xsFont(10)]
+        let selectedAttris = [NSAttributedStringKey.foregroundColor:xsColor_main_blue,NSAttributedStringKey.font:xsFont(10)]
         
         let findVC = FindViewController.init(nibName: "FindViewController", bundle: Bundle.main)
-        findVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Discover"), image: #imageLiteral(resourceName: "weixuanzhongfaxian_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhongfaxian_icon"))
+        findVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Discover"), image: #imageLiteral(resourceName: "weixuanzhongfaxian_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhongfaxian_icon-1").withRenderingMode(.alwaysOriginal))
         findVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         findVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
         

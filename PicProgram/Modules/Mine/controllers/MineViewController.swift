@@ -129,6 +129,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     
     func addDeviceSelected() {
         let qrView = Bundle.main.loadNibNamed("ScanCodeView", owner: nil, options: nil)?.first as! ScanCodeView
+        qrView.delegate = self
         qrView.frame = bottomView.bounds
         bottomView.addSubview(qrView)
     }
@@ -137,7 +138,20 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     
     func wifiManageSelected() {
-        
+        let wifiView = Bundle.main.loadNibNamed("WifiSettingView", owner: nil, options: nil)?.first as! WifiSettingView
+        wifiView.frame = bottomView.bounds
+        bottomView.addSubview(wifiView)
+    }
+    
+    func scanCode(result: String) {
+        let deviceId = (result as NSString).substring(from: 3)
+        network.requestData(.user_bind_device, params: ["device_id":deviceId], finishedCallback: { (result) in
+            if result["ret"] as! Int == 0 {
+                HUDTool.show(.text, text: "该设备已绑定成功", delay: 0.6, view: self.view, complete: nil)
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: self.view, complete: nil)
+            }
+        }, nil)
     }
     
     ///

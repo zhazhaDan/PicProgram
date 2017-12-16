@@ -23,15 +23,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" tag="10" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stV-Lj-DP7" userLabel="today">
-                    <rect key="frame" x="30" y="64" width="129" height="34"/>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stV-Lj-DP7" userLabel="today">
+                    <rect key="frame" x="29" y="64" width="132" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="ZZ9-iy-mPw"/>
                         <constraint firstAttribute="width" constant="129" id="f6I-eT-Dbm"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="今日推荐">
-                        <color key="titleColor" red="0.80292302370071411" green="0.69994395971298218" blue="0.56815975904464722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected" backgroundImage="01faxian_jinrituijian_yuanjiaojuxing"/>
                     <connections>
@@ -42,7 +42,7 @@
                     <rect key="frame" x="217" y="64" width="129" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="艺术先锋">
-                        <color key="titleColor" red="0.80292302370071411" green="0.69994395971298218" blue="0.56815975904464722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected" backgroundImage="01faxian_jinrituijian_yuanjiaojuxing"/>
                     <connections>

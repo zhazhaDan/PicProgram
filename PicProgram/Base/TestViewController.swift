@@ -16,28 +16,33 @@ class TestViewController: BaseViewController,AVCaptureMetadataOutputObjectsDeleg
 //    var tableView:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
-        do{
-            let input = try AVCaptureDeviceInput.init(device: captureDevice!)
-            captureSession = AVCaptureSession()
-            captureSession?.addInput(input)
-        }catch{
-            print(error)
-            return;
-        }
-        // 初始化 AVCaptureMetadataOutput 对象，并将它作为输出
-        let captureMetadataOutput = AVCaptureMetadataOutput()
-        captureSession?.addOutput(captureMetadataOutput)
-        // 设置 delegate 并使用默认的 dispatch 队列来执行回调
-        captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-        // 初始化视频预览 layer，并将其作为 viewPreview 的 sublayer
-        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-        videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        videoPreviewLayer?.frame = (self.view.layer.bounds)
-        self.view.layer.insertSublayer(videoPreviewLayer!, at: 0)
         
-        captureSession?.startRunning()
+        let qrView = Bundle.main.loadNibNamed("ScanCodeView", owner: nil, options: nil)?.first as! ScanCodeView
+        qrView.frame = CGRect.init(x: 0, y: self.view.height - 300, width: self.view.width, height: 300)
+        self.view.addSubview(qrView)
+
+//        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+//        do{
+//            let input = try AVCaptureDeviceInput.init(device: captureDevice!)
+//            captureSession = AVCaptureSession()
+//            captureSession?.addInput(input)
+//        }catch{
+//            print(error)
+//            return;
+//        }
+//        // 初始化 AVCaptureMetadataOutput 对象，并将它作为输出
+//        let captureMetadataOutput = AVCaptureMetadataOutput()
+//        captureSession?.addOutput(captureMetadataOutput)
+//        // 设置 delegate 并使用默认的 dispatch 队列来执行回调
+//        captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+//        captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+//        // 初始化视频预览 layer，并将其作为 viewPreview 的 sublayer
+//        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+//        videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+//        videoPreviewLayer?.frame = (self.view.layer.bounds)
+//        codeView.layer.insertSublayer(videoPreviewLayer!, at: 0)
+//
+//        captureSession?.startRunning()
     }
   
     

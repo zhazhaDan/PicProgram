@@ -201,6 +201,8 @@
 		F72A5AE11FDD6DCC007544CB /* CollectPaintsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */; };
 		F72A5AE31FDD6DEC007544CB /* CollectPaintsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72A5AE21FDD6DEC007544CB /* CollectPaintsListView.xib */; };
 		F748BDF91FE4101700512215 /* BasePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748BDF81FE4101600512215 /* BasePickerView.swift */; };
+		F75D56C11FE54BA60044429C /* WifiSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D56C01FE54BA60044429C /* WifiSettingView.swift */; };
+		F75D56C31FE54BB00044429C /* WifiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75D56C21FE54BB00044429C /* WifiSettingView.xib */; };
 		F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9B1FB345D90033D69C /* FindHeaderView.swift */; };
 		F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9D1FB354590033D69C /* WebViewController.swift */; };
 		F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */; };
@@ -210,6 +212,8 @@
 		F7A5AD701FB7411000B74AF1 /* PicturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A5AD6F1FB7411000B74AF1 /* PicturesView.swift */; };
 		F7AC31E01FD96BA200155666 /* ScanCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC31DF1FD96BA200155666 /* ScanCodeView.swift */; };
 		F7AC31E21FD96BAB00155666 /* ScanCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7AC31E11FD96BAB00155666 /* ScanCodeView.xib */; };
+		F7F8E5D31FE4DB1500390A00 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F8E5D11FE4DB1500390A00 /* AboutUsViewController.swift */; };
+		F7F8E5D41FE4DB1500390A00 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F8E5D21FE4DB1500390A00 /* AboutUsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -422,6 +426,8 @@
 		F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectPaintsListView.swift; sourceTree = "<group>"; };
 		F72A5AE21FDD6DEC007544CB /* CollectPaintsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectPaintsListView.xib; sourceTree = "<group>"; };
 		F748BDF81FE4101600512215 /* BasePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerView.swift; sourceTree = "<group>"; };
+		F75D56C01FE54BA60044429C /* WifiSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiSettingView.swift; sourceTree = "<group>"; };
+		F75D56C21FE54BB00044429C /* WifiSettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WifiSettingView.xib; sourceTree = "<group>"; };
 		F7845C9B1FB345D90033D69C /* FindHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHeaderView.swift; sourceTree = "<group>"; };
 		F7845C9D1FB354590033D69C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBindUserView.swift; sourceTree = "<group>"; };
@@ -431,6 +437,8 @@
 		F7A5AD6F1FB7411000B74AF1 /* PicturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesView.swift; sourceTree = "<group>"; };
 		F7AC31DF1FD96BA200155666 /* ScanCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeView.swift; sourceTree = "<group>"; };
 		F7AC31E11FD96BAB00155666 /* ScanCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanCodeView.xib; sourceTree = "<group>"; };
+		F7F8E5D11FE4DB1500390A00 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		F7F8E5D21FE4DB1500390A00 /* AboutUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -702,6 +710,8 @@
 				3AB78C011FC412D6001D9A43 /* SystemPicsCollectionViewController.xib */,
 				F71952E31FCEFA6000ED9D68 /* SettingViewController.swift */,
 				F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */,
+				F7F8E5D11FE4DB1500390A00 /* AboutUsViewController.swift */,
+				F7F8E5D21FE4DB1500390A00 /* AboutUsViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -728,6 +738,8 @@
 				F7AC31DF1FD96BA200155666 /* ScanCodeView.swift */,
 				F7AC31E11FD96BAB00155666 /* ScanCodeView.xib */,
 				F748BDF81FE4101600512215 /* BasePickerView.swift */,
+				F75D56C01FE54BA60044429C /* WifiSettingView.swift */,
+				F75D56C21FE54BB00044429C /* WifiSettingView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -984,6 +996,7 @@
 				3AB78C0F1FC67863001D9A43 /* 方正宋刻本秀楷简体.TTF in Resources */,
 				3A9963FE1F9E175400077307 /* PicDetailCollectionViewCell.xib in Resources */,
 				F71952D01FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib in Resources */,
+				F75D56C31FE54BB00044429C /* WifiSettingView.xib in Resources */,
 				3AB78BFF1FC2D7C0001D9A43 /* UserViewController.xib in Resources */,
 				F71952E61FCEFA6000ED9D68 /* SettingViewController.xib in Resources */,
 				3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */,
@@ -1014,6 +1027,7 @@
 				3AB5DD081F8CB192004897B5 /* Contents.json in Resources */,
 				3A5387601F95E7D700BA4359 /* Mine.storyboard in Resources */,
 				3A2616611FD695F6004A6A56 /* DeviceManageView.xib in Resources */,
+				F7F8E5D41FE4DB1500390A00 /* AboutUsViewController.xib in Resources */,
 				3A9963CC1F9C6A5A00077307 /* FindViewController.xib in Resources */,
 				F784EEC51FD28DBD00DD1B6F /* BindUserTableViewCell.xib in Resources */,
 				3A2616631FD69644004A6A56 /* MineViewController.xib in Resources */,
@@ -1097,7 +1111,9 @@
 				3A53875A1F95E22E00BA4359 /* FindPassInputCodeViewController.swift in Sources */,
 				3AB78C091FC55840001D9A43 /* GDPhotoTool.swift in Sources */,
 				F71952E51FCEFA6000ED9D68 /* SettingViewController.swift in Sources */,
+				F75D56C11FE54BA60044429C /* WifiSettingView.swift in Sources */,
 				3A9CCC611FA1EC3E00FC33BD /* ArtHeaderView.swift in Sources */,
+				F7F8E5D31FE4DB1500390A00 /* AboutUsViewController.swift in Sources */,
 				3A9CCC5B1FA1E61D00FC33BD /* ItemView.swift in Sources */,
 				3AB5DD371F8CB192004897B5 /* WindowRootViewController.swift in Sources */,
 				3A5387621F96094A00BA4359 /* SBLoginViewController.swift in Sources */,

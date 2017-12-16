@@ -93,8 +93,9 @@ class GDPhotoTool: NSObject,PHPhotoLibraryChangeObserver {
         self.imageManager.requestImage(for: asset, targetSize: imageSize, contentMode: PHImageContentMode.aspectFit, options: PHImageRequestOptions(), resultHandler: { (result, info) in
             if (result != nil) {
                 complete(result!,true);
+            }else {
+                complete(result!,false);
             }
-            complete(result!,false);
         });
     }
 
