@@ -13,19 +13,27 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+    var isDone:Bool = false
+    var gifWindow:UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIBarButtonItem.appearance().tintColor = xsColor_text_black
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = GifViewController()//GifViewController()
+        self.window?.rootViewController = BaseTabBarController()//GifViewController()
         //BaseTabBarController()// HomePageNavigationController.init(rootViewController: BaseTabBarController())
         self.perform(#selector(gifDone), with: nil, afterDelay: 2.3, inModes: [.commonModes,.defaultRunLoopMode,.UITrackingRunLoopMode])
-        self.window?.makeKeyAndVisible()
+        self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
+        self.gifWindow?.rootViewController = GifViewController()
+        self.gifWindow?.makeKeyAndVisible()
         return RegistThirdAppDelegate.shareDelegate.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     @objc func gifDone() {
-        self.window?.rootViewController = BaseTabBarController()
+        if isDone == true {
+            return
+        }
+        self.window?.makeKeyAndVisible()
+        self.gifWindow = nil
+        isDone = true
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

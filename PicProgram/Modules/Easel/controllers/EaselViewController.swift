@@ -91,7 +91,14 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
     func loadCollectDatas() {
         network.requestData(.user_collect_list, params: nil, finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
-                self.view3.dataSource = result["pains"] as! [PaintModel]
+                if result["paint_arry"] != nil {
+                    var datas:[PaintModel] = Array()
+                    for item in (result["paint_arry"] as! Array<[String:Any]>) {
+                        let model = PaintModel.init(dict: item)
+                        datas.append(model)
+                    }
+                    self.view3.dataSource = datas
+                 }
             }
         }, nil)
     }

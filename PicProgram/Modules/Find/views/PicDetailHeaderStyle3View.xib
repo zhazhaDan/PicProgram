@@ -53,7 +53,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画单详情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eti-YU-tlN">
                                 <rect key="frame" x="34" y="33.5" width="307" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -75,13 +75,13 @@
                         <constraint firstAttribute="height" relation="lessThanOrEqual" priority="500" constant="40" id="DaP-rg-IwM"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.78664118051528931" green="0.70316225290298462" blue="0.58427387475967407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----鸟之心个展" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDf-3n-jL9">
                     <rect key="frame" x="205" y="111" width="144" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="16hudanxiangqingye_zuozhehudan_zuozhehzhaopian" translatesAutoresizingMaskIntoConstraints="NO" id="xhb-aw-89D">
@@ -155,7 +155,7 @@
                         <segment title="横竖"/>
                         <segment title="竖"/>
                     </segments>
-                    <color key="tintColor" red="0.80175262689590454" green="0.69612950086593628" blue="0.56939202547073364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <connections>
                         <action selector="picChangeAction:" destination="i5M-Pr-FkT" eventType="valueChanged" id="nV1-xT-Qf5"/>
                     </connections>
@@ -167,7 +167,7 @@
                         <constraint firstAttribute="height" constant="20" id="aoj-SS-jWl"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" red="0.80175262689590454" green="0.69612950086593628" blue="0.56939202547073364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="日志，是一个人的所思所想，所经历的事情的收集，也是一个人一生私密的自述。你用心记录，然后放在了某个黑暗的角落，任由它尘封。时不时你会想起它，但大多数时候，我们都在遗忘。日志，是生活和经历的记叙文，正如廖智新的画作一样。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BW-jY-KRb" userLabel="content">
@@ -257,12 +257,12 @@
     </objects>
     <resources>
         <image name="02faxians_bannererji_yishouchang" width="22" height="22"/>
-        <image name="08wode_shebeiguanli" width="22" height="22"/>
+        <image name="08wode_shebeiguanli" width="23" height="23"/>
         <image name="16hudanxiangqingye_zuozhehudan_zuozhehzhaopian" width="190" height="127"/>
-        <image name="fanhui" width="11" height="18"/>
+        <image name="fanhui" width="10" height="17"/>
         <image name="faxian_zuixin_yanjing" width="22" height="16"/>
-        <image name="fenxiang" width="22" height="22"/>
-        <image name="shangchunhuakuang" width="22" height="22"/>
-        <image name="shouchang" width="22" height="22"/>
+        <image name="fenxiang" width="30" height="30"/>
+        <image name="shangchunhuakuang" width="19" height="19"/>
+        <image name="shouchang" width="18" height="18"/>
     </resources>
 </document>

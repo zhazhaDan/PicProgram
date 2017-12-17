@@ -35,11 +35,13 @@ class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource,Cus
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let subCell = cell as! BindDeviceTableViewCell
         let item = dataSource[indexPath.row]
+        subCell.row = indexPath.row
         if item["flag"] as! Int == 1 {
             subCell.adminButton.isHidden = false
         }else {
             subCell.adminButton.isHidden = true
         }
+        subCell.delegate = self.delegate as! MineViewProtocol!
         subCell.deviceNameLabel.text = item["device_name"] as! String
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -9,7 +9,7 @@
 import UIKit
 
 class GifViewController: BaseViewController,UIWebViewDelegate {
-
+    var webview:UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +17,30 @@ class GifViewController: BaseViewController,UIWebViewDelegate {
     }
 
     override func buildUI() {
-        let webview = UIWebView.init(frame: CGRect.init(x: 0, y: -StatusBarHeight, width: self.view.width, height: SCREEN_HEIGHT))
+        webview = UIWebView.init(frame: CGRect.init(x: 0, y: -StatusBarHeight, width: self.view.width, height: SCREEN_HEIGHT))
         self.view.addSubview(webview)
         webview.delegate = self
         webview.scalesPageToFit = true
+        webview.scrollView.isScrollEnabled = false
         let path = Bundle.main.path(forResource: "moran", ofType: ".gif")
         if let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: path!)) {
             webview.load(data as Data, mimeType: "image/gif", textEncodingName: "UTF-8", baseURL: Bundle.main.resourceURL!)
         }
+        let skitButton = UIButton.init(frame: CGRect.init(x: self.view.width - 28 - 72.5, y: 50, width: 72.5, height: 23))
+//        skitButton.backgroundColor = xsColor_main_yellow
+//        skitButton.setTitle("点击跳过", for: .normal)
+        skitButton.setImage(#imageLiteral(resourceName: "kaijitiaoguo"), for: .normal)
+//        skitButton.setImage(#imageLiteral(resourceName: "kaijitiaoguo"), for: .highlighted)
+        skitButton.addTarget(self, action: #selector(skitGifView), for: .touchUpInside)
+//        skitButton.titleLabel?.font = xsFont(12)
+        self.view.addSubview(skitButton)
+    }
+    
+    @objc func skitGifView() {
+//        webview.stopLoading()
+        appDelegate.gifDone()
+//        appDelegate.window?.rootViewController = BaseTabBarController()
+
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

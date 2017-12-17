@@ -203,6 +203,9 @@
 		F748BDF91FE4101700512215 /* BasePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748BDF81FE4101600512215 /* BasePickerView.swift */; };
 		F75D56C11FE54BA60044429C /* WifiSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D56C01FE54BA60044429C /* WifiSettingView.swift */; };
 		F75D56C31FE54BB00044429C /* WifiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75D56C21FE54BB00044429C /* WifiSettingView.xib */; };
+		F77771461FE67C8A00AF58E3 /* BaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */; };
+		F77771481FE6A82300AF58E3 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77771471FE6A82300AF58E3 /* HintView.swift */; };
+		F777714A1FE6A82C00AF58E3 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77771491FE6A82C00AF58E3 /* HintView.xib */; };
 		F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9B1FB345D90033D69C /* FindHeaderView.swift */; };
 		F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9D1FB354590033D69C /* WebViewController.swift */; };
 		F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */; };
@@ -428,6 +431,9 @@
 		F748BDF81FE4101600512215 /* BasePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerView.swift; sourceTree = "<group>"; };
 		F75D56C01FE54BA60044429C /* WifiSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiSettingView.swift; sourceTree = "<group>"; };
 		F75D56C21FE54BB00044429C /* WifiSettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WifiSettingView.xib; sourceTree = "<group>"; };
+		F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertController.swift; sourceTree = "<group>"; };
+		F77771471FE6A82300AF58E3 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
+		F77771491FE6A82C00AF58E3 /* HintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
 		F7845C9B1FB345D90033D69C /* FindHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHeaderView.swift; sourceTree = "<group>"; };
 		F7845C9D1FB354590033D69C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBindUserView.swift; sourceTree = "<group>"; };
@@ -801,6 +807,7 @@
 				3A7266471FC819D300727509 /* TestViewController.swift */,
 				3A414E4F1FCEC2920046E2B7 /* LocalizedLanguageTool.swift */,
 				3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */,
+				F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -914,6 +921,8 @@
 				3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */,
 				F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */,
 				F72A5AE21FDD6DEC007544CB /* CollectPaintsListView.xib */,
+				F77771471FE6A82300AF58E3 /* HintView.swift */,
+				F77771491FE6A82C00AF58E3 /* HintView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1017,6 +1026,7 @@
 				3ACDB5D51FC7D710007E0E32 /* ClassifyCollectionReusableView.xib in Resources */,
 				3A5387531F95DAB000BA4359 /* ChangePassViewController.xib in Resources */,
 				3A9963DC1F9C9B7B00077307 /* ArtReadTableViewCell.xib in Resources */,
+				F777714A1FE6A82C00AF58E3 /* HintView.xib in Resources */,
 				3A9CCC631FA1EC5100FC33BD /* ArtHeaderView.xib in Resources */,
 				3AB5DD291F8CB192004897B5 /* Images.xcassets in Resources */,
 				3AB78C031FC412D6001D9A43 /* SystemPicsCollectionViewController.xib in Resources */,
@@ -1160,6 +1170,7 @@
 				F72A5ACA1FDD5125007544CB /* Paint+CoreDataProperties.swift in Sources */,
 				3AB7B58E1FDCE70B0055B694 /* AddEmotionView.swift in Sources */,
 				F72A5ACC1FDD5125007544CB /* Picture+CoreDataProperties.swift in Sources */,
+				F77771481FE6A82300AF58E3 /* HintView.swift in Sources */,
 				3AB5DD2B1F8CB192004897B5 /* PKHUDAnimating.swift in Sources */,
 				F72A5ACB1FDD5125007544CB /* Emotion+CoreDataProperties.swift in Sources */,
 				3A12A79C1F8F69C0008C0C9F /* MineView.swift in Sources */,
@@ -1195,6 +1206,7 @@
 				3AB5DD011F8CB192004897B5 /* LengthLimit+UITextField.swift in Sources */,
 				3A6A8B941FBAA15A0062B728 /* TipsViewController.swift in Sources */,
 				3AB5DD301F8CB192004897B5 /* PKHUDRotatingImageView.swift in Sources */,
+				F77771461FE67C8A00AF58E3 /* BaseAlertController.swift in Sources */,
 				3A2616671FD6A9CD004A6A56 /* MineBindDeviceView.swift in Sources */,
 				3A26166A1FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift in Sources */,
 				3A12A79A1F8F69AF008C0C9F /* DeviceManageView.swift in Sources */,

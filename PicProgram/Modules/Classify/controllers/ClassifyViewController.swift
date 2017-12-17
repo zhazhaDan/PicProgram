@@ -20,7 +20,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "分类"
+        self.title = MRLanguage(forKey: "Category")
         self.scrollView?.setContentOffset(CGPoint.init(x: (scrollView?.width)! * CGFloat(selectedIndex), y: 0), animated: true)
     }
     

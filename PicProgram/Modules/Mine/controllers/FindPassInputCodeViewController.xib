@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="方正宋刻本秀楷简.TTF">
+        <array key="方正宋刻本秀楷简体.TTF">
             <string>FZSKBXKJW--GB1-0</string>
         </array>
     </customFonts>
@@ -47,7 +47,7 @@
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-06-SQ8">
                     <rect key="frame" x="53" y="133" width="242" height="15"/>
-                    <color key="textColor" red="0.84166496992111206" green="0.75801330804824829" blue="0.65390139818191528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
@@ -69,7 +69,7 @@
                     <rect key="frame" x="295" y="131" width="54" height="23"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <state key="normal" title="重新发送">
-                        <color key="titleColor" red="0.84480816125869751" green="0.76482057571411133" blue="0.67114037275314331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="resendCodeAction:" destination="-1" eventType="touchUpInside" id="JNk-pb-LY7"/>

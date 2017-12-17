@@ -21,10 +21,15 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
-        self.title = "分类"
+        self.title = MRLanguage(forKey: "Category")
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
+    }
+    
     override func buildUI() {
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .vertical
@@ -115,6 +120,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
         selectedIndex = indexPath.row
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
+        self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
         self.requestData()
     }
     

@@ -20,34 +20,282 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Krh-Nr-4lP">
-                    <rect key="frame" x="67" y="269" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </scrollView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guanyuwomen_diwen" translatesAutoresizingMaskIntoConstraints="NO" id="zrs-Xx-bOk">
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="chH-Vh-8Hr">
-                    <rect key="frame" x="84" y="20" width="207.5" height="118"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Krh-Nr-4lP">
+                    <rect key="frame" x="0.0" y="64" width="375" height="563"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_logo" translatesAutoresizingMaskIntoConstraints="NO" id="chH-Vh-8Hr">
+                            <rect key="frame" x="83" y="10" width="208" height="118"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="118" id="0Ow-Wi-CLE"/>
+                                <constraint firstAttribute="width" constant="207.5" id="OsG-Gg-LwS"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gX-Kd-Vzf">
+                            <rect key="frame" x="0.0" y="128" width="375" height="489"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="489" id="5Rr-1f-Rz0"/>
+                            </constraints>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">出品人:
+吴正雄 周登科
+
+设计总监:
+董 强  </string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.73846000000000001" green="0.57833000000000001" blue="0.36853999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content"> 
+技术总监:
+金戈</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.73846000000000001" green="0.57833000000000001" blue="0.36853999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops>
+                                                <textTab alignment="left" location="28">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="56">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="84">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="112">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="140">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="168">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="196">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="224">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="252">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="280">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="308">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="336">
+                                                    <options/>
+                                                </textTab>
+                                            </tabStops>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops>
+                                                <textTab alignment="left" location="28">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="56">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="84">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="112">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="140">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="168">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="196">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="224">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="252">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="280">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="308">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="336">
+                                                    <options/>
+                                                </textTab>
+                                            </tabStops>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content">
+监制:
+</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content">吕濛
+     </string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.73846000000000001" green="0.57833000000000001" blue="0.36853999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops>
+                                                <textTab alignment="left" location="28">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="56">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="84">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="112">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="140">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="168">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="196">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="224">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="252">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="280">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="308">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="336">
+                                                    <options/>
+                                                </textTab>
+                                            </tabStops>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content" base64-UTF8="YES">
+ICAgICAgICAgICAgICAKA
+</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops>
+                                                <textTab alignment="left" location="28">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="56">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="84">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="112">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="140">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="168">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="196">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="224">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="252">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="280">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="308">
+                                                    <options/>
+                                                </textTab>
+                                                <textTab alignment="left" location="336">
+                                                    <options/>
+                                                </textTab>
+                                            </tabStops>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content">文案策划:
+李海浪、周杨洋      
+
+设计执行：
+李邢贵子、吴彦臻、杨懿楠、
+侯振龙、姜维、孙跃桐、汤裕信 、陈毓暄
+
+技术执行:
+谢建宇、郑明明</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="118" id="0Ow-Wi-CLE"/>
-                        <constraint firstAttribute="width" constant="207.5" id="OsG-Gg-LwS"/>
+                        <constraint firstItem="7gX-Kd-Vzf" firstAttribute="centerX" secondItem="chH-Vh-8Hr" secondAttribute="centerX" id="28A-7w-InY"/>
+                        <constraint firstAttribute="trailing" secondItem="7gX-Kd-Vzf" secondAttribute="trailing" id="PuR-A5-sG4"/>
+                        <constraint firstItem="chH-Vh-8Hr" firstAttribute="top" secondItem="Krh-Nr-4lP" secondAttribute="top" constant="10" id="XD2-jC-ShR"/>
+                        <constraint firstItem="7gX-Kd-Vzf" firstAttribute="top" secondItem="chH-Vh-8Hr" secondAttribute="bottom" id="hNe-JC-8D6"/>
+                        <constraint firstAttribute="bottom" secondItem="7gX-Kd-Vzf" secondAttribute="bottom" constant="60" id="ktT-eQ-nHR"/>
+                        <constraint firstItem="chH-Vh-8Hr" firstAttribute="centerX" secondItem="Krh-Nr-4lP" secondAttribute="centerX" id="t0x-Qx-BDV"/>
+                        <constraint firstItem="7gX-Kd-Vzf" firstAttribute="leading" secondItem="Krh-Nr-4lP" secondAttribute="leading" id="uAP-g2-22H"/>
                     </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gX-Kd-Vzf">
-                    <rect key="frame" x="0.0" y="138" width="375" height="489"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <string key="content">出品人:吴正雄 周登科设计总监:董 强  监制:              文案策划:李海浪、周杨洋      设计执行：李邢贵子、吴彦臻、杨懿楠、侯振龙、姜维、孙跃桐、汤裕信 、陈毓暄 技术总监:金戈技术执行:谢建宇、郑明明</string>
-                            <attributes>
-                                <color key="NSColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
+                </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本应用中所有图片版权归art touch 所有" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7L-cS-FY8">
                     <rect key="frame" x="12" y="627" width="351" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -57,26 +305,25 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="N7L-cS-FY8" firstAttribute="top" secondItem="7gX-Kd-Vzf" secondAttribute="bottom" id="0Ih-dM-xr2"/>
-                <constraint firstItem="chH-Vh-8Hr" firstAttribute="centerX" secondItem="zrs-Xx-bOk" secondAttribute="centerX" id="3gP-Lk-eRm"/>
                 <constraint firstItem="zrs-Xx-bOk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="999" id="3tf-JX-CgC"/>
-                <constraint firstItem="7gX-Kd-Vzf" firstAttribute="top" secondItem="chH-Vh-8Hr" secondAttribute="bottom" id="BEf-JA-dMK"/>
+                <constraint firstItem="Krh-Nr-4lP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AFq-xn-pW4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zrs-Xx-bOk" secondAttribute="bottom" id="FZ0-Is-pU7"/>
+                <constraint firstItem="Krh-Nr-4lP" firstAttribute="top" secondItem="zrs-Xx-bOk" secondAttribute="top" id="JTh-Hd-2Ot"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N7L-cS-FY8" secondAttribute="trailing" constant="12" id="Qbe-bE-LI7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zrs-Xx-bOk" secondAttribute="trailing" id="RSa-EA-RbO"/>
+                <constraint firstItem="Krh-Nr-4lP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SdS-Ae-nng"/>
                 <constraint firstItem="zrs-Xx-bOk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="V6a-nY-LfW"/>
                 <constraint firstItem="N7L-cS-FY8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="dUY-jt-c8k"/>
                 <constraint firstItem="zrs-Xx-bOk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fNp-5o-AJq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7gX-Kd-Vzf" secondAttribute="trailing" id="fg5-a7-Fpn"/>
-                <constraint firstItem="chH-Vh-8Hr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="k0D-4c-xu8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N7L-cS-FY8" secondAttribute="bottom" constant="22" id="kIt-hi-XQ2"/>
-                <constraint firstItem="7gX-Kd-Vzf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kba-7b-gG9"/>
+                <constraint firstItem="Krh-Nr-4lP" firstAttribute="bottom" secondItem="N7L-cS-FY8" secondAttribute="top" id="z0w-io-6FP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
     <resources>
+        <image name="about_logo" width="473" height="224"/>
         <image name="guanyuwomen_diwen" width="621" height="1395"/>
-        <image name="logo" width="223" height="127"/>
     </resources>
 </document>

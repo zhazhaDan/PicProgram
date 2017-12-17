@@ -48,6 +48,8 @@ enum RequestAPIType {
     case user_set_info
     case user_collect_list
     case user_bind_device
+    case user_delete_device
+    case user_master_solve_device
     case classify_get_art_home
     case classify_get_scene_home
     case default_api
@@ -133,7 +135,6 @@ class  NetworkTool{
         case .user_reset_password:
             apiString = "user/reset_password"
         case .user_logout:
-            method = .get
             apiString = "user/logout"
         case .user_info:
             method = .get
@@ -159,6 +160,10 @@ class  NetworkTool{
         case .user_collect_list:
             method = .get
             apiString = "painting/mylist"
+        case .user_master_solve_device:
+            apiString = "master/process_device_bind"
+        case .user_delete_device:
+            apiString = "user/delete_bind"
         default:
             apiString = ""
             method = .get

@@ -25,6 +25,8 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
     
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var switchSender: UISwitch!
+    @IBOutlet weak var switchShowLabel: UILabel!
     
     var lastLocate:CGPoint = CGPoint.zero
     var  chooseLocatedIndex:Int = 1
@@ -57,8 +59,23 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
         }, nil)
     }
 
+    @IBAction func hintAction(_ sender: Any) {
+        let hintView = Bundle.main.loadNibNamed("HintView", owner: nil, options: nil)?.first as! HintView
+        hintView.frame = (self.navigationController?.view.bounds)!
+        hintView.hintTextLabel.text = "此功能需绑定墨染数字画框使用\n底部点选便签材质、位置\n右上角按钮推送到数字画框硬件端"
+        //"此功能需绑定墨染数字画框使用\n底部点选内衬材质、大小\n右上角按钮推送到数字画框硬件端"
+        self.navigationController?.view.addSubview(hintView)
+    }
+    
     @IBAction func tapViewAction(_ sender: UITapGestureRecognizer) {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    @IBAction func switchValueChanged(_ sender: UISwitch) {
+        if sender.isOn == true {
+            self.switchShowLabel.text = "显示到画框端"
+        }else {
+            self.switchShowLabel.text = "不显示到画框端"
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -81,7 +98,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
             let point = (touch?.location(in: self.locateView))!
             self.locateChooseStatusView.isHidden = false
             self.locateChooseStatusView.frame.origin = CGPoint.init(x: floor(point.x/self.locateChooseStatusView.width) * self.locateChooseStatusView.width, y: floor(point.y/self.locateChooseStatusView.height) * self.locateChooseStatusView.height)
-            self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*3 + 1
+            self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*2 + 1
         }
     }
     
@@ -89,20 +106,18 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
         if self.locateView.isHidden == true {
             return
         }
-        //        let touch = touches.first
         self.locateChooseStatusView.isHidden = true
-//        self.localIcon.frame.origin = (touch?.location(in: self.locateView))!
-//        self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*3 + 1
         self.isLocalViewChoosed = false
         self.tipsMaterialsButton.isHidden = false
         self.textView.isHidden = false
+        self.localIcon.center = self.tipsMaterialsButton.frame.origin
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.locateView.isHidden == true {
             return
         }
-        self.localIcon.frame.origin = lastLocate
+        self.localIcon.center = self.tipsMaterialsButton.frame.origin
         self.isLocalViewChoosed = false
         self.locateChooseStatusView.isHidden = true
         self.textView.isHidden = false

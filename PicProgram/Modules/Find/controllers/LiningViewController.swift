@@ -45,6 +45,12 @@ class LiningViewController: BaseViewController {
         })
     }
     
+    @IBAction func hintAction(_ sender: UIButton) {
+        let hintView = Bundle.main.loadNibNamed("HintView", owner: nil, options: nil)?.first as! HintView
+        hintView.frame = (self.navigationController?.view.bounds)!
+        hintView.hintTextLabel.text = "此功能需绑定墨染数字画框使用\n底部点选内衬材质、大小\n右上角按钮推送到数字画框硬件端"
+        self.navigationController?.view.addSubview(hintView)
+    }
     override func requestData() {
         network.requestData(.paint_lining, params: ["frame_colour":tiningStyle.rawValue,"frame_size":tiningSize.rawValue], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
@@ -54,12 +60,28 @@ class LiningViewController: BaseViewController {
     }
     
     @IBAction func chooseTiningStyleAction(_ sender: UIButton) {
+        for i in 0 ..< 5 {
+            let btn = self.view.viewWithTag(10+i) as! UIButton
+            if btn == sender {
+                btn.backgroundColor = xsColor("b6b6b6")
+            }else {
+                btn.backgroundColor = xsColor("e4e4e4")
+            }
+        }
         tiningStyle = TiningStyle(rawValue: sender.tag - 10)!
         let name = tiningStyleArray[tiningStyle.rawValue] + tiningSizeArray[tiningSize.rawValue] + "cm"
         tiningWidthImageView.image = UIImage.init(named: name)
     }
     
     @IBAction func chooseTiningSizeAction(_ sender: UIButton) {
+        for i in 0 ..< 5 {
+            let btn = self.view.viewWithTag(20+i) as! UIButton
+            if btn == sender {
+                btn.backgroundColor = xsColor("b6b6b6")
+            }else {
+                btn.backgroundColor = xsColor("e4e4e4")
+            }
+        }
         tiningSize = TiningSize(rawValue: sender.tag - 20)!
         let name = tiningStyleArray[tiningStyle.rawValue] + tiningSizeArray[tiningSize.rawValue] + "cm"
         tiningWidthImageView.image = UIImage.init(named: name)

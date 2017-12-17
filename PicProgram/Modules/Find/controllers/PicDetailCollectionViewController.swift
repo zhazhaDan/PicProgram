@@ -39,7 +39,6 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     var dataSource:Array<PictureModel> = Array()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "禅境迷踪"
         self.collectionView?.frame = CGRect.init(x: 0, y: -StatusBarHeight, width: self.view.width, height: self.view.height + StatusBarHeight)
         self.collectionView?.backgroundColor = xsColor_main_white
         // Register cell classes

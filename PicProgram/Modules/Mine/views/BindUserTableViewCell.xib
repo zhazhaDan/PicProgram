@@ -33,13 +33,16 @@
                             <constraint firstAttribute="height" constant="15" id="tbB-eJ-QcF"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="批准">
+                        <state key="normal" title="拒绝">
                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="7.5"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="denyAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="U4m-fJ-WVs"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avU-Vy-lJY">
                         <rect key="frame" x="172" y="14.5" width="50" height="15"/>
@@ -48,18 +51,21 @@
                             <constraint firstAttribute="height" constant="15" id="6Va-NZ-waK"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="拒绝">
+                        <state key="normal" title="批准">
                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="7.5"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="promiseAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6S4-uE-uEQ"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3N-IT-jOI">
                         <rect key="frame" x="73" y="15" width="99" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -77,8 +83,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="adminButton" destination="ztL-B9-W2a" id="XgE-Yy-VdW"/>
-                <outlet property="denyButton" destination="avU-Vy-lJY" id="vYv-tL-3K7"/>
-                <outlet property="promiseButton" destination="zPq-EY-Dbv" id="Gcu-pb-ZWz"/>
+                <outlet property="denyButton" destination="zPq-EY-Dbv" id="QZL-DX-nk0"/>
+                <outlet property="promiseButton" destination="avU-Vy-lJY" id="o7B-Bi-QUO"/>
                 <outlet property="userNameLabel" destination="C3N-IT-jOI" id="4ue-ZL-lXy"/>
             </connections>
         </tableViewCell>

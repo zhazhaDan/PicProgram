@@ -22,22 +22,22 @@ class BaseTabBarController: UITabBarController {
         let selectedAttris = [NSAttributedStringKey.foregroundColor:xsColor_main_blue,NSAttributedStringKey.font:xsFont(10)]
         
         let findVC = FindViewController.init(nibName: "FindViewController", bundle: Bundle.main)
-        findVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Discover"), image: #imageLiteral(resourceName: "weixuanzhongfaxian_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhongfaxian_icon-1").withRenderingMode(.alwaysOriginal))
+        findVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Discover"), image: #imageLiteral(resourceName: "weixuanzhongfaxian_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "faxianxuanzhong").withRenderingMode(.alwaysOriginal))
         findVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         findVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
         
         let classVC = ClassifyViewController()
-        classVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Category"), image: #imageLiteral(resourceName: "weixuanzhongfenlei_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhongfenlei_icon"))
+        classVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Category"), image: #imageLiteral(resourceName: "weixuanzhongfenlei_icon").withRenderingMode(.alwaysOriginal), selectedImage:  #imageLiteral(resourceName: "xuanzhongfenlei_icon").withRenderingMode(.alwaysOriginal))
         classVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         classVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
         
         let easelVC = EaselViewController()
-        easelVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Art Works"), image: #imageLiteral(resourceName: "weixuanzhonghuajia_icon").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "weixuanzhonghuajia_icon"))
+        easelVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Art Works"), image: #imageLiteral(resourceName: "weixuanzhonghuajia_icon").withRenderingMode(.alwaysOriginal), selectedImage:  #imageLiteral(resourceName: "huajiaxuanzhong").withRenderingMode(.alwaysOriginal))
         easelVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         easelVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
         
         let minVC = MineViewController.init(nibName: "MineViewController", bundle: Bundle.main)
-        minVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "My Account"), image: UIImage.init(named: "weixuanzhongwode_icon")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage.init(named: "weixuanzhongwode_icon"))
+        minVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "My Account"), image: UIImage.init(named: "weixuanzhongwode_icon")?.withRenderingMode(.alwaysOriginal), selectedImage:  #imageLiteral(resourceName: "xuanzhongwode_icon").withRenderingMode(.alwaysOriginal))
 
         minVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         minVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)

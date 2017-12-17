@@ -56,7 +56,7 @@
                                 <constraint firstAttribute="height" constant="40" id="asp-pK-SXh"/>
                                 <constraint firstAttribute="width" constant="36" id="smk-Zr-A3z"/>
                             </constraints>
-                            <state key="normal" backgroundImage="danduye_shangchuandaohuangkuang"/>
+                            <state key="normal" backgroundImage="neichen_yingyonghuakuang"/>
                             <connections>
                                 <action selector="pushAction:" destination="-1" eventType="touchUpInside" id="6dy-V5-vSF"/>
                             </connections>
@@ -134,8 +134,8 @@
     <resources>
         <image name="danduye_gengduo" width="26" height="6"/>
         <image name="danduye_lining" width="40" height="30"/>
-        <image name="danduye_shangchuandaohuangkuang" width="36" height="40"/>
         <image name="danduye_sunxuxunhuan" width="27" height="21"/>
+        <image name="neichen_yingyonghuakuang" width="36" height="40"/>
         <image name="neichen_yingyonghuakuang-1" width="30" height="30"/>
     </resources>
 </document>

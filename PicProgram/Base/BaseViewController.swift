@@ -20,14 +20,14 @@ class BaseViewController: UIViewController {
         self.extendedLayoutIncludesOpaqueBars = true
         self.view.backgroundColor = xsColor_main_white
         buildUI()
-        // Do any additional setup after loading the view.
+          // Do any additional setup after loading the view.
     }
 
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.backItem?.title = backTitle
-        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: backTitle, style: .done, target: nil, action: nil)
+//        self.navigationController?.navigationBar.backItem?.title = backTitle
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: backTitle, style: .done, target: nil, action: nil)
 
     }
     

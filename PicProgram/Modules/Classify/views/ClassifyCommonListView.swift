@@ -86,7 +86,7 @@ class ClassifyCommonListView: BaseView,UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (delegate?.listDidSelected) != nil{
-            delegate?.listDidSelected!(view: self, at: indexPath.row, 0)
+            delegate?.listDidSelected!(view: self, at: indexPath.row, indexPath.section)
         }
     }
     

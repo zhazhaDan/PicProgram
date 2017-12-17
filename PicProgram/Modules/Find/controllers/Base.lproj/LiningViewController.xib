@@ -55,7 +55,7 @@
                                             <subviews>
                                                 <button opaque="NO" tag="10" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMc-e6-PL9">
                                                     <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="84"/>
-                                                    <color key="backgroundColor" red="0.62504500149999997" green="0.62511724229999999" blue="0.6250033975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.67843598127365112" green="0.67842304706573486" blue="0.67843186855316162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="84" id="W1U-2G-nD1"/>
                                                     </constraints>
@@ -65,6 +65,9 @@
                                                         <action selector="chooseTiningStyleAction:" destination="-1" eventType="touchUpInside" id="Hf0-ke-30K"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neichen_baise" translatesAutoresizingMaskIntoConstraints="NO" id="PF4-Pt-cHu">
+                                                    <rect key="frame" x="20" y="20" width="62.666666666666671" height="64"/>
+                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="白色卡纸" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBp-ee-OUb" userLabel="白色卡纸label">
                                                     <rect key="frame" x="52.666666666666671" y="34" width="30.000000000000014" height="50"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,6 +84,7 @@
                                                 </view>
                                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-Dj-SLM">
                                                     <rect key="frame" x="82.666666666666657" y="0.0" width="82.999999999999972" height="84"/>
+                                                    <color key="backgroundColor" red="0.8941236138343811" green="0.89410686492919922" blue="0.89411824941635132" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <inset key="titleEdgeInsets" minX="40" minY="50" maxX="0.0" maxY="0.0"/>
                                                     <inset key="imageEdgeInsets" minX="20" minY="20" maxX="0.0" maxY="0.0"/>
                                                     <connections>
@@ -109,6 +113,7 @@
                                                 </view>
                                                 <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x9-Ve-LzW">
                                                     <rect key="frame" x="165.66666666666666" y="0.0" width="82.666666666666686" height="84"/>
+                                                    <color key="backgroundColor" red="0.8941236138343811" green="0.89410686492919922" blue="0.89411824941635132" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <inset key="titleEdgeInsets" minX="40" minY="50" maxX="0.0" maxY="0.0"/>
                                                     <inset key="imageEdgeInsets" minX="20" minY="20" maxX="0.0" maxY="0.0"/>
                                                     <connections>
@@ -137,6 +142,7 @@
                                                 </view>
                                                 <button opaque="NO" tag="13" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBo-dJ-4CJ">
                                                     <rect key="frame" x="248.33333333333331" y="0.0" width="82.999999999999943" height="84"/>
+                                                    <color key="backgroundColor" red="0.89412361380000005" green="0.89410686490000002" blue="0.89411824939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <inset key="titleEdgeInsets" minX="40" minY="50" maxX="0.0" maxY="0.0"/>
                                                     <inset key="imageEdgeInsets" minX="20" minY="20" maxX="0.0" maxY="0.0"/>
                                                     <connections>
@@ -165,6 +171,7 @@
                                                 </view>
                                                 <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LZ-AP-0FD">
                                                     <rect key="frame" x="331.33333333333326" y="0.0" width="82.666666666666686" height="84"/>
+                                                    <color key="backgroundColor" red="0.89412361380000005" green="0.89410686490000002" blue="0.89411824939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <inset key="titleEdgeInsets" minX="40" minY="50" maxX="0.0" maxY="0.0"/>
                                                     <inset key="imageEdgeInsets" minX="20" minY="20" maxX="0.0" maxY="0.0"/>
                                                     <connections>
@@ -184,9 +191,6 @@
                                                     <color key="textColor" red="0.62504500149999997" green="0.62511724229999999" blue="0.6250033975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neichen_baise" translatesAutoresizingMaskIntoConstraints="NO" id="PF4-Pt-cHu">
-                                                    <rect key="frame" x="20" y="20" width="62.666666666666671" height="64"/>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.948936522" green="0.94907277820000002" blue="0.94890671969999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -261,7 +265,7 @@
                                             <subviews>
                                                 <button opaque="NO" tag="20" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETm-kv-KYu">
                                                     <rect key="frame" x="0.0" y="0.0" width="82.666666666666686" height="84"/>
-                                                    <color key="backgroundColor" red="0.62504500149999997" green="0.62511724229999999" blue="0.6250033975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.71373039484024048" green="0.71371680498123169" blue="0.71372604370117188" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="84" id="N7L-KS-RHD"/>
                                                     </constraints>
@@ -549,12 +553,25 @@
                         <constraint firstItem="61E-rI-7bP" firstAttribute="top" secondItem="EG8-cs-PJk" secondAttribute="bottom" id="qqT-Ui-FZk"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYg-su-3jP">
+                    <rect key="frame" x="21" y="102" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="6L8-RA-61j"/>
+                        <constraint firstAttribute="width" constant="30" id="C5D-Kn-s6v"/>
+                    </constraints>
+                    <state key="normal" image="icons8-info-tixing"/>
+                    <connections>
+                        <action selector="hintAction:" destination="-1" eventType="touchUpInside" id="tEp-23-nJU"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="h52-BL-MLf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rO3-Xv-gi9" secondAttribute="top" constant="64" id="2ok-Pe-BtE"/>
+                <constraint firstItem="sYg-su-3jP" firstAttribute="top" secondItem="h52-BL-MLf" secondAttribute="top" constant="38" id="3Oe-tZ-ZFq"/>
                 <constraint firstItem="h52-BL-MLf" firstAttribute="leading" secondItem="rO3-Xv-gi9" secondAttribute="leading" id="DyW-9i-yr5"/>
                 <constraint firstItem="h52-BL-MLf" firstAttribute="top" secondItem="OsD-3v-Gm9" secondAttribute="top" priority="750" id="Vez-iv-Os6"/>
+                <constraint firstItem="sYg-su-3jP" firstAttribute="leading" secondItem="h52-BL-MLf" secondAttribute="leading" constant="21" id="o06-7Z-TCf"/>
                 <constraint firstItem="OsD-3v-Gm9" firstAttribute="bottom" secondItem="h52-BL-MLf" secondAttribute="bottom" id="pTS-h3-rKo"/>
                 <constraint firstItem="OsD-3v-Gm9" firstAttribute="trailing" secondItem="h52-BL-MLf" secondAttribute="trailing" id="tb7-kr-BQh"/>
             </constraints>
@@ -562,6 +579,7 @@
         </view>
     </objects>
     <resources>
+        <image name="icons8-info-tixing" width="31" height="31"/>
         <image name="neichen_baise" width="56" height="90"/>
         <image name="neichen_baise2.5cm" width="141" height="255"/>
         <image name="neichen_changjing" width="375" height="667"/>

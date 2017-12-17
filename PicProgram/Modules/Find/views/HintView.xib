@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HintView" customModule="PicProgram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WpY-RK-Pzs">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lmq-l4-RhQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shuomingtubiao" translatesAutoresizingMaskIntoConstraints="NO" id="guf-VL-ble">
+                    <rect key="frame" x="172.5" y="142" width="30" height="68"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="bXZ-To-Dgh"/>
+                        <constraint firstAttribute="height" constant="68" id="eZM-3d-8px"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="说明" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1L-Rf-9VG">
+                    <rect key="frame" x="172.5" y="142" width="30" height="68"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOo-Of-JQ3">
+                    <rect key="frame" x="32" y="280" width="311" height="57.5"/>
+                    <string key="text">此功能需绑定墨染数字画框使用
+底部点选内衬材质、大小
+右上角按钮推送到数字画框硬件端</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="WpY-RK-Pzs" secondAttribute="bottom" id="HmA-tI-euu"/>
+                <constraint firstItem="U1L-Rf-9VG" firstAttribute="height" secondItem="guf-VL-ble" secondAttribute="height" id="Hrn-7J-Fia"/>
+                <constraint firstAttribute="trailing" secondItem="BOo-Of-JQ3" secondAttribute="trailing" constant="32" id="Iz5-M6-Gju"/>
+                <constraint firstItem="guf-VL-ble" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="142" id="J9f-kC-fFq"/>
+                <constraint firstItem="WpY-RK-Pzs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LXk-ga-Ec5"/>
+                <constraint firstItem="BOo-Of-JQ3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="aWZ-f9-bU9"/>
+                <constraint firstItem="WpY-RK-Pzs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bz4-75-IWo"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BOo-Of-JQ3" secondAttribute="bottom" id="dwV-qm-IBp"/>
+                <constraint firstItem="BOo-Of-JQ3" firstAttribute="top" secondItem="guf-VL-ble" secondAttribute="bottom" constant="70" id="k2z-Hj-lgt"/>
+                <constraint firstItem="U1L-Rf-9VG" firstAttribute="leading" secondItem="guf-VL-ble" secondAttribute="leading" id="ktL-Jq-vz7"/>
+                <constraint firstAttribute="trailing" secondItem="WpY-RK-Pzs" secondAttribute="trailing" id="mJA-XA-nzp"/>
+                <constraint firstItem="U1L-Rf-9VG" firstAttribute="width" secondItem="guf-VL-ble" secondAttribute="width" id="ug0-KA-7Em"/>
+                <constraint firstItem="guf-VL-ble" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xou-jq-FOa"/>
+                <constraint firstItem="U1L-Rf-9VG" firstAttribute="top" secondItem="guf-VL-ble" secondAttribute="top" id="yDS-mJ-ML8"/>
+            </constraints>
+            <connections>
+                <outlet property="hintTextLabel" destination="BOo-Of-JQ3" id="pkc-Bu-Kna"/>
+                <outletCollection property="gestureRecognizers" destination="cBK-S1-rsk" appends="YES" id="YY2-Ih-ehK"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
+        </view>
+        <tapGestureRecognizer id="cBK-S1-rsk">
+            <connections>
+                <action selector="tapAction:" destination="iN0-l3-epB" id="bX9-kq-KmM"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="shuomingtubiao" width="30" height="68"/>
+    </resources>
+</document>

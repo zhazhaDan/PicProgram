@@ -16,7 +16,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var cScrollView: UIScrollView!
-    var deviceDatas:Array<[String:Any]> = [["device_id":"1","device_name":"某人的数字画框","flag":1],["device_id":"2","device_name":"某人的智能画框","flag":1],["device_id":"3","device_name":"智能画框","flag":0],["device_id":"4","device_name":"数字画框","flag":0]]
+    var deviceDatas:Array<[String:Any]> = Array()
     
     
     override func viewDidLoad() {
@@ -105,6 +105,10 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     
     func deviceManageSelected() {
+        
+        if self.deviceDatas.count == 0 {
+            return
+        }
         let backView = UIView.init(frame: self.view.bounds)
         backView.backgroundColor = xsColor("000000", alpha: 0.6)
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapRegistAction))
@@ -114,6 +118,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         bindView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
         bindView.dataSource = deviceDatas
         bindView.delegate = self
+        bindView.tag = 300
         backView.tag = 100
         bindView.tableView.reloadData()
         backView.addSubview(bindView)
@@ -162,7 +167,9 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                 if result["ret"] as! Int == 0 {
                     let bindUserView = Bundle.main.loadNibNamed("DeviceBindUserView", owner: nil, options: nil)?.first as! DeviceBindUserView
                     bindUserView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
+                    bindUserView.delegate = self
                     bindUserView.dataSource = self.deviceDatas
+                    bindUserView.tag = 200
                     let backView = self.view.viewWithTag(100)
                     bindUserView.tableView.reloadData()
                     backView?.addSubview(bindUserView)
@@ -170,6 +177,38 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                 }
             }, nil)
         }
+    }
+    
+    func denyBindDevice(view: UIView, deviceIndex row: Int) {
+        let bindUserView = self.view.viewWithTag(200) as! DeviceBindUserView
+        let info = bindUserView.dataSource[row]
+        if info["flag"] as! Int == 1 {
+            masterResolveDeviceBindInfo(status: 3, uin: info["uin"] as! Int64)
+        }else if info["flag"] as! Int == 2 {
+            masterResolveDeviceBindInfo(status: 2, uin: info["uin"] as! Int64)
+        }
+    }
+    func promiseBindDevice(view: UIView, deviceIndex row: Int) {
+        let bindUserView = self.view.viewWithTag(200) as! DeviceBindUserView
+        let info = bindUserView.dataSource[row]
+        masterResolveDeviceBindInfo(status: 1, uin: info["uin"] as! Int64)
+    }
+    func removeDevice(view: UIView, deviceIndex row: Int) {
+        
+//        let alert = UIAlertController.init(title: nil, message: "如果您解绑该设备，所有与该设备绑定的用户将会自动解绑", preferredStyle: .alert)
+        
+        let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
+        let info = bindUserView.dataSource[row]
+        network.requestData(.user_delete_device, params: ["device_id":info["device_id"] as Any], finishedCallback: { (result) in
+            
+        }, nil)
+    }
+    
+    func masterResolveDeviceBindInfo(status:Int,uin:Int64) {
+        let bindUserView = self.view.viewWithTag(200) as! DeviceBindUserView
+        network.requestData(.user_master_solve_device, params: ["uin":uin,"status":status,"device_id":bindUserView.device_id], finishedCallback: { (result) in
+            
+        }, nil)
     }
 
     //为了解决tableivew didselect和tableivew.superview添加手势之后的冲突

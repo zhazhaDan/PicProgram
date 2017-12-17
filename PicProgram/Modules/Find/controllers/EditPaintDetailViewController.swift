@@ -10,6 +10,7 @@ import UIKit
 
 class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITextFieldDelegate {
 
+    @IBOutlet weak var subTitleTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var picImageView: UIImageView!
     @IBOutlet weak var introduceTextView: UITextView!
@@ -83,7 +84,12 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.paintModel.paint_title = textField.text!
+        if textField == titleTextField {
+            self.paintModel.paint_title = textField.text!
+        }else if textField == subTitleTextField {
+            //TODO:画单副标题
+//            self.paintModel.paint_detail
+        }
 //        saveEditPaintInfo()
     }
     
