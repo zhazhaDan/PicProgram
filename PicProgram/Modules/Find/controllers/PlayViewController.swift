@@ -16,9 +16,13 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     var currentIndex:NSInteger = 0
     var dragStartX:CGFloat = 0
     var dragEndX:CGFloat = 0
+    var playStyle:Int = 0
     @IBOutlet weak var collectionView: UICollectionView!
     var dataSource:Array<PictureModel> = Array()
-    @IBAction func playStyleAction(_ sender: Any) {
+    @IBAction func playStyleAction(_ sender: UIButton) {
+        let styleImages = [#imageLiteral(resourceName: "danduye_danzhangbofanganniu"),#imageLiteral(resourceName: "danduye_sunxuxunhuan"),#imageLiteral(resourceName: "danduye_suijibofanganniu")]
+        playStyle = (playStyle+1)%3
+        sender.setBackgroundImage(styleImages[playStyle], for: .normal)
     }
     @IBAction func tipsAction(_ sender: Any) {
         let vc = TipsViewController.init(nibName: "TipsViewController", bundle: Bundle.main)
@@ -55,7 +59,9 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
+        if dataSource.count > 0 {
+            collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
+        }
     }
     
     //单例

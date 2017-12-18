@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.rootViewController = BaseTabBarController()//GifViewController()
         //BaseTabBarController()// HomePageNavigationController.init(rootViewController: BaseTabBarController())
-        self.perform(#selector(gifDone), with: nil, afterDelay: 2.3, inModes: [.commonModes,.defaultRunLoopMode,.UITrackingRunLoopMode])
+        self.perform(#selector(gifDone), with: nil, afterDelay: 3, inModes: [.commonModes,.defaultRunLoopMode,.UITrackingRunLoopMode])
         self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
         self.gifWindow?.rootViewController = GifViewController()
         self.gifWindow?.makeKeyAndVisible()

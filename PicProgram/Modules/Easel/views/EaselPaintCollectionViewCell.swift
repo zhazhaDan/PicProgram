@@ -15,6 +15,9 @@ class EaselPaintCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var paintPicRightConstrain: NSLayoutConstraint!
     @IBOutlet weak var paintTitleLabel: UILabel!
     @IBOutlet weak var plankBottomLeftConstrain: NSLayoutConstraint!
+    @IBOutlet weak var deleteButton: UIButton!
+    open weak var  delegate:CustomViewProtocol!
+    open weak var  collectionView:PaintFrameListView!
     var _row: Int = 0
     var row:Int {
         set {
@@ -40,9 +43,25 @@ class EaselPaintCollectionViewCell: UICollectionViewCell {
             return _row
         }
     }
+    
+    
+    
+    @objc func showDeleteButton(_ sender: Any) {
+        self.deleteButton.isHidden = false
+    }
+    @IBAction func deleteAction(_ sender: UIButton) {
+        delegate.listWillDelete!(view: self.collectionView!, at: row, 0)
+    }
+    @objc func showPaintDetail(_ sender: UITapGestureRecognizer) {
+        delegate.listDidSelected!(view: self.collectionView!, at: row, 0)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(showPaintDetail(_:)))
+        paintPicImageView.addGestureRecognizer(tap)
+        let longGesture = UILongPressGestureRecognizer.init(target: self, action: #selector(showDeleteButton(_:)))
+        paintPicImageView.addGestureRecognizer(longGesture)
     }
 
 }

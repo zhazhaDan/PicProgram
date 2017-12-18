@@ -122,4 +122,32 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    func listWillDelete(view: UIView, at index: Int, _ section: Int) {
+        if view == view1 {//本地删除
+            HUDTool.show(.loading, text: MRLanguage(forKey: "Deleting"), delay: 0.6, view: self.view, complete: nil)
+            let paint = Paint.fetchPaint(key: .name, value: view1.dataSource[index].paint_title, create: false, painttype: 1)
+            if paint != nil {
+                appDelegate.managedObjectContext.delete(paint!)
+                do {
+                    HUDTool.hide()
+                    try appDelegate.managedObjectContext.save()
+                    HUDTool.show(.text, text: MRLanguage(forKey: "Delete Success"), delay: 0.6, view: self.view, complete: {[weak self] in
+                        self?.view1.dataSource.remove(at: index)
+                        self?.view1.collectionView.reloadData()
+                    })
+                }catch{}
+            }
+        }else if view == view3 {//发送请求
+            HUDTool.show(.loading, text: MRLanguage(forKey: "Deleting"), delay: 0.6, view: self.view, complete: nil)
+            network.requestData(.paint_collect, params: ["paint_id":view3.dataSource[index].paint_id], finishedCallback: { [weak self](result) in
+                HUDTool.hide()
+                if result["ret"] as! Int == 0 {
+                    HUDTool.show(.text, text: MRLanguage(forKey: "Delete Success"), delay: 0.6, view: (self?.view)!, complete: {[weak self] in
+                        self?.view3.dataSource.remove(at: index)
+                        self?.view3.collectionView.reloadData()
+                    })
+                }
+                }, nil)
+        }
+    }
 }

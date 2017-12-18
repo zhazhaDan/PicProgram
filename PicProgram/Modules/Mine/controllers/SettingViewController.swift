@@ -70,6 +70,9 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         if cell.textLabel?.text == "意见反馈" {
             //TODO:修改
             cell.detailTextLabel?.text = "34445432@qq.com"
+        }else if cell.textLabel?.text == "软件版本" {
+            //TODO:修改
+            cell.detailTextLabel?.text = "\(majorVersion)"
         }
     }
     
@@ -79,6 +82,15 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
             let vc = AboutUsViewController.init(nibName: "AboutUsViewController", bundle: Bundle.main)
             self.navigationController?.pushViewController(vc, animated: true)
             print("\(indexPath.row)")
+        case 3:
+            let alert = BaseAlertController.init("", message: MRLanguage(forKey: "Choose your language"), confirmText: MRLanguage(forKey: "Chinese"), MRLanguage(forKey: "English"), subComplete: { (index) in
+                if index == 0 {
+                    LocalizedLanguageTool.language = CNS.self
+                }else {
+                    LocalizedLanguageTool.language = EN
+                }
+            })
+            self.navigationController?.present(alert, animated: true, completion: nil)
         default:
             print("\(indexPath.row)")
         }

@@ -13,8 +13,8 @@ let EN = "en"
 let LanguageKey = "language"
 
 class LocalizedLanguageTool: NSObject {
-    var _language:String = EN
-    var language:String {
+    static var _language:String = EN
+    class var language:String {
         set {
             _language = newValue
             UserDefaults.standard.set(newValue, forKey: LanguageKey)
@@ -28,9 +28,15 @@ class LocalizedLanguageTool: NSObject {
         }
     }
     
+    class var bundle:Bundle {
+        get {
+            let path = Bundle.main.path(forResource: LocalizedLanguageTool.language, ofType: "lproj")
+            let cbundle = Bundle.init(path: path!)
+            return cbundle!
+        }
+    }
+    
     func getString(forKey:String,table:String = "content") -> String {
-        let path = Bundle.main.path(forResource: self.language, ofType: "lproj")
-        let bundle = Bundle.init(path: path!)
-        return NSLocalizedString(forKey, tableName: table, bundle: bundle!, value: "", comment: "")
+        return NSLocalizedString(forKey, tableName: table, bundle: LocalizedLanguageTool.bundle, value: "", comment: "")
     }
 }

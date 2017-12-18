@@ -19,7 +19,7 @@ enum PaintPropertyKey:String {
 
 public class Paint: NSManagedObject {
     //NSPredicate
-    class func fetchPaint(key: PaintPropertyKey, value: Any, create:Bool = true, painttype type:Int16 = 1) -> Paint? {
+    class func fetchPaint(key: PaintPropertyKey, value: Any, create:Bool = true, painttype type:Int16 = 1) -> Paint? {//1是本地画单 3是历史浏览
         let fetchRequest: NSFetchRequest<Paint> = Paint.fetchRequest()
         fetchRequest.fetchBatchSize = 1
         var newValue = value

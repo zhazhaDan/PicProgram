@@ -19,7 +19,6 @@
 		3A0B8B391FBD91F1006F09E9 /* EmotionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B8B311FBD91F1006F09E9 /* EmotionCollectionViewCell.xib */; };
 		3A0B8B3A1FBD91F1006F09E9 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B8B321FBD91F1006F09E9 /* EmotionView.swift */; };
 		3A0B8B3D1FBD920C006F09E9 /* EaselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B8B3B1FBD920C006F09E9 /* EaselViewController.swift */; };
-		3A0B8B3E1FBD920C006F09E9 /* EaselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B8B3C1FBD920C006F09E9 /* EaselViewController.xib */; };
 		3A0B8B401FBD97AA006F09E9 /* PaintFrameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B8B3F1FBD97AA006F09E9 /* PaintFrameListView.swift */; };
 		3A0B8B441FBE83FE006F09E9 /* EaselPaintCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B8B421FBE83FE006F09E9 /* EaselPaintCollectionViewCell.swift */; };
 		3A0B8B451FBE83FE006F09E9 /* EaselPaintCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B8B431FBE83FE006F09E9 /* EaselPaintCollectionViewCell.xib */; };
@@ -68,6 +67,8 @@
 		3A7BA0E31FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */; };
 		3A7C827E1FAC2B2000793420 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C827C1FAC2B2000793420 /* PictureDetailViewController.swift */; };
 		3A7C827F1FAC2B2000793420 /* PictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C827D1FAC2B2000793420 /* PictureDetailViewController.xib */; };
+		3A90F3C41FE7BE3800BF4906 /* EaselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A90F3C61FE7BE3800BF4906 /* EaselViewController.xib */; };
+		3A90F3CC1FE7CEDE00BF4906 /* BaseBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90F3CB1FE7CEDE00BF4906 /* BaseBundle.swift */; };
 		3A92E8271FD68C9A00C7B5A3 /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92E8261FD68C9A00C7B5A3 /* GifViewController.swift */; };
 		3A9963CB1F9C6A5A00077307 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9963C91F9C6A5A00077307 /* FindViewController.swift */; };
 		3A9963CC1F9C6A5A00077307 /* FindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9963CA1F9C6A5A00077307 /* FindViewController.xib */; };
@@ -232,7 +233,6 @@
 		3A0B8B311FBD91F1006F09E9 /* EmotionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmotionCollectionViewCell.xib; sourceTree = "<group>"; };
 		3A0B8B321FBD91F1006F09E9 /* EmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
 		3A0B8B3B1FBD920C006F09E9 /* EaselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaselViewController.swift; sourceTree = "<group>"; };
-		3A0B8B3C1FBD920C006F09E9 /* EaselViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EaselViewController.xib; sourceTree = "<group>"; };
 		3A0B8B3F1FBD97AA006F09E9 /* PaintFrameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintFrameListView.swift; sourceTree = "<group>"; };
 		3A0B8B421FBE83FE006F09E9 /* EaselPaintCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaselPaintCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A0B8B431FBE83FE006F09E9 /* EaselPaintCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EaselPaintCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -285,6 +285,10 @@
 		3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDetailHeaderStyle3View.swift; sourceTree = "<group>"; };
 		3A7C827C1FAC2B2000793420 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
 		3A7C827D1FAC2B2000793420 /* PictureDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureDetailViewController.xib; sourceTree = "<group>"; };
+		3A90F3C51FE7BE3800BF4906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EaselViewController.xib; sourceTree = "<group>"; };
+		3A90F3C81FE7BE3B00BF4906 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EaselViewController.strings; sourceTree = "<group>"; };
+		3A90F3CA1FE7BE3D00BF4906 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/EaselViewController.strings"; sourceTree = "<group>"; };
+		3A90F3CB1FE7CEDE00BF4906 /* BaseBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBundle.swift; sourceTree = "<group>"; };
 		3A92E8261FD68C9A00C7B5A3 /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
 		3A9963C91F9C6A5A00077307 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		3A9963CA1F9C6A5A00077307 /* FindViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindViewController.xib; sourceTree = "<group>"; };
@@ -505,7 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				3A0B8B3B1FBD920C006F09E9 /* EaselViewController.swift */,
-				3A0B8B3C1FBD920C006F09E9 /* EaselViewController.xib */,
+				3A90F3C61FE7BE3800BF4906 /* EaselViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -808,6 +812,7 @@
 				3A414E4F1FCEC2920046E2B7 /* LocalizedLanguageTool.swift */,
 				3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */,
 				F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */,
+				3A90F3CB1FE7CEDE00BF4906 /* BaseBundle.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1031,7 +1036,7 @@
 				3AB5DD291F8CB192004897B5 /* Images.xcassets in Resources */,
 				3AB78C031FC412D6001D9A43 /* SystemPicsCollectionViewController.xib in Resources */,
 				3A6F49B91FC6C7C3001AE767 /* AlbumTableViewCell.xib in Resources */,
-				3A0B8B3E1FBD920C006F09E9 /* EaselViewController.xib in Resources */,
+				3A90F3C41FE7BE3800BF4906 /* EaselViewController.xib in Resources */,
 				F72A5AC31FDC2E18007544CB /* moran.gif in Resources */,
 				F7141DB71FDBD06C00606631 /* TipsViewController.xib in Resources */,
 				3AB5DD081F8CB192004897B5 /* Contents.json in Resources */,
@@ -1210,6 +1215,7 @@
 				3A2616671FD6A9CD004A6A56 /* MineBindDeviceView.swift in Sources */,
 				3A26166A1FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift in Sources */,
 				3A12A79A1F8F69AF008C0C9F /* DeviceManageView.swift in Sources */,
+				3A90F3CC1FE7CEDE00BF4906 /* BaseBundle.swift in Sources */,
 				3AB5DD2C1F8CB192004897B5 /* PKHUDAnimation.swift in Sources */,
 				3AB5DD401F8CB192004897B5 /* ShadowView.swift in Sources */,
 				3AB5DD031F8CB192004897B5 /* Shadow+UIView.swift in Sources */,
@@ -1289,6 +1295,16 @@
 				3A53875F1F95E7D700BA4359 /* Base */,
 			);
 			name = Mine.storyboard;
+			sourceTree = "<group>";
+		};
+		3A90F3C61FE7BE3800BF4906 /* EaselViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A90F3C51FE7BE3800BF4906 /* Base */,
+				3A90F3C81FE7BE3B00BF4906 /* en */,
+				3A90F3CA1FE7BE3D00BF4906 /* zh-Hans */,
+			);
+			name = EaselViewController.xib;
 			sourceTree = "<group>";
 		};
 		3AB5DC1C1F8CB119004897B5 /* LaunchScreen.storyboard */ = {

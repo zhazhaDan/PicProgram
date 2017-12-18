@@ -39,7 +39,7 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count + (3 - dataSource.count % 3)
+        return dataSource.count + (9 - dataSource.count % 3)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: self.collectionView.width/3, height: 187)
@@ -61,23 +61,27 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let subCell = cell as! EaselPaintCollectionViewCell
         subCell.row = indexPath.row
+        subCell.delegate = delegate
+        subCell.collectionView = self
         let planks = [#imageLiteral(resourceName: "muwenzuo"),#imageLiteral(resourceName: "muwenzhong"),#imageLiteral(resourceName: "muwenyou")]
         subCell.plankImageView.image = planks[indexPath.row%3]
         if indexPath.row < dataSource.count {
             let model = dataSource[indexPath.row]
             subCell.paintPicImageView.xs_setImage(model.title_url)
+            subCell.paintPicImageView.isHidden = false
             subCell.paintTitleLabel.text = model.paint_title
             subCell.paintPicImageView.backgroundColor = xsColor_main_yellow
         }else {
             subCell.paintPicImageView.image = nil
+             subCell.paintPicImageView.isHidden = true
             subCell.paintPicImageView.backgroundColor = UIColor.clear
             subCell.paintTitleLabel.text = nil
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row < dataSource.count {
-            delegate.listDidSelected!(view: self, at: indexPath.item, 0)
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if indexPath.row < dataSource.count {
+//            delegate.listDidSelected!(view: self, at: indexPath.item, 0)
+//        }
+//    }
 }

@@ -4,18 +4,28 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicProgram/Modules/Mine/controllers/RegisterViewController.swift"
-            timestampString = "532925904.105093"
+            filePath = "PicProgram/Modules/Easel/views/EaselPaintCollectionViewCell.swift"
+            timestampString = "535287072.433859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "nextAction(_:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "deleteAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,29 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535021392.521025"
+            filePath = "PicProgram/Modules/Easel/views/EaselPaintCollectionViewCell.swift"
+            timestampString = "535287072.433928"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "MineViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PicProgram/Modules/Find/views/CollectPaintsListView.swift"
-            timestampString = "534683704.931121"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "addPaintSuccess(_:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "showPaintDetail(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicProgram/Modules/Mine/controllers/RegisterViewController.swift"
-            timestampString = "535020419.440223"
+            filePath = "PicProgram/Modules/Easel/controllers/EaselViewController.swift"
+            timestampString = "535287072.433984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "nextAction(_:)"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "listWillDelete(view:at:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,62 +67,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicProgram/Tools/NetworkTool.swift"
-            timestampString = "535026527.274943"
+            filePath = "PicProgram/Base/BaseTabBarController.swift"
+            timestampString = "535287242.45427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "uploadPic(image:finishedCallback:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "buildBarControllers()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PicProgram/Modules/Mine/controllers/SystemPicsCollectionViewController.swift"
-            timestampString = "535027074.011836"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.UIImage, Swift.Bool) -&gt; () in PicProgram.SystemPicsCollectionViewController.collectionView(__ObjC.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "PicProgram"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Mine/controllers/SystemPicsCollectionViewController.swift"
-                  timestampString = "535027074.278024"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 (__ObjC.UIImage, Swift.Bool) -&gt; () in PicProgram.SystemPicsCollectionViewController.collectionView(__ObjC.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "PicProgram"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Mine/controllers/SystemPicsCollectionViewController.swift"
-                  timestampString = "535027074.279622"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
