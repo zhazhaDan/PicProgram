@@ -53,7 +53,7 @@ class PlayMoreView: BaseView {
     }
     
     @IBAction func timeAction(_ sender: UIButton) {
-        for i in 0 ..< 4 {
+        for i in 0 ..< 5 {
             let btn = self.viewWithTag(20+i) as! UIButton
             if btn == sender {
                 btn.isSelected = true

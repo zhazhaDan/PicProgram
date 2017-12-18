@@ -69,7 +69,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <inset key="titleEdgeInsets" minX="-33" minY="63" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="18.5" minY="0.0" maxX="18.5" maxY="0.0"/>
-                            <state key="normal" title="收藏" image="10sdanduye_gengduogongnneg_shouchang">
+                            <state key="normal" title="收藏至画单" image="10sdanduye_gengduogongnneg_shouchang">
                                 <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <state key="selected" image="02faxians_bannererji_yishouchang"/>
@@ -125,7 +125,7 @@
                                 <constraint firstAttribute="height" constant="1" id="TU8-tx-Qk5"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hti-Qh-3x5" userLabel="15s">
+                        <button opaque="NO" tag="20" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hti-Qh-3x5" userLabel="15s">
                             <rect key="frame" x="57" y="160" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="22" id="40C-rO-Lfs"/>
@@ -137,7 +137,7 @@
                                 <action selector="timeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ngj-c9-NNT"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ec-oH-UGY" userLabel="30s">
+                        <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ec-oH-UGY" userLabel="30s">
                             <rect key="frame" x="113" y="160" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="22" id="PZb-cR-HfV"/>
@@ -149,7 +149,7 @@
                                 <action selector="timeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="OiP-of-8u5"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="21" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUP-7C-IUv" userLabel="2m">
+                        <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUP-7C-IUv" userLabel="2m">
                             <rect key="frame" x="168.5" y="160" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="8Ql-Ah-b7z"/>
@@ -161,7 +161,7 @@
                                 <action selector="timeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="U4v-DI-Re2"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sm-Ns-QXe" userLabel="10m">
+                        <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sm-Ns-QXe" userLabel="10m">
                             <rect key="frame" x="224.5" y="160" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="F5C-HU-i3S"/>
@@ -173,7 +173,7 @@
                                 <action selector="timeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vba-La-Akf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3D-0b-DPQ" userLabel="30m">
+                        <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3D-0b-DPQ" userLabel="30m">
                             <rect key="frame" x="280" y="160" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="22L-zc-hrJ"/>
@@ -276,7 +276,7 @@
                                 <action selector="modeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="PQ5-mb-I47"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关灯熄屏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUF-PY-bcx">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="睡眠模式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUF-PY-bcx">
                             <rect key="frame" x="266" y="312" width="50" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="JVs-A1-D9X"/>

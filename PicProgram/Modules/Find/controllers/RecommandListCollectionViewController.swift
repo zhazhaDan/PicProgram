@@ -13,7 +13,8 @@ private let reuseIdentifier = "Cell"
 
 class RecommandListCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
     var dataSource:Array<PaintModel> = Array()
-    var type:Int = 0 
+    var type:Int = 0
+    var last_id:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = xsColor_main_white
@@ -21,13 +22,18 @@ class RecommandListCollectionViewController: UICollectionViewController,UICollec
         // self.clearsSelectionOnViewWillAppear = false
         // Register cell classes
         self.collectionView!.register(UINib.init(nibName: "RecommandListCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
+    }
+    
+    func buildUI() {
+        self.collectionView?.xs_addRefresh(refresh: .normal_header_refresh, action: {
+            self.requestData()
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        requestData()
+        buildUI()
     }
 
     

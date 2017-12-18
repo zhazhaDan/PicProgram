@@ -21,8 +21,10 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     var dataSource:Array<PictureModel> = Array()
     @IBAction func playStyleAction(_ sender: UIButton) {
         let styleImages = [#imageLiteral(resourceName: "danduye_danzhangbofanganniu"),#imageLiteral(resourceName: "danduye_sunxuxunhuan"),#imageLiteral(resourceName: "danduye_suijibofanganniu")]
+        let styleHints = ["单张循环","顺序循环","随机播放"]
         playStyle = (playStyle+1)%3
         sender.setBackgroundImage(styleImages[playStyle], for: .normal)
+        HUDTool.show(.text, text: styleHints[playStyle], delay: 0.5, view: self.view, complete: nil)
     }
     @IBAction func tipsAction(_ sender: Any) {
         let vc = TipsViewController.init(nibName: "TipsViewController", bundle: Bundle.main)
@@ -56,9 +58,16 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         let layout = collectionView.collectionViewLayout as! PlayViewFlowLayout
         layout.scrollDirection = .horizontal
+        self.baseNavigationController?.addRightNavigationBarItems(["fenxiang"], ["fenxiang"], nil, rightCallBack: { (tag) in
+            let shareView = ShareViewController.init(nibName: "ShareViewController", bundle: Bundle.main)
+            shareView.picUrl = self.dataSource[self.currentIndex].detail_url
+            shareView.picTitle = self.dataSource[self.currentIndex].title
+            self.navigationController?.pushViewController(shareView, animated: true)
+        })
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         if dataSource.count > 0 {
             collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
         }

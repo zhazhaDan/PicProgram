@@ -13,6 +13,7 @@ import UIKit
     @objc optional func seeMoreNews()
     @objc optional func seeMoreReaders()
     @objc optional func praiseBigStar()
+    @objc optional func shareBigStar()
     @objc optional func viewDidSelected(view:ItemView,paint_id:Int)
     @objc optional func listView(view:UIView,didSelected atIndex:Int)
 }
@@ -56,6 +57,8 @@ class TodayRecommandView: BaseScrollView {
     override func buildUI() {
         self.backgroundColor = xsColor_main_white
         bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: SCREEN_WIDTH - 24, height: 168), false)
+        bannerView.layer.cornerRadius = 8
+        bannerView.layer.masksToBounds = true
         self.addSubview(bannerView)
         let header1 = FindHeaderView()
         header1.frame = CGRect.init(x: 12, y: bannerView.bottom + 13, width: bannerView.width, height: 40)

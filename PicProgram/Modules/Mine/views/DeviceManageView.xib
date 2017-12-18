@@ -45,7 +45,7 @@
                         <constraint firstItem="788-R7-Woe" firstAttribute="leading" secondItem="uQ6-CK-DKe" secondAttribute="leading" constant="90" id="pHE-ZM-vj9"/>
                     </constraints>
                 </view>
-                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeD-n3-p2J">
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeD-n3-p2J">
                     <rect key="frame" x="53.5" y="91" width="267" height="175"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="175" id="FNW-7v-RKc"/>
@@ -56,6 +56,8 @@
                     <state key="normal" title="暂无绑定设备" backgroundImage="08wode_shebeikuang">
                         <color key="titleColor" red="0.1426818967" green="0.29433876279999999" blue="0.56016951800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <state key="selected" backgroundImage="08wode_shebeikuang"/>
+                    <state key="highlighted" backgroundImage="08wode_shebeikuang"/>
                     <connections>
                         <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="NoA-tK-XU4"/>
                     </connections>
@@ -72,6 +74,7 @@
                     <state key="normal" title="添加设备" image="08wode_tianjiashebei">
                         <color key="titleColor" red="0.1426818967" green="0.29433876279999999" blue="0.56016951800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <state key="highlighted" image="08wode_tianjiashebei"/>
                     <connections>
                         <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="fiO-NT-kdH"/>
                     </connections>
@@ -84,6 +87,7 @@
                     <state key="normal" title="Wi-fi配置" image="08wode_wifipeizhi">
                         <color key="titleColor" red="0.1426818967" green="0.29433876279999999" blue="0.56016951800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <state key="highlighted" image="08wode_wifipeizhi"/>
                     <connections>
                         <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="chr-6A-qe8"/>
                     </connections>

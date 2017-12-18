@@ -14,9 +14,12 @@ class ArtReadTableViewCell: UITableViewCell {
     @IBOutlet weak var picTitleLabel: UILabel!
     @IBOutlet weak var picDetailLabel: UILabel!
     @IBOutlet weak var picUploadTimeLabel: UILabel!
+    @IBOutlet weak var timeHeightConstraint: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        showPicImageView.layer.cornerRadius = 4
+        showPicImageView.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

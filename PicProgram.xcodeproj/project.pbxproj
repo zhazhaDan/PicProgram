@@ -202,6 +202,9 @@
 		F72A5AE11FDD6DCC007544CB /* CollectPaintsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */; };
 		F72A5AE31FDD6DEC007544CB /* CollectPaintsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72A5AE21FDD6DEC007544CB /* CollectPaintsListView.xib */; };
 		F748BDF91FE4101700512215 /* BasePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748BDF81FE4101600512215 /* BasePickerView.swift */; };
+		F751D2B81FE826B3007E9E75 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751D2B61FE826B3007E9E75 /* LetterViewController.swift */; };
+		F751D2BB1FE84C21007E9E75 /* BigStarShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751D2BA1FE84C21007E9E75 /* BigStarShareView.swift */; };
+		F751D2BD1FE84C2C007E9E75 /* BigStarShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F751D2BC1FE84C2C007E9E75 /* BigStarShareView.xib */; };
 		F75D56C11FE54BA60044429C /* WifiSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D56C01FE54BA60044429C /* WifiSettingView.swift */; };
 		F75D56C31FE54BB00044429C /* WifiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75D56C21FE54BB00044429C /* WifiSettingView.xib */; };
 		F77771461FE67C8A00AF58E3 /* BaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */; };
@@ -433,6 +436,9 @@
 		F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectPaintsListView.swift; sourceTree = "<group>"; };
 		F72A5AE21FDD6DEC007544CB /* CollectPaintsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectPaintsListView.xib; sourceTree = "<group>"; };
 		F748BDF81FE4101600512215 /* BasePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerView.swift; sourceTree = "<group>"; };
+		F751D2B61FE826B3007E9E75 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
+		F751D2BA1FE84C21007E9E75 /* BigStarShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStarShareView.swift; sourceTree = "<group>"; };
+		F751D2BC1FE84C2C007E9E75 /* BigStarShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigStarShareView.xib; sourceTree = "<group>"; };
 		F75D56C01FE54BA60044429C /* WifiSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiSettingView.swift; sourceTree = "<group>"; };
 		F75D56C21FE54BB00044429C /* WifiSettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WifiSettingView.xib; sourceTree = "<group>"; };
 		F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertController.swift; sourceTree = "<group>"; };
@@ -683,6 +689,7 @@
 				3AD84BF71F99CDDD009F3BD5 /* Find */,
 				3AB5DC8C1F8CB192004897B5 /* Mine */,
 				3A92E8261FD68C9A00C7B5A3 /* GifViewController.swift */,
+				F751D2B61FE826B3007E9E75 /* LetterViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -928,6 +935,8 @@
 				F72A5AE21FDD6DEC007544CB /* CollectPaintsListView.xib */,
 				F77771471FE6A82300AF58E3 /* HintView.swift */,
 				F77771491FE6A82C00AF58E3 /* HintView.xib */,
+				F751D2BA1FE84C21007E9E75 /* BigStarShareView.swift */,
+				F751D2BC1FE84C2C007E9E75 /* BigStarShareView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1026,6 +1035,7 @@
 				F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */,
 				3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */,
 				3AB5DC1B1F8CB119004897B5 /* Assets.xcassets in Resources */,
+				F751D2BD1FE84C2C007E9E75 /* BigStarShareView.xib in Resources */,
 				3A0B8B371FBD91F1006F09E9 /* ClassifyCollectionViewCell.xib in Resources */,
 				3A41AD2D1F94947C000BCC16 /* InfoPlist.strings in Resources */,
 				3ACDB5D51FC7D710007E0E32 /* ClassifyCollectionReusableView.xib in Resources */,
@@ -1120,6 +1130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F751D2BB1FE84C21007E9E75 /* BigStarShareView.swift in Sources */,
 				3A9CCC511FA1D08F00FC33BD /* PaintModel.swift in Sources */,
 				3A6F49BB1FC6E1B3001AE767 /* ClassifyCommonListView.swift in Sources */,
 				3AB5DD3E1F8CB192004897B5 /* Extension+UIView.swift in Sources */,
@@ -1130,6 +1141,7 @@
 				3A9CCC611FA1EC3E00FC33BD /* ArtHeaderView.swift in Sources */,
 				F7F8E5D31FE4DB1500390A00 /* AboutUsViewController.swift in Sources */,
 				3A9CCC5B1FA1E61D00FC33BD /* ItemView.swift in Sources */,
+				F751D2B81FE826B3007E9E75 /* LetterViewController.swift in Sources */,
 				3AB5DD371F8CB192004897B5 /* WindowRootViewController.swift in Sources */,
 				3A5387621F96094A00BA4359 /* SBLoginViewController.swift in Sources */,
 				3AB5DC191F8CB119004897B5 /* PicProgram.xcdatamodeld in Sources */,

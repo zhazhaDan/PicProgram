@@ -180,4 +180,22 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
 //            }
 //        }, nil)
 //    }
+    func shareBigStar() {
+        let view = Bundle.main.loadNibNamed("BigStarShareView", owner: self, options: nil)?.first as! BigStarShareView
+        
+        
+        view.cell.contentLabel.text = pioneerModel.master_quote.mq_content
+        view.cell.sayNumLabel.isHidden = true
+        let date = Date()
+        view.cell.weendayLabel.text = date.getDayOfWeek()
+        view.cell.dateLabel.text = date.getUpperDate()
+        view.cell.praiseButton.isHidden = true
+        view.cell.shareButton.isHidden = true
+        view.cell.shareLabel.isHidden = true
+        
+        
+        view.frame = UIScreen.main.bounds
+        self.tabBarController?.view.addSubview(view)
+    }
+    
 }
