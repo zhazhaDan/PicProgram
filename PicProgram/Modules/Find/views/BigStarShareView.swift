@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BigStarShareView: BaseView {
+class BigStarShareView: BaseView,SharePlatformProtocol {
 
     @IBOutlet weak var blurView: UIVisualEffectView!
     var cell : ArtMasterSayTableViewCell!
@@ -16,24 +16,20 @@ class BigStarShareView: BaseView {
     @IBOutlet weak var materialButton: UIButton!
     @IBOutlet weak var platformButton: UIButton!
     @IBOutlet weak var chooseView: UIView!
+    @IBOutlet weak var platView: SharePlatformView!
     @IBAction func materialChooseAction(_ sender: UIButton) {
         let images = [#imageLiteral(resourceName: "yishuxianfeng_huise"),#imageLiteral(resourceName: "yishuxianfeng_dakashuo_xuanzhi"),#imageLiteral(resourceName: "yishuxianfeng_mise")]
         self.cell.materialImageView.image = images[sender.tag - 11]
         for i in 0 ..< 3 {
-            let btn = self.viewWithTag(11+i)
+            let btn = self.viewWithTag(11+i) as! UIButton
             if btn == sender {
-                sender.layer.cornerRadius = sender.height/2
-                sender.layer.borderWidth = 2
-                sender.layer.borderColor = xsColor_main_yellow.cgColor
-                sender.layer.masksToBounds = true
+               btn.isSelected = true
             }else {
-                sender.layer.cornerRadius = 0
-                sender.layer.borderWidth = 0
-                sender.layer.borderColor = xsColor_main_black.cgColor
-                sender.layer.masksToBounds = true
+                btn.isSelected = false
             }
         }
     }
+    
     
     @IBAction func shareAction(_ sender: UIButton) {
         UIView.animate(withDuration: 0.25) {
@@ -53,8 +49,37 @@ class BigStarShareView: BaseView {
         cell = Bundle.main.loadNibNamed("ArtMasterSayTableViewCell", owner: self, options: nil)?.first as! ArtMasterSayTableViewCell
         cell.frame = CGRect.init(x: 24, y: 183, width: SCREEN_WIDTH - 48, height: 190)
         self.addSubview(cell)
-
+        
+        let codeString = "大咖说分享文字"
+        let image = codeString.generateQRCodeImage()
+        let imageview = UIImageView.init(frame: CGRect.init(x: cell.width - 56 - 12, y: cell.height - 56 - 12, width: 56, height: 56))
+        imageview.contentMode = .scaleAspectFit
+        imageview.image = image
+        cell.addSubview(imageview)
+        platView.delegate = self
     }
+    
+    func share(toPlatform index: Int) {
+        //TODO:三方分享
+        switch index {
+        case 0:
+            let image = cell.viewShot()
+            ShareThirdAppTool.share.share_icon = image
+            ShareThirdAppTool.share.shareToWX(WXSceneSession)
+        case 1:
+            ShareThirdAppTool.share.title = "我在享+发现了一个有趣的共享头等舱,一起来看看"
+            ShareThirdAppTool.share.desc = "去看看"
+            ShareThirdAppTool.share.webUrl = "http://www.baidu.com"
+            ShareThirdAppTool.share.share_icon = #imageLiteral(resourceName: "fenxiang_ins")
+            ShareThirdAppTool.share.shareToWeibo()
+            
+        default:
+            ShareThirdAppTool.share.share_icon = cell.viewShot()
+            ShareThirdAppTool.share.shareToWX(WXSceneSession)
+        }
+    }
+    
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

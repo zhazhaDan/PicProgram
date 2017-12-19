@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "caizhi_beixuanzhong.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "caizhi_beixuanzhong@2x.png",
+      "filename" : "icons8-wifi@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "caizhi_beixuanzhong@3x.png",
       "scale" : "3x"
     }
   ],

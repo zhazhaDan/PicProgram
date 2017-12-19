@@ -130,7 +130,7 @@ class LetterViewController: BaseViewController {
             self.dismiss(animated: false, completion: {
                 let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
                 let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
-                appDelegate.window?.rootViewController?.present(HomePageNavigationController.init(rootViewController: login), animated: true, completion: nil)
+                appDelegate.window?.rootViewController?.present(login, animated: true, completion: nil)
 
             })
         }

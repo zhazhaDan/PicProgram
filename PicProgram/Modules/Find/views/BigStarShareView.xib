@@ -36,21 +36,24 @@
                                         <constraint firstAttribute="height" constant="36" id="Nfe-Fc-lrU"/>
                                         <constraint firstAttribute="width" constant="36" id="Psa-QM-pwf"/>
                                     </constraints>
-                                    <state key="normal" backgroundImage="mise_icon"/>
+                                    <state key="normal" image="mise_icon"/>
+                                    <state key="selected" image="mise_icon" backgroundImage="dakashuoxuanzhong"/>
                                     <connections>
                                         <action selector="materialChooseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="UAb-vO-5Ji"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="12" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkT-DS-86g">
+                                <button opaque="NO" tag="12" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkT-DS-86g">
                                     <rect key="frame" x="169.5" y="8.5" width="36" height="36"/>
-                                    <state key="normal" backgroundImage="xuanzhi_icon"/>
+                                    <state key="normal" image="xuanzhi_icon" backgroundImage="dakashuoxuanzhong"/>
+                                    <state key="selected" image="xuanzhi_icon" backgroundImage="dakashuoxuanzhong"/>
                                     <connections>
                                         <action selector="materialChooseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Lfg-zr-hH8"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydn-ah-MeC">
                                     <rect key="frame" x="76" y="8" width="36" height="36"/>
-                                    <state key="normal" backgroundImage="huise_icon"/>
+                                    <state key="normal" image="huise_icon"/>
+                                    <state key="selected" image="huise_icon" backgroundImage="dakashuoxuanzhong"/>
                                     <connections>
                                         <action selector="materialChooseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="BJR-K9-8QX"/>
                                     </connections>
@@ -156,12 +159,14 @@
                 <outlet property="chooseView" destination="zCW-Di-sPb" id="rVW-Mp-hwr"/>
                 <outlet property="contentScrollVIew" destination="jQm-Ph-Cz6" id="OsB-g3-Gjo"/>
                 <outlet property="materialButton" destination="YB4-es-IIg" id="89r-MH-Sjy"/>
+                <outlet property="platView" destination="lja-eX-gmh" id="paf-N6-6Fj"/>
                 <outlet property="platformButton" destination="yvn-fc-XUQ" id="Cos-Ix-5TV"/>
             </connections>
             <point key="canvasLocation" x="25.5" y="52.5"/>
         </view>
     </objects>
     <resources>
+        <image name="dakashuoxuanzhong" width="43" height="43"/>
         <image name="huise_icon" width="34" height="34"/>
         <image name="mise_icon" width="34" height="34"/>
         <image name="xuanzhi_icon" width="34" height="34"/>

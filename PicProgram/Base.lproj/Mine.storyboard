@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -204,12 +204,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-vF-h8C">
-                                        <rect key="frame" x="12" y="27" width="30" height="30"/>
+                                        <rect key="frame" x="12" y="12" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="LQv-ms-I7I"/>
                                             <constraint firstAttribute="height" constant="30" id="idV-Pn-Ywl"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="-12" minY="-12" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="fanhui"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Pv-5e-BtP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <gestureRecognizers/>
@@ -247,7 +251,7 @@
                                     <constraint firstItem="d8q-4U-P9S" firstAttribute="height" secondItem="68p-o6-jlQ" secondAttribute="height" id="b4b-Ns-2TY"/>
                                     <constraint firstItem="qYS-hh-Noq" firstAttribute="top" secondItem="68p-o6-jlQ" secondAttribute="bottom" id="bBm-Xz-YLE"/>
                                     <constraint firstItem="68p-o6-jlQ" firstAttribute="leading" secondItem="Aha-TM-bO5" secondAttribute="trailing" constant="12" id="cUX-va-9aW"/>
-                                    <constraint firstItem="3qW-vF-h8C" firstAttribute="top" secondItem="Ael-3J-CJl" secondAttribute="top" constant="27" id="ccd-8b-UfN"/>
+                                    <constraint firstItem="3qW-vF-h8C" firstAttribute="top" secondItem="Ael-3J-CJl" secondAttribute="top" constant="12" id="ccd-8b-UfN"/>
                                     <constraint firstItem="dc8-0O-2Fy" firstAttribute="centerX" secondItem="1Rd-DE-YmK" secondAttribute="centerX" multiplier="1.25" id="cf9-j0-fJn"/>
                                     <constraint firstAttribute="trailing" secondItem="IEK-0H-vY4" secondAttribute="trailing" constant="42" id="d3w-Eh-KbM"/>
                                     <constraint firstAttribute="trailing" secondItem="RcT-jp-NuJ" secondAttribute="trailing" constant="42" id="dJQ-tz-Jev"/>

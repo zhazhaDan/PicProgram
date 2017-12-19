@@ -40,7 +40,7 @@ extension String {
         // 前景色
         colorFilter.setValue(CIColor(color: xsColor_main_yellow), forKey: "inputColor0")
         // 背景色
-        colorFilter.setValue(CIColor(color: UIColor.white), forKey: "inputColor1")
+        colorFilter.setValue(CIColor(color: UIColor.clear), forKey: "inputColor1")
         
         let outputImage = colorFilter.outputImage
         

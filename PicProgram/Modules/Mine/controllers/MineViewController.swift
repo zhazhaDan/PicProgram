@@ -79,7 +79,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         if UserInfo.user.checkUserLogin() == false {
             let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
             let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
-            self.present(HomePageNavigationController.init(rootViewController: login), animated: true, completion: nil)
+            self.present(login, animated: true, completion: nil)
         }else {//点击前往个人资料
             let vc = UserViewController.init(nibName: "UserViewController", bundle: Bundle.main)
             self.navigationController?.pushViewController(vc, animated: true)

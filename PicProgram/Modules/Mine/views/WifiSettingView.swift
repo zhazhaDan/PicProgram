@@ -20,6 +20,9 @@ class WifiSettingView: BaseView {
         self.wifiCodeView.isHidden = false
         wifiQrCodeImageView.image = codeString.generateQRCodeImage()
     }
+    
+    
+    
     @IBAction func tapAction(_ sender: Any) {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
@@ -38,6 +41,18 @@ class WifiSettingView: BaseView {
     override func awakeFromNib() {
         super.awakeFromNib()
         wifiNameTextfield.text = getUsedSSID()
+        wifiNameTextfield.rightViewMode = .always
+        wifiNameTextfield.leftViewMode = .always
+        passTextfield.leftViewMode = .always
+        let imageView = UIImageView.init(image: #imageLiteral(resourceName: "icons8-wifi"))
+        imageView.frame = CGRect.init(x: 0, y: 0, width: 50, height: 30)
+        imageView.contentMode = .scaleAspectFit
+        wifiNameTextfield.rightView = imageView
+        
+        let spaceView1 = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
+        wifiNameTextfield.leftView = spaceView1
+        let spaceView2 = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
+        passTextfield.leftView = spaceView2
     }
     
     func getUsedSSID() -> String {

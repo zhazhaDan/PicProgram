@@ -22,6 +22,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     var cell2:ArtMasterSayTableViewCell!
     var view1:UIView!
     var view2:UIView!
+    var view1MaskLayer:CAGradientLayer!
     var headerView:UIView!
     var pioneerModel:PioneerModel {
         set {
@@ -112,10 +113,11 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         view1.height/=2
         view2.height /= 2
         cell2.y = -cell2.height/2
-        let gradient = CAGradientLayer()
-        gradient.frame = cell2.bounds
-        gradient.colors = [UIColor.clear,UIColor.black]
-        view2.layer.addSublayer(gradient)
+        view1MaskLayer = CAGradientLayer()
+        view1MaskLayer.frame = cell.bounds
+        view1MaskLayer.colors = [UIColor.clear.cgColor,UIColor.black.cgColor]
+        view1MaskLayer.opacity = 0
+        cell.layer.addSublayer(view1MaskLayer)
         
         
         self.readTableView.tableHeaderView = headerView
@@ -127,6 +129,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         }
         let angle = scrollView.contentOffset.y * CGFloat.pi / SCREEN_HEIGHT
         print(angle)
+        self.view1MaskLayer.opacity = Float(angle / 1.5)
         if angle >= CGFloat.pi/2  {
             view1.isHidden = true
             view2.isHidden = true

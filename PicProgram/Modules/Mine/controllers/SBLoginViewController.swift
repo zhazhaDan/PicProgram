@@ -29,6 +29,12 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
     @IBAction func thirdLoginAction(_ sender: Any) {
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     @IBAction func forgetPassAction(_ sender: Any) {
         let forgetVC = FindPassViewController.init(nibName: "FindPassViewController", bundle: Bundle.main)
         self.navigationController?.pushViewController(forgetVC, animated: true)
