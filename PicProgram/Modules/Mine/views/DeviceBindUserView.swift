@@ -48,6 +48,7 @@ class DeviceBindUserView: BaseView,UITableViewDelegate,UITableViewDataSource {
             subCell.promiseButton.isHidden = false
             subCell.denyButton.setTitle(MRLanguage(forKey: "Deny"), for: .normal)
         }
+        subCell.delegate = self.delegate
         subCell.userNameLabel.text = item["nick_name"] as! String
     }
 }

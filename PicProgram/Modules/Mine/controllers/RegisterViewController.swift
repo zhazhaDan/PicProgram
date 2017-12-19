@@ -59,12 +59,14 @@ class RegisterViewController: BaseViewController {
             return
         }
         if sender.tag == 10 {//邮箱注册
+            selectedMethod = 0
             sender.isSelected = true
             (self.view.viewWithTag(11) as! UIButton).isSelected = false
             self.emailRegistView.isHidden = false
             self.phoneRegistView.isHidden = true
             self.emailTextfield.text = nil
         }else if sender.tag == 11 {//手机号注册
+            selectedMethod = 1
             sender.isSelected = true
             (self.view.viewWithTag(10) as! UIButton).isSelected = false
             self.emailRegistView.isHidden = true
@@ -78,8 +80,13 @@ class RegisterViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "注册账号"
         // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapAction))
+        self.view.addGestureRecognizer(tap)
     }
 
+    @objc func tapAction() {
+        UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
