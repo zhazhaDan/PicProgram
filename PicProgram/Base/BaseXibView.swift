@@ -27,6 +27,7 @@ class BaseXibView: UIView {
         let index = programName.length
         let str = className.substring(from: index+1)
         Bundle.main.loadNibNamed(str, owner: self, options: nil)
+        self.view.width = SCREEN_WIDTH
         self.addSubview(self.view)
     }
     /*

@@ -15,6 +15,7 @@ class RecommandListCollectionViewController: BaseViewController,UICollectionView
     var dataSource:Array<PaintModel> = Array()
     var type:Int = 0
     var collectionView:UICollectionView!
+    var last_id:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,10 +33,10 @@ class RecommandListCollectionViewController: BaseViewController,UICollectionView
         })
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         requestData()
-       
 
     }
 

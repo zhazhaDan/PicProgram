@@ -38,8 +38,6 @@ class BaseTabBarController: UITabBarController {
         classVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         classVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
 
-//        let path = Bundle.main.path(forResource: LocalizedLanguageTool.language, ofType: "lproj", inDirectory: "/Modules/Easel")
-//        let cbundle = Bundle.init(path: path!)
         let easelVC = EaselViewController()
         easelVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Art Works"), image: #imageLiteral(resourceName: "weixuanzhonghuajia_icon").withRenderingMode(.alwaysOriginal), selectedImage:  #imageLiteral(resourceName: "huajiaxuanzhong").withRenderingMode(.alwaysOriginal))
         easelVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)

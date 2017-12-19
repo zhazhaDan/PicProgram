@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -39,7 +39,7 @@
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UE1-uG-8fU">
                                     <rect key="frame" x="0.0" y="229" width="320" height="498"/>
-                                    <color key="backgroundColor" red="0.64049561420000001" green="1" blue="0.34611628459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppJ-PV-uqn">
                                     <rect key="frame" x="12" y="20" width="40" height="40"/>
@@ -59,13 +59,13 @@
                                         <action selector="playAction:" destination="-1" eventType="touchUpInside" id="801-iy-3aT"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nz-N9-LJE">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nz-N9-LJE">
                                     <rect key="frame" x="124.5" y="87" width="71" height="71"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="71" id="Bjc-X1-0Dl"/>
                                         <constraint firstAttribute="height" constant="71" id="Qph-1M-Gbj"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
+                                    <state key="normal" image="08weidenglu_yonghu_touxiang"/>
                                     <connections>
                                         <action selector="headerAction:" destination="-1" eventType="touchUpInside" id="Q4z-uc-mQu"/>
                                     </connections>
@@ -77,11 +77,12 @@
                                         <constraint firstAttribute="height" constant="15" id="kaG-PE-nmG"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstItem="MIh-ua-oC8" firstAttribute="top" secondItem="ppJ-PV-uqn" secondAttribute="top" id="2es-ll-yKg"/>
                                 <constraint firstItem="ppJ-PV-uqn" firstAttribute="leading" secondItem="MEO-NM-UfP" secondAttribute="leading" constant="12" id="2f1-L3-nsp"/>
@@ -124,8 +125,9 @@
         </view>
     </objects>
     <resources>
-        <image name="08wode_shebeiguanli" width="22" height="22"/>
-        <image name="08wode_shebeiguanli_shezhi" width="22" height="22"/>
+        <image name="08weidenglu_yonghu_touxiang" width="71" height="71"/>
+        <image name="08wode_shebeiguanli" width="23" height="23"/>
+        <image name="08wode_shebeiguanli_shezhi" width="23" height="23"/>
         <image name="headerBackground" width="375" height="230"/>
     </resources>
 </document>

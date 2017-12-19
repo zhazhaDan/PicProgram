@@ -84,38 +84,46 @@
                                             <action selector="forgetPassAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RON-6q-0ZF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEK-0H-vY4">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEK-0H-vY4">
                                         <rect key="frame" x="42" y="349" width="291" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="mFv-5c-MVp"/>
                                         </constraints>
-                                        <state key="normal" title="登录" backgroundImage="00dengluzhuce_denglu_dianjianniu">
-                                            <color key="titleColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="登录" backgroundImage="00dengluzhuce_zhuce_weidianjianniu">
+                                            <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="00dengluzhuce_denglu_dianjianniu">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WC2-eO-VLN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8B-MW-JfB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8B-MW-JfB">
                                         <rect key="frame" x="42" y="403" width="291" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="Ynk-Qc-fha"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="注册" backgroundImage="00dengluzhuce_zhuce_weidianjianniu">
-                                            <color key="titleColor" red="0.80294626951217651" green="0.69998854398727417" blue="0.57170653343200684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <state key="selected" backgroundImage="00dengluzhuce_denglu_dianjianniu"/>
                                         <connections>
                                             <action selector="registAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YfE-Rm-sZe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-DE-YmK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-DE-YmK">
                                         <rect key="frame" x="42" y="457" width="291" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="Bhz-QF-BZE"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="稍后注册" backgroundImage="00dengluzhuce_zhuce_weidianjianniu">
-                                            <color key="titleColor" red="0.803150475025177" green="0.69661444425582886" blue="0.56802535057067871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <state key="selected" backgroundImage="00dengluzhuce_denglu_dianjianniu"/>
                                         <connections>
                                             <action selector="holdRegistAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="At3-gs-bfJ"/>
                                         </connections>

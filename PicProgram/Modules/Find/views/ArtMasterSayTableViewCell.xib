@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,25 +22,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yishuxianfeng_dakashuo_xuanzhi" translatesAutoresizingMaskIntoConstraints="NO" id="E9a-pu-OUi">
-                        <rect key="frame" x="12" y="-1" width="296" height="190"/>
+                        <rect key="frame" x="0.0" y="-1" width="320" height="190"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="190" id="1dA-ym-p2r"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期四" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlV-ZC-6JC">
-                        <rect key="frame" x="28" y="16" width="46" height="18"/>
+                        <rect key="frame" x="16" y="16" width="46" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.59667384619999997" green="0.5851896405" blue="0.56729900840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="五月十一日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlM-ky-ahz">
-                        <rect key="frame" x="28" y="34" width="77" height="18"/>
+                        <rect key="frame" x="16" y="34" width="77" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.59667384619999997" green="0.5851896405" blue="0.56729900840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vi-Lv-ldx">
-                        <rect key="frame" x="28" y="75" width="264" height="70"/>
+                        <rect key="frame" x="16" y="75" width="288" height="70"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="l7j-be-jWO"/>
                         </constraints>
@@ -51,20 +51,20 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgq-lb-pwB" userLabel="prise">
-                        <rect key="frame" x="182" y="6" width="30" height="30"/>
+                        <rect key="frame" x="190" y="6" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="H68-7D-wUK"/>
                         </constraints>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-t8-oFR" userLabel="share">
-                        <rect key="frame" x="235" y="6" width="70" height="30"/>
+                        <rect key="frame" x="243" y="6" width="70" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="P0c-ri-7ut"/>
                             <constraint firstAttribute="width" constant="70" id="vQz-HL-nas"/>
                         </constraints>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立即分享" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnS-r4-1at">
-                        <rect key="frame" x="255" y="144" width="41" height="30"/>
+                        <rect key="frame" x="267" y="144" width="41" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="Agz-vL-N8v"/>
                         </constraints>
@@ -73,7 +73,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22K-Ph-5k8">
-                        <rect key="frame" x="193" y="146" width="40" height="26"/>
+                        <rect key="frame" x="205" y="146" width="40" height="26"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="JZJ-kf-R9F"/>
                             <constraint firstAttribute="height" constant="26" id="gKa-oy-Nci"/>
@@ -83,7 +83,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux0-BB-J97">
-                        <rect key="frame" x="169" y="146" width="24" height="26"/>
+                        <rect key="frame" x="181" y="146" width="24" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="KV3-bB-iky"/>
                             <constraint firstAttribute="width" constant="24" id="lPp-cd-5kq"/>
@@ -96,12 +96,15 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS7-QB-ltD">
-                        <rect key="frame" x="231" y="149" width="20" height="20"/>
+                        <rect key="frame" x="243" y="149" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="h7S-od-VWC"/>
                             <constraint firstAttribute="height" constant="20" id="hup-1v-NxM"/>
                         </constraints>
                         <state key="normal" image="fenxiang_icon"/>
+                        <connections>
+                            <action selector="shareAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kuZ-KF-ocI"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -111,7 +114,7 @@
                     <constraint firstItem="YlM-ky-ahz" firstAttribute="leading" secondItem="E9a-pu-OUi" secondAttribute="leading" constant="16" id="F8P-Fw-hJu"/>
                     <constraint firstItem="E9a-pu-OUi" firstAttribute="trailing" secondItem="qnS-r4-1at" secondAttribute="trailing" constant="12" id="GJf-zB-XYO"/>
                     <constraint firstItem="ux0-BB-J97" firstAttribute="firstBaseline" secondItem="cS7-QB-ltD" secondAttribute="firstBaseline" id="Gey-EW-twB"/>
-                    <constraint firstItem="E9a-pu-OUi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Ghh-OU-nYn"/>
+                    <constraint firstItem="E9a-pu-OUi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ghh-OU-nYn"/>
                     <constraint firstItem="qnS-r4-1at" firstAttribute="leading" secondItem="22K-Ph-5k8" secondAttribute="trailing" constant="22" id="KJx-Bb-jrg"/>
                     <constraint firstItem="22K-Ph-5k8" firstAttribute="centerY" secondItem="qnS-r4-1at" secondAttribute="centerY" id="M37-wu-g2n"/>
                     <constraint firstItem="xLQ-t8-oFR" firstAttribute="firstBaseline" secondItem="Zgq-lb-pwB" secondAttribute="firstBaseline" id="MIi-jM-d9q"/>
@@ -129,7 +132,7 @@
                     <constraint firstAttribute="bottom" secondItem="qnS-r4-1at" secondAttribute="bottom" constant="16" id="qC8-Fe-5YI"/>
                     <constraint firstItem="DlV-ZC-6JC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="qW4-yI-GJM"/>
                     <constraint firstItem="cS7-QB-ltD" firstAttribute="centerY" secondItem="qnS-r4-1at" secondAttribute="centerY" id="rEY-qZ-0YA"/>
-                    <constraint firstAttribute="trailing" secondItem="E9a-pu-OUi" secondAttribute="trailing" constant="12" id="sSH-xf-yV1"/>
+                    <constraint firstAttribute="trailing" secondItem="E9a-pu-OUi" secondAttribute="trailing" id="sSH-xf-yV1"/>
                     <constraint firstItem="ux0-BB-J97" firstAttribute="baseline" secondItem="cS7-QB-ltD" secondAttribute="baseline" id="x7G-nN-kCT"/>
                 </constraints>
             </tableViewCellContentView>
@@ -137,8 +140,11 @@
             <connections>
                 <outlet property="contentLabel" destination="8vi-Lv-ldx" id="aLL-le-7bQ"/>
                 <outlet property="dateLabel" destination="YlM-ky-ahz" id="yS1-BN-ccm"/>
+                <outlet property="materialImageView" destination="E9a-pu-OUi" id="iUw-XR-OmF"/>
                 <outlet property="praiseButton" destination="ux0-BB-J97" id="jbo-oD-feP"/>
                 <outlet property="sayNumLabel" destination="22K-Ph-5k8" id="meR-tK-eZe"/>
+                <outlet property="shareButton" destination="cS7-QB-ltD" id="r9n-HG-uD6"/>
+                <outlet property="shareLabel" destination="qnS-r4-1at" id="j5o-1J-OtL"/>
                 <outlet property="weendayLabel" destination="DlV-ZC-6JC" id="l0k-vl-GCX"/>
             </connections>
         </tableViewCell>
