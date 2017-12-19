@@ -237,7 +237,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             ids.append(model.picture_id)
         }
        
-        network.requestData(.paint_play, params: ["picture_ids":ids,"title_paint_id":ids.first], finishedCallback: { (result) in
+        network.requestData(.paint_play, params: ["picture_ids":ids,"title_paint_id":ids.first as! Int], finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: "推送成功", delay: 1, view: self.view, complete: nil)
             }else {
