@@ -16,6 +16,13 @@ class BaseTabBarController: UITabBarController {
         buildBarControllers()
         // Do any additional setup after loading the view.
     }
+    
+//    @objc func languageChange() {
+//        if self.isViewLoaded && (self.view.window != nil)  {
+//            self.view = nil
+//        }
+//    }
+    
     func buildBarControllers() {
         
         let normalAttris = [NSAttributedStringKey.foregroundColor:xsColor_main_yellow,NSAttributedStringKey.font:xsFont(10)]
@@ -31,9 +38,9 @@ class BaseTabBarController: UITabBarController {
         classVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         classVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
 
-        let path = Bundle.main.path(forResource: LocalizedLanguageTool.language, ofType: "lproj", inDirectory: "/Modules/Easel")
-        let cbundle = Bundle.init(path: path!)
-        let easelVC = EaselViewController.init(nibName: "EaselViewController", bundle: cbundle)
+//        let path = Bundle.main.path(forResource: LocalizedLanguageTool.language, ofType: "lproj", inDirectory: "/Modules/Easel")
+//        let cbundle = Bundle.init(path: path!)
+        let easelVC = EaselViewController()
         easelVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "Art Works"), image: #imageLiteral(resourceName: "weixuanzhonghuajia_icon").withRenderingMode(.alwaysOriginal), selectedImage:  #imageLiteral(resourceName: "huajiaxuanzhong").withRenderingMode(.alwaysOriginal))
         easelVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
         easelVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected)
@@ -46,7 +53,7 @@ class BaseTabBarController: UITabBarController {
         self.viewControllers = [HomePageNavigationController.init(rootViewController:findVC),HomePageNavigationController.init(rootViewController:classVC),HomePageNavigationController.init(rootViewController: easelVC),HomePageNavigationController.init(rootViewController: minVC)]
         
         self.tabBar.tintColor = xsColor("a4b7d2")
-//        self.selectedIndex = 3
+        self.selectedIndex = 3
     }
 
 }

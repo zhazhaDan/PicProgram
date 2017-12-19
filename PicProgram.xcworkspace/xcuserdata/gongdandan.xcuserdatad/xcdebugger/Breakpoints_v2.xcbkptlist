@@ -52,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Easel/controllers/EaselViewController.swift"
-            timestampString = "535287072.433984"
+            timestampString = "535373041.237857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
@@ -67,13 +67,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicProgram/Base/BaseTabBarController.swift"
-            timestampString = "535287242.45427"
+            filePath = "PicProgram/ThirdParty/ESPullToRefresh/Sources/Animator/ESRefreshHeaderAnimator.swift"
+            timestampString = "535371781.203821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "buildBarControllers()"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "loadingImageView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/ThirdParty/ESPullToRefresh/Sources/Animator/ESRefreshHeaderAnimator.swift"
+            timestampString = "535371781.203872"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "loadingImageView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Find/controllers/ShareViewController.swift"
+            timestampString = "535373041.237989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "share(toPlatform:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

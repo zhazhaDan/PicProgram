@@ -17,14 +17,32 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "ArtReadTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "readTableViewCell")
         self.view.addSubview(tableView)
+        tableView.xs_addRefresh(refresh: .normal_header_refresh) {
+            self.requestData()
+        }
         requestData()
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.title = "读精彩"
     }
     
     override func requestData() {
         network.requestData(.discovery_cqlist, params: nil, finishedCallback: { [weak self](result) in
+            self?.tableView.xs_endRefreshing()
             if result["ret"] as! Int == 0 {
                 let array = result["classic_quote"] as! Array<[String:Any]>
+                self?.dataSource.removeAll()
                 for item in array {
                     let model = ClassicQuoteModel.init(dict: item)
                     self?.dataSource.append(model)

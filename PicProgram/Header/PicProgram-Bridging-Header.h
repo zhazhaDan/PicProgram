@@ -11,7 +11,7 @@
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
-
+#import "NSBundle+AppLanguageSwitch.h"
 //Facebook
 #import <FacebookConnector/FacebookConnector.h>
 
@@ -20,6 +20,7 @@
 
 //微信SDK头文件
 #import "WXApi.h"
+#import "GeTuiSdk.h"
 
 //新浪微博SDK头文件
 #import "WeiboSDK.h"

@@ -85,7 +85,7 @@ func xsBoldFont(_ size:CGFloat, family:String = "FZSKBXKJW--GB1-0") -> UIFont {
 
 //语言
 func MRLanguage(forKey key:String) -> String {
-    return LocalizedLanguageTool().getString(forKey: key)
+    return BaseBundle().getString(forKey: key)
 }
 
 /**

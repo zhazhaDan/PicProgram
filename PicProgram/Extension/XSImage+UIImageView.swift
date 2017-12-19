@@ -23,22 +23,27 @@ enum XSImageSize:Int{
 }
 
 extension UIImageView {
-    func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "placeholder"){
+    func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white"){
+        self.backgroundColor = xsColor_placeholder_grey
+        self.contentMode = .scaleAspectFit
         var url = "\(imageUrl)_\(imageSize.rawValue)"
 //        if imageSize == .image_0 {
             url = imageUrl
 //        }
         self.kf.setImage(with: URL.init(string: url), placeholder: UIImage.init(named: placeholderImage), options: [.transition(.fade(1))], progressBlock: { (receivedSize, totalSize) in
-            
+           
         }) { (image, error, cacheType, imageUrl) in
-            
+            if image != nil {
+                self.contentMode = .scaleAspectFill
+            }
         }
     }
 }
 
 
 extension UIButton {
-    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "placeholder", state:UIControlState = .normal){
+    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal){
+        self.backgroundColor = xsColor_placeholder_grey
         self.kf.setImage(with: URL.init(string: imageUrl), for: state, placeholder: UIImage.init(named: placeholderImage), options: [.transition(.fade(1))], progressBlock: { (receivedSize, totalSize) in
             
         }) { (image, error, cacheType, imageUrl) in

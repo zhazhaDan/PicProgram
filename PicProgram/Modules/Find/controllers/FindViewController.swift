@@ -72,6 +72,12 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         }
         
     }
+    
+    override func buildUI() {
+        self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         todayView.frame = self.currentView.bounds
@@ -127,8 +133,9 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         if selectedIndex == 1 {
             apiType = .discovery_poineer
         }
-        
+        HUDTool.show(.loading, view: self.view)
         network.requestData(apiType, params: nil, finishedCallback: { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
                 if self?.selectedIndex == 0 {
                     self?.recommandModel = FindTodayRecomModel.init(dict: result["recommend_home_page"] as! [String : Any])
@@ -143,14 +150,14 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     
     func seeMoreNews() {
         let layout = UICollectionViewFlowLayout.init()
-        let controller = RecommandListCollectionViewController.init(collectionViewLayout: layout)
+        let controller = RecommandListCollectionViewController()
         controller.title = "最新"
         controller.type = 1
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func seeMoreHots() {
         let layout = UICollectionViewFlowLayout.init()
-        let controller = RecommandListCollectionViewController.init(collectionViewLayout: layout)
+        let controller = RecommandListCollectionViewController()
         controller.title = "最热"
         controller.type = 2
         self.navigationController?.pushViewController(controller, animated: true)

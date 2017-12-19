@@ -21,6 +21,7 @@ class HomePageNavigationController: BaseNavigationController {
         let backImage = UIImage.init(named: "fanhui")?.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 40, 0, 0), resizingMode: .tile)
         UIBarButtonItem().setBackgroundImage(backImage, for: .normal, barMetrics: .default)
         UIBarButtonItem().setTitlePositionAdjustment(UIOffsetMake(CGFloat.leastNormalMagnitude, CGFloat.leastNormalMagnitude), for: .default)
+        UIBarButtonItem().setBackButtonTitlePositionAdjustment(UIOffset.init(horizontal: 0, vertical: -60), for: .default)
         let backItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
         self.topViewController?.navigationItem.backBarButtonItem = backItem
     }

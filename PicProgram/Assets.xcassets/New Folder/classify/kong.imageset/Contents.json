@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "kong.png",
+      "filename" : "danduye_kong@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "kong@2x.png",
+      "filename" : "danduye_kong@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "kong@3x.png",
+      "filename" : "danduye_kong@3x.png",
       "scale" : "3x"
     }
   ],

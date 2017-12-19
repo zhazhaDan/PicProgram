@@ -40,7 +40,7 @@ open class PKHUDTextView: PKHUDWideBaseView {
         let label = UILabel.init(frame: CGRect.zero)
         label.textAlignment = .center
         label.font = xsFont(17)
-        label.textColor = UIColor.white
+        label.textColor = xsColor_main_yellow
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 3
         return label

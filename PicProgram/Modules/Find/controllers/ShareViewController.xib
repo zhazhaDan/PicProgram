@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +20,8 @@
                 <outlet property="picTitleLabel" destination="R1t-M7-iaG" id="Ic4-9o-Iry"/>
                 <outlet property="qrCodeImageView" destination="nqs-Pw-oew" id="cZE-cZ-sfv"/>
                 <outlet property="segView" destination="g98-e8-S3G" id="SV7-Qa-CMA"/>
+                <outlet property="shareScrollView" destination="oyi-4I-TKc" id="lur-5G-3mu"/>
+                <outlet property="shareView" destination="kbz-1v-BcV" id="RMR-ts-Uob"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="view1" destination="Ivi-xk-hg1" id="cJF-63-TrD"/>
                 <outlet property="view2" destination="9WY-rS-4ZS" id="jZJ-Xm-k9f"/>
@@ -303,6 +305,6 @@
         <image name="danduye_xiaohuawen3_xuanzhong" width="28" height="28"/>
         <image name="shareCode" width="140" height="140"/>
         <image name="wuhuawen" width="262" height="649"/>
-        <image name="xi" width="132" height="127"/>
+        <image name="xi" width="65" height="65"/>
     </resources>
 </document>

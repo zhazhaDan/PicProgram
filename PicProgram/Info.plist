@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>mqqopensdkapiV2</string>
+		<string>mqqapi</string>
+		<string>weixin</string>
+		<string>sinaweibo</string>
+		<string>mqq</string>
+		<string>sosomap</string>
+		<string>comgooglemaps</string>
+		<string>weibosdk</string>
+		<string>baidumap</string>
+		<string>iosamap</string>
+	</array>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>

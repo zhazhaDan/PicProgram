@@ -42,11 +42,11 @@ class DeviceBindUserView: BaseView,UITableViewDelegate,UITableViewDataSource {
         if item["flag"] as! Int == 1 { // 1已绑定 2已申请
             subCell.adminButton.isHidden = true
             subCell.promiseButton.isHidden = true
-            subCell.denyButton.setTitle(LocalizedLanguageTool().getString(forKey: "Remove"), for: .normal)
+            subCell.denyButton.setTitle(MRLanguage(forKey: "Remove"), for: .normal)
         }else {
             subCell.adminButton.isHidden = false
             subCell.promiseButton.isHidden = false
-            subCell.denyButton.setTitle(LocalizedLanguageTool().getString(forKey: "Deny"), for: .normal)
+            subCell.denyButton.setTitle(MRLanguage(forKey: "Deny"), for: .normal)
         }
         subCell.userNameLabel.text = item["nick_name"] as! String
     }

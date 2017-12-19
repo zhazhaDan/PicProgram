@@ -35,7 +35,7 @@ open class PKHUDSquareBaseView: UIView {
 
     open let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.alpha = 0.85
+        imageView.alpha = 1
         imageView.clipsToBounds = true
         imageView.contentMode = .center
         return imageView
@@ -45,7 +45,7 @@ open class PKHUDSquareBaseView: UIView {
         let label = UILabel.init(frame: CGRect.zero)
         label.textAlignment = .center
         label.font = xsFont(12)
-        label.textColor = UIColor.white
+        label.textColor = xsColor_main_yellow
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.25
         return label
@@ -55,7 +55,7 @@ open class PKHUDSquareBaseView: UIView {
         let label = UILabel.init(frame: CGRect.zero)
         label.textAlignment = .center
         label.font = xsFont(12)
-        label.textColor = UIColor.white
+        label.textColor = xsColor_main_yellow
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true

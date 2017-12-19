@@ -11,32 +11,34 @@ import UIKit
 let CNS = "zh-Hans"
 let EN = "en"
 let LanguageKey = "language"
-
-class LocalizedLanguageTool: NSObject {
+let LanguageChangedNotification = "LanguageChangedNotification"
+class BaseBundle: NSObject {
     static var _language:String = EN
     class var language:String {
         set {
             _language = newValue
-            UserDefaults.standard.set(newValue, forKey: LanguageKey)
-            UserDefaults.standard.synchronize()
+            Bundle.setCusLanguage(_language)
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: LanguageChangedNotification), object: nil)
+            appDelegate.changeLanguage()
         }
         get {
-            if UserDefaults.standard.value(forKey: LanguageKey) != nil {
-                _language = UserDefaults.standard.value(forKey: LanguageKey) as! String
+            let lag = Bundle.getCusLanguage()
+            if lag == nil {
+                return CNS
             }
-            return _language
+           return Bundle.getCusLanguage()
         }
     }
     
     class var bundle:Bundle {
         get {
-            let path = Bundle.main.path(forResource: LocalizedLanguageTool.language, ofType: "lproj")
+            let path = Bundle.main.path(forResource: BaseBundle.language, ofType: "lproj")
             let cbundle = Bundle.init(path: path!)
             return cbundle!
         }
     }
     
     func getString(forKey:String,table:String = "content") -> String {
-        return NSLocalizedString(forKey, tableName: table, bundle: LocalizedLanguageTool.bundle, value: "", comment: "")
+        return NSLocalizedString(forKey, tableName: table, bundle: BaseBundle.bundle, value: "", comment: "")
     }
 }

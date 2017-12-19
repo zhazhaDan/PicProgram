@@ -173,10 +173,16 @@ class  NetworkTool{
                 finishedCallback!(result)
             }
         }) {
-            HUDTool.show(.error, text: "网络开小差了", delay: 1, view: UIApplication.shared.keyWindow!, complete: nil)
-            if failCallBack != nil {
-                failCallBack!()
-            }
+//            HUDTool.show(.error, text: "网络开小差了", delay: 1, view: UIApplication.shared.keyWindow!, complete: nil)
+//            if failCallBack != nil {
+//                failCallBack!()
+//            }
+            let vc = NoWifiViewController()
+            appDelegate.window?.rootViewController?.present(vc, animated: true, completion: {
+                if failCallBack != nil {
+                    failCallBack!()
+                } 
+            })
         }
     }
     

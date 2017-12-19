@@ -70,6 +70,12 @@ class UserInfo: UserModel {
             }
             }, nil)
     }
+    
+    func updateIgetuiClient(clientId:String) {
+        network.requestData(.user_set_info, params: ["client_id":clientId], finishedCallback: { (resut) in
+            
+        }, nil)
+    }
     //退出登录
     func localLogout() {
         UserDefaults.standard.removeObject(forKey: User_uin)

@@ -20,6 +20,8 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
     @IBOutlet weak var view2: AddEmotionView!
     @IBOutlet weak var view3: SharePlatformView!
     @IBOutlet weak var contentScrollViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var shareView: UIView!
+    @IBOutlet weak var shareScrollView: UIScrollView!
     
     
     var picUrl:String!
@@ -80,6 +82,22 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
     
     func share(toPlatform index: Int) {
         //TODO:三方分享
+        switch index {
+        case 0:
+            let image = shareView.viewShot()
+            ShareThirdAppTool.share.share_icon = image
+            ShareThirdAppTool.share.shareToWX(WXSceneSession)
+        case 1:
+            ShareThirdAppTool.share.title = "我在享+发现了一个有趣的共享头等舱,一起来看看"
+            ShareThirdAppTool.share.desc = "去看看"
+            ShareThirdAppTool.share.webUrl = "http://www.baidu.com"
+            ShareThirdAppTool.share.share_icon = #imageLiteral(resourceName: "fenxiang_ins")
+            ShareThirdAppTool.share.shareToWeibo()
+
+        default:
+            ShareThirdAppTool.share.share_icon = shareView.viewShot()
+            ShareThirdAppTool.share.shareToWX(WXSceneSession)
+        }
     }
     
     func emotionChoosed(emotionView: AddEmotionView, sender: UIButton, emotionIndex index: Int) {

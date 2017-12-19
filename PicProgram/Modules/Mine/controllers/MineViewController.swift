@@ -27,6 +27,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        HUDTool.hide()
         super.viewDidAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
 //        self.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
@@ -39,6 +40,10 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if UserInfo.user.checkUserLogin() == false {
+            let vc = LetterViewController()
+            self.tabBarController?.present(vc, animated: true, completion: nil)
+        }
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.requestData()
         if UserInfo.user.checkUserLogin() {

@@ -19,13 +19,15 @@ class BaseViewController: UIViewController {
         // 这个方法是为了，不让隐藏状态栏的时候出现view上移
         self.extendedLayoutIncludesOpaqueBars = true
         self.view.backgroundColor = xsColor_main_white
+
         buildUI()
           // Do any additional setup after loading the view.
     }
-
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        UIBarButtonItem().setBackButtonTitlePositionAdjustment(UIOffset.init(horizontal: 0, vertical: -60), for: .default)
+
 //        self.navigationController?.navigationBar.backItem?.title = backTitle
 //        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: backTitle, style: .done, target: nil, action: nil)
 
