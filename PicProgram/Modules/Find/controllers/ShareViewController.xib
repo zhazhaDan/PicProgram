@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareViewController" customModule="PicProgram" customModuleProvider="target">
             <connections>
+                <outlet property="bottomFigureImageView" destination="ou8-LQ-MQh" id="v5A-mG-L3p"/>
                 <outlet property="contentScrollView" destination="M4f-Vy-hR0" id="Fob-MJ-Eqj"/>
                 <outlet property="contentScrollViewHeight" destination="N17-aZ-52U" id="YAu-DS-3RP"/>
                 <outlet property="emotionButton" destination="ECP-I4-Co8" id="ba6-Pt-sp1"/>
@@ -55,6 +56,9 @@
                                         <constraint firstAttribute="height" constant="615" id="LHQ-Oq-vMh"/>
                                     </constraints>
                                 </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diwen1" translatesAutoresizingMaskIntoConstraints="NO" id="ou8-LQ-MQh" userLabel="底纹框">
+                                    <rect key="frame" x="0.0" y="615" width="240" height="185"/>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1t-M7-iaG">
                                     <rect key="frame" x="50" y="495" width="140" height="30"/>
                                     <constraints>
@@ -71,7 +75,7 @@
                                         <constraint firstAttribute="height" constant="90" id="iTa-3S-fCj"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
+                                    <inset key="titleEdgeInsets" minX="-100" minY="0.0" maxX="0.0" maxY="5"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
                                     <state key="normal" title="喜" image="xi">
                                         <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -87,10 +91,12 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="ou8-LQ-MQh" firstAttribute="top" secondItem="EJ5-P7-Bnd" secondAttribute="bottom" id="01u-yZ-YzC"/>
                                 <constraint firstItem="ECP-I4-Co8" firstAttribute="top" secondItem="R1t-M7-iaG" secondAttribute="bottom" id="4DY-BD-Oxv"/>
                                 <constraint firstItem="ECP-I4-Co8" firstAttribute="centerX" secondItem="EJ5-P7-Bnd" secondAttribute="centerX" id="58k-00-s4q"/>
                                 <constraint firstItem="nqs-Pw-oew" firstAttribute="centerX" secondItem="EJ5-P7-Bnd" secondAttribute="centerX" id="EC8-nD-sFC"/>
                                 <constraint firstItem="nqs-Pw-oew" firstAttribute="top" secondItem="EJ5-P7-Bnd" secondAttribute="bottom" constant="20" id="ENm-mh-gZg"/>
+                                <constraint firstAttribute="bottom" secondItem="ou8-LQ-MQh" secondAttribute="bottom" id="NEH-BH-bG8"/>
                                 <constraint firstItem="EJ5-P7-Bnd" firstAttribute="leading" secondItem="kbz-1v-BcV" secondAttribute="leading" id="S6r-5n-773"/>
                                 <constraint firstItem="ZpU-YR-k9b" firstAttribute="top" secondItem="kbz-1v-BcV" secondAttribute="top" constant="10" id="Wgy-dD-sL8"/>
                                 <constraint firstAttribute="trailing" secondItem="EJ5-P7-Bnd" secondAttribute="trailing" id="XTk-vS-4F8"/>
@@ -98,10 +104,12 @@
                                 <constraint firstAttribute="trailing" secondItem="R1t-M7-iaG" secondAttribute="trailing" constant="50" id="eU0-hJ-tJy"/>
                                 <constraint firstItem="EJ5-P7-Bnd" firstAttribute="top" secondItem="kbz-1v-BcV" secondAttribute="top" id="fAw-pq-H5i"/>
                                 <constraint firstItem="R1t-M7-iaG" firstAttribute="leading" secondItem="kbz-1v-BcV" secondAttribute="leading" constant="50" id="hdz-8V-KPC"/>
+                                <constraint firstItem="ou8-LQ-MQh" firstAttribute="leading" secondItem="EJ5-P7-Bnd" secondAttribute="leading" id="jta-ab-Ent"/>
                                 <constraint firstAttribute="width" constant="240" id="lIh-2j-P8O"/>
                                 <constraint firstItem="ZpU-YR-k9b" firstAttribute="leading" secondItem="kbz-1v-BcV" secondAttribute="leading" constant="10" id="qD4-Hj-fXA"/>
                                 <constraint firstItem="R1t-M7-iaG" firstAttribute="top" secondItem="ZpU-YR-k9b" secondAttribute="bottom" id="slf-WK-PJf"/>
                                 <constraint firstAttribute="height" constant="800" id="wHI-6M-5Uy"/>
+                                <constraint firstItem="ou8-LQ-MQh" firstAttribute="trailing" secondItem="EJ5-P7-Bnd" secondAttribute="trailing" id="yMK-0r-4xN"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -303,6 +311,7 @@
         <image name="danduye_xiaohuawen2_xuanzhong" width="30" height="30"/>
         <image name="danduye_xiaohuawen3_weixuanzhong" width="28" height="28"/>
         <image name="danduye_xiaohuawen3_xuanzhong" width="28" height="28"/>
+        <image name="diwen1" width="244" height="181"/>
         <image name="shareCode" width="140" height="140"/>
         <image name="wuhuawen" width="262" height="649"/>
         <image name="xi" width="65" height="65"/>

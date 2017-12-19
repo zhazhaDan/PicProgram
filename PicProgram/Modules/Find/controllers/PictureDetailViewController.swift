@@ -88,6 +88,9 @@ class PictureDetailViewController: BaseViewController {
         }, nil)
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -46,7 +46,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
             let btn = self.view.viewWithTag(10+i) as! UIButton
             btn.layer.borderColor = xsColor_main_yellow.cgColor
         }
-        self.baseNavigationController?.addRightNavigationBarItems(["neichen_yingyonghuakuang"], ["neichen_yingyonghuakuang"], nil, rightCallBack: { [weak self](tag) in
+        self.baseNavigationController?.addRightNavigationBarItems(["shangchunhuakuang"], ["shangchunhuakuang"], nil, rightCallBack: { [weak self](tag) in
             self?.requestData()
         })
         self.tipsMaterialsButton.titleLabel?.numberOfLines = 9

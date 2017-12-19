@@ -22,6 +22,7 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
     @IBOutlet weak var contentScrollViewHeight: NSLayoutConstraint!
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var shareScrollView: UIScrollView!
+    @IBOutlet weak var bottomFigureImageView: UIImageView!
     
     
     var picUrl:String!
@@ -37,6 +38,7 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
         self.picImageView.xs_setImage(picUrl)
         self.picTitleLabel.text = self.picTitle
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        codeUpdate()
     }
     
     @IBAction func chooseFigureAction(_ sender: UIButton) {
@@ -77,7 +79,13 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
                 btn.isSelected = false
             }
         }
+        codeUpdate()
         
+    }
+    
+    func codeUpdate() {
+        let string = picTitleLabel.text! + emotionButton.title(for: .normal)!
+        self.qrCodeImageView.image = string.generateQRCodeImage()
     }
     
     func share(toPlatform index: Int) {

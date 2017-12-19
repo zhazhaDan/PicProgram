@@ -214,21 +214,32 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         masterResolveDeviceBindInfo(status: 1, uin: info["uin"] as! Int64)
     }
     func removeDevice(view: UIView, deviceIndex row: Int) {
-        
-        let alert = BaseAlertController.init("", message: MRLanguage(forKey: "delete device"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
-            let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
-            let info = bindUserView.dataSource[row]
-            network.requestData(.user_delete_device, params: ["device_id":info["device_id"] as Any], finishedCallback: { (result) in
-                if result["ret"] as! Int == 0{
-                    HUDTool.show(.text, text: "设备移除成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
-                }else {
-                    HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
-                }
-            }, nil)
+        let alert = BaseAlertController.init("", message: MRLanguage(forKey: "You are going to disconnect this device"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
+            if tag == 0 {
+                self.confirmRemoveDevice(deviceIndex: row)
+            }
         })
+        
         self.navigationController?.present(alert, animated: true, completion: nil)
-        
-        
+
+    }
+    
+    func confirmRemoveDevice(deviceIndex row: Int) {
+        let alert2 = BaseAlertController.init("", message: MRLanguage(forKey: "If you unbind the device,all that is bound\nto the device.The user will\nautomatically unbundle"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
+            if tag == 0 {
+                let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
+                let info = bindUserView.dataSource[row]
+                network.requestData(.user_delete_device, params: ["device_id":info["device_id"] as Any], finishedCallback: { (result) in
+                    if result["ret"] as! Int == 0{
+                        HUDTool.show(.text, text: "设备移除成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+                    }else {
+                        HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
+                    }
+                }, nil)
+            }
+            
+        })
+        self.navigationController?.present(alert2, animated: true, completion: nil)
     }
     
     func masterResolveDeviceBindInfo(status:Int,uin:Int64) {

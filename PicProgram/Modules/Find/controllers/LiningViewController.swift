@@ -9,14 +9,14 @@
 import UIKit
 
 enum TiningStyle:Int {
-    case Tining_white
+    case Tining_white = 1
     case Tining_misewenlu
     case Tining_fangguxuanzhi
     case Tining_huisezhigan
     case Tining_heiseyaguang
 }
 enum TiningSize:Int {
-    case Tining_0
+    case Tining_0 = 1
     case Tining_2P5
     case Tining_5
     case Tining_7P5
@@ -40,7 +40,7 @@ class LiningViewController: BaseViewController {
     
     override func buildUI() {
         self.title = MRLanguage(forKey: "Lining")
-        self.baseNavigationController?.addRightNavigationBarItems(["neichen_yingyonghuakuang"], ["neichen_yingyonghuakuang"], nil, rightCallBack: { [weak self](tag) in
+        self.baseNavigationController?.addRightNavigationBarItems(["shangchunhuakuang"], ["shangchunhuakuang"], nil, rightCallBack: { [weak self](tag) in
             self?.requestData()
         })
     }
@@ -62,27 +62,35 @@ class LiningViewController: BaseViewController {
     @IBAction func chooseTiningStyleAction(_ sender: UIButton) {
         for i in 0 ..< 5 {
             let btn = self.view.viewWithTag(10+i) as! UIButton
+            let label = self.view.viewWithTag(100+i) as! UILabel
             if btn == sender {
                 btn.backgroundColor = xsColor("b6b6b6")
+                label.textColor = xsColor_main_white
             }else {
                 btn.backgroundColor = xsColor("e4e4e4")
+                label.textColor = xsColor_placeholder_grey
             }
         }
-        tiningStyle = TiningStyle(rawValue: sender.tag - 10)!
-        let name = tiningStyleArray[tiningStyle.rawValue] + tiningSizeArray[tiningSize.rawValue] + "cm"
+        tiningStyle = TiningStyle(rawValue: sender.tag - 9)!
+        let name = tiningStyleArray[tiningStyle.rawValue - 1] + tiningSizeArray[tiningSize.rawValue - 1] + "cm"
         tiningWidthImageView.image = UIImage.init(named: name)
     }
     
     @IBAction func chooseTiningSizeAction(_ sender: UIButton) {
         for i in 0 ..< 5 {
             let btn = self.view.viewWithTag(20+i) as! UIButton
+            let label = self.view.viewWithTag(200+i) as? UILabel
             if btn == sender {
                 btn.backgroundColor = xsColor("b6b6b6")
+                label?.textColor = xsColor_main_white
+                btn.isSelected = true
             }else {
                 btn.backgroundColor = xsColor("e4e4e4")
+                label?.textColor = xsColor_placeholder_grey
+                btn.isSelected = false
             }
         }
-        tiningSize = TiningSize(rawValue: sender.tag - 20)!
+        tiningSize = TiningSize(rawValue: sender.tag - 19)!
         let name = tiningStyleArray[tiningStyle.rawValue] + tiningSizeArray[tiningSize.rawValue] + "cm"
         tiningWidthImageView.image = UIImage.init(named: name)
     }

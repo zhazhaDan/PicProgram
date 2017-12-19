@@ -147,6 +147,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         currentIndex = currentIndex <= 0 ? 0 : currentIndex
         currentIndex = currentIndex >= maxIndex ? maxIndex : currentIndex
         collectionView.scrollToItem(at: NSIndexPath.init(row: currentIndex, section: 0) as IndexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        self.title = dataSource[currentIndex].title
     }
     
     
