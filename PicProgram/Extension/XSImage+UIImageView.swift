@@ -42,8 +42,8 @@ extension UIImageView {
 
 
 extension UIButton {
-    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal){
-        self.backgroundColor = xsColor_placeholder_grey
+    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal, _ backgroundColor:UIColor = xsColor_placeholder_grey){
+        self.backgroundColor = backgroundColor
         self.kf.setImage(with: URL.init(string: imageUrl), for: state, placeholder: UIImage.init(named: placeholderImage), options: [.transition(.fade(1))], progressBlock: { (receivedSize, totalSize) in
             
         }) { (image, error, cacheType, imageUrl) in

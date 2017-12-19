@@ -56,7 +56,7 @@
 "Please go to the moran frame\nsettings page and enter the \nWi-Fi connection option" = "请进入Moran画框设置页面\n并进入Wi-Fi链接选项";
 "Please click“Connect App”\non your MORAN frame and scan\nyour MORAN bar code" = "请在墨染画框上选择“链接app”\n并将墨染画框中的二维码放入框内\n即可自动扫描";
 "NO WiFi" = "无信号\n请检查网络连接";
-"" = "";
+"delete device" = "如果您解绑该设备，所有与该设备绑定的用户将会自动解绑";
 "" = "";
 "" = "";
 "" = "";

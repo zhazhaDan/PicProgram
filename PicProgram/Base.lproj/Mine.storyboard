@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -203,6 +203,14 @@
                                         <color key="textColor" red="0.80294626951217651" green="0.69998854398727417" blue="0.57170653343200684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-vF-h8C">
+                                        <rect key="frame" x="12" y="27" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="LQv-ms-I7I"/>
+                                            <constraint firstAttribute="height" constant="30" id="idV-Pn-Ywl"/>
+                                        </constraints>
+                                        <state key="normal" image="fanhui"/>
+                                    </button>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -214,6 +222,7 @@
                                     <constraint firstItem="XBb-1H-zEp" firstAttribute="centerY" secondItem="2sU-YS-Oij" secondAttribute="centerY" id="69W-4E-HmZ"/>
                                     <constraint firstItem="RcT-jp-NuJ" firstAttribute="top" secondItem="IlB-dR-6iu" secondAttribute="bottom" constant="7" id="6yR-rt-ra5"/>
                                     <constraint firstItem="qYS-hh-Noq" firstAttribute="top" secondItem="Aha-TM-bO5" secondAttribute="bottom" constant="8" id="9RW-dD-1CT"/>
+                                    <constraint firstItem="3qW-vF-h8C" firstAttribute="leading" secondItem="Ael-3J-CJl" secondAttribute="leading" constant="12" id="9o0-PU-UkG"/>
                                     <constraint firstItem="IEK-0H-vY4" firstAttribute="leading" secondItem="Ael-3J-CJl" secondAttribute="leading" constant="42" id="At0-rh-b4t"/>
                                     <constraint firstItem="r8R-3r-ejC" firstAttribute="top" secondItem="nsM-pt-6YH" secondAttribute="bottom" constant="9" id="C6Y-Z8-TTe"/>
                                     <constraint firstItem="D8B-MW-JfB" firstAttribute="leading" secondItem="Ael-3J-CJl" secondAttribute="leading" constant="42" id="Caf-bL-Kj1"/>
@@ -238,6 +247,7 @@
                                     <constraint firstItem="d8q-4U-P9S" firstAttribute="height" secondItem="68p-o6-jlQ" secondAttribute="height" id="b4b-Ns-2TY"/>
                                     <constraint firstItem="qYS-hh-Noq" firstAttribute="top" secondItem="68p-o6-jlQ" secondAttribute="bottom" id="bBm-Xz-YLE"/>
                                     <constraint firstItem="68p-o6-jlQ" firstAttribute="leading" secondItem="Aha-TM-bO5" secondAttribute="trailing" constant="12" id="cUX-va-9aW"/>
+                                    <constraint firstItem="3qW-vF-h8C" firstAttribute="top" secondItem="Ael-3J-CJl" secondAttribute="top" constant="27" id="ccd-8b-UfN"/>
                                     <constraint firstItem="dc8-0O-2Fy" firstAttribute="centerX" secondItem="1Rd-DE-YmK" secondAttribute="centerX" multiplier="1.25" id="cf9-j0-fJn"/>
                                     <constraint firstAttribute="trailing" secondItem="IEK-0H-vY4" secondAttribute="trailing" constant="42" id="d3w-Eh-KbM"/>
                                     <constraint firstAttribute="trailing" secondItem="RcT-jp-NuJ" secondAttribute="trailing" constant="42" id="dJQ-tz-Jev"/>
@@ -298,8 +308,9 @@
         <image name="00dengluzhuce_youxiang_icon" width="25" height="19"/>
         <image name="00dengluzhuce_zhuce_weidianjianniu" width="291" height="32"/>
         <image name="Facebookdenglu" width="31" height="31"/>
+        <image name="fanhui" width="10" height="17"/>
         <image name="icon" width="21" height="27"/>
-        <image name="logo" width="223" height="127"/>
+        <image name="logo" width="164" height="78"/>
         <image name="twitterdenglu" width="31" height="31"/>
         <image name="weibodenglu_icon" width="31" height="31"/>
         <image name="weixindenglu_icon" width="31" height="31"/>

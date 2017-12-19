@@ -29,13 +29,21 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
     
     
     @IBAction func logoutAction(_ sender: Any) {
-        network.requestData(.user_logout, params: nil, finishedCallback: { (result) in
-            if result["ret"] as! Int == 0 {
-                UserInfo.user.localLogout()
-            }else {
-                HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
+    
+        let alert = BaseAlertController.init("", message: MRLanguage(forKey: "Are you sure to sign out?"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
+            if tag == 0 {
+                network.requestData(.user_logout, params: nil, finishedCallback: { (result) in
+                    if result["ret"] as! Int == 0 {
+                        UserInfo.user.localLogout()
+                        self.navigationController?.popViewController(animated: true)
+                    }else {
+                        HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
+                    }
+                }, nil)
             }
-        }, nil)
+        }
+        self.navigationController?.present(alert, animated: true, completion: nil)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

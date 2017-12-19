@@ -51,7 +51,7 @@ class BaseTabBarController: UITabBarController {
         self.viewControllers = [HomePageNavigationController.init(rootViewController:findVC),HomePageNavigationController.init(rootViewController:classVC),HomePageNavigationController.init(rootViewController: easelVC),HomePageNavigationController.init(rootViewController: minVC)]
         
         self.tabBar.tintColor = xsColor("a4b7d2")
-        self.selectedIndex = 3
+//        self.selectedIndex = 3
     }
 
 }

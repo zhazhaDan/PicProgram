@@ -24,7 +24,13 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         let styleHints = ["单张循环","顺序循环","随机播放"]
         playStyle = (playStyle+1)%3
         sender.setBackgroundImage(styleImages[playStyle], for: .normal)
-        HUDTool.show(.text, text: styleHints[playStyle], delay: 0.5, view: self.view, complete: nil)
+        network.requestData(.paint_play_style, params: ["play_type":3 - playStyle], finishedCallback: { (result) in
+            if result["ret"] as! Int == 0{
+                HUDTool.show(.text, text: styleHints[self.playStyle], delay: 0.5, view: self.view, complete: nil)
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: self.view, complete: nil)
+            }
+        }, nil)
     }
     @IBAction func tipsAction(_ sender: Any) {
         let vc = TipsViewController.init(nibName: "TipsViewController", bundle: Bundle.main)
@@ -32,7 +38,13 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func pushAction(_ sender: Any) {
-        
+        network.requestData(.paint_picPlay, params: ["picture_id":dataSource[currentIndex].picture_id], finishedCallback: { (result) in
+            if result["ret"] as! Int == 0{
+                HUDTool.show(.text, text: "推送成功", delay: 0.6, view: self.view, complete: nil)
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: self.view, complete: nil)
+            }
+        }, nil)
     }
     
     @IBAction func TiningAction(_ sender: Any) {
@@ -182,11 +194,23 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     
     
     func playTimeSetting(time: Int) {
-        HUDTool.show(.text, text: "播放时间设置成功", delay: 1, view: self.view, complete: nil)
+        network.requestData(.paint_play_style, params: ["play_type":10+time], finishedCallback: { (result) in
+            if result["ret"] as! Int == 0{
+                HUDTool.show(.text, text: "播放时间设置成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
+            }
+        }, nil)
     }
     
     func playModeSetting(mode: Int) {
-        HUDTool.show(.text, text: "播放模式设置成功", delay: 1, view: self.view, complete: nil)
+        network.requestData(.paint_play_style, params: ["play_type":20 + mode], finishedCallback: { (result) in
+            if result["ret"] as! Int == 0{
+                HUDTool.show(.text, text: "播放模式设置成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
+            }
+        }, nil)
     }
     
     

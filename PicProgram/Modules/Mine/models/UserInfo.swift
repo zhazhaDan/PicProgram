@@ -80,6 +80,8 @@ class UserInfo: UserModel {
     func localLogout() {
         UserDefaults.standard.removeObject(forKey: User_uin)
         UserDefaults.standard.removeObject(forKey: User_token)
+        self.uin = 100000
+        self.token = ""
         UserDefaults.standard.synchronize()
     }
     

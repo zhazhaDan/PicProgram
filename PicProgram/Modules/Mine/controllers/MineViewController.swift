@@ -18,7 +18,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     @IBOutlet weak var cScrollView: UIScrollView!
     var deviceDatas:Array<[String:Any]> = Array()
     
-    
+    var isShowLetter:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
@@ -40,7 +40,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserInfo.user.checkUserLogin() == false {
+        if UserInfo.user.checkUserLogin() == false && isShowLetter == false{
+            isShowLetter = true
             let vc = LetterViewController()
             self.tabBarController?.present(vc, animated: true, completion: nil)
         }
@@ -58,6 +59,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         self.userIconButton.layer.borderColor = xsColor_main_white.cgColor
         let deviceView = Bundle.main.loadNibNamed("DeviceManageView", owner: nil, options: nil)?.first as! DeviceManageView
         deviceView.cDelegate = self
+        deviceView.tag = 500
         deviceView.frame = bottomView.bounds
         self.bottomView.addSubview(deviceView)
 //        self.contentView.height = self.bottomView.bottom
@@ -68,7 +70,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     
     override func requestData() {
         UserInfo.user.updateUserInfo {[weak self] in
-            self?.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal)
+            self?.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal,UIColor.clear)
+            self?.userNameLabel.text = UserInfo.user.nick_name
         }
     }
    
@@ -88,7 +91,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         network.requestData(.user_get_device, params: nil, finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
                 self.deviceDatas = result["device_infos"] as! Array<[String : Any]>
-            }else {
+                self.updateDeviceManageView()
+            }else if result["ret"] as! Int != -1062 {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
             }
         }, nil)
@@ -141,6 +145,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         let qrView = Bundle.main.loadNibNamed("ScanCodeView", owner: nil, options: nil)?.first as! ScanCodeView
         qrView.delegate = self
         qrView.frame = bottomView.bounds
+        qrView.tag = 400
         bottomView.addSubview(qrView)
     }
     func backSelectd() {
@@ -154,14 +159,24 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     
     func scanCode(result: String) {
-        let deviceId = (result as NSString).substring(from: 3)
-        network.requestData(.user_bind_device, params: ["device_id":deviceId], finishedCallback: { (result) in
+//        let deviceId = (result as NSString).substring(from: 3)
+        network.requestData(.user_bind_device, params: ["device_id":result], finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: "该设备已绑定成功", delay: 0.6, view: self.view, complete: nil)
+                self.getUserBindDevices()
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: self.view, complete: nil)
             }
         }, nil)
+    }
+    
+    func updateDeviceManageView() {
+        let qrView = self.view.viewWithTag(500) as! DeviceManageView
+        if deviceDatas.count == 0 {
+            qrView.deviceManageButton.setTitle(MRLanguage(forKey: "Not connected to\nany device"), for: .normal)
+        }else {
+            qrView.deviceManageButton.setTitle(MRLanguage(forKey: "Device Management"), for: .normal)
+        }
     }
     
     ///
@@ -200,13 +215,20 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     func removeDevice(view: UIView, deviceIndex row: Int) {
         
-//        let alert = UIAlertController.init(title: nil, message: "如果您解绑该设备，所有与该设备绑定的用户将会自动解绑", preferredStyle: .alert)
+        let alert = BaseAlertController.init("", message: MRLanguage(forKey: "delete device"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
+            let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
+            let info = bindUserView.dataSource[row]
+            network.requestData(.user_delete_device, params: ["device_id":info["device_id"] as Any], finishedCallback: { (result) in
+                if result["ret"] as! Int == 0{
+                    HUDTool.show(.text, text: "设备移除成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+                }else {
+                    HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
+                }
+            }, nil)
+        })
+        self.navigationController?.present(alert, animated: true, completion: nil)
         
-        let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
-        let info = bindUserView.dataSource[row]
-        network.requestData(.user_delete_device, params: ["device_id":info["device_id"] as Any], finishedCallback: { (result) in
-            
-        }, nil)
+        
     }
     
     func masterResolveDeviceBindInfo(status:Int,uin:Int64) {
