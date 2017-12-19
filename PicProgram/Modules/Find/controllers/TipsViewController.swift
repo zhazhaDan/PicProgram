@@ -52,7 +52,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
         self.tipsMaterialsButton.titleLabel?.numberOfLines = 9
     }
     override func requestData() {
-        network.requestData(.paint_tips, params: ["tips_content":self.tipsMaterialsButton.title(for: .normal),"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: "Tips设置成功", delay: 0.8, view: (self?.view)!, complete: nil)
             }

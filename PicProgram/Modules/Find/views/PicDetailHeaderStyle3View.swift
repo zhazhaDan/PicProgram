@@ -25,7 +25,7 @@ class PicDetailHeaderStyle3View: UICollectionReusableView {
     @IBOutlet weak var collectButton: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
-    var segmentIndex:Int = 0
+    var segmentIndex:Int = 1
     @IBAction func playAction(_ sender: Any) {
         delegate.playAction!()
     }

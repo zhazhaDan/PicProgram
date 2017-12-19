@@ -188,8 +188,9 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                     let bindUserView = Bundle.main.loadNibNamed("DeviceBindUserView", owner: nil, options: nil)?.first as! DeviceBindUserView
                     bindUserView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
                     bindUserView.delegate = self
-                    bindUserView.dataSource = self.deviceDatas
+                    bindUserView.dataSource = result["user_infos"] as! Array<[String : Any]>
                     bindUserView.tag = 200
+                    bindUserView.device_id = item["device_id"] as! String
                     let backView = self.view.viewWithTag(100)
                     bindUserView.tableView.reloadData()
                     backView?.addSubview(bindUserView)
@@ -202,6 +203,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     func denyBindDevice(view: UIView, deviceIndex row: Int) {
         let bindUserView = self.view.viewWithTag(200) as! DeviceBindUserView
         let info = bindUserView.dataSource[row]
+        bindUserView.delegate = self
         if info["flag"] as! Int == 1 {
             masterResolveDeviceBindInfo(status: 3, uin: info["uin"] as! Int64)
         }else if info["flag"] as! Int == 2 {
@@ -245,7 +247,13 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     func masterResolveDeviceBindInfo(status:Int,uin:Int64) {
         let bindUserView = self.view.viewWithTag(200) as! DeviceBindUserView
         network.requestData(.user_master_solve_device, params: ["uin":uin,"status":status,"device_id":bindUserView.device_id], finishedCallback: { (result) in
-            
+            if result["ret"] as! Int == 0 {
+                HUDTool.show(.text, text: "操作成功", delay: 0.6, view: (self.navigationController?.view)!, complete: {
+                    bindUserView.removeFromSuperview()
+                })
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
+            }
         }, nil)
     }
 
