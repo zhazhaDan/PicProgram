@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecognizerDelegate {
+class TipsViewController: BaseViewController,UITextViewDelegate {
     @IBOutlet weak var localIcon: UIImageView!
     
     @IBOutlet weak var locateView: UIImageView!
@@ -46,13 +46,13 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
             let btn = self.view.viewWithTag(10+i) as! UIButton
             btn.layer.borderColor = xsColor_main_yellow.cgColor
         }
-        self.baseNavigationController?.addRightNavigationBarItems(["shangchunhuakuang"], ["shangchunhuakuang"], nil, rightCallBack: { [weak self](tag) in
+        self.baseNavigationController?.addRightNavigationBarItems(["neichen_yingyonghuakuang"], ["neichen_yingyonghuakuang"], nil, rightCallBack: { [weak self](tag) in
             self?.requestData()
         })
         self.tipsMaterialsButton.titleLabel?.numberOfLines = 9
     }
     override func requestData() {
-        network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex,"flag":(switchSender.isOn == true ? 2 : 1)], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: "Tips设置成功", delay: 0.8, view: (self?.view)!, complete: nil)
             }
@@ -71,9 +71,11 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
     @IBAction func switchValueChanged(_ sender: UISwitch) {
-        if sender.isOn == true {
+        if sender.isOn == false {
+            self.switchSender.onTintColor = xsColor_main_white
             self.switchShowLabel.text = "显示到画框端"
         }else {
+            self.switchSender.onTintColor = xsColor_main_blue
             self.switchShowLabel.text = "不显示到画框端"
         }
     }
@@ -123,11 +125,12 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
         self.textView.isHidden = false
     }
     
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer.view == localIcon {
             return true
         }
-        return false
+        return super.gestureRecognizerShouldBegin(gestureRecognizer)
+
     }
     
     

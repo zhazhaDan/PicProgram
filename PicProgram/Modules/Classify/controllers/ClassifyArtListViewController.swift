@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
-class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate {
+class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var classTitleButton: UIButton!
     @IBOutlet weak var showVBackView: UIView!
     @IBOutlet weak var showTableListView: UITableView!
@@ -44,7 +44,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
     override func requestData() {
         let paint_id = dataSource[selectedIndex]["paint_id"]
-        network.requestData(.paint_info, params: ["paint_id":2], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
                 self?.collectionView?.reloadData()

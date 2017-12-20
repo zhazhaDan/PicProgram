@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScrollViewDelegate ,AddEmotionProtocol,SharePlatformProtocol{
+class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionProtocol,SharePlatformProtocol{
     @IBOutlet weak var figureImageView: UIImageView!
     @IBOutlet weak var picImageView: UIImageView!
+    @IBOutlet weak var pic2ImageView: UIImageView!
     @IBOutlet weak var picTitleLabel: UILabel!
     @IBOutlet weak var emotionButton: UIButton!
     @IBOutlet weak var qrCodeImageView: UIImageView!
@@ -23,6 +24,7 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var shareScrollView: UIScrollView!
     @IBOutlet weak var bottomFigureImageView: UIImageView!
+    @IBOutlet weak var backImageView: UIImageView!
     
     
     var picUrl:String!
@@ -36,9 +38,20 @@ class ShareViewController: BaseViewController,UIGestureRecognizerDelegate,UIScro
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.picImageView.xs_setImage(picUrl)
+        self.pic2ImageView.xs_setImage(picUrl)
         self.picTitleLabel.text = self.picTitle
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         codeUpdate()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first?.view == self.backImageView {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func chooseFigureAction(_ sender: UIButton) {

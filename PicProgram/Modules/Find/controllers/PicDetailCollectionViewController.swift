@@ -12,8 +12,8 @@ private let reuseIdentifier = "PicDetailCollectionViewCell"
 private let reuseHeaderIdentifier = "header"
 
 class PicDetailCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,SearchProtocol,UIGestureRecognizerDelegate {
-    private var _paint_id:Int = 0 //默认id = 0 是自己收藏的画单
-    var paint_id:Int {
+    private var _paint_id:Int64 = 0 //默认id = 0 是自己收藏的画单
+    var paint_id:Int64 {
         set{
             _paint_id = newValue
             if _paintModel == nil {
@@ -139,14 +139,15 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeaderIdentifier, for: indexPath) as! PicDetailHeaderStyle3View
             header.delegate = self
 //            if paintModel != nil {
-                header.autoPicImageView.xs_setImage(paintModel.title_url)
-                header.backImageView.xs_setImage(paintModel.title_url)
-                header.picTitleLabel.text = paintModel.paint_title
-                header.subTitleLabel.text = paintModel.paint_detail
-                header.eyeNumLabel.text = "\(paintModel.read_num)"
-                header.totalNumLabel.text = "\(paintModel.picture_num)张"
-                header.contentLabel.text = paintModel.paint_detail
-                header.collectButton.isSelected = (paintModel.flag == 1 ? true : false)
+            header.autoPicImageView.xs_setImage(paintModel.title_url)
+            header.backImageView.xs_setImage(paintModel.title_url)
+            header.picTitleLabel.text = paintModel.paint_title
+            header.subTitleLabel.text = paintModel.sub_title
+            header.eyeNumLabel.text = "\(paintModel.read_num)"
+            header.totalNumLabel.text = "\(paintModel.picture_num)张"
+            header.contentLabel.text = paintModel.paint_detail
+            header.collectButton.isSelected = (paintModel.flag == 1 ? true : false)
+            header.titleLabel.text = self.title
 //            }
             return header
         }
@@ -249,7 +250,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     func shareAction() {
         //TODO:分享 未登录提示登录？
         let vc = ShareViewController.init(nibName: "ShareViewController", bundle: Bundle.main)
-        vc.picUrl = paintModel.title_url
+        vc.picUrl = paintModel.title_detail_url
         vc.picTitle = paintModel.paint_title
         self.navigationController?.pushViewController(vc, animated: true)
     }

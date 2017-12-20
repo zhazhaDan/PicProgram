@@ -9,11 +9,12 @@
 import UIKit
 
 class PaintModel: BaseObject {
-    @objc var paint_id :Int = 0
+    @objc var paint_id :Int64 = 0
     @objc var flag :Int = 0 // 1 收藏  2未收藏
     @objc var title_url:String = ""
     @objc var title_detail_url:String = ""
     @objc var paint_title:String = ""
+    @objc var sub_title:String = ""
     @objc var paint_detail :String = ""
     @objc var read_num:Int = 0
     @objc var love_num:Int = 0
@@ -80,7 +81,7 @@ class PictureModel: BaseObject {
 
 class AutoModel: BaseObject {
     @objc var authro_id :Int = 0
-    @objc var paint_id:Int = 0
+    @objc var paint_id:Int64 = 0
     @objc var img_url:String = ""
     @objc var authro_name :String = ""
 }

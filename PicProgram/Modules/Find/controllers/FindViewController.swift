@@ -76,12 +76,12 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     override func buildUI() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
-
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         todayView.frame = self.currentView.bounds
         customNavigationView()
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,10 +113,12 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
             vc.paint_id = self.recommandModel.banner[index].paint_id
+            vc.title = "今日推荐"
             self.navigationController?.pushViewController(vc, animated: true)
         }else if view == self.artView.bannerView {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
+            vc.title = "艺术先锋"
             vc.paint_id = self.pioneerModel.banner[index].paint_id
             self.navigationController?.pushViewController(vc, animated: true)
 
@@ -166,7 +168,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         let vc = ReadListViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    func viewDidSelected(view: ItemView, paint_id: Int) {
+    func viewDidSelected(view: ItemView, paint_id: Int64) {
         let layout = UICollectionViewFlowLayout.init()
         let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
         vc.paintModel = view.model

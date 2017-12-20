@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareViewController" customModule="PicProgram" customModuleProvider="target">
             <connections>
-                <outlet property="bottomFigureImageView" destination="ou8-LQ-MQh" id="v5A-mG-L3p"/>
+                <outlet property="backImageView" destination="7yr-WT-W1A" id="opG-xT-nF2"/>
                 <outlet property="contentScrollView" destination="M4f-Vy-hR0" id="Fob-MJ-Eqj"/>
                 <outlet property="contentScrollViewHeight" destination="N17-aZ-52U" id="YAu-DS-3RP"/>
                 <outlet property="emotionButton" destination="ECP-I4-Co8" id="ba6-Pt-sp1"/>
                 <outlet property="figureImageView" destination="EJ5-P7-Bnd" id="h7r-50-uwh"/>
-                <outlet property="picImageView" destination="ZpU-YR-k9b" id="eJ1-01-p19"/>
+                <outlet property="pic2ImageView" destination="ZpU-YR-k9b" id="dUZ-wd-C0D"/>
+                <outlet property="picImageView" destination="r6y-AB-IqB" id="iGt-9o-TRL"/>
                 <outlet property="picTitleLabel" destination="R1t-M7-iaG" id="Ic4-9o-Iry"/>
                 <outlet property="qrCodeImageView" destination="nqs-Pw-oew" id="cZE-cZ-sfv"/>
                 <outlet property="segView" destination="g98-e8-S3G" id="SV7-Qa-CMA"/>
@@ -45,22 +46,30 @@
                             <rect key="frame" x="0.0" y="0.0" width="240" height="800"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZpU-YR-k9b" userLabel="图片">
-                                    <rect key="frame" x="10" y="10" width="220" height="485"/>
+                                    <rect key="frame" x="10" y="10" width="220" height="502"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="485" id="DoW-2x-4dz"/>
+                                        <constraint firstAttribute="height" constant="502" id="DoW-2x-4dz"/>
                                     </constraints>
+                                </imageView>
+                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uoj-PJ-Z7U">
+                                    <rect key="frame" x="10" y="10" width="220" height="502"/>
+                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fOY-eQ-Tg5">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="502"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </view>
+                                    <blurEffect style="dark"/>
+                                </visualEffectView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6y-AB-IqB">
+                                    <rect key="frame" x="22" y="40" width="196" height="457"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wuhuawen" translatesAutoresizingMaskIntoConstraints="NO" id="EJ5-P7-Bnd" userLabel="花纹框">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="615"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="802.5"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="615" id="LHQ-Oq-vMh"/>
+                                        <constraint firstAttribute="height" constant="802.5" id="LHQ-Oq-vMh"/>
                                     </constraints>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diwen1" translatesAutoresizingMaskIntoConstraints="NO" id="ou8-LQ-MQh" userLabel="底纹框">
-                                    <rect key="frame" x="0.0" y="615" width="240" height="185"/>
-                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1t-M7-iaG">
-                                    <rect key="frame" x="50" y="495" width="140" height="30"/>
+                                    <rect key="frame" x="50" y="512" width="140" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="9Le-52-0Jk"/>
                                     </constraints>
@@ -69,20 +78,20 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECP-I4-Co8">
-                                    <rect key="frame" x="87" y="525" width="65" height="90"/>
+                                    <rect key="frame" x="87" y="542" width="65" height="90"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="65" id="aMM-EU-tVm"/>
                                         <constraint firstAttribute="height" constant="90" id="iTa-3S-fCj"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <inset key="titleEdgeInsets" minX="-75" minY="0.0" maxX="0.0" maxY="5"/>
+                                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
                                     <state key="normal" title="喜" image="xi">
                                         <color key="titleColor" red="0.78664118049999998" green="0.70316225290000001" blue="0.58427387480000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </state>
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareCode" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-Pw-oew" userLabel="二维码">
-                                    <rect key="frame" x="64.5" y="635" width="111" height="111"/>
+                                    <rect key="frame" x="64.5" y="652" width="111" height="111"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="111" id="2Rh-zp-Lyb"/>
                                         <constraint firstAttribute="width" constant="111" id="ip8-rT-pQb"/>
@@ -91,25 +100,29 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="ou8-LQ-MQh" firstAttribute="top" secondItem="EJ5-P7-Bnd" secondAttribute="bottom" id="01u-yZ-YzC"/>
                                 <constraint firstItem="ECP-I4-Co8" firstAttribute="top" secondItem="R1t-M7-iaG" secondAttribute="bottom" id="4DY-BD-Oxv"/>
                                 <constraint firstItem="ECP-I4-Co8" firstAttribute="centerX" secondItem="EJ5-P7-Bnd" secondAttribute="centerX" id="58k-00-s4q"/>
+                                <constraint firstItem="r6y-AB-IqB" firstAttribute="bottom" secondItem="ZpU-YR-k9b" secondAttribute="bottom" constant="-15" id="7jz-3r-gct"/>
+                                <constraint firstItem="Uoj-PJ-Z7U" firstAttribute="trailing" secondItem="ZpU-YR-k9b" secondAttribute="trailing" id="Dha-hX-yuR"/>
                                 <constraint firstItem="nqs-Pw-oew" firstAttribute="centerX" secondItem="EJ5-P7-Bnd" secondAttribute="centerX" id="EC8-nD-sFC"/>
-                                <constraint firstItem="nqs-Pw-oew" firstAttribute="top" secondItem="EJ5-P7-Bnd" secondAttribute="bottom" constant="20" id="ENm-mh-gZg"/>
-                                <constraint firstAttribute="bottom" secondItem="ou8-LQ-MQh" secondAttribute="bottom" id="NEH-BH-bG8"/>
+                                <constraint firstItem="nqs-Pw-oew" firstAttribute="top" secondItem="ECP-I4-Co8" secondAttribute="bottom" constant="20" id="ENm-mh-gZg"/>
+                                <constraint firstItem="Uoj-PJ-Z7U" firstAttribute="top" secondItem="ZpU-YR-k9b" secondAttribute="top" id="Jpp-Od-qlh"/>
+                                <constraint firstItem="Uoj-PJ-Z7U" firstAttribute="leading" secondItem="ZpU-YR-k9b" secondAttribute="leading" id="O85-Nh-gHC"/>
+                                <constraint firstItem="r6y-AB-IqB" firstAttribute="leading" secondItem="ZpU-YR-k9b" secondAttribute="leading" constant="12" id="P54-vg-Zik"/>
                                 <constraint firstItem="EJ5-P7-Bnd" firstAttribute="leading" secondItem="kbz-1v-BcV" secondAttribute="leading" id="S6r-5n-773"/>
                                 <constraint firstItem="ZpU-YR-k9b" firstAttribute="top" secondItem="kbz-1v-BcV" secondAttribute="top" constant="10" id="Wgy-dD-sL8"/>
+                                <constraint firstItem="r6y-AB-IqB" firstAttribute="trailing" secondItem="ZpU-YR-k9b" secondAttribute="trailing" constant="-12" id="Wnp-7b-sdX"/>
                                 <constraint firstAttribute="trailing" secondItem="EJ5-P7-Bnd" secondAttribute="trailing" id="XTk-vS-4F8"/>
                                 <constraint firstAttribute="trailing" secondItem="ZpU-YR-k9b" secondAttribute="trailing" constant="10" id="cfe-nK-gey"/>
                                 <constraint firstAttribute="trailing" secondItem="R1t-M7-iaG" secondAttribute="trailing" constant="50" id="eU0-hJ-tJy"/>
                                 <constraint firstItem="EJ5-P7-Bnd" firstAttribute="top" secondItem="kbz-1v-BcV" secondAttribute="top" id="fAw-pq-H5i"/>
+                                <constraint firstItem="r6y-AB-IqB" firstAttribute="top" secondItem="ZpU-YR-k9b" secondAttribute="top" constant="30" id="fRI-Ry-R0z"/>
                                 <constraint firstItem="R1t-M7-iaG" firstAttribute="leading" secondItem="kbz-1v-BcV" secondAttribute="leading" constant="50" id="hdz-8V-KPC"/>
-                                <constraint firstItem="ou8-LQ-MQh" firstAttribute="leading" secondItem="EJ5-P7-Bnd" secondAttribute="leading" id="jta-ab-Ent"/>
+                                <constraint firstItem="Uoj-PJ-Z7U" firstAttribute="bottom" secondItem="ZpU-YR-k9b" secondAttribute="bottom" id="hhT-sl-dUh"/>
                                 <constraint firstAttribute="width" constant="240" id="lIh-2j-P8O"/>
                                 <constraint firstItem="ZpU-YR-k9b" firstAttribute="leading" secondItem="kbz-1v-BcV" secondAttribute="leading" constant="10" id="qD4-Hj-fXA"/>
                                 <constraint firstItem="R1t-M7-iaG" firstAttribute="top" secondItem="ZpU-YR-k9b" secondAttribute="bottom" id="slf-WK-PJf"/>
                                 <constraint firstAttribute="height" constant="800" id="wHI-6M-5Uy"/>
-                                <constraint firstItem="ou8-LQ-MQh" firstAttribute="trailing" secondItem="EJ5-P7-Bnd" secondAttribute="trailing" id="yMK-0r-4xN"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -311,9 +324,8 @@
         <image name="danduye_xiaohuawen2_xuanzhong" width="30" height="30"/>
         <image name="danduye_xiaohuawen3_weixuanzhong" width="28" height="28"/>
         <image name="danduye_xiaohuawen3_xuanzhong" width="28" height="28"/>
-        <image name="diwen1" width="244" height="181"/>
         <image name="shareCode" width="140" height="140"/>
-        <image name="wuhuawen" width="262" height="649"/>
+        <image name="wuhuawen" width="243" height="802"/>
         <image name="xi" width="65" height="65"/>
     </resources>
 </document>

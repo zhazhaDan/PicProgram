@@ -40,7 +40,7 @@ class LiningViewController: BaseViewController {
     
     override func buildUI() {
         self.title = MRLanguage(forKey: "Lining")
-        self.baseNavigationController?.addRightNavigationBarItems(["shangchunhuakuang"], ["shangchunhuakuang"], nil, rightCallBack: { [weak self](tag) in
+        self.baseNavigationController?.addRightNavigationBarItems(["neichen_yingyonghuakuang"], ["neichen_yingyonghuakuang"], nil, rightCallBack: { [weak self](tag) in
             self?.requestData()
         })
     }
@@ -91,7 +91,7 @@ class LiningViewController: BaseViewController {
             }
         }
         tiningSize = TiningSize(rawValue: sender.tag - 19)!
-        let name = tiningStyleArray[tiningStyle.rawValue] + tiningSizeArray[tiningSize.rawValue] + "cm"
+        let name = tiningStyleArray[tiningStyle.rawValue - 1] + tiningSizeArray[tiningSize.rawValue - 1] + "cm"
         tiningWidthImageView.image = UIImage.init(named: name)
     }
     

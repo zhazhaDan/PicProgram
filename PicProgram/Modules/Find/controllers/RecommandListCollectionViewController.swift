@@ -25,6 +25,7 @@ class RecommandListCollectionViewController: BaseViewController,UICollectionView
         collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: NavigationBarBottom, width: self.view.width, height: self.view.height - NavigationBarBottom), collectionViewLayout: UICollectionViewFlowLayout.init())
         collectionView.delegate = self
         collectionView.dataSource = self
+        self.collectionView.alwaysBounceVertical = true
         self.view.addSubview(collectionView)
         self.collectionView?.backgroundColor = xsColor_main_white
         self.collectionView!.register(UINib.init(nibName: "RecommandListCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
@@ -36,15 +37,16 @@ class RecommandListCollectionViewController: BaseViewController,UICollectionView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        requestData()
-
+        self.requestData()
     }
 
     
     override func requestData() {
         network.requestData(.paint_list, params: ["type_id":type], finishedCallback: { [weak self](result) in
+            self?.collectionView.xs_endRefreshing()
             if result["ret"] as! Int == 0 {
                 let array = result["paint_arry"] as! Array<[String:Any]>
+                self?.dataSource.removeAll()
                 for item in array {
                     let model = PaintModel.init(dict:item)
                     self?.dataSource.append(model)

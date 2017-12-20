@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="PicProgram">
             <connections>
+                <outlet property="areaButton" destination="LZz-Kz-9gz" id="ewA-5f-KaJ"/>
                 <outlet property="emailRegistView" destination="dDl-uJ-2hQ" id="IrC-BW-mBg"/>
                 <outlet property="emailTextfield" destination="a6p-LG-p8O" id="F2U-lH-3RX"/>
                 <outlet property="nextStepButton" destination="oAb-nf-g9x" id="AHt-YZ-yBL"/>
@@ -46,7 +47,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="邮箱注册">
-                        <color key="titleColor" red="0.80292302370000002" green="0.69994395970000001" blue="0.56815975900000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected" backgroundImage="01faxian_jinrituijian_yuanjiaojuxing"/>
                     <connections>
@@ -57,7 +58,7 @@
                     <rect key="frame" x="217" y="80" width="129" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="手机号注册">
-                        <color key="titleColor" red="0.80292302370000002" green="0.69994395970000001" blue="0.56815975900000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected" backgroundImage="01faxian_jinrituijian_yuanjiaojuxing"/>
                     <connections>
@@ -93,15 +94,18 @@
                             <state key="normal" title="+86" image="xialaquhao">
                                 <color key="titleColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="areaChooseAction:" destination="-1" eventType="touchUpInside" id="b38-FE-OHY"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZs-W0-oHh" userLabel="请输入手机号">
                             <rect key="frame" x="97" y="32" width="254" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="hLj-Kd-gK7"/>
                             </constraints>
-                            <color key="textColor" red="0.84166496989999995" green="0.758013308" blue="0.65390139820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                     <color key="value" red="0.84166496989999995" green="0.758013308" blue="0.65390139820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,7 +147,7 @@
                             </constraints>
                             <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                     <color key="value" red="0.84166496992111206" green="0.75801330804824829" blue="0.65390139818191528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

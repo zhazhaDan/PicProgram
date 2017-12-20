@@ -14,7 +14,7 @@ let baseApi = "http://dev.xiangshuispace.com:9988/api/"
 //let baseApi = "https://www.xiangshuispace.com/api/"
     
 #else
-let baseApi = "https://www.xiangshuispace.com/api/"
+let baseApi = "http://dev.xiangshuispace.com:9988/api/"
     
 #endif
 enum Method {
@@ -96,7 +96,7 @@ class  NetworkTool{
             apiString = "discovery/mq_love"
         case .paint_info:
             method = .get
-            let paint_id:Int = params!["paint_id"] as! Int
+            let paint_id:Int64 = params!["paint_id"] as! Int64
             apiString = "painting/\(paint_id)/info"
             realParams = nil
         case .paint_list:
@@ -225,7 +225,11 @@ class  NetworkTool{
                 }
                 let resultDict = result as! [String : Any]
                
+                if (((resultDict["ret"] as! Int) < -100) && ((resultDict["ret"] as! Int) > -200)) {
+                    UserInfo.user.localLogout()
+                }else {
                     finishedCallback!(resultDict)
+                }
                
                 
         }

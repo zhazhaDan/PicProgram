@@ -28,6 +28,7 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
         layout.scrollDirection = .vertical
         collectionView = UICollectionView.init(frame: self.bounds, collectionViewLayout: layout)
         collectionView.delegate = self
+        self.collectionView.alwaysBounceVertical = true
         collectionView.dataSource = self
         collectionView.backgroundColor = xsColor_line_grey
         collectionView.register(UINib.init(nibName: "EaselPaintCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: cellReuseIdentify)
@@ -39,7 +40,7 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count + (9 - dataSource.count % 3)
+        return (dataSource.count + (9 - dataSource.count)) 
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: self.collectionView.width/3, height: 187)

@@ -28,11 +28,12 @@ class GifViewController: BaseViewController,UIWebViewDelegate {
         }
         let skitButton = UIButton.init(frame: CGRect.init(x: self.view.width - 28 - 72.5, y: 50, width: 72.5, height: 23))
 //        skitButton.backgroundColor = xsColor_main_yellow
-//        skitButton.setTitle("点击跳过", for: .normal)
-        skitButton.setImage(#imageLiteral(resourceName: "kaijitiaoguo"), for: .normal)
+        skitButton.setTitle(MRLanguage(forKey: "Skip"), for: .normal)
+        skitButton.setBackgroundImage(UIImage.init(named: "08wode_shebei_tishi_anxia"), for: .normal)
+        
 //        skitButton.setImage(#imageLiteral(resourceName: "kaijitiaoguo"), for: .highlighted)
         skitButton.addTarget(self, action: #selector(skitGifView), for: .touchUpInside)
-//        skitButton.titleLabel?.font = xsFont(12)
+        skitButton.titleLabel?.font = xsFont(12)
         self.view.addSubview(skitButton)
     }
     

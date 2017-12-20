@@ -162,7 +162,10 @@ class RegistThirdAppDelegate: UIResponder,GeTuiSdkDelegate,UNUserNotificationCen
     //getuiSdk delegate
     func geTuiSdkDidRegisterClient(_ clientId: String!) {
         print("getui -->>>>> \(clientId)")
-        UserInfo.user.updateIgetuiClient(clientId: clientId)
+        UserInfo.user.client_id = clientId
+        if UserInfo.user.checkUserLogin() {
+            UserInfo.user.updateIgetuiClient(clientId: clientId)
+        }
     }
     
     func geTuiSdkDidOccurError(_ error: Error!) {

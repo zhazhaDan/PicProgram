@@ -34,6 +34,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.title = MRLanguage(forKey: "Art Works")
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     
@@ -55,6 +56,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     @IBAction func titleChooseAction(_ sender: UIButton) {

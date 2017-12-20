@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="方正宋刻本秀楷简体.TTF">
+        <array key="方正宋刻本秀楷简.TTF">
             <string>FZSKBXKJW--GB1-0</string>
         </array>
     </customFonts>
@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindPassInputCodeViewController" customModule="PicProgram" customModuleProvider="target">
             <connections>
                 <outlet property="codeTextfield" destination="cnM-06-SQ8" id="CUd-7J-VUG"/>
+                <outlet property="hintLabel" destination="WNS-oD-UeE" id="Co9-lb-Q77"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -52,7 +53,7 @@
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                            <color key="value" red="0.85439974070000002" green="0.77819234130000003" blue="0.68513739110000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="0.80640715360641479" green="0.63069027662277222" blue="0.4099191427230835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
@@ -62,7 +63,7 @@
                         <constraint firstAttribute="height" constant="20" id="wxy-Wf-nFD"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="FZSKBXKJW--GB1-0" family="FZSongKeBenXiuKaiS-R-GB" pointSize="10"/>
-                    <color key="textColor" red="0.42741549015045166" green="0.52695870399475098" blue="0.69438368082046509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.16886612770000001" green="0.37233281140000002" blue="0.59921276570000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-uS-5db" userLabel="resendButton">

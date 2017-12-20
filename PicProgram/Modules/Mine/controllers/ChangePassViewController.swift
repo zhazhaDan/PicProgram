@@ -12,14 +12,21 @@ class ChangePassViewController: BaseViewController {
     var userModel:UserModel = UserModel()
     @IBOutlet weak var repassTextfield: UITextField!
     @IBOutlet weak var passTextfield: UITextField!
+    @IBOutlet weak var changeTitleLabel: UILabel!
     @IBAction func submitChangePassAction(_ sender: Any) {
-        network.requestData(.user_reset_password, params: ["register_id":userModel.register_id,"passwrod":userModel.password], finishedCallback: { (result) in
+        if self.passTextfield.text != self.repassTextfield.text {
+            HUDTool.show(.custom, text: "两次密码不一致,请再次输入", delay: 1, view: self.view, complete: nil)
+            return
+        }
+        
+        HUDTool.show(.loading, view: self.view)
+        userModel.password = passTextfield.text!
+        network.requestData(.user_reset_password, params: ["register_id":userModel.register_id,"password":userModel.password], finishedCallback: { (result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: "密码重置成功", delay: 1, view: self.view, complete: {
-                    let vc = FindPassInputCodeViewController()
-                    vc.method = .login_regist
-                    vc.userModel = self.userModel
-                    self.navigationController?.pushViewController(vc, animated: true)
+                HUDTool.show(.custom, text: "密码重置成功", delay: 1, view: self.view, complete: {
+                    
+                    self.dismiss(animated: true, completion: nil)
                 })
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
@@ -28,8 +35,13 @@ class ChangePassViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = MRLanguage(forKey: "Find Password")
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.changeTitleLabel.text = "请设置\(userModel.register_id)的新密码，建议使用数字、字母、字符的组合密码，提高密码安全等级。"
     }
 
     override func didReceiveMemoryWarning() {

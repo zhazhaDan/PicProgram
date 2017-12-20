@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol,UIGestureRecognizerDelegate {
+class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol {
 //    var mineView:LogOutView!
     @IBOutlet weak var userBackImageView: UIImageView!
     @IBOutlet weak var userIconButton: UIButton!
@@ -18,7 +18,6 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     @IBOutlet weak var cScrollView: UIScrollView!
     var deviceDatas:Array<[String:Any]> = Array()
     
-    var isShowLetter:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
@@ -40,14 +39,14 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserInfo.user.checkUserLogin() == false && isShowLetter == false{
-            isShowLetter = true
+        if UserInfo.user.checkUserLogin() == false && appDelegate.isLetterShowed == false && UserInfo.user.letterStatus == 0 {
+            appDelegate.isLetterShowed = true
             let vc = LetterViewController()
-            self.tabBarController?.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)
         }
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.requestData()
         if UserInfo.user.checkUserLogin() {
+            self.requestData()
             getUserBindDevices()
         }
     }
@@ -79,7 +78,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         if UserInfo.user.checkUserLogin() == false {
             let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
             let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
-            self.present(login, animated: true, completion: nil)
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
         }else {//点击前往个人资料
             let vc = UserViewController.init(nibName: "UserViewController", bundle: Bundle.main)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -94,6 +93,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                 self.updateDeviceManageView()
             }else if result["ret"] as! Int != -1062 {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
+                self.deviceDatas.removeAll()
+                self.updateDeviceManageView()
             }
         }, nil)
     }
@@ -106,6 +107,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     
     @IBAction func playAction(_ sender: Any) {
+        let vc = PlayViewController.player
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func settingDidSelected() {
@@ -142,20 +145,31 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     
     func addDeviceSelected() {
-        let qrView = Bundle.main.loadNibNamed("ScanCodeView", owner: nil, options: nil)?.first as! ScanCodeView
-        qrView.delegate = self
-        qrView.frame = bottomView.bounds
-        qrView.tag = 400
-        bottomView.addSubview(qrView)
+        if UserInfo.user.checkUserLogin() {
+            let qrView = Bundle.main.loadNibNamed("ScanCodeView", owner: nil, options: nil)?.first as! ScanCodeView
+            qrView.delegate = self
+            qrView.frame = bottomView.bounds
+            qrView.tag = 400
+            bottomView.addSubview(qrView)
+        }else {
+            HUDTool.show(.custom, #imageLiteral(resourceName: "icons8-info"), text: MRLanguage(forKey: "Please sign in to add device"), delay: 0.8, view: self.view, complete: nil)
+        }
+        
+        
     }
     func backSelectd() {
         
     }
     
     func wifiManageSelected() {
-        let wifiView = Bundle.main.loadNibNamed("WifiSettingView", owner: nil, options: nil)?.first as! WifiSettingView
-        wifiView.frame = bottomView.bounds
-        bottomView.addSubview(wifiView)
+        if UserInfo.user.checkUserLogin() {
+            let wifiView = Bundle.main.loadNibNamed("WifiSettingView", owner: nil, options: nil)?.first as! WifiSettingView
+            wifiView.frame = bottomView.bounds
+            bottomView.addSubview(wifiView)
+        }else {
+            HUDTool.show(.custom, #imageLiteral(resourceName: "icons8-info"), text: MRLanguage(forKey: "Please sign in to add device"), delay: 0.8, view: self.view, complete: nil)
+        }
+        
     }
     
     func scanCode(result: String) {
@@ -185,15 +199,18 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
             let item = deviceDatas[index]
             network.requestData(.user_get_device_info, params: ["device_id":item["device_id"] as! String], finishedCallback: { (result) in
                 if result["ret"] as! Int == 0 {
-                    let bindUserView = Bundle.main.loadNibNamed("DeviceBindUserView", owner: nil, options: nil)?.first as! DeviceBindUserView
-                    bindUserView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
-                    bindUserView.delegate = self
-                    bindUserView.dataSource = result["user_infos"] as! Array<[String : Any]>
-                    bindUserView.tag = 200
-                    bindUserView.device_id = item["device_id"] as! String
-                    let backView = self.view.viewWithTag(100)
-                    bindUserView.tableView.reloadData()
-                    backView?.addSubview(bindUserView)
+                    if result["user_infos"] != nil {
+                        let bindUserView = Bundle.main.loadNibNamed("DeviceBindUserView", owner: nil, options: nil)?.first as! DeviceBindUserView
+                        bindUserView.frame = CGRect.init(x: 0, y: self.view.height - 209, width: self.view.width, height: 209)
+                        bindUserView.delegate = self
+                        bindUserView.dataSource = result["user_infos"] as! Array<[String : Any]>
+                        bindUserView.tag = 200
+                        bindUserView.device_id = item["device_id"] as! String
+                        let backView = self.view.viewWithTag(100)
+                        bindUserView.tableView.reloadData()
+                        backView?.addSubview(bindUserView)
+                    }
+                  
                     
                 }
             }, nil)
@@ -234,6 +251,10 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                 network.requestData(.user_delete_device, params: ["device_id":info["device_id"] as Any], finishedCallback: { (result) in
                     if result["ret"] as! Int == 0{
                         HUDTool.show(.text, text: "设备移除成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+                        bindUserView.removeFromSuperview()
+                        let backView = self.view.viewWithTag(100)
+                        backView?.removeFromSuperview()
+                        self.getUserBindDevices()
                     }else {
                         HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
                     }
@@ -263,6 +284,10 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
             return false
         }
         return true
+    }
+    
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return super.gestureRecognizerShouldBegin(gestureRecognizer)
     }
     
 }

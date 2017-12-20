@@ -17,7 +17,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var localLabel: UITextField!
     @IBOutlet weak var introduceTextView: UITextView!
-
+    var genderView: BasePickerView! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "我的资料"
@@ -35,6 +35,8 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
         }else if sender.view?.tag == 13 {
             chooseBirthday()
         }else {
+            UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
+            genderView.removeFromSuperview()
         }
     }
     
@@ -44,7 +46,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
     }
     
     func chooseGender() {
-        let genderView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 140, width: self.view.width, height: 140))
+        genderView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 140, width: self.view.width, height: 140))
         genderView.type = .gender
         genderView.buildUI(type: .gender) { (gender) in
             self.genderLabel.text = (gender as! String)
@@ -56,9 +58,9 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
     }
     
     func chooseBirthday() {
-        let birthView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 190, width: self.view.width, height: 190))
-        birthView.type = .birthday
-        birthView.buildUI(type: .birthday) { (date) in
+        genderView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 190, width: self.view.width, height: 190))
+        genderView.type = .birthday
+        genderView.buildUI(type: .birthday) { (date) in
             let dateString = Date.formatterDateString(date as AnyObject) as NSString
             self.birthdayLabel.text = dateString as String
             //
@@ -67,7 +69,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
                  User_birth_month:Int(dateString.substring(with: NSRange.init(location: 5, length: 2))),
                  User_birth_day:Int(dateString.substring(with: NSRange.init(location: 8, length: 2))) as Any])
         }
-        self.view.addSubview(birthView)
+        self.view.addSubview(genderView)
     }
     func finishUpload(imageInfo: [String : Any], type: SystemPicType) {
         if type == .header {

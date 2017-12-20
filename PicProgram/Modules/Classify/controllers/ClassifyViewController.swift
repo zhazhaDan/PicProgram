@@ -26,6 +26,8 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
+        self.title = MRLanguage(forKey: "Category")
     }
     
     override func requestData() {
@@ -54,9 +56,9 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         if (self.customViews[selectedIndex] as! ClassifyCommonListView).dataSource.count > 0 {
             return
         }
-        network.requestData(.classify_get_art_home, params: nil, finishedCallback: { [weak self](result) in
+        network.requestData(.classify_get_scene_home, params: nil, finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
-                (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).dataSource = result["art_home_page"] as! Array<[String : Any]>
+                (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).dataSource = result["scene_home_page"] as! Array<[String : Any]>
                 (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).collecView.reloadData()
             }
         }, nil)
@@ -67,7 +69,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
             return
         }
         let path = Bundle.main.path(forResource: "EmotionList", ofType: "plist")
-        let data = NSArray.init(contentsOfFile: path!) as! Array<[String : String]>
+        let data = NSArray.init(contentsOfFile: path!) as! Array<[String : Any]>
         (self.customViews[1] as! EmotionView).dataSource = data
         (self.customViews[1] as! EmotionView).collecView.reloadData()
     }
@@ -127,6 +129,8 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         })
         self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { (tag) in
             print("去登录")
+            let vc = PlayViewController.player
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         self.title = MRLanguage(forKey: "Category")
     }

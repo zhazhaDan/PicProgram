@@ -13,12 +13,18 @@ private let cellReuseIdentifier = "CellReuseIdentifier"
 class SettingViewController: BaseViewController ,UITableViewDelegate,UITableViewDataSource{
     var dataSource:[String] = [MRLanguage(forKey: "About Us"),MRLanguage(forKey: "FeedBack"),MRLanguage(forKey: "Current Version"),MRLanguage(forKey: "Language"),MRLanguage(forKey: "Cache"),MRLanguage(forKey: "Account Security")]
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.separatorInset = UIEdgeInsetsMake(0, SCREEN_WIDTH, 0, 0 )
         self.title = MRLanguage(forKey: "Mine Setting")
+        if UserInfo.user.checkUserLogin() {
+            loginButton.setTitle(MRLanguage(forKey: "Sign Out"), for: .normal)
+        }else {
+            loginButton.setTitle(MRLanguage(forKey: "Sign In"), for: .normal)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -30,12 +36,25 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
     
     @IBAction func logoutAction(_ sender: Any) {
     
+        if UserInfo.user.checkUserLogin() {
+            logout()
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+        }
+        
+    }
+    func logout() {
         let alert = BaseAlertController.init("", message: MRLanguage(forKey: "Are you sure to sign out?"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
             if tag == 0 {
                 network.requestData(.user_logout, params: nil, finishedCallback: { (result) in
                     if result["ret"] as! Int == 0 {
                         UserInfo.user.localLogout()
                         self.navigationController?.popViewController(animated: true)
+                        // mineView更新
+                        let vc = MineViewController.init(nibName: "MineViewController", bundle: Bundle.main)
+                        self.navigationController?.viewControllers[0] = vc
                     }else {
                         HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
                     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let historyPaintName = "我的历史浏览"
+let HistoryPaintName = "我的历史浏览"
 
 class PictureDetailViewController: BaseViewController {
 
@@ -45,7 +45,7 @@ class PictureDetailViewController: BaseViewController {
     }
     
     func fetchHistoryPaint() {
-        let paint = Paint.fetchPaint(key: .name, value: historyPaintName, create: true, painttype: 3)
+        let paint = Paint.fetchPaint(key: .name, value: HistoryPaintName, create: true, painttype: 3)
         let picture = Picture.fetchPicture(forPicId: Int64(model.picture_id))
         if (paint?.pics?.contains(picture))! {
             paint?.removeFromPics(picture!)

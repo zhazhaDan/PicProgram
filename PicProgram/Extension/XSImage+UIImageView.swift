@@ -24,7 +24,7 @@ enum XSImageSize:Int{
 
 extension UIImageView {
     func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white"){
-        self.backgroundColor = xsColor_placeholder_grey
+        self.backgroundColor = xsColor_main_background
         self.contentMode = .scaleAspectFit
         var url = "\(imageUrl)_\(imageSize.rawValue)"
 //        if imageSize == .image_0 {
@@ -42,7 +42,7 @@ extension UIImageView {
 
 
 extension UIButton {
-    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal, _ backgroundColor:UIColor = xsColor_placeholder_grey){
+    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal, _ backgroundColor:UIColor = xsColor_main_background){
         self.backgroundColor = backgroundColor
         self.kf.setImage(with: URL.init(string: imageUrl), for: state, placeholder: UIImage.init(named: placeholderImage), options: [.transition(.fade(1))], progressBlock: { (receivedSize, totalSize) in
             

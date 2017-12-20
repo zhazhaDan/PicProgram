@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 private let headerReuseIdentifier = "ClassifyEmotionCollectionReusableView"
 
-class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate,CustomViewProtocol {
+class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,CustomViewProtocol {
     @IBOutlet weak var emotionLabel: UILabel!
     @IBOutlet weak var emotionImageView: UIImageView!
     @IBOutlet weak var classTitleButton: UIButton!
@@ -57,8 +57,8 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     }
     
     override func requestData() {
-        let paint_id = dataSource[selectedIndex]["paint_id"]
-        network.requestData(.paint_info, params: ["paint_id":2], finishedCallback: { [weak self](result) in
+        let paint_id = dataSource[selectedIndex]["id"]
+        network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
                 self?.collectionView?.reloadData()

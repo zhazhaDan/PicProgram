@@ -45,7 +45,7 @@ public final class HUD {
     public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
         PKHUD.sharedHUD.contentView = contentView(content)
         switch content {
-        case let .labeledProgress(_, subtitle):
+        case let .rotatingImage(image):
             PKHUD.sharedHUD.contentView.backgroundColor = UIColor.clear
         default:
             PKHUD.sharedHUD.contentView.backgroundColor = xsColor("000000", alpha: 0.8)

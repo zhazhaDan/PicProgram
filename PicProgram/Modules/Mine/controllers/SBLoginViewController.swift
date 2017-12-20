@@ -8,25 +8,41 @@
 
 import UIKit
 
-class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
+class SBLoginViewController: BaseViewController {
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passTextfield: UITextField!
     @IBOutlet weak var label: UILabel!
     @IBOutlet var mainScrollView: UIScrollView!
-    @IBAction func loginAction(_ sender: Any) {
+    var userModel:UserModel = UserModel()
+    @IBAction func loginAction(_ sender: UIButton) {
+        updateButtonStatus(sender: sender)
         requestData()
     }
-    @IBAction func registAction(_ sender: Any) {
+    @IBAction func registAction(_ sender: UIButton) {
         let registVC = RegisterViewController.init(nibName: "RegisterViewController", bundle: Bundle.main)
+        registVC.userModel = self.userModel
         self.navigationController?.pushViewController(registVC, animated: true)
+        updateButtonStatus(sender: sender)
     }
     
-    @IBAction func holdRegistAction(_ sender: Any) {
+    @IBAction func holdRegistAction(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+        updateButtonStatus(sender: sender)
     }
     
-    @IBAction func thirdLoginAction(_ sender: Any) {
+    @IBAction func thirdLoginAction(_ sender: UIButton) {
+    }
+    
+    func updateButtonStatus(sender:UIButton) {
+        for i in 0 ..< 3 {
+            let btn = self.view.viewWithTag(10+i) as! UIButton
+            if btn == sender {
+                btn.isSelected = true
+            }else {
+                btn.isSelected = false
+            }
+        }
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -37,6 +53,8 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
     
     @IBAction func forgetPassAction(_ sender: Any) {
         let forgetVC = FindPassViewController.init(nibName: "FindPassViewController", bundle: Bundle.main)
+        forgetVC.userModel = self.userModel
+        forgetVC.title = MRLanguage(forKey: "Find Password")
         self.navigationController?.pushViewController(forgetVC, animated: true)
     }
     
@@ -58,8 +76,8 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
     @IBAction func tapRegistKeyboardAction(_ sender: Any) {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         mainScrollView.contentSize = CGSize.init(width: mainScrollView.width, height: label.bottom + 44)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
@@ -75,6 +93,7 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
                 HUDTool.show(.text, text: "登录成功", delay: 0.6, view: (self?.view)!, complete: nil)
                 UserInfo.user.setValuesForKeys(result)
                 UserInfo.user.updateUserInfo()
+                UserInfo.user.updateIgetuiClient(clientId: UserInfo.user.client_id!)
 //                self?.navigationController?.popToRootViewController(animated: true)
                 self?.dismiss(animated: true, completion: nil)
             }else {

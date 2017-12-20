@@ -11,7 +11,7 @@ import UIKit
 let User_uin = "uin"
 let User_token = "token"
 let User_head_url:String     =   "head_url"
-let User_background      =   "background"
+let User_background          =   "background"
 let User_nick_name           =   "nick_name"
 let User_gender              =   "gender"
 let User_birth_year          =   "birth_year"
@@ -20,7 +20,7 @@ let User_birth_day           =   "birth_day"
 let User_region              =   "region"
 let User_personal_profile    =   "personal_profile"
 let User_client_id           =   "client_id"
-
+let User_showedLetter        =   "showedLetter"
 class UserInfo: UserModel {
 
     //单例
@@ -97,4 +97,18 @@ class UserInfo: UserModel {
     @objc var region:String = ""
     @objc var personal_profile:String = ""
     @objc var email_verified:String = ""
+    @objc var letterStatus: Int {//0 默认状态   1 每次启动APP展示   2  不在显示
+        get{
+            return UserDefaults.standard.value(forKey: User_showedLetter) != nil ? (UserDefaults.standard.value(forKey: User_showedLetter) as! Int) : 0
+        }
+    }
+    @objc var client_id:String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: User_client_id)
+        }
+        get {
+            return UserDefaults.standard.value(forKey: User_client_id) as? String
+        }
+    }
+
 }

@@ -37,8 +37,9 @@ class BannerView: BaseView,UIScrollViewDelegate {
     weak open var delegate:BannerViewProtocol?
     weak open var show_delegate:BannerViewProtocol?
     var auto:Bool = false
+    var isBannerAuto:Bool = true
     var scrollView:UIScrollView?
-    init(frame: CGRect,_ isHidenPageControl:Bool = false) {
+    init(frame: CGRect,_ isHidenPageControl:Bool = false,_ auto:Bool = true) {
         super.init(frame: frame)
         self.buildUI()
         self.isHidenPageControl = isHidenPageControl
@@ -101,7 +102,9 @@ class BannerView: BaseView,UIScrollViewDelegate {
             scrollView?.delegate = self
             pageControl.numberOfPages = images.count
             reloadImages()
-            initTimer()
+            if isBannerAuto == true {
+                initTimer()
+            }
         }else {
             pageControl.numberOfPages = 0
             scrollView?.delegate = nil
@@ -186,7 +189,9 @@ class BannerView: BaseView,UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        initTimer()
+        if isBannerAuto == true {
+            initTimer()
+        }
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {

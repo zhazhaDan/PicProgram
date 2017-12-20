@@ -145,6 +145,8 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
                 header.delegate = self
             if title == "最热搜索" {
                 header.clearButton.isHidden = true
+            }else {
+                header.clearButton.isHidden = false
             }
             return header
 

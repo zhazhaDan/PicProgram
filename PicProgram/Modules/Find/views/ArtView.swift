@@ -23,6 +23,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     var view1:UIView!
     var view2:UIView!
     var view1MaskLayer:CAGradientLayer!
+    var view2MaskLayer:CAGradientLayer!
     var headerView:UIView!
     var pioneerModel:PioneerModel {
         set {
@@ -42,12 +43,12 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     }
 
     override func buildUI() {
-        bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: self.width - 24, height: 168),true)
+        bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: self.width - 24, height: 168),true,false)
         bannerView.layer.cornerRadius = 8
         bannerView.layer.masksToBounds = true
         
         readTableView = UITableView.init(frame: self.bounds, style:.grouped)
-        readTableView.height -= TabbarHeight
+//        readTableView.height -= TabbarHeight
         readTableView.backgroundColor = xsColor_main_white
         readTableView.delegate = self
         readTableView.dataSource = self
@@ -119,6 +120,11 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         view1MaskLayer.opacity = 0
         cell.layer.addSublayer(view1MaskLayer)
         
+        view2MaskLayer = CAGradientLayer()
+        view2MaskLayer.frame = cell2.bounds
+        view2MaskLayer.colors = [UIColor.black.cgColor,UIColor.clear.cgColor]
+        view2MaskLayer.opacity = 0
+        cell2.layer.addSublayer(view2MaskLayer)
         
         self.readTableView.tableHeaderView = headerView
     }
@@ -130,11 +136,13 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         let angle = scrollView.contentOffset.y * CGFloat.pi / SCREEN_HEIGHT
         print(angle)
         self.view1MaskLayer.opacity = Float(angle / 1.5)
+        self.view2MaskLayer.opacity = Float(angle / 1.5)
         if angle >= CGFloat.pi/2  {
-            view1.isHidden = true
-            view2.isHidden = true
-            headerView.height = 180
-            self.readTableView.tableHeaderView = headerView
+//            view1.isHidden = true
+//            view2.isHidden = true
+//            headerView.height = 180
+//            self.readTableView.tableHeaderView = headerView
+            return
         }
         var transform = CATransform3DIdentity
         transform.m34 = -1/300.0
@@ -143,8 +151,22 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         var transform2 = CATransform3DIdentity
         transform2.m34 = -1/300.0
         view2.layer.transform = CATransform3DRotate(transform2, angle, 1, 0, 0)
+//        let space = 12*(CGFloat(angle / 1.5) + 1)
+//        cell.frame = CGRect.init(x: space, y: 0, width: headerView.width - space * 2, height: cell.height)
+//        cell2.frame = CGRect.init(x: space, y: -cell.height/2, width: headerView.width - space * 2, height: cell.height)
     }
     
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if scrollView.contentOffset.y <= headerView.height - 80 {
+//            scrollView.setContentOffset(CGPoint.zero, animated: true)
+//        }
+//    }
+//
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        if scrollView.contentOffset.y <= headerView.height - 80 {
+//            scrollView.setContentOffset(CGPoint.zero, animated: true)
+//        }
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -243,17 +265,15 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     func praiseBigStar() {
         network.requestData(.discovery_mqlove, params: ["mq_id":pioneerModel.master_quote.mq_id], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
-                let cell = self?.readTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! ArtMasterSayTableViewCell
-                if cell.praiseButton.isSelected == true {
+                if self?.cell2.praiseButton.isSelected == true {
                     self?.pioneerModel.master_quote.mq_love_num = (self?.pioneerModel.master_quote.mq_love_num)! - 1
-                    cell.sayNumLabel.text = "\((self?.pioneerModel.master_quote.mq_love_num)!)"
+                    self?.cell2.sayNumLabel.text = "\((self?.pioneerModel.master_quote.mq_love_num)!)"
                 }else {
                     self?.pioneerModel.master_quote.mq_love_num = (self?.pioneerModel.master_quote.mq_love_num)! + 1
-                    cell.sayNumLabel.text = "\((self?.pioneerModel.master_quote.mq_love_num)!)"
+                    self?.cell2.sayNumLabel.text = "\((self?.pioneerModel.master_quote.mq_love_num)!)"
                 }
-                cell.praiseButton.isSelected = !cell.praiseButton.isSelected
-                self?.bigAnimate(view: cell.praiseButton)
-                print(cell.praiseButton.isSelected)
+                self?.cell2.praiseButton.isSelected = !(self?.cell2.praiseButton.isSelected)!
+                self?.bigAnimate(view: (self?.cell2.praiseButton)!)
             }
         }, nil)
     }

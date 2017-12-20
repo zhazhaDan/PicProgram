@@ -11,7 +11,7 @@ import CoreData
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
-class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,PlayMoreProtocol,CollectPaintsListProtocol,UIGestureRecognizerDelegate,AddEmotionProtocol {
+class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,PlayMoreProtocol,CollectPaintsListProtocol,AddEmotionProtocol {
 
     var currentIndex:NSInteger = 0
     var dragStartX:CGFloat = 0
@@ -80,9 +80,14 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        if dataSource.count == 0 {
+            let paint = Paint.fetchPaint(key: .name, value: HistoryPaintName, create: false, painttype: 3)
+            dataSource = (paint?.pictureModels)!
+        }
         if dataSource.count > 0 {
             collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
         }
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     //单例
@@ -240,10 +245,10 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         
     }
     
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if (gestureRecognizer.view?.isKind(of: AddEmotionView.self))! {
             return false
         }
-        return true
+        return super.gestureRecognizerShouldBegin(gestureRecognizer)
     }
 }

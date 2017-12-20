@@ -14,7 +14,7 @@ import UIKit
     @objc optional func seeMoreReaders()
     @objc optional func praiseBigStar()
     @objc optional func shareBigStar()
-    @objc optional func viewDidSelected(view:ItemView,paint_id:Int)
+    @objc optional func viewDidSelected(view:ItemView,paint_id:Int64)
     @objc optional func listView(view:UIView,didSelected atIndex:Int)
 }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="64" width="375" height="27"/>
                     <subviews>
                         <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwZ-xN-Jm2">
-                            <rect key="frame" x="25" y="3" width="70" height="20"/>
+                            <rect key="frame" x="25" y="3" width="62" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="我的画单">
                                 <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -40,10 +40,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3I-a5-JHF">
-                            <rect key="frame" x="152" y="3" width="70" height="20"/>
+                            <rect key="frame" x="156" y="3" width="62" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="3E0-Xz-Go6"/>
-                                <constraint firstAttribute="width" constant="70" id="I0X-M3-BWU"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="最近浏览">
@@ -57,7 +56,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHN-tf-Zc7">
-                            <rect key="frame" x="280" y="3" width="70" height="20"/>
+                            <rect key="frame" x="288" y="3" width="62" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="收藏画单">
                                 <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -70,7 +69,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynv-f9-n2I" userLabel="选中View">
-                            <rect key="frame" x="25" y="25" width="70" height="2"/>
+                            <rect key="frame" x="25" y="25" width="62" height="2"/>
                             <color key="backgroundColor" red="0.1426818967" green="0.29433876279999999" blue="0.56016951800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="SgZ-i6-N0g"/>
@@ -84,6 +83,7 @@
                         <constraint firstItem="iHN-tf-Zc7" firstAttribute="height" secondItem="s3I-a5-JHF" secondAttribute="height" id="EHt-Qi-c6Q"/>
                         <constraint firstItem="iHN-tf-Zc7" firstAttribute="width" secondItem="s3I-a5-JHF" secondAttribute="width" id="F5d-fy-loM"/>
                         <constraint firstItem="SwZ-xN-Jm2" firstAttribute="height" secondItem="s3I-a5-JHF" secondAttribute="height" id="GHK-Vc-93b"/>
+                        <constraint firstItem="iHN-tf-Zc7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fEy-6x-Ej3" secondAttribute="leading" constant="20" symbolic="YES" id="Kxz-Av-Avf"/>
                         <constraint firstItem="s3I-a5-JHF" firstAttribute="centerX" secondItem="fEy-6x-Ej3" secondAttribute="centerX" id="M8x-pA-mhq"/>
                         <constraint firstItem="ynv-f9-n2I" firstAttribute="width" secondItem="SwZ-xN-Jm2" secondAttribute="width" id="OsE-cc-0hf"/>
                         <constraint firstAttribute="trailing" secondItem="iHN-tf-Zc7" secondAttribute="trailing" constant="25" id="TYP-Yd-FcH"/>
