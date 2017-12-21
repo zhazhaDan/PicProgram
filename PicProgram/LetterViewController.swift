@@ -15,6 +15,7 @@ class LetterViewController: BaseViewController {
     var imageView:UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        animate1()
 
         // Do any additional setup after loading the view.
     }
@@ -28,12 +29,14 @@ class LetterViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animate1()
+        imageView.startAnimating()
+        self.perform(#selector(self.stopBuildUI), with: nil, afterDelay: time1+time2+time3+0.5, inModes: [RunLoopMode.commonModes,RunLoopMode.UITrackingRunLoopMode])
 
 //        self.perform(#selector(self.stopAnimate), with: nil, afterDelay: time1, inModes: [RunLoopMode.commonModes,RunLoopMode.UITrackingRunLoopMode])
 //        self.perform(#selector(self.animate2), with: nil, afterDelay: time1, inModes: [RunLoopMode.commonModes,RunLoopMode.UITrackingRunLoopMode])
 
     }
+    
     
 //    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        if isShow == true {
@@ -58,8 +61,6 @@ class LetterViewController: BaseViewController {
         imageView.animationRepeatCount = 1
         imageView.animationImages = images
         imageView.image = images.last
-        imageView.startAnimating()
-        self.perform(#selector(self.stopBuildUI), with: nil, afterDelay: time1+time2+time3+0.5, inModes: [RunLoopMode.commonModes,RunLoopMode.UITrackingRunLoopMode])
 
     }
     

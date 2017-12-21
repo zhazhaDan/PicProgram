@@ -32,9 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if isDone == true {
             return
         }
-        self.window?.makeKeyAndVisible()
-        self.gifWindow = nil
-        isDone = true
+        UIView.animate(withDuration: 0.5, animations: {
+            self.gifWindow?.alpha = 0.2
+        }) { (finished) in
+            if finished == true {
+                self.window?.makeKeyAndVisible()
+//                self.gifWindow = nil
+                self.isDone = true
+            }
+        }
+        
     }
     
     func changeLanguage() {

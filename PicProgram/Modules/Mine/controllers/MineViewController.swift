@@ -22,6 +22,11 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        if UserInfo.user.checkUserLogin() == false && appDelegate.isLetterShowed == false && UserInfo.user.letterStatus == 0 {
+            appDelegate.isLetterShowed = true
+            let vc = LetterViewController()
+            self.present(vc, animated: true, completion: nil)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -39,11 +44,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserInfo.user.checkUserLogin() == false && appDelegate.isLetterShowed == false && UserInfo.user.letterStatus == 0 {
-            appDelegate.isLetterShowed = true
-            let vc = LetterViewController()
-            self.present(vc, animated: true, completion: nil)
-        }
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         if UserInfo.user.checkUserLogin() {
             self.requestData()
@@ -252,8 +253,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                     if result["ret"] as! Int == 0{
                         HUDTool.show(.text, text: "设备移除成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
                         bindUserView.removeFromSuperview()
-                        let backView = self.view.viewWithTag(100)
-                        backView?.removeFromSuperview()
+                        self.tapRegistAction()
                         self.getUserBindDevices()
                     }else {
                         HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)

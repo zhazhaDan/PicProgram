@@ -41,7 +41,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
     
     override func buildUI() {
         self.customNavigationView()
-        view1 = PaintFrameListView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: self.view.height - segButtonsHeightConstrain.constant))
+        view1 = PaintFrameListView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - segButtonsHeightConstrain.constant - TabbarHeight - NavigationBarBottom))
         view1.delegate = self
         self.contentScrollView.addSubview(view1)
         

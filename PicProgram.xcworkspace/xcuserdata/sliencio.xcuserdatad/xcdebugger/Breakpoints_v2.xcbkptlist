@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535402255.889432"
+            timestampString = "535478021.285661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "deviceManageSelected()"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "settingDidSelected()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535402255.889526"
+            timestampString = "535478021.285732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "buildUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -212,7 +212,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/views/WifiSettingView.swift"
-            timestampString = "535402255.889733"
+            timestampString = "535478021.286006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -276,7 +276,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/views/WifiSettingView.swift"
-            timestampString = "535402255.889792"
+            timestampString = "535478021.286096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535402255.889832"
+            timestampString = "535478021.286142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "headerDidSelected()"
             landmarkType = "7">
          </BreakpointContent>
@@ -308,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535402255.88987"
+            timestampString = "535478021.286185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "playAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -324,12 +324,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535402255.889906"
+            timestampString = "535478021.286226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "denyBindDevice(view:deviceIndex:)"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "listDidSelected(view:at:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -340,12 +340,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535402255.889942"
+            timestampString = "535478021.286266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "denyBindDevice(view:deviceIndex:)"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "listDidSelected(view:at:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -436,7 +436,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Find/views/ArtView.swift"
-            timestampString = "535402255.890051"
+            timestampString = "535478021.286387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -452,7 +452,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Find/views/ArtView.swift"
-            timestampString = "535402255.890091"
+            timestampString = "535478021.286435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -484,12 +484,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Find/views/ArtView.swift"
-            timestampString = "535402255.890144"
+            timestampString = "535478021.286496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkName = "buildBigStarSayUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

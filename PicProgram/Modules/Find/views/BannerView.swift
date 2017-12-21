@@ -41,6 +41,7 @@ class BannerView: BaseView,UIScrollViewDelegate {
     var scrollView:UIScrollView?
     init(frame: CGRect,_ isHidenPageControl:Bool = false,_ auto:Bool = true) {
         super.init(frame: frame)
+        isBannerAuto = auto
         self.buildUI()
         self.isHidenPageControl = isHidenPageControl
         self.pageControl.isHidden = isHidenPageControl
@@ -185,7 +186,9 @@ class BannerView: BaseView,UIScrollViewDelegate {
     
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        timer.invalidate()
+        if isBannerAuto == true {
+            timer.invalidate()
+        }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
