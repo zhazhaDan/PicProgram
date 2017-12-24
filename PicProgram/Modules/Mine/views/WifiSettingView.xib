@@ -72,7 +72,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="BhB-DG-ypj"/>
                             </constraints>
-                            <state key="normal" title="连接WiFi" backgroundImage="00dengluzhuce_denglu_dianjianniu">
+                            <state key="normal" title="生成二维码" backgroundImage="00dengluzhuce_denglu_dianjianniu">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -183,7 +183,7 @@
     </objects>
     <resources>
         <image name="00dengluzhuce_denglu_dianjianniu" width="291" height="32"/>
-        <image name="fanhui" width="11" height="18"/>
+        <image name="fanhui" width="10" height="17"/>
         <image name="icons8-checkmark" width="17" height="12"/>
     </resources>
 </document>

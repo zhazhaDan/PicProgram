@@ -20,6 +20,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     var isFold:Bool = false
     var cell:ArtMasterSayTableViewCell!
     var cell2:ArtMasterSayTableViewCell!
+    var bigStarSayBackView:UIView!
     var view1:UIView!
     var view2:UIView!
     var view1MaskLayer:CAGradientLayer!
@@ -43,10 +44,11 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     }
 
     override func buildUI() {
+        let bannerBackView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 180))
+        bannerBackView.backgroundColor = xsColor_main_white
         bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: self.width - 24, height: 168),true,false)
         bannerView.layer.cornerRadius = 8
         bannerView.layer.masksToBounds = true
-        
         readTableView = UITableView.init(frame: self.bounds, style:.grouped)
 //        readTableView.height -= TabbarHeight
         readTableView.backgroundColor = xsColor_main_white
@@ -58,6 +60,12 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         self.readTableView.register(UINib.init(nibName: "ArtHeaderView", bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: "header")
         self.readTableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "footer")
         self.addSubview(self.readTableView)
+        bigStarSayBackView = UIView.init(frame: CGRect.init(x: 0, y: 180, width: SCREEN_WIDTH, height: 230))
+        self.addSubview(bigStarSayBackView)
+
+        bannerBackView.addSubview(bannerView)
+        self.addSubview(bannerBackView)
+
     }
     
     
@@ -67,14 +75,14 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 410))
         
         headerView.clipsToBounds = true
-        headerView.addSubview(bannerView)
-        
-        let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 180, width: headerView.width, height: 40))
+//        headerView.addSubview(bannerView)
+
+        let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: headerView.width, height: 40))
         titleLabel.textColor = xsColor_main_yellow
         titleLabel.font = xsFont(12)
         titleLabel.text = "大咖说"
         titleLabel.textAlignment = .center
-        headerView.addSubview(titleLabel)
+        bigStarSayBackView.addSubview(titleLabel)
         
         view1 = UIView.init(frame: CGRect.init(x: 0, y: titleLabel.bottom, width: headerView.width, height: 190))
         view1.clipsToBounds = true
@@ -89,7 +97,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         cell.dateLabel.text = date.getUpperDate()
         cell.praiseButton.isSelected = (pioneerModel.master_quote.flag == 1 ? true : false)
         view1.addSubview(cell)
-        headerView.addSubview(view1)
+        bigStarSayBackView.addSubview(view1)
         view2 = UIView.init(frame: CGRect.init(x: 0, y: titleLabel.bottom, width: headerView.width, height: 190))
         view2.clipsToBounds = true
         cell2 = Bundle.main.loadNibNamed("ArtMasterSayTableViewCell", owner: self, options: nil)?.first as! ArtMasterSayTableViewCell
@@ -103,8 +111,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         cell2.praiseButton.isSelected = (pioneerModel.master_quote.flag == 1 ? true : false)
         cell2.layer.masksToBounds = true
         view2.addSubview(cell2)
-        headerView.addSubview(view2)
-        
+        bigStarSayBackView.addSubview(view2)
         
         view1.layer.contentsRect = CGRect.init(x: 0, y: 0, width: 1, height: 0.5)
         view2.layer.contentsRect = CGRect.init(x: 0, y: 0.5, width: 1, height: 0.5)
@@ -133,7 +140,8 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         if view1.isHidden == true || scrollView.contentOffset.y < 0 {
             return
         }
-        let angle = scrollView.contentOffset.y * CGFloat.pi / SCREEN_HEIGHT
+        bigStarSayBackView.bottom = readTableView.contentOffset.y + 180
+        let angle = scrollView.contentOffset.y * CGFloat.pi / bigStarSayBackView.height
         print(angle)
         self.view1MaskLayer.opacity = Float(angle / 1.5)
         self.view2MaskLayer.opacity = Float(angle / 1.5)

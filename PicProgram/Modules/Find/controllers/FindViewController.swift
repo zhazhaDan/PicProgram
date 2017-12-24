@@ -35,6 +35,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             if self.pioneerModel == nil {
                 requestData()
             }
+            artView.readTableView.setContentOffset(CGPoint.zero, animated: true)
         }else if sender.tag == 10 {
             sender.isSelected = true
             let btn:UIButton = self.view.viewWithTag(11) as! UIButton
@@ -151,14 +152,12 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     }
     
     func seeMoreNews() {
-        let layout = UICollectionViewFlowLayout.init()
         let controller = RecommandListCollectionViewController()
         controller.title = "最新"
         controller.type = 1
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func seeMoreHots() {
-        let layout = UICollectionViewFlowLayout.init()
         let controller = RecommandListCollectionViewController()
         controller.title = "最热"
         controller.type = 2

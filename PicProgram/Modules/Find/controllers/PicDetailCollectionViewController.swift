@@ -146,8 +146,14 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             header.eyeNumLabel.text = "\(paintModel.read_num)"
             header.totalNumLabel.text = "\(paintModel.picture_num)张"
             header.contentLabel.text = paintModel.paint_detail
-            header.collectButton.isSelected = (paintModel.flag == 1 ? true : false)
             header.titleLabel.text = self.title
+            if paint_id != 0 {
+                header.collectButton.isEnabled = true
+                header.collectButton.isSelected = (paintModel.flag == 1 ? true : false)
+            }else {
+                header.collectButton.isEnabled = false
+                header.collectButton.isSelected = true
+            }
 //            }
             return header
         }

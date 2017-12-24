@@ -91,7 +91,7 @@ class TodayRecommandView: BaseScrollView {
             let newView = Bundle.main.loadNibNamed("ItemView", owner: nil, options: nil)?.first as! ItemView
             newView.frame =  CGRect.init(x: (bannerView.width - 5)/2 * CGFloat(i) + 5 * CGFloat(i), y: 0, width: (bannerView.width - 5)/2, height: self.newListView.height)
             newView.delegate = cDelegate
-            newView.tag = 10 + i
+            newView.tag = 100 + i
             newView.model = newItem
             newListView.addSubview(newView)
             
@@ -99,7 +99,7 @@ class TodayRecommandView: BaseScrollView {
             let hotView = Bundle.main.loadNibNamed("ItemView", owner: nil, options: nil)?.first as! ItemView
             hotView.frame =  CGRect.init(x: (bannerView.width - 5)/2 * CGFloat(i) + 5 * CGFloat(i), y: 0, width: (bannerView.width - 5)/2, height: self.newListView.height)
             hotView.delegate = cDelegate
-            hotView.tag = 20 + i
+            hotView.tag = 200 + i
             hotView.model = hotItem
             hotListView.addSubview(hotView)
 

@@ -50,7 +50,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
         genderView.type = .gender
         genderView.buildUI(type: .gender) { (gender) in
             self.genderLabel.text = (gender as! String)
-            let genderTitles = ["男","女","其他"]
+            let genderTitles = ["男","女","保密"]
             self.updateUserInfo(params: [User_gender:genderTitles.index(of: gender as! String) as Any])
 
         }

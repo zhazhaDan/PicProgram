@@ -58,7 +58,7 @@
 并将墨染画框中的二维码放入框内
 即可自动扫描</string>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" red="0.16886612772941589" green="0.37233281135559082" blue="0.59921276569366455" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>

@@ -124,7 +124,8 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
     func emotionChoosed(emotionView: AddEmotionView, sender: UIButton, emotionIndex index: Int) {
         self.emotionButton.setImage(sender.image(for: .normal), for: .normal)
         self.emotionButton.setTitle(sender.title(for: .normal), for: .normal)
-
+        let btn = self.view.viewWithTag(10+2) as! UIButton
+        self.bottomSegChooseAction(btn)
     }
     
 //    //为了解决tableivew didselect和tableivew.superview添加手势之后的冲突

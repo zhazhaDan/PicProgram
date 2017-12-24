@@ -36,7 +36,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     let papers:[String] = ["tips_bianqiancaizhi","tips_youhuabucaizhi","tips_keyincaizhi"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.currentImageView.xs_setImage(picModel.picture_url)
+        self.currentImageView.xs_setImage(picModel.detail_url)
         self.title = "便签"
         // Do any additional setup after loading the view.
     }
@@ -52,7 +52,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         self.tipsMaterialsButton.titleLabel?.numberOfLines = 9
     }
     override func requestData() {
-        network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex,"flag":(switchSender.isOn == true ? 2 : 1)], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex,"flag":(switchSender.isOn == true ? 1 : 2)], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: "Tips设置成功", delay: 0.8, view: (self?.view)!, complete: nil)
             }
@@ -71,11 +71,13 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
     @IBAction func switchValueChanged(_ sender: UISwitch) {
-        if sender.isOn == false {
+        if sender.isOn == true {
             self.switchSender.onTintColor = xsColor_main_white
             self.switchShowLabel.text = "显示到画框端"
+            self.tipsMaterialsButton.alpha = 1
         }else {
             self.switchSender.onTintColor = xsColor_main_blue
+            self.tipsMaterialsButton.alpha = 0.5
             self.switchShowLabel.text = "不显示到画框端"
         }
     }
@@ -85,12 +87,12 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
             return
         }
         let touch = touches.first
-        if self.localIcon.frame.contains((touch?.location(in: self.locateView))!) {
+//        if self.localIcon.frame.contains((touch?.location(in: self.locateView))!) {
             self.lastLocate = (touch?.location(in: self.locateView))!
             self.isLocalViewChoosed = true
             self.tipsMaterialsButton.isHidden = true
             self.textView.isHidden = true
-        }
+//        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -108,7 +110,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         if self.locateView.isHidden == true {
             return
         }
-        self.locateChooseStatusView.isHidden = true
+//        self.locateChooseStatusView.isHidden = true
         self.isLocalViewChoosed = false
         self.tipsMaterialsButton.isHidden = false
         self.textView.isHidden = false
@@ -121,7 +123,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         }
         self.localIcon.center = self.tipsMaterialsButton.frame.origin
         self.isLocalViewChoosed = false
-        self.locateChooseStatusView.isHidden = true
+//        self.locateChooseStatusView.isHidden = true
         self.textView.isHidden = false
     }
     
@@ -158,9 +160,11 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
                     if finished == true && i == 1 {
                         self.materialBackView.isHidden = true
                         self.locateView.isHidden = false
+                         self.locateChooseStatusView.isHidden = false
                     }else if finished == true && i == 0 {
                         self.materialBackView.isHidden = false
                         self.locateView.isHidden = true
+                         self.locateChooseStatusView.isHidden = true
                     }
                 })
             }else {

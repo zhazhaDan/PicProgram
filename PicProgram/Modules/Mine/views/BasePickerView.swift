@@ -16,7 +16,7 @@ enum PickerType {
 class BasePickerView: BaseView,UIPickerViewDelegate,UIPickerViewDataSource {
 
     var type:PickerType = PickerType.gender
-    private let genderTitles = ["男","女","其他"]
+    private let genderTitles = ["男","女","保密"]
     private var gender:String!
     private var birthday:Date!
     var finishChoose : ((_ result:Any)->())?
