@@ -40,7 +40,9 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
         super.viewDidLoad()
         self.title = "编辑画单信息"
         self.titleTextField.text = self.paintModel.paint_title
-        self.picImageView.xs_setImage(self.paintModel.title_url!)
+        if self.paintModel.title_url != nil && self.paintModel.title_url?.count as! Int  > 0 {
+            self.picImageView.xs_setImage(self.paintModel.title_url!)
+        }
         // Do any additional setup after loading the view.
     }
 

@@ -119,6 +119,7 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
             sheet.addAction(session)
             sheet.addAction(timeline)
             sheet.addAction(cancel)
+            self.present(sheet, animated: true, completion: nil)
         case 1:
             ShareThirdAppTool.share.title = "我在享+发现了一个有趣的共享头等舱,一起来看看"
             ShareThirdAppTool.share.desc = "去看看"

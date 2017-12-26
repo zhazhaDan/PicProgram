@@ -73,11 +73,11 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     }
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         if sender.isOn == true {
-            self.switchSender.onTintColor = xsColor_main_white
+            self.switchSender.onTintColor = xsColor_main_blue
             self.switchShowLabel.text = "显示到画框端"
             self.tipsMaterialsButton.alpha = 1
         }else {
-            self.switchSender.onTintColor = xsColor_main_blue
+            self.switchSender.onTintColor = xsColor_main_white
             self.tipsMaterialsButton.alpha = 0.5
             self.switchShowLabel.text = "不显示到画框端"
         }

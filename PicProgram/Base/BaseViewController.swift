@@ -36,6 +36,12 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        if self.navigationController != nil {
+            self.baseNavigationController?.addLeftNavigationBarItem {[weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            //            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        }
        
 }
     override func viewDidDisappear(_ animated: Bool) {

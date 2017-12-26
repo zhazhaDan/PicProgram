@@ -62,7 +62,7 @@ class TodayRecommandView: BaseScrollView {
         self.addSubview(bannerView)
         let header1 = FindHeaderView()
         header1.frame = CGRect.init(x: 12, y: bannerView.bottom + 13, width: bannerView.width, height: 40)
-        header1.titleLabel.text = "最新上传画单"
+        header1.titleLabel.text = "最新画单"
         header1.nextButton.addTarget(self, action: #selector(newMoreAction(_:)), for: .touchUpInside)
         header1.layoutIfNeeded()
         self.addSubview(header1)
@@ -71,7 +71,7 @@ class TodayRecommandView: BaseScrollView {
 
         let header2 = FindHeaderView()
         header2.frame = CGRect.init(x: 12, y: newListView.bottom + 13, width: bannerView.width, height: 40)
-        header2.titleLabel.text = "最热上传画单"
+        header2.titleLabel.text = "最热画单"
         header2.layoutIfNeeded()
         header2.nextButton.addTarget(self, action: #selector(hotMoreAction(_:)), for: .touchUpInside)
         self.addSubview(header2)

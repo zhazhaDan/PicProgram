@@ -151,7 +151,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
                 header.collectButton.isEnabled = true
                 header.collectButton.isSelected = (paintModel.flag == 1 ? true : false)
             }else {
-                header.collectButton.isEnabled = false
+                header.collectButton.isUserInteractionEnabled = false
                 header.collectButton.isSelected = true
             }
 //            }

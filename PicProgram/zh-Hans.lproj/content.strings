@@ -38,7 +38,7 @@
 "Device" = "设备";
 "Not connected to\nany device" = "暂未绑定设备";
 "Add Device" = "添加设备";
-"Wi-fi Setting" = "Wi-Fi配置";
+"Wi-fi Setting" = "生成二维码";
 "The scan was successful" = "扫描已成功";
 "The scan was unsuccessful" = "扫描未成功";
 "" = "确定移除设备?";
