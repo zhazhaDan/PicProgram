@@ -22,6 +22,7 @@
                 <outlet property="materialOrLocateChoosedView" destination="qiJ-1I-Ut6" id="MXd-SO-3lc"/>
                 <outlet property="switchSender" destination="r5Y-3Y-Qup" id="Yy6-ou-TsM"/>
                 <outlet property="switchShowLabel" destination="AIJ-bg-mwo" id="PEF-YB-p4v"/>
+                <outlet property="textNumberLabel" destination="Eoa-Ol-6me" id="BoV-3A-ndf"/>
                 <outlet property="textView" destination="X9e-09-bwJ" id="SLQ-J7-4zN"/>
                 <outlet property="tipsMaterialsButton" destination="VSY-io-nXb" id="eKq-cH-nkw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -86,7 +87,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-KN-Swe" userLabel="材质">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-gm-Zah" userLabel="当前背景图片">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-gm-Zah" userLabel="当前背景图片">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyx-Qe-x6g">
@@ -125,7 +126,7 @@
                                         <constraint firstAttribute="height" constant="200" id="qlj-zk-C35"/>
                                     </constraints>
                                     <attributedString key="attributedText">
-                                        <fragment content="老婆，祝你生日快乐老婆，祝你生日快乐老婆，祝你生日快乐老婆，祝你生日快乐老婆，祝你生日快乐老婆，祝你生日快乐老婆，祝你生日快乐">
+                                        <fragment content="点击此处请录入您的祝福哦">
                                             <attributes>
                                                 <color key="NSColor" red="0.26666867733001709" green="0.26666298508644104" blue="0.26666685938835144" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
@@ -138,6 +139,16 @@
                                         <outlet property="delegate" destination="-1" id="Fjj-NT-k6k"/>
                                     </connections>
                                 </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eoa-Ol-6me">
+                                    <rect key="frame" x="272" y="315.5" width="42" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="42" id="5hC-BV-X6H"/>
+                                        <constraint firstAttribute="height" constant="15" id="BEx-GC-9BS"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tips_yuhuan" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-Nn-Sct" userLabel="拖动位置图片">
                                     <rect key="frame" x="17" y="87" width="57" height="56"/>
                                     <gestureRecognizers/>
@@ -251,11 +262,13 @@
                                 <constraint firstItem="WTx-gm-Zah" firstAttribute="top" secondItem="yc0-KN-Swe" secondAttribute="top" id="0rl-QA-fEv"/>
                                 <constraint firstItem="AEW-dO-brk" firstAttribute="width" secondItem="WTx-gm-Zah" secondAttribute="width" id="3g9-lj-gzn"/>
                                 <constraint firstItem="WTx-gm-Zah" firstAttribute="trailing" secondItem="30K-o9-rUa" secondAttribute="trailing" id="4CO-2B-W9s"/>
+                                <constraint firstItem="Eoa-Ol-6me" firstAttribute="trailing" secondItem="X9e-09-bwJ" secondAttribute="trailing" id="50H-Xr-1q2"/>
                                 <constraint firstAttribute="bottom" secondItem="WTx-gm-Zah" secondAttribute="bottom" id="DSh-mV-WYq"/>
                                 <constraint firstItem="rnj-xQ-7EO" firstAttribute="width" secondItem="WTx-gm-Zah" secondAttribute="width" multiplier="0.5" id="EJc-Oo-TwI"/>
                                 <constraint firstAttribute="bottom" secondItem="30K-o9-rUa" secondAttribute="bottom" id="J1b-w4-Dj6"/>
                                 <constraint firstItem="AEW-dO-brk" firstAttribute="top" secondItem="yc0-KN-Swe" secondAttribute="top" id="KQB-wD-alB"/>
                                 <constraint firstItem="AEW-dO-brk" firstAttribute="height" secondItem="WTx-gm-Zah" secondAttribute="height" id="Mb7-Y1-fzE"/>
+                                <constraint firstItem="Eoa-Ol-6me" firstAttribute="bottom" secondItem="X9e-09-bwJ" secondAttribute="bottom" id="NCw-9J-QTv"/>
                                 <constraint firstItem="VSY-io-nXb" firstAttribute="top" secondItem="yc0-KN-Swe" secondAttribute="top" constant="115" id="OoK-iy-2hU"/>
                                 <constraint firstItem="AEW-dO-brk" firstAttribute="centerX" secondItem="WTx-gm-Zah" secondAttribute="centerX" id="PkX-Kk-kp0"/>
                                 <constraint firstItem="Oyx-Qe-x6g" firstAttribute="top" secondItem="WTx-gm-Zah" secondAttribute="top" constant="38" id="Tf8-5H-fHo"/>

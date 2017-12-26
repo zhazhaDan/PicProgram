@@ -22,7 +22,7 @@
                             <scrollView opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Ael-3J-CJl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="GvA-va-oyX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="GvA-va-oyX">
                                         <rect key="frame" x="76" y="10" width="223" height="177"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="223" id="4ws-9Y-8Re"/>
@@ -327,7 +327,7 @@
         <image name="Facebookdenglu" width="31" height="31"/>
         <image name="fanhui" width="10" height="17"/>
         <image name="icon" width="21" height="27"/>
-        <image name="logo" width="164" height="78"/>
+        <image name="login_logo" width="229" height="110"/>
         <image name="twitterdenglu" width="31" height="31"/>
         <image name="weibodenglu_icon" width="31" height="31"/>
         <image name="weixindenglu_icon" width="31" height="31"/>

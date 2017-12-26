@@ -40,7 +40,7 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate {
         message.mediaTagName="MyPic"
         //生成缩略图 
         UIGraphicsBeginImageContext(CGSize.init(width: 100, height: 100))
-        #imageLiteral(resourceName: "logo").draw(in: CGRect.init(x: 0, y: 0, width: 100, height: 100))
+        #imageLiteral(resourceName: "login_logo").draw(in: CGRect.init(x: 0, y: 0, width: 100, height: 100))
         let thumbImage=UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         message.thumbData=UIImagePNGRepresentation(thumbImage!)

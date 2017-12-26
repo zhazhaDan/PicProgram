@@ -13,7 +13,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
     var customViews:Array<BaseView> = Array()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = MRLanguage(forKey: "Category")
         // Do any additional setup after loading the view.
         requestData()
     }

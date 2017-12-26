@@ -33,19 +33,19 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neichen_changjing" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-Dm-4tL" userLabel="当前背景图片">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="641"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neichunkuang" translatesAutoresizingMaskIntoConstraints="NO" id="P0Y-HX-JEO" userLabel="图片框">
-                                    <rect key="frame" x="132.66666666666669" y="31" width="149.00000000000006" height="263"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neichunkuang" translatesAutoresizingMaskIntoConstraints="NO" id="P0Y-HX-JEO" userLabel="图片框">
+                                    <rect key="frame" x="124.66666666666669" y="27" width="165" height="281"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neichen_huazuo" translatesAutoresizingMaskIntoConstraints="NO" id="7uo-T2-VQv" userLabel="图片">
-                                    <rect key="frame" x="137.33333333333331" y="35" width="140.99999999999994" height="255"/>
+                                    <rect key="frame" x="133.33333333333331" y="35" width="148.99999999999994" height="265"/>
                                     <gestureRecognizers/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="141" id="DBV-ol-baH"/>
-                                        <constraint firstAttribute="height" constant="255" id="OWu-ho-kqs"/>
+                                        <constraint firstAttribute="width" constant="149" id="DBV-ol-baH"/>
+                                        <constraint firstAttribute="height" constant="265" id="OWu-ho-kqs"/>
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neichen_baise2.5cm" translatesAutoresizingMaskIntoConstraints="NO" id="5w4-Dc-nPo" userLabel="内衬大小">
-                                    <rect key="frame" x="136.66666666666669" y="35" width="141.00000000000006" height="255"/>
+                                    <rect key="frame" x="132.66666666666669" y="35" width="149.00000000000006" height="265"/>
                                 </imageView>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfh-bW-RNb">
                                     <rect key="frame" x="0.0" y="557" width="414" height="84"/>
@@ -478,13 +478,13 @@
                                 <constraint firstAttribute="bottom" secondItem="Rfh-bW-RNb" secondAttribute="bottom" id="7C9-js-nem"/>
                                 <constraint firstItem="5w4-Dc-nPo" firstAttribute="width" secondItem="7uo-T2-VQv" secondAttribute="width" id="7hS-7B-Qz3"/>
                                 <constraint firstItem="Rfh-bW-RNb" firstAttribute="leading" secondItem="EG8-cs-PJk" secondAttribute="leading" id="Ce3-dJ-J3e"/>
-                                <constraint firstItem="P0Y-HX-JEO" firstAttribute="width" secondItem="7uo-T2-VQv" secondAttribute="width" constant="8" id="Di5-wu-jhx"/>
+                                <constraint firstItem="P0Y-HX-JEO" firstAttribute="width" secondItem="7uo-T2-VQv" secondAttribute="width" constant="16" id="Di5-wu-jhx"/>
                                 <constraint firstItem="7uo-T2-VQv" firstAttribute="top" secondItem="EG8-cs-PJk" secondAttribute="top" constant="35" id="ImK-PB-Kbc"/>
                                 <constraint firstItem="4Bf-Dm-4tL" firstAttribute="top" secondItem="EG8-cs-PJk" secondAttribute="top" id="Nh7-hE-vUc"/>
                                 <constraint firstItem="7uo-T2-VQv" firstAttribute="centerX" secondItem="4Bf-Dm-4tL" secondAttribute="centerX" id="Sse-zN-Ydc"/>
                                 <constraint firstItem="5w4-Dc-nPo" firstAttribute="height" secondItem="7uo-T2-VQv" secondAttribute="height" id="TKk-d4-XAv"/>
                                 <constraint firstAttribute="trailing" secondItem="Rfh-bW-RNb" secondAttribute="trailing" id="Ua4-3S-MsO"/>
-                                <constraint firstItem="P0Y-HX-JEO" firstAttribute="height" secondItem="7uo-T2-VQv" secondAttribute="height" constant="8" id="Ut1-oN-aXU"/>
+                                <constraint firstItem="P0Y-HX-JEO" firstAttribute="height" secondItem="7uo-T2-VQv" secondAttribute="height" constant="16" id="Ut1-oN-aXU"/>
                                 <constraint firstItem="P0Y-HX-JEO" firstAttribute="centerY" secondItem="7uo-T2-VQv" secondAttribute="centerY" id="V7R-eM-BR1"/>
                                 <constraint firstItem="P0Y-HX-JEO" firstAttribute="centerX" secondItem="7uo-T2-VQv" secondAttribute="centerX" id="XXg-p9-ock"/>
                                 <constraint firstItem="5w4-Dc-nPo" firstAttribute="centerX" secondItem="7uo-T2-VQv" secondAttribute="centerX" id="Y1w-Yp-m2y"/>
@@ -597,6 +597,6 @@
         <image name="neichen_huazuo" width="141" height="255"/>
         <image name="neichen_huise" width="56" height="90"/>
         <image name="neichen_mise" width="56" height="90"/>
-        <image name="neichunkuang" width="149" height="264"/>
+        <image name="neichunkuang" width="165" height="281"/>
     </resources>
 </document>

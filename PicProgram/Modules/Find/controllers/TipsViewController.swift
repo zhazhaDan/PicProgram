@@ -24,6 +24,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     @IBOutlet weak var locateChooseStatusView: UIView!
     
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textNumberLabel: UILabel!
     
     @IBOutlet weak var switchSender: UISwitch!
     @IBOutlet weak var switchShowLabel: UILabel!
@@ -92,6 +93,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
             self.isLocalViewChoosed = true
             self.tipsMaterialsButton.isHidden = true
             self.textView.isHidden = true
+        self.textNumberLabel.isHidden = self.textView.isHidden
 //        }
     }
     
@@ -114,7 +116,9 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         self.isLocalViewChoosed = false
         self.tipsMaterialsButton.isHidden = false
         self.textView.isHidden = false
+        self.textNumberLabel.isHidden = self.textView.isHidden
         self.localIcon.center = self.tipsMaterialsButton.frame.origin
+        self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*2 + 1
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -125,6 +129,10 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         self.isLocalViewChoosed = false
 //        self.locateChooseStatusView.isHidden = true
         self.textView.isHidden = false
+        self.textNumberLabel.isHidden = self.textView.isHidden
+
+        self.tipsMaterialsButton.isHidden = false
+        self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*2 + 1
     }
     
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -175,9 +183,16 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     
     
     func textViewDidChange(_ textView: UITextView) {
-        self.tipsMaterialsButton.setTitle(textView.text, for: .normal)
+//        self.tipsMaterialsButton.setTitle(textView.text, for: .normal)
+        textNumberLabel.text = "\(100 - textView.text.count)字"
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.text.count > 100 && text != "\n"{
+            return false
+        }
+        return true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

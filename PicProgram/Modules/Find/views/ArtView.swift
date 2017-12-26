@@ -79,7 +79,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
 
         let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: headerView.width, height: 40))
         titleLabel.textColor = xsColor_main_yellow
-        titleLabel.font = xsFont(12)
+        titleLabel.font = xsFont(14)
         titleLabel.text = "大咖说"
         titleLabel.textAlignment = .center
         bigStarSayBackView.addSubview(titleLabel)

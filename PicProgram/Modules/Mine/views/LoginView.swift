@@ -24,7 +24,7 @@ class LoginView: BaseScrollView,UITextFieldDelegate{
    
     override func buildUI() {
         let loginImageView = UIImageView.init(frame: CGRect.init(x: (self.width - 223)/2, y: 0, width: 223, height: 177))
-        loginImageView.image = UIImage.init(named: "logo")
+        loginImageView.image = #imageLiteral(resourceName: "login_logo")
         loginImageView.contentMode = .scaleAspectFit
         self.addSubview(loginImageView)
         

@@ -199,7 +199,6 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         view.cell.dateLabel.text = date.getUpperDate()
         view.cell.praiseButton.isHidden = true
         view.cell.shareButton.isHidden = true
-        view.cell.shareLabel.isHidden = true
         
         
         view.frame = UIScreen.main.bounds

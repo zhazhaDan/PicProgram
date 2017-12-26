@@ -32,7 +32,7 @@ class BaseNavigationController: UINavigationController {
         let image = UIImage.init(named: imageName)
         leftItemCallBack = leftCallBack
         let leftButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 44, height: 44))
-        leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0)
+        leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -40, 0, 0)
 
         leftButton.setImage(image, for: .normal)
         leftButton.setImage(UIImage.init(named: selectImageName), for: .selected)
@@ -111,8 +111,8 @@ class BaseNavigationController: UINavigationController {
     
     override func popViewController(animated: Bool) -> UIViewController? {
         let vc =  super.popViewController(animated: animated)
-        vc?.navigationController?.navigationItem.title = ""
-        vc?.navigationController?.navigationBar.backItem?.title = ""
+//        vc?.navigationController?.navigationItem.title = ""
+//        vc?.navigationController?.navigationBar.backItem?.title = ""
         return vc
     }
    

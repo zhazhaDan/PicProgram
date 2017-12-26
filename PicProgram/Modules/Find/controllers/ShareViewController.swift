@@ -107,7 +107,18 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
         case 0:
             let image = shareView.viewShot()
             ShareThirdAppTool.share.share_icon = image
-            ShareThirdAppTool.share.shareToWX(WXSceneSession)
+            let sheet = UIAlertController.init(title: "请选择分享方式", message: nil, preferredStyle: .actionSheet)
+            let session = UIAlertAction.init(title: "微信对话", style: .default, handler: { (action) in
+                ShareThirdAppTool.share.shareToWX(WXSceneSession)
+            })
+            let timeline = UIAlertAction.init(title: "微信朋友圈", style: .default, handler: { (action) in
+                ShareThirdAppTool.share.shareToWX(WXSceneTimeline)
+            })
+            let cancel = UIAlertAction.init(title: "取消", style: .cancel, handler: { (action) in
+            })
+            sheet.addAction(session)
+            sheet.addAction(timeline)
+            sheet.addAction(cancel)
         case 1:
             ShareThirdAppTool.share.title = "我在享+发现了一个有趣的共享头等舱,一起来看看"
             ShareThirdAppTool.share.desc = "去看看"
