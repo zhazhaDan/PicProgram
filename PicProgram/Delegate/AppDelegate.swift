@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }) { (finished) in
             if finished == true {
                 self.window?.makeKeyAndVisible()
-//                self.gifWindow = nil
+                self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
+                self.gifWindow?.backgroundColor = UIColor.clear
                 self.isDone = true
             }
         }

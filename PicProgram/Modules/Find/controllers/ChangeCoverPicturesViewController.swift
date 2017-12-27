@@ -22,6 +22,7 @@ class ChangeCoverPicturesViewController: BaseViewController,UICollectionViewDele
         // Do any additional setup after loading the view.
     }
     override func buildUI() {
+        self.title = "更换封面"
         let collectionLayout = UICollectionViewFlowLayout.init()
         collectionLayout.sectionInset = UIEdgeInsets.init(top: 12, left: 12, bottom: 12, right: 12)
         collectionLayout.scrollDirection = .vertical

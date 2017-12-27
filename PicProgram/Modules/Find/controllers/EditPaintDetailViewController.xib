@@ -49,7 +49,7 @@
                                     </constraints>
                                     <state key="normal" title="Button" image="next"/>
                                 </button>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pbt-P4-mtu">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pbt-P4-mtu">
                                     <rect key="frame" x="250" y="5" width="83" height="62"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="83" id="ebn-PE-qzY"/>
@@ -249,7 +249,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="J5k-Wi-psD"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="确定" backgroundImage="bianjihuadan_anniu">
                         <color key="titleColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>

@@ -137,7 +137,7 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate {
     }
     
     func shareResult(_ text:String = "分享成功") {
-        let alert = BaseAlertController.init(text, message: nil, confirmText: "确定", nil, subComplete: nil)
-        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+        let alert = BaseAlertController.inits(text, message: nil, confirmText: "确定", nil, subComplete: nil)
+//        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 }

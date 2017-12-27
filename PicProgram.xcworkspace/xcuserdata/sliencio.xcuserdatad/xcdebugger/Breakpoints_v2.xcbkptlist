@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535478021.285661"
+            timestampString = "536081158.576793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535478021.285732"
+            timestampString = "536081158.576867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Find/controllers/PlayViewController.swift"
-            timestampString = "535788460.086078"
+            timestampString = "536083678.399162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -212,12 +212,12 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/views/ScanCodeView.swift"
-                  timestampString = "536000864.468756"
+                  timestampString = "536083040.070282"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "2882">
+                  offsetFromSymbolStart = "2168">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -227,12 +227,12 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/views/ScanCodeView.swift"
-                  timestampString = "536000864.476123"
+                  timestampString = "536083040.073154"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
                   endingLineNumber = "80"
-                  offsetFromSymbolStart = "21">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -260,7 +260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535478021.286142"
+            timestampString = "536081158.577635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -276,7 +276,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535478021.286185"
+            timestampString = "536081158.577691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -292,7 +292,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535478021.286226"
+            timestampString = "536081158.577739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "204"
@@ -308,12 +308,12 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/controllers/MineViewController.swift"
-                  timestampString = "536000864.506772"
+                  timestampString = "536083040.089141"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "204"
                   endingLineNumber = "204"
-                  offsetFromSymbolStart = "717">
+                  offsetFromSymbolStart = "612">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -323,12 +323,12 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/controllers/MineViewController.swift"
-                  timestampString = "536000864.510235"
+                  timestampString = "536083040.091176"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "204"
                   endingLineNumber = "204"
-                  offsetFromSymbolStart = "4334">
+                  offsetFromSymbolStart = "3388">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -340,7 +340,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/controllers/MineViewController.swift"
-            timestampString = "535478021.286266"
+            timestampString = "536081158.577784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
@@ -377,7 +377,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "requestData()"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -388,12 +388,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Find/controllers/PlayViewController.swift"
-            timestampString = "535788460.086732"
+            timestampString = "536083678.39936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
             endingLineNumber = "75"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Find/controllers/EditPaintDetailViewController.swift"
+            timestampString = "536081515.85397"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "changeCover(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; () in PicProgram.EditPaintDetailViewController.changeCover(Any) -&gt; ()"
+                  moduleName = "PicProgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Find/controllers/EditPaintDetailViewController.swift"
+                  timestampString = "536083040.11127"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; () in PicProgram.EditPaintDetailViewController.changeCover(Any) -&gt; ()"
+                  moduleName = "PicProgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Find/controllers/EditPaintDetailViewController.swift"
+                  timestampString = "536083040.113229"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "2128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Find/views/CollectPaintsListView.swift"
+            timestampString = "536083678.399436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

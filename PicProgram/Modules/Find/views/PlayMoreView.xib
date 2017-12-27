@@ -50,7 +50,7 @@
                             <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="模式选择" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itx-Fg-7ng">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画框端模式选择" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itx-Fg-7ng">
                             <rect key="frame" x="0.0" y="120" width="359" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="ndu-Sw-bQH"/>

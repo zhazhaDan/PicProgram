@@ -114,6 +114,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
             let paint = dataSource[indexPath.row - 1]
             if paint.pics?.count == 0 {
                 paint.title_url = pic.picture_url
+                paint.title_detail_url = pic.detail_url
             }
             paint.addToPics(pic)
             pic.paint = paint

@@ -46,7 +46,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         
     }
     func logout() {
-        let alert = BaseAlertController.init("", message: MRLanguage(forKey: "Are you sure to sign out?"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
+        let alert = BaseAlertController.inits("", message: MRLanguage(forKey: "Are you sure to sign out?"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
             if tag == 0 {
                 network.requestData(.user_logout, params: nil, finishedCallback: { (result) in
                     if result["ret"] as! Int == 0 {
@@ -61,7 +61,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
                 }, nil)
             }
         }
-        self.navigationController?.present(alert, animated: true, completion: nil)
+//        self.navigationController?.present(alert, animated: true, completion: nil)
         
     }
     
@@ -116,20 +116,21 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         case 2:
             print("软件版本")
         case 3:
-            let alert = BaseAlertController.init("", message: MRLanguage(forKey: "Choose your language"), confirmText: MRLanguage(forKey: "Chinese"), MRLanguage(forKey: "English"), subComplete: { (index) in
+            let alert = BaseAlertController.inits("", message: MRLanguage(forKey: "Choose your language"), confirmText: MRLanguage(forKey: "Chinese"), MRLanguage(forKey: "English"), subComplete: { (index) in
                 if index == 0 {
                     BaseBundle.language = CNS.self
                 }else {
                     BaseBundle.language = EN
                 }
             })
-            self.navigationController?.present(alert, animated: true, completion: nil)
+//            self.navigationController?.present(alert, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(alert, animated: true)
         case 4:
             clearCache()
             
         default:
-            let alert = BaseAlertController.init("温馨小提示", message: "程序媛妹子正在加班加点赶制功能，不要着急哦,有功能、UI、bug之类的问题请先和谢建宇联系~", confirmText: "谢谢理解", nil, subComplete: nil)
-            self.present(alert, animated: true, completion: nil)
+            let alert = BaseAlertController.inits("温馨小提示", message: "程序媛妹子正在加班加点赶制功能，不要着急哦,有功能、UI、bug之类的问题请先和谢建宇联系~", confirmText: "谢谢理解", nil, subComplete: nil)
+//            self.present(alert, animated: true, completion: nil)
             print("\(indexPath.row)")
         }
     }

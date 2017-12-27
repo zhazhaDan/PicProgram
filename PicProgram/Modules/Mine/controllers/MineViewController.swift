@@ -234,18 +234,18 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         masterResolveDeviceBindInfo(status: 1, uin: info["uin"] as! Int64)
     }
     func removeDevice(view: UIView, deviceIndex row: Int) {
-        let alert = BaseAlertController.init("", message: MRLanguage(forKey: "You are going to disconnect this device"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
+        let alert = BaseAlertController.inits("", message: MRLanguage(forKey: "You are going to disconnect this device"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
             if tag == 0 {
                 self.confirmRemoveDevice(deviceIndex: row)
             }
         })
         
-        self.navigationController?.present(alert, animated: true, completion: nil)
+//        self.navigationController?.present(alert, animated: true, completion: nil)
 
     }
     
     func confirmRemoveDevice(deviceIndex row: Int) {
-        let alert2 = BaseAlertController.init("", message: MRLanguage(forKey: "If you unbind the device,all that is bound\nto the device.The user will\nautomatically unbundle"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
+        let alert2 = BaseAlertController.inits("", message: MRLanguage(forKey: "If you unbind the device,all that is bound\nto the device.The user will\nautomatically unbundle"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
             if tag == 0 {
                 let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
                 let info = bindUserView.dataSource[row]
@@ -262,7 +262,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
             }
             
         })
-        self.navigationController?.present(alert2, animated: true, completion: nil)
+//        self.navigationController?.present(alert2, animated: true, completion: nil)
     }
     
     func masterResolveDeviceBindInfo(status:Int,uin:Int64) {

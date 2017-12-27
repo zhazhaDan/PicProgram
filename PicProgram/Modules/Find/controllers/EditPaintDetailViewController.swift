@@ -23,6 +23,8 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
             let picModel = self?.paintModel.pictureModels[index]
             self?.picImageView.xs_setImage((picModel?.picture_url)!)
             self?.paintModel.title_url = (picModel?.picture_url)!
+            self?.paintModel.title_detail_url = (picModel?.detail_url)!
+            vc.navigationController?.popViewController(animated: true)
         }
         vc.dataSource = self.paintModel.pictureModels
         self.navigationController?.pushViewController(vc, animated: true)
@@ -59,6 +61,8 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView.text.count >= 36 && text != "" {
             return false
+        }else if text == "" {
+            tapAction()
         }
        
         return true
@@ -82,6 +86,7 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        tapAction()
         return true
     }
     
@@ -102,7 +107,7 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
         }
     }
     
-    @IBAction func tapAction(_ sender: Any) {
+    @IBAction func tapAction(_ sender: Any?=nil) {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
     

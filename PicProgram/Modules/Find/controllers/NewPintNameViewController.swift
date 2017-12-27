@@ -15,7 +15,7 @@ class NewPintNameViewController: BaseViewController {
     override func viewDidLoad() {
         self.title = "新建画单"
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
         self.baseNavigationController?.addLeftNavigationBarItem {
             self.dismiss(animated: true, completion: nil)
         }

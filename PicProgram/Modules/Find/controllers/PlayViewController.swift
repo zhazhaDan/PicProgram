@@ -84,10 +84,13 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
             let paint = Paint.fetchPaint(key: .name, value: HistoryPaintName, create: false, painttype: 3)
             dataSource = (paint?.pictureModels)!
         }
+        collectionView.reloadData()
         if dataSource.count > 0 {
             collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
         }
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
     }
     
     //单例
@@ -95,6 +98,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         struct Singleton {
             static let instance = PlayViewController.init(nibName: "PlayViewController", bundle: Bundle.main)
         }
+        Singleton.instance.currentIndex = 0
         return Singleton.instance
     }
     
@@ -152,7 +156,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         currentIndex = currentIndex <= 0 ? 0 : currentIndex
         currentIndex = currentIndex >= maxIndex ? maxIndex : currentIndex
         collectionView.scrollToItem(at: NSIndexPath.init(row: currentIndex, section: 0) as IndexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
-        self.title = dataSource[currentIndex].title
+//        self.title = dataSource[currentIndex].title
     }
     
     

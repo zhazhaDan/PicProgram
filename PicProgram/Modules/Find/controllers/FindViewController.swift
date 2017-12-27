@@ -75,8 +75,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     }
     
     override func buildUI() {
-        self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -92,7 +91,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
 
         let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 320, height: 26))
         button.setBackgroundImage(#imageLiteral(resourceName: "01faixian_jinrituijian_shousuolan"), for: .normal)

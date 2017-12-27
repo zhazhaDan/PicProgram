@@ -223,8 +223,8 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
 //            header.titleLabel.text = "大咖说"
 //            header.nextButton.isHidden = true
 //        }else {
-            header.titleLabel.text = "读精彩"
             header.nextButton.isHidden = false
+        header.nextButton.setTitle("读精彩", for: .normal)
             header.delegate = cDelegate
 //        }
         return header

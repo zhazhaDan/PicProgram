@@ -115,7 +115,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
         }else if view == view2 {
             let vc = PlayViewController.player
             vc.dataSource = view2.dataSource
-            vc.title = view2.dataSource[index].title
+            vc.title = MRLanguage(forKey: "Recent viewed")//view2.dataSource[index].title
             self.navigationController?.pushViewController(vc, animated: true)
         }else if view == view3 {
             let layout = UICollectionViewFlowLayout.init()

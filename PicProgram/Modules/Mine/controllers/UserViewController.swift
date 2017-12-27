@@ -8,9 +8,11 @@
 
 import UIKit
 
-class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
+class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UITextFieldDelegate,UITextViewDelegate {
     
+    @IBOutlet weak var mScrollView: UIScrollView!
     @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var textNumberLabel: UILabel!
     @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var nickTextField: UITextField!
     @IBOutlet weak var genderLabel: UILabel!
@@ -35,8 +37,8 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
         }else if sender.view?.tag == 13 {
             chooseBirthday()
         }else {
-            UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
-            genderView.removeFromSuperview()
+            keyboardRegist()
+
         }
     }
     
@@ -91,6 +93,30 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol {
                 HUDTool.show(.text, text: "保存成功", delay: 0.5, view: self.view, complete: nil)
             }
         }, nil)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       keyboardRegist()
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        mScrollView?.setContentOffset(CGPoint.init(x: 0, y: 200), animated: true)
+    }
+    
+    func keyboardRegist() {
+        mScrollView?.setContentOffset(CGPoint.zero, animated: true)
+        UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
+        if genderView != nil {
+            genderView.removeFromSuperview()
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.textNumberLabel.text = "\(120 - textView.text.count)字"
+        if textView.text.count > 120 {
+            let str = textView.text as NSString
+            textView.text = str.substring(to: 120)
+        }
     }
     
 }

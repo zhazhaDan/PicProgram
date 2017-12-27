@@ -18,7 +18,9 @@
                 <outlet property="headerImageView" destination="TGY-Xj-aNG" id="AEL-GF-3Ku"/>
                 <outlet property="introduceTextView" destination="nBx-W4-odN" id="0wC-of-wRZ"/>
                 <outlet property="localLabel" destination="OjF-V3-Lvc" id="yfm-Qm-NOX"/>
+                <outlet property="mScrollView" destination="Xzh-qo-tOW" id="itQ-lL-Ftk"/>
                 <outlet property="nickTextField" destination="k53-Yf-nMH" id="bZt-G7-q3r"/>
+                <outlet property="textNumberLabel" destination="9GX-16-vYZ" id="8d4-TX-uMd"/>
                 <outlet property="view" destination="C9e-Kb-go4" id="qqX-Qe-Cpm"/>
             </connections>
         </placeholder>
@@ -301,12 +303,15 @@
                         <view tag="15" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Mz-ZE-49p">
                             <rect key="frame" x="0.0" y="410" width="375" height="131"/>
                             <subviews>
-                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="个人介绍..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nBx-W4-odN" userLabel="画单介绍">
+                                <textView clipsSubviews="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="个人介绍..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nBx-W4-odN" userLabel="画单介绍">
                                     <rect key="frame" x="20" y="12" width="335" height="107"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="textColor" red="0.62504500149999997" green="0.62511724229999999" blue="0.6250033975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="uFs-vs-i6g"/>
+                                    </connections>
                                 </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GX-16-vYZ" userLabel="36">
                                     <rect key="frame" x="323" y="104" width="40" height="15"/>
