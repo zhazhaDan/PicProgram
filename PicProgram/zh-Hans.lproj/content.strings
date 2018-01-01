@@ -66,11 +66,11 @@
 "Enter Phone Verify Code" = "为了安全，请输入你手机收到的验证码";
 "Find Password" = "找回密码";
 "Skip" = "点击跳过";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
+"Gender Man" = "男";
+"Gender Felman" = "女";
+"Gender Other" = "保密";
+"Mine My Info" = "我的资料";
+"Save Successful" = "保存成功";
 "" = "";
 "" = "";
 "" = "";

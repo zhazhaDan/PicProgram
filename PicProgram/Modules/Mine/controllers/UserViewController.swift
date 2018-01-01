@@ -22,7 +22,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     var genderView: BasePickerView! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "我的资料"
+        self.title = MRLanguage(forKey: "Mine My Info")
         // Do any additional setup after loading the view.
     }
 
@@ -45,24 +45,38 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        let birthday = "\(UserInfo.user.birth_year)-\(UserInfo.user.birth_month)-\(UserInfo.user.birth_day)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        self.birthdayLabel.text = birthday
+        let genderTitles = [MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
+        self.genderLabel.text = genderTitles[UserInfo.user.gender]
+
     }
     
     func chooseGender() {
         genderView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 140, width: self.view.width, height: 140))
         genderView.type = .gender
-        genderView.buildUI(type: .gender) { (gender) in
+        let genderTitles = [MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
+        self.genderLabel.text = genderTitles[UserInfo.user.gender]
+        genderView.buildUI(type: .gender, didFinishChoose: { (gender) in
             self.genderLabel.text = (gender as! String)
-            let genderTitles = ["男","女","保密"]
             self.updateUserInfo(params: [User_gender:genderTitles.index(of: gender as! String) as Any])
-
-        }
+            
+        })
         self.view.addSubview(genderView)
     }
     
     func chooseBirthday() {
         genderView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 190, width: self.view.width, height: 190))
         genderView.type = .birthday
-        genderView.buildUI(type: .birthday) { (date) in
+        let birthday = "\(UserInfo.user.birth_year)-\(UserInfo.user.birth_month)-\(UserInfo.user.birth_day)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        
+        let bithday = dateFormatter.date(from: birthday)
+        self.birthdayLabel.text = birthday
+        genderView.buildUI(type: .birthday, didFinishChoose: { (date) in
             let dateString = Date.formatterDateString(date as AnyObject) as NSString
             self.birthdayLabel.text = dateString as String
             //
@@ -70,7 +84,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
                 [User_birth_year:Int(dateString.substring(with: NSRange.init(location: 0, length: 4))),
                  User_birth_month:Int(dateString.substring(with: NSRange.init(location: 5, length: 2))),
                  User_birth_day:Int(dateString.substring(with: NSRange.init(location: 8, length: 2))) as Any])
-        }
+        }, bithday)
         self.view.addSubview(genderView)
     }
     func finishUpload(imageInfo: [String : Any], type: SystemPicType) {
@@ -90,7 +104,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     func updateUserInfo(params:[String:Any]) {
         network.requestData(.user_set_info, params: params, finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: "保存成功", delay: 0.5, view: self.view, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Save Successful"), delay: 0.5, view: self.view, complete: nil)
             }
         }, nil)
     }

@@ -80,6 +80,13 @@ class BaseAlertController:UIView {
             }
         }
         
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(removeAction))
+        self.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    @objc func removeAction() {
+        self.removeFromSuperview()
     }
     
     @objc func cancelAction() {

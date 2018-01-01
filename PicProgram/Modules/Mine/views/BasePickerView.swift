@@ -16,11 +16,11 @@ enum PickerType {
 class BasePickerView: BaseView,UIPickerViewDelegate,UIPickerViewDataSource {
 
     var type:PickerType = PickerType.gender
-    private let genderTitles = ["男","女","保密"]
+    private let genderTitles = [MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
     private var gender:String!
     private var birthday:Date!
     var finishChoose : ((_ result:Any)->())?
-    func buildUI(type:PickerType,didFinishChoose:@escaping (_ result:Any)->()) {
+    func buildUI(type:PickerType,didFinishChoose:@escaping (_ result:Any)->(),_ defaultValue:Any? = nil) {
         self.backgroundColor = xsColor_main_white
         let lineView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.width, height: 1))
         lineView.backgroundColor = xsColor_main_yellow
@@ -48,6 +48,11 @@ class BasePickerView: BaseView,UIPickerViewDelegate,UIPickerViewDataSource {
             picker.dataSource = self
             picker.backgroundColor = xsColor_main_white
             self.addSubview(picker)
+            if defaultValue == nil {
+                gender = genderTitles.first
+            }else {
+                gender = defaultValue as! String
+            }
             
         }else {
             let datePicker = UIDatePicker.init(frame: CGRect.init(x: 0, y: lineView2.bottom, width: self.width, height: 150))
@@ -61,6 +66,12 @@ class BasePickerView: BaseView,UIPickerViewDelegate,UIPickerViewDataSource {
             datePicker.minimumDate = minDate
             datePicker.date = Date.init(timeIntervalSinceNow: 0)
             datePicker.addTarget(self, action: #selector(dateChange(_:)), for: .valueChanged)
+            if defaultValue == nil {
+                birthday = datePicker.date
+            }else {
+                datePicker.date = defaultValue as! Date
+                birthday = defaultValue as! Date
+            }
             self.addSubview(datePicker)
         }
         finishChoose = {(result) in

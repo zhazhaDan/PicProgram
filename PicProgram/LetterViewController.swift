@@ -22,7 +22,7 @@ class LetterViewController: BaseViewController {
     
     override func buildUI() {
         imageView = UIImageView.init(frame: self.view.bounds)
-       imageView.contentMode = .scaleAspectFit
+       imageView.contentMode = .scaleAspectFill
         imageView.isUserInteractionEnabled = true
         self.view.addSubview(imageView)
 
