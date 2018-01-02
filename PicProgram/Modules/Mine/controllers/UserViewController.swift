@@ -23,14 +23,14 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = MRLanguage(forKey: "Mine My Info")
-        // Do any additional setup after loading the view.
+
     }
 
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         if sender.view?.tag == 10 || sender.view?.tag == 11 {
             let vc = SystemPicsCollectionViewController.init(nibName: "SystemPicsCollectionViewController", bundle: Bundle.main)
             vc.delegate = self
-            vc.picType = (sender.view?.tag == 10 ? .header : .background)
+            vc.picType = (sender.view?.tag == 10 ? .user_set_header : .user_set_back)
             self.navigationController?.pushViewController(vc, animated: true)
         }else if sender.view?.tag == 12 {
             chooseGender()
@@ -38,7 +38,6 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
             chooseBirthday()
         }else {
             keyboardRegist()
-
         }
     }
     
@@ -51,6 +50,8 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         self.birthdayLabel.text = birthday
         let genderTitles = [MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
         self.genderLabel.text = genderTitles[UserInfo.user.gender]
+        self.headerImageView.xs_setImage(UserInfo.user.head_url)
+        self.backImageView.xs_setImage(UserInfo.user.background)
 
     }
     
@@ -87,17 +88,17 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         }, bithday)
         self.view.addSubview(genderView)
     }
-    func finishUpload(imageInfo: [String : Any], type: SystemPicType) {
-        if type == .header {
+    func finishUpload(imageInfo: [String : Any], type: RequestAPIType) {
+        if type == .user_set_header {
             self.headerImageView.image = (imageInfo["image"] as! UIImage)
-            if imageInfo["imageUrl"] != nil {
-                updateUserInfo(params: [User_head_url:imageInfo["imageUrl"] ?? ""])
-            }
-        }else if type == .background {
+//            if imageInfo["imageUrl"] != nil {
+//                updateUserInfo(params: [User_head_url:imageInfo["imageUrl"] ?? ""])
+//            }
+        }else if type == .user_set_back {
             self.backImageView.image = (imageInfo["image"] as! UIImage)
-            if imageInfo["imageUrl"] != nil {
-                updateUserInfo(params: [User_background:imageInfo["imageUrl"] ?? ""])
-            }
+//            if imageInfo["imageUrl"] != nil {
+//                updateUserInfo(params: [User_background:imageInfo["imageUrl"] ?? ""])
+//            }
         }
     }
     

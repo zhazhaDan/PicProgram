@@ -45,6 +45,8 @@ enum RequestAPIType {
     case user_reset_password
     case user_logout
     case user_info
+    case user_set_header
+    case user_set_back
     case user_get_device
     case user_get_device_info
     case user_set_info
@@ -170,6 +172,10 @@ class  NetworkTool{
             apiString = "user/delete_bind"
         case .paint_play_style:
             apiString = "painting/modify_play_type"
+        case .user_set_header:
+            apiString = "imgs/upload/user_head"
+        case .user_set_back:
+            apiString = "imgs/upload/backend_img"
         default:
             apiString = ""
             method = .get
@@ -264,11 +270,25 @@ class  NetworkTool{
         }
     }
     //图片上传
-    func uploadPic(image:UIImage,finishedCallback: ((_ result : [String:Any])->())? = nil) {
+    func uploadPic(image:UIImage,apiType: RequestAPIType,finishedCallback: ((_ result : [String:Any])->())? = nil) {
+        var apiString = ""
+        switch apiType {
+        case .user_set_header:
+            apiString = "imgs/upload/user_head"
+        case .user_set_back:
+            apiString = "imgs/upload/backend_img"
+        default:
+            apiString = ""
+        }
+        
         let imageData = UIImageJPEGRepresentation(image, 1.0)
+        var headerDict = ["content-type": "application/json","User-Uin": "\(UserInfo.user.uin)","Req-From": "iOS-app"]
+        if UserInfo.user.token.count > 0 {
+            headerDict["Client-Token"] = UserInfo.user.token
+        }
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(imageData!, withName: "file", fileName: "tmp.jpg", mimeType: "image/jpeg")
-        },usingThreshold:UInt64.init(), to: "\(baseApi)imgs/upload/user_head", method:.post, encodingCompletion: { encodingResult in
+        },usingThreshold:UInt64.init(), to: "\(baseApi)\(apiString)", method:.post,headers: headerDict, encodingCompletion: { encodingResult in
             switch encodingResult {
             case .success(let upload, _, _):
                 upload.responseJSON { response in

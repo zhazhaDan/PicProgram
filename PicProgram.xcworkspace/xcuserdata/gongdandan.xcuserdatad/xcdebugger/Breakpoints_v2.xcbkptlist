@@ -89,7 +89,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
-            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkName = "buildBigStarSayUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -116,7 +116,7 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Mine/controllers/MineViewController.swift"
-                  timestampString = "535964815.361414"
+                  timestampString = "536581515.508766"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -131,7 +131,7 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Mine/controllers/MineViewController.swift"
-                  timestampString = "535964815.363925"
+                  timestampString = "536581515.510773"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -228,7 +228,7 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Mine/controllers/RegisterViewController.swift"
-                  timestampString = "535964815.382863"
+                  timestampString = "536581515.523825"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
@@ -243,7 +243,7 @@
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Mine/controllers/RegisterViewController.swift"
-                  timestampString = "535964815.385783"
+                  timestampString = "536581515.525266"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
@@ -267,6 +267,54 @@
             endingLineNumber = "68"
             landmarkName = "nextAction(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Mine/controllers/SystemPicsCollectionViewController.swift"
+            timestampString = "536581911.674174"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.UIImage, Swift.Bool) -&gt; () in PicProgram.SystemPicsCollectionViewController.collectionView(__ObjC.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "PicProgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Mine/controllers/SystemPicsCollectionViewController.swift"
+                  timestampString = "536581911.994974"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Owned To Guaranteed, Arg[2] = Owned To Guaranteed&gt; of closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 (__ObjC.UIImage, Swift.Bool) -&gt; () in PicProgram.SystemPicsCollectionViewController.collectionView(__ObjC.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "PicProgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gongdandan/Desktop/Demo/Swift_Documents/Swift%20Programming/%E7%94%BB%E6%A1%86%E9%A1%B9%E7%9B%AE/PicProgram/PicProgram/Modules/Mine/controllers/SystemPicsCollectionViewController.swift"
+                  timestampString = "536581911.997177"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "588">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

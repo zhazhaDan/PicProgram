@@ -10,17 +10,17 @@ import UIKit
 import Photos
 import AssetsLibrary
 
-enum SystemPicType {
-    case header
-    case background
-}
+//enum SystemPicType {
+//    case header
+//    case background
+//}
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
 class SystemPicsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,CustomViewProtocol,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var dataSource:[GDPHAsset] = Array()
     open weak var delegate:SystemPicsCollectionProtocol!
-    var picType:SystemPicType = .header
+    var picType:RequestAPIType = .user_set_header
     var _listView:AlbumListView!
     var listView:AlbumListView {
         set{
@@ -153,20 +153,19 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
             //TODO://图片上传
             let asset = self.dataSource[indexPath.row-1]
             GDPhotoTool.defaultTool.getImage(asset: asset.asset as PHAsset,imageSize: PHImageManagerMaximumSize ,complete: { (image, ret) in
-                network.uploadPic(image: image) { [weak self](result) in
+                network.uploadPic(image: image,apiType: .user_set_header) { [weak self](result) in
                     if result["ret"] as! Int == 0 {
-                        let dict = ["imageUrl": result["url"] as! String, "image": image] as [String : Any]
+//                        let dict = ["imageUrl": result["url"] as! String, "image": image] as [String : Any]
+                        let dict = ["image": image] as [String : Any]
                         self?.delegate.finishUpload(imageInfo: dict, type: (self?.picType)!)
-
                     }else {
                         HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: {
-                            
                         })
                     }
                 }
-                //图片上传接口有问题。测试代码
-                let dict = ["image": image] as [String : Any]
-                self.delegate.finishUpload(imageInfo: dict, type: (self.picType))
+//                //图片上传接口有问题。测试代码
+//                let dict = ["image": image] as [String : Any]
+//                self.delegate.finishUpload(imageInfo: dict, type: (self.picType))
                 self.navigationController?.popViewController(animated: true)
             })
         }
@@ -181,7 +180,7 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //照相后回调
-        network.uploadPic(image: info[UIImagePickerControllerOriginalImage] as! UIImage) { [weak self](result) in
+        network.uploadPic(image: info[UIImagePickerControllerOriginalImage] as! UIImage,apiType: self.picType) { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 let dict = ["imageUrl": result["url"] as! String, "image": info[UIImagePickerControllerOriginalImage] as! UIImage] as [String : Any]
                 self?.delegate.finishUpload(imageInfo: dict, type: (self?.picType)!)
@@ -212,5 +211,5 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
 }
 
 protocol SystemPicsCollectionProtocol:NSObjectProtocol{
-     func finishUpload(imageInfo:[String:Any],type:SystemPicType)
+     func finishUpload(imageInfo:[String:Any],type:RequestAPIType)
 }
