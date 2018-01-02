@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserViewController" customModule="PicProgram" customModuleProvider="target">
             <connections>
+                <outlet property="addressTextField" destination="OjF-V3-Lvc" id="7FV-R3-fGd"/>
                 <outlet property="backImageView" destination="cbV-tL-PVy" id="q1n-k4-2Wx"/>
                 <outlet property="birthdayLabel" destination="MaN-s1-bXU" id="P1N-cj-1nb"/>
                 <outlet property="genderLabel" destination="JgJ-13-XjF" id="ZaP-hp-277"/>

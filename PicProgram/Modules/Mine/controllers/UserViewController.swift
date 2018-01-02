@@ -19,6 +19,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var localLabel: UITextField!
     @IBOutlet weak var introduceTextView: UITextView!
+    @IBOutlet weak var addressTextField: UITextField!
     var genderView: BasePickerView! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,8 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         self.genderLabel.text = genderTitles[UserInfo.user.gender]
         self.headerImageView.xs_setImage(UserInfo.user.head_url)
         self.backImageView.xs_setImage(UserInfo.user.background)
-
+        self.nickTextField.text = UserInfo.user.nick_name
+        self.addressTextField.text = UserInfo.user.region
     }
     
     func chooseGender() {
@@ -111,6 +113,13 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
        keyboardRegist()
+        if textField == self.nickTextField {
+            UserInfo.user.nick_name = textField.text!
+            updateUserInfo(params: [User_nick_name:textField.text])
+        }else  if textField == self.addressTextField {
+            UserInfo.user.region = textField.text!
+            updateUserInfo(params: [User_region:textField.text])
+        }
         return true
     }
     
