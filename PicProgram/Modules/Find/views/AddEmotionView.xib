@@ -46,8 +46,8 @@
                         <constraint firstAttribute="height" constant="90" id="Sji-T2-kBk"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="22"/>
                     <state key="normal" title="怒" image="nu">
                         <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
@@ -62,8 +62,8 @@
                         <constraint firstAttribute="height" constant="90" id="p7X-an-9La"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                    <inset key="titleEdgeInsets" minX="-142" minY="0.0" maxX="0.0" maxY="5"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="18"/>
                     <state key="normal" title="思" image="si">
                         <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
@@ -78,7 +78,7 @@
                         <constraint firstAttribute="height" constant="90" id="DS4-zU-8oB"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
+                    <inset key="titleEdgeInsets" minX="-145" minY="0.0" maxX="0.0" maxY="5"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
                     <state key="normal" title="恐" image="kong">
                         <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -94,8 +94,8 @@
                         <constraint firstAttribute="height" constant="90" id="ldZ-I2-6QH"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="22"/>
                     <state key="normal" title="惊" image="jing">
                         <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
@@ -110,8 +110,8 @@
                         <constraint firstAttribute="height" constant="90" id="OWh-9x-yR8"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="22"/>
+                    <inset key="titleEdgeInsets" minX="-140" minY="0.0" maxX="0.0" maxY="5"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
                     <state key="normal" title="忧" image="you">
                         <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
@@ -126,7 +126,7 @@
                         <constraint firstAttribute="width" constant="65" id="nFp-P7-w04"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
+                    <inset key="titleEdgeInsets" minX="-159" minY="0.0" maxX="0.0" maxY="5"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
                     <state key="normal" title="喜" image="xi">
                         <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -142,8 +142,8 @@
                         <constraint firstAttribute="height" constant="90" id="WAK-O1-piF"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="22"/>
+                    <inset key="titleEdgeInsets" minX="-150" minY="0.0" maxX="0.0" maxY="5"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
                     <state key="normal" title="悲" image="bei">
                         <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
@@ -158,8 +158,8 @@
                         <constraint firstAttribute="width" constant="65" id="neU-J3-dyz"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <inset key="titleEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="5"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                    <inset key="titleEdgeInsets" minX="-135" minY="0.0" maxX="0.0" maxY="5"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="22"/>
                     <state key="normal" title="无常" image="wu">
                         <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
@@ -194,13 +194,13 @@
         </view>
     </objects>
     <resources>
-        <image name="bei" width="67" height="67"/>
-        <image name="jing" width="65" height="70"/>
-        <image name="kong" width="65" height="73"/>
-        <image name="nu" width="68" height="70"/>
-        <image name="si" width="65" height="75"/>
-        <image name="wu" width="66" height="70"/>
-        <image name="xi" width="65" height="65"/>
-        <image name="you" width="68" height="69"/>
+        <image name="bei" width="151" height="149"/>
+        <image name="jing" width="130" height="141"/>
+        <image name="kong" width="145" height="161"/>
+        <image name="nu" width="134" height="137"/>
+        <image name="si" width="145" height="166"/>
+        <image name="wu" width="131" height="139"/>
+        <image name="xi" width="159" height="146"/>
+        <image name="you" width="135" height="138"/>
     </resources>
 </document>

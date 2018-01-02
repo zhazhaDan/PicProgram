@@ -44,9 +44,9 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     }
 
     override func buildUI() {
-        let bannerBackView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 180))
-        bannerBackView.backgroundColor = xsColor_main_white
-        bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: self.width - 24, height: 168),true,false)
+//        let bannerBackView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 180))
+//        bannerBackView.backgroundColor = xsColor_main_white
+        bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: self.width - 24, height: 168),false,true)
         bannerView.layer.cornerRadius = 8
         bannerView.layer.masksToBounds = true
         readTableView = UITableView.init(frame: self.bounds, style:.grouped)
@@ -61,10 +61,10 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         self.readTableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "footer")
         self.addSubview(self.readTableView)
         bigStarSayBackView = UIView.init(frame: CGRect.init(x: 0, y: 180, width: SCREEN_WIDTH, height: 230))
-        self.addSubview(bigStarSayBackView)
+//        headerView.addSubview(bigStarSayBackView)
 
-        bannerBackView.addSubview(bannerView)
-        self.addSubview(bannerBackView)
+//        bannerBackView.addSubview(bannerView)
+//        self.addSubview(bannerBackView)
 
     }
     
@@ -75,7 +75,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 410))
         
         headerView.clipsToBounds = true
-//        headerView.addSubview(bannerView)
+        headerView.addSubview(bannerView)
 
         let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: headerView.width, height: 40))
         titleLabel.textColor = xsColor_main_yellow
@@ -132,7 +132,8 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         view2MaskLayer.colors = [UIColor.black.cgColor,UIColor.clear.cgColor]
         view2MaskLayer.opacity = 0
         cell2.layer.addSublayer(view2MaskLayer)
-        
+        headerView.addSubview(bigStarSayBackView)
+
         self.readTableView.tableHeaderView = headerView
     }
     
@@ -140,18 +141,22 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         if view1.isHidden == true || scrollView.contentOffset.y < 0 {
             return
         }
-        bigStarSayBackView.bottom = readTableView.contentOffset.y + 180
+//        bigStarSayBackView.bottom = readTableView.contentOffset.y + 180
         let angle = scrollView.contentOffset.y * CGFloat.pi / bigStarSayBackView.height
         print(angle)
-        self.view1MaskLayer.opacity = Float(angle / 1.5)
-        self.view2MaskLayer.opacity = Float(angle / 1.5)
+        
         if angle >= CGFloat.pi/2  {
 //            view1.isHidden = true
 //            view2.isHidden = true
 //            headerView.height = 180
 //            self.readTableView.tableHeaderView = headerView
             return
+        }else {
+//            headerView.height = 410
+//            self.readTableView.tableHeaderView = headerView
         }
+        self.view1MaskLayer.opacity = Float(angle / 1.5)
+        self.view2MaskLayer.opacity = Float(angle / 1.5)
         var transform = CATransform3DIdentity
         transform.m34 = -1/300.0
         view1.layer.transform = CATransform3DRotate(transform, -angle, 1, 0, 0)
@@ -159,9 +164,9 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         var transform2 = CATransform3DIdentity
         transform2.m34 = -1/300.0
         view2.layer.transform = CATransform3DRotate(transform2, angle, 1, 0, 0)
-//        let space = 12*(CGFloat(angle / 1.5) + 1)
-//        cell.frame = CGRect.init(x: space, y: 0, width: headerView.width - space * 2, height: cell.height)
-//        cell2.frame = CGRect.init(x: space, y: -cell.height/2, width: headerView.width - space * 2, height: cell.height)
+        let space = 12*(CGFloat(angle / 1.5) + 1)
+        cell.frame = CGRect.init(x: space, y: 0, width: headerView.width - space * 2, height: cell.height)
+        cell2.frame = CGRect.init(x: space, y: -cell.height/2, width: headerView.width - space * 2, height: cell.height)
     }
     
 //    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

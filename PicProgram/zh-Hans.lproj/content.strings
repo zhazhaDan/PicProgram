@@ -20,7 +20,8 @@
 "FeedBack" = "意见反馈";
 "Current Version" = "软件版本";
 "Language" = "语言选择";
-"Cache" = "清除缓存";
+"Cache"="缓存";
+"Clean Cache" = "清除缓存";
 "Account Security" = "账户安全";
 "Sign Out" = "退出登录";
 "About Us" = "关于我们";

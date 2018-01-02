@@ -172,35 +172,28 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         // 用于统计文件夹内所有文件大小
         let big = getCacheSize();
         // 提示框
-        let message = "\(big)Mb缓存"
-        let alert = UIAlertController(title: "清除缓存", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let message = "\(big)Mb\(MRLanguage(forKey: "Cache"))"
         
-        let alertConfirm = UIAlertAction(title: "确定", style: UIAlertActionStyle.default) { (alertConfirm) -> Void in
-            // 点击确定时开始删除
-            for p in files!{
-                // 拼接路径
-                let path = cachePath!.appendingFormat("/\(p)")
-                // 判断是否存在，以及是否可以删除
-                if(FileManager.default.fileExists(atPath: path) && FileManager.default.isDeletableFile(atPath: path)){
-                    // 删除
-                    //try! NSFileManager.defaultManager().removeItemAtPath(path)
-                    do {
-                        try FileManager.default.removeItem(atPath: path as String)
-                    } catch {
-                        print("removeItemAtPath err"+path)
+        BaseAlertController.inits(MRLanguage(forKey: "Clean Cache"), message: message, confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
+            if tag == 0 {
+                for p in files!{
+                    // 拼接路径
+                    let path = cachePath!.appendingFormat("/\(p)")
+                    // 判断是否存在，以及是否可以删除
+                    if(FileManager.default.fileExists(atPath: path) && FileManager.default.isDeletableFile(atPath: path)){
+                        // 删除
+                        //try! NSFileManager.defaultManager().removeItemAtPath(path)
+                        do {
+                            try FileManager.default.removeItem(atPath: path as String)
+                        } catch {
+                            print("removeItemAtPath err"+path)
+                        }
                     }
                 }
+                self.tableView.reloadData()
             }
-            self.tableView.reloadData()
         }
-        alert.addAction(alertConfirm)
-        let cancle = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (cancle) -> Void in
-            
-        }
-        alert.addAction(cancle)
-        // 提示框弹出
-        self.present(alert, animated: true) { () -> Void in
-            
-        }
+        
+        
     }
 }
