@@ -20,7 +20,7 @@ let User_birth_day           =   "birth_day"
 let User_region              =   "region"
 let User_personal_profile    =   "personal_profile"
 let User_client_id           =   "client_id"
-let User_showedLetter        =   "showedLetter"
+let User_showedLetter        =   "showedLetter" //是否显示信封
 class UserInfo: UserModel {
 
     //单例

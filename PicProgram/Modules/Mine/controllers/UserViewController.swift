@@ -125,6 +125,11 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         mScrollView?.setContentOffset(CGPoint.init(x: 0, y: 200), animated: true)
+        if textView.text == MRLanguage(forKey: "Personal Introduce") {
+            textView.text = ""
+        }else if textView.text.count as! Int == 0 {
+            textView.text = MRLanguage(forKey: "Personal Introduce")
+        }
     }
     
     func keyboardRegist() {
@@ -136,11 +141,28 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        self.textNumberLabel.text = "\(120 - textView.text.count)字"
         if textView.text.count > 120 {
             let str = textView.text as NSString
             textView.text = str.substring(to: 120)
+        }else {
+            self.textNumberLabel.text = "\(120 - textView.text.count)字"
         }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        updateUserInfo(params: [User_personal_profile:textView.text])
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.text.count >= 120 && text != "" {
+            return false
+        }
+        else if text == "\n" {
+            keyboardRegist()
+            updateUserInfo(params: [User_personal_profile:textView.text])
+        }
+        
+        return true
     }
     
 }

@@ -16,17 +16,17 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
     @IBOutlet weak var introduceTextView: UITextView!
     @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var textLengthLabel: UILabel!
-    var paintModel:Paint!
+    var paintModel:PaintModel!
     @IBAction func changeCover(_ sender: Any) {
         let vc = ChangeCoverPicturesViewController()
         vc.chooseCoverPic = {[weak self](index) in
-            let picModel = self?.paintModel.pictureModels[index]
+            let picModel = self?.paintModel.picture_arry[index]
             self?.picImageView.xs_setImage((picModel?.picture_url)!)
             self?.paintModel.title_url = (picModel?.picture_url)!
             self?.paintModel.title_detail_url = (picModel?.detail_url)!
             vc.navigationController?.popViewController(animated: true)
         }
-        vc.dataSource = self.paintModel.pictureModels
+        vc.dataSource = self.paintModel.picture_arry
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -41,13 +41,23 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "编辑画单信息"
-        self.titleTextField.text = self.paintModel.paint_title
-        if self.paintModel.title_url != nil && self.paintModel.title_url?.count as! Int  > 0 {
-            self.picImageView.xs_setImage(self.paintModel.title_url!)
-        }
+        
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.titleTextField.text = self.paintModel.paint_title
+        self.subTitleTextField.text = self.paintModel.sub_title
+        if self.paintModel.paint_detail != nil && self.paintModel.paint_detail.count as! Int > 0 {
+            self.placeholderLabel.isHidden = true
+            self.introduceTextView.text = self.paintModel.paint_detail
+        }
+        if self.paintModel.title_url != nil && self.paintModel.title_url.count as! Int  > 0 {
+            self.picImageView.xs_setImage(self.paintModel.title_url)
+        }
+    }
+    
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         if textView.text.count >= 36 {
             let str = textView.text
@@ -95,12 +105,14 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
             self.paintModel.paint_title = textField.text!
         }else if textField == subTitleTextField {
             //TODO:画单副标题
-//            self.paintModel.paint_detail
+            self.paintModel.sub_title = textField.text!
         }
 //        saveEditPaintInfo()
     }
     
     func saveEditPaintInfo() {
+        let paint = Paint.fetchPaint(key: .name, value: paintModel.paint_title)
+        paint?.coverValues(model: paintModel)
         do {
             try appDelegate.managedObjectContext.save()
         } catch {

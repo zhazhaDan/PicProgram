@@ -155,6 +155,38 @@
             endingLineNumber = "170"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PicProgram.SystemPicsCollectionViewController.collectionView(__ObjC.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "PicProgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/controllers/SystemPicsCollectionViewController.swift"
+                  timestampString = "536685551.683221"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "566">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.UIImage, Swift.Bool) -&gt; () in PicProgram.SystemPicsCollectionViewController.collectionView(__ObjC.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "PicProgram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/controllers/SystemPicsCollectionViewController.swift"
+                  timestampString = "536685551.69021"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "449">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -196,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicProgram/Modules/Mine/views/ScanCodeView.swift"
-            timestampString = "535186355.058151"
+            timestampString = "536681410.747285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -208,31 +240,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Dead, Arg[1] = Owned To Guaranteed, Arg[2] = Dead&gt; of PicProgram.ScanCodeView.metadataOutput(__ObjC.AVCaptureMetadataOutput, didOutput: Swift.Array&lt;__ObjC.AVMetadataObject&gt;, from: __ObjC.AVCaptureConnection) -&gt; ()"
+                  symbolName = "PicProgram.ScanCodeView.metadataOutput(__ObjC.AVCaptureMetadataOutput, didOutput: Swift.Array&lt;__ObjC.AVMetadataObject&gt;, from: __ObjC.AVCaptureConnection) -&gt; ()"
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/views/ScanCodeView.swift"
-                  timestampString = "536599979.298676"
+                  timestampString = "536685551.712345"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "1568">
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "2882">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Owned To Guaranteed&gt; of closure #1 () -&gt; () in PicProgram.ScanCodeView.metadataOutput(__ObjC.AVCaptureMetadataOutput, didOutput: Swift.Array&lt;__ObjC.AVMetadataObject&gt;, from: __ObjC.AVCaptureConnection) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in PicProgram.ScanCodeView.metadataOutput(__ObjC.AVCaptureMetadataOutput, didOutput: Swift.Array&lt;__ObjC.AVMetadataObject&gt;, from: __ObjC.AVCaptureConnection) -&gt; ()"
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/views/ScanCodeView.swift"
-                  timestampString = "536599979.30388"
+                  timestampString = "536685551.715559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
                   endingLineNumber = "80"
-                  offsetFromSymbolStart = "17">
+                  offsetFromSymbolStart = "21">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -288,31 +320,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Owned To Guaranteed, Arg[2] = Owned To Guaranteed&gt; of closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in PicProgram.MineViewController.listDidSelected(view: __ObjC.UIView, at: Swift.Int, Swift.Int) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in PicProgram.MineViewController.listDidSelected(view: __ObjC.UIView, at: Swift.Int, Swift.Int) -&gt; ()"
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/controllers/MineViewController.swift"
-                  timestampString = "536599979.31997"
+                  timestampString = "536685551.731107"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "204"
                   endingLineNumber = "204"
-                  offsetFromSymbolStart = "1453">
+                  offsetFromSymbolStart = "717">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Owned To Guaranteed, Arg[2] = Owned To Guaranteed&gt; of closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in PicProgram.MineViewController.listDidSelected(view: __ObjC.UIView, at: Swift.Int, Swift.Int) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in PicProgram.MineViewController.listDidSelected(view: __ObjC.UIView, at: Swift.Int, Swift.Int) -&gt; ()"
                   moduleName = "PicProgram"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Mine/controllers/MineViewController.swift"
-                  timestampString = "536599979.323876"
+                  timestampString = "536685551.733706"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "204"
                   endingLineNumber = "204"
-                  offsetFromSymbolStart = "1465">
+                  offsetFromSymbolStart = "4334">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -363,102 +395,6 @@
             endingLineNumber = "41"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PicProgram.RecommandListCollectionViewController.requestData() -&gt; ()"
-                  moduleName = "PicProgram"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Find/controllers/RecommandListCollectionViewController.swift"
-                  timestampString = "536599979.341627"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "171">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Owned To Guaranteed&gt; of closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in PicProgram.RecommandListCollectionViewController.requestData() -&gt; ()"
-                  moduleName = "PicProgram"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Find/controllers/RecommandListCollectionViewController.swift"
-                  timestampString = "536599979.343875"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PicProgram/Modules/Find/controllers/EditPaintDetailViewController.swift"
-            timestampString = "536081515.85397"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "changeCover(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[1] = Owned To Guaranteed, Arg[2] = Owned To Guaranteed&gt; of closure #1 (Swift.Int) -&gt; () in PicProgram.EditPaintDetailViewController.changeCover(Any) -&gt; ()"
-                  moduleName = "PicProgram"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Find/controllers/EditPaintDetailViewController.swift"
-                  timestampString = "536599979.350145"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "201">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[1] = Owned To Guaranteed, Arg[2] = Owned To Guaranteed&gt; of closure #1 (Swift.Int) -&gt; () in PicProgram.EditPaintDetailViewController.changeCover(Any) -&gt; ()"
-                  moduleName = "PicProgram"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sliencio/Desktop/GDD/PicProgram/Modules/Find/controllers/EditPaintDetailViewController.swift"
-                  timestampString = "536599979.354411"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "904">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PicProgram/Modules/Find/views/CollectPaintsListView.swift"
-            timestampString = "536083678.399436"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -475,6 +411,86 @@
             endingLineNumber = "178"
             landmarkName = "clearCache()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Mine/controllers/UserViewController.swift"
+            timestampString = "536684647.424782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "textViewDidChange(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Mine/controllers/UserViewController.swift"
+            timestampString = "536684647.424861"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Find/controllers/PicDetailCollectionViewController.swift"
+            timestampString = "536685551.258258"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Easel/controllers/EaselViewController.swift"
+            timestampString = "536684760.546535"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "listDidSelected(view:at:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicProgram/Modules/Find/controllers/PicDetailCollectionViewController.swift"
+            timestampString = "536685551.258353"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "paintModel"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

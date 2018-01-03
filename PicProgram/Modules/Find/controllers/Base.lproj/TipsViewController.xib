@@ -129,7 +129,7 @@
                                         <fragment content="点击此处请录入您的祝福哦">
                                             <attributes>
                                                 <color key="NSColor" red="0.26666867733001709" green="0.26666298508644104" blue="0.26666685938835144" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                                <font key="NSFont" size="15" name="STKaiti"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>

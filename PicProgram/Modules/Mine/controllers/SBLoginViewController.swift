@@ -93,7 +93,9 @@ class SBLoginViewController: BaseViewController {
                 HUDTool.show(.text, text: "登录成功", delay: 0.6, view: (self?.view)!, complete: nil)
                 UserInfo.user.setValuesForKeys(result)
                 UserInfo.user.updateUserInfo()
-                UserInfo.user.updateIgetuiClient(clientId: UserInfo.user.client_id!)
+                if UserInfo.user.client_id != nil && UserInfo.user.client_id?.count as! Int > 0 {
+                    UserInfo.user.updateIgetuiClient(clientId: UserInfo.user.client_id!)
+                }
 //                self?.navigationController?.popToRootViewController(animated: true)
                 self?.dismiss(animated: true, completion: nil)
             }else {

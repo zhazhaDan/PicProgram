@@ -181,6 +181,13 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         }
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == MRLanguage(forKey: "Tips text") {
+            textView.text = ""
+        }else if textView.text.count as! Int == 0 {
+            textView.text = MRLanguage(forKey: "Tips text")
+        }
+    }
     
     func textViewDidChange(_ textView: UITextView) {
 //        self.tipsMaterialsButton.setTitle(textView.text, for: .normal)

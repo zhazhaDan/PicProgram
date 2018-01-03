@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserProtocolViewController: UIViewController {
+class UserProtocolViewController: BaseViewController {
     var userModel:UserModel!
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -16,6 +16,7 @@ class UserProtocolViewController: UIViewController {
     @IBAction func agreeAction(_ sender: Any) {
         let registVC = RegisterViewController.init(nibName: "RegisterViewController", bundle: Bundle.main)
         registVC.userModel = self.userModel
+        self.title = MRLanguage(forKey: "User Protocol")
         self.navigationController?.pushViewController(registVC, animated: true)
 
     }

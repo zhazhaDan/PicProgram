@@ -51,6 +51,15 @@ public class Paint: NSManagedObject {
        
     }
     
+    func coverValues(model:PaintModel) {
+        let properties = ["paint_id","paint_title","sub_title","title_url","title_detail_url","paint_detail"]
+        for i in 0 ..< properties.count {
+            if model.value(forKey: properties[i]) != nil {
+                self.setValue(model.value(forKey: properties[i]), forKey: properties[i])
+            }
+        }
+    }
+    
     @nonobjc public class func fetchAllLocalPaint() -> Array<Paint>? {
         let fetchRequest: NSFetchRequest<Paint> = Paint.fetchRequest()
         let predicate = NSPredicate.init(format: "paint_type==1", argumentArray: nil)

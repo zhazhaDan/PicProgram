@@ -139,14 +139,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeaderIdentifier, for: indexPath) as! PicDetailHeaderStyle3View
             header.delegate = self
 //            if paintModel != nil {
-            header.autoPicImageView.xs_setImage(paintModel.title_url)
-            header.backImageView.xs_setImage(paintModel.title_url)
-            header.picTitleLabel.text = paintModel.paint_title
-            header.subTitleLabel.text = paintModel.sub_title
-            header.eyeNumLabel.text = "\(paintModel.read_num)"
-            header.totalNumLabel.text = "\(paintModel.picture_num)张"
-            header.contentLabel.text = paintModel.paint_detail
-            header.titleLabel.text = self.title
+            
             if paint_id != 0 {
                 header.collectButton.isEnabled = true
                 header.collectButton.isSelected = (paintModel.flag == 1 ? true : false)
@@ -155,6 +148,14 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
                 header.collectButton.isSelected = true
             }
 //            }
+            header.autoPicImageView.xs_setImage(paintModel.title_url)
+            header.backImageView.xs_setImage(paintModel.title_url)
+            header.picTitleLabel.text = paintModel.paint_title
+            header.subTitleLabel.text = paintModel.sub_title
+            header.eyeNumLabel.text = "\(paintModel.read_num)"
+            header.totalNumLabel.text = "\(paintModel.picture_num)张"
+            header.contentLabel.text = paintModel.paint_detail
+            header.titleLabel.text = self.title
             return header
         }
         return UICollectionReusableView.init()
@@ -264,7 +265,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     func chooseMainPicAction() {
         if paint_id == 0 {
             let vc = EditPaintDetailViewController()
-            vc.paintModel = Paint.fetchPaint(key: .name, value: paintModel.paint_title)
+            vc.paintModel = paintModel//Paint.fetchPaint(key: .name, value: paintModel.paint_title)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
