@@ -189,6 +189,8 @@
 		3A5387621F96094A00BA4359 /* SBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5387611F96094A00BA4359 /* SBLoginViewController.swift */; };
 		3A6A8B911FBA881D0062B728 /* ChangeCoverPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A8B901FBA881D0062B728 /* ChangeCoverPicturesViewController.swift */; };
 		3A6A8B941FBAA15A0062B728 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A8B921FBAA15A0062B728 /* TipsViewController.swift */; };
+		3A6E21A21FFCE6E400674E4A /* UserProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6E21A01FFCE6E400674E4A /* UserProtocolViewController.swift */; };
+		3A6E21A31FFCE6E400674E4A /* UserProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6E21A11FFCE6E400674E4A /* UserProtocolViewController.xib */; };
 		3A6F49B81FC6C7C3001AE767 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */; };
 		3A6F49B91FC6C7C3001AE767 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */; };
 		3A6F49BB1FC6E1B3001AE767 /* ClassifyCommonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */; };
@@ -597,6 +599,8 @@
 		3A5387611F96094A00BA4359 /* SBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBLoginViewController.swift; sourceTree = "<group>"; };
 		3A6A8B901FBA881D0062B728 /* ChangeCoverPicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCoverPicturesViewController.swift; sourceTree = "<group>"; };
 		3A6A8B921FBAA15A0062B728 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		3A6E21A01FFCE6E400674E4A /* UserProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocolViewController.swift; sourceTree = "<group>"; };
+		3A6E21A11FFCE6E400674E4A /* UserProtocolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProtocolViewController.xib; sourceTree = "<group>"; };
 		3A6F49B61FC6C7C3001AE767 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		3A6F49B71FC6C7C3001AE767 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		3A6F49BA1FC6E1B3001AE767 /* ClassifyCommonListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyCommonListView.swift; sourceTree = "<group>"; };
@@ -1376,6 +1380,8 @@
 				F71952E41FCEFA6000ED9D68 /* SettingViewController.xib */,
 				F7F8E5D11FE4DB1500390A00 /* AboutUsViewController.swift */,
 				F7F8E5D21FE4DB1500390A00 /* AboutUsViewController.xib */,
+				3A6E21A01FFCE6E400674E4A /* UserProtocolViewController.swift */,
+				3A6E21A11FFCE6E400674E4A /* UserProtocolViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -1802,6 +1808,7 @@
 				F7141DB71FDBD06C00606631 /* TipsViewController.xib in Resources */,
 				3A33DDE51FE91FF1001565F2 /* xf_20.png in Resources */,
 				3AFB30531FE8B709005BA1A8 /* loading_39@2x.png in Resources */,
+				3A6E21A31FFCE6E400674E4A /* UserProtocolViewController.xib in Resources */,
 				3AB5DD081F8CB192004897B5 /* Contents.json in Resources */,
 				3A33DDE71FE91FF1001565F2 /* xf_22.png in Resources */,
 				3A5387601F95E7D700BA4359 /* Mine.storyboard in Resources */,
@@ -2023,6 +2030,7 @@
 				3AB5DD271F8CB192004897B5 /* FrameView.swift in Sources */,
 				3A92E8271FD68C9A00C7B5A3 /* GifViewController.swift in Sources */,
 				3AB5DD3D1F8CB192004897B5 /* BaseViewController.swift in Sources */,
+				3A6E21A21FFCE6E400674E4A /* UserProtocolViewController.swift in Sources */,
 				3AB5DD391F8CB192004897B5 /* BaseNavigationController.swift in Sources */,
 				F7AC31E01FD96BA200155666 /* ScanCodeView.swift in Sources */,
 				3AB5DD451F8CB1B7004897B5 /* RegistThirdAppDelegate.swift in Sources */,

@@ -135,6 +135,8 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
     
     func emotionChoosed(emotionView: AddEmotionView, sender: UIButton, emotionIndex index: Int) {
         self.emotionButton.setImage(sender.image(for: .normal), for: .normal)
+        self.emotionButton.imageEdgeInsets = sender.imageEdgeInsets
+        self.emotionButton.titleEdgeInsets = sender.titleEdgeInsets
         self.emotionButton.setTitle(sender.title(for: .normal), for: .normal)
         let btn = self.view.viewWithTag(10+2) as! UIButton
         self.bottomSegChooseAction(btn)

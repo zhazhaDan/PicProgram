@@ -20,7 +20,7 @@ class SBLoginViewController: BaseViewController {
         requestData()
     }
     @IBAction func registAction(_ sender: UIButton) {
-        let registVC = RegisterViewController.init(nibName: "RegisterViewController", bundle: Bundle.main)
+        let registVC = UserProtocolViewController.init(nibName: "UserProtocolViewController", bundle: Bundle.main)
         registVC.userModel = self.userModel
         self.navigationController?.pushViewController(registVC, animated: true)
         updateButtonStatus(sender: sender)

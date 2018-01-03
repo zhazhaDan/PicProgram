@@ -7,7 +7,8 @@
 //
 
 import UIKit
-let WXAPPID = "wx3ed1c44f65cb2ec7"
+let WXAPPID = "wxe7a6fef2f05e9ae8"
+let WXAPPSECRET = "4c7fd889d4f2902c0ca4108dc06dd422"
 let WBAPPKEY = "1695158483"
 let WBAPPSECRET = "da72736fd76eac3d4342cf99733dfa16"
 let WBRedirectURL = "https://api.weibo.com/oauth2/default.html"
