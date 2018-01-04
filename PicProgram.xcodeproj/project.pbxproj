@@ -388,6 +388,13 @@
 		F751D2BD1FE84C2C007E9E75 /* BigStarShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F751D2BC1FE84C2C007E9E75 /* BigStarShareView.xib */; };
 		F75D56C11FE54BA60044429C /* WifiSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D56C01FE54BA60044429C /* WifiSettingView.swift */; };
 		F75D56C31FE54BB00044429C /* WifiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75D56C21FE54BB00044429C /* WifiSettingView.xib */; };
+		F7733DAA1FFE5A0E00A29534 /* PicDetailActCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7733DA81FFE5A0D00A29534 /* PicDetailActCollectionViewController.swift */; };
+		F7733DAB1FFE5A0E00A29534 /* PicDetailAutorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7733DA91FFE5A0D00A29534 /* PicDetailAutorCollectionViewController.swift */; };
+		F7733DB01FFE5A7F00A29534 /* PicDetailHeaderStyle2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7733DAC1FFE5A7E00A29534 /* PicDetailHeaderStyle2View.xib */; };
+		F7733DB11FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7733DAD1FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.swift */; };
+		F7733DB21FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7733DAE1FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.xib */; };
+		F7733DB31FFE5A7F00A29534 /* PicDetailHeaderStyle2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7733DAF1FFE5A7F00A29534 /* PicDetailHeaderStyle2View.swift */; };
+		F7733DB51FFE70D700A29534 /* SearchList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7733DB41FFE70D700A29534 /* SearchList.plist */; };
 		F77771461FE67C8A00AF58E3 /* BaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */; };
 		F77771481FE6A82300AF58E3 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77771471FE6A82300AF58E3 /* HintView.swift */; };
 		F777714A1FE6A82C00AF58E3 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77771491FE6A82C00AF58E3 /* HintView.xib */; };
@@ -811,6 +818,13 @@
 		F751D2BC1FE84C2C007E9E75 /* BigStarShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigStarShareView.xib; sourceTree = "<group>"; };
 		F75D56C01FE54BA60044429C /* WifiSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiSettingView.swift; sourceTree = "<group>"; };
 		F75D56C21FE54BB00044429C /* WifiSettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WifiSettingView.xib; sourceTree = "<group>"; };
+		F7733DA81FFE5A0D00A29534 /* PicDetailActCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDetailActCollectionViewController.swift; sourceTree = "<group>"; };
+		F7733DA91FFE5A0D00A29534 /* PicDetailAutorCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDetailAutorCollectionViewController.swift; sourceTree = "<group>"; };
+		F7733DAC1FFE5A7E00A29534 /* PicDetailHeaderStyle2View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicDetailHeaderStyle2View.xib; sourceTree = "<group>"; };
+		F7733DAD1FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDetailHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		F7733DAE1FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicDetailHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		F7733DAF1FFE5A7F00A29534 /* PicDetailHeaderStyle2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicDetailHeaderStyle2View.swift; sourceTree = "<group>"; };
+		F7733DB41FFE70D700A29534 /* SearchList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SearchList.plist; sourceTree = "<group>"; };
 		F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertController.swift; sourceTree = "<group>"; };
 		F77771471FE6A82300AF58E3 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		F77771491FE6A82C00AF58E3 /* HintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
@@ -935,6 +949,7 @@
 		3A0B8B2A1FBD91F1006F09E9 /* files */ = {
 			isa = PBXGroup;
 			children = (
+				F7733DB41FFE70D700A29534 /* SearchList.plist */,
 				3A0B8B2B1FBD91F1006F09E9 /* EmotionList.plist */,
 			);
 			path = files;
@@ -1519,6 +1534,8 @@
 		3AD84BF81F99CDDD009F3BD5 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F7733DA81FFE5A0D00A29534 /* PicDetailActCollectionViewController.swift */,
+				F7733DA91FFE5A0D00A29534 /* PicDetailAutorCollectionViewController.swift */,
 				3A9963C91F9C6A5A00077307 /* FindViewController.swift */,
 				3A9963CA1F9C6A5A00077307 /* FindViewController.xib */,
 				3A9963EB1F9DD63F00077307 /* RecommandListCollectionViewController.swift */,
@@ -1561,6 +1578,10 @@
 		3AD84BFA1F99CDDD009F3BD5 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F7733DAD1FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.swift */,
+				F7733DAE1FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.xib */,
+				F7733DAF1FFE5A7F00A29534 /* PicDetailHeaderStyle2View.swift */,
+				F7733DAC1FFE5A7E00A29534 /* PicDetailHeaderStyle2View.xib */,
 				F7A5AD6F1FB7411000B74AF1 /* PicturesView.swift */,
 				3AF8CB371FB1AE7A00635533 /* NavigationBarShowListView.swift */,
 				3AB8FF921FAAF9D600058784 /* PicDetailCollectionViewCell.swift */,
@@ -1781,6 +1802,7 @@
 				3A9963DC1F9C9B7B00077307 /* ArtReadTableViewCell.xib in Resources */,
 				3AFB305C1FE8B709005BA1A8 /* loading_10@2x.png in Resources */,
 				3A33DE2E1FE91FF1001565F2 /* xf_80.png in Resources */,
+				F7733DB21FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.xib in Resources */,
 				F777714A1FE6A82C00AF58E3 /* HintView.xib in Resources */,
 				3A9CCC631FA1EC5100FC33BD /* ArtHeaderView.xib in Resources */,
 				3A33DE041FE91FF1001565F2 /* xf_8.png in Resources */,
@@ -1814,6 +1836,7 @@
 				3A5387601F95E7D700BA4359 /* Mine.storyboard in Resources */,
 				3A33DDFA1FE91FF1001565F2 /* xf_4.png in Resources */,
 				3A2616611FD695F6004A6A56 /* DeviceManageView.xib in Resources */,
+				F7733DB51FFE70D700A29534 /* SearchList.plist in Resources */,
 				3A33DE211FE91FF1001565F2 /* xf_67.png in Resources */,
 				F7F8E5D41FE4DB1500390A00 /* AboutUsViewController.xib in Resources */,
 				3A9963CC1F9C6A5A00077307 /* FindViewController.xib in Resources */,
@@ -1827,6 +1850,7 @@
 				3A53875B1F95E22E00BA4359 /* FindPassViewController.xib in Resources */,
 				3A33DDE61FE91FF1001565F2 /* xf_21.png in Resources */,
 				3A33DE111FE91FF1001565F2 /* xf_57.png in Resources */,
+				F7733DB01FFE5A7F00A29534 /* PicDetailHeaderStyle2View.xib in Resources */,
 				3A33DE0D1FE91FF1001565F2 /* xf_53.png in Resources */,
 				3A0085D51FB475F100BACFD0 /* PlayMoreView.xib in Resources */,
 				3AFB30551FE8B709005BA1A8 /* loading_3@2x.png in Resources */,
@@ -2004,6 +2028,7 @@
 				3A0B8B381FBD91F1006F09E9 /* EmotionCollectionViewCell.swift in Sources */,
 				F72A5ACD1FDD5125007544CB /* Picture+CoreDataClass.swift in Sources */,
 				3AB5DCFC1F8CB192004897B5 /* Add+String.swift in Sources */,
+				F7733DB11FFE5A7F00A29534 /* PicDetailHeaderCollectionReusableView.swift in Sources */,
 				F7141DBF1FDC11CB00606631 /* SnapShot+UIView.swift in Sources */,
 				F72A5ACA1FDD5125007544CB /* Paint+CoreDataProperties.swift in Sources */,
 				3AB7B58E1FDCE70B0055B694 /* AddEmotionView.swift in Sources */,
@@ -2033,6 +2058,7 @@
 				3A6E21A21FFCE6E400674E4A /* UserProtocolViewController.swift in Sources */,
 				3AB5DD391F8CB192004897B5 /* BaseNavigationController.swift in Sources */,
 				F7AC31E01FD96BA200155666 /* ScanCodeView.swift in Sources */,
+				F7733DAA1FFE5A0E00A29534 /* PicDetailActCollectionViewController.swift in Sources */,
 				3AB5DD451F8CB1B7004897B5 /* RegistThirdAppDelegate.swift in Sources */,
 				3AB7B5921FDCEBD20055B694 /* SharePlatformView.swift in Sources */,
 				3AB5DCC61F8CB192004897B5 /* NetworkTool.swift in Sources */,
@@ -2058,6 +2084,7 @@
 				3A9963DB1F9C9B7B00077307 /* ArtReadTableViewCell.swift in Sources */,
 				3AD84C041F99CDDE009F3BD5 /* CustomViewProtocol.swift in Sources */,
 				3A414E481FCE532B0046E2B7 /* FontChange+UILabel.swift in Sources */,
+				F7733DB31FFE5A7F00A29534 /* PicDetailHeaderStyle2View.swift in Sources */,
 				3A0B8B3A1FBD91F1006F09E9 /* EmotionView.swift in Sources */,
 				3A6F49B81FC6C7C3001AE767 /* AlbumTableViewCell.swift in Sources */,
 				3A7C827E1FAC2B2000793420 /* PictureDetailViewController.swift in Sources */,
@@ -2087,6 +2114,7 @@
 				3AB5DD2D1F8CB192004897B5 /* PKHUDAssets.swift in Sources */,
 				3A41AD541F9599A3000BCC16 /* RegisterViewController.swift in Sources */,
 				3A9CCC531FA1D1A700FC33BD /* FindTodayRecomModel.swift in Sources */,
+				F7733DAB1FFE5A0E00A29534 /* PicDetailAutorCollectionViewController.swift in Sources */,
 				3AB7B5991FDE62100055B694 /* NewPintNameViewController.swift in Sources */,
 				3AB5DD3C1F8CB192004897B5 /* BaseView.swift in Sources */,
 				3AB5DD2A1F8CB192004897B5 /* PKHUD.swift in Sources */,

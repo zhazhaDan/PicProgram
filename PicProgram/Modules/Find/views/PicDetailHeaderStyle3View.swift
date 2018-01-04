@@ -34,8 +34,8 @@ class PicDetailHeaderStyle3View: UICollectionReusableView {
         delegate.pushAction!()
     }
     
-    @IBAction func collectAction(_ sender: Any) {
-        delegate.collectAction!()
+    @IBAction func collectAction(_ sender: UIButton) {
+        delegate.collectAction!(view: sender)
     }
     
     @IBAction func shareAction(_ sender: Any) {

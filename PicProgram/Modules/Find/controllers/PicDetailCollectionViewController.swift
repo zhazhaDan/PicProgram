@@ -44,7 +44,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         // Register cell classes
         self.collectionView!.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         self.registHeader()
-        self.addRightNavigationBarItems(["shangchunhuakuang","fenxiang","08wode_shebeiguanli"])
+        
     }
     
     func registHeader() {
@@ -169,40 +169,40 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         return UICollectionReusableView.init()
     }
 
-
-    func addRightNavigationBarItems(_ imageNames:[String]) {
-        var imageItems : Array = [UIBarButtonItem]()
-        if imageNames.count > 0 {
-            for i in 0 ..< imageNames.count {
-                let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 25, height: 44))
-                let image = UIImage.init(named: imageNames[imageNames.count - i - 1])
-                button.setImage(image, for: .normal)
-                button.setImage(UIImage.init(named: imageNames[imageNames.count - i - 1]), for: .highlighted)
-                button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10)
-                button.addTarget(self, action: #selector(rightNavigationBarAction(_:)), for: .touchUpInside)
-                let barItem = UIBarButtonItem.init(customView: button)
-                button.tag = 1000+imageNames.count - i - 1
-                imageItems.append(barItem)
-            }
-        }
-        self.navigationItem.rightBarButtonItems = imageItems
-    }
-    
-    @objc func rightNavigationBarAction(_ sender:UIButton) {
-        switch sender.tag - 1000 {
-        case 0:
-            print("投放")
-            break
-        case 1:
-            print("分享")
-            break
-        case 2:
-            print("推送")
-            break
-        default:
-            print("")
-        }
-    }
+//
+//    func addRightNavigationBarItems(_ imageNames:[String]) {
+//        var imageItems : Array = [UIBarButtonItem]()
+//        if imageNames.count > 0 {
+//            for i in 0 ..< imageNames.count {
+//                let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 25, height: 44))
+//                let image = UIImage.init(named: imageNames[imageNames.count - i - 1])
+//                button.setImage(image, for: .normal)
+//                button.setImage(UIImage.init(named: imageNames[imageNames.count - i - 1]), for: .highlighted)
+//                button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10)
+//                button.addTarget(self, action: #selector(rightNavigationBarAction(_:)), for: .touchUpInside)
+//                let barItem = UIBarButtonItem.init(customView: button)
+//                button.tag = 1000+imageNames.count - i - 1
+//                imageItems.append(barItem)
+//            }
+//        }
+//        self.navigationItem.rightBarButtonItems = imageItems
+//    }
+//
+//    @objc func rightNavigationBarAction(_ sender:UIButton) {
+//        switch sender.tag - 1000 {
+//        case 0:
+//            print("投放")
+//            break
+//        case 1:
+//            print("分享")
+//            break
+//        case 2:
+//            print("推送")
+//            break
+//        default:
+//            print("")
+//        }
+//    }
     
     func backAction() {
         self.navigationController?.popViewController(animated: true)
@@ -238,30 +238,53 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         }
        
     }
-    func collectAction() {
+    func collectAction(view: UIButton) {
+        HUDTool.show(.loading, view: self.view)
         network.requestData(.paint_collect, params: ["paint_id":self.paintModel.paint_id], finishedCallback: { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
-                let header = self?.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0)) as! PicDetailHeaderStyle3View
-                header.collectButton.isSelected = !header.collectButton.isSelected
+                self?.bigAnimate(view: view)
+                let header = self?.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
+                if header is PicDetailHeaderStyle3View {
+                    (header as! PicDetailHeaderStyle3View).collectButton.isSelected = !(header as! PicDetailHeaderStyle3View).collectButton.isSelected
+
+                }else if header is PicDetailHeaderCollectionReusableView {
+                    (header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected = !(header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected
+                }
             }
         }, nil)
     }
     func pushAction() {
         var array = self.paintModel.picture_arry
-        let header = self.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0)) as! PicDetailHeaderStyle3View
-        if header.segmentIndex == 1 {
-            array = self.paintModel.picture_arry
-        }else if header.segmentIndex == 0 {
-            array = self.paintModel.picture_H
-        }else if header.segmentIndex == 2 {
-            array = self.paintModel.picture_S
+        let header = self.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
+        if header is PicDetailHeaderStyle3View {
+            let header2 = (header as! PicDetailHeaderStyle3View)
+            if header2.segmentIndex == 1 {
+                array = self.paintModel.picture_arry
+            }else if header2.segmentIndex == 0 {
+                array = self.paintModel.picture_H
+            }else if header2.segmentIndex == 2 {
+                array = self.paintModel.picture_S
+            }
+        }else if header is PicDetailHeaderCollectionReusableView {
+            let header2 = (header as! PicDetailHeaderCollectionReusableView)
+            if header2.segmentIndex == 1 {
+                array = self.paintModel.picture_arry
+            }else if header2.segmentIndex == 0 {
+                array = self.paintModel.picture_H
+            }else if header2.segmentIndex == 2 {
+                array = self.paintModel.picture_S
+            }
         }
+       
         var ids: [Int] = Array()
         for model in array {
             ids.append(model.picture_id)
         }
-       
+       HUDTool.show(.loading, view: self.view)
+        // ,"paint_id":self.paintModel.paint_id
         network.requestData(.paint_play, params: ["picture_ids":ids,"title_paint_id":ids.first as! Int], finishedCallback: { (result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: "推送成功", delay: 1, view: self.view, complete: nil)
             }else {
@@ -284,5 +307,17 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             vc.paintModel = paintModel//Paint.fetchPaint(key: .name, value: paintModel.paint_title)
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func bigAnimate(view:UIView) {
+        self.view.isUserInteractionEnabled = false
+        let anim = CAKeyframeAnimation.init(keyPath: "transform.scale")
+        anim.values = [1,2,3,2,1]
+        anim.duration = 0.3
+        view.layer.add(anim, forKey: "add")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + anim.duration) {
+            self.view.isUserInteractionEnabled = true
+        }
+        
     }
 }

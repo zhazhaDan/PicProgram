@@ -16,13 +16,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02faxians_banner2ji" translatesAutoresizingMaskIntoConstraints="NO" id="dxx-nK-wNy">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02faxians_banner2ji" translatesAutoresizingMaskIntoConstraints="NO" id="dxx-nK-wNy">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="208" id="3fd-kY-yXb"/>
                     </constraints>
                 </imageView>
-                <button userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7u-m2-SB3">
+                <button contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7u-m2-SB3">
                     <rect key="frame" x="9" y="9" width="19" height="19"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="19" id="aHh-m7-b7N"/>
@@ -30,6 +30,9 @@
                     </constraints>
                     <state key="normal" image="shouchang"/>
                     <state key="selected" image="02faxians_bannererji_yishouchang"/>
+                    <connections>
+                        <action selector="collectAction:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="1OM-h4-wKQ"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02faxians_bannererji_yueduliang" translatesAutoresizingMaskIntoConstraints="NO" id="Roy-qn-iGK">
                     <rect key="frame" x="9" y="177" width="15" height="10"/>
@@ -59,42 +62,46 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禅宗有云：为参禅时，见山是山。及至后来亲见知识，有个入处，见山不是山，见水不是水。而今得个休歇处，依前见山只是山，见水只是水。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-ep-at7">
-                    <rect key="frame" x="12" y="218" width="351" height="54"/>
+                    <rect key="frame" x="12" y="218" width="351" height="47"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="54" id="Lj5-og-TI7"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Lj5-og-TI7"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.32153749465942383" green="0.32158857583999634" blue="0.32152634859085083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4X-WA-dYw">
-                    <rect key="frame" x="12" y="282" width="351" height="1"/>
+                    <rect key="frame" x="12" y="275" width="351" height="1"/>
                     <color key="backgroundColor" red="0.92542082071304321" green="0.92551285028457642" blue="0.92131882905960083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="8JG-NQ-0Aj"/>
                     </constraints>
                 </view>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-ud-3jl">
-                    <rect key="frame" x="12" y="293" width="104" height="29"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-ud-3jl">
+                    <rect key="frame" x="12" y="286" width="135" height="28"/>
                     <color key="backgroundColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="104" id="VbO-bt-4jx"/>
+                        <constraint firstAttribute="height" constant="27" id="LMS-dB-1x5"/>
+                        <constraint firstAttribute="width" constant="135" id="VbO-bt-4jx"/>
                     </constraints>
                     <segments>
                         <segment title="横"/>
                         <segment title="横竖"/>
                         <segment title="竖"/>
                     </segments>
-                    <color key="tintColor" red="0.80175262689590454" green="0.69612950086593628" blue="0.56939202547073364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <action selector="picChangeAction:" destination="i5M-Pr-FkT" eventType="valueChanged" id="G4L-YZ-EEa"/>
+                    </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45张" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-su-DRC">
-                    <rect key="frame" x="283" y="293" width="80" height="20"/>
+                    <rect key="frame" x="283" y="286" width="80" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="ZXI-Wb-CMh"/>
                         <constraint firstAttribute="height" constant="20" id="aoj-SS-jWl"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" red="0.80175262689590454" green="0.69612950086593628" blue="0.56939202547073364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -125,6 +132,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
                 <outlet property="changeSegment" destination="J2G-ud-3jl" id="dZd-Ii-5AM"/>
+                <outlet property="collectButton" destination="N7u-m2-SB3" id="7cf-BG-TLz"/>
                 <outlet property="contentLabel" destination="IkV-ep-at7" id="WyQ-uJ-yBh"/>
                 <outlet property="eyeNumLabel" destination="xik-Zb-ODC" id="aSu-Nb-ao6"/>
                 <outlet property="headerImageView" destination="dxx-nK-wNy" id="M9m-hZ-i6V"/>
@@ -136,8 +144,8 @@
     </objects>
     <resources>
         <image name="02faxians_banner2ji" width="375" height="208"/>
-        <image name="02faxians_bannererji_yishouchang" width="22" height="22"/>
+        <image name="02faxians_bannererji_yishouchang" width="18" height="17"/>
         <image name="02faxians_bannererji_yueduliang" width="22" height="22"/>
-        <image name="shouchang" width="22" height="22"/>
+        <image name="shouchang" width="18" height="18"/>
     </resources>
 </document>

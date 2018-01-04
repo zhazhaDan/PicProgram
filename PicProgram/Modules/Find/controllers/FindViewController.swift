@@ -119,7 +119,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     func bannerViewDidSelected(view: BannerView, _ index: Int) {
         if view == self.todayView.bannerView {
             let layout = UICollectionViewFlowLayout.init()
-            let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
+            let vc = PicDetailActCollectionViewController.init(collectionViewLayout: layout)
             vc.paint_id = self.recommandModel.banner[index].paint_id
             vc.title = "今日推荐"
             self.navigationController?.pushViewController(vc, animated: true)
