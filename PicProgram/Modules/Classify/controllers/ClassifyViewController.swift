@@ -129,8 +129,17 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         })
         self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { (tag) in
             print("去登录")
-            let vc = PlayViewController.player
-            self.navigationController?.pushViewController(vc, animated: true)
+            if UserInfo.user.checkUserLogin() {
+                let vc = PlayViewController.player
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }else {
+                let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+                let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+                self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+                
+            }
+           
         }
         self.title = MRLanguage(forKey: "Category")
     }

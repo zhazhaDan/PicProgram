@@ -113,10 +113,18 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
             vc.paintModel = view1.dataSource[index]
             self.navigationController?.pushViewController(vc, animated: true)
         }else if view == view2 {
-            let vc = PlayViewController.player
-            vc.dataSource = view2.dataSource
-            vc.title = MRLanguage(forKey: "Recent viewed")//view2.dataSource[index].title
-            self.navigationController?.pushViewController(vc, animated: true)
+            if UserInfo.user.checkUserLogin() {
+                let vc = PlayViewController.player
+                vc.dataSource = view2.dataSource
+                vc.title = MRLanguage(forKey: "Recent viewed")//view2.dataSource[index].title
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else {
+                let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+                let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+                self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+                
+            }
+            
         }else if view == view3 {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)

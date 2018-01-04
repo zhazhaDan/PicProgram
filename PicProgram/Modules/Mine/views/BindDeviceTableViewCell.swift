@@ -24,6 +24,9 @@ class BindDeviceTableViewCell: UITableViewCell {
         delegate.removeDevice!(view: self, deviceIndex: row)
     }
     
+    @IBAction func chooseDeviceAction(_ sender: UIButton) {
+        delegate.setBindDevices!(view: sender, deviceIndex: row)
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

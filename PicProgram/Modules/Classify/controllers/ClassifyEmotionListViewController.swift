@@ -129,22 +129,30 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlayViewController.player
-        
-        if customPaint.count == 0 {
-            vc.dataSource = model.picture_arry
-            vc.title = model.paint_title
-        }else {
-            if indexPath.section == 0 {
-                vc.dataSource = customPaint
-                vc.title = "历史浏览"
-            }else if indexPath.section == 1 {
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            
+            if customPaint.count == 0 {
                 vc.dataSource = model.picture_arry
                 vc.title = model.paint_title
+            }else {
+                if indexPath.section == 0 {
+                    vc.dataSource = customPaint
+                    vc.title = "历史浏览"
+                }else if indexPath.section == 1 {
+                    vc.dataSource = model.picture_arry
+                    vc.title = model.paint_title
+                }
             }
-        }
-        self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
 
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+
+        }
+       
       
     }
     

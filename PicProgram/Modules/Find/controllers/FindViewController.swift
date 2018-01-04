@@ -102,8 +102,16 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         button.setTitleColor(xsColor_placeholder_grey, for: .normal)
         button.addTarget(self, action: #selector(searchAction), for: .touchUpInside)
         self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { [weak self](tag) in
-            let vc = PlayViewController.player
-            self?.navigationController?.pushViewController(vc, animated: true)
+            if UserInfo.user.checkUserLogin() {
+                let vc = PlayViewController.player
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }else {
+                let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+                let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+                self?.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+                
+            }
+            
         }
         self.baseNavigationController?.topViewController?.navigationItem.titleView = button
     }

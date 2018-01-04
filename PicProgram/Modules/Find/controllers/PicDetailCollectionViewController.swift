@@ -109,11 +109,19 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlayViewController.player
-        vc.dataSource = paintModel.picture_arry
-        vc.title = paintModel.paint_title
-        vc.currentIndex = indexPath.item
-        self.navigationController?.pushViewController(vc, animated: true)
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            vc.dataSource = paintModel.picture_arry
+            vc.title = paintModel.paint_title
+            vc.currentIndex = indexPath.item
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+            
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -219,8 +227,16 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     }
     
     func playAction() {
-        let vc = PlayViewController.player
-        self.navigationController?.pushViewController(vc, animated: true)
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+            
+        }
+       
     }
     func collectAction() {
         network.requestData(.paint_collect, params: ["paint_id":self.paintModel.paint_id], finishedCallback: { [weak self](result) in

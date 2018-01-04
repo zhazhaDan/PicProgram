@@ -17,7 +17,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var cScrollView: UIScrollView!
     var deviceDatas:Array<[String:Any]> = Array()
-    
+    var pushDevices:[String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
@@ -62,10 +62,6 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         deviceView.tag = 500
         deviceView.frame = bottomView.bounds
         self.bottomView.addSubview(deviceView)
-//        self.contentView.height = self.bottomView.bottom
-//        self.contentView.updateConstraints()
-//        self.cScrollView.contentSize = CGSize.init(width: cScrollView.width, height: contentView.bottom)
-//        self.cScrollView.updateConstraints()
     }
     
     override func requestData() {
@@ -92,12 +88,23 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
             if result["ret"] as! Int == 0 {
                 self.deviceDatas = result["device_infos"] as! Array<[String : Any]>
                 self.updateDeviceManageView()
+                self.updatePushDevices()
             }else if result["ret"] as! Int != -1062 {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
                 self.deviceDatas.removeAll()
                 self.updateDeviceManageView()
             }
         }, nil)
+    }
+    
+    func updatePushDevices() {
+        self.pushDevices.removeAll()
+        for i in 0 ..< self.deviceDatas.count {
+            let info = self.deviceDatas[i]
+            if info["flag"] as! Int == 1 {
+                self.pushDevices.append(info["device_id"] as! String)
+            }
+        }
     }
     
     @IBAction func headerAction(_ sender: Any) {
@@ -108,8 +115,14 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     
     @IBAction func playAction(_ sender: Any) {
-        let vc = PlayViewController.player
-        self.navigationController?.pushViewController(vc, animated: true)
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+        }
     }
     
     func settingDidSelected() {
@@ -242,6 +255,43 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         
 //        self.navigationController?.present(alert, animated: true, completion: nil)
 
+    }
+    
+    func setBindDevices(view: UIView, deviceIndex row: Int) {
+        let button = view as! UIButton
+        if button.isSelected == false {
+            BaseAlertController.inits("", message: MRLanguage(forKey: "Choose Device"), confirmText: "确定", "取消", subComplete: { (tag) in
+                if tag == 0 {
+                    button.isSelected = true
+                    let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
+                    let info = bindUserView.dataSource[row]
+                    self.pushDevices.append(info["device_id"] as! String)
+                    self.updateUserDefaultDevices()
+                }
+            })
+        }else {
+            if self.pushDevices.count == 1 {
+                BaseAlertController.inits("", message: "还是保留一个推送设备吧", confirmText: "确认", nil, subComplete: nil)
+                return
+            }
+            BaseAlertController.inits("", message: MRLanguage(forKey: "Cancel Device"), confirmText: "确定", "取消", subComplete: { (tag) in
+               if tag == 0 {
+                button.isSelected = false
+                let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
+                let info = bindUserView.dataSource[row]
+                let device_id = info["device_id"] as! String
+                let index = self.pushDevices.index(of: device_id)
+                self.pushDevices.remove(at: index!)
+                self.updateUserDefaultDevices()
+                }
+            })
+        }
+    }
+    
+    func updateUserDefaultDevices() {
+        network.requestData(.user_set_play_device, params: ["device_ids":pushDevices], finishedCallback: { (result) in
+            HUDTool.show(.text, nil, text: MRLanguage(forKey: "Setting Successful"), delay: 0.8, view: self.view, complete: nil)
+        }, nil)
     }
     
     func confirmRemoveDevice(deviceIndex row: Int) {

@@ -81,10 +81,19 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlayViewController.player
-        vc.dataSource = model.picture_arry
-        vc.title = model.paint_title
-        self.navigationController?.pushViewController(vc, animated: true)
+       
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            vc.dataSource = model.picture_arry
+            vc.title = model.paint_title
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath){

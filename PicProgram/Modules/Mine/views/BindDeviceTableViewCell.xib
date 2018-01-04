@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,12 +19,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7t0-b0-lkS">
-                        <rect key="frame" x="70" y="9" width="32" height="27"/>
+                        <rect key="frame" x="44" y="6.5" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="27" id="HIX-uC-sJ8"/>
+                            <constraint firstAttribute="height" constant="32" id="HIX-uC-sJ8"/>
                             <constraint firstAttribute="width" constant="32" id="j1l-b0-vnE"/>
                         </constraints>
-                        <state key="normal" title="Button" image="08wode_icon_guanliyuan"/>
+                        <state key="normal" backgroundImage="bangdinghuakuangbeijing"/>
+                        <state key="selected" image="huakuangyibangding" backgroundImage="bangdinghuakuangbeijing"/>
+                        <state key="highlighted" backgroundImage="bangdinghuakuangbeijing"/>
+                        <connections>
+                            <action selector="chooseDeviceAction:" destination="th2-Mk-aDz" eventType="touchUpInside" id="Joz-pp-0dg"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4H-Co-hdc">
                         <rect key="frame" x="226" y="14.5" width="50" height="15"/>
@@ -45,7 +50,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEX-BG-3ic">
-                        <rect key="frame" x="114" y="15" width="96" height="14.5"/>
+                        <rect key="frame" x="88" y="15" width="122" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -57,7 +62,7 @@
                     <constraint firstItem="V4H-Co-hdc" firstAttribute="leading" secondItem="HEX-BG-3ic" secondAttribute="trailing" constant="16" id="Udp-OM-gLh"/>
                     <constraint firstItem="HEX-BG-3ic" firstAttribute="centerY" secondItem="tF2-Hi-A4I" secondAttribute="centerY" id="Y3A-i5-tBQ"/>
                     <constraint firstItem="7t0-b0-lkS" firstAttribute="centerY" secondItem="tF2-Hi-A4I" secondAttribute="centerY" id="h13-JX-s2c"/>
-                    <constraint firstItem="7t0-b0-lkS" firstAttribute="leading" secondItem="tF2-Hi-A4I" secondAttribute="leading" constant="70" id="wTf-eZ-NIM"/>
+                    <constraint firstItem="7t0-b0-lkS" firstAttribute="leading" secondItem="tF2-Hi-A4I" secondAttribute="leading" constant="44" id="wTf-eZ-NIM"/>
                     <constraint firstItem="V4H-Co-hdc" firstAttribute="centerY" secondItem="tF2-Hi-A4I" secondAttribute="centerY" id="zTW-AF-6qd"/>
                 </constraints>
             </tableViewCellContentView>
@@ -69,6 +74,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="08wode_icon_guanliyuan" width="32" height="27"/>
+        <image name="bangdinghuakuangbeijing" width="24" height="23"/>
+        <image name="huakuangyibangding" width="24" height="17"/>
     </resources>
 </document>

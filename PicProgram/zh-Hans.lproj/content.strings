@@ -76,9 +76,9 @@
 "User Protocol" = "用户协议";
 "Personal Introduce" = "个人介绍...";
 "Tips text" = "点击此处请录入您的祝福哦";
-"" = "";
-"" = "";
-"" = "";
+"Choose Device" = "是否添加推送 ";
+"Cancel Device" = "是否去除推送";
+"Setting Successful" = "设置成功";
 "" = "";
 "" = "";
 "" = "";

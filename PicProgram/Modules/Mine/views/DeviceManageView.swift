@@ -39,6 +39,7 @@ class DeviceManageView: UIView {
     @objc optional func backSelectd()
     @objc optional func scanCode(result: String)
     @objc optional func removeDevice(view:UIView,deviceIndex row : Int)
+    @objc optional func setBindDevices(view:UIView,deviceIndex row : Int)
     @objc optional func promiseBindDevice(view:UIView,deviceIndex row : Int)
     @objc optional func denyBindDevice(view:UIView,deviceIndex row : Int)
 }

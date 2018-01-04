@@ -76,11 +76,12 @@ class ScanCodeView: BaseView,AVCaptureMetadataOutputObjectsDelegate {
             if metadataObj.stringValue != nil {
                 print("qr result is \(metadataObj.stringValue ?? "")")
                 captureSession?.stopRunning()
-                HUDTool.show(.success, text: "扫描已成功", delay: 0.5, view: self, complete: {
+                HUDTool.show(.custom, #imageLiteral(resourceName: "huakuangyibangding"), text: MRLanguage(forKey: "The scan was successful"), delay: 0.5, view: self, complete: {
                     [weak self] in
                     self?.backAction(UIButton())
                     self?.delegate.scanCode!(result: metadataObj.stringValue!)
                 })
+                
             }
         }
     }

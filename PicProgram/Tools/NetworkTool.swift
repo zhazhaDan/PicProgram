@@ -52,6 +52,7 @@ enum RequestAPIType {
     case user_set_info
     case user_collect_list
     case user_bind_device
+    case user_set_play_device
     case user_delete_device
     case user_master_solve_device
     case classify_get_art_home
@@ -176,6 +177,8 @@ class  NetworkTool{
             apiString = "imgs/upload/user_head"
         case .user_set_back:
             apiString = "imgs/upload/backend_img"
+        case .user_set_play_device:
+            apiString = "device/set_play_device"
         default:
             apiString = ""
             method = .get

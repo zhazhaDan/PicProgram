@@ -37,15 +37,15 @@ class MineBindDeviceView: BaseView,UITableViewDelegate,UITableViewDataSource,Cus
         let item = dataSource[indexPath.row]
         subCell.row = indexPath.row
         if item["flag"] as! Int == 1 {
-            subCell.adminButton.isHidden = false
+            subCell.adminButton.isSelected = true
         }else {
-            subCell.adminButton.isHidden = true
+            subCell.adminButton.isSelected = false
         }
         subCell.delegate = self.delegate as! MineViewProtocol!
         subCell.deviceNameLabel.text = item["device_name"] as! String
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate.listDidSelected!(view: self, at: indexPath.row, 0)
+//        delegate.listDidSelected!(view: self, at: indexPath.row, 0)
     }
 }
 
