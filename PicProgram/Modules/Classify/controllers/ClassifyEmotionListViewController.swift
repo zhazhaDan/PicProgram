@@ -39,6 +39,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
 
         let sectionData = self.dataSource[selectedIndex]
         self.emotionImageView.image = UIImage.init(named: sectionData["imageName"]! as! String)
+        self.emotionLabel.font = xsFont(20)
         self.emotionLabel.text = sectionData["title"] as! String
        loadLoadEmotionPaint()
     }
