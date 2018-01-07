@@ -44,6 +44,9 @@ class FindPassViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if self.userModel.register_id != nil {
+            self.emailTextfield.text = self.userModel.register_id
+        }
         // Do any additional setup after loading the view.
     }
 

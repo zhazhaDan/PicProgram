@@ -363,6 +363,7 @@
 		F70B897E200264E7001F22D6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F70B897D200264E7001F22D6 /* libsqlite3.0.tbd */; };
 		F70B8980200264F8001F22D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70B897F200264F8001F22D6 /* CoreGraphics.framework */; };
 		F70B898220026520001F22D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70B898120026520001F22D6 /* CoreData.framework */; };
+		F70B898520026D33001F22D6 /* AccountSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B898320026D33001F22D6 /* AccountSafeViewController.swift */; };
 		F7141DAC1FDBCF5900606631 /* LiningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7141DAE1FDBCF5900606631 /* LiningViewController.xib */; };
 		F7141DB51FDBD05F00606631 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7141DB31FDBD05F00606631 /* ShareViewController.swift */; };
 		F7141DB61FDBD05F00606631 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7141DB41FDBD05F00606631 /* ShareViewController.xib */; };
@@ -793,6 +794,7 @@
 		F70B897D200264E7001F22D6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		F70B897F200264F8001F22D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F70B898120026520001F22D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F70B898320026D33001F22D6 /* AccountSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSafeViewController.swift; sourceTree = "<group>"; };
 		F7141DAD1FDBCF5900606631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LiningViewController.xib; sourceTree = "<group>"; };
 		F7141DB01FDBCF6100606631 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LiningViewController.strings; sourceTree = "<group>"; };
 		F7141DB21FDBCF6700606631 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LiningViewController.strings"; sourceTree = "<group>"; };
@@ -1411,6 +1413,7 @@
 				F7F8E5D21FE4DB1500390A00 /* AboutUsViewController.xib */,
 				3A6E21A01FFCE6E400674E4A /* UserProtocolViewController.swift */,
 				3A6E21A11FFCE6E400674E4A /* UserProtocolViewController.xib */,
+				F70B898320026D33001F22D6 /* AccountSafeViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -2091,6 +2094,7 @@
 				F77771461FE67C8A00AF58E3 /* BaseAlertController.swift in Sources */,
 				3A2616671FD6A9CD004A6A56 /* MineBindDeviceView.swift in Sources */,
 				3A26166A1FD6AB1A004A6A56 /* BindDeviceTableViewCell.swift in Sources */,
+				F70B898520026D33001F22D6 /* AccountSafeViewController.swift in Sources */,
 				3A12A79A1F8F69AF008C0C9F /* DeviceManageView.swift in Sources */,
 				3A90F3CC1FE7CEDE00BF4906 /* BaseBundle.swift in Sources */,
 				3AB5DD2C1F8CB192004897B5 /* PKHUDAnimation.swift in Sources */,
