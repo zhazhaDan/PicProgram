@@ -37,8 +37,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
         self.navigationItem.leftBarButtonItem = nil
     }
     
-    
-    
+   
     override func buildUI() {
         self.customNavigationView()
         view1 = PaintFrameListView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - segButtonsHeightConstrain.constant - TabbarHeight - NavigationBarBottom))
@@ -51,7 +50,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
         view3 = PaintFrameListView.init(frame: CGRect.init(x: SCREEN_WIDTH * 2, y: 0, width: SCREEN_WIDTH, height: view1.height))
         view3.delegate = self
         self.contentScrollView.addSubview(view3)
-    }
+  }
     
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")

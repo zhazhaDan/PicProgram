@@ -53,8 +53,14 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
                         UserInfo.user.localLogout()
                         self.navigationController?.popViewController(animated: true)
                         // mineView更新
-                        let vc = MineViewController.init(nibName: "MineViewController", bundle: Bundle.main)
-                        self.navigationController?.viewControllers[0] = vc
+                        let normalAttris = [NSAttributedStringKey.foregroundColor:xsColor_main_yellow,NSAttributedStringKey.font:xsFont(10)]
+                        let selectedAttris = [NSAttributedStringKey.foregroundColor:xsColor_main_blue,NSAttributedStringKey.font:xsFont(10)]
+                        
+                        let minVC = MineViewController.init(nibName: "MineViewController", bundle: Bundle.main)
+                        minVC.tabBarItem = UITabBarItem.init(title: MRLanguage(forKey: "My Account"), image: UIImage.init(named: "weixuanzhongwode_icon")?.withRenderingMode(.alwaysOriginal), selectedImage:  #imageLiteral(resourceName: "xuanzhongwode_icon").withRenderingMode(.alwaysOriginal))
+                        
+                        minVC.tabBarItem.setTitleTextAttributes(normalAttris, for: .normal)
+                        minVC.tabBarItem.setTitleTextAttributes(selectedAttris, for: .selected);                 self.navigationController?.viewControllers[0] = minVC
                     }else {
                         HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
                     }

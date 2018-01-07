@@ -11,6 +11,8 @@ import UIKit
 import AVFoundation
 import UserNotifications
 
+
+
 let GTAPPKEY = "MxomNCKZml9NclLWPz9kl6"
 let GTAPPID = "AaFCgeHNR47biqwmDyRJd7"
 let GTAPPSECRET = "ISgE6b9pLM7xFcr8gWpNU7"
@@ -33,6 +35,7 @@ class RegistThirdAppDelegate: UIResponder,GeTuiSdkDelegate,UNUserNotificationCen
         GeTuiSdk.start(withAppId: GTAPPID, appKey: GTAPPKEY, appSecret: GTAPPSECRET, delegate: self)
         registRemoteNotifications()
 
+        
 //        ShareSDK.registerActivePlatforms(
 //            [SSDKPlatformType.typeSinaWeibo.rawValue,SSDKPlatformType.typeWechat.rawValue,SSDKPlatformType.typeTwitter.rawValue,SSDKPlatformType.typeFacebook.rawValue],
 //            onImport: {(platform : SSDKPlatformType) -> Void in

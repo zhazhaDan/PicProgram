@@ -138,7 +138,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let contentHeight = paintModel.paint_detail.size(self.view.width - 24, 74, xsFont(10)).height
-        return CGSize.init(width: self.view.width, height: 256+contentHeight)
+        return CGSize.init(width: self.view.width, height: 276+contentHeight)
     }
     
     
@@ -239,66 +239,91 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
        
     }
     func collectAction(view: UIButton) {
-        HUDTool.show(.loading, view: self.view)
-        network.requestData(.paint_collect, params: ["paint_id":self.paintModel.paint_id], finishedCallback: { [weak self](result) in
-            HUDTool.hide()
-            if result["ret"] as! Int == 0 {
-                self?.bigAnimate(view: view)
-                let header = self?.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
-                if header is PicDetailHeaderStyle3View {
-                    (header as! PicDetailHeaderStyle3View).collectButton.isSelected = !(header as! PicDetailHeaderStyle3View).collectButton.isSelected
-
-                }else if header is PicDetailHeaderCollectionReusableView {
-                    (header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected = !(header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected
+        if UserInfo.user.checkUserLogin() {
+            
+            HUDTool.show(.loading, view: self.view)
+            network.requestData(.paint_collect, params: ["paint_id":self.paintModel.paint_id], finishedCallback: { [weak self](result) in
+                HUDTool.hide()
+                if result["ret"] as! Int == 0 {
+                    self?.bigAnimate(view: view)
+                    let header = self?.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
+                    if header is PicDetailHeaderStyle3View {
+                        (header as! PicDetailHeaderStyle3View).collectButton.isSelected = !(header as! PicDetailHeaderStyle3View).collectButton.isSelected
+                        
+                    }else if header is PicDetailHeaderCollectionReusableView {
+                        (header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected = !(header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected
+                    }
                 }
-            }
-        }, nil)
+                }, nil)
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+            
+        }
+        
     }
     func pushAction() {
-        var array = self.paintModel.picture_arry
-        let header = self.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
-        if header is PicDetailHeaderStyle3View {
-            let header2 = (header as! PicDetailHeaderStyle3View)
-            if header2.segmentIndex == 1 {
-                array = self.paintModel.picture_arry
-            }else if header2.segmentIndex == 0 {
-                array = self.paintModel.picture_H
-            }else if header2.segmentIndex == 2 {
-                array = self.paintModel.picture_S
+        if UserInfo.user.checkUserLogin() {
+            var array = self.paintModel.picture_arry
+            let header = self.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
+            if header is PicDetailHeaderStyle3View {
+                let header2 = (header as! PicDetailHeaderStyle3View)
+                if header2.segmentIndex == 1 {
+                    array = self.paintModel.picture_arry
+                }else if header2.segmentIndex == 0 {
+                    array = self.paintModel.picture_H
+                }else if header2.segmentIndex == 2 {
+                    array = self.paintModel.picture_S
+                }
+            }else if header is PicDetailHeaderCollectionReusableView {
+                let header2 = (header as! PicDetailHeaderCollectionReusableView)
+                if header2.segmentIndex == 1 {
+                    array = self.paintModel.picture_arry
+                }else if header2.segmentIndex == 0 {
+                    array = self.paintModel.picture_H
+                }else if header2.segmentIndex == 2 {
+                    array = self.paintModel.picture_S
+                }
             }
-        }else if header is PicDetailHeaderCollectionReusableView {
-            let header2 = (header as! PicDetailHeaderCollectionReusableView)
-            if header2.segmentIndex == 1 {
-                array = self.paintModel.picture_arry
-            }else if header2.segmentIndex == 0 {
-                array = self.paintModel.picture_H
-            }else if header2.segmentIndex == 2 {
-                array = self.paintModel.picture_S
+            
+            var ids: [Int] = Array()
+            for model in array {
+                ids.append(model.picture_id)
             }
+            HUDTool.show(.loading, view: self.view)
+            // ,"paint_id":self.paintModel.paint_id
+            network.requestData(.paint_play, params: ["picture_ids":ids,"title_paint_id":ids.first as! Int], finishedCallback: { (result) in
+                HUDTool.hide()
+                if result["ret"] as! Int == 0 {
+                    HUDTool.show(.text, text: "推送成功", delay: 1, view: self.view, complete: nil)
+                }else {
+                    HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
+                }
+            }, nil)
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+            
         }
-       
-        var ids: [Int] = Array()
-        for model in array {
-            ids.append(model.picture_id)
-        }
-       HUDTool.show(.loading, view: self.view)
-        // ,"paint_id":self.paintModel.paint_id
-        network.requestData(.paint_play, params: ["picture_ids":ids,"title_paint_id":ids.first as! Int], finishedCallback: { (result) in
-            HUDTool.hide()
-            if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: "推送成功", delay: 1, view: self.view, complete: nil)
-            }else {
-                HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
-            }
-        }, nil)
+        
     }
     
     func shareAction() {
-        //TODO:分享 未登录提示登录？
-        let vc = ShareViewController.init(nibName: "ShareViewController", bundle: Bundle.main)
-        vc.picUrl = paintModel.title_detail_url
-        vc.picTitle = paintModel.paint_title
-        self.navigationController?.pushViewController(vc, animated: true)
+//        if UserInfo.user.checkUserLogin() {
+            //TODO:分享 未登录提示登录？
+            let vc = ShareViewController.init(nibName: "ShareViewController", bundle: Bundle.main)
+            vc.picUrl = paintModel.title_detail_url
+            vc.picTitle = paintModel.paint_title
+            self.navigationController?.pushViewController(vc, animated: true)
+//        }else {
+//            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+//            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+//            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+//
+//        }
+       
     }
     
     func chooseMainPicAction() {

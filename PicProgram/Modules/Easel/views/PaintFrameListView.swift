@@ -33,7 +33,16 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
         collectionView.backgroundColor = xsColor_line_grey
         collectionView.register(UINib.init(nibName: "EaselPaintCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: cellReuseIdentify)
         self.addSubview(collectionView)
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapAction(_:)))
+        self.addGestureRecognizer(tap)
+
     }
+    
+    @objc func tapAction(_ tap:UITapGestureRecognizer) {
+       self.collectionView.reloadData()
+    }
+    
     
   
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -78,6 +87,7 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
             subCell.paintPicImageView.backgroundColor = UIColor.clear
             subCell.paintTitleLabel.text = nil
         }
+        subCell.deleteButton.isHidden = true
     }
     
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

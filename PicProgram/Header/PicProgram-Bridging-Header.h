@@ -8,9 +8,10 @@
 
 #ifndef PicProgram_Bridging_Header_h
 #define PicProgram_Bridging_Header_h
+#import <UMShare/UMShare.h>
 
-#import <ShareSDK/ShareSDK.h>
-#import <ShareSDKConnector/ShareSDKConnector.h>
+//#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDKConnector/ShareSDKConnector.h>
 #import "NSBundle+AppLanguageSwitch.h"
 //Facebook
 #import <FacebookConnector/FacebookConnector.h>

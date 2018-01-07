@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,7 +56,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SD4-vd-w7h">
-                        <rect key="frame" x="179" y="54" width="30" height="30"/>
+                        <rect key="frame" x="177" y="54" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="9Ar-uL-jjK"/>
                             <constraint firstAttribute="width" constant="30" id="tB9-Pm-S0Q"/>
@@ -73,7 +73,7 @@
                 <constraint firstItem="N2x-Rj-mpN" firstAttribute="top" secondItem="HNc-L2-aet" secondAttribute="bottom" constant="4" id="8Z3-Cr-UQq"/>
                 <constraint firstItem="HNc-L2-aet" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9i9-x8-D6w"/>
                 <constraint firstItem="inK-wF-pqo" firstAttribute="top" secondItem="HNc-L2-aet" secondAttribute="bottom" constant="-3" id="AOH-Q6-kjt"/>
-                <constraint firstItem="SD4-vd-w7h" firstAttribute="centerX" secondItem="QbR-xs-WYb" secondAttribute="trailing" constant="-10" id="EIV-CL-Nlg"/>
+                <constraint firstItem="SD4-vd-w7h" firstAttribute="centerX" secondItem="QbR-xs-WYb" secondAttribute="trailing" constant="-12" id="EIV-CL-Nlg"/>
                 <constraint firstAttribute="trailing" secondItem="HNc-L2-aet" secondAttribute="trailing" id="Kq6-4o-yz3"/>
                 <constraint firstItem="inK-wF-pqo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="dGS-96-oKP"/>
                 <constraint firstItem="HNc-L2-aet" firstAttribute="top" secondItem="QbR-xs-WYb" secondAttribute="bottom" constant="-5" id="e4C-pq-R7A"/>
@@ -98,7 +98,7 @@
     </objects>
     <resources>
         <image name="02faxains-tu9" width="109" height="109"/>
-        <image name="huajia_xiaochazi" width="14" height="14"/>
+        <image name="huajia_xiaochazi" width="22" height="22"/>
         <image name="muwenzuobian" width="43" height="23"/>
     </resources>
 </document>

@@ -41,6 +41,9 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             let btn:UIButton = self.view.viewWithTag(11) as! UIButton
             btn.isSelected = false
             //今日推荐
+            if self.recommandModel == nil {
+                requestData()
+            }
             self.currentView.addSubview(todayView)
         }
     }
@@ -178,6 +181,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         let layout = UICollectionViewFlowLayout.init()
         let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
         vc.paintModel = view.model
+        vc.title = view.model.paint_title
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func listView(view: UIView, didSelected atIndex: Int) {

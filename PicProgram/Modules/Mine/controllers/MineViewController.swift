@@ -21,7 +21,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
         if UserInfo.user.checkUserLogin() == false && appDelegate.isLetterShowed == false && UserInfo.user.letterStatus == 0 {
             appDelegate.isLetterShowed = true
             let vc = LetterViewController()
@@ -290,7 +290,11 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     
     func updateUserDefaultDevices() {
         network.requestData(.user_set_play_device, params: ["device_ids":pushDevices], finishedCallback: { (result) in
-            HUDTool.show(.text, nil, text: MRLanguage(forKey: "Setting Successful"), delay: 0.8, view: self.view, complete: nil)
+            if result["ret"] as! Int == 0 {
+                HUDTool.show(.text, nil, text: MRLanguage(forKey: "Setting Successful"), delay: 0.8, view: self.view, complete: {
+                    self.getUserBindDevices()
+                })
+            }
         }, nil)
     }
     

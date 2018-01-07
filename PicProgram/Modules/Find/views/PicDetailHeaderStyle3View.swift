@@ -25,6 +25,7 @@ class PicDetailHeaderStyle3View: UICollectionReusableView {
     @IBOutlet weak var collectButton: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    @IBOutlet weak var backTopConstraint: NSLayoutConstraint!
     var segmentIndex:Int = 1
     @IBAction func playAction(_ sender: Any) {
         delegate.playAction!()
@@ -57,6 +58,8 @@ class PicDetailHeaderStyle3View: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backTopConstraint.constant = StatusBarHeight
+        self.updateConstraints()
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(picTapAction(_ :)))
         self.autoPicImageView.addGestureRecognizer(tap)
     }

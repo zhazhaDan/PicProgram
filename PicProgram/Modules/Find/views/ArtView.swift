@@ -152,8 +152,11 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
 //            self.readTableView.tableHeaderView = headerView
             return
         }else {
-//            headerView.height = 410
+//            view1.isHidden = false
+//            view2.isHidden = false
+//            headerView.height = 180
 //            self.readTableView.tableHeaderView = headerView
+
         }
         self.view1MaskLayer.opacity = Float(angle / 1.5)
         self.view2MaskLayer.opacity = Float(angle / 1.5)
@@ -169,17 +172,14 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         cell2.frame = CGRect.init(x: space, y: -cell.height/2, width: headerView.width - space * 2, height: cell.height)
     }
     
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if scrollView.contentOffset.y <= headerView.height - 80 {
-//            scrollView.setContentOffset(CGPoint.zero, animated: true)
-//        }
-//    }
-//
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y <= headerView.height - 80 {
-//            scrollView.setContentOffset(CGPoint.zero, animated: true)
-//        }
-//    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+      scrollViewDidScroll(scrollView)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollViewDidScroll(scrollView)
+
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

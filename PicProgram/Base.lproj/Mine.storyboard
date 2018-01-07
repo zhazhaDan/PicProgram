@@ -217,12 +217,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-vF-h8C">
-                                        <rect key="frame" x="12" y="12" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="LQv-ms-I7I"/>
-                                            <constraint firstAttribute="height" constant="30" id="idV-Pn-Ywl"/>
+                                            <constraint firstAttribute="width" constant="44" id="LQv-ms-I7I"/>
+                                            <constraint firstAttribute="height" constant="44" id="idV-Pn-Ywl"/>
                                         </constraints>
-                                        <inset key="contentEdgeInsets" minX="-12" minY="-12" maxX="0.0" maxY="0.0"/>
+                                        <inset key="contentEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="fanhui"/>
                                         <connections>
                                             <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Pv-5e-BtP"/>
@@ -239,7 +239,7 @@
                                     <constraint firstItem="XBb-1H-zEp" firstAttribute="centerY" secondItem="2sU-YS-Oij" secondAttribute="centerY" id="69W-4E-HmZ"/>
                                     <constraint firstItem="RcT-jp-NuJ" firstAttribute="top" secondItem="IlB-dR-6iu" secondAttribute="bottom" constant="7" id="6yR-rt-ra5"/>
                                     <constraint firstItem="qYS-hh-Noq" firstAttribute="top" secondItem="Aha-TM-bO5" secondAttribute="bottom" constant="8" id="9RW-dD-1CT"/>
-                                    <constraint firstItem="3qW-vF-h8C" firstAttribute="leading" secondItem="Ael-3J-CJl" secondAttribute="leading" constant="12" id="9o0-PU-UkG"/>
+                                    <constraint firstItem="3qW-vF-h8C" firstAttribute="leading" secondItem="Ael-3J-CJl" secondAttribute="leading" id="9o0-PU-UkG"/>
                                     <constraint firstItem="IEK-0H-vY4" firstAttribute="leading" secondItem="Ael-3J-CJl" secondAttribute="leading" constant="42" id="At0-rh-b4t"/>
                                     <constraint firstItem="r8R-3r-ejC" firstAttribute="top" secondItem="nsM-pt-6YH" secondAttribute="bottom" constant="9" id="C6Y-Z8-TTe"/>
                                     <constraint firstItem="D8B-MW-JfB" firstAttribute="leading" secondItem="Ael-3J-CJl" secondAttribute="leading" constant="42" id="Caf-bL-Kj1"/>
@@ -264,7 +264,7 @@
                                     <constraint firstItem="d8q-4U-P9S" firstAttribute="height" secondItem="68p-o6-jlQ" secondAttribute="height" id="b4b-Ns-2TY"/>
                                     <constraint firstItem="qYS-hh-Noq" firstAttribute="top" secondItem="68p-o6-jlQ" secondAttribute="bottom" id="bBm-Xz-YLE"/>
                                     <constraint firstItem="68p-o6-jlQ" firstAttribute="leading" secondItem="Aha-TM-bO5" secondAttribute="trailing" constant="12" id="cUX-va-9aW"/>
-                                    <constraint firstItem="3qW-vF-h8C" firstAttribute="top" secondItem="Ael-3J-CJl" secondAttribute="top" constant="12" id="ccd-8b-UfN"/>
+                                    <constraint firstItem="3qW-vF-h8C" firstAttribute="top" secondItem="Ael-3J-CJl" secondAttribute="top" id="ccd-8b-UfN"/>
                                     <constraint firstItem="dc8-0O-2Fy" firstAttribute="centerX" secondItem="1Rd-DE-YmK" secondAttribute="centerX" multiplier="1.25" id="cf9-j0-fJn"/>
                                     <constraint firstAttribute="trailing" secondItem="IEK-0H-vY4" secondAttribute="trailing" constant="42" id="d3w-Eh-KbM"/>
                                     <constraint firstAttribute="trailing" secondItem="RcT-jp-NuJ" secondAttribute="trailing" constant="42" id="dJQ-tz-Jev"/>
@@ -324,12 +324,12 @@
         <image name="00dengluzhuce_denglu_dianjianniu" width="291" height="32"/>
         <image name="00dengluzhuce_youxiang_icon" width="25" height="19"/>
         <image name="00dengluzhuce_zhuce_weidianjianniu" width="291" height="32"/>
-        <image name="Facebookdenglu" width="31" height="31"/>
+        <image name="Facebookdenglu" width="32" height="33"/>
         <image name="fanhui" width="10" height="17"/>
         <image name="icon" width="21" height="27"/>
         <image name="login_logo" width="229" height="110"/>
-        <image name="twitterdenglu" width="31" height="31"/>
-        <image name="weibodenglu_icon" width="31" height="31"/>
-        <image name="weixindenglu_icon" width="31" height="31"/>
+        <image name="twitterdenglu" width="32" height="33"/>
+        <image name="weibodenglu_icon" width="32" height="33"/>
+        <image name="weixindenglu_icon" width="32" height="33"/>
     </resources>
 </document>
