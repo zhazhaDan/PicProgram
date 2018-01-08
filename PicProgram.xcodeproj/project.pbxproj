@@ -359,7 +359,6 @@
 		3AFB30671FE8B709005BA1A8 /* loading_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB30371FE8B709005BA1A8 /* loading_2@2x.png */; };
 		3AFB30681FE8B709005BA1A8 /* loading_19@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB30381FE8B709005BA1A8 /* loading_19@2x.png */; };
 		F104340E8EA668A380E025B1 /* Pods_PicProgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD8C6DEB27196A274AADA3E /* Pods_PicProgram.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F70B897C20026459001F22D6 /* share in Resources */ = {isa = PBXBuildFile; fileRef = F70B897B20026459001F22D6 /* share */; };
 		F70B897E200264E7001F22D6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F70B897D200264E7001F22D6 /* libsqlite3.0.tbd */; };
 		F70B8980200264F8001F22D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70B897F200264F8001F22D6 /* CoreGraphics.framework */; };
 		F70B898220026520001F22D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70B898120026520001F22D6 /* CoreData.framework */; };
@@ -790,7 +789,6 @@
 		4244DE9259CCF70FBFEBA945 /* Pods-PicProgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicProgram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicProgram/Pods-PicProgram.debug.xcconfig"; sourceTree = "<group>"; };
 		B637EB1BF82FD9C7B3061DE3 /* Pods-PicProgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicProgram.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicProgram/Pods-PicProgram.release.xcconfig"; sourceTree = "<group>"; };
 		CFD8C6DEB27196A274AADA3E /* Pods_PicProgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicProgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F70B897B20026459001F22D6 /* share */ = {isa = PBXFileReference; lastKnownFileType = folder; path = share; sourceTree = "<group>"; };
 		F70B897D200264E7001F22D6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		F70B897F200264F8001F22D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F70B898120026520001F22D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -923,8 +921,8 @@
 		3A0B8B241FBD91F0006F09E9 /* Easel */ = {
 			isa = PBXGroup;
 			children = (
-				3A0B8B411FBD97AE006F09E9 /* views */,
 				3A0B8B251FBD91F0006F09E9 /* controllers */,
+				3A0B8B411FBD97AE006F09E9 /* views */,
 			);
 			path = Easel;
 			sourceTree = "<group>";
@@ -1449,7 +1447,6 @@
 		3AB5DC941F8CB192004897B5 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				F70B897B20026459001F22D6 /* share */,
 				3A33DB371FE91178001565F2 /* GtSdkLib */,
 				3A33DB2E1FE90349001565F2 /* libWeiboSDK */,
 				3A33DB281FE90349001565F2 /* WechatOpenSDK */,
@@ -1682,7 +1679,7 @@
 				TargetAttributes = {
 					3AB5DC0C1F8CB119004897B5 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1860,7 +1857,6 @@
 				3A9963CC1F9C6A5A00077307 /* FindViewController.xib in Resources */,
 				3A33DE341FE91FF1001565F2 /* xf_86.png in Resources */,
 				3A33DE1E1FE91FF1001565F2 /* xf_64.png in Resources */,
-				F70B897C20026459001F22D6 /* share in Resources */,
 				3A33DE311FE91FF1001565F2 /* xf_83.png in Resources */,
 				3AFB303F1FE8B709005BA1A8 /* loading_7@2x.png in Resources */,
 				3AFB305F1FE8B709005BA1A8 /* loading_43@2x.png in Resources */,
@@ -2352,7 +2348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VR5KL66BH3;
 				INFOPLIST_FILE = PicProgram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2365,8 +2361,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cmversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "042ba807-ef5a-4b1e-8b7b-a91314b0fe66";
+				PROVISIONING_PROFILE_SPECIFIER = dev_cm;
 				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PicProgram/Header/PicProgram-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2379,8 +2375,8 @@
 			baseConfigurationReference = B637EB1BF82FD9C7B3061DE3 /* Pods-PicProgram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VR5KL66BH3;
 				INFOPLIST_FILE = PicProgram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2393,8 +2389,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cmversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "9d8b5a21-0f43-4c34-aba9-3243711dee75";
+				PROVISIONING_PROFILE_SPECIFIER = ad_hoc;
 				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PicProgram/Header/PicProgram-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

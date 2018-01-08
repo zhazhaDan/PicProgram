@@ -34,7 +34,7 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.title = "读精彩"
+        self.title = MRLanguage(forKey: "Art Digest")
     }
     
     override func requestData() {
@@ -66,7 +66,7 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
         cell.showPicImageView.xs_setImage(model.cq_img_url)
         cell.picTitleLabel.text = model.cq_title
         cell.picDetailLabel.text = model.cq_content
-        cell.picUploadTimeLabel.text = "上传时间：2017-08-13"
+        cell.picUploadTimeLabel.text = "\(MRLanguage(forKey: "Upload time"))：2017-08-13"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

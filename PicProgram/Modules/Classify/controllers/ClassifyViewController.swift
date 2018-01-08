@@ -76,7 +76,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
     
     override func buildUI() {
         super.buildUI()
-        let titles = ["艺术","心情","场景"]
+        let titles = [MRLanguage(forKey: "Art"),MRLanguage(forKey: "Mood"),MRLanguage(forKey: "Scenes")]
         let space = (self.view.width - 84*3)/3
         for i in 0 ..< titles.count {
             let button = UIButton.init(frame: CGRect.init(x: space/2 + (space + 84) * CGFloat(i), y: NavigationBarBottom + 5, width: (84), height: 34))
@@ -128,7 +128,6 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
             self.navigationController?.pushViewController(searchVC, animated: true)
         })
         self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { (tag) in
-            print("去登录")
             if UserInfo.user.checkUserLogin() {
                 let vc = PlayViewController.player
                 self.navigationController?.pushViewController(vc, animated: true)

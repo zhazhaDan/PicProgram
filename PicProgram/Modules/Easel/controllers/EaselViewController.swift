@@ -79,7 +79,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
             datas.append(model)
         }
         if datas.count == 0 {
-            let paint = Paint.fetchPaint(key: .name, value: "我的收藏画单", create: true, painttype: 1)
+            let paint = Paint.fetchPaint(key: .name, value: MRLanguage(forKey: "My collection"), create: true, painttype: 1)
             let model = PaintModel.init(paint: paint!)
             datas.append(model)
             do {

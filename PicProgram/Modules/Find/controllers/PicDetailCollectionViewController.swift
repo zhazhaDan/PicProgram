@@ -296,7 +296,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             network.requestData(.paint_play, params: ["picture_ids":ids,"title_paint_id":ids.first as! Int], finishedCallback: { (result) in
                 HUDTool.hide()
                 if result["ret"] as! Int == 0 {
-                    HUDTool.show(.text, text: "推送成功", delay: 1, view: self.view, complete: nil)
+                    HUDTool.show(.text, text: MRLanguage(forKey: "Submitted"), delay: 1, view: self.view, complete: nil)
                 }else {
                     HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
                 }

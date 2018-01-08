@@ -31,7 +31,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "心情"
+        self.title = MRLanguage(forKey: "Mood")
 
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -108,12 +108,12 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
         if kind == UICollectionElementKindSectionHeader {
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as! ClassifyEmotionCollectionReusableView
             if customPaint.count == 0 {
-                view.emotionTitleButton.setTitle("初始分类", for: .normal)
+                view.emotionTitleButton.setTitle(MRLanguage(forKey: "Initical Category"), for: .normal)
             }else {
                 if indexPath.section == 0 {
-                    view.emotionTitleButton.setTitle("用户自定义", for: .normal)
+                    view.emotionTitleButton.setTitle(MRLanguage(forKey: "User Customized Setting"), for: .normal)
                 }else if indexPath.section == 1 {
-                    view.emotionTitleButton.setTitle("初始分类", for: .normal)
+                    view.emotionTitleButton.setTitle(MRLanguage(forKey: "Initical Category"), for: .normal)
                 }
             }
             view.delegate = self
@@ -139,7 +139,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
             }else {
                 if indexPath.section == 0 {
                     vc.dataSource = customPaint
-                    vc.title = "历史浏览"
+                    vc.title = MRLanguage(forKey: "History Viewed")
                 }else if indexPath.section == 1 {
                     vc.dataSource = model.picture_arry
                     vc.title = model.paint_title

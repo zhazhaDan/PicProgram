@@ -14,8 +14,8 @@ private let historyFilePath = NSHomeDirectory()  + "/Documents/webs.plist"
 
 class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,SearchProtocol,UITextFieldDelegate {
     var collectionView:UICollectionView!
-    var dataSource:Array<[String:Any]> = [["title":"最近搜索","data":[]],
-    ["title":"最热搜索","data":[]]]
+    var dataSource:Array<[String:Any]> = [["title":MRLanguage(forKey: "Recent Searches"),"data":[]],
+    ["title":MRLanguage(forKey: "Popular Searches"),"data":[]]]
     var searchResultView:SearchResultView!
     var inputTextField:UITextField!
     override func viewDidLoad() {
@@ -76,7 +76,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
         inputTextField.layer.masksToBounds = true
         inputTextField.delegate = self
         inputTextField.clearButtonMode = .whileEditing
-        inputTextField.attributedPlaceholder = NSAttributedString.init(string: "艺术品名称／作家", attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_yellow])
+        inputTextField.attributedPlaceholder = NSAttributedString.init(string: MRLanguage(forKey: "Art works/Artist"), attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_yellow])
         inputTextField.delegate = self
         inputTextField.font = xsFont(14)
         self.view.addSubview(inputTextField)
@@ -84,7 +84,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
         let cancelButton = UIButton.init(frame: CGRect.init(x: inputTextField.right + 10, y: inputTextField.y, width: 40, height: 30))
         cancelButton.titleLabel?.font = xsBoldFont(14)
         cancelButton.setTitleColor(xsColor_main_text_blue, for: .normal)
-        cancelButton.setTitle("取消", for: .normal)
+        cancelButton.setTitle(MRLanguage(forKey: "No"), for: .normal)
         cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
         self.view.addSubview(cancelButton)
     }
@@ -204,7 +204,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
             let dict1 = dataSource[0]
             let data1 = dict1["data"] as! [String]
             
-            if title == "最热搜索" || data1.count == 0{
+            if title == MRLanguage(forKey: "Popular Searches") || data1.count == 0{
                 header.clearButton.isHidden = true
             }else {
                 header.clearButton.isHidden = false
@@ -356,7 +356,7 @@ class SearchHeaderReuseableView: UICollectionReusableView {
     }
     
     @objc func clearAllHistory() {
-        BaseAlertController.inits("确认删除全部历史记录？", message: nil, confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
+        BaseAlertController.inits(MRLanguage(forKey: "Delete all history?"), message: nil, confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
             if tag == 0 {
                 self.delegate.clearnUpHistory!()
             }

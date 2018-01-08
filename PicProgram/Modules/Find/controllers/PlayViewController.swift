@@ -21,7 +21,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     var dataSource:Array<PictureModel> = Array()
     @IBAction func playStyleAction(_ sender: UIButton) {
         let styleImages = [#imageLiteral(resourceName: "danduye_danzhangbofanganniu"),#imageLiteral(resourceName: "danduye_sunxuxunhuan"),#imageLiteral(resourceName: "danduye_suijibofanganniu")]
-        let styleHints = ["单张循环","顺序循环","随机播放"]
+        let styleHints = [MRLanguage(forKey: "Single cycle"),MRLanguage(forKey: "Play In Order"),MRLanguage(forKey: "Shuffle Play")]
         playStyle = (playStyle+1)%3
         sender.setBackgroundImage(styleImages[playStyle], for: .normal)
         network.requestData(.paint_play_style, params: ["play_type":3 - playStyle], finishedCallback: { (result) in
@@ -40,7 +40,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     @IBAction func pushAction(_ sender: Any) {
         network.requestData(.paint_picPlay, params: ["picture_id":dataSource[currentIndex].picture_id], finishedCallback: { (result) in
             if result["ret"] as! Int == 0{
-                HUDTool.show(.text, text: "推送成功", delay: 0.6, view: self.view, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Submitted"), delay: 0.6, view: self.view, complete: nil)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: self.view, complete: nil)
             }
@@ -180,7 +180,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         paint?.removeFromPics(pic!)
         do {
             try appDelegate.managedObjectContext.save()
-            HUDTool.show(.text, text: "取消收藏成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+            HUDTool.show(.text, text: MRLanguage(forKey: "Cancel save successful"), delay: 1, view: (self.navigationController?.view)!, complete: nil)
         }catch {}
 
     }
@@ -206,7 +206,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     func playTimeSetting(time: Int) {
         network.requestData(.paint_play_style, params: ["play_type":10+time], finishedCallback: { (result) in
             if result["ret"] as! Int == 0{
-                HUDTool.show(.text, text: "播放时间设置成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Setting Successful"), delay: 1, view: (self.navigationController?.view)!, complete: nil)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
             }
@@ -216,7 +216,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     func playModeSetting(mode: Int) {
         network.requestData(.paint_play_style, params: ["play_type":20 + mode], finishedCallback: { (result) in
             if result["ret"] as! Int == 0{
-                HUDTool.show(.text, text: "播放模式设置成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Setting Successful"), delay: 1, view: (self.navigationController?.view)!, complete: nil)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
             }
@@ -240,7 +240,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         pic?.emotion = paint
         do {
             try appDelegate.managedObjectContext.save()
-            HUDTool.show(.text, text: "心情添加成功", delay: 1, view: (self.navigationController?.view)!, complete: {[weak self] in
+            HUDTool.show(.text, text: MRLanguage(forKey: "Add Mood successful"), delay: 1, view: (self.navigationController?.view)!, complete: {[weak self] in
                 self?.tapAction(nil)
             })
         } catch  {

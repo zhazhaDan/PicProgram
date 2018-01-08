@@ -98,7 +98,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
 
         let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 320, height: 26))
         button.setBackgroundImage(#imageLiteral(resourceName: "01faixian_jinrituijian_shousuolan"), for: .normal)
-        button.setTitle("艺术品名称/作者", for: .normal)
+        button.setTitle(MRLanguage(forKey: "Art works/Artist"), for: .normal)
         button.setImage(#imageLiteral(resourceName: "01faxian_jinrituijian_shousuo"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
         button.titleLabel?.font = xsFont(12)
@@ -124,12 +124,12 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailActCollectionViewController.init(collectionViewLayout: layout)
             vc.paint_id = self.recommandModel.banner[index].paint_id
-            vc.title = "今日推荐"
+            vc.title = MRLanguage(forKey: "Art For Today")
             self.navigationController?.pushViewController(vc, animated: true)
         }else if view == self.artView.bannerView {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
-            vc.title = "艺术先锋"
+            vc.title = MRLanguage(forKey: "Art For Today")
             vc.paint_id = self.pioneerModel.banner[index].paint_id
             self.navigationController?.pushViewController(vc, animated: true)
 
@@ -163,13 +163,13 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     
     func seeMoreNews() {
         let controller = RecommandListCollectionViewController()
-        controller.title = "最新"
+        controller.title = MRLanguage(forKey: "Recent")
         controller.type = 1
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func seeMoreHots() {
         let controller = RecommandListCollectionViewController()
-        controller.title = "最热"
+        controller.title = MRLanguage(forKey: "Popular")
         controller.type = 2
         self.navigationController?.pushViewController(controller, animated: true)
     }

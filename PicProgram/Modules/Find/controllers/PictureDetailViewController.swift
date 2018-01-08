@@ -8,7 +8,7 @@
 
 import UIKit
 
-let HistoryPaintName = "我的历史浏览"
+let HistoryPaintName = "\(MRLanguage(forKey: "My Account"))\(MRLanguage(forKey: "History Viewed"))"
 
 class PictureDetailViewController: BaseViewController {
 
