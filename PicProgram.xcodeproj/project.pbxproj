@@ -364,6 +364,8 @@
 		F70B8980200264F8001F22D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70B897F200264F8001F22D6 /* CoreGraphics.framework */; };
 		F70B898220026520001F22D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70B898120026520001F22D6 /* CoreData.framework */; };
 		F70B898520026D33001F22D6 /* AccountSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B898320026D33001F22D6 /* AccountSafeViewController.swift */; };
+		F70B89892003B35D001F22D6 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B89872003B35D001F22D6 /* ReportViewController.swift */; };
+		F70B898A2003B35D001F22D6 /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70B89882003B35D001F22D6 /* ReportViewController.xib */; };
 		F7141DAC1FDBCF5900606631 /* LiningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7141DAE1FDBCF5900606631 /* LiningViewController.xib */; };
 		F7141DB51FDBD05F00606631 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7141DB31FDBD05F00606631 /* ShareViewController.swift */; };
 		F7141DB61FDBD05F00606631 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7141DB41FDBD05F00606631 /* ShareViewController.xib */; };
@@ -795,6 +797,8 @@
 		F70B897F200264F8001F22D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F70B898120026520001F22D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F70B898320026D33001F22D6 /* AccountSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSafeViewController.swift; sourceTree = "<group>"; };
+		F70B89872003B35D001F22D6 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		F70B89882003B35D001F22D6 /* ReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
 		F7141DAD1FDBCF5900606631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LiningViewController.xib; sourceTree = "<group>"; };
 		F7141DB01FDBCF6100606631 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LiningViewController.strings; sourceTree = "<group>"; };
 		F7141DB21FDBCF6700606631 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LiningViewController.strings"; sourceTree = "<group>"; };
@@ -1414,6 +1418,8 @@
 				3A6E21A01FFCE6E400674E4A /* UserProtocolViewController.swift */,
 				3A6E21A11FFCE6E400674E4A /* UserProtocolViewController.xib */,
 				F70B898320026D33001F22D6 /* AccountSafeViewController.swift */,
+				F70B89872003B35D001F22D6 /* ReportViewController.swift */,
+				F70B89882003B35D001F22D6 /* ReportViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -1754,6 +1760,7 @@
 				3A33DE221FE91FF1001565F2 /* xf_68.png in Resources */,
 				3AFB30391FE8B709005BA1A8 /* loading_25@2x.png in Resources */,
 				F75D56C31FE54BB00044429C /* WifiSettingView.xib in Resources */,
+				F70B898A2003B35D001F22D6 /* ReportViewController.xib in Resources */,
 				3AFB303B1FE8B709005BA1A8 /* loading_12@2x.png in Resources */,
 				3A33DE3C1FE91FF1001565F2 /* xf_94.png in Resources */,
 				3A33DE2A1FE91FF1001565F2 /* xf_76.png in Resources */,
@@ -2147,6 +2154,7 @@
 				3A5387521F95DAB000BA4359 /* ChangePassViewController.swift in Sources */,
 				F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */,
 				3AB5DD2F1F8CB192004897B5 /* PKHUDProgressView.swift in Sources */,
+				F70B89892003B35D001F22D6 /* ReportViewController.swift in Sources */,
 				3A9CCC551FA1DB7A00FC33BD /* PioneerModel.swift in Sources */,
 				3A11C0331FE8A97300FC6E4D /* ESPullToRefresh.swift in Sources */,
 				3AB5DD1B1F8CB192004897B5 /* ScanQRCodeViewController.swift in Sources */,

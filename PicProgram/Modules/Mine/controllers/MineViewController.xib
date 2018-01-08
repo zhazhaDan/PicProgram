@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +14,7 @@
                 <outlet property="bottomView" destination="UE1-uG-8fU" id="f7a-wv-bxF"/>
                 <outlet property="cScrollView" destination="puf-OK-Pnq" id="9Ck-o1-6pr"/>
                 <outlet property="contentView" destination="MEO-NM-UfP" id="gl6-bm-vF2"/>
+                <outlet property="settingTopConstraint" destination="nR4-GL-rdx" id="tC6-Oz-47k"/>
                 <outlet property="userBackImageView" destination="Lz5-Ae-3U2" id="iUT-3e-Gzx"/>
                 <outlet property="userIconButton" destination="8Nz-N9-LJE" id="7yt-G2-tGJ"/>
                 <outlet property="userNameLabel" destination="cqB-Em-don" id="LM9-Bv-1sz"/>

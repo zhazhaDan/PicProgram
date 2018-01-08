@@ -119,6 +119,9 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
             let vc = AboutUsViewController.init(nibName: "AboutUsViewController", bundle: Bundle.main)
             self.navigationController?.pushViewController(vc, animated: true)
             print("\(indexPath.row)")
+        case 1:
+            let vc = ReportViewController.init(nibName: "ReportViewController", bundle: Bundle.main)
+            self.navigationController?.pushViewController(vc, animated: true)
         case 2:
             print("软件版本")
         case 3:

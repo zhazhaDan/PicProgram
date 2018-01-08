@@ -10,6 +10,7 @@ import UIKit
 
 class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol {
 //    var mineView:LogOutView!
+    @IBOutlet weak var settingTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var userBackImageView: UIImageView!
     @IBOutlet weak var userIconButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -27,6 +28,9 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
             let vc = LetterViewController()
             self.present(vc, animated: true, completion: nil)
         }
+        self.settingTopConstraint.constant = StatusBarHeight
+        self.view.updateConstraints()
+
         // Do any additional setup after loading the view.
     }
 
