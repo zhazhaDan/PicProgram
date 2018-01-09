@@ -68,7 +68,7 @@ class ScanCodeView: BaseView,AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.count == 0 {
             print("No QR code is detected")
-            HUDTool.show(.text, text: "请将二维码对准摄像头", delay: 1, view: self, complete: nil)
+            HUDTool.show(.text, text: MRLanguage(forKey: "Please aim the qr code at the camera"), delay: 1, view: self, complete: nil)
             return
         }
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject

@@ -125,7 +125,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         case 2:
             print("软件版本")
         case 3:
-            let alert = BaseAlertController.inits("", message: MRLanguage(forKey: "Choose your language"), confirmText: MRLanguage(forKey: "Chinese"), MRLanguage(forKey: "English"), subComplete: { (index) in
+             BaseAlertController.inits("", message: MRLanguage(forKey: "Choose your language"), confirmText: MRLanguage(forKey: "Chinese"), MRLanguage(forKey: "English"), subComplete: { (index) in
                 if index == 0 {
                     BaseBundle.language = CNS.self
                 }else {
@@ -140,7 +140,7 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
             let vc = AccountSafeViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
-            let alert = BaseAlertController.inits("温馨小提示", message: "程序媛妹子正在加班加点赶制功能，不要着急哦,有功能、UI、bug之类的问题请先和谢建宇联系~", confirmText: "谢谢理解", nil, subComplete: nil)
+//            let alert = BaseAlertController.inits("温馨小提示", message: "程序媛妹子正在加班加点赶制功能，不要着急哦,有功能、UI、bug之类的问题请先和谢建宇联系~", confirmText: "谢谢理解", nil, subComplete: nil)
 //            self.present(alert, animated: true, completion: nil)
             print("\(indexPath.row)")
         }

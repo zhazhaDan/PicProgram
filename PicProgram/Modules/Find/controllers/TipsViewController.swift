@@ -38,7 +38,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentImageView.xs_setImage(picModel.detail_url)
-        self.title = "便签"
+        self.title = MRLanguage(forKey: "Tips")
         // Do any additional setup after loading the view.
     }
     
@@ -55,7 +55,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     override func requestData() {
         network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex,"flag":(switchSender.isOn == true ? 1 : 2)], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: "Tips设置成功", delay: 0.8, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: "Tips\(MRLanguage(forKey: "Setting Successful"))", delay: 0.8, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }
@@ -191,7 +191,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
 //        self.tipsMaterialsButton.setTitle(textView.text, for: .normal)
-        textNumberLabel.text = "\(100 - textView.text.count)字"
+        textNumberLabel.text = "\(100 - textView.text.count)\(MRLanguage(forKey: "size"))"
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

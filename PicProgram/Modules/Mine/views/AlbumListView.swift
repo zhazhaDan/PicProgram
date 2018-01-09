@@ -97,7 +97,7 @@ class AlbumListView: BaseView,UITableViewDelegate,UITableViewDataSource {
                 }
             })
             subCell.titleLabel.text = assetCollection.localizedTitle
-            subCell.subTitleLabel.text =  "\(fetchResult.count)张"
+            subCell.subTitleLabel.text =  "\(fetchResult.count)\(MRLanguage(forKey: "pages"))"
         }
     }
     

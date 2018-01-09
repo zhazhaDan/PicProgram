@@ -33,14 +33,14 @@ class EditPaintDetailViewController: BaseViewController,UITextViewDelegate,UITex
     @IBAction func updatePainInfoAction(_ sender: Any) {
         //本地画单信息更新
         saveEditPaintInfo()
-        HUDTool.show(.text, text: "画单信息修改成功", delay: 0.6, view: self.view) {
+        HUDTool.show(.text, text: MRLanguage(forKey: "Edit Paint info successful"), delay: 0.6, view: self.view) {
             [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "编辑画单信息"
+        self.title = MRLanguage(forKey: "Edit paint info")
         
         // Do any additional setup after loading the view.
     }

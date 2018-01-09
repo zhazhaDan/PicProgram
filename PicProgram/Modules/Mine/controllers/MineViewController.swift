@@ -194,7 +194,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
 //        let deviceId = (result as NSString).substring(from: 3)
         network.requestData(.user_bind_device, params: ["device_id":result], finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: "该设备已绑定成功", delay: 0.6, view: self.view, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Generate a two-dimensional code\nPlease wait"), delay: 0.6, view: self.view, complete: nil)
                 self.getUserBindDevices()
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: self.view, complete: nil)
@@ -264,7 +264,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     func setBindDevices(view: UIView, deviceIndex row: Int) {
         let button = view as! UIButton
         if button.isSelected == false {
-            BaseAlertController.inits("", message: MRLanguage(forKey: "Choose Device"), confirmText: "确定", "取消", subComplete: { (tag) in
+            BaseAlertController.inits("", message: MRLanguage(forKey: "Choose Device"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
                 if tag == 0 {
                     button.isSelected = true
                     let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
@@ -275,10 +275,10 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
             })
         }else {
             if self.pushDevices.count == 1 {
-                BaseAlertController.inits("", message: "还是保留一个推送设备吧", confirmText: "确认", nil, subComplete: nil)
+                BaseAlertController.inits("", message: MRLanguage(forKey: "Just one"), confirmText:  MRLanguage(forKey: "Yes"), nil, subComplete: nil)
                 return
             }
-            BaseAlertController.inits("", message: MRLanguage(forKey: "Cancel Device"), confirmText: "确定", "取消", subComplete: { (tag) in
+            BaseAlertController.inits("", message: MRLanguage(forKey: "Cancel Device"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
                if tag == 0 {
                 button.isSelected = false
                 let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
@@ -309,7 +309,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                 let info = bindUserView.dataSource[row]
                 network.requestData(.user_delete_device, params: ["device_id":info["device_id"] as Any], finishedCallback: { (result) in
                     if result["ret"] as! Int == 0{
-                        HUDTool.show(.text, text: "设备移除成功", delay: 1, view: (self.navigationController?.view)!, complete: nil)
+                        HUDTool.show(.text, text: MRLanguage(forKey: "Delete successful"), delay: 1, view: (self.navigationController?.view)!, complete: nil)
                         bindUserView.removeFromSuperview()
                         self.tapRegistAction()
                         self.getUserBindDevices()
@@ -327,7 +327,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         let bindUserView = self.view.viewWithTag(200) as! DeviceBindUserView
         network.requestData(.user_master_solve_device, params: ["uin":uin,"status":status,"device_id":bindUserView.device_id], finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: "操作成功", delay: 0.6, view: (self.navigationController?.view)!, complete: {
+                HUDTool.show(.text, text: MRLanguage(forKey: "Setting Successful"), delay: 0.6, view: (self.navigationController?.view)!, complete: {
                     bindUserView.removeFromSuperview()
                 })
             }else {

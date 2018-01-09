@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "重新发送"; ObjectID = "BwZ-uS-5db"; */
+"BwZ-uS-5db.normalTitle" = "Resend";
+
+/* Class = "UILabel"; text = "为了安全，请输入你邮箱收到的验证码"; ObjectID = "WNS-oD-UeE"; */
+"WNS-oD-UeE.text" = "Enter Email Verify Code";
+
+/* Class = "UITextField"; placeholder = "输入验证码"; ObjectID = "cnM-06-SQ8"; */
+"cnM-06-SQ8.placeholder" = "Verification Code";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "oAb-nf-g9x"; */
+"oAb-nf-g9x.normalTitle" = "Next Step";

@@ -51,7 +51,7 @@ class BigStarShareView: BaseView,SharePlatformProtocol {
         cell.frame = CGRect.init(x: 24, y: 183, width: SCREEN_WIDTH - 48, height: 190)
         self.addSubview(cell)
         
-        let codeString = "大咖说分享文字"
+        let codeString = "大咖说分享文\(MRLanguage(forKey: "pages"))"
         let image = codeString.generateQRCodeImage()
         let imageview = UIImageView.init(frame: CGRect.init(x: cell.width - 56 - 12, y: cell.height - 56 - 12, width: 56, height: 56))
         imageview.contentMode = .scaleAspectFit
@@ -66,14 +66,14 @@ class BigStarShareView: BaseView,SharePlatformProtocol {
         case 0:
             let image = cell.viewShot()
             ShareThirdAppTool.share.share_icon = image
-            let sheet = UIAlertController.init(title: "请选择分享方式", message: nil, preferredStyle: .actionSheet)
-            let session = UIAlertAction.init(title: "微信对话", style: .default, handler: { (action) in
+            let sheet = UIAlertController.init(title: MRLanguage(forKey: "No"), message: nil, preferredStyle: .actionSheet)
+            let session = UIAlertAction.init(title: MRLanguage(forKey: "Wechat session"), style: .default, handler: { (action) in
                 ShareThirdAppTool.share.shareToWX(WXSceneSession)
             })
-            let timeline = UIAlertAction.init(title: "微信朋友圈", style: .default, handler: { (action) in
+            let timeline = UIAlertAction.init(title: MRLanguage(forKey: "Wechat timeline"), style: .default, handler: { (action) in
                 ShareThirdAppTool.share.shareToWX(WXSceneTimeline)
             })
-            let cancel = UIAlertAction.init(title: "取消", style: .cancel, handler: { (action) in
+            let cancel = UIAlertAction.init(title: MRLanguage(forKey: "No"), style: .cancel, handler: { (action) in
             })
             sheet.addAction(session)
             sheet.addAction(timeline)
@@ -81,10 +81,6 @@ class BigStarShareView: BaseView,SharePlatformProtocol {
             appDelegate.window?.rootViewController?.present(sheet, animated: true, completion: nil)
             
         case 1:
-            ShareThirdAppTool.share.title = "我在享+发现了一个有趣的共享头等舱,一起来看看"
-            ShareThirdAppTool.share.desc = "去看看"
-            ShareThirdAppTool.share.webUrl = "http://www.baidu.com"
-            ShareThirdAppTool.share.share_icon = #imageLiteral(resourceName: "fenxiang_ins")
             ShareThirdAppTool.share.shareToWeibo()
             
         default:

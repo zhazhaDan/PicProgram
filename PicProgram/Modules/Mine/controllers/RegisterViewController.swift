@@ -48,7 +48,7 @@ class RegisterViewController: BaseViewController,CustomViewProtocol {
 //        
         
         if self.passTextfield.text != self.repassTextfield.text {
-            HUDTool.show(.text, text: "两次密码不一致,请再次输入", delay: 1, view: self.view, complete: nil)
+            HUDTool.show(.text, text: MRLanguage(forKey: "Error repassword"), delay: 1, view: self.view, complete: nil)
             return
         }
         
@@ -71,7 +71,7 @@ class RegisterViewController: BaseViewController,CustomViewProtocol {
                 vc.method = .login_regist
                 vc.userModel = self.userModel
                 vc.type = (self.selectedMethod == 0 ? .User_type_email : .User_type_phone)
-                vc.title = "注册"
+                vc.title = MRLanguage(forKey: "Sing Up")
                 self.navigationController?.pushViewController(vc, animated: true)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
@@ -103,7 +103,7 @@ class RegisterViewController: BaseViewController,CustomViewProtocol {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "注册账号"
+        self.title = MRLanguage(forKey: "Sign up account")
         // Do any additional setup after loading the view.
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapAction))
         self.view.addGestureRecognizer(tap)

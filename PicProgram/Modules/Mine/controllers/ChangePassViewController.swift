@@ -15,7 +15,7 @@ class ChangePassViewController: BaseViewController {
     @IBOutlet weak var changeTitleLabel: UILabel!
     @IBAction func submitChangePassAction(_ sender: Any) {
         if self.passTextfield.text != self.repassTextfield.text {
-            HUDTool.show(.custom, text: "两次密码不一致,请再次输入", delay: 1, view: self.view, complete: nil)
+            HUDTool.show(.custom, text: MRLanguage(forKey: "Error repassword"), delay: 1, view: self.view, complete: nil)
             return
         }
         
@@ -24,7 +24,7 @@ class ChangePassViewController: BaseViewController {
         network.requestData(.user_reset_password, params: ["register_id":userModel.register_id,"password":userModel.password], finishedCallback: { (result) in
             HUDTool.hide()
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.custom, text: "密码重置成功", delay: 1, view: self.view, complete: {
+                HUDTool.show(.custom, text: MRLanguage(forKey: "Reset password successful"), delay: 1, view: self.view, complete: {
                     
                     self.dismiss(animated: true, completion: nil)
                 })

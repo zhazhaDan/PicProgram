@@ -1,0 +1,42 @@
+
+/* Class = "UIButton"; normalTitle = "稍后注册"; ObjectID = "1Rd-DE-YmK"; */
+"1Rd-DE-YmK.normalTitle" = "稍后注册";
+
+/* Class = "UITextField"; placeholder = "请输入密码"; ObjectID = "68p-o6-jlQ"; */
+"68p-o6-jlQ.placeholder" = "请输入密码";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "D8B-MW-JfB"; */
+"D8B-MW-JfB.normalTitle" = "注册";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "IEK-0H-vY4"; */
+"IEK-0H-vY4.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "忘记密码"; ObjectID = "Jen-3z-Eok"; */
+"Jen-3z-Eok.normalTitle" = "忘记密码";
+
+/* Class = "UILabel"; text = "微信"; ObjectID = "Tcr-u9-ptK"; */
+"Tcr-u9-ptK.text" = "微信";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XBb-1H-zEp"; */
+"XBb-1H-zEp.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Facebook"; ObjectID = "c2h-4y-NgW"; */
+"c2h-4y-NgW.text" = "Facebook";
+
+/* Class = "UITextField"; placeholder = "请输入邮箱号/手机号"; ObjectID = "d8q-4U-P9S"; */
+"d8q-4U-P9S.placeholder" = "请输入邮箱号/手机号";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dc8-0O-2Fy"; */
+"dc8-0O-2Fy.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nsM-pt-6YH"; */
+"nsM-pt-6YH.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "qWW-Sp-7C8"; */
+"qWW-Sp-7C8.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "微博"; ObjectID = "r8R-3r-ejC"; */
+"r8R-3r-ejC.text" = "微博";
+
+/* Class = "UILabel"; text = "Twitter"; ObjectID = "s2o-K7-TcZ"; */
+"s2o-K7-TcZ.text" = "Twitter";

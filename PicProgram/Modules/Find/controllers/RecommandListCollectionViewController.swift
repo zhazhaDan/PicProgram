@@ -88,7 +88,7 @@ class RecommandListCollectionViewController: BaseViewController,UICollectionView
         let cell = cell as! RecommandListCollectionViewCell
         cell.picImageView.xs_setImage(model.title_url)
         cell.titleLabel.text = model.paint_title
-        cell.numberLabel.text = "\(model.picture_num)张"
+        cell.numberLabel.text = "\(model.picture_num)\(MRLanguage(forKey: "pages"))"
         cell.eyeNumLabel.text = "\(model.read_num)"
     }
     

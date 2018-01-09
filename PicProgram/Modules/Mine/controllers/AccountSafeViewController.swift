@@ -11,10 +11,10 @@ import UIKit
 class AccountSafeViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate {
 
     var tableView:UITableView!
-    var titles:[String] = ["账户","修改密码"]
+    var titles:[String] = [MRLanguage(forKey: "Account"),MRLanguage(forKey: "Change Password")]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = MRLanguage(forKey: "Account Security")
         // Do any additional setup after loading the view.
     }
     
@@ -49,7 +49,7 @@ class AccountSafeViewController: BaseViewController,UITableViewDataSource,UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if titles[indexPath.row] == "修改密码" {
+        if titles[indexPath.row] == MRLanguage(forKey: "Change Password") {
             let forgetVC = FindPassViewController.init(nibName: "FindPassViewController", bundle: Bundle.main)
             forgetVC.userModel = UserInfo.user
             forgetVC.title = MRLanguage(forKey: "Find Password")

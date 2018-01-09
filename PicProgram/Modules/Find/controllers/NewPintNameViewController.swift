@@ -13,7 +13,7 @@ class NewPintNameViewController: BaseViewController {
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
-        self.title = "新建画单"
+        self.title = MRLanguage(forKey: "New Art Work List")
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
         self.baseNavigationController?.addLeftNavigationBarItem {
@@ -29,7 +29,7 @@ class NewPintNameViewController: BaseViewController {
             btn.isSelected = false
             if (textField.text?.count)! > 0 && (textField.text?.count)! < 20 {
                 if let paint = Paint.fetchPaint(key: .name, value: textField.text, create: false) {
-                    HUDTool.show(.text, text: "画单已存在", delay: 1, view: self.view, complete: nil)
+                    HUDTool.show(.text, text: MRLanguage(forKey: "Existed paint"), delay: 1, view: self.view, complete: nil)
                 }else {
                     let entity = NSEntityDescription.entity(forEntityName: "Paint", in:  appDelegate.managedObjectContext) as! NSEntityDescription
                     let paint = NSManagedObject.init(entity: entity, insertInto: appDelegate.managedObjectContext) as! Paint

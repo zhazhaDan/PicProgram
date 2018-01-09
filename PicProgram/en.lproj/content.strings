@@ -7,16 +7,16 @@
 */
 
 //一、发现
-"Art For Today" = "Art For Today ";
-"Pioneer Artist" = "Pioneer Artist ";
-"Recent Art Works" = "Recent Art Works ";
+"Art For Today" = "Art For Today";
+"Pioneer Artist" = "Pioneer Artist";
+"Recent Art Works" = "Recent Art Works";
 "Popular Art Works t" = "Popular Art Works t";
 //搜索里边的字：
 "Art works/Artist" = "Art works/Artist";
 "Discover" = "Discover";
 "Category" = "Category";
 "Art Works" ="Art Works";
-"My Account" = "My Account";
+//"My Account" = "My Account";
 "Artists’words" = "Artists’words";
 "Share" = "Share";
 "Art Digest" = "Art Digest";
@@ -146,9 +146,9 @@
 "Sing In" = "Sing In";
 "Wrong Password/email" = "Wrong Password/email";
 "User Name /Email" = "User Name /Email";
-"Forgert Password" = "Forgert Password";
+"Forget Password" = "Forget Password";
 "Sign in" = "Sign in";
-"Sing Up " = "Sing Up ";
+"Sing Up" = "Sing Up ";
 "Sign Up Later" = "Sign Up Later";
 //六、搜索
 "Horizontal" = "Horizontal";
@@ -200,7 +200,7 @@
 "Remove" = "Remove";
 "Device Management" = "Device Management";
 "If you unbind the device,all that is bound\nto the device.The user will\nautomatically unbundle" = "If you unbind the device,all that is bound\nto the device.The user will\nautomatically unbundle";
-"Generate a two-dimensional code\nPlease wait " = "Generate a two-dimensional code\nPlease wait ";
+"Generate a two-dimensional code\nPlease wait" = "Generate a two-dimensional code\nPlease wait";
 "Please sign in to add device" = "Please sign in to add device";
 "This device is connected\nto your account" = "This device is connected\nto your account";
 "This device is connected to another\naccount,do you request to use it now?" = "This device is connected to another\naccount,do you request to use it now?";

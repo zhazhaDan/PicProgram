@@ -323,7 +323,6 @@ class SearchCell: UICollectionViewCell {
             titleLabel.layer.borderWidth = 1
             self.addSubview(titleLabel)
         }
-        
     }
     override func layoutIfNeeded() {
         super.layoutIfNeeded()

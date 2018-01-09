@@ -52,7 +52,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
     func loadDatas() {
         dataSource = Paint.fetchAllLocalPaint()!
         if dataSource.count == 0 {
-            let paint = Paint.fetchPaint(key: .name, value: "我的收藏画单", create: true, painttype: 1)
+            let paint = Paint.fetchPaint(key: .name, value: MRLanguage(forKey: "My collection"), create: true, painttype: 1)
             dataSource.append(paint!)
             do {
                 try appDelegate.managedObjectContext.save()
@@ -91,7 +91,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             cell.imageView?.image = UIImage.init(named: "dansuye_xinjianhuadan")
-            cell.textLabel?.text = "新建画单"
+            cell.textLabel?.text = MRLanguage(forKey: "New Art Work List")
         }else {
             let paint = dataSource[indexPath.row - 1]
             if paint.title_url != nil {
@@ -101,7 +101,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
             }
             cell.textLabel?.text = paint.paint_title
             if paint.pics?.count as! Int > 0  {
-                cell.detailTextLabel?.text = "\(paint.pics?.count as! Int)张"
+                cell.detailTextLabel?.text = "\(paint.pics?.count as! Int)\(MRLanguage(forKey: "pages"))"
             }else {
                 cell.detailTextLabel?.text = nil
             }
@@ -120,7 +120,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
             pic.paint = paint
             do {
                 try managedObectContext.save()
-                HUDTool.show(.text, text: "收藏成功", delay: 1, view: self, complete: {
+                HUDTool.show(.text, text: MRLanguage(forKey: "Save successful"), delay: 1, view: self, complete: {
                     self.tapAction(nil)
                 })
             }catch {

@@ -90,7 +90,7 @@ class SBLoginViewController: BaseViewController {
     override func requestData() {
         network.requestData(.user_login, params: ["register_id":emailTextfield.text as! String,"password":passTextfield.text as! String], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0{
-                HUDTool.show(.text, text: "登录成功", delay: 0.6, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
                 UserInfo.user.setValuesForKeys(result)
                 UserInfo.user.updateUserInfo()
                 if UserInfo.user.client_id != nil && UserInfo.user.client_id?.count as! Int > 0 {

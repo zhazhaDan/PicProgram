@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "丢失日志的故事"; ObjectID = "388-Fj-9Xd"; */
+"388-Fj-9Xd.text" = "丢失日志的故事";
+
+/* Class = "UILabel"; text = "日志，是一个人的所思所想，所经历的事情的收集，也是一个人一生私密的自述。你用心记录，然后放在了某个黑暗的角落，任由它尘封。时不时你会想起它，但大多数时候，我们都在遗忘。日志，是生活和经历的记叙文，正如廖智新的画作一样。"; ObjectID = "6BW-jY-KRb"; */
+"6BW-jY-KRb.text" = "日志，是一个人的所思所想，所经历的事情的收集，也是一个人一生私密的自述。你用心记录，然后放在了某个黑暗的角落，任由它尘封。时不时你会想起它，但大多数时候，我们都在遗忘。日志，是生活和经历的记叙文，正如廖智新的画作一样。";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6pw-4r-rnV"; */
+"6pw-4r-rnV.text" = "Label";
+
+/* Class = "UISegmentedControl"; J2G-ud-3jl.segmentTitles[0] = "横"; ObjectID = "J2G-ud-3jl"; */
+"J2G-ud-3jl.segmentTitles[0]" = "Hori";
+
+/* Class = "UISegmentedControl"; J2G-ud-3jl.segmentTitles[1] = "横竖"; ObjectID = "J2G-ud-3jl"; */
+"J2G-ud-3jl.segmentTitles[1]" = "All";
+
+/* Class = "UISegmentedControl"; J2G-ud-3jl.segmentTitles[2] = "竖"; ObjectID = "J2G-ud-3jl"; */
+"J2G-ud-3jl.segmentTitles[2]" = "Veri";
+
+/* Class = "UILabel"; text = "45张"; ObjectID = "WoG-su-DRC"; */
+"WoG-su-DRC.text" = "45pages";
+
+/* Class = "UILabel"; text = "画单详情"; ObjectID = "eti-YU-tlN"; */
+"eti-YU-tlN.text" = "detail";
+
+/* Class = "UILabel"; text = "----鸟之心个展"; ObjectID = "kDf-3n-jL9"; */
+"kDf-3n-jL9.text" = "----鸟之心个展";
+
+/* Class = "UILabel"; text = "192"; ObjectID = "xik-Zb-ODC"; */
+"xik-Zb-ODC.text" = "192";

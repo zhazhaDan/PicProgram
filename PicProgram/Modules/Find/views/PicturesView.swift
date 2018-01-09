@@ -59,7 +59,7 @@ class PicturesView: BaseView,UICollectionViewDelegateFlowLayout,UICollectionView
         collecView.reloadData()
     }
     
-    private let historyPaintName = "我的历史浏览"
+    private let historyPaintName = HistoryPaintName
 
  func requestData() {
 //        network.requestData(.picture_info, params: ["picture_id":picture_id], finishedCallback: { (result) in

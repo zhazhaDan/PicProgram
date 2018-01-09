@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "2WF-GZ-v5C"; */
+"2WF-GZ-v5C.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "确定"; ObjectID = "3e9-ZR-iMz"; */
+"3e9-ZR-iMz.normalTitle" = "Yes";
+
+/* Class = "UILabel"; text = "副标题"; ObjectID = "Fzd-8W-u0L"; */
+"Fzd-8W-u0L.text" = "Sub title";
+
+/* Class = "UILabel"; text = "介绍"; ObjectID = "U1E-0T-73t"; */
+"U1E-0T-73t.text" = "Introduce";
+
+/* Class = "UILabel"; text = "画单介绍"; ObjectID = "WuY-9N-ILv"; */
+"WuY-9N-ILv.text" = "Paint Introduce";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "alc-Md-7pD"; */
+"alc-Md-7pD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "更换封面"; ObjectID = "bQi-aI-5af"; */
+"bQi-aI-5af.text" = "Change Cover";
+
+/* Class = "UILabel"; text = "名称"; ObjectID = "itU-w2-10p"; */
+"itU-w2-10p.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rQF-TJ-d2Y"; */
+"rQF-TJ-d2Y.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "36"; ObjectID = "wi5-TJ-OZr"; */
+"wi5-TJ-OZr.text" = "36";

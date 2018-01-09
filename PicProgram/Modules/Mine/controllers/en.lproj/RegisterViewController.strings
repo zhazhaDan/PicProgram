@@ -1,0 +1,24 @@
+
+/* Class = "UITextField"; placeholder = "请输入手机号"; ObjectID = "CZs-W0-oHh"; */
+"CZs-W0-oHh.placeholder" = "Enter phone number";
+
+/* Class = "UIButton"; normalTitle = "手机号注册"; ObjectID = "Kxg-cQ-KT5"; */
+"Kxg-cQ-KT5.normalTitle" = "Phone Regist";
+
+/* Class = "UIButton"; normalTitle = "+86"; ObjectID = "LZz-Kz-9gz"; */
+"LZz-Kz-9gz.normalTitle" = "+86";
+
+/* Class = "UITextField"; placeholder = "请再次输入密码"; ObjectID = "Run-0T-ctK"; */
+"Run-0T-ctK.placeholder" = "Enter repassword";
+
+/* Class = "UITextField"; placeholder = "请输入邮箱号"; ObjectID = "a6p-LG-p8O"; */
+"a6p-LG-p8O.placeholder" = "Enter email";
+
+/* Class = "UITextField"; placeholder = "请输入密码"; ObjectID = "cnM-06-SQ8"; */
+"cnM-06-SQ8.placeholder" = "Enter password";
+
+/* Class = "UIButton"; normalTitle = "邮箱注册"; ObjectID = "kdI-u5-Ug9"; */
+"kdI-u5-Ug9.normalTitle" = "Email Regist";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "oAb-nf-g9x"; */
+"oAb-nf-g9x.normalTitle" = "Next Step";

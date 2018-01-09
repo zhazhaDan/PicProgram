@@ -161,7 +161,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             header.picTitleLabel.text = paintModel.paint_title
             header.subTitleLabel.text = paintModel.sub_title
             header.eyeNumLabel.text = "\(paintModel.read_num)"
-            header.totalNumLabel.text = "\(paintModel.picture_num)张"
+            header.totalNumLabel.text = "\(paintModel.picture_num)\(MRLanguage(forKey: "pages"))"
             header.contentLabel.text = paintModel.paint_detail
             header.titleLabel.text = self.title
             return header
@@ -215,13 +215,13 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
 
         if style == 0 {
             dataSource = paintModel.picture_H
-            header.numberLabel.text = "\(paintModel.picture_H.count)张"
+            header.numberLabel.text = "\(paintModel.picture_H.count)\(MRLanguage(forKey: "pages"))"
         }else if style == 1 {
             dataSource = paintModel.picture_arry
-            header.numberLabel.text = "\(paintModel.picture_arry.count)张"
+            header.numberLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
         }else if style == 2 {
             dataSource = paintModel.picture_S
-            header.numberLabel.text = "\(paintModel.picture_S.count)张"
+            header.numberLabel.text = "\(paintModel.picture_S.count)\(MRLanguage(forKey: "pages"))"
         }
         self.collectionView?.reloadData()
     }
@@ -293,7 +293,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             }
             HUDTool.show(.loading, view: self.view)
             // ,"paint_id":self.paintModel.paint_id
-            network.requestData(.paint_play, params: ["picture_ids":ids,"title_paint_id":ids.first as! Int], finishedCallback: { (result) in
+            network.requestData(.paint_play, params: ["picture_ids":ids,"title_paint_id":ids.first as! Int,"paint_id":self.paintModel.paint_id,"paint_title":self.paintModel.paint_title], finishedCallback: { (result) in
                 HUDTool.hide()
                 if result["ret"] as! Int == 0 {
                     HUDTool.show(.text, text: MRLanguage(forKey: "Submitted"), delay: 1, view: self.view, complete: nil)

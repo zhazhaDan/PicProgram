@@ -1,36 +1,36 @@
 
 /* Class = "UILabel"; text = "黑色哑光"; ObjectID = "CMs-XJ-oeD"; */
-"CMs-XJ-oeD.text" = "黑色哑光";
+"CMs-XJ-oeD.text" = "Black Matt";
 
 /* Class = "UIButton"; normalTitle = "无内衬"; ObjectID = "ETm-kv-KYu"; */
-"ETm-kv-KYu.normalTitle" = "无内衬";
+"ETm-kv-KYu.normalTitle" = "No painting Linging";
 
 /* Class = "UIButton"; normalTitle = "内衬大小"; ObjectID = "IvV-9a-lW5"; */
-"IvV-9a-lW5.normalTitle" = "内衬大小";
+"IvV-9a-lW5.normalTitle" = "Linging size";
 
 /* Class = "UILabel"; text = "5cm"; ObjectID = "PNb-0C-0Tv"; */
 "PNb-0C-0Tv.text" = "5cm";
 
 /* Class = "UILabel"; text = "米色纹路"; ObjectID = "RD3-Fr-jfA"; */
-"RD3-Fr-jfA.text" = "米色纹路";
+"RD3-Fr-jfA.text" = "Beige Texture";
 
 /* Class = "UILabel"; text = "10cm"; ObjectID = "TcG-Pf-Whg"; */
 "TcG-Pf-Whg.text" = "10cm";
 
 /* Class = "UILabel"; text = "仿古宣纸"; ObjectID = "UzI-ew-vor"; */
-"UzI-ew-vor.text" = "仿古宣纸";
+"UzI-ew-vor.text" = "Xuan Paper";
 
 /* Class = "UILabel"; text = "白色卡纸"; ObjectID = "dBp-ee-OUb"; */
-"dBp-ee-OUb.text" = "白色卡纸";
+"dBp-ee-OUb.text" = "Card Board";
 
 /* Class = "UILabel"; text = "2.5cm"; ObjectID = "ewo-Vg-2YO"; */
 "ewo-Vg-2YO.text" = "2.5cm";
 
 /* Class = "UIButton"; normalTitle = "内衬材质"; ObjectID = "lFE-Qm-gVe"; */
-"lFE-Qm-gVe.normalTitle" = "内衬材质";
+"lFE-Qm-gVe.normalTitle" = "Lining";
 
 /* Class = "UILabel"; text = "灰色质感"; ObjectID = "wgW-Ci-AYe"; */
-"wgW-Ci-AYe.text" = "灰色质感";
+"wgW-Ci-AYe.text" = "Grey Texture";
 
 /* Class = "UILabel"; text = "7.5cm"; ObjectID = "xFw-GB-aiD"; */
 "xFw-GB-aiD.text" = "7.5cm";

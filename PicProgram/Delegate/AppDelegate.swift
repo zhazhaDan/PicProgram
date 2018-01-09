@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabController = BaseTabBarController()
         self.window?.rootViewController = tabController
         let vc = SettingViewController()
+        vc.hidesBottomBarWhenPushed = true
        (tabController.selectedViewController as!UINavigationController).pushViewController(vc, animated: true)
         
     }

@@ -80,7 +80,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: headerView.width, height: 40))
         titleLabel.textColor = xsColor_main_yellow
         titleLabel.font = xsFont(14)
-        titleLabel.text = "大咖说"
+        titleLabel.text = MRLanguage(forKey: "Artists’words")
         titleLabel.textAlignment = .center
         bigStarSayBackView.addSubview(titleLabel)
         
@@ -229,7 +229,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
 //            header.nextButton.isHidden = true
 //        }else {
             header.nextButton.isHidden = false
-        header.nextButton.setTitle("读精彩", for: .normal)
+        header.nextButton.setTitle(MRLanguage(forKey: "Art Digest"), for: .normal)
             header.delegate = cDelegate
 //        }
         return header

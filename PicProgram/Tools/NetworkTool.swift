@@ -57,6 +57,7 @@ enum RequestAPIType {
     case user_master_solve_device
     case classify_get_art_home
     case classify_get_scene_home
+    case user_report
     case default_api
 }
 
@@ -179,6 +180,8 @@ class  NetworkTool{
             apiString = "imgs/upload/backend_img"
         case .user_set_play_device:
             apiString = "device/set_play_device"
+        case .user_report:
+            apiString = "user/proposal"
         default:
             apiString = ""
             method = .get

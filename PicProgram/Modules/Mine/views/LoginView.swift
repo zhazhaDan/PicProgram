@@ -40,7 +40,7 @@ class LoginView: BaseScrollView,UITextFieldDelegate{
         phone_textfield.textColor = xsColor_main_text
         phone_textfield.delegate = self
         phone_textfield.leftViewMode = .always
-        phone_textfield.attributedPlaceholder = NSAttributedString.init(string: "请输入用户名/邮箱号", attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_text])
+        phone_textfield.attributedPlaceholder = NSAttributedString.init(string: MRLanguage(forKey: "User Name /Email"), attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_text])
         inputView.addSubview(phone_textfield)
         
         let phoneLeftView = UIImageView.init(image: UIImage.init(named: "youxiang_icon"))
@@ -57,7 +57,7 @@ class LoginView: BaseScrollView,UITextFieldDelegate{
         code_textfield.delegate = self
         code_textfield.keyboardType = .numberPad
         code_textfield.leftViewMode = .always
-        code_textfield.attributedPlaceholder = NSAttributedString.init(string: "请输入密码", attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_text])
+        code_textfield.attributedPlaceholder = NSAttributedString.init(string: MRLanguage(forKey: "Please enter password"), attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_text])
 
         inputView.addSubview(code_textfield)
         
@@ -69,7 +69,7 @@ class LoginView: BaseScrollView,UITextFieldDelegate{
         code_textfield.addSubview(code_line)
         
         viewHeight = code_textfield.bottom
-        let buttonTitles = ["登录","注册","稍后注册"]
+        let buttonTitles = [MRLanguage(forKey: "Sign in"),MRLanguage(forKey: "Sing Up"),MRLanguage(forKey: "Sign Up Later")]
         for i in 0 ..< 3 {
             let button = UIButton.init(frame: CGRect.init(x: 42, y: inputView.bottom + CGFloat(56*i), width: self.width - 84, height: 32))
             button.setTitle(buttonTitles[i], for: .normal)
@@ -92,7 +92,7 @@ class LoginView: BaseScrollView,UITextFieldDelegate{
         var titles = Array<String>()
         var types = Array<LoginThirdAppType>()
         icons = ["Facebookdenglu","twitterdenglu","weibodenglu_icon","weixindenglu_icon"]
-        titles = ["Facebook","Twitter","微信登录","微博登录"]
+        titles = ["Facebook","Twitter",MRLanguage(forKey: "Wechat"),MRLanguage(forKey: "Sina")]
         types = [.login_facebook,.login_twitter,.login_wxchat,.login_sinawb]
         for i in 0 ..< icons.count {
             let left = (self.width - CGFloat(icons.count * Int(57 * iPhoneScale) - 17))/2.0

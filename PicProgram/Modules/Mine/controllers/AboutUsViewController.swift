@@ -12,7 +12,7 @@ class AboutUsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "关于我们"
+        self.title = MRLanguage(forKey: "About Us")
         // Do any additional setup after loading the view.
     }
 

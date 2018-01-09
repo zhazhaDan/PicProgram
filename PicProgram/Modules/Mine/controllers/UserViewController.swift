@@ -145,7 +145,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
             let str = textView.text as NSString
             textView.text = str.substring(to: 120)
         }else {
-            self.textNumberLabel.text = "\(120 - textView.text.count)字"
+            self.textNumberLabel.text = "\(120 - textView.text.count)\(MRLanguage(forKey: "pages"))"
         }
     }
     

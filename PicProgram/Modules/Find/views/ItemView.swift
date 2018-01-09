@@ -16,7 +16,7 @@ class ItemView: BaseView {
             self.picImageView.xs_setImage(_model.title_url)
             self.titleLabel.text = _model.paint_title
             self.glanceNumberLabel.text = "\(_model.read_num)"
-            self.picsNumberLabel.text = "\(_model.picture_num)张"
+            self.picsNumberLabel.text = "\(_model.picture_num)\(MRLanguage(forKey: "pages"))"
         }
         get {
             return _model

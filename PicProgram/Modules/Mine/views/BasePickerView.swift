@@ -26,14 +26,14 @@ class BasePickerView: BaseView,UIPickerViewDelegate,UIPickerViewDataSource {
         lineView.backgroundColor = xsColor_main_yellow
         self.addSubview(lineView)
         let cancelButton = UIButton.init(frame: CGRect.init(x: 0, y: 1, width: 60, height: 38))
-        cancelButton.setTitle("取消", for: .normal)
+        cancelButton.setTitle(MRLanguage(forKey: "No"), for: .normal)
         cancelButton.setTitleColor(xsColor_main_yellow, for: .normal)
         cancelButton.titleLabel?.font = xsFont(13)
         cancelButton.tag = 10
         cancelButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
         self.addSubview(cancelButton)
         let subButton = UIButton.init(frame: CGRect.init(x: self.width - 60, y: 1, width: 60, height: 38))
-        subButton.setTitle("确定", for: .normal)
+        subButton.setTitle(MRLanguage(forKey: "Yes"), for: .normal)
         subButton.setTitleColor(xsColor_main_yellow, for: .normal)
         subButton.titleLabel?.font = xsFont(13)
         subButton.tag = 11

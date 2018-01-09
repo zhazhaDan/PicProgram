@@ -98,8 +98,8 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
             }
             header.headerImageView.xs_setImage(paintModel.title_url)
             header.eyeNumLabel.text = "\(paintModel.read_num)"
-            header.numberLabel.text = "\(paintModel.picture_num)张"
-            header.numLabel.text = "\(paintModel.picture_num)张"
+            header.numberLabel.text = "\(paintModel.picture_num)\(MRLanguage(forKey: "pages"))"
+            header.numLabel.text = "\(paintModel.picture_num)\(MRLanguage(forKey: "pages"))"
             header.contentLabel.text = paintModel.paint_detail
             return header
         }

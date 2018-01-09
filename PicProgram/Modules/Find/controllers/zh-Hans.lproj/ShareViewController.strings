@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "心情"; ObjectID = "BH6-Aq-PVS"; */
+"BH6-Aq-PVS.normalTitle" = "心情";
+
+/* Class = "UIButton"; normalTitle = "分享"; ObjectID = "Bw2-Zv-hwx"; */
+"Bw2-Zv-hwx.normalTitle" = "分享";
+
+/* Class = "UIButton"; normalTitle = "喜"; ObjectID = "ECP-I4-Co8"; */
+"ECP-I4-Co8.normalTitle" = "喜";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R1t-M7-iaG"; */
+"R1t-M7-iaG.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "无花纹"; ObjectID = "oS9-Zf-syG"; */
+"oS9-Zf-syG.normalTitle" = "无花纹";
+
+/* Class = "UIButton"; normalTitle = "花纹"; ObjectID = "qYW-Np-noG"; */
+"qYW-Np-noG.normalTitle" = "花纹";

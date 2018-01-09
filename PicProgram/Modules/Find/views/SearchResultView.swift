@@ -37,7 +37,7 @@ class SearchResultView: BaseView,UITableViewDelegate,UITableViewDataSource {
     
     override func buildUI() {
         self.backgroundColor = xsColor_main_white
-        let titles = ["作品","作者","画单"]
+        let titles = [MRLanguage(forKey: "Art Works"),MRLanguage(forKey: "Artist"),MRLanguage(forKey: "Gallery")]
         let width = self.width/3
         for i in 0..<titles.count {
             let button = UIButton.init(frame: CGRect.init(x: (width) * CGFloat(i) +  (width - 61)/2, y: 0, width: 61, height: 30))
@@ -76,7 +76,7 @@ class SearchResultView: BaseView,UITableViewDelegate,UITableViewDataSource {
             showTableViews.append(tableView)
         }
         noResultView = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: scrollView.width, height: scrollView.height))
-        noResultView.text = "无结果"
+        noResultView.text = MRLanguage(forKey: "No Results")
         noResultView.font = xsFont(15)
         noResultView.textColor = xsColor_placeholder_grey
         noResultView.textAlignment = .center
@@ -147,7 +147,7 @@ class SearchResultView: BaseView,UITableViewDelegate,UITableViewDataSource {
             let model = dataSource[selectIndex][indexPath.row] as! PaintModel
             cell.iconImageView.xs_setImage(model.title_url)
             cell.titleLabel.text = model.paint_title
-            cell.subTitleLabel.text = "\(model.picture_num)张作品，播放\(model.read_num)次"
+            cell.subTitleLabel.text = "\(model.picture_num)\(MRLanguage(forKey: "pages"))\(MRLanguage(forKey: "Art Works"))，\(MRLanguage(forKey: "Play"))\(model.read_num)\(MRLanguage(forKey: "times"))"
             return cell
         }
         return UITableViewCell()

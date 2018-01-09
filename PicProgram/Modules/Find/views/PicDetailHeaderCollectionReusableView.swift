@@ -38,6 +38,7 @@ class PicDetailHeaderCollectionReusableView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.changeSegment.apportionsSegmentWidthsByContent = true
        
     }
     

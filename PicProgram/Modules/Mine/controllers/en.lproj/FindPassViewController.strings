@@ -1,0 +1,6 @@
+
+/* Class = "UITextField"; placeholder = "请输入邮箱号/手机号"; ObjectID = "cnM-06-SQ8"; */
+"cnM-06-SQ8.placeholder" = "Enter phone/email";
+
+/* Class = "UIButton"; normalTitle = "发送验证码"; ObjectID = "oAb-nf-g9x"; */
+"oAb-nf-g9x.normalTitle" = "Send Veridication Code";

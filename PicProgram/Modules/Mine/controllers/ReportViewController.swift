@@ -15,10 +15,24 @@ class ReportViewController: BaseViewController,UITextViewDelegate {
     @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "意见反馈"
+        self.title = MRLanguage(forKey: "User Review")
         // Do any additional setup after loading the view.
     }
     @IBAction func submitReportAction(_ sender: Any) {
+        if (textView.text.count as! Int) <= 0 {
+            return
+        }
+        HUDTool.show(.loading, view: self.view)
+        network.requestData(.user_report, params: ["content":textView.text], finishedCallback: { (result) in
+           HUDTool.hide()
+            if result["ret"] as! Int == 0 {
+                HUDTool.show(.text, nil, text: MRLanguage(forKey: "Upload Successful"), delay: 0.8, view: self.view, complete: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }else {
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 0.8, view: self.view, complete: nil)
+            }
+        }, nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
