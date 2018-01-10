@@ -19,11 +19,11 @@ class NavigationBarShowListView: BaseView,UITableViewDelegate,UITableViewDataSou
         tableView = UITableView.init(frame: self.bounds, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = xsColor_main_black
-        tableView.separatorColor = xsColor_main_white
+        tableView.backgroundColor = xsColor_main_white
+        tableView.separatorColor = xsColor_main_yellow
         tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 11, bottom: 0, right: 11)
         self.addSubview(tableView)
-        self.y = -height
+        self.height = 0
         self.clipsToBounds = true
     }
     //UITableViewDelegate,UITableViewDataSource
@@ -35,9 +35,6 @@ class NavigationBarShowListView: BaseView,UITableViewDelegate,UITableViewDataSou
         var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         if cell == nil {
             cell = BarCell.init(style: .default, reuseIdentifier: "cell")
-//            cell?.contentView.backgroundColor = xsColor_main_black
-//            cell?.textLabel?.backgroundColor = xsColor_main_black
-//            cell?.textLabel?.textColor = xsColor_main_white
             cell?.separatorInset = UIEdgeInsets.init(top: 0, left: 11, bottom: 0, right: 11)
         }
         return cell!
@@ -52,12 +49,13 @@ class NavigationBarShowListView: BaseView,UITableViewDelegate,UITableViewDataSou
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        print("\(indexPath.row)++++++++++++")
         delegate.listDidSelected!(view: self, at: indexPath.row, 0)
     }
     
     override func didMoveToSuperview() {
         UIView.animate(withDuration: 0.25, animations: {
-            self.y = self.originFrame.origin.y
+            self.height = self.originFrame.size.height
         }) { (ret) in
             if let superView = self.superview {
                 super.didMoveToSuperview()
@@ -67,7 +65,7 @@ class NavigationBarShowListView: BaseView,UITableViewDelegate,UITableViewDataSou
     }
     override func removeFromSuperview() {
         UIView.animate(withDuration: 0.25, animations: {[weak self] in
-            self?.y = -(self?.height)!
+            self?.height = 0
         }) { (ret) in
             if ret == true {
                 super.removeFromSuperview()
@@ -88,8 +86,8 @@ class BarCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func buildUI() {
-        self.contentView.backgroundColor = xsColor_main_black
-        titleLabel = UILabel.initializeLabel(self.bounds, font: 13, textColor: xsColor_main_white, textAlignment: .center)
+        self.contentView.backgroundColor = xsColor_main_white
+        titleLabel = UILabel.initializeLabel(self.bounds, font: 13, textColor: xsColor_main_yellow, textAlignment: .center)
         self.contentView.addSubview(titleLabel)
     }
     override func layoutIfNeeded() {

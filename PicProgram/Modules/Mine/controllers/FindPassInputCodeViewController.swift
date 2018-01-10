@@ -13,10 +13,19 @@ enum LoginMethod {
     case login_forgetPass
 }
 
+enum UserType {
+    case User_type_email
+    case User_type_phone
+}
+
 class FindPassInputCodeViewController: BaseViewController {
-    var userModel:UserModel = UserModel()
     @IBOutlet weak var codeTextfield: UITextField!
+    @IBOutlet weak var hintLabel: UILabel!
+    var userModel:UserModel!
+
+    
     var method:LoginMethod = .login_regist
+    var type:UserType = .User_type_email
     @IBAction func sendCodeAction(_ sender: Any) {
         switch method {
         case .login_regist:
@@ -24,6 +33,7 @@ class FindPassInputCodeViewController: BaseViewController {
         case .login_forgetPass:
             //测试代码
             let repassVC = ChangePassViewController.init(nibName: "ChangePassViewController", bundle: Bundle.main)
+            repassVC.userModel = self.userModel
             self.navigationController?.pushViewController(repassVC, animated: true)
         }
     }
@@ -53,10 +63,10 @@ class FindPassInputCodeViewController: BaseViewController {
     override func requestData() {
         //发送验证码
 //        var str = userModel.email
-        var hint = "验证码已发送到电子邮件"
+        var hint = MRLanguage(forKey: "Verification Code To Your Email")
         if userModel.email.count == 0 {
 //            str = userModel.phone
-            hint = "验证码已发送到手机"
+            hint = MRLanguage(forKey: "Verification Code To Your Phone")
         }
         network.requestData(.user_send_code, params: ["register_id":userModel.register_id], finishedCallback: { (result) in
             if result["ret"] as! Int == 0 {
@@ -74,6 +84,15 @@ class FindPassInputCodeViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if type == .User_type_email {
+            hintLabel.text = MRLanguage(forKey: "Enter Email Verify Code")
+        }else {
+            hintLabel.text = MRLanguage(forKey: "Enter Phone Verify Code")
+        }
     }
 
     override func didReceiveMemoryWarning() {

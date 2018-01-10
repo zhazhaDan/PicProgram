@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; placeholder = "请再次输入密码"; ObjectID = "Run-0T-ctK"; */
+"Run-0T-ctK.placeholder" = "请再次输入密码";
+
+/* Class = "UITextField"; placeholder = "6-16位密码,区分大小写"; ObjectID = "cnM-06-SQ8"; */
+"cnM-06-SQ8.placeholder" = "6-16位密码,区分大小写";
+
+/* Class = "UILabel"; text = "请设置m18******578@163.com的新密码，建议使用数字、字母、字符的组合密码，提高密码安全等级。"; ObjectID = "fmk-TJ-ULx"; */
+"fmk-TJ-ULx.text" = "请设置m18******578@163.com的新密码，建议使用数字、字母、字符的组合密码，提高密码安全等级。";
+
+/* Class = "UIButton"; normalTitle = "确定"; ObjectID = "oAb-nf-g9x"; */
+"oAb-nf-g9x.normalTitle" = "确定";

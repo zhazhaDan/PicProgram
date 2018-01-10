@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import AssetsLibrary
 
-let cellReuseIdentifyString = "AlbumTableViewCell"
+private let cellReuseIdentifyString = "AlbumTableViewCell"
 class AlbumListView: BaseView,UITableViewDelegate,UITableViewDataSource {
     var dataSource:[Any] = Array()
     open weak var delegate:CustomViewProtocol!
@@ -97,7 +97,7 @@ class AlbumListView: BaseView,UITableViewDelegate,UITableViewDataSource {
                 }
             })
             subCell.titleLabel.text = assetCollection.localizedTitle
-            subCell.subTitleLabel.text =  "\(fetchResult.count)张"
+            subCell.subTitleLabel.text =  "\(fetchResult.count)\(MRLanguage(forKey: "pages"))"
         }
     }
     

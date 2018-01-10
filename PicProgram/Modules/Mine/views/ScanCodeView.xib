@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScanCodeView" customModule="PicProgram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUL-lX-MVa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeO-tj-AQG">
+                            <rect key="frame" x="12" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Tfy-FF-5dv"/>
+                                <constraint firstAttribute="height" constant="40" id="qLs-Hu-cdC"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" image="fanhui"/>
+                            <connections>
+                                <action selector="backAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="H0c-wP-zPq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="oeO-tj-AQG" firstAttribute="leading" secondItem="KUL-lX-MVa" secondAttribute="leading" constant="12" id="LA7-cx-ibb"/>
+                        <constraint firstItem="oeO-tj-AQG" firstAttribute="centerY" secondItem="KUL-lX-MVa" secondAttribute="centerY" id="hmx-WX-mLS"/>
+                        <constraint firstAttribute="height" constant="50" id="ml4-xY-hUe"/>
+                    </constraints>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCU-5i-HDt">
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQK-cD-SjV">
+                            <rect key="frame" x="85" y="36" width="205" height="205"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="205" id="RKs-Bg-8nJ"/>
+                                <constraint firstAttribute="height" constant="205" id="rJK-Wx-bLF"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtK-fO-Z6E">
+                            <rect key="frame" x="55" y="261" width="265" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="bq7-A1-fjr"/>
+                            </constraints>
+                            <string key="text">请在墨染画框上选择“链接app”
+并将墨染画框中的二维码放入框内
+即可自动扫描</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="EQK-cD-SjV" firstAttribute="top" secondItem="BCU-5i-HDt" secondAttribute="top" constant="36" id="Ro1-g4-1dZ"/>
+                        <constraint firstItem="EQK-cD-SjV" firstAttribute="trailing" secondItem="EtK-fO-Z6E" secondAttribute="trailing" constant="-30" id="Zv1-f5-ycc"/>
+                        <constraint firstItem="EtK-fO-Z6E" firstAttribute="top" secondItem="EQK-cD-SjV" secondAttribute="bottom" constant="20" id="lae-uX-5S7"/>
+                        <constraint firstItem="EQK-cD-SjV" firstAttribute="centerX" secondItem="BCU-5i-HDt" secondAttribute="centerX" id="u2a-qr-YJu"/>
+                        <constraint firstItem="EtK-fO-Z6E" firstAttribute="leading" secondItem="EQK-cD-SjV" secondAttribute="leading" constant="-30" id="yaA-7s-qci"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="BCU-5i-HDt" firstAttribute="top" secondItem="KUL-lX-MVa" secondAttribute="bottom" id="I7p-Eg-8gQ"/>
+                <constraint firstItem="KUL-lX-MVa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JsF-tM-njb"/>
+                <constraint firstItem="KUL-lX-MVa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Jza-SL-phd"/>
+                <constraint firstAttribute="trailing" secondItem="KUL-lX-MVa" secondAttribute="trailing" id="LTo-9l-FOk"/>
+                <constraint firstItem="BCU-5i-HDt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Uy5-ff-LLe"/>
+                <constraint firstAttribute="trailing" secondItem="BCU-5i-HDt" secondAttribute="trailing" id="kVw-Sp-dYZ"/>
+                <constraint firstAttribute="bottom" secondItem="BCU-5i-HDt" secondAttribute="bottom" id="saa-g6-5a5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="qrContentHeight" destination="rJK-Wx-bLF" id="2fS-59-etH"/>
+                <outlet property="qrContentView" destination="EQK-cD-SjV" id="rI3-dV-lg3"/>
+                <outlet property="qrContentWidth" destination="RKs-Bg-8nJ" id="JjG-ZG-pIs"/>
+                <outlet property="qrView" destination="BCU-5i-HDt" id="Y5l-e3-e7h"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="fanhui" width="10" height="17"/>
+    </resources>
+</document>

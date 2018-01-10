@@ -16,6 +16,10 @@ class PicDetailCollectionViewCell: UICollectionViewCell {
         set{
             _model = newValue
             picImageView.xs_setImage(_model.picture_url)
+            if _model.detail_url != nil && _model.detail_url.count as! Int > 0 {
+                picImageView.xs_setImage(_model.detail_url)
+            }
+
         }
         get{
             return _model

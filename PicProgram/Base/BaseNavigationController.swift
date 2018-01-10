@@ -19,11 +19,11 @@ class BaseNavigationController: UINavigationController {
             }
         }
         //设置导航栏颜色
-        self.navigationBar.barTintColor = xsColor_main_white
+//        self.navigationBar.barTintColor = xsColor_main_white
         //设置导航栏返回按钮样式
-        let backImage = UIImage.init(named: "fanhui")
-        navigationBar.backIndicatorImage = backImage
-        navigationBar.backIndicatorTransitionMaskImage = backImage
+//        let backImage = UIImage.init(named: "fanhui")
+//        navigationBar.backIndicatorImage = backImage
+//        navigationBar.backIndicatorTransitionMaskImage = backImage
         
     }
 
@@ -31,7 +31,9 @@ class BaseNavigationController: UINavigationController {
     func addLeftNavigationBarItem(_ imageName:String = "fanhui",_ selectImageName:String = "fanhui",leftCallBack:@escaping ()->Void) {
         let image = UIImage.init(named: imageName)
         leftItemCallBack = leftCallBack
-        let leftButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: (image?.size.width)!, height: 44))
+        let leftButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 44, height: 44))
+        leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -40, 0, 0)
+
         leftButton.setImage(image, for: .normal)
         leftButton.setImage(UIImage.init(named: selectImageName), for: .selected)
         leftButton.setImage(UIImage.init(named: selectImageName), for: .highlighted)
@@ -109,11 +111,12 @@ class BaseNavigationController: UINavigationController {
     
     override func popViewController(animated: Bool) -> UIViewController? {
         let vc =  super.popViewController(animated: animated)
-        vc?.navigationController?.navigationItem.title = ""
-        vc?.navigationController?.navigationBar.backItem?.title = ""
+//        vc?.navigationController?.navigationItem.title = ""
+//        vc?.navigationController?.navigationBar.backItem?.title = ""
         return vc
     }
    
+    
 //    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
 //        if viewController.isKind(of: BaseViewController.self) {
 //            let backTitle = (viewController as! BaseViewController).backTitle

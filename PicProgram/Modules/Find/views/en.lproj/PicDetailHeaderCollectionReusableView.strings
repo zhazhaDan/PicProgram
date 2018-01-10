@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "21张"; ObjectID = "GPD-r5-sLC"; */
+"GPD-r5-sLC.text" = "21 pages";
+
+/* Class = "UILabel"; text = "禅宗有云：为参禅时，见山是山。及至后来亲见知识，有个入处，见山不是山，见水不是水。而今得个休歇处，依前见山只是山，见水只是水。"; ObjectID = "IkV-ep-at7"; */
+"IkV-ep-at7.text" = "禅宗有云：为参禅时，见山是山。及至后来亲见知识，有个入处，见山不是山，见水不是水。而今得个休歇处，依前见山只是山，见水只是水。";
+
+/* Class = "UISegmentedControl"; J2G-ud-3jl.segmentTitles[0] = "横"; ObjectID = "J2G-ud-3jl"; */
+"J2G-ud-3jl.segmentTitles[0]" = "Hori";
+
+/* Class = "UISegmentedControl"; J2G-ud-3jl.segmentTitles[1] = "横竖"; ObjectID = "J2G-ud-3jl"; */
+"J2G-ud-3jl.segmentTitles[1]" = "All";
+
+/* Class = "UISegmentedControl"; J2G-ud-3jl.segmentTitles[2] = "竖"; ObjectID = "J2G-ud-3jl"; */
+"J2G-ud-3jl.segmentTitles[2]" = "Veri";
+
+/* Class = "UILabel"; text = "45张"; ObjectID = "WoG-su-DRC"; */
+"WoG-su-DRC.text" = "45 pages";
+
+/* Class = "UILabel"; text = "192"; ObjectID = "xik-Zb-ODC"; */
+"xik-Zb-ODC.text" = "192";

@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Wi-fi配置"; ObjectID = "5Ig-f9-LhW"; */
+"5Ig-f9-LhW.normalTitle" = "Wi-fi配置";
+
+/* Class = "UILabel"; text = "设备"; ObjectID = "788-R7-Woe"; */
+"788-R7-Woe.text" = "设备";
+
+/* Class = "UIButton"; normalTitle = "添加设备"; ObjectID = "Sns-DM-JB6"; */
+"Sns-DM-JB6.normalTitle" = "添加设备";
+
+/* Class = "UIButton"; normalTitle = "暂无绑定设备"; ObjectID = "VeD-n3-p2J"; */
+"VeD-n3-p2J.normalTitle" = "暂无绑定设备";

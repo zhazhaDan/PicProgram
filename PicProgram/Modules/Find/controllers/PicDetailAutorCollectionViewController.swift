@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 private let reuseHeaderIdentifier = "header"
 
-class PicDetailAutorCollectionViewController: PicDetailCollectionViewController,SearchProtocol {
+class PicDetailAutorCollectionViewController: PicDetailCollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,11 +61,11 @@ class PicDetailAutorCollectionViewController: PicDetailCollectionViewController,
   
     
     //SearchProtocol
-    func backAction() {
+    override func backAction() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func picsStyleChangeAction(style: Int) {
+    override func picsStyleChangeAction(style: Int) {
         // 横  横竖  竖
     }
 

@@ -16,6 +16,13 @@ class DeviceManageView: UIView {
     
     @IBOutlet weak var addDeviceButton: UIButton!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.deviceManageButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.wifiButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.addDeviceButton.titleLabel?.adjustsFontSizeToFitWidth = true
+    }
+    
     @IBAction func buttonAction(_ sender: UIButton) {
         if sender.tag == 10 {
             cDelegate.deviceManageSelected!()
@@ -37,4 +44,9 @@ class DeviceManageView: UIView {
     @objc optional func addDeviceSelected()
     @objc optional func wifiManageSelected()
     @objc optional func backSelectd()
+    @objc optional func scanCode(result: String)
+    @objc optional func removeDevice(view:UIView,deviceIndex row : Int)
+    @objc optional func setBindDevices(view:UIView,deviceIndex row : Int)
+    @objc optional func promiseBindDevice(view:UIView,deviceIndex row : Int)
+    @objc optional func denyBindDevice(view:UIView,deviceIndex row : Int)
 }

@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 private let headerReuseIdentifier = "ClassifyEmotionCollectionReusableView"
 
-class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate,CustomViewProtocol {
+class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,CustomViewProtocol {
     @IBOutlet weak var emotionLabel: UILabel!
     @IBOutlet weak var emotionImageView: UIImageView!
     @IBOutlet weak var classTitleButton: UIButton!
@@ -22,18 +22,26 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     var selectedIndex:Int = 0
     var model:PaintModel!
     var customPaint:[PictureModel] = Array()
+    var emotion:Emotion!
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
-        self.title = "心情"
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = MRLanguage(forKey: "Mood")
+
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         let sectionData = self.dataSource[selectedIndex]
         self.emotionImageView.image = UIImage.init(named: sectionData["imageName"]! as! String)
+        self.emotionLabel.font = xsFont(20)
         self.emotionLabel.text = sectionData["title"] as! String
+       loadLoadEmotionPaint()
     }
 
     override func buildUI() {
@@ -50,8 +58,8 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     }
     
     override func requestData() {
-        let paint_id = dataSource[selectedIndex]["paint_id"]
-        network.requestData(.paint_info, params: ["paint_id":2], finishedCallback: { [weak self](result) in
+        let paint_id = dataSource[selectedIndex]["id"]
+        network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
                 self?.collectionView?.reloadData()
@@ -62,19 +70,22 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if customPaint.count > 0 {
+        if customPaint.count > 0 && self.model != nil {
             return 2
+        }else if customPaint.count == 0 && self.model == nil {
+            return 0
         }
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if self.model == nil {
+        if customPaint.count > 0 && section == 0 {
+            return (customPaint.count > 9 ? 9 : customPaint.count)
+        }else if self.model == nil {
             return 0
-        }else if customPaint.count == 0 || section == 1{
-            return model.picture_arry.count
+        }else {
+            return (model.picture_arry.count > 12 ? 12 : model.picture_arry.count)
         }
-        return customPaint.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -97,12 +108,12 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
         if kind == UICollectionElementKindSectionHeader {
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath) as! ClassifyEmotionCollectionReusableView
             if customPaint.count == 0 {
-                view.emotionTitleButton.setTitle("初始分类", for: .normal)
+                view.emotionTitleButton.setTitle(MRLanguage(forKey: "Initical Category"), for: .normal)
             }else {
                 if indexPath.section == 0 {
-                    view.emotionTitleButton.setTitle("用户自定义", for: .normal)
+                    view.emotionTitleButton.setTitle(MRLanguage(forKey: "User Customized Setting"), for: .normal)
                 }else if indexPath.section == 1 {
-                    view.emotionTitleButton.setTitle("初始分类", for: .normal)
+                    view.emotionTitleButton.setTitle(MRLanguage(forKey: "Initical Category"), for: .normal)
                 }
             }
             view.delegate = self
@@ -119,22 +130,30 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlayViewController.player
-        
-        if customPaint.count == 0 {
-            vc.dataSource = model.picture_arry
-            vc.title = model.paint_title
-        }else {
-            if indexPath.section == 0 {
-                vc.dataSource = customPaint
-                vc.title = "历史浏览"
-            }else if indexPath.section == 1 {
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            
+            if customPaint.count == 0 {
                 vc.dataSource = model.picture_arry
                 vc.title = model.paint_title
+            }else {
+                if indexPath.section == 0 {
+                    vc.dataSource = customPaint
+                    vc.title = MRLanguage(forKey: "History Viewed")
+                }else if indexPath.section == 1 {
+                    vc.dataSource = model.picture_arry
+                    vc.title = model.paint_title
+                }
             }
-        }
-        self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
 
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+
+        }
+       
       
     }
     
@@ -186,6 +205,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
         let sectionData = self.dataSource[indexPath.row]
         self.emotionImageView.image = UIImage.init(named: sectionData["imageName"]! as! String)
         self.emotionLabel.text = sectionData["title"] as! String
+        loadLoadEmotionPaint()
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
         self.requestData()
@@ -213,11 +233,18 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
         }
         return true
     }
-    
+    //点击从本地数据库读取用户自定义列表
+    func loadLoadEmotionPaint() {
+        let sectionData = self.dataSource[selectedIndex]
+        emotion = Emotion.fetchEmotionPaint(forEmotionName: sectionData["title"] as! String)
+        customPaint = emotion.pictureModels
+        collectionView.reloadData()
+
+    }
     
     //customViewProtocol
     func listDidSelected(view: UIView, at index: Int, _ section: Int) {
-        let vc = ClassifyEmotionDetailListViewController()
+        let vc = ClassifyEmotionDetailListViewController.init(nibName: "ClassifyEmotionDetailListViewController", bundle: Bundle.main)
         let header = view as! ClassifyEmotionCollectionReusableView
         if customPaint.count == 0 {
             if section == 0 {
@@ -229,7 +256,8 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
             vc.pictures = self.model.picture_arry
         }
         vc.title = self.emotionLabel.text
-//        vc.titleButton.setTitle(header.emotionTitleButton.title(for: .normal), for: .normal)
+        let subTitle = header.emotionTitleButton.title(for: .normal)
+        vc.subTitle = subTitle
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

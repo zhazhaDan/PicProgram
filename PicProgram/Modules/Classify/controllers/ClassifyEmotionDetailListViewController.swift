@@ -13,10 +13,12 @@ private let reuseIdentifier = "PicDetailCollectionViewCell"
 class ClassifyEmotionDetailListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var titleButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    var subTitle:String!
     var pictures:[PictureModel] = Array()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.titleButton.setTitle(subTitle, for: .normal)
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier:reuseIdentifier)
         // Do any additional setup after loading the view.
     }
@@ -47,10 +49,18 @@ class ClassifyEmotionDetailListViewController: BaseViewController,UICollectionVi
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlayViewController.player
-        vc.dataSource = pictures
-        vc.title = self.title
-        self.navigationController?.pushViewController(vc, animated: true)
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            vc.dataSource = pictures
+            vc.title = self.title
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+            
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath){

@@ -13,13 +13,22 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
     var customViews:Array<BaseView> = Array()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = MRLanguage(forKey: "Category")
         // Do any additional setup after loading the view.
         requestData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = MRLanguage(forKey: "Category")
+        self.scrollView?.setContentOffset(CGPoint.init(x: (scrollView?.width)! * CGFloat(selectedIndex), y: 0), animated: true)
+        self.navigationItem.leftBarButtonItem = nil
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
+        self.title = MRLanguage(forKey: "Category")
     }
     
     override func requestData() {
@@ -48,9 +57,9 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         if (self.customViews[selectedIndex] as! ClassifyCommonListView).dataSource.count > 0 {
             return
         }
-        network.requestData(.classify_get_art_home, params: nil, finishedCallback: { [weak self](result) in
+        network.requestData(.classify_get_scene_home, params: nil, finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
-                (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).dataSource = result["art_home_page"] as! Array<[String : Any]>
+                (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).dataSource = result["scene_home_page"] as! Array<[String : Any]>
                 (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).collecView.reloadData()
             }
         }, nil)
@@ -60,18 +69,19 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         if (self.customViews[1] as! EmotionView).dataSource.count > 0 {
             return
         }
-        let path = Bundle.main.path(forResource: "EmotionList", ofType: "plist")
-        let data = NSArray.init(contentsOfFile: path!) as! Array<[String : String]>
+        
+        let path = BaseBundle.bundle.path(forResource: "EmotionList", ofType: "plist")
+        let data = NSArray.init(contentsOfFile: path!) as! Array<[String : Any]>
         (self.customViews[1] as! EmotionView).dataSource = data
         (self.customViews[1] as! EmotionView).collecView.reloadData()
     }
     
     override func buildUI() {
         super.buildUI()
-        let titles = ["艺术","心情","场景"]
+        let titles = [MRLanguage(forKey: "Art"),MRLanguage(forKey: "Mood"),MRLanguage(forKey: "Scenes")]
         let space = (self.view.width - 84*3)/3
         for i in 0 ..< titles.count {
-            let button = UIButton.init(frame: CGRect.init(x: space/2 + (space + 84) * CGFloat(i), y: NavigationBarBottom + 5, width: ( 84), height: 34))
+            let button = UIButton.init(frame: CGRect.init(x: space/2 + (space + 84) * CGFloat(i), y: NavigationBarBottom + 5, width: (84), height: 34))
             button.setTitle(titles[i], for: .normal)
             button.titleLabel?.font = xsFont(15)
             button.setTitleColor(xsColor_main_yellow, for: .normal)
@@ -120,9 +130,19 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
             self.navigationController?.pushViewController(searchVC, animated: true)
         })
         self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { (tag) in
-            print("去登录")
+            if UserInfo.user.checkUserLogin() {
+                let vc = PlayViewController.player
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }else {
+                let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+                let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+                self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+                
+            }
+           
         }
-        self.title = LocalizedLanguageTool().getString(forKey: "Category")
+        self.title = MRLanguage(forKey: "Category")
     }
     
     

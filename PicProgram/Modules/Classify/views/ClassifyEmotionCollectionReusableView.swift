@@ -13,7 +13,7 @@ class ClassifyEmotionCollectionReusableView: UICollectionReusableView,CustomView
     open weak var delegate:CustomViewProtocol!
     var section:Int = 0
     @IBAction func emotionListShowAction(_ sender: Any) {
-        delegate.listDidSelected!(view: self, at: 0, 0)
+        delegate.listDidSelected!(view: self, at: 0, section)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

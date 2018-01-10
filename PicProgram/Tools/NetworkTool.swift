@@ -14,7 +14,7 @@ let baseApi = "http://dev.xiangshuispace.com:9988/api/"
 //let baseApi = "https://www.xiangshuispace.com/api/"
     
 #else
-let baseApi = "https://www.xiangshuispace.com/api/"
+let baseApi = "http://dev.xiangshuispace.com:9988/api/"
     
 #endif
 enum Method {
@@ -31,6 +31,8 @@ enum RequestAPIType {
     case paint_list
     case paint_collect
     case paint_play
+    case paint_play_style
+    case paint_picPlay
     case paint_tips
     case paint_lining
     case search_hotwords
@@ -43,10 +45,19 @@ enum RequestAPIType {
     case user_reset_password
     case user_logout
     case user_info
+    case user_set_header
+    case user_set_back
     case user_get_device
     case user_get_device_info
+    case user_set_info
+    case user_collect_list
+    case user_bind_device
+    case user_set_play_device
+    case user_delete_device
+    case user_master_solve_device
     case classify_get_art_home
     case classify_get_scene_home
+    case user_report
     case default_api
 }
 
@@ -89,7 +100,7 @@ class  NetworkTool{
             apiString = "discovery/mq_love"
         case .paint_info:
             method = .get
-            let paint_id:Int = params!["paint_id"] as! Int
+            let paint_id:Int64 = params!["paint_id"] as! Int64
             apiString = "painting/\(paint_id)/info"
             realParams = nil
         case .paint_list:
@@ -115,6 +126,8 @@ class  NetworkTool{
             realParams = nil
         case .paint_play:
             apiString = "painting/play"
+        case .paint_picPlay:
+            apiString = "painting/picture_play"
         case .paint_tips:
             apiString = "painting/add_tips"
         case .paint_lining:
@@ -130,7 +143,6 @@ class  NetworkTool{
         case .user_reset_password:
             apiString = "user/reset_password"
         case .user_logout:
-            method = .get
             apiString = "user/logout"
         case .user_info:
             method = .get
@@ -146,7 +158,30 @@ class  NetworkTool{
             apiString = "user/get_bind_device"
         case .user_get_device_info:
             method = .get
-            apiString = ""
+            let device_id = params!["device_id"]
+            apiString = "master/\(device_id as! String)/get_device_info"
+            realParams = nil
+        case .user_bind_device:
+            apiString = "user/device_bind"
+        case .user_set_info:
+            apiString = "user/set_info"
+        case .user_collect_list:
+            method = .get
+            apiString = "painting/mylist"
+        case .user_master_solve_device:
+            apiString = "master/process_device_bind"
+        case .user_delete_device:
+            apiString = "user/delete_bind"
+        case .paint_play_style:
+            apiString = "painting/modify_play_type"
+        case .user_set_header:
+            apiString = "imgs/upload/user_head"
+        case .user_set_back:
+            apiString = "imgs/upload/backend_img"
+        case .user_set_play_device:
+            apiString = "device/set_play_device"
+        case .user_report:
+            apiString = "user/proposal"
         default:
             apiString = ""
             method = .get
@@ -156,10 +191,16 @@ class  NetworkTool{
                 finishedCallback!(result)
             }
         }) {
-            HUDTool.show(.error, text: "网络开小差了", delay: 1, view: UIApplication.shared.keyWindow!, complete: nil)
-            if failCallBack != nil {
-                failCallBack!()
-            }
+//            HUDTool.show(.error, text: "网络开小差了", delay: 1, view: UIApplication.shared.keyWindow!, complete: nil)
+//            if failCallBack != nil {
+//                failCallBack!()
+//            }
+            let vc = NoWifiViewController()
+            appDelegate.window?.rootViewController?.present(vc, animated: true, completion: {
+                if failCallBack != nil {
+                    failCallBack!()
+                } 
+            })
         }
     }
     
@@ -196,7 +237,11 @@ class  NetworkTool{
                 }
                 let resultDict = result as! [String : Any]
                
+                if (((resultDict["ret"] as! Int) < -100) && ((resultDict["ret"] as! Int) > -200)) {
+                    UserInfo.user.localLogout()
+                }else {
                     finishedCallback!(resultDict)
+                }
                
                 
         }
@@ -230,6 +275,47 @@ class  NetworkTool{
             }
         }
     }
-    
+    //图片上传
+    func uploadPic(image:UIImage,apiType: RequestAPIType,finishedCallback: ((_ result : [String:Any])->())? = nil) {
+        var apiString = ""
+        switch apiType {
+        case .user_set_header:
+            apiString = "imgs/upload/user_head"
+        case .user_set_back:
+            apiString = "imgs/upload/backend_img"
+        default:
+            apiString = ""
+        }
+        
+        let imageData = UIImageJPEGRepresentation(image, 1.0)
+        var headerDict = ["content-type": "application/json","User-Uin": "\(UserInfo.user.uin)","Req-From": "iOS-app"]
+        if UserInfo.user.token.count > 0 {
+            headerDict["Client-Token"] = UserInfo.user.token
+        }
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imageData!, withName: "file", fileName: "tmp.jpg", mimeType: "image/jpeg")
+        },usingThreshold:UInt64.init(), to: "\(baseApi)\(apiString)", method:.post,headers: headerDict, encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    if let JSON = response.result.value {
+                        let dict = JSON as! [String:Any]
+                        //这里处理JSON数据
+                        var item:[String:Any] = [:]
+                        item["url"] = dict["url"]
+                        item["image"] = image
+                        item["ret"] = 0
+                        finishedCallback!(item)
+                    }
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+                var item:[String:Any] = [:]
+                item["err"] = "图片上传失败"
+                item["ret"] = -1
+                finishedCallback!(item)
+            }
+        })
+    }
 }
 

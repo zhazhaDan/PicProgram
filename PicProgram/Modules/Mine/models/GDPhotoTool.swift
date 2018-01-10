@@ -76,7 +76,7 @@ class GDPhotoTool: NSObject,PHPhotoLibraryChangeObserver {
         var array = Array<Any>();
         for i in 0..<fetchResult.count {
             let asset = fetchResult[i] as! PHAsset;
-            if asset.mediaSubtypes.rawValue == 0 {
+            if asset.mediaSubtypes.rawValue > 0 {
                 let gdAsset = GDPHAsset.init()
                 gdAsset.asset = asset
                 gdAsset.isSelected = false
@@ -90,11 +90,12 @@ class GDPhotoTool: NSObject,PHPhotoLibraryChangeObserver {
         if self.imageManager == nil {
             self.imageManager = PHImageManager.init();
         }
-        self.imageManager.requestImage(for: asset, targetSize: imageSize, contentMode: PHImageContentMode.aspectFill, options: nil, resultHandler: { (result, info) in
+        self.imageManager.requestImage(for: asset, targetSize: imageSize, contentMode: PHImageContentMode.aspectFit, options: PHImageRequestOptions(), resultHandler: { (result, info) in
             if (result != nil) {
                 complete(result!,true);
+            }else {
+                complete(result!,false);
             }
-            complete(result!,false);
         });
     }
 

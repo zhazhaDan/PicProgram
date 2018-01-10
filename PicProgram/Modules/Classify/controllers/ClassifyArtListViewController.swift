@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
-class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate {
+class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var classTitleButton: UIButton!
     @IBOutlet weak var showVBackView: UIView!
     @IBOutlet weak var showTableListView: UITableView!
@@ -21,10 +21,15 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
-        self.title = "分类"
+        self.title = MRLanguage(forKey: "Category")
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
+    }
+    
     override func buildUI() {
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .vertical
@@ -39,7 +44,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
     override func requestData() {
         let paint_id = dataSource[selectedIndex]["paint_id"]
-        network.requestData(.paint_info, params: ["paint_id":2], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
                 self?.collectionView?.reloadData()
@@ -76,10 +81,19 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlayViewController.player
-        vc.dataSource = model.picture_arry
-        vc.title = model.paint_title
-        self.navigationController?.pushViewController(vc, animated: true)
+       
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            vc.dataSource = model.picture_arry
+            vc.title = model.paint_title
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath){
@@ -115,6 +129,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
         selectedIndex = indexPath.row
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
+        self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
         self.requestData()
     }
     

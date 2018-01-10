@@ -23,8 +23,10 @@ class PicDetailHeaderStyle3View: UICollectionReusableView {
     @IBOutlet weak var numberLabel: UILabel!
     
     @IBOutlet weak var collectButton: UIButton!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
-    var segmentIndex:Int = 0
+    @IBOutlet weak var backTopConstraint: NSLayoutConstraint!
+    var segmentIndex:Int = 1
     @IBAction func playAction(_ sender: Any) {
         delegate.playAction!()
     }
@@ -33,8 +35,8 @@ class PicDetailHeaderStyle3View: UICollectionReusableView {
         delegate.pushAction!()
     }
     
-    @IBAction func collectAction(_ sender: Any) {
-        delegate.collectAction!()
+    @IBAction func collectAction(_ sender: UIButton) {
+        delegate.collectAction!(view: sender)
     }
     
     @IBAction func shareAction(_ sender: Any) {
@@ -56,6 +58,8 @@ class PicDetailHeaderStyle3View: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backTopConstraint.constant = StatusBarHeight
+        self.updateConstraints()
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(picTapAction(_ :)))
         self.autoPicImageView.addGestureRecognizer(tap)
     }

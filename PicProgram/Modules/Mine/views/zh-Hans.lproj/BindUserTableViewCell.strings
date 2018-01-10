@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "C3N-IT-jOI"; */
+"C3N-IT-jOI.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "批准"; ObjectID = "avU-Vy-lJY"; */
+"avU-Vy-lJY.normalTitle" = "批准";
+
+/* Class = "UIButton"; normalTitle = "拒绝"; ObjectID = "zPq-EY-Dbv"; */
+"zPq-EY-Dbv.normalTitle" = "拒绝";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ztL-B9-W2a"; */
+"ztL-B9-W2a.normalTitle" = "Button";

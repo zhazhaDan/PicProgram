@@ -10,10 +10,17 @@ import UIKit
 import Photos
 import AssetsLibrary
 
+//enum SystemPicType {
+//    case header
+//    case background
+//}
+
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
 class SystemPicsCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,CustomViewProtocol,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var dataSource:[GDPHAsset] = Array()
+    open weak var delegate:SystemPicsCollectionProtocol!
+    var picType:RequestAPIType = .user_set_header
     var _listView:AlbumListView!
     var listView:AlbumListView {
         set{
@@ -40,7 +47,7 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
         GDPhotoTool.defaultTool.authorize { [weak self](ret) in
             if ret == true {
                 self?.listView.showAlbum()
-                self?.listDidSelected(view: (self?.listView)!, at: 0)
+                self?.listDidSelected(view: (self?.listView)!, at: 0, 0)
             }
         }
         self.collectionView?.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
@@ -144,6 +151,23 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
             self.showSystemCamera()
         }else {
             //TODO://图片上传
+            let asset = self.dataSource[indexPath.row-1]
+            GDPhotoTool.defaultTool.getImage(asset: asset.asset as PHAsset,imageSize: PHImageManagerMaximumSize ,complete: { (image, ret) in
+                network.uploadPic(image: image,apiType: .user_set_header) { [weak self](result) in
+                    if result["ret"] as! Int == 0 {
+//                        let dict = ["imageUrl": result["url"] as! String, "image": image] as [String : Any]
+                        let dict = ["image": image] as [String : Any]
+                        self?.delegate.finishUpload(imageInfo: dict, type: (self?.picType)!)
+                    }else {
+                        HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: {
+                        })
+                    }
+                }
+//                //图片上传接口有问题。测试代码
+//                let dict = ["image": image] as [String : Any]
+//                self.delegate.finishUpload(imageInfo: dict, type: (self.picType))
+                self.navigationController?.popViewController(animated: true)
+            })
         }
     }
     
@@ -156,10 +180,26 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //照相后回调
-        picker.dismiss(animated: true, completion: nil)
+        network.uploadPic(image: info[UIImagePickerControllerOriginalImage] as! UIImage,apiType: self.picType) { [weak self](result) in
+            if result["ret"] as! Int == 0 {
+                let dict = ["imageUrl": result["url"] as! String, "image": info[UIImagePickerControllerOriginalImage] as! UIImage] as [String : Any]
+                self?.delegate.finishUpload(imageInfo: dict, type: (self?.picType)!)
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: {
+                    
+                })
+            }
+           
+        }
+        //图片上传接口有问题。测试代码
+        let dict = ["image": info[UIImagePickerControllerOriginalImage] as! UIImage] as [String : Any]
+        self.delegate.finishUpload(imageInfo: dict, type: (self.picType))
+        picker.dismiss(animated: true) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
-    func listDidSelected(view: UIView, at index: Int) {
+    func listDidSelected(view: UIView, at index: Int, _ section: Int) {
         showSigleView.text = (self.listView.dataSource[index] as! PHAssetCollection).localizedTitle
         let assetCollection = self.listView.dataSource[index]
         let fetchResult = GDPhotoTool.defaultTool.getFetchResultInAlbums(assetCollection: assetCollection as! PHAssetCollection);
@@ -168,4 +208,8 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
         self.collectionView?.reloadData()
         self.listView.hideList()
     }
+}
+
+protocol SystemPicsCollectionProtocol:NSObjectProtocol{
+     func finishUpload(imageInfo:[String:Any],type:RequestAPIType)
 }
