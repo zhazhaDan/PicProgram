@@ -32,6 +32,18 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = MRLanguage(forKey: "Mood")
+        self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { [weak self](tag) in
+            if UserInfo.user.checkUserLogin() {
+                let vc = PlayViewController.player
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }else {
+                let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+                let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+                self?.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+                
+            }
+            
+        }
 
     }
     override func viewDidAppear(_ animated: Bool) {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-let WXAPPID = "wx4f0a156d8bb04f93"
+let WXAPPID = "wx4f0a156d8bb04f93"//"wxd477edab60670232"//"wx4f0a156d8bb04f93"
 //let WXAPPSECRET = "4c7fd889d4f2902c0ca4108dc06dd422"
 let WBAPPKEY = "1695158483"
 let WBAPPSECRET = "da72736fd76eac3d4342cf99733dfa16"

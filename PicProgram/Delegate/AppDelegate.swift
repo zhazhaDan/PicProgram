@@ -51,7 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabController
         let vc = SettingViewController()
         vc.hidesBottomBarWhenPushed = true
-       (tabController.selectedViewController as!UINavigationController).pushViewController(vc, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            (tabController.selectedViewController as!UINavigationController).pushViewController(vc, animated: true)
+        }
         
     }
     

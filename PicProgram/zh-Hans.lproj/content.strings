@@ -132,7 +132,7 @@
 "Ancient Times" = "古代";
 "Modern Times" = "近代";
 "Contemporary" = "当代";
-"Category" = "类型";
+//"Category" = "类型";
 "User Customized Setting" = "用户自定义";
 "Initical Category" = "初始分类";
 "Happiness" = "喜";
@@ -231,7 +231,7 @@
 "Veritical" = "竖";
 "Recent Searches" = "最近搜索";
 "Popular Searches" = "热门搜索";
-"Art Works" = "作品";
+//"Art Works" = "作品";
 "Artist" = "作者";
 "Gallery" = "画单";
 "No Results" = "无结果";
@@ -323,3 +323,4 @@
 "" = "请输入反馈，我们将为您不断改进";
 "" = "请进入Moran画框设置页面并进入Wi-Fi连接选项";
 "" = "请输入反馈，我们将为您不断改进";
+"Auth Failed" = "授权失败";

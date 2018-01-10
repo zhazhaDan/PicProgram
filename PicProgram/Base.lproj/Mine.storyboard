@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,23 +145,29 @@
                                         <rect key="frame" x="0.0" y="489" width="375" height="146"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBb-1H-zEp" userLabel="weixin">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBb-1H-zEp" userLabel="weixin">
                                         <rect key="frame" x="42" y="546.5" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="OYj-5k-qg1"/>
                                             <constraint firstAttribute="height" constant="31" id="ok8-ou-CzQ"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="weixindenglu_icon"/>
+                                        <connections>
+                                            <action selector="thirdLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ic-H0-4xF"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsM-pt-6YH" userLabel="weibo">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsM-pt-6YH" userLabel="weibo">
                                         <rect key="frame" x="125" y="546.5" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="5WN-Uq-hHb"/>
                                             <constraint firstAttribute="width" constant="31" id="iod-in-uQY"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="weibodenglu_icon"/>
+                                        <connections>
+                                            <action selector="thirdLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUN-S6-Mnd"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc8-0O-2Fy" userLabel="facebook">
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc8-0O-2Fy" userLabel="facebook">
                                         <rect key="frame" x="219" y="546.5" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="jZc-vT-hA2"/>
@@ -169,16 +175,19 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="Facebookdenglu"/>
                                         <connections>
-                                            <action selector="thirdLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sZB-w3-TFW"/>
+                                            <action selector="thirdLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GJ9-4W-paB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWW-Sp-7C8" userLabel="twitter">
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWW-Sp-7C8" userLabel="twitter">
                                         <rect key="frame" x="302" y="546.5" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="ZLg-Jn-cnv"/>
                                             <constraint firstAttribute="width" constant="31" id="ntY-Mj-qTt"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="twitterdenglu"/>
+                                        <connections>
+                                            <action selector="thirdLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSI-a5-kvy"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2h-4y-NgW">
                                         <rect key="frame" x="203" y="586.5" width="63" height="17"/>

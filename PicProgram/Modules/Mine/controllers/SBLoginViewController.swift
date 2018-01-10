@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SBLoginViewController: BaseViewController {
+class SBLoginViewController: BaseViewController,WXApiDelegate {
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passTextfield: UITextField!
@@ -32,7 +32,32 @@ class SBLoginViewController: BaseViewController {
     }
     
     @IBAction func thirdLoginAction(_ sender: UIButton) {
+        if sender.tag == 10 {
+            //微信登录
+            let req = SendAuthReq.init()
+            req.scope = "snsapi_userinfo"
+            req.state = "wechat_sdk_demo"
+            WXApi.sendAuthReq(req, viewController: self, delegate: self)
+        }
     }
+
+    
+    func onResp(_ resp: BaseResp!) {
+        if resp.errCode < 0 {
+            HUDTool.show(.text, nil, text: MRLanguage(forKey: "Auth Failed"), delay: 0.5, view: self.view, complete: nil)
+            
+        }else {
+            if resp is SendAuthResp {
+                let response = resp as! SendAuthResp
+                network.requestData(.user_third_login, params: ["register_type":2,"access_token":response.code], finishedCallback: { (result) in
+                    
+                }, nil)
+                
+            }
+           
+        }
+    }
+    
     
     func updateButtonStatus(sender:UIButton) {
         for i in 0 ..< 3 {

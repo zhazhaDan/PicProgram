@@ -216,6 +216,7 @@
 		3AA7A1601F8DC16000DDF7CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7A15F1F8DC16000DDF7CB /* LoginView.swift */; };
 		3AA8DCFA2005C77000245FBB /* EmotionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DCFC2005C77000245FBB /* EmotionList.plist */; };
 		3AA8DCFF2005EA4B00245FBB /* ArtMasterSayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DD012005EA4B00245FBB /* ArtMasterSayTableViewCell.xib */; };
+		3AA8DD0620060C6600245FBB /* ClassifyEmotionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DD0820060C6600245FBB /* ClassifyEmotionListViewController.xib */; };
 		3AB5DC191F8CB119004897B5 /* PicProgram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AB5DC171F8CB119004897B5 /* PicProgram.xcdatamodeld */; };
 		3AB5DC1B1F8CB119004897B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB5DC1A1F8CB119004897B5 /* Assets.xcassets */; };
 		3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB5DC1C1F8CB119004897B5 /* LaunchScreen.storyboard */; };
@@ -379,7 +380,6 @@
 		F7141DB71FDBD06C00606631 /* TipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7141DB91FDBD06C00606631 /* TipsViewController.xib */; };
 		F7141DBF1FDC11CB00606631 /* SnapShot+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7141DBE1FDC11CB00606631 /* SnapShot+UIView.swift */; };
 		F71952CF1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */; };
-		F71952D01FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952CE1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib */; };
 		F71952D31FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952D11FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift */; };
 		F71952D71FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71952D51FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift */; };
 		F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */; };
@@ -644,6 +644,9 @@
 		3AA8DD002005EA4B00245FBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ArtMasterSayTableViewCell.xib; sourceTree = "<group>"; };
 		3AA8DD032005EA4E00245FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ArtMasterSayTableViewCell.strings; sourceTree = "<group>"; };
 		3AA8DD052005EA4F00245FBB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ArtMasterSayTableViewCell.strings"; sourceTree = "<group>"; };
+		3AA8DD0720060C6600245FBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ClassifyEmotionListViewController.xib; sourceTree = "<group>"; };
+		3AA8DD0A20060C6800245FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ClassifyEmotionListViewController.strings; sourceTree = "<group>"; };
+		3AA8DD0C20060C6A00245FBB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ClassifyEmotionListViewController.strings"; sourceTree = "<group>"; };
 		3AB5DC0D1F8CB119004897B5 /* PicProgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicProgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB5DC181F8CB119004897B5 /* PicProgram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PicProgram.xcdatamodel; sourceTree = "<group>"; };
 		3AB5DC1A1F8CB119004897B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -872,7 +875,6 @@
 		F7141DBD1FDBD07000606631 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TipsViewController.strings"; sourceTree = "<group>"; };
 		F7141DBE1FDC11CB00606631 /* SnapShot+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnapShot+UIView.swift"; sourceTree = "<group>"; };
 		F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionListViewController.swift; sourceTree = "<group>"; };
-		F71952CE1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassifyEmotionListViewController.xib; sourceTree = "<group>"; };
 		F71952D11FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionCollectionReusableView.swift; sourceTree = "<group>"; };
 		F71952D51FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionDetailListViewController.swift; sourceTree = "<group>"; };
 		F71952D61FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassifyEmotionDetailListViewController.xib; sourceTree = "<group>"; };
@@ -1010,7 +1012,7 @@
 			isa = PBXGroup;
 			children = (
 				F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */,
-				F71952CE1FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib */,
+				3AA8DD0820060C6600245FBB /* ClassifyEmotionListViewController.xib */,
 				3A0B8B291FBD91F1006F09E9 /* ClassifyViewController.swift */,
 				3A7266431FC80F3C00727509 /* ClassifyArtListViewController.swift */,
 				3A7266441FC80F3C00727509 /* ClassifyArtListViewController.xib */,
@@ -1806,7 +1808,7 @@
 				3A33DDD91FE91FF1001565F2 /* xf_1.png in Resources */,
 				3A33DE381FE91FF1001565F2 /* xf_90.png in Resources */,
 				3A33DE371FE91FF1001565F2 /* xf_89.png in Resources */,
-				F71952D01FCA88AE00ED9D68 /* ClassifyEmotionListViewController.xib in Resources */,
+				3AA8DD0620060C6600245FBB /* ClassifyEmotionListViewController.xib in Resources */,
 				3AFB30571FE8B709005BA1A8 /* loading_6@2x.png in Resources */,
 				3A33DDF11FE91FF1001565F2 /* xf_31.png in Resources */,
 				3A33DE221FE91FF1001565F2 /* xf_68.png in Resources */,
@@ -2275,6 +2277,16 @@
 			name = ArtMasterSayTableViewCell.xib;
 			sourceTree = "<group>";
 		};
+		3AA8DD0820060C6600245FBB /* ClassifyEmotionListViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AA8DD0720060C6600245FBB /* Base */,
+				3AA8DD0A20060C6800245FBB /* en */,
+				3AA8DD0C20060C6A00245FBB /* zh-Hans */,
+			);
+			name = ClassifyEmotionListViewController.xib;
+			sourceTree = "<group>";
+		};
 		3AB5DC1C1F8CB119004897B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2703,7 +2715,7 @@
 					"$(PROJECT_DIR)/PicProgram/ThirdParty/libWeiboSDK",
 					"$(PROJECT_DIR)/PicProgram/ThirdParty/GtSdkLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cmversion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cnversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2731,7 +2743,7 @@
 					"$(PROJECT_DIR)/PicProgram/ThirdParty/libWeiboSDK",
 					"$(PROJECT_DIR)/PicProgram/ThirdParty/GtSdkLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cmversion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cnversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -109,7 +109,14 @@ class RegistThirdAppDelegate: UIResponder,GeTuiSdkDelegate,UNUserNotificationCen
         }
     }
      func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+        if url.host == "response" {//微博
+            WeiboSDK.handleOpen(url, delegate: ShareThirdAppTool.share)
+        }else if url.host == "platformId=wechat" {//微信分享
+            WXApi.handleOpen(url, delegate: ShareThirdAppTool.share as WXApiDelegate)
+        }else if url.host == "oauth" {//微信分享
+            let nvc = (UIApplication.shared.keyWindow?.rootViewController as! BaseTabBarController).selectedViewController as! UINavigationController
+            WXApi.handleOpen(url, delegate: nvc.visibleViewController as! WXApiDelegate)
+        }
         return true
     }
      func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {

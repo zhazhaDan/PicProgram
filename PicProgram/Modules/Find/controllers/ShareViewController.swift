@@ -103,10 +103,10 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
     
     func share(toPlatform index: Int) {
         //TODO:三方分享
+        let image = shareView.viewShot()
+        ShareThirdAppTool.share.share_icon = image
         switch index {
         case 0:
-            let image = shareView.viewShot()
-            ShareThirdAppTool.share.share_icon = image
             let sheet = UIAlertController.init(title: MRLanguage(forKey: "No"), message: nil, preferredStyle: .actionSheet)
             let session = UIAlertAction.init(title: MRLanguage(forKey: "Wechat session"), style: .default, handler: { (action) in
                 ShareThirdAppTool.share.shareToWX(WXSceneSession)

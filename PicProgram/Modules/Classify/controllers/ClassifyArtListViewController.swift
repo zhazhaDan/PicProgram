@@ -11,6 +11,7 @@ import UIKit
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
 class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
+    @IBOutlet weak var subTitleWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var classTitleButton: UIButton!
     @IBOutlet weak var showVBackView: UIView!
     @IBOutlet weak var showTableListView: UITableView!
@@ -28,6 +29,20 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
+        self.subTitleWidthConstraint.constant = (self.classTitleButton.titleLabel?.textSize().width)! + 12
+        self.view.updateConstraints()
+        self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { [weak self](tag) in
+            if UserInfo.user.checkUserLogin() {
+                let vc = PlayViewController.player
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }else {
+                let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+                let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+                self?.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+                
+            }
+            
+        }
     }
     
     override func buildUI() {
@@ -130,6 +145,9 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
         self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
+        
+        self.subTitleWidthConstraint.constant = (self.classTitleButton.titleLabel?.textSize().width)! + 12
+        self.view.updateConstraints()
         self.requestData()
     }
     

@@ -58,6 +58,7 @@ enum RequestAPIType {
     case classify_get_art_home
     case classify_get_scene_home
     case user_report
+    case user_third_login
     case default_api
 }
 
@@ -182,6 +183,8 @@ class  NetworkTool{
             apiString = "device/set_play_device"
         case .user_report:
             apiString = "user/proposal"
+        case .user_third_login:
+            apiString = "user/bind_thirdparty"
         default:
             apiString = ""
             method = .get

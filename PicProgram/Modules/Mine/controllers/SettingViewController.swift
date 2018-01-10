@@ -32,6 +32,11 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         super.viewWillAppear(animated)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        HUDTool.hide()
+    }
+    
     
     
     @IBAction func logoutAction(_ sender: Any) {
@@ -126,10 +131,17 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
             print("软件版本")
         case 3:
              BaseAlertController.inits("", message: MRLanguage(forKey: "Choose your language"), confirmText: MRLanguage(forKey: "Chinese"), MRLanguage(forKey: "English"), subComplete: { (index) in
+               
                 if index == 0 {
-                    BaseBundle.language = CNS.self
+                    if BaseBundle.language != CNS {
+                        HUDTool.show(.loading, view: UIApplication.shared.keyWindow!)
+                        BaseBundle.language = CNS.self
+                    }
                 }else {
-                    BaseBundle.language = EN
+                    if BaseBundle.language != EN {
+                        HUDTool.show(.loading, view: UIApplication.shared.keyWindow!)
+                        BaseBundle.language = EN
+                    }
                 }
             })
 //            self.navigationController?.present(alert, animated: true, completion: nil)
