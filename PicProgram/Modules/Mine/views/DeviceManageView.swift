@@ -16,6 +16,13 @@ class DeviceManageView: UIView {
     
     @IBOutlet weak var addDeviceButton: UIButton!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.deviceManageButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.wifiButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.addDeviceButton.titleLabel?.adjustsFontSizeToFitWidth = true
+    }
+    
     @IBAction func buttonAction(_ sender: UIButton) {
         if sender.tag == 10 {
             cDelegate.deviceManageSelected!()

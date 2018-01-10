@@ -26,6 +26,12 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
         super.viewWillAppear(animated)
         self.collectionView?.frame = CGRect.init(x: 0, y: NavigationBarBottom, width: self.view.width, height: SCREEN_HEIGHT - NavigationBarBottom)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        if self.navigationController != nil {
+            (self.navigationController as! BaseNavigationController).addLeftNavigationBarItem {[weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            self.addRightNavigationBarItems(["shangchunhuakuang","fenxiang","08wode_shebeiguanli"])
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

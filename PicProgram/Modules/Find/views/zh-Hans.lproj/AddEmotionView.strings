@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "无常"; ObjectID = "30v-wI-Grg"; */
+"30v-wI-Grg.normalTitle" = "无常";
+
+/* Class = "UIButton"; normalTitle = "恐"; ObjectID = "5wl-rx-41i"; */
+"5wl-rx-41i.normalTitle" = "恐";
+
+/* Class = "UIButton"; normalTitle = "悲"; ObjectID = "6IL-TT-exA"; */
+"6IL-TT-exA.normalTitle" = "悲";
+
+/* Class = "UILabel"; text = "添加心情"; ObjectID = "BE4-m2-nKH"; */
+"BE4-m2-nKH.text" = "添加心情";
+
+/* Class = "UIButton"; normalTitle = "思"; ObjectID = "Cbd-MX-efJ"; */
+"Cbd-MX-efJ.normalTitle" = "思";
+
+/* Class = "UIButton"; normalTitle = "喜"; ObjectID = "eMW-Qa-42c"; */
+"eMW-Qa-42c.normalTitle" = "喜";
+
+/* Class = "UIButton"; normalTitle = "怒"; ObjectID = "kjR-eb-Ral"; */
+"kjR-eb-Ral.normalTitle" = "怒";
+
+/* Class = "UIButton"; normalTitle = "惊"; ObjectID = "muU-Gb-L1c"; */
+"muU-Gb-L1c.normalTitle" = "惊";
+
+/* Class = "UIButton"; normalTitle = "忧"; ObjectID = "unB-HB-Nc1"; */
+"unB-HB-Nc1.normalTitle" = "忧";

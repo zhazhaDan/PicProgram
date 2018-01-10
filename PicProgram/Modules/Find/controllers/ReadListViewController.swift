@@ -66,7 +66,7 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
         cell.showPicImageView.xs_setImage(model.cq_img_url)
         cell.picTitleLabel.text = model.cq_title
         cell.picDetailLabel.text = model.cq_content
-        cell.picUploadTimeLabel.text = "\(MRLanguage(forKey: "Upload time"))：2017-08-13"
+        cell.picUploadTimeLabel.text = "\(MRLanguage(forKey: "Upload time"))：\(Date.formatterDateString(model.cq_time as AnyObject))"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

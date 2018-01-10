@@ -10,7 +10,6 @@
 		3A0085D71FB4760300BACFD0 /* PlayMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0085D61FB4760300BACFD0 /* PlayMoreView.swift */; };
 		3A0B8B211FBD84AD006F09E9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B8B201FBD84AD006F09E9 /* UserModel.swift */; };
 		3A0B8B331FBD91F1006F09E9 /* ClassifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B8B291FBD91F1006F09E9 /* ClassifyViewController.swift */; };
-		3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B8B2B1FBD91F1006F09E9 /* EmotionList.plist */; };
 		3A0B8B351FBD91F1006F09E9 /* ClassifyBaseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B8B2D1FBD91F1006F09E9 /* ClassifyBaseListView.swift */; };
 		3A0B8B361FBD91F1006F09E9 /* ClassifyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B8B2E1FBD91F1006F09E9 /* ClassifyCollectionViewCell.swift */; };
 		3A0B8B371FBD91F1006F09E9 /* ClassifyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B8B2F1FBD91F1006F09E9 /* ClassifyCollectionViewCell.xib */; };
@@ -214,8 +213,9 @@
 		3A9CCC611FA1EC3E00FC33BD /* ArtHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CCC601FA1EC3E00FC33BD /* ArtHeaderView.swift */; };
 		3A9CCC631FA1EC5100FC33BD /* ArtHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9CCC621FA1EC5100FC33BD /* ArtHeaderView.xib */; };
 		3A9CCC661FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CCC641FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift */; };
-		3A9CCC671FA1ED2400FC33BD /* ArtMasterSayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9CCC651FA1ED2400FC33BD /* ArtMasterSayTableViewCell.xib */; };
 		3AA7A1601F8DC16000DDF7CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7A15F1F8DC16000DDF7CB /* LoginView.swift */; };
+		3AA8DCFA2005C77000245FBB /* EmotionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DCFC2005C77000245FBB /* EmotionList.plist */; };
+		3AA8DCFF2005EA4B00245FBB /* ArtMasterSayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DD012005EA4B00245FBB /* ArtMasterSayTableViewCell.xib */; };
 		3AB5DC191F8CB119004897B5 /* PicProgram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AB5DC171F8CB119004897B5 /* PicProgram.xcdatamodeld */; };
 		3AB5DC1B1F8CB119004897B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB5DC1A1F8CB119004897B5 /* Assets.xcassets */; };
 		3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB5DC1C1F8CB119004897B5 /* LaunchScreen.storyboard */; };
@@ -278,7 +278,6 @@
 		3AB78C0E1FC67863001D9A43 /* 方正宋刻本秀楷简.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */; };
 		3AB78C0F1FC67863001D9A43 /* 方正宋刻本秀楷简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78C0A1FC675B2001D9A43 /* 方正宋刻本秀楷简体.TTF */; };
 		3AB7B58E1FDCE70B0055B694 /* AddEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B58D1FDCE70B0055B694 /* AddEmotionView.swift */; };
-		3AB7B5901FDCE7160055B694 /* AddEmotionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7B58F1FDCE7160055B694 /* AddEmotionView.xib */; };
 		3AB7B5921FDCEBD20055B694 /* SharePlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5911FDCEBD20055B694 /* SharePlatformView.swift */; };
 		3AB7B5941FDCEBDC0055B694 /* SharePlatformView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */; };
 		3AB7B5961FDCEC1E0055B694 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */; };
@@ -317,6 +316,7 @@
 		3AE028A92004D33B00EA1B8C /* BindUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE028AB2004D33B00EA1B8C /* BindUserTableViewCell.xib */; };
 		3AE028B02004D35C00EA1B8C /* BindDeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE028B22004D35C00EA1B8C /* BindDeviceTableViewCell.xib */; };
 		3AE028B72004D37300EA1B8C /* WifiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE028B92004D37300EA1B8C /* WifiSettingView.xib */; };
+		3AE028C22005C42D00EA1B8C /* AddEmotionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE028C42005C42D00EA1B8C /* AddEmotionView.xib */; };
 		3AE7A2481FA2EE96004BAD20 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7A2471FA2EE96004BAD20 /* SearchResultView.swift */; };
 		3AE7A24A1FA33335004BAD20 /* ReadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7A2491FA33335004BAD20 /* ReadListViewController.swift */; };
 		3AF8CB381FB1AE7A00635533 /* NavigationBarShowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8CB371FB1AE7A00635533 /* NavigationBarShowListView.swift */; };
@@ -420,7 +420,6 @@
 		3A0085D61FB4760300BACFD0 /* PlayMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMoreView.swift; sourceTree = "<group>"; };
 		3A0B8B201FBD84AD006F09E9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3A0B8B291FBD91F1006F09E9 /* ClassifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyViewController.swift; sourceTree = "<group>"; };
-		3A0B8B2B1FBD91F1006F09E9 /* EmotionList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmotionList.plist; sourceTree = "<group>"; };
 		3A0B8B2D1FBD91F1006F09E9 /* ClassifyBaseListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyBaseListView.swift; sourceTree = "<group>"; };
 		3A0B8B2E1FBD91F1006F09E9 /* ClassifyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A0B8B2F1FBD91F1006F09E9 /* ClassifyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassifyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -638,8 +637,13 @@
 		3A9CCC601FA1EC3E00FC33BD /* ArtHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtHeaderView.swift; sourceTree = "<group>"; };
 		3A9CCC621FA1EC5100FC33BD /* ArtHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtHeaderView.xib; sourceTree = "<group>"; };
 		3A9CCC641FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtMasterSayTableViewCell.swift; sourceTree = "<group>"; };
-		3A9CCC651FA1ED2400FC33BD /* ArtMasterSayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtMasterSayTableViewCell.xib; sourceTree = "<group>"; };
 		3AA7A15F1F8DC16000DDF7CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3AA8DCFB2005C77000245FBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/EmotionList.plist; sourceTree = "<group>"; };
+		3AA8DCFD2005C77300245FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/EmotionList.plist; sourceTree = "<group>"; };
+		3AA8DCFE2005C77500245FBB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/EmotionList.plist"; sourceTree = "<group>"; };
+		3AA8DD002005EA4B00245FBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ArtMasterSayTableViewCell.xib; sourceTree = "<group>"; };
+		3AA8DD032005EA4E00245FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ArtMasterSayTableViewCell.strings; sourceTree = "<group>"; };
+		3AA8DD052005EA4F00245FBB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ArtMasterSayTableViewCell.strings"; sourceTree = "<group>"; };
 		3AB5DC0D1F8CB119004897B5 /* PicProgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicProgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB5DC181F8CB119004897B5 /* PicProgram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PicProgram.xcdatamodel; sourceTree = "<group>"; };
 		3AB5DC1A1F8CB119004897B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -705,7 +709,6 @@
 		3AB78C0B1FC675B2001D9A43 /* 方正清刻本悦宋简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正清刻本悦宋简体.TTF"; sourceTree = "<group>"; };
 		3AB78C0C1FC675B3001D9A43 /* 方正宋刻本秀楷简.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正宋刻本秀楷简.TTF"; sourceTree = "<group>"; };
 		3AB7B58D1FDCE70B0055B694 /* AddEmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmotionView.swift; sourceTree = "<group>"; };
-		3AB7B58F1FDCE7160055B694 /* AddEmotionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmotionView.xib; sourceTree = "<group>"; };
 		3AB7B5911FDCEBD20055B694 /* SharePlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlatformView.swift; sourceTree = "<group>"; };
 		3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharePlatformView.xib; sourceTree = "<group>"; };
 		3AB7B5951FDCEC1E0055B694 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
@@ -798,6 +801,9 @@
 		3AE028BD2004D37800EA1B8C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/WifiSettingView.strings"; sourceTree = "<group>"; };
 		3AE028BF2004D3BD00EA1B8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Mine.strings; sourceTree = "<group>"; };
 		3AE028C12004D3C000EA1B8C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Mine.strings"; sourceTree = "<group>"; };
+		3AE028C32005C42D00EA1B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddEmotionView.xib; sourceTree = "<group>"; };
+		3AE028C62005C42F00EA1B8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AddEmotionView.strings; sourceTree = "<group>"; };
+		3AE028C82005C43100EA1B8C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AddEmotionView.strings"; sourceTree = "<group>"; };
 		3AE7A2471FA2EE96004BAD20 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		3AE7A2491FA33335004BAD20 /* ReadListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadListViewController.swift; sourceTree = "<group>"; };
 		3AF8CB371FB1AE7A00635533 /* NavigationBarShowListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarShowListView.swift; sourceTree = "<group>"; };
@@ -1018,7 +1024,7 @@
 			isa = PBXGroup;
 			children = (
 				F7733DB41FFE70D700A29534 /* SearchList.plist */,
-				3A0B8B2B1FBD91F1006F09E9 /* EmotionList.plist */,
+				3AA8DCFC2005C77000245FBB /* EmotionList.plist */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -1667,7 +1673,7 @@
 				3A9CCC5A1FA1E61D00FC33BD /* ItemView.swift */,
 				3A9CCC5E1FA1E65A00FC33BD /* ItemView.xib */,
 				3A9CCC641FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift */,
-				3A9CCC651FA1ED2400FC33BD /* ArtMasterSayTableViewCell.xib */,
+				3AA8DD012005EA4B00245FBB /* ArtMasterSayTableViewCell.xib */,
 				3A7BA0E11FA5A62D00E0EB55 /* PicDetailHeaderStyle3View.swift */,
 				3AE028342004CCAE00EA1B8C /* PicDetailHeaderStyle3View.xib */,
 				3A9CCC601FA1EC3E00FC33BD /* ArtHeaderView.swift */,
@@ -1677,7 +1683,7 @@
 				3A0085D61FB4760300BACFD0 /* PlayMoreView.swift */,
 				3AE0283B2004CD1800EA1B8C /* PlayMoreView.xib */,
 				3AB7B58D1FDCE70B0055B694 /* AddEmotionView.swift */,
-				3AB7B58F1FDCE7160055B694 /* AddEmotionView.xib */,
+				3AE028C42005C42D00EA1B8C /* AddEmotionView.xib */,
 				3AB7B5911FDCEBD20055B694 /* SharePlatformView.swift */,
 				3AB7B5931FDCEBDC0055B694 /* SharePlatformView.xib */,
 				F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */,
@@ -1813,7 +1819,7 @@
 				3AE028712004CF5300EA1B8C /* UserViewController.xib in Resources */,
 				3A33DE201FE91FF1001565F2 /* xf_66.png in Resources */,
 				3AE028782004CF6D00EA1B8C /* SettingViewController.xib in Resources */,
-				3A0B8B341FBD91F1006F09E9 /* EmotionList.plist in Resources */,
+				3AA8DCFA2005C77000245FBB /* EmotionList.plist in Resources */,
 				3A33DDE21FE91FF1001565F2 /* xf_18.png in Resources */,
 				3A0B8B391FBD91F1006F09E9 /* EmotionCollectionViewCell.xib in Resources */,
 				3A33DE001FE91FF1001565F2 /* xf_45.png in Resources */,
@@ -1832,7 +1838,7 @@
 				3AFB30461FE8B709005BA1A8 /* loading_40@2x.png in Resources */,
 				3A33DE231FE91FF1001565F2 /* xf_69.png in Resources */,
 				3A33DDEB1FE91FF1001565F2 /* xf_26.png in Resources */,
-				3AB7B5901FDCE7160055B694 /* AddEmotionView.xib in Resources */,
+				3AE028C22005C42D00EA1B8C /* AddEmotionView.xib in Resources */,
 				3A33DE401FE91FF1001565F2 /* xf_98.png in Resources */,
 				3AE028B02004D35C00EA1B8C /* BindDeviceTableViewCell.xib in Resources */,
 				F7141DAC1FDBCF5900606631 /* LiningViewController.xib in Resources */,
@@ -1961,7 +1967,7 @@
 				3A9963F21F9DEE6700077307 /* RecommandListCollectionViewCell.xib in Resources */,
 				3A33DE3E1FE91FF1001565F2 /* xf_96.png in Resources */,
 				3AFB30671FE8B709005BA1A8 /* loading_2@2x.png in Resources */,
-				3A9CCC671FA1ED2400FC33BD /* ArtMasterSayTableViewCell.xib in Resources */,
+				3AA8DCFF2005EA4B00245FBB /* ArtMasterSayTableViewCell.xib in Resources */,
 				3AFB30581FE8B709005BA1A8 /* loading_24@2x.png in Resources */,
 				3A33DDFE1FE91FF1001565F2 /* xf_43.png in Resources */,
 				3AE0285C2004CE4800EA1B8C /* RegisterViewController.xib in Resources */,
@@ -2249,6 +2255,26 @@
 			name = EaselViewController.xib;
 			sourceTree = "<group>";
 		};
+		3AA8DCFC2005C77000245FBB /* EmotionList.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AA8DCFB2005C77000245FBB /* Base */,
+				3AA8DCFD2005C77300245FBB /* en */,
+				3AA8DCFE2005C77500245FBB /* zh-Hans */,
+			);
+			name = EmotionList.plist;
+			sourceTree = "<group>";
+		};
+		3AA8DD012005EA4B00245FBB /* ArtMasterSayTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AA8DD002005EA4B00245FBB /* Base */,
+				3AA8DD032005EA4E00245FBB /* en */,
+				3AA8DD052005EA4F00245FBB /* zh-Hans */,
+			);
+			name = ArtMasterSayTableViewCell.xib;
+			sourceTree = "<group>";
+		};
 		3AB5DC1C1F8CB119004897B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2516,6 +2542,16 @@
 				3AE028BD2004D37800EA1B8C /* zh-Hans */,
 			);
 			name = WifiSettingView.xib;
+			sourceTree = "<group>";
+		};
+		3AE028C42005C42D00EA1B8C /* AddEmotionView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AE028C32005C42D00EA1B8C /* Base */,
+				3AE028C62005C42F00EA1B8C /* en */,
+				3AE028C82005C43100EA1B8C /* zh-Hans */,
+			);
+			name = AddEmotionView.xib;
 			sourceTree = "<group>";
 		};
 		F7141DAE1FDBCF5900606631 /* LiningViewController.xib */ = {

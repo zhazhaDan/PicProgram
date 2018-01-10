@@ -31,8 +31,10 @@ class WebViewController: BaseViewController,WKUIDelegate,WKNavigationDelegate {
 
         webView = WKWebView.init(frame: commonRect, configuration:config)
         self.view.addSubview(webView)
-        let request = URLRequest.init(url: URL.init(string: urlString)!)
-        webView.load(request)
+        if urlString.count as! Int > 0 {
+            let request = URLRequest.init(url: URL.init(string: urlString)!)
+            webView.load(request)
+        }
         // Do any additional setup after loading the view.
     }
 

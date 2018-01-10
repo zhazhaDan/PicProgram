@@ -29,6 +29,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
         loadCollectDatas()
         self.title = MRLanguage(forKey: "Art Works")
         self.contentScrollView.setContentOffset(CGPoint.init(x: CGFloat(selectedAtIndex) * SCREEN_WIDTH, y: 0), animated: false)
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {

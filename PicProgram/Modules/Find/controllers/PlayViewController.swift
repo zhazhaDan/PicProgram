@@ -93,6 +93,13 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if dataSource.count > 0 {
+            collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
+        }
+    }
+    
     //单例
     class var player: PlayViewController {
         struct Singleton {

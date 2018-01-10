@@ -66,6 +66,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.collectionView?.y = -StatusBarHeight
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -45,6 +45,7 @@ class SearchResultView: BaseView,UITableViewDelegate,UITableViewDataSource {
             button.setTitle(titles[i], for: .normal)
             button.titleLabel?.font = xsFont(15)
             button.tag = 10+i
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
             self.addSubview(button)
         }

@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "请输入反馈，我们将为您不断改进"; ObjectID = "HOq-DS-voJ"; */
-"HOq-DS-voJ.text" = "请输入反馈，我们将为您不断改进";
+"HOq-DS-voJ.text" = "Feedback";
 
 /* Class = "UIButton"; normalTitle = "提交"; ObjectID = "Iu5-e0-dDL"; */
 "Iu5-e0-dDL.normalTitle" = "Submit";

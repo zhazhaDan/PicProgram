@@ -22,6 +22,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         super.viewWillAppear(animated)
         self.title = MRLanguage(forKey: "Category")
         self.scrollView?.setContentOffset(CGPoint.init(x: (scrollView?.width)! * CGFloat(selectedIndex), y: 0), animated: true)
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,7 +69,8 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         if (self.customViews[1] as! EmotionView).dataSource.count > 0 {
             return
         }
-        let path = Bundle.main.path(forResource: "EmotionList", ofType: "plist")
+        
+        let path = BaseBundle.bundle.path(forResource: "EmotionList", ofType: "plist")
         let data = NSArray.init(contentsOfFile: path!) as! Array<[String : Any]>
         (self.customViews[1] as! EmotionView).dataSource = data
         (self.customViews[1] as! EmotionView).collecView.reloadData()
