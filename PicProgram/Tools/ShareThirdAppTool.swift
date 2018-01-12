@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import FBSDKShareKit
+import TwitterKit
+
 let WXAPPID = "wx4f0a156d8bb04f93"//"wxd477edab60670232"//"wx4f0a156d8bb04f93"
 //let WXAPPSECRET = "4c7fd889d4f2902c0ca4108dc06dd422"
 let WBAPPKEY = "1695158483"
 let WBAPPSECRET = "da72736fd76eac3d4342cf99733dfa16"
 let WBRedirectURL = "https://api.weibo.com/oauth2/default.html"
 
-class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate {
+let TwitterAPPKEY = "Y54ikILtTwI9hiUVkebzxK9bU"
+let TwitterAPPSECRET = "APQ8mhqcdXxcRENfsMowmIMKf52y81F9o9Mdsby3tugo65MsXL"
+
+
+class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDelegate {
     
      var title:String!
      var webUrl:String!
@@ -60,25 +67,9 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate {
     
     func shareToWeibo() {
         let wbmesObj = WBMessageObject.message() as! WBMessageObject
-//        let webpage = WBWebpageObject.object() as! WBWebpageObject
-//        webpage.objectID = "identifier1";
-//        webpage.title = title
-//        webpage.description = desc
         let imageObj = WBImageObject()
         imageObj.imageData = UIImagePNGRepresentation(share_icon)
         wbmesObj.imageObject = imageObj
-//        if WeiboSDK.isCanShareInWeiboAPP() {
-//            let image = UIImage.init(named: share_icon)
-//            webpage.thumbnailData = UIImagePNGRepresentation(#imageLiteral(resourceName: "logo"))
-//            webpage.webpageUrl = webUrl
-//            wbmesObj.mediaObject = webpage;
-//        }else {
-//            wbmesObj.text = "\(title as! String)\(webUrl as! String)"
-            
-//            let image = UIImage.init(named: share_icon)
-//            wbmesObj.imageObject = WBImageObject.object() as! WBImageObject
-//            wbmesObj.imageObject.imageData = UIImagePNGRepresentation(image!)
-//        }
         let authRequest = WBAuthorizeRequest.init()
         authRequest.redirectURI = WBRedirectURL;
         authRequest.scope = "all";
@@ -92,16 +83,35 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate {
         if (WeiboSDK.send(request)) {
         }
     }
-    func shareToTencent() {
-//        let image = UIImage.init(named: share_icon)
-        let data = UIImagePNGRepresentation(share_icon!)
-//        let obj = QQApiNewsObject(url: URL.init(string: webUrl), title: title, description: desc, previewImageData: data, targetContentType: QQApiURLTargetTypeNews)
-//        let req = SendMessageToQQReq(content: obj)
-//        // 分享到QQ
-//        QQApiInterface.send(req)
+    
+    func shareToFacebook() {
+        let content = FBSDKSharePhotoContent.init()
+        let photo = FBSDKSharePhoto.init(image: share_icon, userGenerated: true)
+        content.photos = [photo]
+        let dialog = FBSDKShareDialog.show(from: UIApplication.shared.keyWindow?.rootViewController, with: content, delegate: self)
+        dialog?.mode = FBSDKShareDialogMode.native
+        
+    }
+    
+    func shareToTwitter() {
+        Twitter.sharedInstance().start(withConsumerKey: TwitterAPPKEY, consumerSecret: TwitterAPPSECRET)
+        
+        
+        
+        let composer = TWTRComposer.init()
+        composer.setText("分享")
+        composer.setImage(share_icon)
+        composer.show(from: (UIApplication.shared.keyWindow?.rootViewController)!) { (result) in
+            if result == TWTRComposerResult.cancelled {
+                self.shareResult("用户取消")
+            }else if result == TWTRComposerResult.done {
+                self.shareResult("分享成功")
+            }
+        }
     }
     
     
+    // 微信分享回调
     func onResp(_ resp: BaseResp!) {
         if resp.errCode < 0 {
 //            shareResult(text: resp.errStr)
@@ -138,7 +148,37 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate {
     }
     
     func shareResult(_ text:String = "分享成功") {
-        let alert = BaseAlertController.inits(text, message: nil, confirmText: "确定", nil, subComplete: nil)
+       BaseAlertController.inits(text, message: nil, confirmText: "确定", nil, subComplete: nil)
 //        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
+    
+    
+    // FBSDKSharingDelegate
+    func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable : Any]!) {
+        let postId = results["postId"]
+        let dialog = sharer as! FBSDKShareDialog
+        if dialog.mode == FBSDKShareDialogMode.browser && (postId == nil || postId as! String == "" ){
+            // 如果使用webview分享的，但postId是空的，
+            // 这种情况是用户点击了『完成』按钮，并没有真的分享
+            NSLog("Cancel");
+        }else {
+            shareResult("分享成功")
+        }
+    }
+    
+    func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) {
+        let dialog = sharer as! FBSDKShareDialog
+        if error == nil  && dialog.mode == FBSDKShareDialogMode.native {
+            dialog.mode = FBSDKShareDialogMode.browser
+            dialog.show()
+        }else {
+            shareResult("分享失败")
+        }
+    }
+    
+    func sharerDidCancel(_ sharer: FBSDKSharing!) {
+        shareResult("用户取消")
+    }
+    
+    
 }

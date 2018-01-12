@@ -42,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.isDone = true
             }
         }
-        
     }
     
     func changeLanguage() {

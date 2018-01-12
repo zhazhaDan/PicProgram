@@ -157,6 +157,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
                     vc.title = model.paint_title
                 }
             }
+            vc.currentIndex = indexPath.row
             self.navigationController?.pushViewController(vc, animated: true)
 
         }else {

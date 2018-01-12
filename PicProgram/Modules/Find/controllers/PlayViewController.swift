@@ -105,7 +105,9 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         struct Singleton {
             static let instance = PlayViewController.init(nibName: "PlayViewController", bundle: Bundle.main)
         }
-        Singleton.instance.currentIndex = 0
+        if Singleton.instance.currentIndex > Singleton.instance.dataSource.count {
+            Singleton.instance.currentIndex = 0
+        }
         return Singleton.instance
     }
     

@@ -101,6 +101,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
             let vc = PlayViewController.player
             vc.dataSource = model.picture_arry
             vc.title = model.paint_title
+            vc.currentIndex = indexPath.row
             self.navigationController?.pushViewController(vc, animated: true)
             
         }else {

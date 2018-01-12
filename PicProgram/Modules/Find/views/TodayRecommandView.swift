@@ -97,6 +97,10 @@ class TodayRecommandView: BaseScrollView {
             newView.tag = 100 + i
             newView.model = newItem
             newListView.addSubview(newView)
+
+        }
+        
+        for i in 0 ..< self.recommandModel.hot_arry.count {
             
             let hotItem = self.recommandModel.hot_arry[i]
             let hotView = Bundle.main.loadNibNamed("ItemView", owner: nil, options: nil)?.first as! ItemView
@@ -105,8 +109,9 @@ class TodayRecommandView: BaseScrollView {
             hotView.tag = 200 + i
             hotView.model = hotItem
             hotListView.addSubview(hotView)
-
+            
         }
+        
         self.contentSize = CGSize.init(width: SCREEN_WIDTH - 24, height: hotListView.bottom + NavigationBarBottom + 50)
     }
     

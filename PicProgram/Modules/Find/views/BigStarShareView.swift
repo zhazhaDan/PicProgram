@@ -83,6 +83,10 @@ class BigStarShareView: BaseView,SharePlatformProtocol {
         case 1:
             ShareThirdAppTool.share.shareToWeibo()
             
+        case 3:
+            ShareThirdAppTool.share.shareToTwitter()
+        case 4:
+            ShareThirdAppTool.share.shareToFacebook()
         default:
             ShareThirdAppTool.share.share_icon = cell.viewShot()
             ShareThirdAppTool.share.shareToWX(WXSceneSession)
