@@ -122,6 +122,8 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
             self.present(sheet, animated: true, completion: nil)
         case 1:
             ShareThirdAppTool.share.shareToWeibo()
+        case 2:
+            ShareThirdAppTool.share.shareToInstagram()
         case 3:
             ShareThirdAppTool.share.shareToTwitter()
         case 4:

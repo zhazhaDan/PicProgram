@@ -82,7 +82,8 @@ class BigStarShareView: BaseView,SharePlatformProtocol {
             
         case 1:
             ShareThirdAppTool.share.shareToWeibo()
-            
+        case 2:
+            ShareThirdAppTool.share.shareToInstagram()
         case 3:
             ShareThirdAppTool.share.shareToTwitter()
         case 4:

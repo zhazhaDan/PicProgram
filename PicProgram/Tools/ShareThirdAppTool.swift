@@ -85,31 +85,49 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
     }
     
     func shareToFacebook() {
-        let content = FBSDKSharePhotoContent.init()
-        let photo = FBSDKSharePhoto.init(image: share_icon, userGenerated: true)
-        content.photos = [photo]
-        let dialog = FBSDKShareDialog.show(from: UIApplication.shared.keyWindow?.rootViewController, with: content, delegate: self)
-        dialog?.mode = FBSDKShareDialogMode.native
+        let instagramUrl = URL.init(string: "facebook://")
+        if UIApplication.shared.canOpenURL(instagramUrl!) {
+            let content = FBSDKSharePhotoContent.init()
+            let photo = FBSDKSharePhoto.init(image: share_icon, userGenerated: true)
+            content.photos = [photo]
+            let dialog = FBSDKShareDialog.show(from: UIApplication.shared.keyWindow?.rootViewController, with: content, delegate: self)
+            dialog?.mode = FBSDKShareDialogMode.native
+            
+        }else {
+            HUDTool.show(.text, nil, text: MRLanguage(forKey: "Not installed app"), delay: 0/8, view: (UIApplication.shared.keyWindow?.rootViewController?.view)!, complete: nil)
+        }
+        
         
     }
     
     func shareToTwitter() {
-        Twitter.sharedInstance().start(withConsumerKey: TwitterAPPKEY, consumerSecret: TwitterAPPSECRET)
-        
-        
-        
-        let composer = TWTRComposer.init()
-        composer.setText("分享")
-        composer.setImage(share_icon)
-        composer.show(from: (UIApplication.shared.keyWindow?.rootViewController)!) { (result) in
-            if result == TWTRComposerResult.cancelled {
-                self.shareResult("用户取消")
-            }else if result == TWTRComposerResult.done {
-                self.shareResult("分享成功")
+        let instagramUrl = URL.init(string: "twitter://")
+        if UIApplication.shared.canOpenURL(instagramUrl!) {
+            Twitter.sharedInstance().start(withConsumerKey: TwitterAPPKEY, consumerSecret: TwitterAPPSECRET)
+            let composer = TWTRComposer.init()
+            composer.setText("分享")
+            composer.setImage(share_icon)
+            composer.show(from: (UIApplication.shared.keyWindow?.rootViewController)!) { (result) in
+                if result == TWTRComposerResult.cancelled {
+                    self.shareResult("用户取消")
+                }else if result == TWTRComposerResult.done {
+                    self.shareResult("分享成功")
+                }
             }
+        }else {
+            HUDTool.show(.text, nil, text: MRLanguage(forKey: "Not installed app"), delay: 0/8, view: (UIApplication.shared.keyWindow?.rootViewController?.view)!, complete: nil)
         }
+       
     }
     
+    func shareToInstagram() {
+        let instagramUrl = URL.init(string: "instagram://media?id=1")
+        if UIApplication.shared.canOpenURL(instagramUrl!) {
+            UIApplication.shared.openURL(instagramUrl!)
+        }else {
+            HUDTool.show(.text, nil, text: MRLanguage(forKey: "Not installed app"), delay: 0/8, view: (UIApplication.shared.keyWindow?.rootViewController?.view)!, complete: nil)
+        }
+    }
     
     // 微信分享回调
     func onResp(_ resp: BaseResp!) {
