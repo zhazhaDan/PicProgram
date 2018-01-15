@@ -129,6 +129,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PicDetailCollectionViewCell
+        cell.isDetail = true
         cell.model = dataSource[indexPath.item]
         return cell
     }

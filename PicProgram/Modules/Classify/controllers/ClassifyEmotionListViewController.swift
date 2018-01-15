@@ -71,7 +71,9 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     
     override func requestData() {
         let paint_id = dataSource[selectedIndex]["id"]
+        HUDTool.show(.loading, view: self.view)
         network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
                 self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
                 self?.collectionView?.reloadData()
