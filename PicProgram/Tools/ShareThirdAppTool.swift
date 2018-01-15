@@ -20,7 +20,7 @@ let TwitterAPPKEY = "Y54ikILtTwI9hiUVkebzxK9bU"
 let TwitterAPPSECRET = "APQ8mhqcdXxcRENfsMowmIMKf52y81F9o9Mdsby3tugo65MsXL"
 
 
-class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDelegate {
+class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDelegate,UIDocumentInteractionControllerDelegate {
     
      var title:String!
      var webUrl:String!
@@ -121,13 +121,25 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
     }
     
     func shareToInstagram() {
-        let instagramUrl = URL.init(string: "instagram://media?id=1")
+        let instagramUrl = URL.init(string: "instagram://app")
         if UIApplication.shared.canOpenURL(instagramUrl!) {
-            UIApplication.shared.openURL(instagramUrl!)
+//            UIApplication.shared.openURL(instagramUrl!)
+            let documentDirectory = NSHomeDirectory() + "Documents/Image.igo"
+            let imageData = UIImagePNGRepresentation(share_icon) as! NSData
+            imageData.write(toFile: documentDirectory, atomically: true)
+            let imageUrl = URL.init(fileURLWithPath: documentDirectory)
+            let documentController = UIDocumentInteractionController.init(url: imageUrl)
+            documentController.delegate = self
+            documentController.annotation = ["InstagramCaption":"Testing"]
+            documentController.uti = "com.instagram.exclusivegram"
+            let vc = UIApplication.shared.keyWindow?.rootViewController
+            documentController.presentOpenInMenu(from: CGRect.init(x: 1, y: 1, width: 1, height: 1), in:(vc?.view)!, animated: true)
+            
         }else {
             HUDTool.show(.text, nil, text: MRLanguage(forKey: "Not installed app"), delay: 0/8, view: (UIApplication.shared.keyWindow?.rootViewController?.view)!, complete: nil)
         }
     }
+    
     
     // 微信分享回调
     func onResp(_ resp: BaseResp!) {
