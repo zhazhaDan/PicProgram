@@ -28,6 +28,13 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
         updateHistoryPaintDatas()
         loadCollectDatas()
         self.title = MRLanguage(forKey: "Art Works")
+        if view1 != nil {
+            view1.collectionView.setContentOffset(CGPoint.zero, animated: false)
+            view2.collecView.setContentOffset(CGPoint.zero, animated: false)
+            view3.collectionView.setContentOffset(CGPoint.zero, animated: false)
+            let button = self.view.viewWithTag(10) as? UIButton
+            titleChooseAction(button!)
+        }
         self.contentScrollView.setContentOffset(CGPoint.init(x: CGFloat(selectedAtIndex) * SCREEN_WIDTH, y: 0), animated: false)
         self.navigationItem.leftBarButtonItem = nil
     }

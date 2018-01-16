@@ -75,7 +75,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     }
     
     func requestData() {
-        network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_info, params: ["paint_id":paint_id,"last_id":0], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 self?.paintModel = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
                 self?.picsStyleChangeAction(style: 1)

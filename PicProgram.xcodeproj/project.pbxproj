@@ -181,7 +181,6 @@
 		3A4DD1C120086FB80090F41D /* libSocialTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4DD1A820086FB80090F41D /* libSocialTwitter.a */; };
 		3A4DD1C220086FB80090F41D /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4DD1A920086FB80090F41D /* TwitterCore.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		3A4DD1C320086FB80090F41D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4DD1AA20086FB80090F41D /* TwitterKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		3A4DD1C420086FB80090F41D /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A4DD1AB20086FB80090F41D /* TwitterKitResources.bundle */; };
 		3A4DD1C520086FB80090F41D /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A4DD1AC20086FB80090F41D /* TwitterShareExtensionUIResources.bundle */; };
 		3A4DD1C620086FB80090F41D /* libSocialUniqueId.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4DD1AF20086FB80090F41D /* libSocialUniqueId.a */; };
 		3A4DD1C720086FB80090F41D /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4DD1B220086FB80090F41D /* UMSocialCore.framework */; };
@@ -627,7 +626,6 @@
 		3A4DD1A820086FB80090F41D /* libSocialTwitter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialTwitter.a; sourceTree = "<group>"; };
 		3A4DD1A920086FB80090F41D /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		3A4DD1AA20086FB80090F41D /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		3A4DD1AB20086FB80090F41D /* TwitterKitResources.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		3A4DD1AC20086FB80090F41D /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
 		3A4DD1AD20086FB80090F41D /* UMSocialTwitterHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialTwitterHandler.h; sourceTree = "<group>"; };
 		3A4DD1AF20086FB80090F41D /* libSocialUniqueId.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialUniqueId.a; sourceTree = "<group>"; };
@@ -1435,7 +1433,6 @@
 				3A4DD1A820086FB80090F41D /* libSocialTwitter.a */,
 				3A4DD1A920086FB80090F41D /* TwitterCore.framework */,
 				3A4DD1AA20086FB80090F41D /* TwitterKit.framework */,
-				3A4DD1AB20086FB80090F41D /* TwitterKitResources.bundle */,
 				3A4DD1AC20086FB80090F41D /* TwitterShareExtensionUIResources.bundle */,
 				3A4DD1AD20086FB80090F41D /* UMSocialTwitterHandler.h */,
 			);
@@ -2008,7 +2005,6 @@
 				F7141DAC1FDBCF5900606631 /* LiningViewController.xib in Resources */,
 				3A33DDDD1FE91FF1001565F2 /* xf_13.png in Resources */,
 				3AFB303D1FE8B709005BA1A8 /* loading_27@2x.png in Resources */,
-				3A4DD1C420086FB80090F41D /* TwitterKitResources.bundle in Resources */,
 				3AB7B59B1FDE6D870055B694 /* NewPintNameViewController.xib in Resources */,
 				F71952D81FCB085800ED9D68 /* ClassifyEmotionDetailListViewController.xib in Resources */,
 				3AB5DC1E1F8CB119004897B5 /* LaunchScreen.storyboard in Resources */,

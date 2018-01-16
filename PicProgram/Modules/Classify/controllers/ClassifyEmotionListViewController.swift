@@ -18,6 +18,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     @IBOutlet weak var showVBackView: UIView!
     @IBOutlet weak var showTableListView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    var last_id:Int32 = 0
       var dataSource: Array<[String:Any]>!
     var selectedIndex:Int = 0
     var model:PaintModel!
@@ -72,9 +73,12 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
     override func requestData() {
         let paint_id = dataSource[selectedIndex]["id"]
         HUDTool.show(.loading, view: self.view)
-        network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_info, params: ["paint_id":paint_id,"last_id":last_id], finishedCallback: { [weak self](result) in
             HUDTool.hide()
             if result["ret"] as! Int == 0 {
+                if result["last_id"] != nil {
+                    self?.last_id = result["last_id"] as! Int32
+                }
                 self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
                 self?.collectionView?.reloadData()
             }else {

@@ -24,7 +24,7 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.collectionView?.frame = CGRect.init(x: 0, y: NavigationBarBottom, width: self.view.width, height: SCREEN_HEIGHT - NavigationBarBottom)
+        self.collectionView?.frame = CGRect.init(x: 0, y: 0, width: self.view.width, height: SCREEN_HEIGHT)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         if self.navigationController != nil {
             (self.navigationController as! BaseNavigationController).addLeftNavigationBarItem {[weak self] in

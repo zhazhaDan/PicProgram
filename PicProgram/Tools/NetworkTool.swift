@@ -100,10 +100,11 @@ class  NetworkTool{
         case .discovery_mqlove:
             apiString = "discovery/mq_love"
         case .paint_info:
-            method = .get
+            method = .post
             let paint_id:Int64 = params!["paint_id"] as! Int64
             apiString = "painting/\(paint_id)/info"
-            realParams = nil
+            realParams?.removeValue(forKey: "paint_id")
+//            realParams = nil
         case .paint_list:
             method = .get
             let type = params!["type_id"] as! Int

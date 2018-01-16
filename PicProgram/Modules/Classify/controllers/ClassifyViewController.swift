@@ -22,6 +22,14 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         super.viewWillAppear(animated)
         self.title = MRLanguage(forKey: "Category")
         self.scrollView?.setContentOffset(CGPoint.init(x: (scrollView?.width)! * CGFloat(selectedIndex), y: 0), animated: true)
+        if self.customViews.count > 0 {
+            (customViews.first as! ClassifyCommonListView).collecView.setContentOffset(CGPoint.zero, animated: false)
+            (customViews.last as! ClassifyCommonListView).collecView.setContentOffset(CGPoint.zero, animated: false)
+            (customViews[1] as! EmotionView).collecView.setContentOffset(CGPoint.zero, animated: false)
+            let button = self.view.viewWithTag(10) as? UIButton
+            titlesSelected(button!)
+        }
+        
         self.navigationItem.leftBarButtonItem = nil
     }
     
