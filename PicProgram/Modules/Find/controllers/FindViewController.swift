@@ -54,6 +54,9 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
                 _today = TodayRecommandView()
                 _today.bannerView.delegate = self
                 _today.cDelegate = self
+                _today.xs_addRefresh(refresh: .normal_header_refresh, action: {
+                    self.requestData()
+                })
             }
             return _today
         }
@@ -68,6 +71,9 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
                 _art = ArtView.init(frame:self.currentView.bounds)
                 _art.bannerView.delegate = self
                 _art.cDelegate = self
+                _art.readTableView.xs_addRefresh(refresh: .normal_header_refresh, action: {
+                    self.requestData()
+                })
             }
             return _art
         }
@@ -151,13 +157,21 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         HUDTool.show(.loading, view: self.view)
         network.requestData(apiType, params: nil, finishedCallback: { [weak self](result) in
             HUDTool.hide()
+            if self?._art != nil {
+                self?._art.readTableView.xs_endRefreshing()
+            }
+            if self?._today != nil {
+                self?._today.xs_endRefreshing()
+            }
             if result["ret"] as! Int == 0 {
                 if self?.selectedIndex == 0 {
                     self?.recommandModel = FindTodayRecomModel.init(dict: result["recommend_home_page"] as! [String : Any])
                     self?.todayView.recommandModel = (self?.recommandModel)!
+                    self?.todayView.bannerView.updateUI()
                 }else {
                     self?.pioneerModel = PioneerModel.init(dict: result["pioneer_home"] as! [String : Any])
                     self?.artView.pioneerModel = (self?.pioneerModel)!
+                    self?.artView.bannerView.updateUI()
                 }
             }
         }, nil)

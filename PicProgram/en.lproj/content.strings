@@ -206,5 +206,45 @@
 "This device is connected to another\naccount,do you request to use it now?" = "This device is connected to another\naccount,do you request to use it now?";
 "Please go to the moran frame\nsettings page and enter the \nWi-Fi connection option" ="Please go to the moran frame\nsettings page and enter the \nWi-Fi connection option";
 "Please click“Connect App”\non your MORAN frame and scan\nyour MORAN bar code" = "Please click“Connect App”\non your MORAN frame and scan\nyour MORAN bar code";
+"Upload time" = " Upload time ";
+"Cancel save successful" = " you have removed this item from your favourite list ";
+"Save successful" = " saved successfully ";
+"Add Mood successful" = " Add Mood successfully ";
+"Change Cover" = " Change Cover ";
+"Edit paint info" = " Edit art work info ";
+"Edit Paint info successful" = " Edit Paint info successful ";
+"pages" = " pages ";
+"Upload Successful" = " saved successfully ";
+"Tips" = " Tips ";
+"tips hint" = " tips hint ";
+"Lining hint" = " Lining hint ";
+"Show it on digital frame" = " Show it on digital frame ";
+"Don not show it on digital frame" = " Don not show it on digital frame ";
+"size" = " font ";
+"Choose" = " Share it on ";
+"Wechat session" = " Wechat session ";
+"Wechat timeline" = " Wechat timeline ";
+"Existed paint" = " exist painting list ";
+"Play" = " Play ";
+"times" = " times ";
+"Just one" = " Just one ";
+"Delete successfully" = " Delete successfully ";
+"Error repassword" = " Failed to log in, please try again ";
+"Sign up account" = " Sign up account ";
+"Reset password successful" = " Reset password successfully ";
+"reset hint" = " reset hint ";
+"Sign in successful" = " Sign in successful ";
+"Account" = " Account ";
+"Please enter your password" = " Please enter your password ";
+"login via wechat" = " login via wechat ";
+"Login via Sina" = " Login via Sina ";
+"Please scan the QR code with your camera" = "Please scan the QR code with your camera ";
+"Sub title" = " Sub title ";
+"Register an account with your email" = " Register an account with your email ";
+"Register an account with your phone number" = " Register an account with your phone number ";
+"The copy right of images on this app are all reserved to Art Touch" = " The copy right of images on this app are all reserved to Art Touch ";
+"Your feedbacks are highly appreciated, please let us know what we can do improve to our service" = " Your feedbacks are highly appreciated, please let us know what we can do improve to our service ";
+"please enter the setting page of  Moran digital frame to set up your wifi connections" = " please enter the setting page of  Moran digital frame to set up your wifi connections ";
+
 
 

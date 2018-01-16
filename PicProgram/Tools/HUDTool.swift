@@ -33,7 +33,7 @@ class HUDTool {
     open static func hide() {
         HUD.hide(animated: true, completion: nil)
     }
-    open static func show(_ type:LoadingType, _ image:UIImage? = #imageLiteral(resourceName: "icons8-info"), text showText:String? = nil,delay:TimeInterval = 0.5,view inView:UIView,complete:(()->Void)? = nil){
+    open static func show(_ type:LoadingType, _ image:UIImage? = #imageLiteral(resourceName: "icons8-info"), text showText:String? = nil,delay:TimeInterval = 60,view inView:UIView,complete:(()->Void)? = nil){
         HUD.dimsBackground = false
         switch type {
         case .success:

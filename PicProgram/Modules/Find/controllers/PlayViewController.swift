@@ -105,7 +105,9 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         struct Singleton {
             static let instance = PlayViewController.init(nibName: "PlayViewController", bundle: Bundle.main)
         }
-        Singleton.instance.currentIndex = 0
+        if Singleton.instance.currentIndex > Singleton.instance.dataSource.count {
+            Singleton.instance.currentIndex = 0
+        }
         return Singleton.instance
     }
     
@@ -127,6 +129,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PicDetailCollectionViewCell
+        cell.isDetail = true
         cell.model = dataSource[indexPath.item]
         return cell
     }

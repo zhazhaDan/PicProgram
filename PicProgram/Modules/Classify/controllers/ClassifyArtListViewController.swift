@@ -59,7 +59,9 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
     override func requestData() {
         let paint_id = dataSource[selectedIndex]["paint_id"]
+        HUDTool.show(.loading, view: self.view)
         network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
                 self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
                 self?.collectionView?.reloadData()
@@ -101,6 +103,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
             let vc = PlayViewController.player
             vc.dataSource = model.picture_arry
             vc.title = model.paint_title
+            vc.currentIndex = indexPath.row
             self.navigationController?.pushViewController(vc, animated: true)
             
         }else {
