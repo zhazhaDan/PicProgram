@@ -29,6 +29,7 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
      var share_icon:UIImage!
     //单例
     var shareComplete:((Bool) -> Void)!
+    var documentController:UIDocumentInteractionController!
     class var share: ShareThirdAppTool {
         struct Singleton {
             static let instance = ShareThirdAppTool()
@@ -85,7 +86,7 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
     }
     
     func shareToFacebook() {
-        let instagramUrl = URL.init(string: "facebook://")
+        let instagramUrl = URL.init(string: "fbshareextension://")
         if UIApplication.shared.canOpenURL(instagramUrl!) {
             let content = FBSDKSharePhotoContent.init()
             let photo = FBSDKSharePhoto.init(image: share_icon, userGenerated: true)
@@ -101,12 +102,18 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
     }
     
     func shareToTwitter() {
-        let instagramUrl = URL.init(string: "twitter://")
+        let instagramUrl = URL.init(string: "twitterauth://")
         if UIApplication.shared.canOpenURL(instagramUrl!) {
             Twitter.sharedInstance().start(withConsumerKey: TwitterAPPKEY, consumerSecret: TwitterAPPSECRET)
+//        Twitter.sharedInstance().logIn { (session, error) in
+//            if session == nil {
+//                HUDTool.show(.text, nil, text: error?.localizedDescription, delay: 1, view: (UIApplication.shared.keyWindow?.rootViewController?.view)!, complete: nil)
+//                return
+//            }
             let composer = TWTRComposer.init()
-            composer.setText("分享")
-            composer.setImage(share_icon)
+//            composer.setText("分享")
+            composer.setImage(self.share_icon)
+//            composer.setURL(URL.init(string: "https://www.baidu.com"))
             composer.show(from: (UIApplication.shared.keyWindow?.rootViewController)!) { (result) in
                 if result == TWTRComposerResult.cancelled {
                     self.shareResult("用户取消")
@@ -114,6 +121,8 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
                     self.shareResult("分享成功")
                 }
             }
+//        }
+        
         }else {
             HUDTool.show(.text, nil, text: MRLanguage(forKey: "Not installed app"), delay: 0/8, view: (UIApplication.shared.keyWindow?.rootViewController?.view)!, complete: nil)
         }
@@ -124,16 +133,16 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
         let instagramUrl = URL.init(string: "instagram://app")
         if UIApplication.shared.canOpenURL(instagramUrl!) {
 //            UIApplication.shared.openURL(instagramUrl!)
-            let documentDirectory = NSHomeDirectory() + "Documents/Image.igo"
+            let documentDirectory = NSHomeDirectory() + "/Documents/Image.igo"
             let imageData = UIImagePNGRepresentation(share_icon) as! NSData
             imageData.write(toFile: documentDirectory, atomically: true)
             let imageUrl = URL.init(fileURLWithPath: documentDirectory)
-            let documentController = UIDocumentInteractionController.init(url: imageUrl)
+            documentController = UIDocumentInteractionController.init(url: imageUrl)
             documentController.delegate = self
             documentController.annotation = ["InstagramCaption":"Testing"]
-            documentController.uti = "com.instagram.exclusivegram"
+            documentController.uti = "com.instagram.photo"//"com.instagram.exclusivegram"
             let vc = UIApplication.shared.keyWindow?.rootViewController
-            documentController.presentOpenInMenu(from: CGRect.init(x: 1, y: 1, width: 1, height: 1), in:(vc?.view)!, animated: true)
+            documentController.presentOpenInMenu(from: CGRect.zero, in:(vc?.view)!, animated: true)
             
         }else {
             HUDTool.show(.text, nil, text: MRLanguage(forKey: "Not installed app"), delay: 0/8, view: (UIApplication.shared.keyWindow?.rootViewController?.view)!, complete: nil)

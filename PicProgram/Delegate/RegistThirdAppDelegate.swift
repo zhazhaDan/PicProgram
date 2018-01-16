@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import UserNotifications
+import TwitterKit
 
 
 
@@ -116,6 +117,8 @@ class RegistThirdAppDelegate: UIResponder,GeTuiSdkDelegate,UNUserNotificationCen
         }else if url.host == "oauth" {//微信分享
             let nvc = (UIApplication.shared.keyWindow?.rootViewController as! BaseTabBarController).selectedViewController as! UINavigationController
             WXApi.handleOpen(url, delegate: nvc.visibleViewController as! WXApiDelegate)
+        }else if url.absoluteString.hasPrefix("twitterkit-Y54ikILtTwI9hiUVkebzxK9bU") {
+            Twitter.sharedInstance().application(app, open: url, options: options)
         }
         return true
     }
