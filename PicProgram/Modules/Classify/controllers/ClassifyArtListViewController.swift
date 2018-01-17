@@ -19,6 +19,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
       var dataSource: Array<[String:Any]>!
     var selectedIndex:Int = 0
     var model:PaintModel!
+    var last_id:Int32 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
@@ -51,6 +52,13 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
         collectionView.collectionViewLayout = layout
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier:reuseIdentifier)
         showTableListView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        collectionView.xs_addRefresh(refresh: .normal_header_refresh) {
+            self.last_id = 0
+            self.requestData()
+        }
+        collectionView.xs_addRefresh(refresh: .normal_footer_refresh) {
+            self.requestData()
+        }
     }
     
     @IBAction func tapChangePaintAction(_ sender: Any) {
@@ -60,10 +68,26 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     override func requestData() {
         let paint_id = dataSource[selectedIndex]["paint_id"]
         HUDTool.show(.loading, view: self.view)
-        network.requestData(.paint_info, params: ["paint_id":paint_id], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_info, params: ["paint_id":paint_id,"last_id":last_id], finishedCallback: { [weak self](result) in
             HUDTool.hide()
+            self?.collectionView.xs_endRefreshing()
             if result["ret"] as! Int == 0 {
-                self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
+               
+                if self?.last_id == 0 {
+                    self?.model = nil
+                }
+                let info = result["paint_detail"] as! [String : Any]
+                if self?.model != nil {
+                    self?.model.setValue(info["picture_info"], forKey: "picture_info")
+                }else {
+                    self?.model = PaintModel.init(dict: info)
+                }
+                if result["last_id"] != nil {
+                    self?.last_id = result["last_id"] as! Int32
+                }else {
+                    self?.last_id = -1
+                    self?.collectionView.xs_endRefreshingWithNoMoreData()
+                }
                 self?.collectionView?.reloadData()
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.8, view: (self?.view)!, complete: nil)

@@ -15,17 +15,56 @@ class ClassifyEmotionDetailListViewController: BaseViewController,UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     var subTitle:String!
     var pictures:[PictureModel] = Array()
-    
+    var last_id:Int32 = 0
+    var model:PaintModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleButton.setTitle(subTitle, for: .normal)
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier:reuseIdentifier)
         // Do any additional setup after loading the view.
+        collectionView.xs_addRefresh(refresh: .normal_header_refresh) {
+            self.last_id = 0
+            self.requestData()
+        }
+        collectionView.xs_addRefresh(refresh: .normal_footer_refresh) {
+            self.requestData()
+        }
     }
-
+    
+    override func requestData() {
+        HUDTool.show(.loading, view: self.view)
+        network.requestData(.paint_info, params: ["paint_id":self.model.paint_id,"last_id":last_id], finishedCallback: { [weak self](result) in
+            HUDTool.hide()
+            self?.collectionView.xs_endRefreshing()
+            if result["ret"] as! Int == 0 {
+                
+                if self?.last_id == 0 {
+                    self?.model = nil
+                }
+                let info = result["paint_detail"] as! [String : Any]
+                if self?.model != nil {
+                    self?.model.setValue(info["picture_info"], forKey: "picture_info")
+                }else {
+                    self?.model = PaintModel.init(dict: info)
+                }
+                if result["last_id"] != nil {
+                    self?.last_id = result["last_id"] as! Int32
+                }else {
+                    self?.last_id = -1
+                    self?.collectionView.xs_endRefreshingWithNoMoreData()
+                }
+                self?.pictures = (self?.model.picture_arry)!
+                self?.collectionView?.reloadData()
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.8, view: (self?.view)!, complete: nil)
+            }
+            }, nil)
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return pictures.count
     }
     

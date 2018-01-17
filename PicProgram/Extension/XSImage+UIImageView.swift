@@ -23,14 +23,18 @@ enum XSImageSize:Int{
 }
 
 extension UIImageView {
-    func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white"){
+    func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white",forceRefresh:Bool = false){
         self.backgroundColor = xsColor_main_background
         self.contentMode = .scaleAspectFit
         var url = "\(imageUrl)_\(imageSize.rawValue)"
 //        if imageSize == .image_0 {
             url = imageUrl
 //        }
-        self.kf.setImage(with: URL.init(string: url), placeholder: UIImage.init(named: placeholderImage), options: [.transition(.fade(1))], progressBlock: { (receivedSize, totalSize) in
+        var options:Array<KingfisherOptionsInfoItem> = [.transition(.fade(1))]
+        if forceRefresh == true {
+            options.append(.forceRefresh)
+        }
+        self.kf.setImage(with: URL.init(string: url), placeholder: UIImage.init(named: placeholderImage), options: options, progressBlock: { (receivedSize, totalSize) in
            
         }) { (image, error, cacheType, imageUrl) in
             if image != nil {
@@ -42,9 +46,13 @@ extension UIImageView {
 
 
 extension UIButton {
-    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal, _ backgroundColor:UIColor = xsColor_main_background){
+    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal, _ backgroundColor:UIColor = xsColor_main_background,forceRefresh:Bool = false){
         self.backgroundColor = backgroundColor
-        self.kf.setImage(with: URL.init(string: imageUrl), for: state, placeholder: UIImage.init(named: placeholderImage), options: [.transition(.fade(1))], progressBlock: { (receivedSize, totalSize) in
+        var options:Array<KingfisherOptionsInfoItem> = [.transition(.fade(1))]
+        if forceRefresh == true {
+            options.append(.forceRefresh)
+        }
+        self.kf.setImage(with: URL.init(string: imageUrl), for: state, placeholder: UIImage.init(named: placeholderImage), options: options, progressBlock: { (receivedSize, totalSize) in
             
         }) { (image, error, cacheType, imageUrl) in
             

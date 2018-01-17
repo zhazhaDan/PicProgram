@@ -51,8 +51,8 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         self.birthdayLabel.text = birthday
         let genderTitles = [MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
         self.genderLabel.text = genderTitles[UserInfo.user.gender]
-        self.headerImageView.xs_setImage(UserInfo.user.head_url)
-        self.backImageView.xs_setImage(UserInfo.user.background)
+        self.headerImageView.xs_setImage(UserInfo.user.head_url, imageSize: .image_0, forceRefresh: true)
+        self.backImageView.xs_setImage(UserInfo.user.background, forceRefresh: true)
         self.nickTextField.text = UserInfo.user.nick_name
         self.addressTextField.text = UserInfo.user.region
     }

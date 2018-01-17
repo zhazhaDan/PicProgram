@@ -70,7 +70,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     
     override func requestData() {
         UserInfo.user.updateUserInfo {[weak self] in
-            self?.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal,UIColor.clear)
+            self?.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal,UIColor.clear, forceRefresh: true)
             self?.userNameLabel.text = UserInfo.user.nick_name
         }
     }
