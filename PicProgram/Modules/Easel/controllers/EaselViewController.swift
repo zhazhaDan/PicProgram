@@ -53,6 +53,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
         self.contentScrollView.addSubview(view1)
         
         view2 = PicturesView.init(frame: CGRect.init(x: SCREEN_WIDTH, y: 0, width: SCREEN_WIDTH, height: view1.height))
+        view2.delegate = self
         self.contentScrollView.addSubview(view2)
         
         view3 = PaintFrameListView.init(frame: CGRect.init(x: SCREEN_WIDTH * 2, y: 0, width: SCREEN_WIDTH, height: view1.height))

@@ -137,6 +137,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = PictureDetailViewController.init(nibName: "PictureDetailViewController", bundle: Bundle.main)
         vc.model = dataSource[indexPath.item]
+        vc.isUpdatePicture = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -174,6 +175,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     func detailInfo() {
         let vc = PictureDetailViewController.init(nibName: "PictureDetailViewController", bundle: Bundle.main)
         vc.model = dataSource[currentIndex]
+        vc.isUpdatePicture = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func collectPicture() {

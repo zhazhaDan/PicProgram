@@ -76,6 +76,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
         inputTextField.layer.masksToBounds = true
         inputTextField.delegate = self
         inputTextField.clearButtonMode = .whileEditing
+        inputTextField.returnKeyType = .search
         inputTextField.attributedPlaceholder = NSAttributedString.init(string: MRLanguage(forKey: "Art works/Artist"), attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_yellow])
         inputTextField.delegate = self
         inputTextField.font = xsFont(14)

@@ -212,18 +212,35 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     
     //SearchProtocol
     func picsStyleChangeAction(style: Int) {
-        let header = self.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0)) as! PicDetailHeaderStyle3View
-
-        if style == 0 {
-            dataSource = paintModel.picture_H
-            header.numberLabel.text = "\(paintModel.picture_H.count)\(MRLanguage(forKey: "pages"))"
-        }else if style == 1 {
-            dataSource = paintModel.picture_arry
-            header.numberLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
-        }else if style == 2 {
-            dataSource = paintModel.picture_S
-            header.numberLabel.text = "\(paintModel.picture_S.count)\(MRLanguage(forKey: "pages"))"
+        var header = self.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
+        if (header?.isKind(of: PicDetailHeaderStyle3View.self))! {
+            let header2 = header as! PicDetailHeaderStyle3View
+            
+            if style == 0 {
+                dataSource = paintModel.picture_H
+                header2.numberLabel.text = "\(paintModel.picture_H.count)\(MRLanguage(forKey: "pages"))"
+            }else if style == 1 {
+                dataSource = paintModel.picture_arry
+                header2.numberLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
+            }else if style == 2 {
+                dataSource = paintModel.picture_S
+                header2.numberLabel.text = "\(paintModel.picture_S.count)\(MRLanguage(forKey: "pages"))"
+            }
+        }else {
+            let header2 = header as! PicDetailHeaderCollectionReusableView
+            
+            if style == 0 {
+                dataSource = paintModel.picture_H
+                header2.numberLabel.text = "\(paintModel.picture_H.count)\(MRLanguage(forKey: "pages"))"
+            }else if style == 1 {
+                dataSource = paintModel.picture_arry
+                header2.numberLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
+            }else if style == 2 {
+                dataSource = paintModel.picture_S
+                header2.numberLabel.text = "\(paintModel.picture_S.count)\(MRLanguage(forKey: "pages"))"
+            }
         }
+
         self.collectionView?.reloadData()
     }
     

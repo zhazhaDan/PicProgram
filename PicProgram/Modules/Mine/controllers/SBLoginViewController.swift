@@ -37,6 +37,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
             let req = SendAuthReq.init()
             req.scope = "snsapi_userinfo"
             req.state = "wechat_sdk_demo"
+            req.openID = ""
             WXApi.sendAuthReq(req, viewController: self, delegate: self)
         }
     }
@@ -49,7 +50,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
         }else {
             if resp is SendAuthResp {
                 let response = resp as! SendAuthResp
-                network.requestData(.user_third_login, params: ["register_type":2,"access_token":response.code], finishedCallback: { (result) in
+                network.requestData(.user_third_login, params: ["register_type":2,"auth_token":response.code], finishedCallback: { (result) in
                     
                 }, nil)
                 

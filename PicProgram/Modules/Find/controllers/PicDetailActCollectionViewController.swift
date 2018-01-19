@@ -127,5 +127,6 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
     
     override func picsStyleChangeAction(style: Int) {
         // 横  横竖  竖
+        super.picsStyleChangeAction(style: style)
     }
 }

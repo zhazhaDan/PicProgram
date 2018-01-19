@@ -14,7 +14,7 @@ let baseApi = "http://dev.xiangshuispace.com:9988/api/"
 //let baseApi = "https://www.xiangshuispace.com/api/"
     
 #else
-let baseApi = "http://dev.xiangshuispace.com:9988/api/"
+let baseApi = "http://47.94.245.138:9090/api/"
     
 #endif
 enum Method {
