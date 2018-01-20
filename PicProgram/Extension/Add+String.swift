@@ -21,7 +21,7 @@ extension String {
     
     
     /// 生成二维码
- func generateQRCodeImage() -> UIImage {
+    func generateQRCodeImage(color:UIColor = xsColor_main_yellow) -> UIImage {
         
         // 1. 生成二维码
         let qrFilter = CIFilter(name: "CIQRCodeGenerator")!
@@ -38,7 +38,7 @@ extension String {
         colorFilter.setDefaults()
         colorFilter.setValue(transformImage, forKey: "inputImage")
         // 前景色
-        colorFilter.setValue(CIColor(color: xsColor_main_yellow), forKey: "inputColor0")
+        colorFilter.setValue(CIColor(color: color), forKey: "inputColor0")
         // 背景色
         colorFilter.setValue(CIColor(color: UIColor.clear), forKey: "inputColor1")
         

@@ -80,17 +80,16 @@
                             </connections>
                         </button>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保存密码" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MY-dk-nag">
-                            <rect key="frame" x="273" y="153" width="60" height="20"/>
+                            <rect key="frame" x="283.5" y="153" width="49.5" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="5f8-As-OpO"/>
-                                <constraint firstAttribute="width" constant="60" id="xXV-D3-aOX"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zr-hx-e5A">
-                            <rect key="frame" x="253" y="153" width="20" height="20"/>
+                            <rect key="frame" x="263.5" y="153" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="QjW-eB-Q47"/>
                                 <constraint firstAttribute="width" constant="20" id="uh1-EF-vsJ"/>

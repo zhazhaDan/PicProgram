@@ -13,6 +13,7 @@ private let reuseHeaderIdentifier = "header"
 
 class PicDetailCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,SearchProtocol,UIGestureRecognizerDelegate {
     private var _paint_id:Int64 = 0 //默认id = 0 是自己收藏的画单
+    var last_id:Int32 = 0
     var paint_id:Int64 {
         set{
             _paint_id = newValue
@@ -44,6 +45,9 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         // Register cell classes
         self.collectionView!.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         self.registHeader()
+        collectionView?.xs_addRefresh(refresh: .normal_footer_refresh) {
+            self.requestData()
+        }
         
     }
     
@@ -77,8 +81,21 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     func requestData() {
         network.requestData(.paint_info, params: ["paint_id":paint_id,"last_id":0], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
+                let info = result["paint_detail"] as! [String : Any]
+                if self?.paintModel != nil {
+                    self?.paintModel.setValue(info["picture_info"], forKey: "picture_info")
+                }else {
+                    self?.paintModel = PaintModel.init(dict: info)
+                }
+                if result["last_id"] != nil {
+                    self?.last_id = result["last_id"] as! Int32
+                }else {
+                    self?.last_id = -1
+                    self?.collectionView?.xs_endRefreshingWithNoMoreData()
+                }
+                self?.collectionView?.reloadData()
                 self?.paintModel = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
-                self?.picsStyleChangeAction(style: 1)
+//                self?.picsStyleChangeAction(style: 1)
                 self?.collectionView?.reloadData()
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.8, view: (self?.view)!, complete: nil)

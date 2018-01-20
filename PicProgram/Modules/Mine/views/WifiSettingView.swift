@@ -18,7 +18,7 @@ class WifiSettingView: BaseView {
     @IBAction func connectWifiAction(_ sender: Any) {
         let codeString = wifiNameTextfield.text! + "&" + passTextfield.text! + "&2"
         self.wifiCodeView.isHidden = false
-        wifiQrCodeImageView.image = codeString.generateQRCodeImage()
+        wifiQrCodeImageView.image = codeString.generateQRCodeImage(color: xsColor_main_blue)
     }
     
     
