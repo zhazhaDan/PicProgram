@@ -26,7 +26,7 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
     @IBOutlet weak var bottomFigureImageView: UIImageView!
     @IBOutlet weak var backImageView: UIImageView!
     
-    
+    var selectedIndex:Int = 0
     var picUrl:String!
     var picTitle:String!
     override func viewDidLoad() {
@@ -42,6 +42,9 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
         self.picTitleLabel.text = self.picTitle
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         codeUpdate()
+        let btn = self.view.viewWithTag(10+selectedIndex) as! UIButton
+        self.bottomSegChooseAction(btn)
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -71,6 +74,7 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
         for i in 0 ..< 3 {
             let btn = self.view.viewWithTag(10+i) as! UIButton
             if btn == sender {
+                selectedIndex = i
                 UIView.animate(withDuration: 0.25, animations: {
                     self.segView.x = btn.x
                 }, completion: {(finished) in

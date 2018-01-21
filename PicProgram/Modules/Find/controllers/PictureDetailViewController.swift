@@ -74,8 +74,10 @@ class PictureDetailViewController: BaseViewController {
     func updateUI() {
         self.titleLabel.text = model.title
         picImageView.xs_setImage(model.detail_url)
-        autorLabel.text = model.title
-        timeLabel.text = model.time + "作"
+        autorLabel.text = model.author
+        if model.time.count as! Int > 0 {
+            timeLabel.text = model.time + MRLanguage(forKey: "made")
+        }
         picInfoLabel.text = model.detail
     }
 

@@ -71,6 +71,7 @@ class PictureModel: BaseObject {
     @objc var picture_id :Int = 0
     @objc var picture_type:Int = 0
     @objc var title:String = ""
+    @objc var author:String = ""
     @objc var time:String = ""
     @objc var size:String = ""
     @objc var detail:String = ""

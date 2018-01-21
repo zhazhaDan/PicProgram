@@ -219,9 +219,12 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var datas = dataSource[indexPath.section]["data"] as! [String]
 
-        if datas.count == 0 {
-        }else {
+        if datas.count == 0 && indexPath.section == 0 {
             datas = dataSource[1]["data"] as! [String]
+            let keyword = datas[indexPath.row]
+            inputTextField.text = keyword
+            searchKeywords(kw: keyword)
+        }else {
             let keyword = datas[indexPath.row]
             inputTextField.text = keyword
             searchKeywords(kw: keyword)

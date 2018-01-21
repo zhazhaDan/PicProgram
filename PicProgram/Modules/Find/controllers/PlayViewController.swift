@@ -70,12 +70,6 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         let layout = collectionView.collectionViewLayout as! PlayViewFlowLayout
         layout.scrollDirection = .horizontal
-        self.baseNavigationController?.addRightNavigationBarItems(["fenxiang"], ["fenxiang"], nil, rightCallBack: { (tag) in
-            let shareView = ShareViewController.init(nibName: "ShareViewController", bundle: Bundle.main)
-            shareView.picUrl = self.dataSource[self.currentIndex].detail_url
-            shareView.picTitle = self.dataSource[self.currentIndex].title
-            self.navigationController?.pushViewController(shareView, animated: true)
-        })
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -91,6 +85,13 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
+        self.baseNavigationController?.addRightNavigationBarItems(["fenxiang"], ["fenxiang"], nil, rightCallBack: { (tag) in
+            let shareView = ShareViewController.init(nibName: "ShareViewController", bundle: Bundle.main)
+            shareView.picUrl = self.dataSource[self.currentIndex].detail_url
+            shareView.picTitle = self.dataSource[self.currentIndex].title
+            self.navigationController?.pushViewController(shareView, animated: true)
+        })
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
