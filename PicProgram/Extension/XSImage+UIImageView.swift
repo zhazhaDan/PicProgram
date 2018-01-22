@@ -23,7 +23,7 @@ enum XSImageSize:Int{
 }
 
 extension UIImageView {
-    func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white",forceRefresh:Bool = false){
+    func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white",forceRefresh:Bool = true){
         self.backgroundColor = xsColor_main_background
         self.contentMode = .scaleAspectFit
         var url = "\(imageUrl)_\(imageSize.rawValue)"
@@ -46,7 +46,7 @@ extension UIImageView {
 
 
 extension UIButton {
-    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal, _ backgroundColor:UIColor = xsColor_main_background,forceRefresh:Bool = false){
+    func xs_setImage(_ imageUrl:String, _ placeholderImage:String = "logo_white", state:UIControlState = .normal, _ backgroundColor:UIColor = xsColor_main_background,forceRefresh:Bool = true){
         self.backgroundColor = backgroundColor
         var options:Array<KingfisherOptionsInfoItem> = [.transition(.fade(1))]
         if forceRefresh == true {

@@ -16,7 +16,7 @@
                 <outlet property="contentView" destination="MEO-NM-UfP" id="gl6-bm-vF2"/>
                 <outlet property="settingTopConstraint" destination="nR4-GL-rdx" id="tC6-Oz-47k"/>
                 <outlet property="userBackImageView" destination="Lz5-Ae-3U2" id="iUT-3e-Gzx"/>
-                <outlet property="userIconButton" destination="8Nz-N9-LJE" id="7yt-G2-tGJ"/>
+                <outlet property="userIconButton" destination="mpG-g5-vau" id="CPR-P8-eJH"/>
                 <outlet property="userNameLabel" destination="cqB-Em-don" id="LM9-Bv-1sz"/>
                 <outlet property="view" destination="iN0-l3-epB" id="s1B-IC-aUh"/>
             </connections>
@@ -60,7 +60,7 @@
                                         <action selector="playAction:" destination="-1" eventType="touchUpInside" id="801-iy-3aT"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nz-N9-LJE">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nz-N9-LJE">
                                     <rect key="frame" x="124.5" y="87" width="71" height="71"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="71" id="Bjc-X1-0Dl"/>
@@ -81,6 +81,9 @@
                                     <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mpG-g5-vau">
+                                    <rect key="frame" x="124.5" y="87" width="71" height="71"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -92,9 +95,12 @@
                                 <constraint firstItem="UE1-uG-8fU" firstAttribute="top" secondItem="Lz5-Ae-3U2" secondAttribute="bottom" id="H4V-vh-aiy"/>
                                 <constraint firstAttribute="trailing" secondItem="MIh-ua-oC8" secondAttribute="trailing" constant="12" id="HLS-vl-wNH"/>
                                 <constraint firstItem="MIh-ua-oC8" firstAttribute="width" secondItem="ppJ-PV-uqn" secondAttribute="width" id="JVn-KR-rk3"/>
+                                <constraint firstItem="mpG-g5-vau" firstAttribute="height" secondItem="8Nz-N9-LJE" secondAttribute="height" id="ORP-WP-Vbg"/>
                                 <constraint firstItem="cqB-Em-don" firstAttribute="top" secondItem="8Nz-N9-LJE" secondAttribute="bottom" constant="18" id="PxP-5R-8IT"/>
                                 <constraint firstItem="Lz5-Ae-3U2" firstAttribute="top" secondItem="MEO-NM-UfP" secondAttribute="top" id="QBS-oM-8bF"/>
+                                <constraint firstItem="mpG-g5-vau" firstAttribute="top" secondItem="8Nz-N9-LJE" secondAttribute="top" id="Qt2-pr-U2Z"/>
                                 <constraint firstItem="UE1-uG-8fU" firstAttribute="leading" secondItem="MEO-NM-UfP" secondAttribute="leading" id="SPY-P6-Rg8"/>
+                                <constraint firstItem="mpG-g5-vau" firstAttribute="width" secondItem="8Nz-N9-LJE" secondAttribute="width" id="TXO-La-NYe"/>
                                 <constraint firstItem="MIh-ua-oC8" firstAttribute="height" secondItem="ppJ-PV-uqn" secondAttribute="height" id="UhN-uh-GZe"/>
                                 <constraint firstItem="cqB-Em-don" firstAttribute="centerX" secondItem="8Nz-N9-LJE" secondAttribute="centerX" id="VCV-nX-79K"/>
                                 <constraint firstAttribute="trailing" secondItem="Lz5-Ae-3U2" secondAttribute="trailing" id="bNB-eX-gKg"/>
@@ -103,6 +109,7 @@
                                 <constraint firstAttribute="bottom" secondItem="UE1-uG-8fU" secondAttribute="bottom" constant="-69" id="r68-Ff-SnE"/>
                                 <constraint firstItem="Lz5-Ae-3U2" firstAttribute="leading" secondItem="MEO-NM-UfP" secondAttribute="leading" id="wcy-UB-Qqh"/>
                                 <constraint firstAttribute="height" constant="658" id="ypC-iF-vGt"/>
+                                <constraint firstItem="mpG-g5-vau" firstAttribute="leading" secondItem="8Nz-N9-LJE" secondAttribute="leading" id="ytr-Wy-zhA"/>
                             </constraints>
                         </view>
                     </subviews>

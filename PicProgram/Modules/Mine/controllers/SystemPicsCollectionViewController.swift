@@ -154,7 +154,7 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
             let asset = self.dataSource[indexPath.row-1]
             GDPhotoTool.defaultTool.getImage(asset: asset.asset as PHAsset,imageSize: PHImageManagerMaximumSize ,complete: { (image, ret) in
                 HUDTool.show(.loading, view: self.view)
-                network.uploadPic(image: image,apiType: .user_set_header) { [weak self](result) in
+                network.uploadPic(image: image,apiType: self.picType) { [weak self](result) in
                     HUDTool.hide()
                     if result["ret"] as! Int == 0 {
 //                        let dict = ["imageUrl": result["url"] as! String, "image": image] as [String : Any]
@@ -194,11 +194,11 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
            
         }
         //图片上传接口有问题。测试代码
-        let dict = ["image": info[UIImagePickerControllerOriginalImage] as! UIImage] as [String : Any]
-        self.delegate.finishUpload(imageInfo: dict, type: (self.picType))
-        picker.dismiss(animated: true) {
-            self.navigationController?.popViewController(animated: true)
-        }
+//        let dict = ["image": info[UIImagePickerControllerOriginalImage] as! UIImage] as [String : Any]
+//        self.delegate.finishUpload(imageInfo: dict, type: (self.picType))
+//        picker.dismiss(animated: true) {
+//            self.navigationController?.popViewController(animated: true)
+//        }
     }
     
     func listDidSelected(view: UIView, at index: Int, _ section: Int) {

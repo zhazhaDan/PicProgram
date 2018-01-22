@@ -12,7 +12,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
 //    var mineView:LogOutView!
     @IBOutlet weak var settingTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var userBackImageView: UIImageView!
-    @IBOutlet weak var userIconButton: UIButton!
+    @IBOutlet weak var userIconButton: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bottomView: UIView!
@@ -61,6 +61,7 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
         self.userIconButton.layer.masksToBounds = true
         self.userIconButton.layer.borderWidth = 2
         self.userIconButton.layer.borderColor = xsColor_main_white.cgColor
+        self.userIconButton.contentMode = .scaleAspectFill
         let deviceView = Bundle.main.loadNibNamed("DeviceManageView", owner: nil, options: nil)?.first as! DeviceManageView
         deviceView.cDelegate = self
         deviceView.tag = 500
@@ -70,7 +71,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     
     override func requestData() {
         UserInfo.user.updateUserInfo {[weak self] in
-            self?.userIconButton.xs_setImage(UserInfo.user.head_url, "08weidenglu_yonghu_touxiang", state: .normal,UIColor.clear, forceRefresh: true)
+            self?.userIconButton.xs_setImage(UserInfo.user.head_url)
+            self?.userBackImageView.xs_setImage(UserInfo.user.background)
             self?.userNameLabel.text = UserInfo.user.nick_name
         }
     }
