@@ -138,6 +138,9 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if view1 == nil {
+            return
+        }
         if view1.isHidden == true || scrollView.contentOffset.y < 0 {
             return
         }

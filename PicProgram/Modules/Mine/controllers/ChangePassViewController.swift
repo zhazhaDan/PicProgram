@@ -24,9 +24,12 @@ class ChangePassViewController: BaseViewController {
         network.requestData(.user_reset_password, params: ["register_id":userModel.register_id,"password":userModel.password], finishedCallback: { (result) in
             HUDTool.hide()
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.custom, text: MRLanguage(forKey: "Reset password successful"), delay: 1, view: self.view, complete: {
-                    
+                UserInfo.user.setValuesForKeys(result)
+                UserInfo.user.updateUserInfo()
+                HUDTool.show(.custom, #imageLiteral(resourceName: "icons8-checkmark"), text: MRLanguage(forKey: "Reset password successful"), delay: 1, view: self.view, complete: nil)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                     self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popToRootViewController(animated: true)
                 })
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)

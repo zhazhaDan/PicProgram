@@ -70,9 +70,11 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let model = dataSource[indexPath.row]
         let vc = WebViewController()
         vc.urlString = model.cq_h5_url
+
         self.navigationController?.pushViewController(vc, animated: true)
 
     }

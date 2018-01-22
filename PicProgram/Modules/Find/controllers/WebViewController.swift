@@ -37,6 +37,11 @@ class WebViewController: BaseViewController,WKUIDelegate,WKNavigationDelegate {
         }
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = MRLanguage(forKey: "Art Digest")
+    }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         //页面加载成功

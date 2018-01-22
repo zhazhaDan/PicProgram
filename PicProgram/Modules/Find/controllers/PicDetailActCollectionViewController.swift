@@ -113,7 +113,7 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let contentHeight = paintModel.paint_detail.size(self.view.width - 24, 74, xsFont(10)).height
+        let contentHeight = paintModel.paint_detail.size(self.view.width - 24, 74, xsFont(13)).height
         return CGSize.init(width: self.view.width, height: 290+contentHeight)
     }
     
