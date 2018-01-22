@@ -23,7 +23,7 @@ enum XSImageSize:Int{
 }
 
 extension UIImageView {
-    func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white",forceRefresh:Bool = true){
+    func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white",forceRefresh:Bool = false){
         self.backgroundColor = xsColor_main_background
         self.contentMode = .scaleAspectFit
         var url = "\(imageUrl)_\(imageSize.rawValue)"

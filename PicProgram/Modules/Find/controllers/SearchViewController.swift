@@ -37,6 +37,10 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        if self.searchResultView.superview != nil {
+            let button = self.searchResultView.viewWithTag(10 + self.searchResultView.selectIndex)
+            self.searchResultView.buttonAction(button as! UIButton)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -260,6 +264,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
                     }
                 }
                 self?.searchResultView.reloadDatas()
+                self?.searchResultView.selectIndex = 0
                 self?.view.addSubview((self?.searchResultView)!)
             }
             }, nil)
