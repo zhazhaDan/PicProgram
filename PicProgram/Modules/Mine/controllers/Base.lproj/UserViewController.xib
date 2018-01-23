@@ -36,10 +36,10 @@
                         <view multipleTouchEnabled="YES" tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KL7-1y-eev" userLabel="头像">
                             <rect key="frame" x="0.0" y="5" width="375" height="61"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoq-5S-uLd" userLabel="头像">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoq-5S-uLd" userLabel="头像">
                                     <rect key="frame" x="23" y="22" width="65" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="65" id="oyM-UM-o5T"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="oyM-UM-o5T"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -87,7 +87,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人主页背景" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuS-SQ-0wW" userLabel="个人主页背景">
                                     <rect key="frame" x="23" y="22" width="120" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="120" id="Mss-ur-Dd8"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Mss-ur-Dd8"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -130,7 +130,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEz-YP-iJw">
                                     <rect key="frame" x="23" y="18" width="35" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="35" id="2NE-Je-M60"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="2NE-Je-M60"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -173,7 +173,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuH-ap-vD1">
                                     <rect key="frame" x="23" y="18" width="35" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="35" id="LMR-9r-HVQ"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="LMR-9r-HVQ"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -191,7 +191,7 @@
                                     <rect key="frame" x="289" y="17" width="42" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="nYo-Z9-TMr"/>
-                                        <constraint firstAttribute="width" constant="42" id="unt-bM-lA1"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="unt-bM-lA1"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.62504500149999997" green="0.62511724229999999" blue="0.6250033975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -217,7 +217,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urZ-dW-B42">
                                     <rect key="frame" x="23" y="15" width="35" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="35" id="VMC-GP-xVf"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="VMC-GP-xVf"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -231,7 +231,7 @@
                                     </constraints>
                                     <state key="normal" title="Button" image="next"/>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入生日信息" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaN-s1-bXU">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="输入生日信息" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaN-s1-bXU">
                                     <rect key="frame" x="70" y="0.5" width="261" height="48"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.62504500149999997" green="0.62511724229999999" blue="0.6250033975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -259,7 +259,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ig-wt-PJY">
                                     <rect key="frame" x="23" y="15" width="35" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="35" id="lT8-jq-9UP"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="lT8-jq-9UP"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
