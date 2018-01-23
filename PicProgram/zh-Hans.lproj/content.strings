@@ -353,6 +353,7 @@
 "reset hint" = "请设置*****的新密码，建议使用数字、字母、字符的组合密码，提高密码安全等级。";
 "Sign in successful" = "登录成功";
 "Account" = "账户";
+"Bind" = "绑定";
 "Please enter your password" = "请输入密码";
 "login via wechat" = "微信登录";
 "Login via Sina" = "微博登录";

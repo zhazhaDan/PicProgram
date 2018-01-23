@@ -208,6 +208,8 @@
 		3A7C827F1FAC2B2000793420 /* PictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C827D1FAC2B2000793420 /* PictureDetailViewController.xib */; };
 		3A90F3C41FE7BE3800BF4906 /* EaselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A90F3C61FE7BE3800BF4906 /* EaselViewController.xib */; };
 		3A90F3CC1FE7CEDE00BF4906 /* BaseBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90F3CB1FE7CEDE00BF4906 /* BaseBundle.swift */; };
+		3A92E5922016E8D700CADED9 /* BindPhoneEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92E5902016E8D700CADED9 /* BindPhoneEmailViewController.swift */; };
+		3A92E5932016E8D700CADED9 /* BindPhoneEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A92E5912016E8D700CADED9 /* BindPhoneEmailViewController.xib */; };
 		3A92E8271FD68C9A00C7B5A3 /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92E8261FD68C9A00C7B5A3 /* GifViewController.swift */; };
 		3A9963CB1F9C6A5A00077307 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9963C91F9C6A5A00077307 /* FindViewController.swift */; };
 		3A9963DB1F9C9B7B00077307 /* ArtReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9963D91F9C9B7B00077307 /* ArtReadTableViewCell.swift */; };
@@ -231,6 +233,8 @@
 		3A9CCC611FA1EC3E00FC33BD /* ArtHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CCC601FA1EC3E00FC33BD /* ArtHeaderView.swift */; };
 		3A9CCC631FA1EC5100FC33BD /* ArtHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A9CCC621FA1EC5100FC33BD /* ArtHeaderView.xib */; };
 		3A9CCC661FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CCC641FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift */; };
+		3AA09A162017078C009D38EB /* BindListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA09A142017078C009D38EB /* BindListViewController.swift */; };
+		3AA09A172017078C009D38EB /* BindListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA09A152017078C009D38EB /* BindListViewController.xib */; };
 		3AA7A1601F8DC16000DDF7CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7A15F1F8DC16000DDF7CB /* LoginView.swift */; };
 		3AA8DCFA2005C77000245FBB /* EmotionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DCFC2005C77000245FBB /* EmotionList.plist */; };
 		3AA8DCFF2005EA4B00245FBB /* ArtMasterSayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DD012005EA4B00245FBB /* ArtMasterSayTableViewCell.xib */; };
@@ -657,6 +661,8 @@
 		3A90F3C81FE7BE3B00BF4906 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EaselViewController.strings; sourceTree = "<group>"; };
 		3A90F3CA1FE7BE3D00BF4906 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/EaselViewController.strings"; sourceTree = "<group>"; };
 		3A90F3CB1FE7CEDE00BF4906 /* BaseBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBundle.swift; sourceTree = "<group>"; };
+		3A92E5902016E8D700CADED9 /* BindPhoneEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindPhoneEmailViewController.swift; sourceTree = "<group>"; };
+		3A92E5912016E8D700CADED9 /* BindPhoneEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindPhoneEmailViewController.xib; sourceTree = "<group>"; };
 		3A92E8261FD68C9A00C7B5A3 /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
 		3A9963C91F9C6A5A00077307 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		3A9963D91F9C9B7B00077307 /* ArtReadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtReadTableViewCell.swift; sourceTree = "<group>"; };
@@ -680,6 +686,8 @@
 		3A9CCC601FA1EC3E00FC33BD /* ArtHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtHeaderView.swift; sourceTree = "<group>"; };
 		3A9CCC621FA1EC5100FC33BD /* ArtHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtHeaderView.xib; sourceTree = "<group>"; };
 		3A9CCC641FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtMasterSayTableViewCell.swift; sourceTree = "<group>"; };
+		3AA09A142017078C009D38EB /* BindListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindListViewController.swift; sourceTree = "<group>"; };
+		3AA09A152017078C009D38EB /* BindListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindListViewController.xib; sourceTree = "<group>"; };
 		3AA7A15F1F8DC16000DDF7CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3AA8DCFB2005C77000245FBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/EmotionList.plist; sourceTree = "<group>"; };
 		3AA8DCFD2005C77300245FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/EmotionList.plist; sourceTree = "<group>"; };
@@ -1632,6 +1640,10 @@
 				F70B898320026D33001F22D6 /* AccountSafeViewController.swift */,
 				F70B89872003B35D001F22D6 /* ReportViewController.swift */,
 				3AE0288F2004CF9400EA1B8C /* ReportViewController.xib */,
+				3A92E5902016E8D700CADED9 /* BindPhoneEmailViewController.swift */,
+				3A92E5912016E8D700CADED9 /* BindPhoneEmailViewController.xib */,
+				3AA09A142017078C009D38EB /* BindListViewController.swift */,
+				3AA09A152017078C009D38EB /* BindListViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -2078,6 +2090,7 @@
 				3A33DDFA1FE91FF1001565F2 /* xf_4.png in Resources */,
 				3AE028942004D2A500EA1B8C /* DeviceManageView.xib in Resources */,
 				F7733DB51FFE70D700A29534 /* SearchList.plist in Resources */,
+				3A92E5932016E8D700CADED9 /* BindPhoneEmailViewController.xib in Resources */,
 				3A33DE211FE91FF1001565F2 /* xf_67.png in Resources */,
 				3AE0287F2004CF7B00EA1B8C /* AboutUsViewController.xib in Resources */,
 				3AE028162004C30100EA1B8C /* FindViewController.xib in Resources */,
@@ -2100,6 +2113,7 @@
 				3A0B8B451FBE83FE006F09E9 /* EaselPaintCollectionViewCell.xib in Resources */,
 				3A33DDD81FE91FF1001565F2 /* xf_0.png in Resources */,
 				3A33DE1D1FE91FF1001565F2 /* xf_63.png in Resources */,
+				3AA09A172017078C009D38EB /* BindListViewController.xib in Resources */,
 				3AE0289B2004D2F500EA1B8C /* DeviceBindUserView.xib in Resources */,
 				3AFB304B1FE8B709005BA1A8 /* loading_17@2x.png in Resources */,
 				3A33DDDA1FE91FF1001565F2 /* xf_10.png in Resources */,
@@ -2258,6 +2272,7 @@
 				3A11C02F1FE8A97300FC6E4D /* ESRefreshFooterAnimator.swift in Sources */,
 				3AE7A2481FA2EE96004BAD20 /* SearchResultView.swift in Sources */,
 				3AB5DD381F8CB192004897B5 /* BaseEntityManager.swift in Sources */,
+				3A92E5922016E8D700CADED9 /* BindPhoneEmailViewController.swift in Sources */,
 				3ADB94A71FA753AE00711445 /* PlayViewController.swift in Sources */,
 				3AB5DD361F8CB192004897B5 /* Window.swift in Sources */,
 				3AB5DD281F8CB192004897B5 /* HUD.swift in Sources */,
@@ -2341,6 +2356,7 @@
 				3A9CCC591FA1DC2700FC33BD /* ClassicQuoteModel.swift in Sources */,
 				3A0B8B3D1FBD920C006F09E9 /* EaselViewController.swift in Sources */,
 				3A0B8B401FBD97AA006F09E9 /* PaintFrameListView.swift in Sources */,
+				3AA09A162017078C009D38EB /* BindListViewController.swift in Sources */,
 				3AB5DD1A1F8CB192004897B5 /* MineViewController.swift in Sources */,
 				3A9963E41F9DC16F00077307 /* ArtView.swift in Sources */,
 				3A11C0361FE8A97300FC6E4D /* ESRefreshProtocol.swift in Sources */,
