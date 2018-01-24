@@ -24,6 +24,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
             pic = Picture.fetchPicture(forPicId: Int64(newValue?.picture_id as! Int))
 //            pic.picture_id = Int64(newValue?.picture_id as! Int)
             pic.picture_url = newValue?.picture_url
+            pic.picture_type = (newValue?.picture_type)!
         }
         get {
             return nil

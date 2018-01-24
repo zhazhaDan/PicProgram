@@ -13,6 +13,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="introduce" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="save_time" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="pics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Picture" syncable="YES"/>
     </entity>
     <entity name="Paint" representedClassName=".Paint" syncable="YES">
@@ -24,6 +25,7 @@
         <attribute name="paint_title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paint_type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="read_num" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="save_time" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="sub_title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title_detail_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title_url" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,6 +38,7 @@
         <attribute name="picture_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="picture_type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="picture_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="save_time" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -46,8 +49,8 @@
     <elements>
         <element name="Emotion" positionX="-54" positionY="36" width="128" height="90"/>
         <element name="HistoryPic" positionX="-45" positionY="63" width="128" height="60"/>
-        <element name="LocalPaint" positionX="-54" positionY="45" width="128" height="120"/>
-        <element name="Paint" positionX="-63" positionY="-18" width="128" height="225"/>
-        <element name="Picture" positionX="-63" positionY="36" width="128" height="225"/>
+        <element name="LocalPaint" positionX="-54" positionY="45" width="128" height="135"/>
+        <element name="Paint" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="Picture" positionX="-63" positionY="36" width="128" height="240"/>
     </elements>
 </model>

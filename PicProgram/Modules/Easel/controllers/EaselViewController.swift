@@ -95,6 +95,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
                 try appDelegate.managedObjectContext.save()
             }catch{}
         }
+        
         view1.dataSource = datas
     }
     
@@ -124,6 +125,7 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
             if UserInfo.user.checkUserLogin() {
                 let vc = PlayViewController.player
                 vc.dataSource = view2.dataSource
+                vc.currentIndex = index
                 vc.title = MRLanguage(forKey: "Recent viewed")//view2.dataSource[index].title
                 self.navigationController?.pushViewController(vc, animated: true)
             }else {

@@ -14,8 +14,9 @@ let baseApi = "http://dev.xiangshuispace.com:9988/api/"
 //let baseApi = "https://www.xiangshuispace.com/api/"
     
 #else
-let baseApi = "http://47.94.245.138:9090/api/"
-    
+//let baseApi = "http://47.94.245.138:9090/api/"
+let baseApi = "http://dev.xiangshuispace.com:9988/api/"
+
 #endif
 enum Method {
     case get
@@ -243,6 +244,7 @@ class  NetworkTool{
                
                 if (((resultDict["ret"] as! Int) < -100) && ((resultDict["ret"] as! Int) > -200)) {
                     UserInfo.user.localLogout()
+                    HUDTool.hide()
                 }else {
                     finishedCallback!(resultDict)
                 }

@@ -2,7 +2,7 @@
 //  LocalPaint+CoreDataProperties.swift
 //  
 //
-//  Created by sliencio on 2017/12/13.
+//  Created by sliencio on 2018/1/24.
 //
 //
 
@@ -20,6 +20,7 @@ extension LocalPaint {
     @NSManaged public var id: Int64
     @NSManaged public var introduce: String?
     @NSManaged public var name: String?
+    @NSManaged public var save_time: Int64
     @NSManaged public var pics: NSSet?
 
 }

@@ -37,7 +37,7 @@ class SearchResultView: BaseView,UITableViewDelegate,UITableViewDataSource {
     
     override func buildUI() {
         self.backgroundColor = xsColor_main_white
-        let titles = [MRLanguage(forKey: "Art Works"),MRLanguage(forKey: "Artist"),MRLanguage(forKey: "Gallery")]
+        let titles = [MRLanguage(forKey: "Painting"),MRLanguage(forKey: "Artist"),MRLanguage(forKey: "Gallery")]
         let width = self.width/3
         for i in 0..<titles.count {
             let button = UIButton.init(frame: CGRect.init(x: (width) * CGFloat(i) +  (width - 61)/2, y: 0, width: 61, height: 30))

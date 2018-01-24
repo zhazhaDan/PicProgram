@@ -12,6 +12,7 @@ let HistoryPaintName = "\(MRLanguage(forKey: "My Account"))\(MRLanguage(forKey: 
 
 class PictureDetailViewController: BaseViewController {
 
+    @IBOutlet weak var contentTitleLabel: UILabel!
     @IBOutlet weak var picImageView: UIImageView!
     @IBOutlet weak var autorLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -47,9 +48,9 @@ class PictureDetailViewController: BaseViewController {
     func fetchHistoryPaint() {
         let paint = Paint.fetchPaint(key: .name, value: HistoryPaintName, create: true, painttype: 3)
         let picture = Picture.fetchPicture(forPicId: Int64(model.picture_id))
-        if (paint?.pics?.contains(picture))! {
-            paint?.removeFromPics(picture!)
-        }
+//        if (paint?.pics?.contains(picture))! {
+//            paint?.removeFromPics(picture!)
+//        }
         picture?.coverProperties(model: model)
         paint?.addToPics(picture!)
         do {
@@ -73,8 +74,13 @@ class PictureDetailViewController: BaseViewController {
     
     func updateUI() {
         self.titleLabel.text = model.title
-        picImageView.xs_setImage(model.detail_url)
+        if model.detail_url.count as! Int > 0 {
+            picImageView.xs_setImage(model.detail_url)
+        }else {
+            picImageView.xs_setImage(model.picture_url)
+        }
         autorLabel.text = model.author
+        contentTitleLabel.text = model.title
         if model.time.count as! Int > 0 {
             timeLabel.text = model.time + MRLanguage(forKey: "made")
         }

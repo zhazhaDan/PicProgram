@@ -49,7 +49,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         self.birthdayLabel.text = birthday
-        let genderTitles = [MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
+        let genderTitles = ["",MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
         self.genderLabel.text = genderTitles[UserInfo.user.gender]
         self.headerImageView.xs_setImage(UserInfo.user.head_url, imageSize: .image_0, forceRefresh: true)
         self.backImageView.xs_setImage(UserInfo.user.background, forceRefresh: true)
@@ -60,7 +60,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     func chooseGender() {
         genderView = BasePickerView.init(frame: CGRect.init(x: 0, y: self.view.height - 140, width: self.view.width, height: 140))
         genderView.type = .gender
-        let genderTitles = [MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
+        let genderTitles = ["",MRLanguage(forKey: "Gender Man"),MRLanguage(forKey: "Gender Felman"),MRLanguage(forKey: "Gender Other")]
         self.genderLabel.text = genderTitles[UserInfo.user.gender]
         genderView.buildUI(type: .gender, didFinishChoose: { (gender) in
             self.genderLabel.text = (gender as! String)
@@ -105,8 +105,11 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     }
     
     func updateUserInfo(params:[String:Any]) {
+        HUDTool.show(.loading, view: self.view)
         network.requestData(.user_set_info, params: params, finishedCallback: { (result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
+                UserInfo.user.setValuesForKeys(result["user_info"] as! [String : Any])
                 HUDTool.show(.text, text: MRLanguage(forKey: "Save Successful"), delay: 0.5, view: self.view, complete: nil)
             }
         }, nil)

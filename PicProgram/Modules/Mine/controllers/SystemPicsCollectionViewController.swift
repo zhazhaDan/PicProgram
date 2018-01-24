@@ -153,7 +153,7 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
             //TODO://图片上传
             let asset = self.dataSource[indexPath.row-1]
             GDPhotoTool.defaultTool.getImage(asset: asset.asset as PHAsset,imageSize: PHImageManagerMaximumSize ,complete: { (image, ret) in
-                HUDTool.show(.loading, view: self.view)
+                HUDTool.show(.loading, view: UIApplication.shared.keyWindow!)
                 network.uploadPic(image: image,apiType: self.picType) { [weak self](result) in
                     HUDTool.hide()
                     if result["ret"] as! Int == 0 {

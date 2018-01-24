@@ -14,6 +14,7 @@ private let reuseHeaderIdentifier = "header"
 class PicDetailCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,SearchProtocol,UIGestureRecognizerDelegate {
     private var _paint_id:Int64 = 0 //默认id = 0 是自己收藏的画单
     var last_id:Int32 = 0
+    var isAutor:Bool = false
     var paint_id:Int64 {
         set{
             _paint_id = newValue
@@ -121,7 +122,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PicDetailCollectionViewCell
-        cell.model = paintModel.picture_arry[indexPath.row]
+        cell.model = dataSource[indexPath.row]
         // Configure the cell
         return cell
     }
@@ -155,7 +156,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let contentHeight = paintModel.paint_detail.size(self.view.width - 24, 74, xsFont(10)).height
+        let contentHeight = paintModel.paint_detail.size(self.view.width - 24, CGFloat(MAXFLOAT), xsFont(10)).height + 10
         return CGSize.init(width: self.view.width, height: 276+contentHeight)
     }
     
@@ -179,9 +180,18 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             header.picTitleLabel.text = paintModel.paint_title
             header.subTitleLabel.text = paintModel.sub_title
             header.eyeNumLabel.text = "\(paintModel.read_num)"
-            header.totalNumLabel.text = "\(paintModel.picture_num)\(MRLanguage(forKey: "pages"))"
+            header.totalNumLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
+            header.numberLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
             header.contentLabel.text = paintModel.paint_detail
             header.titleLabel.text = self.title
+            if self.isAutor == true && paintModel.title_url.count as! Int == 0 {
+                header.autoPicImageView.isHidden = true
+                header.autorTitleLabel.isHidden = false
+                header.autorTitleLabel.text = paintModel.paint_title
+            }else {
+                header.autoPicImageView.isHidden = false
+                header.autorTitleLabel.isHidden = true
+            }
             return header
         }
         return UICollectionReusableView.init()
@@ -235,27 +245,24 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             
             if style == 0 {
                 dataSource = paintModel.picture_H
-                header2.numberLabel.text = "\(paintModel.picture_H.count)\(MRLanguage(forKey: "pages"))"
             }else if style == 1 {
                 dataSource = paintModel.picture_arry
-                header2.numberLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
             }else if style == 2 {
                 dataSource = paintModel.picture_S
-                header2.numberLabel.text = "\(paintModel.picture_S.count)\(MRLanguage(forKey: "pages"))"
             }
+            header2.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
+
         }else {
             let header2 = header as! PicDetailHeaderCollectionReusableView
             
             if style == 0 {
                 dataSource = paintModel.picture_H
-                header2.numberLabel.text = "\(paintModel.picture_H.count)\(MRLanguage(forKey: "pages"))"
             }else if style == 1 {
                 dataSource = paintModel.picture_arry
-                header2.numberLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
             }else if style == 2 {
                 dataSource = paintModel.picture_S
-                header2.numberLabel.text = "\(paintModel.picture_S.count)\(MRLanguage(forKey: "pages"))"
             }
+            header2.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
         }
 
         self.collectionView?.reloadData()

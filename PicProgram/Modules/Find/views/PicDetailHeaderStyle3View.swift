@@ -10,6 +10,7 @@ import UIKit
 
 class PicDetailHeaderStyle3View: UICollectionReusableView {
 
+    @IBOutlet weak var autorTitleLabel: UILabel!
     @IBOutlet weak var picTitleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

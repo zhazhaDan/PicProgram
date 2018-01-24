@@ -25,7 +25,9 @@ enum XSImageSize:Int{
 extension UIImageView {
     func xs_setImage(_ imageUrl:String, imageSize:XSImageSize = .image_0, _ placeholderImage:String = "logo_white",forceRefresh:Bool = false){
         self.backgroundColor = xsColor_main_background
-        self.contentMode = .scaleAspectFit
+        if placeholderImage == "logo_white" {
+            self.contentMode = .scaleAspectFit
+        }
         var url = "\(imageUrl)_\(imageSize.rawValue)"
 //        if imageSize == .image_0 {
             url = imageUrl
@@ -37,7 +39,7 @@ extension UIImageView {
         self.kf.setImage(with: URL.init(string: url), placeholder: UIImage.init(named: placeholderImage), options: options, progressBlock: { (receivedSize, totalSize) in
            
         }) { (image, error, cacheType, imageUrl) in
-            if image != nil {
+            if image != nil && placeholderImage == "logo_white" {
                 self.contentMode = .scaleAspectFill
             }
         }

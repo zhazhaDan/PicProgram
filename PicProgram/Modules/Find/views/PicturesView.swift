@@ -69,6 +69,9 @@ class PicturesView: BaseView,UICollectionViewDelegateFlowLayout,UICollectionView
     do {
         try appDelegate.managedObjectContext.save()
     }catch {}
+    if dataSource.count == paint?.pictureModels.count {
+        return
+    }
         dataSource = (paint?.pictureModels)!
         collecView.reloadData()
     }

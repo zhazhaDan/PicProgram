@@ -68,6 +68,15 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
 
     }
     
+    func updateUI() {
+        if view1 == nil {
+            return
+        }
+        view1.isHidden = false
+        view2.isHidden = false
+        self.readTableView.setContentOffset(CGPoint.zero, animated: false)
+        self.scrollViewDidScroll(self.readTableView)
+    }
     
     func buildBigStarSayUI() {
         
@@ -145,20 +154,21 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
             return
         }
 //        bigStarSayBackView.bottom = readTableView.contentOffset.y + 180
-        let angle = scrollView.contentOffset.y * CGFloat.pi / bigStarSayBackView.height
+        var angle = scrollView.contentOffset.y * CGFloat.pi / bigStarSayBackView.height
         print(angle)
         
         if angle >= CGFloat.pi/2  {
-//            view1.isHidden = true
-//            view2.isHidden = true
-//            headerView.height = 180
-//            self.readTableView.tableHeaderView = headerView
-            return
+            view1.isHidden = true
+            view2.isHidden = true
+            headerView.height = 180
+            self.readTableView.tableHeaderView = headerView
+            angle = CGFloat.pi/2 - 0.01
+//            return
         }else {
-//            view1.isHidden = false
-//            view2.isHidden = false
-//            headerView.height = 180
-//            self.readTableView.tableHeaderView = headerView
+            view1.isHidden = false
+            view2.isHidden = false
+            headerView.height = 410
+            self.readTableView.tableHeaderView = headerView
 
         }
         self.view1MaskLayer.opacity = Float(angle / 1.5)

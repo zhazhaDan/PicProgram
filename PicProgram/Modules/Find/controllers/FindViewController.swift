@@ -35,7 +35,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             if self.pioneerModel == nil {
                 requestData()
             }
-            artView.readTableView.setContentOffset(CGPoint.zero, animated: true)
+            artView.updateUI()
         }else if sender.tag == 10 {
             sender.isSelected = true
             let btn:UIButton = self.view.viewWithTag(11) as! UIButton
@@ -44,6 +44,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             if self.recommandModel == nil {
                 requestData()
             }
+            todayView.setContentOffset(CGPoint.zero, animated: true)
             self.currentView.addSubview(todayView)
         }
     }
@@ -98,6 +99,9 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         customNavigationView()
         self.navigationItem.leftBarButtonItem = nil
+        if _art != nil {
+            artView.updateUI()
+        }
     }
     
     func customNavigationView() {
@@ -137,10 +141,8 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         }else if view == self.artView.bannerView {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
-            vc.title = MRLanguage(forKey: "Art For Today")
             vc.paint_id = self.pioneerModel.banner[index].paint_id
             self.navigationController?.pushViewController(vc, animated: true)
-
         }
     }
     

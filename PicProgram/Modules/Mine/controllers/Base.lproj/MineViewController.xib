@@ -32,7 +32,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEO-NM-UfP">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="658"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Lz5-Ae-3U2">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Lz5-Ae-3U2">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="229" id="hOi-4c-oGo"/>

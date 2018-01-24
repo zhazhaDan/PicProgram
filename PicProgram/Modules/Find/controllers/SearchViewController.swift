@@ -95,7 +95,9 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
     }
     
     override func requestData() {
+        HUDTool.show(.loading, view: self.view)
         network.requestData(.search_hotwords, params: nil, finishedCallback: { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
                 let datas = result["hot_words"]
                 self?.dataSource[1]["data"] = datas
@@ -202,8 +204,14 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
             
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeaderIdentifier, for: indexPath) as! SearchHeaderReuseableView
                 header.layoutIfNeeded()
-            let dict = dataSource[indexPath.section]
+            var dict = dataSource[indexPath.section]
+            let data = dict["data"] as! [String]
+
+            if data.count == 0 {
+                dict = dataSource[1]
+            }
             let title = dict["title"] as! String
+
             header.titleLabel.text = title
                 header.delegate = self
             let dict1 = dataSource[0]
@@ -236,9 +244,12 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
     }
     
     func searchKeywords(kw:String) {
+        HUDTool.show(.loading, view: self.view)
         network.requestData(.search_info, params: ["kw":kw], finishedCallback: { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
                 let keys = ["picture_info","authro_info","paint_info"]
+                self?.searchResultView.dataSource.removeAll()
                 for i in 0 ..< keys.count {
                     if result[keys[i]] != nil {
                         let array = result[keys[i]] as! Array<[String:Any]>
@@ -265,6 +276,9 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
                 }
                 self?.searchResultView.reloadDatas()
                 self?.searchResultView.selectIndex = 0
+                let button = self?.searchResultView.viewWithTag(10 + (self?.searchResultView.selectIndex)!)
+                self?.searchResultView.buttonAction(button as! UIButton)
+
                 self?.view.addSubview((self?.searchResultView)!)
             }
             }, nil)
@@ -286,6 +300,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
         if view == SearchResultListType.SearchResultListType_autor.hashValue {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
+            vc.isAutor = true
             vc.paintModel = (searchResultView.dataSource[view][index] as! PaintModel)
             self.navigationController?.pushViewController(vc, animated: true)
         }else  if view == SearchResultListType.SearchResultListType_production.hashValue {

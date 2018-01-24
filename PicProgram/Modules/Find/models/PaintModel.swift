@@ -30,7 +30,7 @@ class PaintModel: BaseObject {
     @objc var authro_name :String = ""
     
     override func setValue(_ value: Any?, forKey key: String) {
-        if key == "picture_info" {
+        if key == "picture_info"{
             let array = value as! Array<[String:Any]>
             for item in array {
                 let model = PictureModel.init(dict: item)
@@ -56,6 +56,13 @@ class PaintModel: BaseObject {
             }
         }
         self.picture_arry = paint.pictureModels
+        for item in picture_arry {
+            if item.picture_type == 1 {
+                picture_H.append(item)
+            }else if item.picture_type == 2 {
+                picture_S.append(item)
+            }
+        }
     }
     
     override init(dict: [String : Any]) {
@@ -69,7 +76,7 @@ class PaintModel: BaseObject {
 
 class PictureModel: BaseObject {
     @objc var picture_id :Int = 0
-    @objc var picture_type:Int = 0
+    @objc var picture_type:Int16 = 0
     @objc var title:String = ""
     @objc var author:String = ""
     @objc var time:String = ""
