@@ -63,10 +63,13 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
     }
     
     func updateUIData() {
-        listViewHeight.constant = CGFloat(Int(tableView.rowHeight) * (dataSource.count + 1) + 34)
+        var height = CGFloat(Int(tableView.rowHeight) * (dataSource.count + 1) + 34)
+        if height >= UIScreen.main.bounds.size.height - 100 {
+            height = UIScreen.main.bounds.size.height - 100
+        }
+        listViewHeight.constant = height
         self.updateConstraints()
         tableView.reloadData()
-
     }
     
     @IBAction func tapAction(_ sender: Any?) {
@@ -144,6 +147,7 @@ class CollectPaintsListTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         imageView?.size = CGSize.init(width: 35, height: 35)
+        imageView?.clipsToBounds = true
         textLabel?.x = 65
         detailTextLabel?.x = 65
         self.separatorInset = UIEdgeInsetsMake(0, 65, 0, 0)

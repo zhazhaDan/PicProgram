@@ -21,6 +21,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = MRLanguage(forKey: "Category")
+        customNavigationView()
         self.scrollView?.setContentOffset(CGPoint.init(x: (scrollView?.width)! * CGFloat(selectedIndex), y: 0), animated: true)
         if self.customViews.count > 0 {
             (customViews.first as! ClassifyCommonListView).collecView.setContentOffset(CGPoint.zero, animated: false)
@@ -105,7 +106,6 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         let headerLineView = UIImageView.init(image: #imageLiteral(resourceName: "jianbiantiao"))
         headerLineView.frame = CGRect.init(x: 0, y: NavigationBarBottom + 44, width: self.view.width, height: 6)
         self.view.addSubview(headerLineView)
-        customNavigationView()
         
         scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: headerLineView.bottom, width: self.view.width, height: self.view.height - headerLineView.bottom - TabbarHeight))
         scrollView?.showsVerticalScrollIndicator = false
