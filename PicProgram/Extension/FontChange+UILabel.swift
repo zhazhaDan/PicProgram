@@ -9,7 +9,7 @@
 import Foundation
 extension UILabel {
     @objc func myAwakeFromNib() {
-        if self.font.fontDescriptor.postscriptName.hasSuffix(".SFUIText") || self.font.fontDescriptor.postscriptName.hasPrefix(".SFUIText") {
+        if self.font.fontDescriptor.postscriptName.hasSuffix(".SFUIText") || self.font.fontDescriptor.postscriptName.hasPrefix(".SFUIText") || self.font.fontDescriptor.postscriptName.hasPrefix(".SFUIDisplay") {
             let font = xsFont(self.font.pointSize, family: "FZSKBXKJW--GB1-0")
             self.font = font
         }

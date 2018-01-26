@@ -11,7 +11,9 @@ import UIKit
 class AccountSafeViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate {
 
     var tableView:UITableView!
-    var titles:[String] = [MRLanguage(forKey: "Bind"),MRLanguage(forKey: "Change Password")]
+    var titles:[String] = [
+//        MRLanguage(forKey: "Bind"),
+        MRLanguage(forKey: "Change Password")]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = MRLanguage(forKey: "Account Security")
