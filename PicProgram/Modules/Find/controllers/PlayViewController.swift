@@ -58,10 +58,18 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         self.navigationController?.view.addSubview(moreView)
         
         let pic = Picture.fetchPicture(forPicId: Int64(Int(dataSource[currentIndex].picture_id)))
-        if pic == nil || (pic?.paint == nil) || (pic?.paint?.paint_type != 1) {
+        if pic == nil || (pic?.paints == nil) || pic?.paints?.count == 0 {
             moreView.isCollected = false
-        }else {
-            moreView.isCollected = (pic?.paint == nil ? false : true)
+        }else if pic?.paints?.count as! Int > 0 {
+            for paint in (pic?.paints)! {
+                let p = paint as! Paint
+                if p.paint_type == 1 {
+                    moreView.isCollected = true
+                    break
+                }else {
+                    moreView.isCollected = false
+                }
+            }
         }
     }
     override func viewDidLoad() {
@@ -189,8 +197,16 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     
     func cancelCollectPicture() {
         let pic = Picture.fetchPicture(forPicId: Int64(Int(dataSource[currentIndex].picture_id)))
-        let paint = pic?.paint
-        paint?.removeFromPics(pic!)
+
+        if pic?.paints?.count as! Int > 0 {
+            for paint in (pic?.paints)! {
+                let p = paint as! Paint
+                if p.paint_type == 1 {
+                    p.removeFromPics(pic!)
+                    break
+                }
+            }
+        }
         do {
             try appDelegate.managedObjectContext.save()
             HUDTool.show(.text, text: MRLanguage(forKey: "Cancel save successful"), delay: 1, view: (self.navigationController?.view)!, complete: nil)
@@ -250,7 +266,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         pic?.coverProperties(model: dataSource[currentIndex])
         let paint = Emotion.fetchEmotionPaint(forEmotionName: sender.title(for: .normal)!)
         paint?.addToPictures(pic!)
-        pic?.emotion = paint
+        pic?.emotions?.adding(paint)
         do {
             try appDelegate.managedObjectContext.save()
             HUDTool.show(.text, text: MRLanguage(forKey: "Add Mood successful"), delay: 1, view: (self.navigationController?.view)!, complete: {[weak self] in

@@ -2,7 +2,7 @@
 //  Emotion+CoreDataProperties.swift
 //  
 //
-//  Created by sliencio on 2018/1/24.
+//  Created by 龚丹丹 on 2018/1/26.
 //
 //
 
