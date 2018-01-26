@@ -101,7 +101,6 @@ class RegistThirdAppDelegate: UIResponder,GeTuiSdkDelegate,UNUserNotificationCen
             UIApplication.shared.registerForRemoteNotifications()
             let settings = UIUserNotificationSettings.init(types: [.alert,.badge,.sound], categories: nil)
             UIApplication.shared.registerUserNotificationSettings(settings)
-            
         } else if #available(iOS 8.0, *){
             // Fallback on earlier versions
             UIApplication.shared.registerForRemoteNotifications()

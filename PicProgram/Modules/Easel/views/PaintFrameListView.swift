@@ -49,7 +49,13 @@ class PaintFrameListView: BaseView,UICollectionViewDelegate,UICollectionViewDele
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (dataSource.count + (9 - dataSource.count)) 
+        if dataSource.count < 9 {
+            return (dataSource.count + (9 - dataSource.count))
+        }else if dataSource.count % 3 == 0 {
+            return dataSource.count
+        }else{
+            return (dataSource.count + (3 - dataSource.count%3))
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: self.collectionView.width/3, height: 187)

@@ -15,34 +15,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var isDone:Bool = false
     var isLetterShowed:Bool = false
-    var gifWindow:UIWindow?
+//    var gifWindow:UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIBarButtonItem.appearance().tintColor = xsColor_text_black
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.rootViewController = BaseTabBarController()//GifViewController()
         //BaseTabBarController()// HomePageNavigationController.init(rootViewController: BaseTabBarController())
-        self.perform(#selector(gifDone), with: nil, afterDelay: 4, inModes: [.commonModes,.defaultRunLoopMode,.UITrackingRunLoopMode])
-        self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
-        self.gifWindow?.rootViewController = GifViewController()
-        self.gifWindow?.makeKeyAndVisible()
+//        self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
+//        self.gifWindow?.rootViewController = GifViewController()
+        self.window?.makeKeyAndVisible()
+        let gitVC = GifView.init(frame: UIScreen.main.bounds)
+        gitVC.buildUI()
+        self.window?.addSubview(gitVC)
         return RegistThirdAppDelegate.shareDelegate.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
-    @objc func gifDone() {
-        if isDone == true {
-            return
-        }
-        UIView.animate(withDuration: 0.5, animations: {
-            self.gifWindow?.alpha = 0.2
-        }) { (finished) in
-            if finished == true {
-                self.window?.makeKeyAndVisible()
-                self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
-                self.gifWindow?.backgroundColor = UIColor.clear
-                self.isDone = true
-            }
-        }
-    }
+//    @objc func gifDone() {
+//        if isDone == true {
+//            return
+//        }
+//        UIView.animate(withDuration: 0.5, animations: {
+//            self.gifWindow?.alpha = 0.2
+//        }) { (finished) in
+//            if finished == true {
+//                self.window?.makeKeyAndVisible()
+//                self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
+//                self.gifWindow?.backgroundColor = UIColor.clear
+//                self.isDone = true
+//            }
+//        }
+//    }
     
     func changeLanguage() {
         HUDTool.show(.loading, view: self.window!)
@@ -53,7 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
             (tabController.selectedViewController as!UINavigationController).pushViewController(vc, animated: true)
         }
-        
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
