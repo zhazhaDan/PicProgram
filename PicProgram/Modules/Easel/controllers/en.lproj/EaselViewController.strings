@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "我的画单"; ObjectID = "SwZ-xN-Jm2"; */
+"SwZ-xN-Jm2.normalTitle" = "My art work list";
+
+/* Class = "UIButton"; normalTitle = "收藏画单"; ObjectID = "iHN-tf-Zc7"; */
+"iHN-tf-Zc7.normalTitle" = "My collection";
+
+/* Class = "UIButton"; normalTitle = "最近浏览"; ObjectID = "s3I-a5-JHF"; */
+"s3I-a5-JHF.normalTitle" = "Recent viewed";

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="aDR-k5-mTZ" customClass="WifiSettingView" customModule="PicProgram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rV-NF-JAo">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoA-9N-PvJ">
+                            <rect key="frame" x="12" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Im7-oi-XjO"/>
+                                <constraint firstAttribute="height" constant="40" id="kCv-gd-rZd"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" image="fanhui"/>
+                            <connections>
+                                <action selector="backAction:" destination="aDR-k5-mTZ" eventType="touchUpInside" id="d1r-vg-XKr"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIP-Qc-gMA">
+                            <rect key="frame" x="62" y="16" width="263" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.22791916130000001" green="0.353222698" blue="0.58043831589999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yoA-9N-PvJ" firstAttribute="leading" secondItem="2rV-NF-JAo" secondAttribute="leading" constant="12" id="JVQ-ew-9ZS"/>
+                        <constraint firstItem="mIP-Qc-gMA" firstAttribute="leading" secondItem="yoA-9N-PvJ" secondAttribute="trailing" constant="10" id="Tsa-9r-PZC"/>
+                        <constraint firstAttribute="trailing" secondItem="mIP-Qc-gMA" secondAttribute="trailing" constant="50" id="bIi-WK-it5"/>
+                        <constraint firstItem="yoA-9N-PvJ" firstAttribute="centerY" secondItem="2rV-NF-JAo" secondAttribute="centerY" id="gcU-64-k5H"/>
+                        <constraint firstItem="mIP-Qc-gMA" firstAttribute="centerY" secondItem="yoA-9N-PvJ" secondAttribute="centerY" id="s2s-me-Q9g"/>
+                        <constraint firstAttribute="height" constant="50" id="zXb-ZG-GJ0"/>
+                    </constraints>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ds-oY-1XC" userLabel="wifiSetting">
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7oB-JA-txs">
+                            <rect key="frame" x="42" y="21" width="291" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="GXf-qC-k3N"/>
+                                <constraint firstAttribute="width" constant="291" id="oIU-g3-B1v"/>
+                            </constraints>
+                            <color key="textColor" red="0.22791916130000001" green="0.353222698" blue="0.58043831589999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-1Z-KHj">
+                            <rect key="frame" x="42" y="87" width="291" height="40"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5se-Iz-bxh">
+                            <rect key="frame" x="42" y="221" width="291" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="BhB-DG-ypj"/>
+                            </constraints>
+                            <state key="normal" title="生成二维码" backgroundImage="00dengluzhuce_denglu_dianjianniu">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="connectWifiAction:" destination="aDR-k5-mTZ" eventType="touchUpInside" id="vgm-q2-eP7"/>
+                            </connections>
+                        </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保存密码" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MY-dk-nag">
+                            <rect key="frame" x="283.5" y="153" width="49.5" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="5f8-As-OpO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zr-hx-e5A">
+                            <rect key="frame" x="263.5" y="153" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="QjW-eB-Q47"/>
+                                <constraint firstAttribute="width" constant="20" id="uh1-EF-vsJ"/>
+                            </constraints>
+                            <state key="selected" image="icons8-checkmark"/>
+                            <connections>
+                                <action selector="rememberAction:" destination="aDR-k5-mTZ" eventType="touchUpInside" id="SgK-hS-JrA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="0MY-dk-nag" firstAttribute="top" secondItem="RtX-1Z-KHj" secondAttribute="bottom" constant="26" id="28K-VM-zLE"/>
+                        <constraint firstItem="RtX-1Z-KHj" firstAttribute="top" secondItem="7oB-JA-txs" secondAttribute="bottom" constant="26" id="4aq-fu-nKZ"/>
+                        <constraint firstItem="0MY-dk-nag" firstAttribute="trailing" secondItem="RtX-1Z-KHj" secondAttribute="trailing" id="5YZ-88-ued"/>
+                        <constraint firstItem="RtX-1Z-KHj" firstAttribute="leading" secondItem="7oB-JA-txs" secondAttribute="leading" id="7u2-Wa-2pY"/>
+                        <constraint firstItem="1Zr-hx-e5A" firstAttribute="trailing" secondItem="0MY-dk-nag" secondAttribute="leading" id="Dg1-d3-hVN"/>
+                        <constraint firstItem="RtX-1Z-KHj" firstAttribute="trailing" secondItem="7oB-JA-txs" secondAttribute="trailing" id="JmP-ng-vAE"/>
+                        <constraint firstItem="RtX-1Z-KHj" firstAttribute="height" secondItem="7oB-JA-txs" secondAttribute="height" id="Jtx-4k-SdQ"/>
+                        <constraint firstItem="7oB-JA-txs" firstAttribute="centerX" secondItem="1ds-oY-1XC" secondAttribute="centerX" id="OaA-8a-pYn"/>
+                        <constraint firstItem="5se-Iz-bxh" firstAttribute="top" secondItem="RtX-1Z-KHj" secondAttribute="bottom" constant="94" id="bMz-rJ-6IM"/>
+                        <constraint firstItem="7oB-JA-txs" firstAttribute="top" secondItem="1ds-oY-1XC" secondAttribute="top" constant="21" id="dUp-QT-y8d"/>
+                        <constraint firstItem="5se-Iz-bxh" firstAttribute="trailing" secondItem="RtX-1Z-KHj" secondAttribute="trailing" id="hxz-I5-tjb"/>
+                        <constraint firstItem="5se-Iz-bxh" firstAttribute="leading" secondItem="RtX-1Z-KHj" secondAttribute="leading" id="pyE-5q-heG"/>
+                        <constraint firstItem="1Zr-hx-e5A" firstAttribute="top" secondItem="0MY-dk-nag" secondAttribute="top" id="zsZ-ov-4W4"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dt-0S-aLU" userLabel="wifiCode">
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W82-Qm-5BW">
+                            <rect key="frame" x="114" y="41" width="147" height="147"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="W82-Qm-5BW" secondAttribute="height" id="VQj-ZD-FtG"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请进入Moran画框设置页面并进入Wi-Fi连接选项" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpF-ja-6fS">
+                            <rect key="frame" x="94" y="194" width="187" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="ndU-Sw-eKJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.22791916130000001" green="0.353222698" blue="0.58043831589999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.71374017000000001" green="0.71367162470000001" blue="0.71764856580000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="W82-Qm-5BW" firstAttribute="top" secondItem="7dt-0S-aLU" secondAttribute="top" constant="41" id="Isu-2t-5wN"/>
+                        <constraint firstItem="ZpF-ja-6fS" firstAttribute="trailing" secondItem="W82-Qm-5BW" secondAttribute="trailing" constant="20" id="PI1-uX-1ze"/>
+                        <constraint firstAttribute="trailing" secondItem="W82-Qm-5BW" secondAttribute="trailing" constant="114" id="SsU-4U-TTh"/>
+                        <constraint firstItem="ZpF-ja-6fS" firstAttribute="leading" secondItem="W82-Qm-5BW" secondAttribute="leading" constant="-20" id="eWF-UG-Gvj"/>
+                        <constraint firstItem="ZpF-ja-6fS" firstAttribute="top" secondItem="W82-Qm-5BW" secondAttribute="bottom" constant="6" id="wBV-kI-0ch"/>
+                        <constraint firstItem="W82-Qm-5BW" firstAttribute="leading" secondItem="7dt-0S-aLU" secondAttribute="leading" constant="114" id="y39-eV-kPd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="1ds-oY-1XC" secondAttribute="bottom" id="1Sj-T5-clV"/>
+                <constraint firstAttribute="trailing" secondItem="2rV-NF-JAo" secondAttribute="trailing" id="2ZX-wh-7iC"/>
+                <constraint firstItem="2rV-NF-JAo" firstAttribute="top" secondItem="aDR-k5-mTZ" secondAttribute="top" id="Bjz-Om-dV0"/>
+                <constraint firstItem="2rV-NF-JAo" firstAttribute="leading" secondItem="aDR-k5-mTZ" secondAttribute="leading" id="LPc-XQ-uDH"/>
+                <constraint firstItem="7dt-0S-aLU" firstAttribute="top" secondItem="1ds-oY-1XC" secondAttribute="top" id="Oxj-4J-sWS"/>
+                <constraint firstItem="1ds-oY-1XC" firstAttribute="leading" secondItem="aDR-k5-mTZ" secondAttribute="leading" id="Uak-Qp-bwU"/>
+                <constraint firstItem="7dt-0S-aLU" firstAttribute="trailing" secondItem="1ds-oY-1XC" secondAttribute="trailing" id="agG-3w-3mv"/>
+                <constraint firstItem="7dt-0S-aLU" firstAttribute="bottom" secondItem="1ds-oY-1XC" secondAttribute="bottom" id="fYQ-dc-qTn"/>
+                <constraint firstItem="7dt-0S-aLU" firstAttribute="leading" secondItem="1ds-oY-1XC" secondAttribute="leading" id="kvZ-tY-IEY"/>
+                <constraint firstItem="1ds-oY-1XC" firstAttribute="top" secondItem="2rV-NF-JAo" secondAttribute="bottom" id="oL6-bs-3iF"/>
+                <constraint firstAttribute="trailing" secondItem="1ds-oY-1XC" secondAttribute="trailing" id="znd-M5-anq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="passTextfield" destination="RtX-1Z-KHj" id="Ngc-kZ-4Pd"/>
+                <outlet property="statusButton" destination="1Zr-hx-e5A" id="hcP-IO-Vsh"/>
+                <outlet property="wifiCodeView" destination="7dt-0S-aLU" id="yFa-Xj-Tnz"/>
+                <outlet property="wifiNameTextfield" destination="7oB-JA-txs" id="6hy-sq-glB"/>
+                <outlet property="wifiQrCodeImageView" destination="W82-Qm-5BW" id="odu-dn-VFu"/>
+                <outlet property="wifiSettingView" destination="1ds-oY-1XC" id="6RF-DN-kYN"/>
+                <outlet property="wifiTitleLabel" destination="mIP-Qc-gMA" id="ONH-4Z-JpE"/>
+                <outletCollection property="gestureRecognizers" destination="JGt-xU-ShC" appends="YES" id="lkY-lr-y0s"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="JGt-xU-ShC">
+            <connections>
+                <action selector="tapAction:" destination="aDR-k5-mTZ" id="Sk4-ll-cTL"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="00dengluzhuce_denglu_dianjianniu" width="291" height="32"/>
+        <image name="fanhui" width="10" height="17"/>
+        <image name="icons8-checkmark" width="17" height="12"/>
+    </resources>
+</document>

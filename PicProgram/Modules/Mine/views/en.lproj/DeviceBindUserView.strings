@@ -1,0 +1,6 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8rk-DL-amw"; */
+"8rk-DL-amw.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "已绑定该画框用户"; ObjectID = "HNh-fQ-zBo"; */
+"HNh-fQ-zBo.text" = "Connected Users";

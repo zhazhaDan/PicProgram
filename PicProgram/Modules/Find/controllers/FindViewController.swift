@@ -19,16 +19,6 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         super.viewDidLoad()
         requestData()
         self.currentView.addSubview(todayView)
-        
-        let f = UIFont.familyNames
-        for string in f {
-            print(string+":-->")
-            let fs = UIFont.fontNames(forFamilyName: string)
-            for fo in fs {
-                print(fo+"++++")
-            }
-            print("\n")
-        }
     }
 
     
@@ -45,11 +35,16 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             if self.pioneerModel == nil {
                 requestData()
             }
+            artView.updateUI()
         }else if sender.tag == 10 {
             sender.isSelected = true
             let btn:UIButton = self.view.viewWithTag(11) as! UIButton
             btn.isSelected = false
             //今日推荐
+            if self.recommandModel == nil {
+                requestData()
+            }
+            todayView.setContentOffset(CGPoint.zero, animated: true)
             self.currentView.addSubview(todayView)
         }
     }
@@ -60,6 +55,9 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
                 _today = TodayRecommandView()
                 _today.bannerView.delegate = self
                 _today.cDelegate = self
+                _today.xs_addRefresh(refresh: .normal_header_refresh, action: {
+                    self.requestData()
+                })
             }
             return _today
         }
@@ -74,6 +72,9 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
                 _art = ArtView.init(frame:self.currentView.bounds)
                 _art.bannerView.delegate = self
                 _art.cDelegate = self
+                _art.readTableView.xs_addRefresh(refresh: .normal_header_refresh, action: {
+                    self.requestData()
+                })
             }
             return _art
         }
@@ -82,30 +83,50 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         }
         
     }
+    
+    override func buildUI() {
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         todayView.frame = self.currentView.bounds
         customNavigationView()
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        customNavigationView()
+        self.navigationItem.leftBarButtonItem = nil
+        if _art != nil {
+            artView.updateUI()
+        }
     }
     
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
+
         let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 320, height: 26))
         button.setBackgroundImage(#imageLiteral(resourceName: "01faixian_jinrituijian_shousuolan"), for: .normal)
-        button.setTitle("艺术品名称/作者", for: .normal)
+        button.setTitle(MRLanguage(forKey: "Art works/Artist"), for: .normal)
         button.setImage(#imageLiteral(resourceName: "01faxian_jinrituijian_shousuo"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
         button.titleLabel?.font = xsFont(12)
         button.setTitleColor(xsColor_placeholder_grey, for: .normal)
         button.addTarget(self, action: #selector(searchAction), for: .touchUpInside)
         self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { [weak self](tag) in
-            let vc = PlayViewController.player
-            self?.navigationController?.pushViewController(vc, animated: true)
+            if UserInfo.user.checkUserLogin() {
+                let vc = PlayViewController.player
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }else {
+                let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+                let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+                self?.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+                
+            }
+            
         }
         self.baseNavigationController?.topViewController?.navigationItem.titleView = button
     }
@@ -113,15 +134,15 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     func bannerViewDidSelected(view: BannerView, _ index: Int) {
         if view == self.todayView.bannerView {
             let layout = UICollectionViewFlowLayout.init()
-            let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
+            let vc = PicDetailActCollectionViewController.init(collectionViewLayout: layout)
             vc.paint_id = self.recommandModel.banner[index].paint_id
+            vc.title = MRLanguage(forKey: "Art For Today")
             self.navigationController?.pushViewController(vc, animated: true)
         }else if view == self.artView.bannerView {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
             vc.paint_id = self.pioneerModel.banner[index].paint_id
             self.navigationController?.pushViewController(vc, animated: true)
-
         }
     }
     
@@ -135,31 +156,38 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         if selectedIndex == 1 {
             apiType = .discovery_poineer
         }
-        
+        HUDTool.show(.loading, view: self.view)
         network.requestData(apiType, params: nil, finishedCallback: { [weak self](result) in
+            HUDTool.hide()
+            if self?._art != nil {
+                self?._art.readTableView.xs_endRefreshing()
+            }
+            if self?._today != nil {
+                self?._today.xs_endRefreshing()
+            }
             if result["ret"] as! Int == 0 {
                 if self?.selectedIndex == 0 {
                     self?.recommandModel = FindTodayRecomModel.init(dict: result["recommend_home_page"] as! [String : Any])
                     self?.todayView.recommandModel = (self?.recommandModel)!
+                    self?.todayView.bannerView.updateUI()
                 }else {
                     self?.pioneerModel = PioneerModel.init(dict: result["pioneer_home"] as! [String : Any])
                     self?.artView.pioneerModel = (self?.pioneerModel)!
+                    self?.artView.bannerView.updateUI()
                 }
             }
         }, nil)
     }
     
     func seeMoreNews() {
-        let layout = UICollectionViewFlowLayout.init()
-        let controller = RecommandListCollectionViewController.init(collectionViewLayout: layout)
-        controller.title = "最新"
+        let controller = RecommandListCollectionViewController()
+        controller.title = MRLanguage(forKey: "Recent")
         controller.type = 1
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func seeMoreHots() {
-        let layout = UICollectionViewFlowLayout.init()
-        let controller = RecommandListCollectionViewController.init(collectionViewLayout: layout)
-        controller.title = "最热"
+        let controller = RecommandListCollectionViewController()
+        controller.title = MRLanguage(forKey: "Popular")
         controller.type = 2
         self.navigationController?.pushViewController(controller, animated: true)
     }
@@ -167,10 +195,11 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
         let vc = ReadListViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    func viewDidSelected(view: ItemView, paint_id: Int) {
+    func viewDidSelected(view: ItemView, paint_id: Int64) {
         let layout = UICollectionViewFlowLayout.init()
         let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
         vc.paintModel = view.model
+        vc.title = view.model.paint_title
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func listView(view: UIView, didSelected atIndex: Int) {
@@ -181,11 +210,28 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    func praiseBigStar() {
-        network.requestData(.discovery_mqlove, params: ["mq_id":pioneerModel.master_quote.mq_id], finishedCallback: { (result) in
-            if result["ret"] as! Int == 0 {
-                
-            }
-        }, nil)
+//    func praiseBigStar() {
+//        network.requestData(.discovery_mqlove, params: ["mq_id":pioneerModel.master_quote.mq_id], finishedCallback: { (result) in
+//            if result["ret"] as! Int == 0 {
+//
+//            }
+//        }, nil)
+//    }
+    func shareBigStar() {
+        let view = Bundle.main.loadNibNamed("BigStarShareView", owner: self, options: nil)?.first as! BigStarShareView
+        
+        
+        view.cell.contentLabel.text = pioneerModel.master_quote.mq_content
+        view.cell.sayNumLabel.isHidden = true
+        let date = Date()
+        view.cell.weendayLabel.text = date.getDayOfWeek()
+        view.cell.dateLabel.text = date.getUpperDate()
+        view.cell.praiseButton.isHidden = true
+        view.cell.shareButton.isHidden = true
+        
+        
+        view.frame = UIScreen.main.bounds
+        self.tabBarController?.view.addSubview(view)
     }
+    
 }

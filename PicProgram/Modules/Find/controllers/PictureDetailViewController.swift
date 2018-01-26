@@ -8,13 +8,17 @@
 
 import UIKit
 
+let HistoryPaintName = "\(MRLanguage(forKey: "My Account"))\(MRLanguage(forKey: "History Viewed"))"
+
 class PictureDetailViewController: BaseViewController {
 
+    @IBOutlet weak var contentTitleLabel: UILabel!
     @IBOutlet weak var picImageView: UIImageView!
     @IBOutlet weak var autorLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var picInfoLabel: UILabel!
-    var _model:PictureModel!
+    @IBOutlet weak var titleLabel: UILabel!
+    private var _model:PictureModel!
     var model:PictureModel {
         set{
             _model = newValue
@@ -38,12 +42,48 @@ class PictureDetailViewController: BaseViewController {
         }else {
            self.updateUI()
         }
+        fetchHistoryPaint()
+    }
+    
+    func fetchHistoryPaint() {
+        let paint = Paint.fetchPaint(key: .name, value: HistoryPaintName, create: true, painttype: 3)
+        let picture = Picture.fetchPicture(forPicId: Int64(model.picture_id))
+//        if (paint?.pics?.contains(picture))! {
+//            paint?.removeFromPics(picture!)
+//        }
+        picture?.coverProperties(model: model)
+        paint?.addToPics(picture!)
+        do {
+            try appDelegate.managedObjectContext.save()
+        }catch {}
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func updateUI() {
-        picImageView.xs_setImage(model.picture_url)
-        autorLabel.text = model.title
-        timeLabel.text = model.time + "作"
+        self.titleLabel.text = model.title
+        if model.detail_url.count as! Int > 0 {
+            picImageView.xs_setImage(model.detail_url)
+        }else {
+            picImageView.xs_setImage(model.picture_url)
+        }
+        autorLabel.text = model.author
+        contentTitleLabel.text = model.title
+        if model.time.count as! Int > 0 {
+            timeLabel.text = model.time + MRLanguage(forKey: "made")
+        }
         picInfoLabel.text = model.detail
     }
 
@@ -56,6 +96,9 @@ class PictureDetailViewController: BaseViewController {
         }, nil)
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

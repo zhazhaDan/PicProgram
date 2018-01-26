@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PicProgram.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>4430C513C6841825B9969B9C1D4557905724BE66</string>
+				<key>dateExpires</key>
+				<string>2018/12/11</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>4430C513C6841825B9969B9C1D4557905724BE66</string>
+						<key>dateExpires</key>
+						<string>2018/12/11</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>Alamofire.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>VR5KL66BH3</string>
+						<key>name</key>
+						<string>Getron Space (Beijing) Technology Co., Ltd</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>4430C513C6841825B9969B9C1D4557905724BE66</string>
+						<key>dateExpires</key>
+						<string>2018/12/11</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>Kingfisher.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>VR5KL66BH3</string>
+						<key>name</key>
+						<string>Getron Space (Beijing) Technology Co., Ltd</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>VR5KL66BH3.com.arttouchthemuseum.cnversion</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>VR5KL66BH3</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>VR5KL66BH3.com.arttouchthemuseum.cnversion</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>PicProgram.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>036e1c52-e965-484f-ba55-8a733e886da0</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: com.arttouchthemuseum.cnversion</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>VR5KL66BH3</string>
+				<key>name</key>
+				<string>Getron Space (Beijing) Technology Co., Ltd</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

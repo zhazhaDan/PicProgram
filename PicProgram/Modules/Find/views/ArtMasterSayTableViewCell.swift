@@ -10,7 +10,11 @@ import UIKit
 
 class ArtMasterSayTableViewCell: UITableViewCell {
     open weak var delegate: FindViewProtocol!
+    open weak var shareDelegate: FindViewProtocol!
 
+    @IBOutlet weak var materialImageView: UIImageView!
+    @IBOutlet weak var shareLabel: UILabel!
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var praiseButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weendayLabel: UILabel!
@@ -23,6 +27,9 @@ class ArtMasterSayTableViewCell: UITableViewCell {
         self.selectedBackgroundView?.backgroundColor = xsColor_main_white
     }
 
+    @IBAction func shareAction(_ sender: Any) {
+        shareDelegate.shareBigStar!()
+    }
     @IBAction func prainAction(_ sender: Any) {
         delegate.praiseBigStar!()
     }

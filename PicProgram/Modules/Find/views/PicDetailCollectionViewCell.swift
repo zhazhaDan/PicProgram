@@ -11,11 +11,16 @@ import UIKit
 class PicDetailCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var picImageView: UIImageView!
+    var isDetail:Bool = false
     var _model:PictureModel!
     var model:PictureModel {
         set{
             _model = newValue
             picImageView.xs_setImage(_model.picture_url)
+            if _model.detail_url != nil && _model.detail_url.count as! Int > 0 && isDetail == true {
+                picImageView.xs_setImage(_model.detail_url)
+            }
+
         }
         get{
             return _model

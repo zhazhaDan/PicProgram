@@ -24,6 +24,8 @@ extension Date {
             let timeInterval:TimeInterval = TimeInterval(time as! NSNumber)
             let date = Date.init(timeIntervalSince1970: timeInterval)
             return dateFormatter.string(from: date)
+        }else if time is Date {
+            return dateFormatter.string(from: time as! Date)
         }
         return "00:00:00"
     }

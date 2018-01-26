@@ -8,6 +8,9 @@
 
 import UIKit
 
+//统一通知名称
+let NotificationName_LocalPaintCreateSuccessful = "NotificationName_LocalPaintCreateSuccessful"
+
 //统一常量定义
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -44,11 +47,11 @@ func xsColor(_ color:String,alpha:Float = 1) -> UIColor {
 //通用色值
 let xsColor_title_normal = xsColor("adadad")
 let xsColor_title_select = xsColor("4a4a4a")
-let xsColor_main_blue = xsColor("189df9")
+let xsColor_main_blue = xsColor("2f5b99")
 let xsColor_main_red = xsColor("fe393d")
 let xsColor_main_white = xsColor("ffffff")
 let xsColor_main_black = xsColor("000000")
-let xsColor_main_yellow = xsColor("cdb291")
+let xsColor_main_yellow = xsColor("c49255")
 let xsColor_line_grey = xsColor("ededed")
 let xsColor_line_lightgrey = xsColor("f2f2f2")
 let xsColor_mine_back = xsColor("edf0f5")
@@ -78,6 +81,11 @@ func xsBoldFont(_ size:CGFloat, family:String = "FZSKBXKJW--GB1-0") -> UIFont {
     return UIFont.init(name: family, size: size*CGFloat(fontScale))!
 
 //    return UIFont.boldSystemFont(ofSize: size*CGFloat(fontScale))
+}
+
+//语言
+func MRLanguage(forKey key:String) -> String {
+    return BaseBundle().getString(forKey: key)
 }
 
 /**

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController,UIGestureRecognizerDelegate {
     var scrollView:UIScrollView?
     var backTitle:String!
 
@@ -20,15 +20,33 @@ class BaseViewController: UIViewController {
         self.extendedLayoutIncludesOpaqueBars = true
         self.view.backgroundColor = xsColor_main_white
         buildUI()
-        // Do any additional setup after loading the view.
+          // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.navigationController != nil {
+            self.baseNavigationController?.addLeftNavigationBarItem {[weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            //            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.backItem?.title = backTitle
-        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: backTitle, style: .done, target: nil, action: nil)
-
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        if self.navigationController != nil {
+            self.baseNavigationController?.addLeftNavigationBarItem {[weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            //            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        }
+       
+}
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     func buildUI() {
@@ -46,6 +64,12 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+//        if (self.navigationController?.viewControllers.count as! Int) <= 1 {
+//            return false
+//        }
+        return true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

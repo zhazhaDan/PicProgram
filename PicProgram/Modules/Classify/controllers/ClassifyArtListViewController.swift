@@ -10,7 +10,8 @@ import UIKit
 
 private let reuseIdentifier = "PicDetailCollectionViewCell"
 
-class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate {
+class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
+    @IBOutlet weak var subTitleWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var classTitleButton: UIButton!
     @IBOutlet weak var showVBackView: UIView!
     @IBOutlet weak var showTableListView: UITableView!
@@ -18,19 +19,46 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
       var dataSource: Array<[String:Any]>!
     var selectedIndex:Int = 0
     var model:PaintModel!
+    var last_id:Int32 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
-        self.title = "分类"
+        self.title = MRLanguage(forKey: "Category")
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
+        self.subTitleWidthConstraint.constant = (self.classTitleButton.titleLabel?.textSize().width)! + 12
+        self.view.updateConstraints()
+        self.baseNavigationController?.addRightNavigationBarItems(["08wode_shebeiguanli"], ["08wode_shebeiguanli"]) { [weak self](tag) in
+            if UserInfo.user.checkUserLogin() {
+                let vc = PlayViewController.player
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }else {
+                let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+                let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+                self?.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+                
+            }
+            
+        }
+    }
+    
     override func buildUI() {
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier:reuseIdentifier)
         showTableListView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        collectionView.xs_addRefresh(refresh: .normal_header_refresh) {
+            self.last_id = 0
+            self.requestData()
+        }
+        collectionView.xs_addRefresh(refresh: .normal_footer_refresh) {
+            self.requestData()
+        }
     }
     
     @IBAction func tapChangePaintAction(_ sender: Any) {
@@ -39,9 +67,27 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
     override func requestData() {
         let paint_id = dataSource[selectedIndex]["paint_id"]
-        network.requestData(.paint_info, params: ["paint_id":2], finishedCallback: { [weak self](result) in
+        HUDTool.show(.loading, view: self.view)
+        network.requestData(.paint_info, params: ["paint_id":paint_id,"last_id":last_id], finishedCallback: { [weak self](result) in
+            HUDTool.hide()
+            self?.collectionView.xs_endRefreshing()
             if result["ret"] as! Int == 0 {
-                self?.model = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
+               
+                if self?.last_id == 0 {
+                    self?.model = nil
+                }
+                let info = result["paint_detail"] as! [String : Any]
+                if self?.model != nil {
+                    self?.model.setValue(info["picture_info"], forKey: "picture_info")
+                }else {
+                    self?.model = PaintModel.init(dict: info)
+                }
+                if result["last_id"] != nil {
+                    self?.last_id = result["last_id"] as! Int32
+                }else {
+                    self?.last_id = -1
+                    self?.collectionView.xs_endRefreshingWithNoMoreData()
+                }
                 self?.collectionView?.reloadData()
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.8, view: (self?.view)!, complete: nil)
@@ -76,10 +122,20 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PlayViewController.player
-        vc.dataSource = model.picture_arry
-        vc.title = model.paint_title
-        self.navigationController?.pushViewController(vc, animated: true)
+       
+        if UserInfo.user.checkUserLogin() {
+            let vc = PlayViewController.player
+            vc.dataSource = model.picture_arry
+            vc.title = model.paint_title
+            vc.currentIndex = indexPath.row
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }else {
+            let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
+            let login = sb.instantiateViewController(withIdentifier: "SBLoginViewController")
+            self.present(HomePageNavigationController.init(rootViewController:login), animated: true, completion: nil)
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath){
@@ -115,6 +171,10 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
         selectedIndex = indexPath.row
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
+        self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
+        
+        self.subTitleWidthConstraint.constant = (self.classTitleButton.titleLabel?.textSize().width)! + 12
+        self.view.updateConstraints()
         self.requestData()
     }
     

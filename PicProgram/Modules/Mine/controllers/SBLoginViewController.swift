@@ -8,43 +8,113 @@
 
 import UIKit
 
-class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
+class SBLoginViewController: BaseViewController,WXApiDelegate {
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passTextfield: UITextField!
     @IBOutlet weak var label: UILabel!
     @IBOutlet var mainScrollView: UIScrollView!
-    @IBAction func loginAction(_ sender: Any) {
+    var userModel:UserModel = UserModel()
+    @IBAction func loginAction(_ sender: UIButton) {
+        updateButtonStatus(sender: sender)
         requestData()
     }
-    @IBAction func registAction(_ sender: Any) {
-        let registVC = RegisterViewController.init(nibName: "RegisterViewController", bundle: Bundle.main)
+    @IBAction func registAction(_ sender: UIButton) {
+        let registVC = UserProtocolViewController.init(nibName: "UserProtocolViewController", bundle: Bundle.main)
+        registVC.userModel = self.userModel
         self.navigationController?.pushViewController(registVC, animated: true)
+        updateButtonStatus(sender: sender)
     }
     
-    @IBAction func holdRegistAction(_ sender: Any) {
+    @IBAction func holdRegistAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        updateButtonStatus(sender: sender)
     }
     
-    @IBAction func thirdLoginAction(_ sender: Any) {
+    @IBAction func thirdLoginAction(_ sender: UIButton) {
+        if sender.tag == 10 {
+            //微信登录
+            let req = SendAuthReq.init()
+            req.scope = "snsapi_userinfo"
+            req.state = "wechat_sdk_demo"
+            req.openID = ""
+            WXApi.sendAuthReq(req, viewController: self, delegate: self)
+        }
     }
+
+    
+    func onResp(_ resp: BaseResp!) {
+        if resp.errCode < 0 {
+            HUDTool.show(.text, nil, text: MRLanguage(forKey: "Auth Failed"), delay: 0.5, view: self.view, complete: nil)
+            
+        }else {
+            if resp is SendAuthResp {
+                let response = resp as! SendAuthResp
+                network.requestData(.user_third_login, params: ["register_type":2,"auth_token":response.code], finishedCallback: { [weak self] (result) in
+                    if result["ret"] as! Int == 0{
+                        HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
+                        UserInfo.user.setValuesForKeys(result)
+                        UserInfo.user.updateUserInfo()
+                        if UserInfo.user.client_id != nil && UserInfo.user.client_id?.count as! Int > 0 {
+                            UserInfo.user.updateIgetuiClient(clientId: UserInfo.user.client_id!)
+                        }
+                        //                self?.navigationController?.popToRootViewController(animated: true)
+                        self?.dismiss(animated: true, completion: nil)
+                    }else {
+                        HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self?.view)!, complete: nil)
+                    }
+                }, nil)
+                
+            }
+           
+        }
+    }
+    
+    
+    func updateButtonStatus(sender:UIButton) {
+        for i in 0 ..< 3 {
+            let btn = self.view.viewWithTag(10+i) as! UIButton
+            if btn == sender {
+                btn.isSelected = true
+            }else {
+                btn.isSelected = false
+            }
+        }
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func forgetPassAction(_ sender: Any) {
         let forgetVC = FindPassViewController.init(nibName: "FindPassViewController", bundle: Bundle.main)
+        forgetVC.userModel = self.userModel
+        forgetVC.title = MRLanguage(forKey: "Find Password")
         self.navigationController?.pushViewController(forgetVC, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
 
-        // Do any additional setup after loading the view.
+        self.customNavigationView()
     }
 
+    
+    func customNavigationView() {
+        self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        self.title = MRLanguage(forKey: "Art Works")
+    }
+    
+    
     @IBAction func tapRegistKeyboardAction(_ sender: Any) {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         mainScrollView.contentSize = CGSize.init(width: mainScrollView.width, height: label.bottom + 44)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
@@ -57,10 +127,14 @@ class SBLoginViewController: BaseViewController,UIGestureRecognizerDelegate {
     override func requestData() {
         network.requestData(.user_login, params: ["register_id":emailTextfield.text as! String,"password":passTextfield.text as! String], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0{
-                HUDTool.show(.text, text: "登录成功", delay: 0.6, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
                 UserInfo.user.setValuesForKeys(result)
                 UserInfo.user.updateUserInfo()
-                self?.navigationController?.popToRootViewController(animated: true)
+                if UserInfo.user.client_id != nil && UserInfo.user.client_id?.count as! Int > 0 {
+                    UserInfo.user.updateIgetuiClient(clientId: UserInfo.user.client_id!)
+                }
+//                self?.navigationController?.popToRootViewController(animated: true)
+                self?.dismiss(animated: true, completion: nil)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self?.view)!, complete: nil)
             }

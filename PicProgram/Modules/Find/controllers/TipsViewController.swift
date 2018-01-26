@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecognizerDelegate {
+class TipsViewController: BaseViewController,UITextViewDelegate {
     @IBOutlet weak var localIcon: UIImageView!
     
     @IBOutlet weak var locateView: UIImageView!
@@ -22,6 +22,13 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
     @IBOutlet weak var currentImageView: UIImageView!
     
     @IBOutlet weak var locateChooseStatusView: UIView!
+    
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textNumberLabel: UILabel!
+    
+    @IBOutlet weak var switchSender: UISwitch!
+    @IBOutlet weak var switchShowLabel: UILabel!
+    
     var lastLocate:CGPoint = CGPoint.zero
     var  chooseLocatedIndex:Int = 1
     var  chooseMaterialIndex:Int = 1
@@ -30,8 +37,8 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
     let papers:[String] = ["tips_bianqiancaizhi","tips_youhuabucaizhi","tips_keyincaizhi"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.currentImageView.xs_setImage(picModel.picture_url)
-        self.title = "便签"
+        self.currentImageView.xs_setImage(picModel.detail_url)
+        self.title = MRLanguage(forKey: "Tips")
         // Do any additional setup after loading the view.
     }
     
@@ -46,23 +53,48 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
         self.tipsMaterialsButton.titleLabel?.numberOfLines = 9
     }
     override func requestData() {
-        network.requestData(.paint_tips, params: ["tips_content":self.tipsMaterialsButton.title(for: .normal),"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex], finishedCallback: { [weak self](result) in
+        network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex,"flag":(switchSender.isOn == true ? 1 : 2)], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: "Tips设置成功", delay: 0.8, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: "Tips\(MRLanguage(forKey: "Setting Successful"))", delay: 0.8, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }
 
+    @IBAction func hintAction(_ sender: Any) {
+        let hintView = Bundle.main.loadNibNamed("HintView", owner: nil, options: nil)?.first as! HintView
+        hintView.frame = (self.navigationController?.view.bounds)!
+        hintView.hintTextLabel.text = "此功能需绑定墨染数字画框使用\n底部点选便签材质、位置\n右上角按钮推送到数字画框硬件端"
+        //"此功能需绑定墨染数字画框使用\n底部点选内衬材质、大小\n右上角按钮推送到数字画框硬件端"
+        self.navigationController?.view.addSubview(hintView)
+    }
+    
     @IBAction func tapViewAction(_ sender: UITapGestureRecognizer) {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
+    @IBAction func switchValueChanged(_ sender: UISwitch) {
+        if sender.isOn == true {
+            self.switchSender.onTintColor = xsColor_main_blue
+            self.switchShowLabel.text = "显示到画框端"
+            self.tipsMaterialsButton.alpha = 1
+        }else {
+            self.switchSender.onTintColor = xsColor_main_white
+            self.tipsMaterialsButton.alpha = 0.5
+            self.switchShowLabel.text = "不显示到画框端"
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if self.locateView.isHidden == true {
+            return
+        }
         let touch = touches.first
-        if self.localIcon.frame.contains((touch?.location(in: self.locateView))!) {
+//        if self.localIcon.frame.contains((touch?.location(in: self.locateView))!) {
             self.lastLocate = (touch?.location(in: self.locateView))!
             self.isLocalViewChoosed = true
-        }
+            self.tipsMaterialsButton.isHidden = true
+            self.textView.isHidden = true
+        self.textNumberLabel.isHidden = self.textView.isHidden
+//        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -72,30 +104,43 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
             let point = (touch?.location(in: self.locateView))!
             self.locateChooseStatusView.isHidden = false
             self.locateChooseStatusView.frame.origin = CGPoint.init(x: floor(point.x/self.locateChooseStatusView.width) * self.locateChooseStatusView.width, y: floor(point.y/self.locateChooseStatusView.height) * self.locateChooseStatusView.height)
-            self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*3 + 1
-
+            self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*2 + 1
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        let touch = touches.first
-        self.locateChooseStatusView.isHidden = true
-//        self.localIcon.frame.origin = (touch?.location(in: self.locateView))!
-//        self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*3 + 1
+        if self.locateView.isHidden == true {
+            return
+        }
+//        self.locateChooseStatusView.isHidden = true
         self.isLocalViewChoosed = false
+        self.tipsMaterialsButton.isHidden = false
+        self.textView.isHidden = false
+        self.textNumberLabel.isHidden = self.textView.isHidden
+        self.localIcon.center = self.tipsMaterialsButton.frame.origin
+        self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*2 + 1
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.localIcon.frame.origin = lastLocate
+        if self.locateView.isHidden == true {
+            return
+        }
+        self.localIcon.center = self.tipsMaterialsButton.frame.origin
         self.isLocalViewChoosed = false
-        self.locateChooseStatusView.isHidden = true
+//        self.locateChooseStatusView.isHidden = true
+        self.textView.isHidden = false
+        self.textNumberLabel.isHidden = self.textView.isHidden
+
+        self.tipsMaterialsButton.isHidden = false
+        self.chooseLocatedIndex = Int(floor(self.locateChooseStatusView.x/self.locateChooseStatusView.width)) +  Int(floor(self.locateChooseStatusView.y/self.locateChooseStatusView.height))*2 + 1
     }
     
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer.view == localIcon {
             return true
         }
-        return false
+        return super.gestureRecognizerShouldBegin(gestureRecognizer)
+
     }
     
     
@@ -123,9 +168,11 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
                     if finished == true && i == 1 {
                         self.materialBackView.isHidden = true
                         self.locateView.isHidden = false
+                         self.locateChooseStatusView.isHidden = false
                     }else if finished == true && i == 0 {
                         self.materialBackView.isHidden = false
                         self.locateView.isHidden = true
+                         self.locateChooseStatusView.isHidden = true
                     }
                 })
             }else {
@@ -134,11 +181,25 @@ class TipsViewController: BaseViewController,UITextViewDelegate,UIGestureRecogni
         }
     }
     
-    
-    func textViewDidChange(_ textView: UITextView) {
-        self.tipsMaterialsButton.setTitle(textView.text, for: .normal)
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == MRLanguage(forKey: "Tips text") {
+            textView.text = ""
+        }else if textView.text.count as! Int == 0 {
+            textView.text = MRLanguage(forKey: "Tips text")
+        }
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+//        self.tipsMaterialsButton.setTitle(textView.text, for: .normal)
+        textNumberLabel.text = "\(100 - textView.text.count)\(MRLanguage(forKey: "size"))"
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.text.count > 100 && text != "\n"{
+            return false
+        }
+        return true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

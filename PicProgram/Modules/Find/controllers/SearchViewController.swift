@@ -10,22 +10,37 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 private let reuseHeaderIdentifier = "header"
+private let historyFilePath = NSHomeDirectory()  + "/Documents/webs.plist"
 
 class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,SearchProtocol,UITextFieldDelegate {
     var collectionView:UICollectionView!
-    var dataSource:Array<[String:Any]> = [["title":"最近搜索","data":["这里","大家好","吴冠中","礼拜","欧阳","一蓑烟雨任平生","尘粒","奇妙能力歌","晚安","够了吗","hello","好","拜"]],
-    ["title":"最热搜索","data":["尘粒","奇妙能力歌","欧阳","一蓑烟雨任平生","晚安","够了吗","hello","好","拜","这里","大家好","吴冠中","礼拜"]]]
+    var dataSource:Array<[String:Any]> = [["title":MRLanguage(forKey: "Recent Searches"),"data":[]],
+    ["title":MRLanguage(forKey: "Popular Searches"),"data":[]]]
     var searchResultView:SearchResultView!
     var inputTextField:UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadHistory()
         requestData()
         customNavigationBar()
+        
+    }
+    
+    func loadHistory() {
+        if NSArray.init(contentsOfFile: historyFilePath) != nil {
+            let data = NSArray.init(contentsOfFile: historyFilePath)
+            self.dataSource[0]["data"] = data
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        if self.searchResultView.superview != nil {
+            let button = self.searchResultView.viewWithTag(10 + self.searchResultView.selectIndex)
+            self.searchResultView.buttonAction(button as! UIButton)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -65,7 +80,8 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
         inputTextField.layer.masksToBounds = true
         inputTextField.delegate = self
         inputTextField.clearButtonMode = .whileEditing
-        inputTextField.attributedPlaceholder = NSAttributedString.init(string: "艺术品名称／作家", attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_yellow])
+        inputTextField.returnKeyType = .search
+        inputTextField.attributedPlaceholder = NSAttributedString.init(string: MRLanguage(forKey: "Art works/Artist"), attributes: [NSAttributedStringKey.foregroundColor:xsColor_main_yellow])
         inputTextField.delegate = self
         inputTextField.font = xsFont(14)
         self.view.addSubview(inputTextField)
@@ -73,13 +89,15 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
         let cancelButton = UIButton.init(frame: CGRect.init(x: inputTextField.right + 10, y: inputTextField.y, width: 40, height: 30))
         cancelButton.titleLabel?.font = xsBoldFont(14)
         cancelButton.setTitleColor(xsColor_main_text_blue, for: .normal)
-        cancelButton.setTitle("取消", for: .normal)
+        cancelButton.setTitle(MRLanguage(forKey: "No"), for: .normal)
         cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
         self.view.addSubview(cancelButton)
     }
     
     override func requestData() {
+        HUDTool.show(.loading, view: self.view)
         network.requestData(.search_hotwords, params: nil, finishedCallback: { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
                 let datas = result["hot_words"]
                 self?.dataSource[1]["data"] = datas
@@ -93,6 +111,21 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
         return true
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField.text?.count as! Int > 0 {
+            searchKeywords(kw: textField.text!)
+            var datas = self.dataSource[0]["data"] as! [String]
+            datas.append(textField.text!)
+
+            let ret = (datas as! NSArray).write(toFile: historyFilePath, atomically: true)
+            self.dataSource[0]["data"] = datas
+            self.collectionView.reloadData()
+            
+        }
+        return true
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField.text?.count == 0 {
             self.searchResultView.removeFromSuperview()
@@ -102,20 +135,45 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return dataSource.count
+        let dict = dataSource[0]
+        let data = dict["data"] as! [String]
+        if data.count > 0 {
+            return dataSource.count
+        }else {
+            return dataSource.count - 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let dict = dataSource[section]
+        let dict = dataSource[0]
         let data = dict["data"] as! [String]
-        return data.count
+        if data.count > 0 {
+            let dict = dataSource[section]
+            let data = dict["data"] as! [String]
+            return data.count
+        }else {
+            let dict = dataSource[1]
+            let data = dict["data"] as! [String]
+            return data.count
+            
+        }
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let dict = dataSource[indexPath.section]
-        let data = dict["data"] as! [String]
+        
+        
+        var dict = dataSource[indexPath.section]
+        var data = dict["data"] as! [String]
 
-        let str = data[indexPath.item]
+        var str = ""
+        if data.count > 0 {
+            str = data[indexPath.item]
+        }else {
+            dict = dataSource[1]
+            data = dict["data"] as! [String]
+            str = data[indexPath.item]
+        }
         let size = str.boundingRect(with: CGSize.init(width: self.view.width, height: 22), options: .usesFontLeading, attributes: nil, context: nil)
         return CGSize.init(width: size.width + 54, height: 22)
     }
@@ -126,9 +184,16 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SearchCell
-        let dict = dataSource[indexPath.section]
-        let data = dict["data"] as! [String]
-        let str = data[indexPath.item]
+        var dict = dataSource[indexPath.section]
+        var data = dict["data"] as! [String]
+        var str = ""
+        if data.count == 0 {
+            dict = dataSource[1]
+            data = dict["data"] as! [String]
+            str = data[indexPath.item]
+        }else {
+            str = data[indexPath.item]
+        }
         cell.layoutIfNeeded()
         cell.titleLabel.text = "#\(str)#"
         return cell
@@ -139,12 +204,23 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
             
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeaderIdentifier, for: indexPath) as! SearchHeaderReuseableView
                 header.layoutIfNeeded()
-            let dict = dataSource[indexPath.section]
+            var dict = dataSource[indexPath.section]
+            let data = dict["data"] as! [String]
+
+            if data.count == 0 {
+                dict = dataSource[1]
+            }
             let title = dict["title"] as! String
+
             header.titleLabel.text = title
                 header.delegate = self
-            if title == "最热搜索" {
+            let dict1 = dataSource[0]
+            let data1 = dict1["data"] as! [String]
+            
+            if title == MRLanguage(forKey: "Popular Searches") || data1.count == 0{
                 header.clearButton.isHidden = true
+            }else {
+                header.clearButton.isHidden = false
             }
             return header
 
@@ -153,12 +229,27 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let datas = dataSource[indexPath.section]["data"] as! [String]
-        let keyword = datas[indexPath.row]
-        inputTextField.text = keyword
-        network.requestData(.search_info, params: ["kw":keyword], finishedCallback: { [weak self](result) in
+        var datas = dataSource[indexPath.section]["data"] as! [String]
+
+        if datas.count == 0 && indexPath.section == 0 {
+            datas = dataSource[1]["data"] as! [String]
+            let keyword = datas[indexPath.row]
+            inputTextField.text = keyword
+            searchKeywords(kw: keyword)
+        }else {
+            let keyword = datas[indexPath.row]
+            inputTextField.text = keyword
+            searchKeywords(kw: keyword)
+        }
+    }
+    
+    func searchKeywords(kw:String) {
+        HUDTool.show(.loading, view: self.view)
+        network.requestData(.search_info, params: ["kw":kw], finishedCallback: { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
                 let keys = ["picture_info","authro_info","paint_info"]
+                self?.searchResultView.dataSource.removeAll()
                 for i in 0 ..< keys.count {
                     if result[keys[i]] != nil {
                         let array = result[keys[i]] as! Array<[String:Any]>
@@ -184,22 +275,32 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
                     }
                 }
                 self?.searchResultView.reloadDatas()
+                self?.searchResultView.selectIndex = 0
+                let button = self?.searchResultView.viewWithTag(10 + (self?.searchResultView.selectIndex)!)
+                self?.searchResultView.buttonAction(button as! UIButton)
+
                 self?.view.addSubview((self?.searchResultView)!)
             }
-        }, nil)
+            }, nil)
     }
     
     
-    
     func clearnUpHistory() {
-        self.dataSource.remove(at: 0)
-        self.collectionView.deleteSections(IndexSet.init(integer: 0))
+        do {
+            try FileManager.default.removeItem(atPath: historyFilePath)
+            self.dataSource[0]["data"] = []
+
+        } catch {
+            print("removeItemAtPath err"+historyFilePath)
+        }
+        self.collectionView.reloadData()
     }
     
     func searchResultDidChoosedCell(view: Int, _ index: Int) {
         if view == SearchResultListType.SearchResultListType_autor.hashValue {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
+            vc.isAutor = true
             vc.paintModel = (searchResultView.dataSource[view][index] as! PaintModel)
             self.navigationController?.pushViewController(vc, animated: true)
         }else  if view == SearchResultListType.SearchResultListType_production.hashValue {
@@ -251,7 +352,6 @@ class SearchCell: UICollectionViewCell {
             titleLabel.layer.borderWidth = 1
             self.addSubview(titleLabel)
         }
-        
     }
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
@@ -284,14 +384,11 @@ class SearchHeaderReuseableView: UICollectionReusableView {
     }
     
     @objc func clearAllHistory() {
-        let alert = UIAlertController.init(title: "确认删除全部历史记录？", message: nil, preferredStyle: .alert)
-        let cancel = UIAlertAction.init(title: "取消", style: .default, handler: nil)
-        let confirm = UIAlertAction.init(title: "确定", style: .default, handler: {[weak self](act) in
-            self?.delegate.clearnUpHistory!()
-        })
-        alert.addAction(cancel)
-        alert.addAction(confirm)
-        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+        BaseAlertController.inits(MRLanguage(forKey: "Delete all history?"), message: nil, confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
+            if tag == 0 {
+                self.delegate.clearnUpHistory!()
+            }
+        }
     }
     
     
@@ -309,7 +406,7 @@ class SearchHeaderReuseableView: UICollectionReusableView {
     @objc optional func searchResultDidChoosedCell(view:Int,_ index:Int)
     @objc optional func playAction()
     @objc optional func pushAction()
-    @objc optional func collectAction()
+    @objc optional func collectAction(view:UIButton)
     @objc optional func shareAction()
     @objc optional func picsStyleChangeAction(style:Int)
     @objc optional func backAction()

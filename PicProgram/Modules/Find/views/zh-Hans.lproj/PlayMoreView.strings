@@ -1,0 +1,33 @@
+
+/* Class = "UIButton"; normalTitle = "详细信息"; ObjectID = "CaZ-nt-Rwf"; */
+"CaZ-nt-Rwf.normalTitle" = "详细信息";
+
+/* Class = "UILabel"; text = "画框端模式选择"; ObjectID = "Itx-Fg-7ng"; */
+"Itx-Fg-7ng.text" = "画框端模式选择";
+
+/* Class = "UILabel"; text = "夜间模式"; ObjectID = "KZH-H9-uTK"; */
+"KZH-H9-uTK.text" = "夜间模式";
+
+/* Class = "UIButton"; normalTitle = "添加心情"; ObjectID = "KbB-Il-aJa"; */
+"KbB-Il-aJa.normalTitle" = "添加心情";
+
+/* Class = "UILabel"; text = "更多功能"; ObjectID = "NP1-Yc-BMQ"; */
+"NP1-Yc-BMQ.text" = "更多功能";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "UPn-q8-bJd"; */
+"UPn-q8-bJd.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "睡眠模式"; ObjectID = "ZUF-PY-bcx"; */
+"ZUF-PY-bcx.text" = "睡眠模式";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fe2-Vd-FFn"; */
+"fe2-Vd-FFn.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "收藏至画单"; ObjectID = "lWv-kW-s6S"; */
+"lWv-kW-s6S.normalTitle" = "收藏至画单";
+
+/* Class = "UILabel"; text = "正常模式"; ObjectID = "lwG-0Z-eBn"; */
+"lwG-0Z-eBn.text" = "正常模式";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "qMd-1P-2OD"; */
+"qMd-1P-2OD.normalTitle" = "Button";

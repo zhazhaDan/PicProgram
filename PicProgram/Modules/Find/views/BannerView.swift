@@ -37,9 +37,11 @@ class BannerView: BaseView,UIScrollViewDelegate {
     weak open var delegate:BannerViewProtocol?
     weak open var show_delegate:BannerViewProtocol?
     var auto:Bool = false
+    var isBannerAuto:Bool = true
     var scrollView:UIScrollView?
-    init(frame: CGRect,_ isHidenPageControl:Bool = false) {
+    init(frame: CGRect,_ isHidenPageControl:Bool = false,_ auto:Bool = true) {
         super.init(frame: frame)
+        isBannerAuto = auto
         self.buildUI()
         self.isHidenPageControl = isHidenPageControl
         self.pageControl.isHidden = isHidenPageControl
@@ -84,7 +86,7 @@ class BannerView: BaseView,UIScrollViewDelegate {
         for i in 0 ..< count {
             let imageName = images[i % images.count]
             imageViews[i].frame = CGRect.init(x: CGFloat(i)*self.width, y: 0, width: self.width, height: self.height)
-            imageViews[i].backgroundColor = xsColor_main_blue
+            imageViews[i].backgroundColor = xsColor_main_yellow
             imageViews[i].contentMode = .scaleAspectFill
             imageViews[i].clipsToBounds = true
             imageViews[i].xs_setImage(imageName, imageSize: .image_957)
@@ -101,7 +103,9 @@ class BannerView: BaseView,UIScrollViewDelegate {
             scrollView?.delegate = self
             pageControl.numberOfPages = images.count
             reloadImages()
-            initTimer()
+            if isBannerAuto == true {
+                initTimer()
+            }
         }else {
             pageControl.numberOfPages = 0
             scrollView?.delegate = nil
@@ -182,11 +186,15 @@ class BannerView: BaseView,UIScrollViewDelegate {
     
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        timer.invalidate()
+        if isBannerAuto == true {
+            timer.invalidate()
+        }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        initTimer()
+        if isBannerAuto == true {
+            initTimer()
+        }
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {

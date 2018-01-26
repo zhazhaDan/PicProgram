@@ -17,13 +17,32 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "ArtReadTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "readTableViewCell")
         self.view.addSubview(tableView)
+        tableView.xs_addRefresh(refresh: .normal_header_refresh) {
+            self.requestData()
+        }
         requestData()
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = MRLanguage(forKey: "Art Digest")
     }
     
     override func requestData() {
         network.requestData(.discovery_cqlist, params: nil, finishedCallback: { [weak self](result) in
+            self?.tableView.xs_endRefreshing()
             if result["ret"] as! Int == 0 {
                 let array = result["classic_quote"] as! Array<[String:Any]>
+                self?.dataSource.removeAll()
                 for item in array {
                     let model = ClassicQuoteModel.init(dict: item)
                     self?.dataSource.append(model)
@@ -47,13 +66,15 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
         cell.showPicImageView.xs_setImage(model.cq_img_url)
         cell.picTitleLabel.text = model.cq_title
         cell.picDetailLabel.text = model.cq_content
-        cell.picUploadTimeLabel.text = "上传时间：2017-08-13"
+        cell.picUploadTimeLabel.text = "\(MRLanguage(forKey: "Upload time"))：\(Date.formatterDateString(model.cq_time as AnyObject))"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let model = dataSource[indexPath.row]
         let vc = WebViewController()
         vc.urlString = model.cq_h5_url
+
         self.navigationController?.pushViewController(vc, animated: true)
 
     }

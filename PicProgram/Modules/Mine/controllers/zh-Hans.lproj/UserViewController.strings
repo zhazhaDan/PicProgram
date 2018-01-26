@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "地区"; ObjectID = "6ig-wt-PJY"; */
+"6ig-wt-PJY.text" = "地区";
+
+/* Class = "UILabel"; text = "120"; ObjectID = "9GX-16-vYZ"; */
+"9GX-16-vYZ.text" = "120";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Hhu-2I-qEi"; */
+"Hhu-2I-qEi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "性别"; ObjectID = "IuH-ap-vD1"; */
+"IuH-ap-vD1.text" = "性别";
+
+/* Class = "UILabel"; text = "女"; ObjectID = "JgJ-13-XjF"; */
+"JgJ-13-XjF.text" = "女";
+
+/* Class = "UILabel"; text = "输入生日信息"; ObjectID = "MaN-s1-bXU"; */
+"MaN-s1-bXU.text" = "输入生日信息";
+
+/* Class = "UILabel"; text = "昵称"; ObjectID = "NEz-YP-iJw"; */
+"NEz-YP-iJw.text" = "昵称";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YQu-dk-wZc"; */
+"YQu-dk-wZc.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZBZ-LE-cmD"; */
+"ZBZ-LE-cmD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "个人主页背景"; ObjectID = "ZuS-SQ-0wW"; */
+"ZuS-SQ-0wW.text" = "个人主页背景";
+
+/* Class = "UILabel"; text = "头像"; ObjectID = "eoq-5S-uLd"; */
+"eoq-5S-uLd.text" = "头像";
+
+/* Class = "UITextView"; text = "个人介绍..."; ObjectID = "nBx-W4-odN"; */
+"nBx-W4-odN.text" = "个人介绍...";
+
+/* Class = "UILabel"; text = "介绍"; ObjectID = "qoZ-o5-ffO"; */
+"qoZ-o5-ffO.text" = "介绍";
+
+/* Class = "UILabel"; text = "生日"; ObjectID = "urZ-dW-B42"; */
+"urZ-dW-B42.text" = "生日";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vyZ-o5-kZ6"; */
+"vyZ-o5-kZ6.normalTitle" = "Button";

@@ -13,16 +13,49 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+    var isDone:Bool = false
+    var isLetterShowed:Bool = false
+//    var gifWindow:UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIBarButtonItem.appearance().tintColor = xsColor_text_black
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = BaseTabBarController()// HomePageNavigationController.init(rootViewController: BaseTabBarController())
+        self.window?.rootViewController = BaseTabBarController()//GifViewController()
+        //BaseTabBarController()// HomePageNavigationController.init(rootViewController: BaseTabBarController())
+//        self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
+//        self.gifWindow?.rootViewController = GifViewController()
         self.window?.makeKeyAndVisible()
+        let gitVC = GifView.init(frame: UIScreen.main.bounds)
+        gitVC.buildUI()
+        self.window?.addSubview(gitVC)
         return RegistThirdAppDelegate.shareDelegate.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
-
+//    @objc func gifDone() {
+//        if isDone == true {
+//            return
+//        }
+//        UIView.animate(withDuration: 0.5, animations: {
+//            self.gifWindow?.alpha = 0.2
+//        }) { (finished) in
+//            if finished == true {
+//                self.window?.makeKeyAndVisible()
+//                self.gifWindow = UIWindow.init(frame: UIScreen.main.bounds)
+//                self.gifWindow?.backgroundColor = UIColor.clear
+//                self.isDone = true
+//            }
+//        }
+//    }
+    
+    func changeLanguage() {
+        HUDTool.show(.loading, view: self.window!)
+        let tabController = BaseTabBarController()
+        self.window?.rootViewController = tabController
+        let vc = SettingViewController()
+        vc.hidesBottomBarWhenPushed = true
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+            (tabController.selectedViewController as!UINavigationController).pushViewController(vc, animated: true)
+        }
+    }
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
@@ -156,6 +189,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Fallback on earlier versions
         }
     }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return RegistThirdAppDelegate.shareDelegate.application(app, open: url, options:options)
+    }
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return RegistThirdAppDelegate.shareDelegate.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+    }
     
+    //notification
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        RegistThirdAppDelegate.shareDelegate.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+    }
+    
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        RegistThirdAppDelegate.shareDelegate.application(application, didRegister: notificationSettings)
+    }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        RegistThirdAppDelegate.shareDelegate.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        RegistThirdAppDelegate.shareDelegate.application(application, performFetchWithCompletionHandler: completionHandler)
+    }
+    
+    // iOS 10        APNs                     AppDelegate.m     didReceiveRemoteNotification          SDK
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        RegistThirdAppDelegate.shareDelegate.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+        
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        RegistThirdAppDelegate.shareDelegate.application(application, didReceiveRemoteNotification: userInfo)
+    }
    }
 

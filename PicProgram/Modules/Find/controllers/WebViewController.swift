@@ -31,9 +31,16 @@ class WebViewController: BaseViewController,WKUIDelegate,WKNavigationDelegate {
 
         webView = WKWebView.init(frame: commonRect, configuration:config)
         self.view.addSubview(webView)
-        let request = URLRequest.init(url: URL.init(string: urlString)!)
-        webView.load(request)
+        if urlString.count as! Int > 0 {
+            let request = URLRequest.init(url: URL.init(string: urlString)!)
+            webView.load(request)
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = MRLanguage(forKey: "Art Digest")
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

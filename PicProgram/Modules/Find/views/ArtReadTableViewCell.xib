@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,27 +21,30 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mo-DK-c3U" userLabel="标题">
-                        <rect key="frame" x="114" y="19.5" width="191" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="138" y="7.5" width="167" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twm-BY-p3d" userLabel="描述">
-                        <rect key="frame" x="114" y="44" width="191" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twm-BY-p3d" userLabel="描述">
+                        <rect key="frame" x="138" y="43" width="167" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOv-wN-N4B" userLabel="上传时间">
-                        <rect key="frame" x="114" y="84.5" width="191" height="10"/>
+                        <rect key="frame" x="138" y="94.5" width="167" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="ycG-E0-8P9"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <color key="textColor" red="0.62504500149999997" green="0.62511724229999999" blue="0.6250033975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lkb-lf-Ge4">
-                        <rect key="frame" x="22" y="19.5" width="75" height="75"/>
+                        <rect key="frame" x="22" y="7.5" width="99" height="99"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="75" id="4yW-A4-g8B"/>
-                            <constraint firstAttribute="height" constant="75" id="qHz-1W-jSR"/>
+                            <constraint firstAttribute="width" secondItem="Lkb-lf-Ge4" secondAttribute="height" id="rl1-Yp-9OX"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvb-80-ROs">
@@ -58,14 +62,16 @@
                     <constraint firstItem="bOv-wN-N4B" firstAttribute="bottom" secondItem="Lkb-lf-Ge4" secondAttribute="bottom" id="Gyw-WV-RPb"/>
                     <constraint firstItem="8mo-DK-c3U" firstAttribute="top" secondItem="Lkb-lf-Ge4" secondAttribute="top" id="Hfx-sH-PjE"/>
                     <constraint firstItem="Lkb-lf-Ge4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JT5-mg-gcK"/>
+                    <constraint firstItem="twm-BY-p3d" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="bOv-wN-N4B" secondAttribute="top" id="N6o-8u-lfL"/>
                     <constraint firstAttribute="bottom" secondItem="Gvb-80-ROs" secondAttribute="bottom" id="Ncf-wX-MZ2"/>
                     <constraint firstItem="8mo-DK-c3U" firstAttribute="leading" secondItem="Lkb-lf-Ge4" secondAttribute="trailing" constant="17" id="iMV-e9-QB7"/>
-                    <constraint firstItem="twm-BY-p3d" firstAttribute="top" secondItem="8mo-DK-c3U" secondAttribute="bottom" constant="4" id="ixC-tZ-4nK"/>
+                    <constraint firstItem="twm-BY-p3d" firstAttribute="top" secondItem="8mo-DK-c3U" secondAttribute="bottom" constant="16" id="ixC-tZ-4nK"/>
                     <constraint firstAttribute="trailing" secondItem="Gvb-80-ROs" secondAttribute="trailing" constant="15" id="jAh-OH-KrS"/>
                     <constraint firstItem="Lkb-lf-Ge4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="l6N-O6-Gj5"/>
                     <constraint firstItem="bOv-wN-N4B" firstAttribute="leading" secondItem="twm-BY-p3d" secondAttribute="leading" id="lsG-0J-R0M"/>
                     <constraint firstItem="bOv-wN-N4B" firstAttribute="trailing" secondItem="twm-BY-p3d" secondAttribute="trailing" id="oQC-VP-GVZ"/>
                     <constraint firstItem="8mo-DK-c3U" firstAttribute="leading" secondItem="twm-BY-p3d" secondAttribute="leading" id="pUu-It-JZx"/>
+                    <constraint firstItem="Lkb-lf-Ge4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7.5" id="pbd-4y-Fhg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -74,6 +80,7 @@
                 <outlet property="picTitleLabel" destination="8mo-DK-c3U" id="60I-Lb-30h"/>
                 <outlet property="picUploadTimeLabel" destination="bOv-wN-N4B" id="2iw-YO-pny"/>
                 <outlet property="showPicImageView" destination="Lkb-lf-Ge4" id="N24-OD-hEn"/>
+                <outlet property="timeHeightConstraint" destination="ycG-E0-8P9" id="DNN-Vi-ZIg"/>
             </connections>
             <point key="canvasLocation" x="91.5" y="-92"/>
         </tableViewCell>

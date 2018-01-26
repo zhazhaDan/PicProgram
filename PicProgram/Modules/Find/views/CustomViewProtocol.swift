@@ -10,4 +10,5 @@ import UIKit
 
 @objc protocol CustomViewProtocol:NSObjectProtocol {
     @objc optional func listDidSelected(view:UIView,at index:Int, _ section:Int)
+    @objc optional func listWillDelete(view:UIView,at index:Int, _ section:Int)
 }

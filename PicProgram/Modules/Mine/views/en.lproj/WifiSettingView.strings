@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "保存密码"; ObjectID = "0MY-dk-nag"; */
+"0MY-dk-nag.text" = "保存密码";
+
+/* Class = "UIButton"; normalTitle = "生成二维码"; ObjectID = "5se-Iz-bxh"; */
+"5se-Iz-bxh.normalTitle" = "Wi-fi Setting";
+
+/* Class = "UILabel"; text = "请进入Moran画框设置页面并进入Wi-Fi连接选项"; ObjectID = "ZpF-ja-6fS"; */
+"ZpF-ja-6fS.text" = "请进入Moran画框设置页面并进入Wi-Fi连接选项";
+
+/* Class = "UILabel"; text = "输入密码"; ObjectID = "mIP-Qc-gMA"; */
+"mIP-Qc-gMA.text" = "Type Your Password";

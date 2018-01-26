@@ -14,7 +14,7 @@ import QuartzCore
 open class PKHUDProgressView: PKHUDSquareBaseView, PKHUDAnimating {
 
     public init(title: String? = nil, subtitle: String? = nil) {
-        super.init(image: PKHUDAssets.progressActivityImage, title: title, subtitle: subtitle)
+        super.init(image: PKHUDAssets.progressCircularImage, title: title, subtitle: subtitle)
     }
 
     public required init?(coder aDecoder: NSCoder) {

@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>方正宋刻本秀楷简体.TTF</string>
-		<string>方正宋刻本秀楷简.TTF</string>
-		<string>方正清刻本悦宋简体.TTF</string>
-	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>访问相册</string>
-	<key>NSCameraUsageDescription</key>
-	<string>访问相机</string>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -23,13 +13,93 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>墨染博物馆</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>Wechat</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wx4f0a156d8bb04f93</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>WB</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb3252817501</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Facebook</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb128032274544686</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Twitter</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-Y54ikILtTwI9hiUVkebzxK9bU</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>9</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>Y54ikILtTwI9hiUVkebzxK9bU</string>
+	</dict>
+	<key>FacebookAppID</key>
+	<string>128032274544686</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitterauth</string>
+		<string>mqqopensdkapiV2</string>
+		<string>mqqapi</string>
+		<string>weixin</string>
+		<string>sinaweibo</string>
+		<string>mqq</string>
+		<string>sosomap</string>
+		<string>comgooglemaps</string>
+		<string>weibosdk</string>
+		<string>baidumap</string>
+		<string>iosamap</string>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth</string>
+		<string>fbauth2</string>
+		<string>fb-messenger-api20140430</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbshareextension</string>
+		<string>instagram</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MOBAppSecret</key>
@@ -41,6 +111,18 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>访问相机</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>访问相册</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>方正宋刻本秀楷简体.TTF</string>
+		<string>方正宋刻本秀楷简.TTF</string>
+		<string>方正清刻本悦宋简体.TTF</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

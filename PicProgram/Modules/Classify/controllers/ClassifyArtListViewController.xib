@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +16,7 @@
                 <outlet property="collectionView" destination="JZU-22-Wog" id="lYX-IX-Gpa"/>
                 <outlet property="showTableListView" destination="BaF-eh-fzr" id="AAK-wC-ThB"/>
                 <outlet property="showVBackView" destination="mF5-yE-DLg" id="tLy-5h-aLR"/>
+                <outlet property="subTitleWidthConstraint" destination="vqy-rw-SJ5" id="vxZ-fE-s3M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,25 +29,34 @@
                     <rect key="frame" x="0.0" y="64" width="375" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ib5-jN-a8E">
-                            <rect key="frame" x="162.5" y="10" width="50" height="20"/>
+                            <rect key="frame" x="137.5" y="10" width="100" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="q49-Me-mcG"/>
-                                <constraint firstAttribute="width" constant="50" id="vqy-rw-SJ5"/>
+                                <constraint firstAttribute="width" constant="100" id="vqy-rw-SJ5"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <inset key="imageEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="写实" image="04fenlei_yishu xieshi_sanjiaoxing">
-                                <color key="titleColor" red="0.80175262690000004" green="0.69612950090000003" blue="0.56939202550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="imageEdgeInsets" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
                                 <action selector="tapChangePaintAction:" destination="-1" eventType="touchUpInside" id="Dpk-JB-Qmu"/>
                             </connections>
                         </button>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="04fenlei_yishu xieshi_sanjiaoxing" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-S2-5Cz">
+                            <rect key="frame" x="237.5" y="15" width="12" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="a2p-sg-Kw9"/>
+                                <constraint firstAttribute="width" constant="12" id="fje-aK-Evf"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="ib5-jN-a8E" firstAttribute="centerX" secondItem="adk-Je-dsI" secondAttribute="centerX" id="6JT-5a-46V"/>
                         <constraint firstAttribute="height" constant="40" id="Acl-5x-6Na"/>
+                        <constraint firstItem="SPd-S2-5Cz" firstAttribute="leading" secondItem="ib5-jN-a8E" secondAttribute="trailing" id="Txd-4C-JBB"/>
+                        <constraint firstItem="SPd-S2-5Cz" firstAttribute="centerY" secondItem="ib5-jN-a8E" secondAttribute="centerY" id="e42-gE-pYc"/>
                         <constraint firstItem="ib5-jN-a8E" firstAttribute="centerY" secondItem="adk-Je-dsI" secondAttribute="centerY" id="zju-is-8Ks"/>
                     </constraints>
                 </view>
