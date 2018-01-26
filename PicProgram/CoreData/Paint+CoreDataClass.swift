@@ -35,7 +35,6 @@ public class Paint: NSManagedObject {
                     return results.first as? Paint
                 }
             }
-            
         } catch  {
             fatalError("获取失败")
         }

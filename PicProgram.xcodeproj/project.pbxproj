@@ -2947,8 +2947,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arttouchthemuseum.cmversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "efb7854b-bdac-4e40-91c8-e5e3e861872f";
-				PROVISIONING_PROFILE_SPECIFIER = app_store;
+				PROVISIONING_PROFILE = "9a0e906f-0b70-49fa-85c5-36d293ce9080";
+				PROVISIONING_PROFILE_SPECIFIER = ad_hoc;
 				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PicProgram/Header/PicProgram-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
