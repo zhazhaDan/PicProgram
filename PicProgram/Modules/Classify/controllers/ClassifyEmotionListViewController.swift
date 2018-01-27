@@ -89,11 +89,11 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
 //                    self?.model = nil
 //                }
                 let info = result["paint_detail"] as! [String : Any]
-                if self?.model != nil {
-                    self?.model.setValue(info["picture_info"], forKey: "picture_info")
-                }else {
+//                if self?.model != nil {
+//                    self?.model.setValue(info["picture_info"], forKey: "picture_info")
+//                }else {
                     self?.model = PaintModel.init(dict: info)
-                }
+//                }
 //                if result["last_id"] != nil {
 //                    self?.last_id = result["last_id"] as! Int32
 //                }else {
