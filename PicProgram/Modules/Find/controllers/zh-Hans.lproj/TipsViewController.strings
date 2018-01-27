@@ -1,12 +1,12 @@
 
+/* Class = "UILabel"; text = "显示到画框端"; ObjectID = "AIJ-bg-mwo"; */
+"AIJ-bg-mwo.text" = "显示到画框端";
+
+/* Class = "UILabel"; text = "100字"; ObjectID = "Eoa-Ol-6me"; */
+"Eoa-Ol-6me.text" = "100字";
+
 /* Class = "UIButton"; normalTitle = "材质"; ObjectID = "RjY-Ux-t0W"; */
 "RjY-Ux-t0W.normalTitle" = "材质";
-
-/* Class = "UIButton"; normalTitle = "老婆，祝你生日快乐"; ObjectID = "VSY-io-nXb"; */
-"VSY-io-nXb.normalTitle" = "点击此处请录入您的祝福哦";
-
-/* Class = "UITextView"; text = "老婆，祝你生日快乐"; ObjectID = "X9e-09-bwJ"; */
-"X9e-09-bwJ.text" = "点击此处请录入您的祝福哦";
 
 /* Class = "UIButton"; normalTitle = "宣纸"; ObjectID = "Zb8-LO-rwr"; */
 "Zb8-LO-rwr.normalTitle" = "宣纸";

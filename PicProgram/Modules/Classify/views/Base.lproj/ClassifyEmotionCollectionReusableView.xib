@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,14 +17,14 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oz-lQ-C44">
-                    <rect key="frame" x="110" y="15" width="100" height="20"/>
+                    <rect key="frame" x="95" y="15" width="130" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Lqt-rE-QAu"/>
-                        <constraint firstAttribute="width" constant="100" id="M9O-qn-1CL"/>
+                        <constraint firstAttribute="width" constant="130" id="M9O-qn-1CL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="20" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="用户自定义" image="01faxian_jinrituijian_fanhui">
                         <color key="titleColor" red="0.73845994469999998" green="0.57833081480000004" blue="0.36853605509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>

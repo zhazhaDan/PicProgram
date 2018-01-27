@@ -13,11 +13,12 @@ private let reuseIdentifier = "PicDetailCollectionViewCell"
 
 class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,PlayMoreProtocol,CollectPaintsListProtocol,AddEmotionProtocol {
 
+//    @IBOutlet weak var collectionViewTopConstaint: NSLayoutConstraint!
     var currentIndex:NSInteger = 0
     var dragStartX:CGFloat = 0
     var dragEndX:CGFloat = 0
     var playStyle:Int = 0
-    @IBOutlet weak var collectionView: UICollectionView!
+    var collectionView: UICollectionView!
     var dataSource:Array<PictureModel> = Array()
     @IBAction func playStyleAction(_ sender: UIButton) {
         let styleImages = [#imageLiteral(resourceName: "danduye_danzhangbofanganniu"),#imageLiteral(resourceName: "danduye_sunxuxunhuan"),#imageLiteral(resourceName: "danduye_suijibofanganniu")]
@@ -67,18 +68,32 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
-//        collectionView.frame = CGRect.init(x: 0, y: NavigationBarBottom, width: self.view.width, height: SCREEN_HEIGHT - NavigationBarBottom)
-        collectionView.height = SCREEN_HEIGHT - NavigationBarBottom
-        let layout = collectionView.collectionViewLayout as! PlayViewFlowLayout
+        let layout = PlayViewFlowLayout.init()
         layout.scrollDirection = .horizontal
+        collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: NavigationBarBottom + 20, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 75 - NavigationBarBottom), collectionViewLayout: layout)
+        collectionView.backgroundColor = xsColor_main_white
+        collectionView.isPagingEnabled = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
+        self.view.addSubview(collectionView)
+//        collectionViewTopConstaint.constant = NavigationBarBottom + 20
+//        self.collectionView.updateConstraints()
+//        self.view.updateConstraints()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         if dataSource.count == 0 {
             let paint = Paint.fetchPaint(key: .name, value: HistoryPaintName, create: false, painttype: 3)
-            dataSource = (paint?.pictureModels)!
+            if paint != nil && paint?.pics?.count as! Int > 0 {
+                dataSource = (paint?.pictureModels)!
+            }
+        }
+        if dataSource.count == 0 {
+            self.view.isUserInteractionEnabled = false
+        }else {
+            self.view.isUserInteractionEnabled = true
         }
         collectionView.reloadData()
         if dataSource.count > 0 {

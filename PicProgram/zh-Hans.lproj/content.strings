@@ -79,6 +79,7 @@
 "Choose Device" = "是否添加推送 ";
 "Cancel Device" = "是否去除推送";
 "Setting Successful" = "设置成功";
+"Applied" = "设置成功";
 //一、发现
 "Art For Today" = "今日推荐";
 "Pioneer Artist" = "艺术先锋";
@@ -113,14 +114,14 @@
 "Modern" = "现代";
 "North American" = "美式";
 "Mediterranean" = "地中海";
-"Art Genre" = "按风格流派";
+"Genres" = "按风格流派";
 "Realism" = "写实";
 "Abstractionism" = "抽象";
 "Modernism" = "现代";
 "Figure" = "人物";
 "Landscape" = "山水";
-"Bird And Flower" = "花鸟";
-"Art Work" = "按画作品类";
+"Animal" = "花鸟";
+"Medium" = "按画作品类";
 "Traditional Chinese painting" = "国画";
 "Oil painting" = "油画";
 "Wood Printing " = "版画";
@@ -128,9 +129,9 @@
 "Sculpture" = "雕塑";
 "New Media" = "新媒体艺术";
 "Calligraphy" = "书法";
-"Chronologically" = "按年代时间轴";
-"Ancient Times" = "古代";
-"Modern Times" = "近代";
+"Chronologic" = "按年代时间轴";
+"Ancient" = "古代";
+"Modern" = "近代";
 "Contemporary" = "当代";
 //"Category" = "类型";
 "User Customized Setting" = "用户自定义";
@@ -146,8 +147,8 @@
 "History Viewed" = "历史浏览";
 
 //三、画架
-"My Art Work List" = "我的画单";
-"Recent Viewed" = "最近浏览";
+//"My Art Work List" = "我的画单";
+//"Recent Viewed" = "最近浏览";
 "My Collection" = "收藏画单";
 //四、播放页
 "Single cycle" = "单张循环";
@@ -265,7 +266,7 @@
 "Device" = "设备";
 "Not connected to\nany device" = "暂未绑定设备";
 "Add Device" = "添加设备";
-"Wi-fi Setting" = "Wi-Fi配置";
+//"Wi-fi Setting" = "Wis-Fi配置";
 "The scan was successful" = "扫描已成功";
 "The scan was unsuccessful" = "扫描未成功";
 "You are going to disconnect this device" = "确定移除设备?";

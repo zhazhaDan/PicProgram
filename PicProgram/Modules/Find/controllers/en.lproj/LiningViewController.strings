@@ -3,16 +3,16 @@
 "CMs-XJ-oeD.text" = "Black Matt";
 
 /* Class = "UIButton"; normalTitle = "无内衬"; ObjectID = "ETm-kv-KYu"; */
-"ETm-kv-KYu.normalTitle" = "No painting Linging";
+"ETm-kv-KYu.normalTitle" = "No Lining";
 
 /* Class = "UIButton"; normalTitle = "内衬大小"; ObjectID = "IvV-9a-lW5"; */
-"IvV-9a-lW5.normalTitle" = "Linging size";
+"IvV-9a-lW5.normalTitle" = "Size";
 
 /* Class = "UILabel"; text = "5cm"; ObjectID = "PNb-0C-0Tv"; */
 "PNb-0C-0Tv.text" = "5cm";
 
 /* Class = "UILabel"; text = "米色纹路"; ObjectID = "RD3-Fr-jfA"; */
-"RD3-Fr-jfA.text" = "Beige Texture";
+"RD3-Fr-jfA.text" = "Wood Texture";
 
 /* Class = "UILabel"; text = "10cm"; ObjectID = "TcG-Pf-Whg"; */
 "TcG-Pf-Whg.text" = "10cm";
@@ -30,7 +30,7 @@
 "lFE-Qm-gVe.normalTitle" = "Lining";
 
 /* Class = "UILabel"; text = "灰色质感"; ObjectID = "wgW-Ci-AYe"; */
-"wgW-Ci-AYe.text" = "Grey Texture";
+"wgW-Ci-AYe.text" = "Grey";
 
 /* Class = "UILabel"; text = "7.5cm"; ObjectID = "xFw-GB-aiD"; */
 "xFw-GB-aiD.text" = "7.5cm";

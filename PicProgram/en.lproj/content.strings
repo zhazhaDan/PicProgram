@@ -10,14 +10,14 @@
 "Art For Today" = "Art For Today";
 "Pioneer Artist" = "Pioneer Artist";
 "Recent Art Works" = "Recent Art Works";
-"Popular Art Works t" = "Popular Art Works t";
+"Popular Art Works t" = "Popular Art Works";
 //搜索里边的字：
 "Art works/Artist" = "Art works/Artist";
 "Discover" = "Discover";
 "Category" = "Category";
 "Art Works" ="Art Works";
 //"My Account" = "My Account";
-"Artists’words" = "Artists’words";
+"Artists’words" = "Artists' Sayings";
 "Share" = "Share";
 "Art Digest" = "Art Digest    ";
 //二、分类
@@ -58,7 +58,7 @@
 "Modern Times" = "Modern Times";
 "Contemporary" = "Contemporary";
 "Category" = "Category";
-"User Customized Setting" = "User Customized Setting";
+"User Customized Setting" = "User list";
 "Initical Category" = "Initical Category";
 "Happiness" ="Happiness";
 "Anger" = "Anger";
@@ -68,10 +68,10 @@
 "Fear" = "Fear";
 "Boggle" = "Boggle";
 "Emptiness" = "Emptiness";
-"Recent viewed" = "Recent viewed";
+//"Recent viewed" = "Recent viewed";
 //三、画架
-"My Art Work List" = "My Art Work List";
-"Recent Viewed" = "Recent Viewed";
+//"My Art Work List" = "My List";
+"Recent Viewed" = "Recent View";
 "My Collection" = "My Collection";
 //四、播放页
 "Single cycle" = "Single cycle";
@@ -95,13 +95,13 @@
 "List Name" = "List Name";
 "Submit" = "Submit";
 "Cancel" = "Cancel";
-"No painting Linging" = "No painting Linging";
+"No painting Linging" = "No Linging";
 "Texture" = "Texture";
-"Size" = "Size";
+"Size" = " ";
 "Card Board" = "Card Board";
-"Beige Texture" = "Beige Texture";
+"Beige Texture" = "Wood Texture";
 "Xuan Paper" = "Xuan Paper";
-"Grey Texture" = "Grey Texture";
+"Grey Texture" = "Grey";
 "Black Matt" = "Black Matt";
 "Lining" ="Lining";
 "Position" ="Position";
@@ -110,7 +110,7 @@
 "Not Set Up" ="Not Set Up";
 "Device" = "Device";
 "Add Device" = "Add Device";
-"WIFI Seting" = "WIFI Seting";
+"WIFI Seting" = "WiFi Seting";
 "Language" = "Language";
 "Device Management" = "Device Management";
 "Connected Decices x" = "Connected Decices x";
@@ -160,14 +160,14 @@
 "Artist" = "Artist";
 "Gallery" = "Gallery";
 "No Results" = "No Results";
-"Mine Setting" = "Mine Setting";
+"Mine Setting" = "My Settings";
 "Lining" = "Lining";
 "Deny" = "Deny";
 "Remove" = "Remove";
 "Deleting" = "Deleting";
 "Delete Success" = "Delete Success";
-"My art work list" = "My art work list";
-"Recent viewed" = "Recent viewed";
+"My art work list" = "My list";
+//"Recent viewed" = "Recent viewed";
 "FeedBack" = "FeedBack";
 "Current Version" = "Current Version";
 "Language" ="Language";
@@ -190,7 +190,7 @@
 "Device" = "Device";
 "Not connected to\nany device" = "Not connected to\nany device";
 "Add Device" = "Add Device";
-"Wi-fi Setting" = "Wi-fi Setting";
+"Wi-fi Setting" = "Generate QR code";
 "The scan was successful" = "The scan was successful";
 "The scan was unsuccessful" = "The scan was unsuccessful";
 "You are going to disconnect this device" = "You are going to disconnect this device";
@@ -214,13 +214,16 @@
 "Change Cover" = " Change Cover ";
 "Edit paint info" = " Edit art work info ";
 "Edit Paint info successful" = " Edit Paint info successful ";
-"pages" = " pages ";
+"pages" = " pcs ";
 "Upload Successful" = " saved successfully ";
 "Tips" = " Tips ";
-"tips hint" = " tips hint ";
-"Lining hint" = " Lining hint ";
-"Show it on digital frame" = " Show it on digital frame ";
-"Don not show it on digital frame" = " Don not show it on digital frame ";
+
+//"tips hint" = "此功能需绑定墨染数字画框使用\n底部点选便签材质、位置\n右上角按钮推送到数字画框硬件端";
+//"Lining hint" = "此功能需绑定墨染数字画框使用\n底部点选内衬材质、大小\n右上角按钮推送到数字画框硬件端";
+"tips hint" = "You need to pair this App with Moran Digital Museum to enable this function";
+"Lining hint" = "You need to pair this App with Moran Digital Museum to enable this function";
+"Show it on digital frame" = "Show on Moran Digital Museum";
+"Don not show it on digital frame" = "Hide on Moran Digital Museum";
 "size" = " font ";
 "Choose" = " Share it on ";
 "Wechat session" = " Wechat session ";
@@ -249,5 +252,9 @@
 "made" = "made";
 "Personal Introduce" = "Personal Introduce";
 "Painting" = "Painting";
-
+"Please Click “Connect App”On Your Moran Frame And Scan Your Moran bar code" = "Please scan the QR code on the “App Pairing” page at Moran Digital Museum";
+"Applied" = "Applied";
+"Recent" = "Most Recent";
+"Popular" = "Most Popular";
+"Tips text" = "Please leave your message here";
 

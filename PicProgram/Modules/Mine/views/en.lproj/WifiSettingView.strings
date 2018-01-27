@@ -6,7 +6,7 @@
 "5se-Iz-bxh.normalTitle" = "Wi-fi Setting";
 
 /* Class = "UILabel"; text = "请进入Moran画框设置页面并进入Wi-Fi连接选项"; ObjectID = "ZpF-ja-6fS"; */
-"ZpF-ja-6fS.text" = "请进入Moran画框设置页面并进入Wi-Fi连接选项";
+"ZpF-ja-6fS.text" = "Please scan this QR code on “Wifi setting” page using Moran Digital Museum";
 
 /* Class = "UILabel"; text = "输入密码"; ObjectID = "mIP-Qc-gMA"; */
 "mIP-Qc-gMA.text" = "Type Your Password";

@@ -39,9 +39,11 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         super.viewDidLoad()
         self.currentImageView.xs_setImage(picModel.detail_url)
         self.title = MRLanguage(forKey: "Tips")
+        self.textView.text = MRLanguage(forKey: "Tips text")
         // Do any additional setup after loading the view.
     }
     
+
     override func buildUI() {
         for i in 0 ..< 3 {
             let btn = self.view.viewWithTag(10+i) as! UIButton
@@ -55,7 +57,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     override func requestData() {
         network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex,"flag":(switchSender.isOn == true ? 1 : 2)], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: "Tips\(MRLanguage(forKey: "Setting Successful"))", delay: 0.8, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: "Tips\(MRLanguage(forKey: "Applied"))", delay: 0.8, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }
@@ -63,7 +65,7 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     @IBAction func hintAction(_ sender: Any) {
         let hintView = Bundle.main.loadNibNamed("HintView", owner: nil, options: nil)?.first as! HintView
         hintView.frame = (self.navigationController?.view.bounds)!
-        hintView.hintTextLabel.text = "此功能需绑定墨染数字画框使用\n底部点选便签材质、位置\n右上角按钮推送到数字画框硬件端"
+        hintView.hintTextLabel.text = MRLanguage(forKey: "tips hint")
         //"此功能需绑定墨染数字画框使用\n底部点选内衬材质、大小\n右上角按钮推送到数字画框硬件端"
         self.navigationController?.view.addSubview(hintView)
     }
@@ -74,12 +76,12 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         if sender.isOn == true {
             self.switchSender.onTintColor = xsColor_main_blue
-            self.switchShowLabel.text = "显示到画框端"
+            self.switchShowLabel.text = MRLanguage(forKey: "Show it on digital frame")
             self.tipsMaterialsButton.alpha = 1
         }else {
             self.switchSender.onTintColor = xsColor_main_white
             self.tipsMaterialsButton.alpha = 0.5
-            self.switchShowLabel.text = "不显示到画框端"
+            self.switchShowLabel.text = MRLanguage(forKey: "Don not show it on digital frame")
         }
     }
     

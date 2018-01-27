@@ -1,12 +1,12 @@
 
+/* Class = "UILabel"; text = "显示到画框端"; ObjectID = "AIJ-bg-mwo"; */
+"AIJ-bg-mwo.text" = "Show on Moran Digital Museum";
+
+/* Class = "UILabel"; text = "100字"; ObjectID = "Eoa-Ol-6me"; */
+"Eoa-Ol-6me.text" = "100";
+
 /* Class = "UIButton"; normalTitle = "材质"; ObjectID = "RjY-Ux-t0W"; */
 "RjY-Ux-t0W.normalTitle" = "Texture";
-
-/* Class = "UIButton"; normalTitle = "老婆，祝你生日快乐"; ObjectID = "VSY-io-nXb"; */
-"VSY-io-nXb.normalTitle" = "Tips text";
-
-/* Class = "UITextView"; text = "老婆，祝你生日快乐"; ObjectID = "X9e-09-bwJ"; */
-"X9e-09-bwJ.text" = "Tips text";
 
 /* Class = "UIButton"; normalTitle = "宣纸"; ObjectID = "Zb8-LO-rwr"; */
 "Zb8-LO-rwr.normalTitle" = "Paper";
@@ -19,3 +19,7 @@
 
 /* Class = "UIButton"; normalTitle = "刻印"; ObjectID = "yUz-Fa-kKM"; */
 "yUz-Fa-kKM.normalTitle" = "stamp";
+
+/* Class = "UIButton"; normalTitle = "材质"; ObjectID = "RjY-Ux-t0W"; */
+"RjY-Ux-t0W.normalTitle" = "Texture";
+

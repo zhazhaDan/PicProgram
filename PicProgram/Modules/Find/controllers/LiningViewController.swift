@@ -54,7 +54,7 @@ class LiningViewController: BaseViewController {
     override func requestData() {
         network.requestData(.paint_lining, params: ["frame_colour":tiningStyle.rawValue,"frame_size":tiningSize.rawValue], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
-                HUDTool.show(.text, text: MRLanguage(forKey: "Linng") + MRLanguage(forKey: "Setting Successful"), delay: 0.8, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Lining") + MRLanguage(forKey: "Applied"), delay: 0.8, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }

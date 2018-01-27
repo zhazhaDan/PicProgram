@@ -924,8 +924,6 @@
 		F7141DB21FDBCF6700606631 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LiningViewController.strings"; sourceTree = "<group>"; };
 		F7141DB31FDBD05F00606631 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		F7141DB81FDBD06C00606631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TipsViewController.xib; sourceTree = "<group>"; };
-		F7141DBB1FDBD06E00606631 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TipsViewController.strings; sourceTree = "<group>"; };
-		F7141DBD1FDBD07000606631 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TipsViewController.strings"; sourceTree = "<group>"; };
 		F7141DBE1FDC11CB00606631 /* SnapShot+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnapShot+UIView.swift"; sourceTree = "<group>"; };
 		F71952CD1FCA88AD00ED9D68 /* ClassifyEmotionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionListViewController.swift; sourceTree = "<group>"; };
 		F71952D11FCAFF0A00ED9D68 /* ClassifyEmotionCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyEmotionCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -942,6 +940,8 @@
 		F72A5AD81FDD63E3007544CB /* HistoryPic+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryPic+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F72A5ADA1FDD63E4007544CB /* HistoryPic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryPic+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectPaintsListView.swift; sourceTree = "<group>"; };
+		F73D5BDA201C6938000E0F77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TipsViewController.strings"; sourceTree = "<group>"; };
+		F73D5BDC201C6957000E0F77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TipsViewController.strings; sourceTree = "<group>"; };
 		F748BDF81FE4101600512215 /* BasePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePickerView.swift; sourceTree = "<group>"; };
 		F751D2BA1FE84C21007E9E75 /* BigStarShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigStarShareView.swift; sourceTree = "<group>"; };
 		F75D56C01FE54BA60044429C /* WifiSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiSettingView.swift; sourceTree = "<group>"; };
@@ -2758,8 +2758,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F7141DB81FDBD06C00606631 /* Base */,
-				F7141DBB1FDBD06E00606631 /* en */,
-				F7141DBD1FDBD07000606631 /* zh-Hans */,
+				F73D5BDA201C6938000E0F77 /* zh-Hans */,
+				F73D5BDC201C6957000E0F77 /* en */,
 			);
 			name = TipsViewController.xib;
 			sourceTree = "<group>";

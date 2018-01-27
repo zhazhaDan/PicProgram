@@ -181,13 +181,13 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     func seeMoreNews() {
         let controller = RecommandListCollectionViewController()
         controller.title = MRLanguage(forKey: "Recent")
-        controller.type = 1
+        controller.type = 2
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func seeMoreHots() {
         let controller = RecommandListCollectionViewController()
         controller.title = MRLanguage(forKey: "Popular")
-        controller.type = 2
+        controller.type = 3
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func seeMoreReaders() {
