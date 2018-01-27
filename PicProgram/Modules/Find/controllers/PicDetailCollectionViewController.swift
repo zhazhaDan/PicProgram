@@ -15,6 +15,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     private var _paint_id:Int64 = 0 //默认id = 0 是自己收藏的画单
     var last_id:Int32 = 0
     var isAutor:Bool = false
+    var style_index:Int = 1
     var paint_id:Int64 {
         set{
             _paint_id = newValue
@@ -59,7 +60,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if paint_id != 0 {
+        if paint_id != 0 && dataSource.count == 0{
             requestData()
         }else {
             self.collectionView?.reloadData()
@@ -72,6 +73,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.collectionView?.y = -StatusBarHeight
         self.navigationItem.leftBarButtonItem = nil
+        picsStyleChangeAction(style:style_index)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -130,7 +132,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if UserInfo.user.checkUserLogin() {
             let vc = PlayViewController.player
-            vc.dataSource = paintModel.picture_arry
+            vc.dataSource = dataSource
             vc.title = paintModel.paint_title
             vc.currentIndex = indexPath.item
             self.navigationController?.pushViewController(vc, animated: true)
@@ -181,10 +183,10 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             header.subTitleLabel.text = paintModel.sub_title
             header.eyeNumLabel.text = "\(paintModel.read_num)"
             header.totalNumLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
-            header.numberLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
+            header.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
             header.contentLabel.text = paintModel.paint_detail
             header.titleLabel.text = self.title
-            if self.isAutor == true && paintModel.title_url.count as! Int == 0 {
+            if paintModel.title_url.count as! Int == 0 {
                 header.autoPicImageView.isHidden = true
                 header.autorTitleLabel.isHidden = false
                 header.autorTitleLabel.text = paintModel.paint_title
@@ -240,6 +242,9 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     //SearchProtocol
     func picsStyleChangeAction(style: Int) {
         var header = self.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
+        if header == nil {
+            return
+        }
         if (header?.isKind(of: PicDetailHeaderStyle3View.self))! {
             let header2 = header as! PicDetailHeaderStyle3View
             
@@ -265,6 +270,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             header2.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
         }
 
+        style_index = style
         self.collectionView?.reloadData()
     }
     

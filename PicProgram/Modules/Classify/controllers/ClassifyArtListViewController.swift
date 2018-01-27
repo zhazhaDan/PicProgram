@@ -77,7 +77,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
                     self?.model = nil
                 }
                 let info = result["paint_detail"] as! [String : Any]
-                if self?.model != nil {
+                if self?.model != nil && info["picture_info"] != nil{
                     self?.model.setValue(info["picture_info"], forKey: "picture_info")
                 }else {
                     self?.model = PaintModel.init(dict: info)
@@ -169,6 +169,7 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
+        last_id = 0
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
         self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)

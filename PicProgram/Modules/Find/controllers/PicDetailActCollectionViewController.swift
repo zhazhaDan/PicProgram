@@ -104,7 +104,7 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
             }
             header.headerImageView.xs_setImage(paintModel.title_url)
             header.eyeNumLabel.text = "\(paintModel.read_num)"
-            header.numberLabel.text = "\(paintModel.picture_num)\(MRLanguage(forKey: "pages"))"
+            header.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
             header.numLabel.text = "\(paintModel.picture_num)\(MRLanguage(forKey: "pages"))"
             header.contentLabel.text = paintModel.paint_detail
             return header
@@ -128,5 +128,6 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
     override func picsStyleChangeAction(style: Int) {
         // 横  横竖  竖
         super.picsStyleChangeAction(style: style)
+        
     }
 }

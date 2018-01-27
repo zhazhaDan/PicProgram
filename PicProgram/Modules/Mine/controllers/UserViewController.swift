@@ -20,6 +20,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     @IBOutlet weak var localLabel: UITextField!
     @IBOutlet weak var introduceTextView: UITextView!
     @IBOutlet weak var addressTextField: UITextField!
+    var picVC : SystemPicsCollectionViewController = SystemPicsCollectionViewController.init(nibName: "SystemPicsCollectionViewController", bundle: Bundle.main)
     var genderView: BasePickerView! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,9 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
 
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         if sender.view?.tag == 10 || sender.view?.tag == 11 {
-            let vc = SystemPicsCollectionViewController.init(nibName: "SystemPicsCollectionViewController", bundle: Bundle.main)
-            vc.delegate = self
-            vc.picType = (sender.view?.tag == 10 ? .user_set_header : .user_set_back)
-            self.navigationController?.pushViewController(vc, animated: true)
+            picVC.delegate = self
+            picVC.picType = (sender.view?.tag == 10 ? .user_set_header : .user_set_back)
+            self.navigationController?.pushViewController(picVC, animated: true)
         }else if sender.view?.tag == 12 {
             chooseGender()
         }else if sender.view?.tag == 13 {

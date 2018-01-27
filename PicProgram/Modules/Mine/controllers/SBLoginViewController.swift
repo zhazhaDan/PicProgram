@@ -105,7 +105,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
     
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
         self.title = MRLanguage(forKey: "Art Works")
     }
     

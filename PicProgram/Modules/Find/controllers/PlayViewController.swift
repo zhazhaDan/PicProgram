@@ -22,10 +22,10 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     @IBAction func playStyleAction(_ sender: UIButton) {
         let styleImages = [#imageLiteral(resourceName: "danduye_danzhangbofanganniu"),#imageLiteral(resourceName: "danduye_sunxuxunhuan"),#imageLiteral(resourceName: "danduye_suijibofanganniu")]
         let styleHints = [MRLanguage(forKey: "Single cycle"),MRLanguage(forKey: "Play In Order"),MRLanguage(forKey: "Shuffle Play")]
-        playStyle = (playStyle+1)%3
-        sender.setBackgroundImage(styleImages[playStyle], for: .normal)
-        network.requestData(.paint_play_style, params: ["play_type":3 - playStyle], finishedCallback: { (result) in
+        network.requestData(.paint_play_style, params: ["play_type":3 - (playStyle+1)%3], finishedCallback: { (result) in
             if result["ret"] as! Int == 0{
+                self.self.playStyle = (self.playStyle+1)%3
+                sender.setImage(styleImages[self.playStyle], for: .normal)
                 HUDTool.show(.text, text: styleHints[self.playStyle], delay: 0.5, view: self.view, complete: nil)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: self.view, complete: nil)
@@ -68,6 +68,8 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         collectionView.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
+//        collectionView.frame = CGRect.init(x: 0, y: NavigationBarBottom, width: self.view.width, height: SCREEN_HEIGHT - NavigationBarBottom)
+        collectionView.height = SCREEN_HEIGHT - NavigationBarBottom
         let layout = collectionView.collectionViewLayout as! PlayViewFlowLayout
         layout.scrollDirection = .horizontal
     }
@@ -124,7 +126,7 @@ class PlayViewController: BaseViewController,UICollectionViewDelegateFlowLayout,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: SCREEN_WIDTH - 64, height: self.view.height - 75 - 84)
+        return CGSize.init(width: SCREEN_WIDTH - 64, height: SCREEN_HEIGHT - 75 - NavigationBarBottom)
     }
     
     

@@ -30,7 +30,6 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
             let button = self.view.viewWithTag(10) as? UIButton
             titlesSelected(button!)
         }
-        
         self.navigationItem.leftBarButtonItem = nil
     }
     
@@ -82,7 +81,6 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
         if (self.customViews[1] as! EmotionView).dataSource.count > 0 {
             return
         }
-        
         let path = BaseBundle.bundle.path(forResource: "EmotionList", ofType: "plist")
         let data = NSArray.init(contentsOfFile: path!) as! Array<[String : Any]>
         (self.customViews[1] as! EmotionView).dataSource = data
@@ -136,7 +134,7 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
 
     func customNavigationView() {
         self.navigationController?.navigationBar.barTintColor = xsColor("fcf9eb")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:xsColor_main_text_blue,NSAttributedStringKey.font:xsFont(17)]
         self.baseNavigationController?.addLeftNavigationBarItem("shousuo_icon", "shousuo_icon", leftCallBack: {
             let searchVC = SearchViewController()
             self.navigationController?.pushViewController(searchVC, animated: true)

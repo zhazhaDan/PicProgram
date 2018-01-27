@@ -176,15 +176,17 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
     func showSystemCamera() {
         let picker = UIImagePickerController.init()
         picker.sourceType = .camera
+        picker.allowsEditing = true
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //照相后回调
-        network.uploadPic(image: info[UIImagePickerControllerOriginalImage] as! UIImage,apiType: self.picType) { [weak self](result) in
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        network.uploadPic(image: image,apiType: self.picType) { [weak self](result) in
             if result["ret"] as! Int == 0 {
-                let dict = ["imageUrl": result["url"] as! String, "image": info[UIImagePickerControllerOriginalImage] as! UIImage] as [String : Any]
+                let dict = ["imageUrl": result["url"] as! String, "image": image] as [String : Any]
                 self?.delegate.finishUpload(imageInfo: dict, type: (self?.picType)!)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: {
@@ -210,6 +212,7 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
         self.collectionView?.reloadData()
         self.listView.hideList()
     }
+   
 }
 
 protocol SystemPicsCollectionProtocol:NSObjectProtocol{

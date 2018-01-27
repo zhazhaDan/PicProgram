@@ -82,6 +82,14 @@ class UserInfo: UserModel {
         UserDefaults.standard.removeObject(forKey: User_token)
         self.uin = 100000
         self.token = ""
+        let keys = ["head_url","background","nick_name","gender","birth_year","birth_month","birth_day","region","personal_profile","email_verified","letterStatus"]
+        for key in keys {
+            if self.value(forKey: key) is String {
+                self.setValue("", forKey: key)
+            }else if  self.value(forKey: key) is Int {
+                self.setValue(0, forKey: key)
+            }
+        }
         UserDefaults.standard.synchronize()
     }
     
