@@ -136,7 +136,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
 //                self?.navigationController?.popToRootViewController(animated: true)
                 self?.dismiss(animated: true, completion: nil)
             }else {
-                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: appDelegate.window!, complete: nil)
             }
         }, nil)
     }
