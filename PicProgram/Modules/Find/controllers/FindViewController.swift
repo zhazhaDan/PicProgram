@@ -197,7 +197,7 @@ class FindViewController: BaseViewController,BannerViewProtocol,FindViewProtocol
     func viewDidSelected(view: ItemView, paint_id: Int64) {
         let layout = UICollectionViewFlowLayout.init()
         let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
-        vc.paintModel = view.model
+        vc.paint_id = view.model.paint_id
         vc.title = view.model.paint_title
         self.navigationController?.pushViewController(vc, animated: true)
     }

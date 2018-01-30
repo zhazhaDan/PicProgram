@@ -297,7 +297,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
                     let header = self?.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
                     if header is PicDetailHeaderStyle3View {
                         (header as! PicDetailHeaderStyle3View).collectButton.isSelected = !(header as! PicDetailHeaderStyle3View).collectButton.isSelected
-                        
+                        self?.paintModel.flag = ((header as! PicDetailHeaderStyle3View).collectButton.isSelected == true ? 1 : 2)
                     }else if header is PicDetailHeaderCollectionReusableView {
                         (header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected = !(header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected
                     }
