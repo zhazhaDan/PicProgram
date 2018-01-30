@@ -305,8 +305,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
     }
     
     func confirmRemoveDevice(deviceIndex row: Int) {
-        let alert2 = BaseAlertController.inits("", message: MRLanguage(forKey: "If you unbind the device,all that is bound\nto the device.The user will\nautomatically unbundle"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
-            if tag == 0 {
+//        let alert2 = BaseAlertController.inits("", message: MRLanguage(forKey: "If you unbind the device,all that is bound\nto the device.The user will\nautomatically unbundle"), confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No"), subComplete: { (tag) in
+//            if tag == 0 {
                 let bindUserView = self.view.viewWithTag(300) as! MineBindDeviceView
                 let info = bindUserView.dataSource[row]
                 network.requestData(.user_delete_device, params: ["device_id":info["device_id"] as Any], finishedCallback: { (result) in
@@ -319,9 +319,9 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                         HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self.navigationController?.view)!, complete: nil)
                     }
                 }, nil)
-            }
-            
-        })
+//            }
+        
+//        })
 //        self.navigationController?.present(alert2, animated: true, completion: nil)
     }
     

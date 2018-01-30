@@ -125,7 +125,7 @@
                                 <constraint firstAttribute="height" constant="1" id="eqR-9W-zlH"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" tag="31" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fe2-Vd-FFn" userLabel="夜间">
+                        <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fe2-Vd-FFn" userLabel="夜间">
                             <rect key="frame" x="163.5" y="175.5" width="33" height="33"/>
                             <state key="normal" image="10sdanduye_gengduogongnneg_danxuan"/>
                             <state key="selected" image="10sdanduye_gengduogongnneg_xuanzhong"/>
@@ -161,7 +161,7 @@
                             <color key="textColor" red="0.73850190640000002" green="0.58228081460000003" blue="0.3685348034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-1P-2OD" userLabel="正常">
+                        <button opaque="NO" tag="30" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-1P-2OD" userLabel="正常">
                             <rect key="frame" x="51.5" y="175.5" width="33" height="33"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="33" id="QPf-Um-xie"/>

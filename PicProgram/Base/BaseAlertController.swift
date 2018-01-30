@@ -16,13 +16,13 @@ class BaseAlertController:UIView {
     var subButton:UIButton!
     var cancelButton:UIButton!
     var callBackBlock:((Int)->Void)!
-    open static func inits(_ title:String,message:String?=nil,confirmText:String,_ cancelText:String? = "取消",subComplete:((Int)->Void)? = nil) -> BaseAlertController {
+    open static func inits(_ title:String,message:String?=nil,confirmText:String,_ cancelText:String? = "取消",_ selectedIndex:Int = 0,subComplete:((Int)->Void)? = nil) -> BaseAlertController {
         let alertController = BaseAlertController()
-        alertController.buildUI(title, message: message, confirmText: confirmText, cancelText,subComplete: subComplete)
+        alertController.buildUI(title, message: message, confirmText: confirmText, cancelText,selectedIndex,subComplete: subComplete)
         UIApplication.shared.keyWindow?.addSubview(alertController)
         return alertController
     }
-    func buildUI(_ title:String,message:String?=nil,confirmText:String,_ cancelText:String? = "取消",subComplete:((Int)->Void)? = nil) {
+    func buildUI(_ title:String,message:String?=nil,confirmText:String,_ cancelText:String? = "取消",_ selectedIndex:Int = 0,subComplete:((Int)->Void)? = nil) {
         self.frame = UIScreen.main.bounds
         self.backgroundColor = xsColor("000000", alpha: 0.6)
         backView.frame = CGRect.init(x: 0, y: 0, width: (SCREEN_WIDTH - 48), height: 167)
@@ -53,7 +53,9 @@ class BaseAlertController:UIView {
         subButton.setTitleColor(xsColor_main_white, for: .highlighted)
         subButton.setTitleColor(xsColor_main_yellow, for: .normal)
         subButton.setTitle(confirmText, for: .normal)
-        subButton.isSelected = true
+        if selectedIndex == 0 {
+            subButton.isSelected = true
+        }
         subButton.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
         backView.addSubview(subButton)
         
@@ -71,6 +73,9 @@ class BaseAlertController:UIView {
             cancelButton.setTitle(cancelText, for: .normal)
             cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
             backView.addSubview(cancelButton)
+            if selectedIndex == 1 {
+                cancelButton.isSelected = true
+            }
         
         }
         

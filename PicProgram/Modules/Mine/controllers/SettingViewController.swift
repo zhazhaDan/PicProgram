@@ -130,7 +130,8 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         case 2:
             print("软件版本")
         case 3:
-             BaseAlertController.inits("", message: MRLanguage(forKey: "Choose your language"), confirmText: MRLanguage(forKey: "Chinese"), MRLanguage(forKey: "English"), subComplete: { (index) in
+            let index = (BaseBundle.language == CNS ? 0 : 1)
+             BaseAlertController.inits("", message: MRLanguage(forKey: "Choose your language"), confirmText: MRLanguage(forKey: "Chinese"), MRLanguage(forKey: "English"),index, subComplete: { (index) in
                
                 if index == 0 {
                     if BaseBundle.language != CNS {
