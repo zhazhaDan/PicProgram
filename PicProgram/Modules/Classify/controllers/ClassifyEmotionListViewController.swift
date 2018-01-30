@@ -248,6 +248,7 @@ class ClassifyEmotionListViewController: BaseViewController,UICollectionViewDele
         loadLoadEmotionPaint()
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
+        self.collectionView.setContentOffset(CGPoint.zero, animated: false)
         self.requestData()
     }
     

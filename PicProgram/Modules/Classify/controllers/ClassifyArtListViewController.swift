@@ -170,12 +170,15 @@ class ClassifyArtListViewController: BaseViewController,UICollectionViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         last_id = 0
+        self.collectionView.xs_resetNoMoreData()
         self.tapChangePaintAction(tableView)
         self.showTableListView.reloadData()
         self.classTitleButton.setTitle(dataSource[selectedIndex]["paint_name"] as! String, for: .normal)
         
         self.subTitleWidthConstraint.constant = (self.classTitleButton.titleLabel?.textSize().width)! + 12
         self.view.updateConstraints()
+        self.collectionView.setContentOffset(CGPoint.zero, animated: false)
+
         self.requestData()
     }
     

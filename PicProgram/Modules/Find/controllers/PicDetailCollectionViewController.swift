@@ -73,7 +73,6 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.collectionView?.y = -StatusBarHeight
         self.navigationItem.leftBarButtonItem = nil
-        picsStyleChangeAction(style:style_index)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -82,11 +81,15 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     }
     
     func requestData() {
-        network.requestData(.paint_info, params: ["paint_id":paint_id,"last_id":0], finishedCallback: { [weak self](result) in
+        HUDTool.show(.loading, view: self.view)
+        network.requestData(.paint_info, params: ["paint_id":paint_id,"last_id":self.last_id], finishedCallback: { [weak self](result) in
+            HUDTool.hide()
+            self?.collectionView?.xs_endRefreshing()
             if result["ret"] as! Int == 0 {
                 let info = result["paint_detail"] as! [String : Any]
                 if self?.paintModel != nil {
-                    self?.paintModel.setValue(info["picture_info"], forKey: "picture_info")
+                    self?.paintModel.setValuesForKeys(info)
+//                    self?.paintModel.setValue(info["picture_info"], forKey: "picture_info")
                 }else {
                     self?.paintModel = PaintModel.init(dict: info)
                 }
@@ -96,10 +99,11 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
                     self?.last_id = -1
                     self?.collectionView?.xs_endRefreshingWithNoMoreData()
                 }
-                self?.collectionView?.reloadData()
-                self?.paintModel = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
+//                self?.paintModel = PaintModel.init(dict: result["paint_detail"] as! [String : Any])
 //                self?.picsStyleChangeAction(style: 1)
-                self?.collectionView?.reloadData()
+                self?.picsStyleChangeAction(style:(self?.style_index)!)
+
+//                self?.collectionView?.reloadData()
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 0.8, view: (self?.view)!, complete: nil)
             }
@@ -182,7 +186,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
             header.picTitleLabel.text = paintModel.paint_title
             header.subTitleLabel.text = paintModel.sub_title
             header.eyeNumLabel.text = "\(paintModel.read_num)"
-            header.totalNumLabel.text = "\(paintModel.picture_arry.count)\(MRLanguage(forKey: "pages"))"
+            header.totalNumLabel.text = "\(paintModel.picture_num)\(MRLanguage(forKey: "pages"))"
             header.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
             header.contentLabel.text = paintModel.paint_detail
             header.titleLabel.text = self.title
@@ -241,35 +245,28 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
     
     //SearchProtocol
     func picsStyleChangeAction(style: Int) {
+        if style == 0 {
+            dataSource = paintModel.picture_H
+        }else if style == 1 {
+            dataSource = paintModel.picture_arry
+        }else if style == 2 {
+            dataSource = paintModel.picture_S
+        }
         var header = self.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
-        if header == nil {
-            return
-        }
-        if (header?.isKind(of: PicDetailHeaderStyle3View.self))! {
-            let header2 = header as! PicDetailHeaderStyle3View
-            
-            if style == 0 {
-                dataSource = paintModel.picture_H
-            }else if style == 1 {
-                dataSource = paintModel.picture_arry
-            }else if style == 2 {
-                dataSource = paintModel.picture_S
+        if header != nil {
+            if (header?.isKind(of: PicDetailHeaderStyle3View.self))! {
+                let header2 = header as! PicDetailHeaderStyle3View
+                
+                
+                header2.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
+                
+            }else {
+                let header2 = header as! PicDetailHeaderCollectionReusableView
+                
+                header2.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
             }
-            header2.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
-
-        }else {
-            let header2 = header as! PicDetailHeaderCollectionReusableView
-            
-            if style == 0 {
-                dataSource = paintModel.picture_H
-            }else if style == 1 {
-                dataSource = paintModel.picture_arry
-            }else if style == 2 {
-                dataSource = paintModel.picture_S
-            }
-            header2.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
         }
-
+       
         style_index = style
         self.collectionView?.reloadData()
     }
@@ -297,7 +294,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
                     let header = self?.collectionView?.supplementaryView(forElementKind: UICollectionElementKindSectionHeader, at: IndexPath.init(row: 0, section: 0))
                     if header is PicDetailHeaderStyle3View {
                         (header as! PicDetailHeaderStyle3View).collectButton.isSelected = !(header as! PicDetailHeaderStyle3View).collectButton.isSelected
-                        
+                        self?.paintModel.flag = ((header as! PicDetailHeaderStyle3View).collectButton.isSelected == true ? 1 : 2)
                     }else if header is PicDetailHeaderCollectionReusableView {
                         (header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected = !(header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected
                     }

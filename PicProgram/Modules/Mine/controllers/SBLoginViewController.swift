@@ -127,7 +127,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
     override func requestData() {
         network.requestData(.user_login, params: ["register_id":emailTextfield.text as! String,"password":passTextfield.text as! String], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0{
-                HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: appDelegate.window!, complete: nil)
                 UserInfo.user.setValuesForKeys(result)
                 UserInfo.user.updateUserInfo()
                 if UserInfo.user.client_id != nil && UserInfo.user.client_id?.count as! Int > 0 {
@@ -136,7 +136,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
 //                self?.navigationController?.popToRootViewController(animated: true)
                 self?.dismiss(animated: true, completion: nil)
             }else {
-                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self?.view)!, complete: nil)
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: appDelegate.window!, complete: nil)
             }
         }, nil)
     }
