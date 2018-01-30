@@ -40,7 +40,7 @@ extension UIScrollView {
         }
     }
     func xs_endRefreshing() {
-        if (self.es_header?.isRefreshing)! {
+        if  self.es_header != nil && (self.es_header?.isRefreshing)! {
             self.es_header?.stopRefreshing()
         }
         if self.es_footer != nil && (self.es_footer?.isRefreshing)! {
@@ -51,6 +51,10 @@ extension UIScrollView {
     
     func xs_endRefreshingWithNoMoreData() {
         self.es_noticeNoMoreData()
+    }
+    
+    func xs_resetNoMoreData() {
+        self.es_resetNoMoreData()
     }
     
     

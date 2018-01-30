@@ -301,7 +301,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
             vc.isAutor = true
-            vc.paintModel = (searchResultView.dataSource[view][index] as! PaintModel)
+            vc.paint_id = (searchResultView.dataSource[view][index] as! PaintModel).paint_id
             self.navigationController?.pushViewController(vc, animated: true)
         }else  if view == SearchResultListType.SearchResultListType_production.hashValue {
             let vc = PictureDetailViewController()
@@ -311,7 +311,7 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
         }else  if view == SearchResultListType.SearchResultListType_paint.hashValue {
             let layout = UICollectionViewFlowLayout.init()
             let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
-            vc.paintModel = (searchResultView.dataSource[view][index] as! PaintModel)
+            vc.paint_id = (searchResultView.dataSource[view][index] as! PaintModel).paint_id
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

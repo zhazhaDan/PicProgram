@@ -121,7 +121,7 @@ class CollectPaintsListView: BaseView,UITableViewDelegate,UITableViewDataSource,
                 paint.title_detail_url = pic.detail_url
             }
             paint.addToPics(pic)
-            pic.paint = paint
+            pic.paints?.adding(paint)
             do {
                 try managedObectContext.save()
                 HUDTool.show(.text, text: MRLanguage(forKey: "Save successful"), delay: 1, view: self, complete: {

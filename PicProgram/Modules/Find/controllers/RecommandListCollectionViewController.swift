@@ -96,7 +96,7 @@ class RecommandListCollectionViewController: BaseViewController,UICollectionView
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let layout = UICollectionViewFlowLayout.init()
         let vc = PicDetailCollectionViewController.init(collectionViewLayout: layout)
-        vc.paintModel = dataSource[indexPath.row]
+        vc.paint_id = dataSource[indexPath.row].paint_id
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
