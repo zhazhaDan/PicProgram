@@ -99,6 +99,9 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: self.view, complete: nil)
                 self.deviceDatas.removeAll()
                 self.updateDeviceManageView()
+            }else if result["ret"] as! Int == -1062 {
+                self.deviceDatas.removeAll()
+                self.updateDeviceManageView()
             }
         }, nil)
     }

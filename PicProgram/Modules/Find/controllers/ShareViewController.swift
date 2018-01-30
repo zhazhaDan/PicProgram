@@ -101,7 +101,8 @@ class ShareViewController: BaseViewController,UIScrollViewDelegate ,AddEmotionPr
     }
     
     func codeUpdate() {
-        let string = picTitleLabel.text! + emotionButton.title(for: .normal)!
+//        let string = picTitleLabel.text! + emotionButton.title(for: .normal)!
+        let string = "www.atmoran.com"
         self.qrCodeImageView.image = string.generateQRCodeImage()
     }
     
