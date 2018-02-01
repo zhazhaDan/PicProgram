@@ -201,8 +201,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
             endingLineNumber = "288"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "listDidSelected(view:at:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

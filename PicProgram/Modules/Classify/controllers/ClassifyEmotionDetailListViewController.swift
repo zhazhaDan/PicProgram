@@ -92,6 +92,7 @@ class ClassifyEmotionDetailListViewController: BaseViewController,UICollectionVi
             let vc = PlayViewController.player
             vc.dataSource = pictures
             vc.title = self.title
+            vc.currentIndex = indexPath.row
             self.navigationController?.pushViewController(vc, animated: true)
         }else {
             let sb = UIStoryboard.init(name: "Mine", bundle: Bundle.main)
