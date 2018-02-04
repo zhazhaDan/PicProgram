@@ -62,7 +62,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>13</string>
+	<string>14</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -112,9 +112,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>访问相机</string>
+	<string>"墨染博物馆"需要访问您的相机才能启动二维码扫描功能</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>访问相册</string>
+	<string>"墨染博物馆"需要访问您的相册才能开启头像和主页的修改功能</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>方正宋刻本秀楷简体.TTF</string>

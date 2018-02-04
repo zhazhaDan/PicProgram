@@ -21,7 +21,7 @@ extension String {
     
     
     /// 生成二维码
-    func generateQRCodeImage(color:UIColor = xsColor_main_yellow) -> UIImage {
+    func generateQRCodeImage(color:UIColor = xsColor_main_yellow,orientation: UIImageOrientation = UIImageOrientation.up) -> UIImage {
         
         // 1. 生成二维码
         let qrFilter = CIFilter(name: "CIQRCodeGenerator")!
@@ -46,7 +46,31 @@ extension String {
         
         //        return insertAvatarImage(qrimage: UIImage(CIImage: outputImage!), avatar: UIImage(named: "avatar")!)
         return UIImage.init(ciImage: outputImage!)
+//        return UIImage.init(ciImage: outputImage!, scale: 1.0, orientation: orientation)
     }
+    
+//    func rotateImage(orientation:UIImageOrientation,srcImage:UIImage) {
+//        //Quartz重绘图片
+//        let rect = CGRect.init(x: 0, y: 0, width: srcImage.size.width, height: srcImage.size.height)//创建矩形框
+//        //根据size大小创建一个基于位图的图形上下文
+//        UIGraphicsBeginImageContextWithOptions(rect.size, false, 2)
+//        let currentContext = UIGraphicsGetCurrentContext();//获取当前quartz 2d绘图环境
+////        CGContext.clip(to:currentContext)
+////        CGContext.rotate(currentContext!)
+//        CGContextClipToRect(currentContext!, rect);//设置当前绘图环境到矩形框
+//        CGContextRotateCTM(currentContext!, CGFloat(M_PI)); //旋转180度
+//        //平移， 这里是平移坐标系，跟平移图形是一个道理
+//        CGContextTranslateCTM(currentContext!, -rect.size.width, -rect.size.height);
+//        CGContextDrawImage(currentContext, rect, srcImage.cgImage);//绘图
+//
+//        //翻转图片
+//        let drawImage =   UIGraphicsGetImageFromCurrentImageContext();//获得图片
+//        let flipImage =   UIImage(CGImage:drawImage?.CGImage!,
+//                                                             scale:srcImage.scale,
+//                                                                                                                orientation:srcImage.imageOrientation  //图片方向不用改
+//        )
+//    }
+//
     
     func insertAvatarImage(qrimage: UIImage, avatar: UIImage) -> UIImage {
         

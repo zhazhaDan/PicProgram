@@ -18,10 +18,11 @@ class WifiSettingView: BaseView {
     @IBAction func connectWifiAction(_ sender: Any) {
         let codeString = wifiNameTextfield.text! + "&" + passTextfield.text! + "&2"
         self.wifiCodeView.isHidden = false
-        wifiQrCodeImageView.image = codeString.generateQRCodeImage(color: xsColor_main_blue)
+        
+        wifiQrCodeImageView.image = codeString.generateQRCodeImage(color: xsColor_main_blue,orientation: .rightMirrored)
     }
     
-    
+     
     
     @IBAction func tapAction(_ sender: Any) {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
