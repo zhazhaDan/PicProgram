@@ -42,16 +42,16 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
             return _pioneerModel
         }
     }
-    private let bannerHeight = (SCREEN_WIDTH - 24)/CGFloat(351/168.0)
-    private let scrollHeight = 242 + (SCREEN_WIDTH - 24)/CGFloat(351/168.0)
+    private let bannerHeight = (SCREEN_WIDTH - 24)/CGFloat(399/165)
+    private let scrollHeight = 242 + (SCREEN_WIDTH - 24)/CGFloat(399/165)
 
 
     override func buildUI() {
 //        let bannerBackView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 180))
 //        bannerBackView.backgroundColor = xsColor_main_white
-        let bannerScale = CGFloat(351/168.0)
-        let bannerFrame = CGRect.init(x: 12, y: 12, width: SCREEN_WIDTH - 24, height: (SCREEN_WIDTH - 24)/bannerScale)
-
+        let bannerScale = CGFloat(399/165)
+        let bannerFrame = CGRect.init(x: 13, y: 12, width: SCREEN_WIDTH - 26, height: (SCREEN_WIDTH - 26)/bannerScale)
+        
         bannerView = BannerView.init(frame: bannerFrame,false,true)
         bannerView.layer.cornerRadius = 8
         bannerView.layer.masksToBounds = true

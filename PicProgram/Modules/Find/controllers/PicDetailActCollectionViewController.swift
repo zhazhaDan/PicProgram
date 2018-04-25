@@ -102,7 +102,7 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
                 header.collectButton.isUserInteractionEnabled = false
                 header.collectButton.isSelected = true
             }
-            let bannerScale = CGFloat(375/203.0)
+            let bannerScale = CGFloat(375/168)
             let picHight = SCREEN_WIDTH/bannerScale
             header.picHeightConstraint.constant = picHight + 5
             header.updateConstraints()
@@ -118,7 +118,7 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let contentHeight = paintModel.paint_detail.size(self.view.width - 24, CGFloat(MAXFLOAT), xsFont(13)).height
-        let bannerScale = CGFloat(375/203.0)
+        let bannerScale = CGFloat(375/168)
         let picHight = SCREEN_WIDTH/bannerScale
         return CGSize.init(width: self.view.width, height: 75+contentHeight+picHight)
     }
