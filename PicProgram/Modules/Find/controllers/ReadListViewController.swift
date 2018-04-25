@@ -48,6 +48,8 @@ class ReadListViewController: BaseViewController,UITableViewDelegate,UITableView
                     self?.dataSource.append(model)
                 }
                 self?.tableView.reloadData()
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }

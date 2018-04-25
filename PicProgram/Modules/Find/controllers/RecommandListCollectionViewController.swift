@@ -52,6 +52,8 @@ class RecommandListCollectionViewController: BaseViewController,UICollectionView
                     self?.dataSource.append(model)
                 }
                 self?.collectionView?.reloadData()
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }

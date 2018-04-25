@@ -92,6 +92,8 @@ class PictureDetailViewController: BaseViewController {
             if result["ret"] as! Int == 0 {
                 self?.model.setValuesForKeys(result["picture_detail"] as! [String : Any])
                 self?.updateUI()
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }

@@ -24,6 +24,17 @@ let iPhoneScale = SCREEN_HEIGHT/568.0
 let fontScale = (iPhone5 == true ? 1:(iPhone6 == true ? 1.1:1.15))
 let defaultImageName = "default";
 
+//let iOS9 = (UIDevice.current.systemVersion <= "9.0") ? true : false
+//let iOS10 = (UIDevice.current.systemVersion <= "10.0") ? true : false
+
+func iOSVersion(version:Int) -> Bool {
+    let subVersions = UIDevice.current.systemVersion.components(separatedBy: CharacterSet.init(charactersIn: "."))
+    if Int(subVersions.first!)! <= version {
+        return true
+    }
+    return false
+}
+
 extension UIView {
     var x:CGFloat {
         get {

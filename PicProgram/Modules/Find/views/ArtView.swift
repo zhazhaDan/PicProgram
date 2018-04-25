@@ -42,11 +42,17 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
             return _pioneerModel
         }
     }
+    private let bannerHeight = (SCREEN_WIDTH - 24)/CGFloat(351/168.0)
+    private let scrollHeight = 242 + (SCREEN_WIDTH - 24)/CGFloat(351/168.0)
+
 
     override func buildUI() {
 //        let bannerBackView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 180))
 //        bannerBackView.backgroundColor = xsColor_main_white
-        bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: self.width - 24, height: 168),false,true)
+        let bannerScale = CGFloat(351/168.0)
+        let bannerFrame = CGRect.init(x: 12, y: 12, width: SCREEN_WIDTH - 24, height: (SCREEN_WIDTH - 24)/bannerScale)
+
+        bannerView = BannerView.init(frame: bannerFrame,false,true)
         bannerView.layer.cornerRadius = 8
         bannerView.layer.masksToBounds = true
         readTableView = UITableView.init(frame: self.bounds, style:.grouped)
@@ -60,12 +66,7 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         self.readTableView.register(UINib.init(nibName: "ArtHeaderView", bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: "header")
         self.readTableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "footer")
         self.addSubview(self.readTableView)
-        bigStarSayBackView = UIView.init(frame: CGRect.init(x: 0, y: 180, width: SCREEN_WIDTH, height: 230))
-//        headerView.addSubview(bigStarSayBackView)
-
-//        bannerBackView.addSubview(bannerView)
-//        self.addSubview(bannerBackView)
-
+        bigStarSayBackView = UIView.init(frame: CGRect.init(x: 0, y: 12 + bannerHeight, width: SCREEN_WIDTH, height: 230))
     }
     
     func updateUI() {
@@ -78,10 +79,10 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         self.scrollViewDidScroll(self.readTableView)
     }
     
+    
     func buildBigStarSayUI() {
         
-        
-        headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 410))
+        headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: scrollHeight))
         
         headerView.clipsToBounds = true
         headerView.addSubview(bannerView)
@@ -144,6 +145,10 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         headerView.addSubview(bigStarSayBackView)
 
         self.readTableView.tableHeaderView = headerView
+        
+        if iOSVersion(version: 9) {
+            self.readTableView.contentInset = UIEdgeInsetsMake(0, 0, NavigationBarBottom, 0)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -160,14 +165,14 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
         if angle >= CGFloat.pi/2  {
             view1.isHidden = true
             view2.isHidden = true
-            headerView.height = 180
+            headerView.height = 12 + bannerHeight
             self.readTableView.tableHeaderView = headerView
             angle = CGFloat.pi/2 - 0.01
 //            return
         }else {
             view1.isHidden = false
             view2.isHidden = false
-            headerView.height = 410
+            headerView.height = scrollHeight
             self.readTableView.tableHeaderView = headerView
 
         }
@@ -301,6 +306,8 @@ class ArtView: BaseView,UITableViewDelegate,UITableViewDataSource,FindViewProtoc
                 }
                 self?.cell2.praiseButton.isSelected = !(self?.cell2.praiseButton.isSelected)!
                 self?.bigAnimate(view: (self?.cell2.praiseButton)!)
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: self!, complete: nil)
             }
         }, nil)
     }

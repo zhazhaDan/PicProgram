@@ -110,6 +110,8 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
                     }
                     self.view3.dataSource = datas
                  }
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self.view)!, complete: nil)
             }
         }, nil)
     }
@@ -166,6 +168,8 @@ class EaselViewController: BaseViewController,CustomViewProtocol {
                         self?.view3.dataSource.remove(at: index)
                         self?.view3.collectionView.reloadData()
                     })
+                }else{
+                    HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
                 }
                 }, nil)
         }

@@ -184,13 +184,14 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //照相后回调
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        HUDTool.show(.loading, view: UIApplication.shared.keyWindow!)
         network.uploadPic(image: image,apiType: self.picType) { [weak self](result) in
+            HUDTool.hide()
             if result["ret"] as! Int == 0 {
-                let dict = ["imageUrl": result["url"] as! String, "image": image] as [String : Any]
+                let dict = ["image": image] as [String : Any]
                 self?.delegate.finishUpload(imageInfo: dict, type: (self?.picType)!)
             }else {
                 HUDTool.show(.text, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: {
-                    
                 })
             }
            
@@ -198,9 +199,9 @@ class SystemPicsCollectionViewController: UICollectionViewController,UICollectio
         //图片上传接口有问题。测试代码
 //        let dict = ["image": info[UIImagePickerControllerOriginalImage] as! UIImage] as [String : Any]
 //        self.delegate.finishUpload(imageInfo: dict, type: (self.picType))
-//        picker.dismiss(animated: true) {
-//            self.navigationController?.popViewController(animated: true)
-//        }
+        picker.dismiss(animated: true) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func listDidSelected(view: UIView, at index: Int, _ section: Int) {

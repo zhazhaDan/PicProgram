@@ -102,6 +102,10 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
                 header.collectButton.isUserInteractionEnabled = false
                 header.collectButton.isSelected = true
             }
+            let bannerScale = CGFloat(375/203.0)
+            let picHight = SCREEN_WIDTH/bannerScale
+            header.picHeightConstraint.constant = picHight + 5
+            header.updateConstraints()
             header.headerImageView.xs_setImage(paintModel.title_url)
             header.eyeNumLabel.text = "\(paintModel.read_num)"
             header.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
@@ -114,7 +118,9 @@ class PicDetailActCollectionViewController: PicDetailCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let contentHeight = paintModel.paint_detail.size(self.view.width - 24, CGFloat(MAXFLOAT), xsFont(13)).height
-        return CGSize.init(width: self.view.width, height: 290+contentHeight)
+        let bannerScale = CGFloat(375/203.0)
+        let picHight = SCREEN_WIDTH/bannerScale
+        return CGSize.init(width: self.view.width, height: 75+contentHeight+picHight)
     }
     
     

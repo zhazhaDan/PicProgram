@@ -48,13 +48,15 @@ class LiningViewController: BaseViewController {
     @IBAction func hintAction(_ sender: UIButton) {
         let hintView = Bundle.main.loadNibNamed("HintView", owner: nil, options: nil)?.first as! HintView
         hintView.frame = (self.navigationController?.view.bounds)!
-        hintView.hintTextLabel.text = "此功能需绑定墨染数字画框使用\n底部点选内衬材质、大小\n右上角按钮推送到数字画框硬件端"
+        hintView.hintTextLabel.text = MRLanguage(forKey: "Lining hint")
         self.navigationController?.view.addSubview(hintView)
     }
     override func requestData() {
         network.requestData(.paint_lining, params: ["frame_colour":tiningStyle.rawValue,"frame_size":tiningSize.rawValue], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: MRLanguage(forKey: "Lining") + MRLanguage(forKey: "Applied"), delay: 0.8, view: (self?.view)!, complete: nil)
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }

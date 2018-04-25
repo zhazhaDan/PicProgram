@@ -56,7 +56,9 @@ class TodayRecommandView: BaseScrollView {
     
     override func buildUI() {
         self.backgroundColor = xsColor_main_white
-        bannerView = BannerView.init(frame: CGRect.init(x: 12, y: 12, width: SCREEN_WIDTH - 24, height: 168), false)
+        let bannerScale = CGFloat(351/168.0)
+        let bannerFrame = CGRect.init(x: 12, y: 12, width: SCREEN_WIDTH - 24, height: (SCREEN_WIDTH - 24)/bannerScale)
+        bannerView = BannerView.init(frame: bannerFrame, false)
         bannerView.layer.cornerRadius = 8
         bannerView.layer.masksToBounds = true
         self.addSubview(bannerView)
@@ -81,7 +83,7 @@ class TodayRecommandView: BaseScrollView {
 
         hotListView = UIView.init(frame:CGRect.init(x: header1.x, y: header2.bottom, width: header1.width, height: 125))
         self.addSubview(hotListView)
-        self.contentSize = CGSize.init(width: self.width, height: hotListView.bottom + 20)
+        self.contentSize = CGSize.init(width: self.width, height: hotListView.bottom)
 
     }
     
@@ -112,7 +114,10 @@ class TodayRecommandView: BaseScrollView {
             
         }
         
-        self.contentSize = CGSize.init(width: SCREEN_WIDTH - 24, height: hotListView.bottom + NavigationBarBottom + 50)
+        self.contentSize = CGSize.init(width: SCREEN_WIDTH - 24, height: hotListView.bottom + 10)
+        if iOSVersion(version: 9) {
+            self.contentSize = CGSize.init(width: SCREEN_WIDTH - 24, height: hotListView.bottom + NavigationBarBottom)
+        }
     }
     
    

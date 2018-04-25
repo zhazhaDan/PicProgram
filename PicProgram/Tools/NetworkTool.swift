@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 #if DEBUG
-let baseApi = "http://app.atmoran.com/api/"
-//let baseApi = "http://dev.xiangshuispace.com:9988/api/"
+//let baseApi = "http://app.atmoran.com/api/"
+let baseApi = "http://dev.xiangshuispace.com:9988/api/"
 //let baseApi = "https://www.xiangshuispace.com/api/"
     
 #else
@@ -225,6 +225,9 @@ class  NetworkTool{
         var headerDict = ["content-type": "application/json","User-Uin": "\(UserInfo.user.uin)","Req-From": "iOS-app"]
         if UserInfo.user.token.count > 0 {
             headerDict["Client-Token"] = UserInfo.user.token
+        }
+        if BaseBundle.language == EN {
+            headerDict["en"] = "1"
         }
         print(headerDict)
         Alamofire.request(url, method: method, parameters: params, encoding: JSONEncoding.default,headers:headerDict)

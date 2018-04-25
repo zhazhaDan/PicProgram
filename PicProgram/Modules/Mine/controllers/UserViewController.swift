@@ -111,6 +111,8 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
             if result["ret"] as! Int == 0 {
                 UserInfo.user.setValuesForKeys(result["user_info"] as! [String : Any])
                 HUDTool.show(.text, text: MRLanguage(forKey: "Save Successful"), delay: 0.5, view: self.view, complete: nil)
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self.view)!, complete: nil)
             }
         }, nil)
     }

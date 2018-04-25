@@ -59,6 +59,8 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
             if result["ret"] as! Int == 0 {
                 (self?.customViews.first as! ClassifyCommonListView).dataSource = result["art_home_page"] as! Array<[String : Any]>
                 (self?.customViews.first as! ClassifyCommonListView).collecView.reloadData()
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }
@@ -73,6 +75,8 @@ class ClassifyViewController: BaseViewController,CustomViewProtocol {
             if result["ret"] as! Int == 0 {
                 (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).dataSource = result["scene_home_page"] as! Array<[String : Any]>
                 (self?.customViews[(self?.selectedIndex)!] as! ClassifyCommonListView).collecView.reloadData()
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }

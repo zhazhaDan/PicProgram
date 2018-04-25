@@ -58,6 +58,8 @@ class TipsViewController: BaseViewController,UITextViewDelegate {
         network.requestData(.paint_tips, params: ["tips_content":self.textView.text,"tips_texture":self.chooseMaterialIndex,"tips_location":self.chooseLocatedIndex,"flag":(switchSender.isOn == true ? 1 : 2)], finishedCallback: { [weak self](result) in
             if result["ret"] as! Int == 0 {
                 HUDTool.show(.text, text: "Tips\(MRLanguage(forKey: "Applied"))", delay: 0.8, view: (self?.view)!, complete: nil)
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }

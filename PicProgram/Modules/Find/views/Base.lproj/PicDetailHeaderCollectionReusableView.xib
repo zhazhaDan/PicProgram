@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,8 +62,8 @@
                     <color key="textColor" red="0.51595890519999998" green="0.60865098240000004" blue="0.6008244157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禅宗有云：为参禅时，见山是山。及至后来亲见知识，有个入处，见山不是山，见水不是水。而今得个休歇处，依前见山只是山，见水只是水。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-ep-at7">
-                    <rect key="frame" x="12" y="218" width="351" height="47"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-ep-at7">
+                    <rect key="frame" x="12" y="218" width="351" height="10"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Lj5-og-TI7"/>
                     </constraints>
@@ -72,17 +72,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4X-WA-dYw">
-                    <rect key="frame" x="12" y="275" width="351" height="1"/>
+                    <rect key="frame" x="12" y="238" width="351" height="1"/>
                     <color key="backgroundColor" red="0.92542082071304321" green="0.92551285028457642" blue="0.92131882905960083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="8JG-NQ-0Aj"/>
                     </constraints>
                 </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-ud-3jl">
-                    <rect key="frame" x="12" y="286" width="135" height="28"/>
+                    <rect key="frame" x="12" y="249" width="125" height="28"/>
                     <color key="backgroundColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="135" id="GrS-fv-7E0"/>
                         <constraint firstAttribute="height" constant="27" id="LMS-dB-1x5"/>
                     </constraints>
                     <segments>
@@ -96,7 +95,7 @@
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45张" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-su-DRC">
-                    <rect key="frame" x="335.5" y="286" width="27.5" height="20"/>
+                    <rect key="frame" x="335.5" y="249" width="27.5" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="aoj-SS-jWl"/>
                     </constraints>
@@ -146,6 +145,7 @@
                 <outlet property="headerImageView" destination="dxx-nK-wNy" id="M9m-hZ-i6V"/>
                 <outlet property="numLabel" destination="GPD-r5-sLC" id="gE8-V8-j6C"/>
                 <outlet property="numberLabel" destination="WoG-su-DRC" id="Pcd-y6-uje"/>
+                <outlet property="picHeightConstraint" destination="oDD-kR-6PL" id="6hb-DC-Y84"/>
             </connections>
             <point key="canvasLocation" x="-11" y="42"/>
         </collectionReusableView>

@@ -17,6 +17,7 @@ class PicDetailHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var changeSegment: UISegmentedControl!
     open weak var delegate: SearchProtocol!
+    @IBOutlet weak var picHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var collectButton: UIButton!
     

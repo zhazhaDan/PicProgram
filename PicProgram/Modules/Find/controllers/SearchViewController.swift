@@ -102,6 +102,8 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
                 let datas = result["hot_words"]
                 self?.dataSource[1]["data"] = datas
                 self?.collectionView.reloadData()
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
         }, nil)
     }
@@ -280,6 +282,8 @@ class SearchViewController: BaseViewController,UICollectionViewDelegate,UICollec
                 self?.searchResultView.buttonAction(button as! UIButton)
 
                 self?.view.addSubview((self?.searchResultView)!)
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
             }
             }, nil)
     }

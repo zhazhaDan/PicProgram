@@ -50,7 +50,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
         }else {
             if resp is SendAuthResp {
                 let response = resp as! SendAuthResp
-                network.requestData(.user_third_login, params: ["register_type":2,"auth_token":response.code], finishedCallback: { [weak self] (result) in
+                network.requestData(.user_third_login, params: ["register_type":2,"auth_token":response.code as! String], finishedCallback: { [weak self] (result) in
                     if result["ret"] as! Int == 0{
                         HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
                         UserInfo.user.setValuesForKeys(result)

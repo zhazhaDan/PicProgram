@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,7 +35,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZk-TG-Ut2" userLabel="titleLabel">
-                    <rect key="frame" x="20" y="592" width="335" height="0.0"/>
+                    <rect key="frame" x="20" y="572" width="335" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="15" id="u6I-9F-15q"/>
                     </constraints>
@@ -44,7 +44,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A1-wV-mtB">
-                    <rect key="frame" x="20" y="597" width="335" height="0.0"/>
+                    <rect key="frame" x="20" y="577" width="335" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="15" id="iSx-yp-ghF"/>
                     </constraints>
@@ -112,7 +112,7 @@
                 <constraint firstAttribute="trailing" secondItem="rBL-hT-nqP" secondAttribute="trailing" constant="20" id="pMy-XB-Sdv"/>
                 <constraint firstAttribute="trailing" secondItem="0PB-HM-hcL" secondAttribute="trailing" constant="20" id="pr8-DW-TNv"/>
                 <constraint firstItem="RZk-TG-Ut2" firstAttribute="leading" secondItem="7A1-wV-mtB" secondAttribute="leading" id="ps6-Nw-EWj"/>
-                <constraint firstItem="7A1-wV-mtB" firstAttribute="bottom" secondItem="rBL-hT-nqP" secondAttribute="top" constant="10" id="qQg-Zr-2Zi"/>
+                <constraint firstItem="7A1-wV-mtB" firstAttribute="bottom" secondItem="rBL-hT-nqP" secondAttribute="top" constant="-10" id="qQg-Zr-2Zi"/>
                 <constraint firstAttribute="trailing" secondItem="7A1-wV-mtB" secondAttribute="trailing" constant="20" id="qbH-KF-EeU"/>
             </constraints>
             <point key="canvasLocation" x="57.5" y="102.5"/>

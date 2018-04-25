@@ -102,6 +102,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
             }else if result["ret"] as! Int == -1062 {
                 self.deviceDatas.removeAll()
                 self.updateDeviceManageView()
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self.view)!, complete: nil)
             }
         }, nil)
     }
@@ -235,6 +237,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                     }
                   
                     
+                }else{
+                    HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self.view)!, complete: nil)
                 }
             }, nil)
         }
@@ -303,6 +307,8 @@ class MineViewController: BaseViewController,MineViewProtocol,CustomViewProtocol
                 HUDTool.show(.text, nil, text: MRLanguage(forKey: "Setting Successful"), delay: 0.8, view: self.view, complete: {
                     self.getUserBindDevices()
                 })
+            }else{
+                HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self.view)!, complete: nil)
             }
         }, nil)
     }

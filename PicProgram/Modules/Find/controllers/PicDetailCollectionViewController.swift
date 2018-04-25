@@ -47,10 +47,11 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         // Register cell classes
         self.collectionView!.register(UINib.init(nibName: "PicDetailCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         self.registHeader()
-        collectionView?.xs_addRefresh(refresh: .normal_footer_refresh) {
-            self.requestData()
+        if paint_id != 0 && dataSource.count == 0{
+            collectionView?.xs_addRefresh(refresh: .normal_footer_refresh) {
+                self.requestData()
+            }
         }
-        
     }
     
     func registHeader() {
@@ -203,41 +204,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         return UICollectionReusableView.init()
     }
 
-//
-//    func addRightNavigationBarItems(_ imageNames:[String]) {
-//        var imageItems : Array = [UIBarButtonItem]()
-//        if imageNames.count > 0 {
-//            for i in 0 ..< imageNames.count {
-//                let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 25, height: 44))
-//                let image = UIImage.init(named: imageNames[imageNames.count - i - 1])
-//                button.setImage(image, for: .normal)
-//                button.setImage(UIImage.init(named: imageNames[imageNames.count - i - 1]), for: .highlighted)
-//                button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10)
-//                button.addTarget(self, action: #selector(rightNavigationBarAction(_:)), for: .touchUpInside)
-//                let barItem = UIBarButtonItem.init(customView: button)
-//                button.tag = 1000+imageNames.count - i - 1
-//                imageItems.append(barItem)
-//            }
-//        }
-//        self.navigationItem.rightBarButtonItems = imageItems
-//    }
-//
-//    @objc func rightNavigationBarAction(_ sender:UIButton) {
-//        switch sender.tag - 1000 {
-//        case 0:
-//            print("投放")
-//            break
-//        case 1:
-//            print("分享")
-//            break
-//        case 2:
-//            print("推送")
-//            break
-//        default:
-//            print("")
-//        }
-//    }
-    
+
     func backAction() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -256,10 +223,7 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
         if header != nil {
             if (header?.isKind(of: PicDetailHeaderStyle3View.self))! {
                 let header2 = header as! PicDetailHeaderStyle3View
-                
-                
                 header2.numberLabel.text = "\(dataSource.count)\(MRLanguage(forKey: "pages"))"
-                
             }else {
                 let header2 = header as! PicDetailHeaderCollectionReusableView
                 
@@ -298,6 +262,8 @@ class PicDetailCollectionViewController: UICollectionViewController,UICollection
                     }else if header is PicDetailHeaderCollectionReusableView {
                         (header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected = !(header as! PicDetailHeaderCollectionReusableView).collectButton.isSelected
                     }
+                }else{
+                    HUDTool.show(.text, nil, text: result["err"] as! String, delay: 1, view: (self?.view)!, complete: nil)
                 }
                 }, nil)
         }else {
