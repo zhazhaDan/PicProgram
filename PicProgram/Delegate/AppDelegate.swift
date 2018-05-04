@@ -196,6 +196,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return RegistThirdAppDelegate.shareDelegate.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         
     }
+    //兼容微博sdk
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any?) -> Bool{
+        return RegistThirdAppDelegate.shareDelegate.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
     
     //notification
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

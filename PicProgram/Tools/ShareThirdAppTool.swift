@@ -12,8 +12,8 @@ import TwitterKit
 
 let WXAPPID = "wx4f0a156d8bb04f93"//"wxd477edab60670232"//"wx4f0a156d8bb04f93"
 //let WXAPPSECRET = "4c7fd889d4f2902c0ca4108dc06dd422"
-let WBAPPKEY = "1695158483"
-let WBAPPSECRET = "da72736fd76eac3d4342cf99733dfa16"
+let WBAPPKEY = "1810058338"
+let WBAPPSECRET = "2e1f6b926c73b8a8ea3f465069730e2b"
 let WBRedirectURL = "https://api.weibo.com/oauth2/default.html"
 
 let TwitterAPPKEY = "Y54ikILtTwI9hiUVkebzxK9bU"
@@ -116,9 +116,9 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
 //            composer.setURL(URL.init(string: "https://www.baidu.com"))
             composer.show(from: (UIApplication.shared.keyWindow?.rootViewController)!) { (result) in
                 if result == TWTRComposerResult.cancelled {
-                    self.shareResult("用户取消")
+                    self.shareResult(MRLanguage(forKey: "user cancel"))
                 }else if result == TWTRComposerResult.done {
-                    self.shareResult("分享成功")
+                    self.shareResult(MRLanguage(forKey: "share success"))
                 }
             }
 //        }
@@ -155,7 +155,7 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
         if resp.errCode < 0 {
 //            shareResult(text: resp.errStr)
         }else {
-            shareResult("分享成功")
+            shareResult(MRLanguage(forKey: "share success"))
             
         }
     }
@@ -175,19 +175,21 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
          WeiboSDKResponseStatusCodeUnknown = -100,
          */
         
+      
         if response.statusCode == .userCancel {
-            shareResult("用户取消")
+            shareResult(MRLanguage(forKey: "user cancel"))
         }else if response.statusCode == .success{
-            shareResult("分享成功")
+            shareResult(MRLanguage(forKey: "share success"))
         }else{
-            shareResult("分享失败")
+            shareResult(MRLanguage(forKey: "share fail"))
         }
-    
+            
+        
     
     }
     
-    func shareResult(_ text:String = "分享成功") {
-       BaseAlertController.inits(text, message: nil, confirmText: "确定", nil, subComplete: nil)
+    func shareResult(_ text:String = MRLanguage(forKey: "share success")) {
+       BaseAlertController.inits(text, message: nil, confirmText: MRLanguage(forKey: "Yes"), nil, subComplete: nil)
 //        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
@@ -201,7 +203,7 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
             // 这种情况是用户点击了『完成』按钮，并没有真的分享
             NSLog("Cancel");
         }else {
-            shareResult("分享成功")
+            shareResult(MRLanguage(forKey: "share success"))
         }
     }
     
@@ -211,12 +213,12 @@ class ShareThirdAppTool: NSObject,WXApiDelegate,WeiboSDKDelegate,FBSDKSharingDel
             dialog.mode = FBSDKShareDialogMode.browser
             dialog.show()
         }else {
-            shareResult("分享失败")
+            shareResult(MRLanguage(forKey: "share fail"))
         }
     }
     
     func sharerDidCancel(_ sharer: FBSDKSharing!) {
-        shareResult("用户取消")
+        shareResult(MRLanguage(forKey: "user cancel"))
     }
     
     

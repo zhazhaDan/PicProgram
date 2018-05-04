@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SBLoginViewController: BaseViewController,WXApiDelegate {
+class SBLoginViewController: BaseViewController,WXApiDelegate,WeiboSDKDelegate {
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passTextfield: UITextField!
@@ -39,6 +39,11 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
             req.state = "wechat_sdk_demo"
             req.openID = ""
             WXApi.sendAuthReq(req, viewController: self, delegate: self)
+        }else if sender.tag == 11 {
+            let req = WBAuthorizeRequest.init()
+            req.redirectURI = "https://api.weibo.com/oauth2/default.html"
+            req.scope = "all"
+            WeiboSDK.send(req)
         }
     }
 
@@ -50,24 +55,57 @@ class SBLoginViewController: BaseViewController,WXApiDelegate {
         }else {
             if resp is SendAuthResp {
                 let response = resp as! SendAuthResp
-                network.requestData(.user_third_login, params: ["register_type":2,"auth_token":response.code as! String], finishedCallback: { [weak self] (result) in
-                    if result["ret"] as! Int == 0{
-                        HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
-                        UserInfo.user.setValuesForKeys(result)
-                        UserInfo.user.updateUserInfo()
-                        if UserInfo.user.client_id != nil && UserInfo.user.client_id?.count as! Int > 0 {
-                            UserInfo.user.updateIgetuiClient(clientId: UserInfo.user.client_id!)
-                        }
-                        //                self?.navigationController?.popToRootViewController(animated: true)
-                        self?.dismiss(animated: true, completion: nil)
-                    }else {
-                        HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self?.view)!, complete: nil)
-                    }
-                }, nil)
-                
+               thirdLogin(code: response.code as! String)
             }
            
         }
+    }
+    
+    func didReceiveWeiboRequest(_ request: WBBaseRequest!) {
+        
+    }
+    
+    func didReceiveWeiboResponse(_ response: WBBaseResponse!) {
+        /*
+         WeiboSDKResponseStatusCodeSuccess = 0,
+         WeiboSDKResponseStatusCodeUserCancel = -1,
+         WeiboSDKResponseStatusCodeSentFail = -2,
+         WeiboSDKResponseStatusCodeAuthDeny = -3,
+         WeiboSDKResponseStatusCodeUserCancelInstall = -4,
+         WeiboSDKResponseStatusCodeUnsupport = -99,
+         WeiboSDKResponseStatusCodeUnknown = -100,
+         */
+        
+        if response.statusCode == .userCancel {
+            HUDTool.show(.text, nil, text: MRLanguage(forKey: "user cancel"), delay: 1, view: self.view, complete: nil)
+        }else if response.statusCode == .success{
+            if response.isKind(of: WBAuthorizeResponse.self)  {
+                let autoRep = response as! WBAuthorizeResponse
+                thirdLogin(code: autoRep.accessToken)
+            }
+        }else{
+            HUDTool.show(.text, nil, text: MRLanguage(forKey: "user cancel"), delay: 1, view: self.view, complete: nil)
+        }
+        
+        
+    }
+    
+    func thirdLogin(code:String) {
+        network.requestData(.user_third_login, params: ["register_type":2,"auth_token":code], finishedCallback: { [weak self] (result) in
+            if result["ret"] as! Int == 0{
+                HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
+                UserInfo.user.setValuesForKeys(result)
+                UserInfo.user.updateUserInfo()
+                if UserInfo.user.client_id != nil && UserInfo.user.client_id?.count as! Int > 0 {
+                    UserInfo.user.updateIgetuiClient(clientId: UserInfo.user.client_id!)
+                }
+                //                self?.navigationController?.popToRootViewController(animated: true)
+                self?.dismiss(animated: true, completion: nil)
+            }else {
+                HUDTool.show(.text, text: result["err"] as! String, delay: 0.6, view: (self?.view)!, complete: nil)
+            }
+            }, nil)
+        
     }
     
     

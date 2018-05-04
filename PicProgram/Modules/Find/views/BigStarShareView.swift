@@ -52,7 +52,7 @@ class BigStarShareView: BaseView,SharePlatformProtocol {
         self.addSubview(cell)
         
 //        let codeString = "大咖说分享文\(MRLanguage(forKey: "pages"))"
-        let codeString = "www.atmoran.com"
+        let codeString = "http://www.atmoran.com"
         let image = codeString.generateQRCodeImage()
         let imageview = UIImageView.init(frame: CGRect.init(x: cell.width - 56 - 12, y: cell.height - 56 - 12, width: 56, height: 56))
         imageview.contentMode = .scaleAspectFit

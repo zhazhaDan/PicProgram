@@ -35,46 +35,10 @@ class RegistThirdAppDelegate: UIResponder,GeTuiSdkDelegate,UNUserNotificationCen
         WeiboSDK.registerApp(WBAPPKEY)
         GeTuiSdk.start(withAppId: GTAPPID, appKey: GTAPPKEY, appSecret: GTAPPSECRET, delegate: self)
         registRemoteNotifications()
-
-        
-//        ShareSDK.registerActivePlatforms(
-//            [SSDKPlatformType.typeSinaWeibo.rawValue,SSDKPlatformType.typeWechat.rawValue,SSDKPlatformType.typeTwitter.rawValue,SSDKPlatformType.typeFacebook.rawValue],
-//            onImport: {(platform : SSDKPlatformType) -> Void in
-//                switch platform
-//                {
-//                case SSDKPlatformType.typeSinaWeibo:
-//                    ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
-//                case SSDKPlatformType.typeWechat:
-//                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
-//                default:
-//                    break
-//                }
-//        },
-//            onConfiguration: {(platform : SSDKPlatformType , appInfo : NSMutableDictionary?) -> Void in
-//                switch platform
-//                {
-//                case SSDKPlatformType.typeSinaWeibo:
-//                    //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-//                    appInfo?.ssdkSetupSinaWeibo(byAppKey: "568898243",
-//                                                appSecret: "38a4f8204cc784f81f9f0daaf31e02e3",
-//                                                redirectUri: "http://www.sharesdk.cn",
-//                                                authType: SSDKAuthTypeBoth)
-//                    
-//                case SSDKPlatformType.typeWechat:
-//                    //设置微信应用信息
-//                    appInfo?.ssdkSetupWeChat(byAppId: "wx4868b35061f87885",
-//                                             appSecret: "64020361b8ec4c99936c0e3999a9f249")
-//                case SSDKPlatformType.typeTwitter:
-//                    appInfo?.ssdkSetupTwitter(byConsumerKey: "", consumerSecret: "", redirectUri: "")
-//                default:
-//                    break
-//                }
-//        })
         UserInfo.user.readUserDefaults()
 
         return true
     }
-    
     
     func networkStatusListener() {
         let reachability = Reachability()!
@@ -110,7 +74,13 @@ class RegistThirdAppDelegate: UIResponder,GeTuiSdkDelegate,UNUserNotificationCen
     }
      func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if url.host == "response" {//微博
-            WeiboSDK.handleOpen(url, delegate: ShareThirdAppTool.share)
+            let rootVC = appDelegate.window?.rootViewController?.presentedViewController?.childViewControllers.first
+            if (rootVC != nil && (rootVC?.isKind(of: SBLoginViewController.self))!) {
+                WeiboSDK.handleOpen(url, delegate: rootVC as! WeiboSDKDelegate)
+            }else {
+                WeiboSDK.handleOpen(url, delegate: ShareThirdAppTool.share)
+            }
+
         }else if url.host == "platformId=wechat" {//微信分享
             WXApi.handleOpen(url, delegate: ShareThirdAppTool.share as WXApiDelegate)
         }else if url.host == "oauth" {//微信分享
