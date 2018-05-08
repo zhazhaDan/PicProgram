@@ -55,7 +55,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate,WeiboSDKDelegate {
         }else {
             if resp is SendAuthResp {
                 let response = resp as! SendAuthResp
-               thirdLogin(code: response.code as! String)
+               thirdLogin(code: response.code as! String,type: 2)
             }
            
         }
@@ -81,7 +81,7 @@ class SBLoginViewController: BaseViewController,WXApiDelegate,WeiboSDKDelegate {
         }else if response.statusCode == .success{
             if response.isKind(of: WBAuthorizeResponse.self)  {
                 let autoRep = response as! WBAuthorizeResponse
-                thirdLogin(code: autoRep.accessToken)
+                thirdLogin(code: autoRep.accessToken,type: 5)
             }
         }else{
             HUDTool.show(.text, nil, text: MRLanguage(forKey: "user cancel"), delay: 1, view: self.view, complete: nil)
@@ -90,8 +90,8 @@ class SBLoginViewController: BaseViewController,WXApiDelegate,WeiboSDKDelegate {
         
     }
     
-    func thirdLogin(code:String) {
-        network.requestData(.user_third_login, params: ["register_type":2,"auth_token":code], finishedCallback: { [weak self] (result) in
+    func thirdLogin(code:String,type:Int) {
+        network.requestData(.user_third_login, params: ["register_type":type,"auth_token":code], finishedCallback: { [weak self] (result) in
             if result["ret"] as! Int == 0{
                 HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
                 UserInfo.user.setValuesForKeys(result)

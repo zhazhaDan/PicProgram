@@ -37,7 +37,7 @@
 			<string>WB</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wb3252817501</string>
+				<string>wb1810058338</string>
 			</array>
 		</dict>
 		<dict>
@@ -112,9 +112,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>"墨染博物馆"需要访问您的相机才能启动二维码扫描功能</string>
+	<string>&quot;墨染博物馆&quot;需要访问您的相机才能启动二维码扫描功能</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>"墨染博物馆"需要访问您的相册才能开启头像和主页的修改功能</string>
+	<string>&quot;墨染博物馆&quot;需要访问您的相册才能开启头像和主页的修改功能</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>方正宋刻本秀楷简体.TTF</string>
