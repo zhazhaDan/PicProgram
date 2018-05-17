@@ -8,8 +8,8 @@
 
 import UIKit
 
-let CNS = "zh-Hans"
-let EN = "en"
+let CNS = "zh-Hans" //中文
+let EN = "en" //英文
 let LanguageKey = "language"
 let LanguageChangedNotification = "LanguageChangedNotification"
 class BaseBundle: NSObject {

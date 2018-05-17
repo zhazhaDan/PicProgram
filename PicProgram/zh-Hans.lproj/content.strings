@@ -371,4 +371,5 @@
 "user cancel" = "用户取消";
 "share success" = "分享成功";
 "share fail" = "分享失败";
-
+"wait" = "请稍等";
+"clean success" = "清理成功";

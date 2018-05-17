@@ -41,7 +41,9 @@ class SBLoginViewController: BaseViewController,WXApiDelegate,WeiboSDKDelegate {
             WXApi.sendAuthReq(req, viewController: self, delegate: self)
         }else if sender.tag == 11 {
             let req = WBAuthorizeRequest.init()
-            req.redirectURI = "https://api.weibo.com/oauth2/default.html"
+            req.redirectURI = "http://app.atmoran.com/api/user/signup_thirdparty_callback"
+            //http://app.atmoran.com/api/user/signup_thirdparty_callback
+            //http://dev.xiangshuispace.com:9988/api/user/signup_thirdparty_callback
             req.scope = "all"
             WeiboSDK.send(req)
         }
@@ -91,7 +93,13 @@ class SBLoginViewController: BaseViewController,WXApiDelegate,WeiboSDKDelegate {
     }
     
     func thirdLogin(code:String,type:Int) {
-        network.requestData(.user_third_login, params: ["register_type":type,"auth_token":code], finishedCallback: { [weak self] (result) in
+        var params:[String:Any] = [:]
+        if type == 5 {
+            params = ["register_type":type,"access_token":code]
+        }else {
+            params = ["register_type":type,"auth_token":code]
+        }
+        network.requestData(.user_third_login, params: params, finishedCallback: { [weak self] (result) in
             if result["ret"] as! Int == 0{
                 HUDTool.show(.text, text: MRLanguage(forKey: "Sign in successful"), delay: 0.6, view: (self?.view)!, complete: nil)
                 UserInfo.user.setValuesForKeys(result)

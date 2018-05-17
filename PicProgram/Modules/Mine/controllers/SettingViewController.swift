@@ -106,13 +106,10 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
             cell.accessoryView = nil
         }
         if cell.textLabel?.text == MRLanguage(forKey: "FeedBack") {
-            //TODO:修改
             cell.detailTextLabel?.text = "34445432@qq.com"
         }else if cell.textLabel?.text == MRLanguage(forKey: "Current Version") {
-            //TODO:修改
             cell.detailTextLabel?.text = "\(majorVersion)"
         }else if cell.textLabel?.text == MRLanguage(forKey: "Cache") {
-            //TODO:修改
             cell.detailTextLabel?.text = "\(getCacheSize())M"
         }
     }
@@ -200,21 +197,27 @@ class SettingViewController: BaseViewController ,UITableViewDelegate,UITableView
         
         BaseAlertController.inits(MRLanguage(forKey: "Clean Cache"), message: message, confirmText: MRLanguage(forKey: "Yes"), MRLanguage(forKey: "No")) { (tag) in
             if tag == 0 {
-                for p in files!{
-                    // 拼接路径
-                    let path = cachePath!.appendingFormat("/\(p)")
-                    // 判断是否存在，以及是否可以删除
-                    if(FileManager.default.fileExists(atPath: path) && FileManager.default.isDeletableFile(atPath: path)){
-                        // 删除
-                        //try! NSFileManager.defaultManager().removeItemAtPath(path)
-                        do {
-                            try FileManager.default.removeItem(atPath: path as String)
-                        } catch {
-                            print("removeItemAtPath err"+path)
+                HUDTool.show(.loading, #imageLiteral(resourceName: "progress_activity"), text: MRLanguage(forKey: "wait"), delay: 2, view: self.view) {[weak self] in
+                    for p in files!{
+                        // 拼接路径
+                        let path = cachePath!.appendingFormat("/\(p)")
+                        // 判断是否存在，以及是否可以删除
+                        if(FileManager.default.fileExists(atPath: path) && FileManager.default.isDeletableFile(atPath: path)){
+                            // 删除
+                            //try! NSFileManager.defaultManager().removeItemAtPath(path)
+                            do {
+                                try FileManager.default.removeItem(atPath: path as String)
+                            } catch {
+                                print("removeItemAtPath err"+path)
+                            }
                         }
                     }
+                    self?.tableView.reloadData()
                 }
-                self.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
+                    HUDTool.show(.custom, #imageLiteral(resourceName: "icons8-checkmark"), text: MRLanguage(forKey: "clean success"), delay: 1, view: self.view, complete: nil)
+                })
+               
             }
         }
         

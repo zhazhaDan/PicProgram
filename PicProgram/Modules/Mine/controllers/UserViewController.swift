@@ -25,8 +25,18 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = MRLanguage(forKey: "Mine My Info")
-
     }
+  
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserInfo.user.personal_profile.count <= 0 {
+            introduceTextView.text = MRLanguage(forKey: "Personal Introduce")
+        }else {
+            introduceTextView.text = UserInfo.user.personal_profile
+        }
+    }
+    
 
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         if sender.view?.tag == 10 || sender.view?.tag == 11 {
@@ -132,9 +142,10 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         mScrollView?.setContentOffset(CGPoint.init(x: 0, y: 200), animated: true)
         if textView.text == MRLanguage(forKey: "Personal Introduce") {
             textView.text = ""
-        }else if textView.text.count as! Int == 0 {
+        }else if textView.text.count == 0 {
             textView.text = MRLanguage(forKey: "Personal Introduce")
         }
+       
     }
     
     func keyboardRegist() {
@@ -152,10 +163,16 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         }else {
             self.textNumberLabel.text = "\(120 - textView.text.count)\(MRLanguage(forKey: "pages"))"
         }
+        
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        updateUserInfo(params: [User_personal_profile:textView.text])
+        
+        if textView.text == MRLanguage(forKey: "Personal Introduce") {
+            textView.text = ""
+        }else if textView.text.count == 0 {
+            textView.text = MRLanguage(forKey: "Personal Introduce")
+        }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -164,7 +181,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         }
         else if text == "\n" {
             keyboardRegist()
-            updateUserInfo(params: [User_personal_profile:textView.text])
+            updateUserInfo(params: [User_personal_profile:textView.text as! String])
         }
         
         return true
