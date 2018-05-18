@@ -235,6 +235,7 @@
 		3A9CCC661FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CCC641FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift */; };
 		3AA09A162017078C009D38EB /* BindListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA09A142017078C009D38EB /* BindListViewController.swift */; };
 		3AA09A172017078C009D38EB /* BindListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA09A152017078C009D38EB /* BindListViewController.xib */; };
+		3AA7429420AEF0950085358C /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA7429620AEF0950085358C /* HintView.xib */; };
 		3AA7A1601F8DC16000DDF7CB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7A15F1F8DC16000DDF7CB /* LoginView.swift */; };
 		3AA8DCFA2005C77000245FBB /* EmotionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DCFC2005C77000245FBB /* EmotionList.plist */; };
 		3AA8DCFF2005EA4B00245FBB /* ArtMasterSayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8DD012005EA4B00245FBB /* ArtMasterSayTableViewCell.xib */; };
@@ -430,7 +431,6 @@
 		F7733DB51FFE70D700A29534 /* SearchList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7733DB41FFE70D700A29534 /* SearchList.plist */; };
 		F77771461FE67C8A00AF58E3 /* BaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */; };
 		F77771481FE6A82300AF58E3 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77771471FE6A82300AF58E3 /* HintView.swift */; };
-		F777714A1FE6A82C00AF58E3 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77771491FE6A82C00AF58E3 /* HintView.xib */; };
 		F7845C9C1FB345D90033D69C /* FindHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9B1FB345D90033D69C /* FindHeaderView.swift */; };
 		F7845C9E1FB354590033D69C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7845C9D1FB354590033D69C /* WebViewController.swift */; };
 		F784EEBF1FD2897800DD1B6F /* DeviceBindUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */; };
@@ -688,6 +688,8 @@
 		3A9CCC641FA1ED2400FC33BD /* ArtMasterSayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtMasterSayTableViewCell.swift; sourceTree = "<group>"; };
 		3AA09A142017078C009D38EB /* BindListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindListViewController.swift; sourceTree = "<group>"; };
 		3AA09A152017078C009D38EB /* BindListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindListViewController.xib; sourceTree = "<group>"; };
+		3AA7429520AEF0950085358C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HintView.xib; sourceTree = "<group>"; };
+		3AA7429820AEF0980085358C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HintView.strings; sourceTree = "<group>"; };
 		3AA7A15F1F8DC16000DDF7CB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3AA8DCFB2005C77000245FBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/EmotionList.plist; sourceTree = "<group>"; };
 		3AA8DCFD2005C77300245FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/EmotionList.plist; sourceTree = "<group>"; };
@@ -956,7 +958,6 @@
 		F7733DB41FFE70D700A29534 /* SearchList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SearchList.plist; sourceTree = "<group>"; };
 		F77771451FE67C8A00AF58E3 /* BaseAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertController.swift; sourceTree = "<group>"; };
 		F77771471FE6A82300AF58E3 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
-		F77771491FE6A82C00AF58E3 /* HintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
 		F7845C9B1FB345D90033D69C /* FindHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHeaderView.swift; sourceTree = "<group>"; };
 		F7845C9D1FB354590033D69C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F784EEBE1FD2897800DD1B6F /* DeviceBindUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBindUserView.swift; sourceTree = "<group>"; };
@@ -1863,7 +1864,7 @@
 				F72A5AE01FDD6DCC007544CB /* CollectPaintsListView.swift */,
 				3AE028422004CD8B00EA1B8C /* CollectPaintsListView.xib */,
 				F77771471FE6A82300AF58E3 /* HintView.swift */,
-				F77771491FE6A82C00AF58E3 /* HintView.xib */,
+				3AA7429620AEF0950085358C /* HintView.xib */,
 				F751D2BA1FE84C21007E9E75 /* BigStarShareView.swift */,
 				3AE028492004CDBA00EA1B8C /* BigStarShareView.xib */,
 			);
@@ -2056,7 +2057,7 @@
 				3AFB305C1FE8B709005BA1A8 /* loading_10@2x.png in Resources */,
 				3A33DE2E1FE91FF1001565F2 /* xf_80.png in Resources */,
 				3AE0282B2004C6FA00EA1B8C /* PicDetailHeaderCollectionReusableView.xib in Resources */,
-				F777714A1FE6A82C00AF58E3 /* HintView.xib in Resources */,
+				3AA7429420AEF0950085358C /* HintView.xib in Resources */,
 				3A9CCC631FA1EC5100FC33BD /* ArtHeaderView.xib in Resources */,
 				3A33DE041FE91FF1001565F2 /* xf_8.png in Resources */,
 				3AFB30601FE8B709005BA1A8 /* loading_35@2x.png in Resources */,
@@ -2435,6 +2436,15 @@
 				3A90F3CA1FE7BE3D00BF4906 /* zh-Hans */,
 			);
 			name = EaselViewController.xib;
+			sourceTree = "<group>";
+		};
+		3AA7429620AEF0950085358C /* HintView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AA7429520AEF0950085358C /* Base */,
+				3AA7429820AEF0980085358C /* en */,
+			);
+			name = HintView.xib;
 			sourceTree = "<group>";
 		};
 		3AA8DCFC2005C77000245FBB /* EmotionList.plist */ = {
