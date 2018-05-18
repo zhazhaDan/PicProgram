@@ -373,3 +373,6 @@
 "share fail" = "分享失败";
 "wait" = "请稍等";
 "clean success" = "清理成功";
+"more" = "加载更多";
+"no more" = "没有更多了";
+"refreshing" = "正在刷新数据中...";

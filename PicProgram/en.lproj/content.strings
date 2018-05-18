@@ -259,4 +259,6 @@
 "Tips text" = "Please leave your message here";
 "wait" = "Please wait a moment";
 "clean success" = "clean success";
-
+"more" = "more";
+"no more" = "no more data";
+"refreshing" = "refreshing...";

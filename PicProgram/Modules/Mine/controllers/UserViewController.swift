@@ -86,7 +86,6 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         let birthday = "\(UserInfo.user.birth_year)-\(UserInfo.user.birth_month)-\(UserInfo.user.birth_day)"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
-        
         let bithday = dateFormatter.date(from: birthday)
         self.birthdayLabel.text = birthday
         genderView.buildUI(type: .birthday, didFinishChoose: { (date) in
@@ -103,14 +102,8 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
     func finishUpload(imageInfo: [String : Any], type: RequestAPIType) {
         if type == .user_set_header {
             self.headerImageView.image = (imageInfo["image"] as! UIImage)
-//            if imageInfo["imageUrl"] != nil {
-//                updateUserInfo(params: [User_head_url:imageInfo["imageUrl"] ?? ""])
-//            }
         }else if type == .user_set_back {
             self.backImageView.image = (imageInfo["image"] as! UIImage)
-//            if imageInfo["imageUrl"] != nil {
-//                updateUserInfo(params: [User_background:imageInfo["imageUrl"] ?? ""])
-//            }
         }
     }
     
@@ -179,7 +172,7 @@ class UserViewController: BaseViewController,SystemPicsCollectionProtocol,UIText
         if textView.text.count >= 120 && text != "" {
             return false
         }
-        else if text == "\n" {
+        else if text == "\n" && textView.text != MRLanguage(forKey: "Personal Introduce") {
             keyboardRegist()
             updateUserInfo(params: [User_personal_profile:textView.text as! String])
         }
